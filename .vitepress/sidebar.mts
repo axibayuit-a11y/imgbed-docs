@@ -23,6 +23,22 @@ const uploadItems = [
   'upload/pcloud'
 ] as const
 
+const uploadChannelLabels: Record<string, string> = {
+  'upload/telegram': 'Telegram',
+  'upload/cloudflare-r2': 'Cloudflare R2',
+  'upload/s3': 'S3',
+  'upload/webdav': 'WebDAV',
+  'upload/discord': 'Discord',
+  'upload/huggingface': 'Hugging Face',
+  'upload/github-releases': 'GitHub Releases',
+  'upload/gitlab-packages': 'GitLab Packages',
+  'upload/onedrive': 'OneDrive',
+  'upload/google-drive': 'Google Drive',
+  'upload/dropbox': 'Dropbox',
+  'upload/yandex': 'Yandex',
+  'upload/pcloud': 'pCloud'
+}
+
 const safetyItems = [
   'Safety/authentication-and-login-devices',
   'Safety/cloudflare-api-token',
@@ -92,11 +108,11 @@ function getTitleFromMarkdown(locale: string, link: string) {
   return title || link
 }
 
-function toSidebarItems(prefix: string, items: readonly string[]): DefaultTheme.SidebarItem[] {
+function toSidebarItems(prefix: string, items: readonly string[], labels?: Record<string, string>): DefaultTheme.SidebarItem[] {
   const locale = getLocaleFromPrefix(prefix)
 
   return items.map((link) => ({
-    text: getTitleFromMarkdown(locale, link),
+    text: labels?.[link] || getTitleFromMarkdown(locale, link),
     link: `${prefix}${link}`
   }))
 }
@@ -109,7 +125,7 @@ function buildSidebar(prefix: string): DefaultTheme.SidebarItem[] {
     {
       text: labels.upload,
       collapsed: false,
-      items: toSidebarItems(prefix, uploadItems)
+      items: toSidebarItems(prefix, uploadItems, uploadChannelLabels)
     },
     {
       text: labels.safety,
