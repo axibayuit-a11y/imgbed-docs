@@ -1,6 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import type { Theme } from 'vitepress'
 import RedirectHome from './RedirectHome.vue'
+import './style.css'
 
 const docsPathToLocale: Record<string, string> = {
   cn: 'zh-CN',
