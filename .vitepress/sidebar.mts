@@ -1,72 +1,128 @@
 import type { DefaultTheme } from 'vitepress'
+import { readFileSync } from 'node:fs'
+import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-// 文档结构已经固定，这里只维护静态索引，不扫描目录，避免构建时出现隐式变化。
+// 文档结构已经固定，这里只维护静态路径；显示文字从各语言 Markdown 的 H1 读取。
+const docsRoot = dirname(dirname(fileURLToPath(import.meta.url)))
+
 const uploadItems = [
-  ['Upload overview', 'upload/'],
-  ['Telegram', 'upload/telegram'],
-  ['Cloudflare R2', 'upload/cloudflare-r2'],
-  ['S3', 'upload/s3'],
-  ['WebDAV', 'upload/webdav'],
-  ['Discord', 'upload/discord'],
-  ['Hugging Face', 'upload/huggingface'],
-  ['GitHub Releases', 'upload/github-releases'],
-  ['GitLab Packages', 'upload/gitlab-packages'],
-  ['OneDrive', 'upload/onedrive'],
-  ['Google Drive', 'upload/google-drive'],
-  ['Dropbox', 'upload/dropbox'],
-  ['Yandex', 'upload/yandex'],
-  ['pCloud', 'upload/pcloud']
+  'upload/',
+  'upload/telegram',
+  'upload/cloudflare-r2',
+  'upload/s3',
+  'upload/webdav',
+  'upload/discord',
+  'upload/huggingface',
+  'upload/github-releases',
+  'upload/gitlab-packages',
+  'upload/onedrive',
+  'upload/google-drive',
+  'upload/dropbox',
+  'upload/yandex',
+  'upload/pcloud'
 ] as const
 
 const safetyItems = [
-  ['Authentication and Login Devices', 'Safety/authentication-and-login-devices'],
-  ['Cloudflare API Token', 'Safety/cloudflare-api-token'],
-  ['Image Moderation and Access Mode', 'Safety/image-moderation-and-access-mode'],
-  ['User Rate Limits', 'Safety/user-rate-limits'],
-  ['WebDAV Site Access', 'Safety/webdav-site-access']
+  'Safety/authentication-and-login-devices',
+  'Safety/cloudflare-api-token',
+  'Safety/image-moderation-and-access-mode',
+  'Safety/user-rate-limits',
+  'Safety/webdav-site-access'
 ] as const
 
 const otherItems = [
-  ['Auto Tagging', 'Other/auto-tagging'],
-  ['Blog', 'Other/blog'],
-  ['Federated Distributed Index', 'Other/federated-distributed-index'],
-  ['IP Geolocation and User Management', 'Other/ip-geolocation-and-user-management'],
-  ['Magnet Transfer', 'Other/magnet-transfer'],
-  ['OCR', 'Other/ocr'],
-  ['Random Image API and Public Gallery', 'Other/random-image-api-and-public-gallery'],
-  ['Redundant Backup and Read Source Switching', 'Other/redundant-backup-and-read-source']
+  'Other/auto-tagging',
+  'Other/blog',
+  'Other/federated-distributed-index',
+  'Other/ip-geolocation-and-user-management',
+  'Other/magnet-transfer',
+  'Other/ocr',
+  'Other/random-image-api-and-public-gallery',
+  'Other/redundant-backup-and-read-source'
 ] as const
 
 const pageItems = [
-  ['Page Settings', 'Page/page-settings']
+  'Page/page-settings'
 ] as const
 
-function toSidebarItems(prefix: string, items: readonly (readonly [string, string])[]): DefaultTheme.SidebarItem[] {
-  return items.map(([text, link]) => ({
-    text,
+const sectionLabels: Record<string, Record<string, string>> = {
+  en: { upload: 'Upload', safety: 'Safety', other: 'Other', page: 'Page' },
+  cn: { upload: '上传', safety: '安全', other: '其他', page: '页面' },
+  'zh-TW': { upload: '上傳', safety: '安全', other: '其他', page: '頁面' },
+  'ja-JP': { upload: 'アップロード', safety: 'セキュリティ', other: 'その他', page: 'ページ' },
+  'ko-KR': { upload: '업로드', safety: '보안', other: '기타', page: '페이지' },
+  es: { upload: 'Subidas', safety: 'Seguridad', other: 'Otros', page: 'Página' },
+  'pt-BR': { upload: 'Uploads', safety: 'Segurança', other: 'Outros', page: 'Página' },
+  'fr-FR': { upload: 'Envoi', safety: 'Sécurité', other: 'Autres', page: 'Page' },
+  'de-DE': { upload: 'Upload', safety: 'Sicherheit', other: 'Weitere', page: 'Seite' },
+  'it-IT': { upload: 'Caricamento', safety: 'Sicurezza', other: 'Altro', page: 'Pagina' },
+  'nl-NL': { upload: 'Uploaden', safety: 'Beveiliging', other: 'Overig', page: 'Pagina' },
+  'pl-PL': { upload: 'Przesyłanie', safety: 'Bezpieczeństwo', other: 'Inne', page: 'Strona' },
+  'cs-CZ': { upload: 'Nahrávání', safety: 'Zabezpečení', other: 'Další', page: 'Stránka' },
+  'uk-UA': { upload: 'Завантаження', safety: 'Безпека', other: 'Інше', page: 'Сторінка' },
+  'ru-RU': { upload: 'Загрузка', safety: 'Безопасность', other: 'Другое', page: 'Страница' },
+  'tr-TR': { upload: 'Yükleme', safety: 'Güvenlik', other: 'Diğer', page: 'Sayfa' },
+  'ar-SA': { upload: 'الرفع', safety: 'الأمان', other: 'أخرى', page: 'الصفحة' },
+  hi: { upload: 'अपलोड', safety: 'सुरक्षा', other: 'अन्य', page: 'पेज' },
+  'bn-BD': { upload: 'আপলোড', safety: 'নিরাপত্তা', other: 'অন্যান্য', page: 'পৃষ্ঠা' },
+  'th-TH': { upload: 'อัปโหลด', safety: 'ความปลอดภัย', other: 'อื่นๆ', page: 'หน้าเว็บ' },
+  'vi-VN': { upload: 'Tải lên', safety: 'Bảo mật', other: 'Khác', page: 'Trang' },
+  'ms-MY': { upload: 'Muat naik', safety: 'Keselamatan', other: 'Lain-lain', page: 'Halaman' },
+  'id-ID': { upload: 'Unggahan', safety: 'Keamanan', other: 'Lainnya', page: 'Halaman' },
+  ur: { upload: 'اپ لوڈ', safety: 'سیکیورٹی', other: 'دیگر', page: 'صفحہ' },
+  ta: { upload: 'பதிவேற்றம்', safety: 'பாதுகாப்பு', other: 'மற்றவை', page: 'பக்கம்' },
+  fa: { upload: 'آپلود', safety: 'امنیت', other: 'سایر', page: 'صفحه' },
+  my: { upload: 'Upload', safety: 'Security', other: 'Other', page: 'Page' },
+  ps: { upload: 'Upload', safety: 'Security', other: 'Other', page: 'Page' }
+}
+
+function getLocaleFromPrefix(prefix: string) {
+  return prefix.replace(/^\/|\/$/g, '')
+}
+
+function getMarkdownPath(locale: string, link: string) {
+  const normalizedLink = link.endsWith('/') ? `${link}index` : link
+  return join(docsRoot, locale, `${normalizedLink}.md`)
+}
+
+function getTitleFromMarkdown(locale: string, link: string) {
+  const content = readFileSync(getMarkdownPath(locale, link), 'utf-8')
+  const title = content.match(/^#\s+(.+)$/m)?.[1]?.trim()
+  return title || link
+}
+
+function toSidebarItems(prefix: string, items: readonly string[]): DefaultTheme.SidebarItem[] {
+  const locale = getLocaleFromPrefix(prefix)
+
+  return items.map((link) => ({
+    text: getTitleFromMarkdown(locale, link),
     link: `${prefix}${link}`
   }))
 }
 
 function buildSidebar(prefix: string): DefaultTheme.SidebarItem[] {
+  const locale = getLocaleFromPrefix(prefix)
+  const labels = sectionLabels[locale] || sectionLabels.en
+
   return [
     {
-      text: 'Upload',
+      text: labels.upload,
       collapsed: false,
       items: toSidebarItems(prefix, uploadItems)
     },
     {
-      text: 'Safety',
+      text: labels.safety,
       collapsed: false,
       items: toSidebarItems(prefix, safetyItems)
     },
     {
-      text: 'Other',
+      text: labels.other,
       collapsed: false,
       items: toSidebarItems(prefix, otherItems)
     },
     {
-      text: 'Page',
+      text: labels.page,
       collapsed: false,
       items: toSidebarItems(prefix, pageItems)
     }
