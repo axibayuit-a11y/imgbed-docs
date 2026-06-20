@@ -1,14 +1,16 @@
 # Nastavení nahrávání
 
-Tato část používá stejné pořadí kanálů jako stránka Nastavení systému, takže můžete rovnou přejít k poskytovateli úložiště, který právě nastavujete.
+Nastavení nahrávání propojuje ImgBed s vašimi vlastními úložnými kanály. Po nastavení se nahrané obrázky a soubory ukládají do zvolené služby. ImgBed se stará o přístupové odkazy, záznamy souborů, náhledy, veřejnou galerii, API náhodného obrázku, WebDAV přístup a související postupy.
 
-## Jak je tato část uspořádána
+Každému může vyhovovat jiný kanál. Pokud chcete jednoduchý začátek, zkuste Telegram, Discord nebo GitHub Releases. Pokud je pro vás důležitější kapacita, rychlost a dlouhodobá stabilita, zvažte Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud nebo vlastní WebDAV.
 
-- Každý poskytovatel má vlastní stránku. Oddělení 13 nahrávacích kanálů usnadňuje sledování postupu.
-- Snímky obrazovky jsou v `../../image/upload/provider-name/` a jednotlivé stránky na ně odkazují lokálně.
-- Technické názvy a názvy polí zůstávají co nejblíže rozhraní produktu, zejména `Endpoint`, `Client ID`, `Access Token` a `Refresh Token`.
+## Než začnete
 
-## Přehled kanálů
+- Připravte si úložný účet nebo API údaje, které chcete použít.
+- Ověřte, že je vaše doména ImgBed dostupná, protože OAuth kanály potřebují callback URL.
+- Po přidání kanálu nejdříve nahrajte testovací obrázek a ověřte, že se soubor uloží a otevře.
+
+## Seznam kanálů
 
 - [Telegram](./telegram.md)
 - [Cloudflare R2](./cloudflare-r2.md)
@@ -24,10 +26,8 @@ Tato část používá stejné pořadí kanálů jako stránka Nastavení systé
 - [Yandex](./yandex.md)
 - [pCloud](./pcloud.md)
 
-## Co tato kapitola řeší
+## Co tato kapitola popisuje
 
-- Jak přidat jednotlivé nahrávací kanály.
-- Jaké přihlašovací údaje, ID nebo oprávnění si připravit předem.
-- Jak ověřit, že je kanál připravený pro nahrávání souborů.
-
-Podrobnosti k řešení problémů, limitům kapacity a doporučeným postupům jsou uvedené u konkrétních služeb.
+- Jaké informace si připravit pro každý nahrávací kanál.
+- Jak na externích platformách vytvořit aplikaci, zkopírovat klíče nebo autorizovat tokeny.
+- Jak vyplnit konfiguraci v ImgBed a ověřit funkční nahrávání.

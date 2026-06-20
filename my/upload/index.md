@@ -1,14 +1,16 @@
-# Upload Settings
+# Upload settings
 
-ဒီအပိုင်းက System Settings စာမျက်နှာမှာရှိတဲ့ channel အစဉ်အတိုင်း စီထားပါတယ်။ ဒါကြောင့် သင် configure လုပ်ချင်တဲ့ storage provider စာမျက်နှာကို တိုက်ရိုက်သွားနိုင်ပါတယ်။
+Upload settings သည် ImgBed ကို သင့်ကိုယ်ပိုင် storage channels များနှင့် ချိတ်ဆက်ပေးပါသည်။ Channel တစ်ခု configure ပြီးပါက uploaded images နှင့် files များကို သင်ရွေးထားသော service ထဲတွင် သိမ်းဆည်းမည်ဖြစ်ပြီး ImgBed က access links, file records, previews, public gallery, random image API, WebDAV access နှင့် related workflows များကို စီမံပေးပါသည်။
 
-## ဒီအပိုင်းကို ဘယ်လိုစီထားလဲ
+အသုံးပြုပုံအလိုက် သင့်တော်သော channel ကွဲပြားနိုင်ပါသည်။ လွယ်ကူစွာ စတင်ချင်လျှင် Telegram, Discord သို့မဟုတ် GitHub Releases ကို စဉ်းစားနိုင်ပါသည်။ Capacity, speed နှင့် long-term stability ကို ပိုအရေးကြီးထားလျှင် Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud သို့မဟုတ် သင့် WebDAV service ကို အသုံးပြုနိုင်ပါသည်။
 
-- provider တစ်ခုချင်းစီမှာ ကိုယ်ပိုင်စာမျက်နှာရှိပါတယ်။ upload channel 13 ခုကို ခွဲထားတာကြောင့် setup steps ကိုလိုက်လုပ်ရတာ ပိုလွယ်ပါတယ်။
-- Screenshots တွေကို `../../image/upload/provider-name/` အောက်မှာ သိမ်းထားပြီး စာမျက်နှာတစ်ခုချင်းစီက local path နဲ့ reference လုပ်ထားပါတယ်။
-- မြန်မာဘာသာလမ်းညွှန်မှာ UI field names နဲ့ service names တွေကို product UI နဲ့နှိုင်းယှဉ်ရလွယ်အောင် လိုအပ်တဲ့နေရာတွေမှာ English အတိုင်းထားပါတယ်။
+## မစတင်မီ
 
-## Channel Directory
+- အသုံးပြုမည့် storage account သို့မဟုတ် API credentials ကို ပြင်ဆင်ထားပါ။
+- ImgBed domain ကို ဝင်ရောက်နိုင်ကြောင်း စစ်ဆေးပါ။ OAuth channels များအတွက် callback URL လိုအပ်ပါသည်။
+- Channel ထည့်ပြီးနောက် test image တစ်ခု upload လုပ်ပြီး file သိမ်းဆည်းခြင်းနှင့် ဖွင့်ကြည့်ခြင်း အလုပ်လုပ်ကြောင်း စစ်ဆေးပါ။
+
+## Channel list
 
 - [Telegram](./telegram.md)
 - [Cloudflare R2](./cloudflare-r2.md)
@@ -24,10 +26,8 @@
 - [Yandex](./yandex.md)
 - [pCloud](./pcloud.md)
 
-## ဒီအခန်းမှာ ပါဝင်တာတွေ
+## ဤအခန်းတွင် ပါဝင်သောအရာများ
 
-- upload channel တစ်ခုချင်းစီ ထည့်သွင်းနည်း။
-- channel မထည့်ခင် ပြင်ဆင်ထားရမယ့် credentials, keys, IDs။
-- channel က upload လုပ်ဖို့အသင့်ဖြစ်ပြီလား စစ်ဆေးနည်း။
-
-Troubleshooting, quota strategy, best practices တို့ကို လိုအပ်တဲ့စာမျက်နှာတွေမှာ သီးခြားရှင်းပြထားပါတယ်။
+- Upload channel တစ်ခုချင်းစီအတွက် setup မတိုင်မီလိုအပ်သောအချက်အလက်များ။
+- Third-party platforms တွင် app ဖန်တီးခြင်း၊ key copy လုပ်ခြင်း သို့မဟုတ် Token authorize လုပ်ခြင်း။
+- ImgBed တွင် channel configuration ဖြည့်ပြီး upload အလုပ်လုပ်ကြောင်း စစ်ဆေးခြင်း။

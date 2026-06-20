@@ -1,14 +1,16 @@
 # Uploadinstellingen
 
-Dit hoofdstuk volgt dezelfde volgorde als de kanalen op de pagina Systeeminstellingen. Zo kun je meteen naar de opslagdienst gaan die je wilt instellen.
+Met uploadinstellingen verbind je ImgBed met je eigen opslagkanalen. Na configuratie worden geüploade afbeeldingen en bestanden opgeslagen in de gekozen dienst. ImgBed beheert daarna toeganglinks, bestandsrecords, previews, openbare galerijfuncties, de willekeurige-afbeelding-API, WebDAV-toegang en bijbehorende workflows.
 
-## Opbouw van dit hoofdstuk
+Welk kanaal het beste past, hangt af van je gebruik. Voor een eenvoudige start zijn Telegram, Discord of GitHub Releases geschikt. Als capaciteit, snelheid en stabiliteit op lange termijn belangrijker zijn, kies dan Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud of je eigen WebDAV-service.
 
-- Elke provider heeft een eigen pagina. De 13 uploadkanalen blijven gescheiden, zodat de stappen overzichtelijk blijven.
-- Screenshots staan onder `../../image/upload/provider-name/` en worden lokaal vanuit de betreffende pagina gebruikt.
-- Technische veldnamen blijven zo dicht mogelijk bij de productinterface. Namen zoals `Endpoint`, `Client ID`, `Access Token` en `Refresh Token` worden niet onnodig vertaald.
+## Voor je begint
 
-## Kanaaloverzicht
+- Bereid het opslagaccount of de API-gegevens voor die je wilt gebruiken.
+- Controleer of je ImgBed-domein bereikbaar is, omdat OAuth-kanalen callback-URL's nodig hebben.
+- Upload na het toevoegen van een kanaal eerst een testafbeelding om te bevestigen dat opslaan en openen werkt.
+
+## Kanaallijst
 
 - [Telegram](./telegram.md)
 - [Cloudflare R2](./cloudflare-r2.md)
@@ -26,8 +28,6 @@ Dit hoofdstuk volgt dezelfde volgorde als de kanalen op de pagina Systeeminstell
 
 ## Wat dit hoofdstuk behandelt
 
-- Hoe je elk uploadkanaal toevoegt.
-- Welke inloggegevens, ID's of rechten je vooraf nodig hebt.
-- Hoe je controleert of een kanaal klaar is om bestanden te uploaden.
-
-Details over foutopsporing, quota en speciale aandachtspunten staan bij de betreffende provider.
+- Welke informatie elk uploadkanaal vooraf nodig heeft.
+- Hoe je apps maakt, sleutels kopieert of tokens autoriseert op externe platforms.
+- Hoe je de kanaalconfiguratie invult in ImgBed en controleert of uploaden werkt.

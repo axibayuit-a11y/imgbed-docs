@@ -1,12 +1,14 @@
 # Ustawienia przesyłania
 
-Ten rozdział ma tę samą kolejność kanałów co strona Ustawienia systemowe, więc możesz od razu przejść do dostawcy pamięci, którego konfigurujesz.
+Ustawienia przesyłania łączą ImgBed z wybranymi kanałami przechowywania. Po konfiguracji przesłane obrazy i pliki są zapisywane w wybranej usłudze, a ImgBed zarządza linkami dostępu, rekordami plików, podglądem, galerią publiczną, API losowego obrazu, dostępem WebDAV i powiązanymi funkcjami.
 
-## Jak zorganizowano ten rozdział
+Różnym użytkownikom pasują różne kanały. Jeśli chcesz zacząć prosto, dobrym wyborem mogą być Telegram, Discord lub GitHub Releases. Jeśli ważniejsza jest pojemność, szybkość i stabilność na dłużej, rozważ Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud albo własny WebDAV.
 
-- Każdy dostawca ma osobną stronę. Oddzielenie 13 kanałów przesyłania ułatwia śledzenie kroków konfiguracji.
-- Zrzuty ekranu znajdują się w `../../image/upload/provider-name/` i są odwoływane lokalnie z poszczególnych stron.
-- Nazwy pól są możliwie bliskie interfejsowi produktu. Techniczne nazwy, takie jak `Endpoint`, `Client ID`, `Access Token` i `Refresh Token`, pozostają bez sztucznego tłumaczenia.
+## Zanim zaczniesz
+
+- Przygotuj konto przechowywania lub dane API, których chcesz użyć.
+- Sprawdź, czy domena ImgBed jest dostępna, ponieważ kanały OAuth wymagają adresów callback.
+- Po dodaniu kanału prześlij najpierw obraz testowy, aby potwierdzić zapis i dostęp.
 
 ## Lista kanałów
 
@@ -24,10 +26,8 @@ Ten rozdział ma tę samą kolejność kanałów co strona Ustawienia systemowe,
 - [Yandex](./yandex.md)
 - [pCloud](./pcloud.md)
 
-## Co obejmuje ten rozdział
+## Co opisuje ten rozdział
 
-- Jak dodać każdy kanał przesyłania.
-- Jakie dane dostępowe, identyfikatory lub uprawnienia trzeba przygotować wcześniej.
-- Jak sprawdzić, czy kanał jest gotowy do przesyłania plików.
-
-Szczegóły dotyczące rozwiązywania problemów, limitów i dobrych praktyk znajdują się przy konkretnych dostawcach.
+- Jakich informacji wymaga każdy kanał przed konfiguracją.
+- Jak tworzyć aplikacje, kopiować klucze lub autoryzować tokeny na zewnętrznych platformach.
+- Jak wpisać konfigurację w ImgBed i sprawdzić, czy przesyłanie działa.

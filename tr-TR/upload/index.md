@@ -1,14 +1,16 @@
-# Yükleme Ayarları
+# Yükleme ayarları
 
-Bu bölüm, Sistem Ayarları sayfasındaki kanal sırasını izler. Böylece yapılandırmak istediğiniz depolama sağlayıcısına doğrudan geçebilirsiniz.
+Yükleme ayarları ImgBed'i kendi depolama kanallarınıza bağlar. Bir kanal yapılandırıldıktan sonra yüklenen görseller ve dosyalar seçtiğiniz hizmette saklanır. ImgBed erişim bağlantılarını, dosya kayıtlarını, önizlemeleri, herkese açık galeri özelliklerini, rastgele görsel API'sini, WebDAV erişimini ve ilgili iş akışlarını yönetir.
 
-## Bölümün Yapısı
+Her kullanıcı için uygun kanal farklı olabilir. Basit bir başlangıç için Telegram, Discord veya GitHub Releases iyi seçeneklerdir. Kapasite, hız ve uzun vadeli kararlılık daha önemliyse Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud veya kendi WebDAV hizmetinizi değerlendirin.
 
-- Her sağlayıcının ayrı bir sayfası vardır. 13 yükleme kanalını ayrı tutmak kurulum adımlarını daha anlaşılır hale getirir.
-- Ekran görüntüleri `../../image/upload/provider-name/` altında tutulur ve ilgili sayfalardan yerel olarak çağrılır.
-- Türkçe belgeler, kullanıcıya yönelik anlatımı koruyacak şekilde yerelleştirildi; alan adları mümkün olduğunca ürün arayüzündeki karşılıklarına yakın bırakıldı.
+## Başlamadan önce
 
-## Kanal Listesi
+- Kullanacağınız depolama hesabını veya API bilgilerini hazırlayın.
+- ImgBed alan adınızın erişilebilir olduğundan emin olun; OAuth tabanlı kanallar callback URL ister.
+- Kanalı ekledikten sonra önce bir test görseli yükleyerek dosyanın kaydedilip açıldığını doğrulayın.
+
+## Kanal listesi
 
 - [Telegram](./telegram.md)
 - [Cloudflare R2](./cloudflare-r2.md)
@@ -24,10 +26,8 @@ Bu bölüm, Sistem Ayarları sayfasındaki kanal sırasını izler. Böylece yap
 - [Yandex](./yandex.md)
 - [pCloud](./pcloud.md)
 
-## Bu Bölümde Neler Var?
+## Bu bölümde neler var
 
-- Her yükleme kanalının nasıl ekleneceği.
-- Kanal eklemeden önce hangi kimlik bilgileri, anahtarlar veya ID değerlerinin gerektiği.
-- Kanalın yüklemeye hazır olup olmadığının nasıl kontrol edileceği.
-
-Sorun giderme ayrıntıları, kota stratejisi ve en iyi uygulamalar gerektiği yerlerde ayrı sayfalarda anlatılır.
+- Her yükleme kanalı için önceden gereken bilgiler.
+- Harici platformlarda uygulama oluşturma, anahtar kopyalama veya token yetkilendirme adımları.
+- Kanal yapılandırmasını ImgBed'e girme ve yüklemenin çalıştığını doğrulama.

@@ -1,14 +1,16 @@
-# Pengaturan Upload
+# Pengaturan unggahan
 
-Bagian ini mengikuti urutan channel yang sama seperti halaman System Settings, supaya Anda bisa langsung menuju storage provider yang ingin dikonfigurasi.
+Pengaturan unggahan menghubungkan ImgBed dengan kanal penyimpanan milik Anda. Setelah kanal dikonfigurasi, gambar dan file yang diunggah akan disimpan ke layanan yang Anda pilih. ImgBed mengelola tautan akses, catatan file, pratinjau, galeri publik, Random Image API, akses WebDAV, dan alur terkait.
 
-## Cara Bagian Ini Disusun
+Setiap pengguna bisa cocok dengan kanal yang berbeda. Jika ingin mulai dengan sederhana, Telegram, Discord, atau GitHub Releases bisa menjadi pilihan awal. Jika kapasitas, kecepatan, dan stabilitas jangka panjang lebih penting, pertimbangkan Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud, atau layanan WebDAV sendiri.
 
-- Setiap provider memiliki halaman sendiri. Memisahkan 13 upload channel membuat langkah setup lebih mudah diikuti.
-- Screenshot disimpan di `../../image/upload/provider-name/` dan dirujuk secara local dari setiap halaman.
-- Dokumentasi Bahasa Indonesia ini dilokalkan untuk gaya dokumentasi teknis yang umum dipakai pengguna Indonesia, sambil tetap mempertahankan nama field yang sesuai dengan UI produk.
+## Sebelum mulai
 
-## Daftar Channel
+- Siapkan akun penyimpanan atau API credentials yang akan digunakan.
+- Pastikan domain ImgBed dapat diakses, karena kanal OAuth membutuhkan callback URL.
+- Setelah menambahkan kanal, unggah gambar uji coba terlebih dahulu untuk memastikan file tersimpan dan dapat dibuka.
+
+## Daftar kanal
 
 - [Telegram](./telegram.md)
 - [Cloudflare R2](./cloudflare-r2.md)
@@ -24,10 +26,8 @@ Bagian ini mengikuti urutan channel yang sama seperti halaman System Settings, s
 - [Yandex](./yandex.md)
 - [pCloud](./pcloud.md)
 
-## Yang Dibahas di Bab Ini
+## Isi bab ini
 
-- Cara menambahkan setiap upload channel.
-- Credentials, keys, atau IDs apa saja yang perlu disiapkan sebelum menambahkan channel.
-- Cara memastikan channel sudah siap untuk upload.
-
-Detail troubleshooting, quota strategy, dan best practices dijelaskan terpisah pada halaman yang relevan.
+- Informasi yang perlu disiapkan sebelum mengatur setiap kanal unggahan.
+- Cara membuat aplikasi, menyalin key, atau memberi otorisasi Token di platform pihak ketiga.
+- Cara mengisi konfigurasi kanal di ImgBed dan memastikan unggahan berjalan.

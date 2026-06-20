@@ -1,14 +1,16 @@
 # اپ لوڈ سیٹنگز
 
-یہ حصہ System Settings کے اسی channel order کے مطابق ہے، تاکہ آپ جس storage provider کو configure کرنا چاہتے ہیں، سیدھا اسی صفحے پر جا سکیں۔
+اپ لوڈ سیٹنگز ImgBed کو آپ کے اپنے storage channels سے جوڑتی ہیں۔ channel configure ہونے کے بعد uploaded images اور files آپ کی منتخب service میں محفوظ ہوتی ہیں۔ ImgBed access links، file records، previews، public gallery، random image API، WebDAV access اور متعلقہ workflows کو manage کرتا ہے۔
 
-## یہ حصہ کیسے ترتیب دیا گیا ہے
+ہر user کے لیے مناسب channel مختلف ہو سکتا ہے۔ آسان آغاز کے لیے Telegram، Discord یا GitHub Releases اچھے choices ہیں۔ اگر capacity، speed اور long-term stability زیادہ اہم ہیں تو Cloudflare R2، S3، OneDrive، Google Drive، Dropbox، Yandex، pCloud یا اپنا WebDAV service استعمال کریں۔
 
-- ہر provider کا اپنا صفحہ ہے۔ 13 upload channels کو الگ رکھنے سے setup steps سمجھنا آسان رہتا ہے۔
-- screenshots `../../image/upload/provider-name/` میں محفوظ ہیں اور ہر صفحے سے local طور پر refer کیے گئے ہیں۔
-- اردو دستاویزات کو عام مقامی technical documentation کے انداز میں لکھا گیا ہے، جبکہ UI کے field names جہاں ضروری ہوں product کے مطابق رکھے گئے ہیں۔
+## شروع کرنے سے پہلے
 
-## Channel Directory
+- جس storage account یا API credentials کو استعمال کرنا ہے، انہیں تیار رکھیں۔
+- یقینی بنائیں کہ آپ کا ImgBed domain کھل رہا ہے، کیونکہ OAuth channels کو callback URL چاہیے۔
+- channel add کرنے کے بعد پہلے ایک test image upload کریں، تاکہ file save اور open ہونا confirm ہو سکے۔
+
+## Channel فہرست
 
 - [Telegram](./telegram.md)
 - [Cloudflare R2](./cloudflare-r2.md)
@@ -24,10 +26,8 @@
 - [Yandex](./yandex.md)
 - [pCloud](./pcloud.md)
 
-## اس باب میں کیا شامل ہے
+## اس باب میں کیا ہے
 
-- ہر upload channel شامل کرنے کا طریقہ۔
-- channel شامل کرنے سے پہلے کون سے credentials، keys، یا IDs درکار ہیں۔
-- یہ چیک کرنے کا طریقہ کہ channel upload کے لیے تیار ہے یا نہیں۔
-
-Troubleshooting، quota strategy، اور best practices متعلقہ صفحات میں الگ سے دی گئی ہیں۔
+- ہر upload channel کے لیے setup سے پہلے کون سی معلومات چاہیے۔
+- third-party platforms پر app بنانا، keys copy کرنا یا Token authorize کرنا۔
+- ImgBed میں channel configuration بھرنا اور upload کے کام کرنے کی تصدیق کرنا۔

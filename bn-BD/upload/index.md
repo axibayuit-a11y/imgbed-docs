@@ -1,14 +1,16 @@
 # আপলোড সেটিংস
 
-এই অংশটি System Settings পেজের channel order অনুসরণ করে সাজানো হয়েছে, যাতে আপনি যে storage provider সেট করতে চান সেখানে সরাসরি যেতে পারেন।
+আপলোড সেটিংস ImgBed-কে আপনার নিজের storage channels-এর সঙ্গে যুক্ত করে। কোনো channel কনফিগার করার পর আপলোড করা ছবি ও ফাইল আপনার বেছে নেওয়া সার্ভিসে সংরক্ষিত হয়। ImgBed access link, file record, preview, public gallery, random image API, WebDAV access এবং সম্পর্কিত workflow পরিচালনা করে।
 
-## এই অংশ কীভাবে সাজানো
+প্রতিটি ব্যবহারকারীর জন্য উপযুক্ত channel আলাদা হতে পারে। সহজভাবে শুরু করতে চাইলে Telegram, Discord বা GitHub Releases ভালো বিকল্প। capacity, speed ও long-term stability বেশি গুরুত্বপূর্ণ হলে Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud বা নিজের WebDAV service বিবেচনা করুন।
 
-- প্রতিটি provider-এর জন্য আলাদা পেজ আছে। ১৩টি upload channel আলাদা রাখলে setup steps অনুসরণ করা সহজ হয়।
-- Screenshots `../../image/upload/provider-name/`-এর নিচে রাখা আছে এবং প্রতিটি পেজ থেকে local path দিয়ে ব্যবহার করা হয়েছে।
-- বাংলা ডকুমেন্টেশন ব্যবহারকারীর কাজের ভাষায় স্থানীয়করণ করা হয়েছে; field name যেখানে সম্ভব product UI-এর কাছাকাছি রাখা হয়েছে।
+## শুরু করার আগে
 
-## Channel Directory
+- যে storage account বা API credentials ব্যবহার করবেন, তা প্রস্তুত রাখুন।
+- আপনার ImgBed domain ঠিকমতো খোলা যাচ্ছে কি না নিশ্চিত করুন, কারণ OAuth channels callback URL চায়।
+- channel যোগ করার পর প্রথমে একটি test image upload করে file save ও open হচ্ছে কি না দেখুন।
+
+## চ্যানেল তালিকা
 
 - [Telegram](./telegram.md)
 - [Cloudflare R2](./cloudflare-r2.md)
@@ -24,10 +26,8 @@
 - [Yandex](./yandex.md)
 - [pCloud](./pcloud.md)
 
-## এই অধ্যায়ে যা আছে
+## এই অধ্যায়ে যা থাকবে
 
-- প্রতিটি upload channel কীভাবে যোগ করবেন।
-- Channel যোগ করার আগে কোন credentials, keys বা IDs লাগবে।
-- Channel upload-এর জন্য প্রস্তুত কি না কীভাবে যাচাই করবেন।
-
-Troubleshooting, quota strategy এবং best practices যেখানে প্রয়োজন, আলাদা করে দেওয়া হয়েছে।
+- প্রতিটি upload channel সেটআপের আগে কোন তথ্য দরকার।
+- third-party platform-এ app তৈরি, key copy বা Token authorize করার পদ্ধতি।
+- ImgBed-এ channel configuration পূরণ করে upload কাজ করছে কি না যাচাই করা।

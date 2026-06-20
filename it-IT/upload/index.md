@@ -1,14 +1,16 @@
 # Impostazioni di caricamento
 
-Questa sezione segue lo stesso ordine dei canali nella pagina Impostazioni di sistema, così puoi aprire subito il provider di archiviazione che devi configurare.
+Le impostazioni di caricamento collegano ImgBed ai tuoi canali di archiviazione. Dopo la configurazione, immagini e file caricati vengono salvati nel servizio scelto. ImgBed gestisce poi link di accesso, record dei file, anteprime, galleria pubblica, API immagine casuale, accesso WebDAV e flussi collegati.
 
-## Come è organizzata
+Il canale migliore dipende dall'uso. Per iniziare in modo semplice, Telegram, Discord o GitHub Releases possono andare bene. Se contano di più capacità, velocità e stabilità nel tempo, valuta Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud o un tuo servizio WebDAV.
 
-- Ogni provider ha una pagina dedicata. Tenere separati i 13 canali di upload rende i passaggi più facili da seguire.
-- Gli screenshot si trovano in `../../image/upload/provider-name/` e vengono richiamati localmente dalle singole pagine.
-- I nomi tecnici e i campi dell'interfaccia restano il più possibile vicini al prodotto, soprattutto per valori come `Endpoint`, `Client ID`, `Access Token` e `Refresh Token`.
+## Prima di iniziare
 
-## Elenco dei canali
+- Prepara l'account di archiviazione o le credenziali API da usare.
+- Verifica che il dominio ImgBed sia raggiungibile, perché i canali OAuth richiedono URL di callback.
+- Dopo aver aggiunto un canale, carica prima un'immagine di prova per controllare che salvataggio e apertura funzionino.
+
+## Elenco canali
 
 - [Telegram](./telegram.md)
 - [Cloudflare R2](./cloudflare-r2.md)
@@ -24,10 +26,8 @@ Questa sezione segue lo stesso ordine dei canali nella pagina Impostazioni di si
 - [Yandex](./yandex.md)
 - [pCloud](./pcloud.md)
 
-## Cosa trovi in questo capitolo
+## Cosa spiega questo capitolo
 
-- Come aggiungere ciascun canale di upload.
-- Quali credenziali, ID o permessi preparare prima.
-- Come controllare che il canale sia pronto per caricare file.
-
-Le note su problemi comuni, quote e casi particolari sono riportate nelle pagine dei singoli provider.
+- Quali informazioni servono prima di configurare ogni canale.
+- Come creare app, copiare chiavi o autorizzare token su piattaforme esterne.
+- Come inserire la configurazione in ImgBed e verificare che il caricamento funzioni.

@@ -1,12 +1,14 @@
 # 上传设置
 
-这一章按系统配置页里的真实渠道顺序整理，方便用户直接按自己正在使用的渠道去找说明。
+上传设置用于把 ImgBed 连接到你自己的存储渠道。配置完成后，用户上传的图片和文件会保存到你选择的服务中，ImgBed 负责生成访问链接、管理文件记录，并在需要时配合预览、公开图库、随机图片接口、WebDAV 访问等功能使用。
 
-## 使用约定
+不同用户适合的渠道不一样：如果你想配置简单，可以从 Telegram、Discord、GitHub Releases 这类渠道开始；如果你更看重容量、速度和长期稳定性，可以选择 Cloudflare R2、S3、OneDrive、Google Drive、Dropbox、Yandex、pCloud 或自建 WebDAV。
 
-- 每个渠道单独一页，避免把 13 个渠道揉成一大坨。
-- 截图统一放在 `../../image/upload/渠道名/` 下，后面直接本地引用。
-- 先写中文主稿，英文目录先留空位，后续再补。
+## 开始之前
+
+- 准备好要使用的存储账号或 API 凭据。
+- 确认 ImgBed 的访问域名已经可用，部分 OAuth 渠道需要填写回调地址。
+- 添加渠道后，建议先上传一张测试图片，确认文件能正常保存和访问。
 
 ## 渠道目录
 
@@ -15,7 +17,7 @@
 - [S3](./s3.md)
 - [WebDAV](./webdav.md)
 - [Discord](./discord.md)
-- [HuggingFace](./huggingface.md)
+- [Hugging Face](./huggingface.md)
 - [GitHub Releases](./github-releases.md)
 - [GitLab Packages](./gitlab-packages.md)
 - [OneDrive](./onedrive.md)
@@ -24,7 +26,8 @@
 - [Yandex](./yandex.md)
 - [pCloud](./pcloud.md)
 
-## 后续补充
+## 本章会说明什么
 
-- 这一章先解决“怎么加渠道”。
-- 具体报错排查、最佳实践、配额策略后面再补。
+- 每个上传渠道需要提前准备哪些信息。
+- 如何在第三方平台创建应用、复制密钥或授权 Token。
+- 如何把渠道配置填回 ImgBed，并确认它可以正常上传。

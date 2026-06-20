@@ -1,49 +1,33 @@
-# Configuración de canales de subida
+# Ajustes de subida
 
-En ImgBed, cada destino de almacenamiento se configura como un canal. Puedes decidir dónde guardar imágenes, vídeos, audio u otros archivos desde la configuración de subida.
+Los ajustes de subida conectan ImgBed con tus propios canales de almacenamiento. Después de configurar un canal, las imágenes y los archivos subidos se guardan en el servicio que elijas. ImgBed se encarga de los enlaces de acceso, los registros de archivos, las vistas previas, la galería pública, la API de imagen aleatoria, el acceso WebDAV y otros flujos relacionados.
 
-## Dónde se configura
+Cada usuario puede preferir un canal distinto. Si quieres empezar de forma sencilla, Telegram, Discord o GitHub Releases son buenas opciones. Si te importan más la capacidad, la velocidad y la estabilidad a largo plazo, considera Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud o tu propio servicio WebDAV.
 
-```text
-Configuración del sistema -> Configuración de subida
-```
+## Antes de empezar
 
-Desde ahí puedes añadir canales, habilitarlos, definir límites de capacidad, añadir notas y comprobar conexiones.
+- Prepara la cuenta de almacenamiento o las credenciales API que vas a usar.
+- Comprueba que tu dominio de ImgBed esté disponible, porque los canales OAuth necesitan URL de callback.
+- Después de añadir un canal, sube primero una imagen de prueba para confirmar que se guarda y se abre correctamente.
 
-## Canales disponibles
+## Directorio de canales
 
-| Canal | Uso principal |
-| --- | --- |
-| Cloudflare R2 | Almacenamiento de objetos en Cloudflare |
-| S3 | AWS S3, Backblaze B2, MinIO y servicios compatibles |
-| Google Drive | Guardar en Google Drive |
-| OneDrive | Guardar en Microsoft OneDrive |
-| Dropbox | Guardar en Dropbox |
-| pCloud | Guardar en pCloud |
-| WebDAV | NAS, discos en la nube o servicios compatibles WebDAV |
-| Telegram | Usar un canal de Telegram como destino |
-| Discord | Usar un canal de Discord como destino |
-| GitHub Releases | Guardar en Release Assets de GitHub |
-| GitLab Packages | Guardar en Generic Package Registry de GitLab |
-| Hugging Face | Guardar en un repositorio de Hugging Face |
-| Yandex | Guardar en Yandex Disk |
+- [Telegram](./telegram.md)
+- [Cloudflare R2](./cloudflare-r2.md)
+- [S3](./s3.md)
+- [WebDAV](./webdav.md)
+- [Discord](./discord.md)
+- [Hugging Face](./huggingface.md)
+- [GitHub Releases](./github-releases.md)
+- [GitLab Packages](./gitlab-packages.md)
+- [OneDrive](./onedrive.md)
+- [Google Drive](./google-drive.md)
+- [Dropbox](./dropbox.md)
+- [Yandex](./yandex.md)
+- [pCloud](./pcloud.md)
 
-## Antes de añadir un canal
+## Qué cubre este capítulo
 
-| Punto | Qué revisar |
-| --- | --- |
-| Cuenta de almacenamiento | La cuenta donde se guardarán realmente los archivos |
-| API Key / Token | Credenciales necesarias para cada canal |
-| Directorio de almacenamiento | Normalmente `imgbed`, salvo que quieras otra carpeta |
-| Límite de capacidad | Si quieres que el canal deje de recibir archivos al llegar a cierto uso |
-| Dominio público | Si usarás CDN o dominio personalizado |
-
-## Después de guardar
-
-1. Comprueba que aparece la tarjeta del canal.
-2. Verifica que el canal está habilitado.
-3. Revisa que las credenciales y el directorio se guardaron correctamente.
-4. Ejecuta consulta de capacidad si aplica.
-5. Sube una imagen de prueba y abre el enlace devuelto.
-
-Si falla, revisa primero credenciales, permisos, directorio de destino y límites de la API del proveedor.
+- Qué necesita cada canal antes de configurarlo.
+- Cómo crear aplicaciones, copiar claves o autorizar tokens en plataformas externas.
+- Cómo completar la configuración en ImgBed y comprobar que la subida funciona.

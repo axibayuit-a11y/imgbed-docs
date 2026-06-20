@@ -1,12 +1,14 @@
-﻿# Upload Settings
+# Upload Settings
 
-This section follows the same channel order used on the System Settings page, so you can jump straight to the storage provider you are configuring.
+Upload Settings connects ImgBed to your own storage channels. After a channel is configured, uploaded images and files are saved to the service you choose. ImgBed then manages file records, access links, previews, public gallery features, random image API access, WebDAV access, and related workflows.
 
-## How This Section Is Organized
+Different users may prefer different channels. If you want a simple setup, Telegram, Discord, or GitHub Releases can be good starting points. If you care more about capacity, speed, and long-term stability, consider Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud, or your own WebDAV service.
 
-- Each provider has its own page. Keeping the 13 upload channels separate makes the setup steps easier to follow.
-- Screenshots are stored under `../../image/upload/provider-name/` and are referenced locally from each page.
-- The English documentation is localized from the Chinese source, with field names kept close to the product UI where possible.
+## Before You Start
+
+- Prepare the storage account or API credentials you want to use.
+- Make sure your ImgBed domain is reachable, because OAuth-based channels need callback URLs.
+- After adding a channel, upload a test image first to confirm that files can be saved and opened correctly.
 
 ## Channel Directory
 
@@ -26,8 +28,6 @@ This section follows the same channel order used on the System Settings page, so
 
 ## What This Chapter Covers
 
-- How to add each upload channel.
-- Which credentials or IDs you need before adding a channel.
-- How to verify that a channel is ready for uploads.
-
-Troubleshooting details, quota strategy, and best practices are documented separately where needed.
+- What each upload channel needs before setup.
+- How to create apps, copy keys, or authorize tokens on third-party platforms.
+- How to fill the channel configuration back into ImgBed and confirm uploads work.

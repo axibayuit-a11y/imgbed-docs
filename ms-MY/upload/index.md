@@ -1,14 +1,16 @@
-# Tetapan Muat Naik
+# Tetapan muat naik
 
-Bahagian ini mengikut susunan channel yang sama seperti halaman System Settings, supaya anda boleh terus pergi ke storage provider yang hendak dikonfigurasi.
+Tetapan muat naik menghubungkan ImgBed kepada saluran storan anda sendiri. Selepas saluran dikonfigurasi, imej dan fail yang dimuat naik akan disimpan dalam perkhidmatan yang anda pilih. ImgBed mengurus pautan akses, rekod fail, pratonton, galeri awam, API imej rawak, akses WebDAV dan aliran berkaitan.
 
-## Cara Bahagian Ini Disusun
+Setiap pengguna mungkin sesuai dengan saluran yang berbeza. Untuk permulaan yang mudah, Telegram, Discord atau GitHub Releases boleh digunakan. Jika anda lebih mementingkan kapasiti, kelajuan dan kestabilan jangka panjang, pertimbangkan Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud atau perkhidmatan WebDAV sendiri.
 
-- Setiap provider ada halaman sendiri. Mengasingkan 13 upload channel menjadikan langkah setup lebih mudah diikuti.
-- Screenshot disimpan di bawah `../../image/upload/provider-name/` dan dirujuk secara local daripada setiap halaman.
-- Dokumentasi Bahasa Melayu ini disesuaikan untuk penggunaan teknikal harian, sambil mengekalkan nama field hampir dengan UI produk apabila sesuai.
+## Sebelum bermula
 
-## Senarai Channel
+- Sediakan akaun storan atau API credentials yang ingin digunakan.
+- Pastikan domain ImgBed boleh diakses, kerana saluran OAuth memerlukan callback URL.
+- Selepas menambah saluran, muat naik imej ujian dahulu untuk memastikan fail boleh disimpan dan dibuka.
+
+## Senarai saluran
 
 - [Telegram](./telegram.md)
 - [Cloudflare R2](./cloudflare-r2.md)
@@ -24,10 +26,8 @@ Bahagian ini mengikut susunan channel yang sama seperti halaman System Settings,
 - [Yandex](./yandex.md)
 - [pCloud](./pcloud.md)
 
-## Apa Yang Diliputi
+## Perkara yang diterangkan
 
-- Cara menambah setiap upload channel.
-- Credentials, keys atau IDs yang perlu disediakan sebelum menambah channel.
-- Cara menyemak sama ada channel sudah sedia untuk upload.
-
-Butiran troubleshooting, quota strategy dan best practices diterangkan secara berasingan di halaman yang berkaitan.
+- Maklumat yang diperlukan sebelum menyediakan setiap saluran muat naik.
+- Cara mencipta aplikasi, menyalin key atau membenarkan Token di platform pihak ketiga.
+- Cara mengisi konfigurasi saluran dalam ImgBed dan mengesahkan muat naik berfungsi.

@@ -1,12 +1,14 @@
 # अपलोड सेटिंग्स
 
-यह सेक्शन System Settings पेज में दिखने वाले चैनल क्रम का ही पालन करता है, ताकि आप सीधे उस स्टोरेज प्रोवाइडर पर जा सकें जिसे सेट करना है।
+अपलोड सेटिंग्स ImgBed को आपके अपने storage channels से जोड़ती हैं। चैनल सेट होने के बाद अपलोड की गई images और files आपकी चुनी हुई service में सेव होती हैं। ImgBed access links, file records, previews, public gallery, random image API, WebDAV access और संबंधित workflows को संभालता है।
 
-## यह सेक्शन कैसे व्यवस्थित है
+हर उपयोगकर्ता के लिए सही channel अलग हो सकता है। आसान शुरुआत के लिए Telegram, Discord या GitHub Releases अच्छे विकल्प हो सकते हैं। अगर capacity, speed और long-term stability ज्यादा महत्वपूर्ण हैं, तो Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud या अपना WebDAV service चुनें।
 
-- हर प्रोवाइडर के लिए अलग पेज है। 13 अपलोड चैनलों को अलग रखने से सेटअप स्टेप समझना आसान रहता है।
-- स्क्रीनशॉट `../../image/upload/provider-name/` में रखे गए हैं और हर पेज से लोकल रूप से संदर्भित किए गए हैं।
-- हिंदी दस्तावेज़ को उपयोगकर्ता-केंद्रित तरीके से स्थानीयकृत किया गया है; फ़ील्ड नाम जहाँ संभव हो, प्रोडक्ट UI के करीब रखे गए हैं।
+## शुरू करने से पहले
+
+- जिस storage account या API credentials का उपयोग करना है, उन्हें तैयार रखें।
+- सुनिश्चित करें कि आपका ImgBed domain खुल रहा है, क्योंकि OAuth channels को callback URL चाहिए।
+- channel जोड़ने के बाद पहले एक test image upload करें, ताकि file save और open होना confirm हो सके।
 
 ## चैनल सूची
 
@@ -24,10 +26,8 @@
 - [Yandex](./yandex.md)
 - [pCloud](./pcloud.md)
 
-## इस अध्याय में क्या शामिल है
+## इस अध्याय में क्या है
 
-- हर अपलोड चैनल कैसे जोड़ें।
-- चैनल जोड़ने से पहले कौन से credentials, keys या IDs चाहिए।
-- कैसे जाँचें कि चैनल अपलोड के लिए तैयार है।
-
-Troubleshooting, quota strategy और best practices जहाँ ज़रूरी हैं, अलग से समझाए गए हैं।
+- हर upload channel को setup से पहले किन जानकारी की जरूरत होती है।
+- external platforms पर app बनाना, keys copy करना या Token authorize करना।
+- ImgBed में channel configuration भरना और upload काम कर रहा है या नहीं जांचना।

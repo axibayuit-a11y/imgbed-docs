@@ -1,49 +1,33 @@
-# Configuration des canaux d’upload
+# Paramètres d'envoi
 
-Dans ImgBed, chaque destination de stockage est configurée comme un canal. Vous choisissez où enregistrer les images, vidéos, audios et autres fichiers dans les paramètres d’upload.
+Les paramètres d'envoi connectent ImgBed à vos propres canaux de stockage. Une fois un canal configuré, les images et fichiers envoyés sont enregistrés dans le service choisi. ImgBed gère ensuite les liens d'accès, les enregistrements de fichiers, les aperçus, la galerie publique, l'API d'image aléatoire, l'accès WebDAV et les fonctions associées.
 
-## Où configurer
+Le bon canal dépend de votre usage. Pour démarrer simplement, Telegram, Discord ou GitHub Releases peuvent convenir. Si vous privilégiez la capacité, la vitesse et la stabilité à long terme, vous pouvez choisir Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud ou votre propre service WebDAV.
 
-```text
-Paramètres système -> Paramètres d’upload
-```
+## Avant de commencer
 
-Vous pouvez y ajouter des canaux, les activer ou désactiver, définir des limites de capacité, ajouter des notes et tester les connexions.
+- Préparez le compte de stockage ou les identifiants API à utiliser.
+- Vérifiez que votre domaine ImgBed est accessible, car les canaux OAuth ont besoin d'URL de callback.
+- Après avoir ajouté un canal, envoyez d'abord une image de test pour confirmer que le fichier est bien enregistré et accessible.
 
-## Canaux disponibles
+## Liste des canaux
 
-| Canal | Usage principal |
-| --- | --- |
-| Cloudflare R2 | Stockage objet chez Cloudflare |
-| S3 | AWS S3, Backblaze B2, MinIO et services compatibles |
-| Google Drive | Enregistrer dans Google Drive |
-| OneDrive | Enregistrer dans Microsoft OneDrive |
-| Dropbox | Enregistrer dans Dropbox |
-| pCloud | Enregistrer dans pCloud |
-| WebDAV | NAS, disques cloud ou services compatibles WebDAV |
-| Telegram | Utiliser un canal Telegram comme destination |
-| Discord | Utiliser un canal Discord comme destination |
-| GitHub Releases | Enregistrer dans les Release Assets de GitHub |
-| GitLab Packages | Enregistrer dans le Generic Package Registry de GitLab |
-| Hugging Face | Enregistrer dans un dépôt Hugging Face |
-| Yandex | Enregistrer dans Yandex Disk |
+- [Telegram](./telegram.md)
+- [Cloudflare R2](./cloudflare-r2.md)
+- [S3](./s3.md)
+- [WebDAV](./webdav.md)
+- [Discord](./discord.md)
+- [Hugging Face](./huggingface.md)
+- [GitHub Releases](./github-releases.md)
+- [GitLab Packages](./gitlab-packages.md)
+- [OneDrive](./onedrive.md)
+- [Google Drive](./google-drive.md)
+- [Dropbox](./dropbox.md)
+- [Yandex](./yandex.md)
+- [pCloud](./pcloud.md)
 
-## Avant d’ajouter un canal
+## Ce que couvre ce chapitre
 
-| Point | À vérifier |
-| --- | --- |
-| Compte de stockage | Le compte où les fichiers seront réellement enregistrés |
-| API Key / Token | Les identifiants requis par le canal |
-| Dossier de stockage | Souvent `imgbed`, sauf si vous voulez une autre organisation |
-| Limite de capacité | Si le canal doit cesser de recevoir des fichiers à partir d’un seuil |
-| Domaine public | Si vous utilisez un CDN ou un domaine personnalisé |
-
-## Après enregistrement
-
-1. Vérifiez que la carte du canal apparaît.
-2. Vérifiez que le canal est activé.
-3. Contrôlez que les identifiants et le dossier sont bien enregistrés.
-4. Lancez une consultation de capacité si le canal le permet.
-5. Envoyez une image de test et ouvrez le lien renvoyé.
-
-En cas d’échec, vérifiez d’abord les identifiants, permissions, dossier de destination et limites de l’API du fournisseur.
+- Les informations à préparer pour chaque canal d'envoi.
+- La création d'applications, la copie de clés ou l'autorisation de tokens sur les plateformes externes.
+- La saisie de la configuration dans ImgBed et la vérification des envois.

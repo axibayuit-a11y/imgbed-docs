@@ -1,49 +1,33 @@
-# Configuração de canais de upload
+# Configurações de upload
 
-No ImgBed, cada destino de armazenamento é configurado como um canal. Você decide onde salvar imagens, vídeos, áudios e outros arquivos pela configuração de upload.
+As configurações de upload conectam o ImgBed aos seus próprios canais de armazenamento. Depois que um canal é configurado, imagens e arquivos enviados são salvos no serviço escolhido. O ImgBed cuida dos links de acesso, registros de arquivos, prévias, galeria pública, API de imagem aleatória, acesso WebDAV e fluxos relacionados.
 
-## Onde configurar
+Cada pessoa pode preferir um canal diferente. Para começar de forma simples, Telegram, Discord ou GitHub Releases são boas opções. Se capacidade, velocidade e estabilidade de longo prazo forem mais importantes, considere Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud ou seu próprio serviço WebDAV.
 
-```text
-Configurações do sistema -> Configurações de upload
-```
+## Antes de começar
 
-Ali você pode adicionar canais, habilitar ou desabilitar, definir limite de capacidade, adicionar observações e testar conexões.
+- Prepare a conta de armazenamento ou as credenciais de API que você pretende usar.
+- Verifique se o domínio do ImgBed está acessível, pois canais baseados em OAuth precisam de URLs de callback.
+- Depois de adicionar um canal, envie primeiro uma imagem de teste para confirmar que o arquivo é salvo e aberto corretamente.
 
-## Canais disponíveis
+## Diretório de canais
 
-| Canal | Uso principal |
-| --- | --- |
-| Cloudflare R2 | Armazenamento de objetos na Cloudflare |
-| S3 | AWS S3, Backblaze B2, MinIO e serviços compatíveis |
-| Google Drive | Salvar no Google Drive |
-| OneDrive | Salvar no Microsoft OneDrive |
-| Dropbox | Salvar no Dropbox |
-| pCloud | Salvar no pCloud |
-| WebDAV | NAS, discos em nuvem ou serviços compatíveis com WebDAV |
-| Telegram | Usar um canal do Telegram como destino |
-| Discord | Usar um canal do Discord como destino |
-| GitHub Releases | Salvar em Release Assets do GitHub |
-| GitLab Packages | Salvar no Generic Package Registry do GitLab |
-| Hugging Face | Salvar em um repositório do Hugging Face |
-| Yandex | Salvar no Yandex Disk |
+- [Telegram](./telegram.md)
+- [Cloudflare R2](./cloudflare-r2.md)
+- [S3](./s3.md)
+- [WebDAV](./webdav.md)
+- [Discord](./discord.md)
+- [Hugging Face](./huggingface.md)
+- [GitHub Releases](./github-releases.md)
+- [GitLab Packages](./gitlab-packages.md)
+- [OneDrive](./onedrive.md)
+- [Google Drive](./google-drive.md)
+- [Dropbox](./dropbox.md)
+- [Yandex](./yandex.md)
+- [pCloud](./pcloud.md)
 
-## Antes de adicionar
+## O que este capítulo cobre
 
-| Ponto | O que conferir |
-| --- | --- |
-| Conta de armazenamento | A conta onde os arquivos serão salvos |
-| API Key / Token | Credenciais exigidas por cada canal |
-| Diretório de armazenamento | Normalmente `imgbed`, salvo se você quiser outra pasta |
-| Limite de capacidade | Se o canal deve parar de receber arquivos ao atingir certo uso |
-| Domínio público | Se você vai usar CDN ou domínio personalizado |
-
-## Depois de salvar
-
-1. Confira se o cartão do canal aparece.
-2. Verifique se o canal está habilitado.
-3. Veja se credenciais e diretório foram salvos corretamente.
-4. Execute consulta de capacidade se o canal oferecer isso.
-5. Envie uma imagem de teste e abra o link retornado.
-
-Se falhar, revise primeiro credenciais, permissões, diretório de destino e limites da API do provedor.
+- O que cada canal precisa antes da configuração.
+- Como criar apps, copiar chaves ou autorizar tokens em plataformas externas.
+- Como preencher a configuração no ImgBed e confirmar que os uploads funcionam.

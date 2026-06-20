@@ -1,14 +1,16 @@
 # Upload-Einstellungen
 
-Dieser Abschnitt folgt der gleichen Reihenfolge wie die Kanalverwaltung in den Systemeinstellungen. So kannst du direkt zu dem Speicherdienst springen, den du gerade einrichten möchtest.
+Die Upload-Einstellungen verbinden ImgBed mit Ihren eigenen Speicherkanälen. Nach der Einrichtung werden hochgeladene Bilder und Dateien im gewählten Dienst gespeichert. ImgBed verwaltet dazu Zugrifflinks, Dateieinträge, Vorschauen, öffentliche Galerien, die Zufallsbild-API, WebDAV-Zugriff und ähnliche Abläufe.
 
-## Aufbau dieses Abschnitts
+Je nach Nutzung passt ein anderer Kanal besser. Für einen einfachen Einstieg eignen sich Telegram, Discord oder GitHub Releases. Wenn Kapazität, Geschwindigkeit und langfristige Stabilität wichtiger sind, kommen Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud oder ein eigener WebDAV-Dienst infrage.
 
-- Jeder Anbieter hat eine eigene Seite. Die 13 Upload-Kanäle bleiben getrennt, damit die Einrichtungsschritte übersichtlich bleiben.
-- Screenshots liegen unter `../../image/upload/provider-name/` und werden lokal aus der jeweiligen Seite eingebunden.
-- Feldnamen bleiben möglichst nah an der Oberfläche von ImgBed; technische Namen wie `Endpoint`, `Client ID` oder `Refresh Token` werden nicht unnötig eingedeutscht.
+## Vor dem Start
 
-## Kanalübersicht
+- Bereiten Sie das Speicherkonto oder die API-Zugangsdaten vor.
+- Stellen Sie sicher, dass Ihre ImgBed-Domain erreichbar ist, da OAuth-Kanäle Callback-URLs benötigen.
+- Laden Sie nach dem Hinzufügen eines Kanals zuerst ein Testbild hoch, um Speichern und Öffnen zu prüfen.
+
+## Kanalliste
 
 - [Telegram](./telegram.md)
 - [Cloudflare R2](./cloudflare-r2.md)
@@ -24,10 +26,8 @@ Dieser Abschnitt folgt der gleichen Reihenfolge wie die Kanalverwaltung in den S
 - [Yandex](./yandex.md)
 - [pCloud](./pcloud.md)
 
-## Was dieses Kapitel abdeckt
+## Was dieses Kapitel erklärt
 
-- Wie du die einzelnen Upload-Kanäle hinzufügst.
-- Welche Zugangsdaten, IDs oder Berechtigungen du vorher brauchst.
-- Woran du erkennst, dass ein Kanal wirklich für Uploads bereit ist.
-
-Fehlersuche, Quotenlogik und besondere Hinweise stehen jeweils dort, wo sie für den entsprechenden Dienst wichtig sind.
+- Welche Informationen jeder Upload-Kanal vor der Einrichtung benötigt.
+- Wie Apps erstellt, Schlüssel kopiert oder Tokens auf externen Plattformen autorisiert werden.
+- Wie die Kanalkonfiguration in ImgBed eingetragen und der Upload geprüft wird.
