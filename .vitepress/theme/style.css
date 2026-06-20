@@ -19,34 +19,13 @@
 }
 
 @media (max-width: 640px) {
-  .vp-doc table:has(tr > :nth-child(2):last-child),
-  .vp-doc table:has(tr > :nth-child(2):last-child) thead,
-  .vp-doc table:has(tr > :nth-child(2):last-child) tbody,
-  .vp-doc table:has(tr > :nth-child(2):last-child) tr,
-  .vp-doc table:has(tr > :nth-child(2):last-child) th,
-  .vp-doc table:has(tr > :nth-child(2):last-child) td {
-    display: block;
-    width: 100%;
-  }
-
-  .vp-doc table:has(tr > :nth-child(2):last-child) thead {
-    display: none;
-  }
-
-  .vp-doc table:has(tr > :nth-child(2):last-child) tr {
-    border-top: 1px solid var(--vp-c-divider);
-  }
-
-  .vp-doc table:has(tr > :nth-child(2):last-child) td {
-    border: 0;
-    padding: 6px 12px;
-  }
-
+  .vp-doc table:has(tr > :nth-child(2):last-child) th:first-child,
   .vp-doc table:has(tr > :nth-child(2):last-child) td:first-child {
-    padding-top: 12px;
+    width: 45%;
   }
 
+  .vp-doc table:has(tr > :nth-child(2):last-child) th:last-child,
   .vp-doc table:has(tr > :nth-child(2):last-child) td:last-child {
-    padding-bottom: 12px;
+    width: 55%;
   }
 }
