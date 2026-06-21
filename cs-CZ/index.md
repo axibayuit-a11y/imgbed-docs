@@ -1,12 +1,25 @@
-# Uživatelská dokumentace ImgBed
+# ImgBed
 
-ImgBed je projekt pro hosting obrázků a sdílení souborů postavený na ekosystému Cloudflare. Začal u nahrávání obrázků a správy odkazů, ale postupně se rozšířil v ucelenější nástroj pro osobní obsah: můžete nahrávat soubory do různých úložišť, zveřejnit veřejnou galerii, provozovat vlastní blog, přenášet soubory z magnet odkazů a propojit se s dalšími uzly ImgBed přes federovaný index souborů.
+Univerzální nástroj pro osobní hosting obsahu postavený na ekosystému Cloudflare.
 
-Nechceme, aby ImgBed byl jen nástroj, který nahraje obrázek a vrátí odkaz. Cílem je pomoci lidem snadněji vlastnit vlastní obrázkový hosting, blog a prostor pro sdílení souborů. Ať už chcete ukládat obrázky, spravovat alba, psát články nebo zveřejnit jednoduchou stránku se zdroji, ImgBed se snaží nechat vám prostor pro vlastní způsob používání.
+ImgBed začal u nahrávání obrázků a správy odkazů. Dnes z něj vyrostlo kompletní řešení pro osobní hosting obsahu. Můžete ho použít k tomu, abyste:
 
-ImgBed nyní podporuje 28 lokalizovaných jazyků a mnoho nahrávacích kanálů, včetně Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex a pCloud. Úložiště si můžete vybrat podle regionu, účtů a svých návyků.
+- Nahrávali soubory do libovolného preferovaného úložného kanálu
+- Veřejně sdíleli obrázky a soubory v jakémkoli formátu
+- Během minuty rychle spustili osobní blog
+- Jedním kliknutím ukládali soubory z magnet odkazů
+- Připojili se k federaci uzlů ImgBed a sdíleli otevřené indexy souborů
 
-Projekt se stále vyvíjí. Naše možnosti jsou omezené, ale budeme se snažit, aby každá funkce byla srozumitelná, stabilní a užitečná. Pokud vám ImgBed pomůže vytvořit vlastní obrázkový hosting, blog nebo prostor pro sdílení souborů, budeme velmi rádi.
+Nevěříme na řešení typu "jedno pro všechny". Ať už chcete jen ukládat obrázky, hromadně spravovat alba, psát pár poznámek nebo vytvořit lehký veřejný web se zdroji, ImgBed respektuje vaši volbu a nechává vám co největší flexibilitu.
+
+## Silné funkce připravené k použití
+
+- 🌍 Podpora 28 jazyků rozhraní pro uživatele po celém světě
+- 📦 13 vestavěných hlavních nahrávacích kanálů: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex a pCloud
+- 🧩 Plně modulární návrh: každou funkci zapnete jen tehdy, když ji potřebujete, bez plýtvání prostředky
+- 🔒 Data máte plně pod kontrolou. Žádná třetí strana nemůže váš obsah zobrazit ani smazat
+
+Projekt se stále zlepšuje. Naše možnosti jsou omezené, ale uděláme maximum pro to, aby každá funkce byla jasná, stabilní a příjemná k použití. Pokud vám ImgBed pomůže snadněji získat vlastní hosting obrázků, blog nebo prostor pro sdílení souborů, budeme velmi rádi.
 
 ## Sekce
 

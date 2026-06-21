@@ -1,12 +1,25 @@
-# Tài liệu người dùng ImgBed
+# ImgBed
 
-ImgBed là một dự án lưu trữ ảnh và chia sẻ tệp được xây dựng quanh hệ sinh thái Cloudflare. Ban đầu dự án tập trung vào tải ảnh lên và quản lý liên kết, nhưng hiện đã mở rộng thành một công cụ lưu trữ nội dung cá nhân đầy đủ hơn: bạn có thể tải tệp lên nhiều kênh lưu trữ, xuất bản thư viện công khai, vận hành blog riêng, chuyển tệp từ liên kết magnet và kết nối với các node ImgBed khác thông qua chỉ mục tệp liên kết.
+Công cụ lưu trữ nội dung cá nhân toàn diện, xây dựng trên hệ sinh thái Cloudflare.
 
-Chúng tôi không muốn ImgBed chỉ là công cụ "tải ảnh lên rồi lấy liên kết". Mục tiêu là giúp mọi người dễ dàng có không gian lưu ảnh, blog và cách chia sẻ tệp của riêng mình. Dù bạn chỉ muốn lưu ảnh, quản lý album, viết vài bài, hay dựng một trang tài nguyên công khai nhẹ, ImgBed cố gắng để bạn có đủ lựa chọn.
+ImgBed bắt đầu từ việc tải ảnh lên và quản lý liên kết. Giờ đây nó đã phát triển thành một giải pháp hoàn chỉnh để lưu trữ nội dung cá nhân. Bạn có thể dùng ImgBed để:
 
-Hiện ImgBed hỗ trợ 28 ngôn ngữ được bản địa hóa và nhiều kênh tải lên như Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex và pCloud. Bạn có thể chọn cách lưu trữ phù hợp với khu vực, tài khoản và thói quen sử dụng của mình.
+- Tải tệp lên bất kỳ kênh lưu trữ nào bạn thích
+- Chia sẻ công khai hình ảnh và tệp ở mọi định dạng
+- Nhanh chóng dựng blog cá nhân trong một phút
+- Lưu tệp từ liên kết magnet chỉ với một cú nhấp
+- Tham gia liên minh node ImgBed và chia sẻ chỉ mục tệp mở
 
-Dự án vẫn đang tiếp tục hoàn thiện. Khả năng của chúng tôi có giới hạn, nhưng chúng tôi sẽ cố gắng làm cho từng tính năng rõ ràng, ổn định và hữu ích. Nếu ImgBed giúp bạn có không gian lưu ảnh, blog hoặc chia sẻ tệp riêng, chúng tôi sẽ rất vui.
+Chúng tôi không tin vào giải pháp "một khuôn cho tất cả". Dù bạn chỉ muốn lưu ảnh, quản lý album hàng loạt, viết vài ghi chú hay dựng một trang tài nguyên công khai nhẹ, ImgBed tôn trọng lựa chọn của bạn và giữ lại mức linh hoạt lớn nhất có thể.
+
+## Sức mạnh sẵn sàng dùng ngay
+
+- 🌍 Hỗ trợ 28 ngôn ngữ giao diện, giúp người dùng toàn cầu sử dụng thuận tiện
+- 📦 Tích hợp 13 kênh tải lên phổ biến: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, pCloud
+- 🧩 Thiết kế thuần mô-đun, mọi tính năng bật theo nhu cầu, không lãng phí tài nguyên
+- 🔒 Dữ liệu hoàn toàn do bạn kiểm soát. Không bên thứ ba nào có thể xem hoặc xóa nội dung của bạn
+
+Dự án này vẫn đang tiếp tục hoàn thiện. Khả năng của chúng tôi có giới hạn, nhưng chúng tôi sẽ cố hết sức để từng tính năng rõ ràng, ổn định và dễ dùng. Nếu ImgBed giúp bạn dễ dàng sở hữu nơi lưu ảnh, blog hoặc không gian chia sẻ tệp riêng, chúng tôi sẽ rất vui.
 
 ## Phần tài liệu
 

@@ -1,12 +1,25 @@
-# Documentation utilisateur ImgBed
+# ImgBed
 
-ImgBed est un projet d'hébergement d'images et de partage de fichiers construit autour de l'écosystème Cloudflare. Il a commencé avec l'envoi d'images et la gestion de liens, puis s'est élargi en un outil plus complet d'hébergement de contenu personnel : vous pouvez envoyer des fichiers vers plusieurs fournisseurs de stockage, publier une galerie publique, tenir votre propre blog, transférer des fichiers depuis des liens magnet et rejoindre d'autres noeuds ImgBed grâce à un index fédéré.
+Un outil complet d'hébergement de contenu personnel basé sur l'écosystème Cloudflare.
 
-Nous souhaitons qu'ImgBed soit plus qu'un simple outil qui envoie une image et renvoie un lien. L'objectif est d'aider chacun à disposer plus facilement de son propre hébergement d'images, de son blog et d'un espace de partage de fichiers. Que vous vouliez conserver des images, organiser des albums, écrire quelques articles ou publier une petite page de ressources, ImgBed essaie de vous laisser le choix.
+ImgBed a commencé avec l'envoi d'images et la gestion des liens. Il est désormais devenu une solution complète pour héberger du contenu personnel. Vous pouvez l'utiliser pour :
 
-ImgBed prend actuellement en charge 28 langues localisées et de nombreux canaux d'envoi, dont Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex et pCloud. Vous pouvez choisir le stockage adapté à votre région, à vos comptes et à vos habitudes.
+- Envoyer des fichiers vers le canal de stockage de votre choix
+- Partager publiquement des images et des fichiers de tout format
+- Mettre en place un blog personnel en une minute
+- Enregistrer des fichiers depuis des liens magnet en un clic
+- Rejoindre la fédération de noeuds ImgBed et partager des index de fichiers ouverts
 
-Le projet continue d'évoluer. Nos moyens sont limités, mais nous ferons de notre mieux pour rendre chaque fonction claire, stable et utile. Si ImgBed vous aide à créer votre propre hébergement d'images, blog ou espace de partage de fichiers, nous en serons très heureux.
+Nous ne croyons pas aux solutions "taille unique". Que vous vouliez simplement conserver des images, gérer des albums en lot, écrire quelques notes ou créer un site public léger de ressources, ImgBed respecte votre choix et vous laisse la plus grande flexibilité possible.
+
+## Des capacités puissantes prêtes à l'emploi
+
+- 🌍 28 langues d'interface pour une utilisation accessible partout dans le monde
+- 📦 13 canaux d'envoi courants intégrés : Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex et pCloud
+- 🧩 Conception entièrement modulaire : chaque fonction s'active à la demande, sans gaspiller de ressources
+- 🔒 Vos données restent entièrement sous votre contrôle. Aucun tiers ne peut consulter ni supprimer votre contenu
+
+Ce projet continue de s'améliorer. Nos moyens sont limités, mais nous ferons tout notre possible pour rendre chaque fonction claire, stable et agréable à utiliser. Si ImgBed vous aide à posséder plus facilement votre propre hébergement d'images, blog ou espace de partage de fichiers, nous en serons très heureux.
 
 ## Sections
 

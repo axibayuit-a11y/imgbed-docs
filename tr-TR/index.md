@@ -1,12 +1,25 @@
-# ImgBed Kullanıcı Belgeleri
+# ImgBed
 
-ImgBed, Cloudflare ekosistemi üzerine kurulu bir görsel barındırma ve dosya paylaşım projesidir. İlk olarak görsel yükleme ve bağlantı yönetimiyle başladı, ancak bugün kişisel içerik barındırma için daha kapsamlı bir araca dönüştü: dosyaları farklı depolama kanallarına yükleyebilir, herkese açık galeri yayımlayabilir, kendi blogunuzu çalıştırabilir, magnet bağlantılarından dosya aktarabilir ve diğer ImgBed düğümleriyle birleşik dosya dizini paylaşabilirsiniz.
+Cloudflare ekosistemi üzerine kurulu, her şeyi kapsayan kişisel içerik barındırma aracı.
 
-ImgBed'in yalnızca "görsel yükle, bağlantı al" aracı olmasını istemiyoruz. Amacımız herkesin kendi görsel barındırma alanına, bloguna ve dosya paylaşım yöntemine daha kolay sahip olabilmesi. Görselleri saklamak, albümleri düzenlemek, yazı yazmak veya hafif bir açık kaynak sayfası yayımlamak istediğinizde ImgBed size kullanma biçiminizi seçme alanı bırakmaya çalışır.
+ImgBed görsel yükleme ve bağlantı yönetimiyle başladı. Bugün kişisel içerik barındırma için eksiksiz bir çözüme dönüştü. ImgBed ile şunları yapabilirsiniz:
 
-ImgBed şu anda 28 yerelleştirilmiş dili ve Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex ve pCloud dahil birçok yükleme kanalını destekler. Bölgenize, hesaplarınıza ve alışkanlıklarınıza göre uygun depolamayı seçebilirsiniz.
+- Dosyaları tercih ettiğiniz herhangi bir depolama kanalına yüklemek
+- Görselleri ve her formattaki dosyaları herkese açık şekilde paylaşmak
+- Bir dakika içinde hızlıca kişisel blog kurmak
+- Magnet bağlantılarından dosyaları tek tıkla kaydetmek
+- ImgBed düğüm federasyonuna katılıp açık dosya indekslerini paylaşmak
 
-Bu proje gelişmeye devam ediyor. İmkanlarımız sınırlı, ancak her özelliği anlaşılır, kararlı ve kullanışlı hale getirmek için elimizden geleni yapacağız. ImgBed kendi görsel barındırma alanınızı, blogunuzu veya dosya paylaşım alanınızı kurmanıza yardımcı olursa bundan büyük mutluluk duyarız.
+"Herkese aynı çözüm" anlayışına inanmıyoruz. Sadece görsel saklamak, albümleri toplu yönetmek, birkaç not yazmak ya da hafif bir açık kaynak sitesi kurmak isteyin; ImgBed seçiminize saygı duyar ve size en geniş esnekliği bırakır.
+
+## Kutudan çıktığı gibi güçlü yetenekler
+
+- 🌍 Dünya genelindeki kullanıcılar için 28 arayüz dili desteği
+- 📦 13 yerleşik ana yükleme kanalı: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex ve pCloud
+- 🧩 Tam modüler tasarım: tüm özellikler ihtiyaca göre açılır, kaynak israfı olmaz
+- 🔒 Veriler tamamen sizin kontrolünüzdedir. Hiçbir üçüncü taraf içeriğinizi göremez veya silemez
+
+Bu proje gelişmeye devam ediyor. İmkanlarımız sınırlı, ancak her özelliği açık, kararlı ve kullanımı iyi hale getirmek için elimizden geleni yapacağız. ImgBed kendi görsel barındırma alanınıza, blogunuza veya dosya paylaşım alanınıza daha kolay sahip olmanıza yardımcı olursa çok mutlu oluruz.
 
 ## Bölümler
 

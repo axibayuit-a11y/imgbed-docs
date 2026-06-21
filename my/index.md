@@ -1,12 +1,25 @@
-# ImgBed အသုံးပြုသူလမ်းညွှန်
+# ImgBed
 
-ImgBed သည် Cloudflare ecosystem အပေါ် အခြေခံထားသော image hosting နှင့် file sharing project တစ်ခုဖြစ်သည်။ အစပိုင်းတွင် image upload နှင့် link management မှ စတင်ခဲ့ပြီး၊ ယခုအခါ personal content hosting အတွက် ပိုမိုပြည့်စုံသော tool တစ်ခုအဖြစ် တိုးချဲ့လာပါသည်။ Files များကို storage channels အမျိုးမျိုးသို့ upload လုပ်နိုင်ပြီး၊ public gallery ထုတ်ပြနိုင်သည်၊ ကိုယ်ပိုင် blog ပြုလုပ်နိုင်သည်၊ magnet links မှ files များ transfer လုပ်နိုင်သည်၊ ထို့အပြင် အခြား ImgBed nodes များနှင့် federated file index ဖြင့် open files များ share လုပ်နိုင်သည်။
+Cloudflare ecosystem ပေါ်မှာ အခြေခံထားတဲ့ all-in-one personal content hosting tool ဖြစ်ပါတယ်။
 
-ImgBed ကို "image upload လုပ်ပြီး link ယူသည့် tool" တစ်ခုအဖြစ်သာ မထားချင်ပါ။ လူတိုင်းကိုယ်ပိုင် image host၊ blog နှင့် file sharing space ကို ပိုမိုလွယ်ကူစွာ ပိုင်ဆိုင်နိုင်ရန် ကူညီချင်ပါသည်။ Images သိမ်းချင်သည်ဖြစ်စေ၊ albums စီမံချင်သည်ဖြစ်စေ၊ posts ရေးချင်သည်ဖြစ်စေ၊ lightweight public resource page တစ်ခု တည်ဆောက်ချင်သည်ဖြစ်စေ၊ ImgBed သည် သင့်အသုံးပြုပုံအတွက် ရွေးချယ်ခွင့်ထားပေးရန် ကြိုးစားထားပါသည်။
+ImgBed က image upload နဲ့ link management ကနေ စတင်ခဲ့ပါတယ်။ အခုတော့ personal content hosting အတွက် ပြည့်စုံတဲ့ solution တစ်ခုအဖြစ် တိုးတက်လာပါပြီ။ ImgBed နဲ့ သင်လုပ်နိုင်တာတွေက:
 
-လက်ရှိ ImgBed သည် localized languages 28 မျိုးနှင့် Telegram၊ Cloudflare R2၊ S3၊ WebDAV၊ Discord၊ Hugging Face၊ GitHub Releases၊ GitLab Packages၊ OneDrive၊ Google Drive၊ Dropbox၊ Yandex၊ pCloud အပါအဝင် upload channels များစွာကို support လုပ်ပါသည်။ သင့် region၊ accounts နှင့် usage habits အလိုက် သင့်တော်သော storage ကို ရွေးနိုင်ပါသည်။
+- သင်နှစ်သက်တဲ့ မည်သည့် storage channel ကိုမဆို files upload လုပ်ခြင်း
+- images နဲ့ မည်သည့် format files မဆို public share လုပ်ခြင်း
+- personal blog ကို တစ်မိနစ်အတွင်း မြန်မြန် setup လုပ်ခြင်း
+- magnet links ကနေ files ကို one-click နဲ့ save လုပ်ခြင်း
+- ImgBed node federation ထဲဝင်ပြီး open file indexes ကို share လုပ်ခြင်း
 
-ဤ project သည် ဆက်လက်တိုးတက်နေဆဲဖြစ်သည်။ ကျွန်ုပ်တို့၏ စွမ်းရည်မှာ ကန့်သတ်ချက်ရှိသော်လည်း feature တစ်ခုချင်းစီကို ရှင်းလင်း၊ တည်ငြိမ်ပြီး အသုံးဝင်စေရန် အတတ်နိုင်ဆုံး ကြိုးစားပါမည်။ ImgBed က သင့်ကိုယ်ပိုင် image host၊ blog သို့မဟုတ် file sharing space တည်ဆောက်ရာတွင် ကူညီနိုင်ပါက ကျွန်ုပ်တို့ အလွန်ဝမ်းသာပါသည်။
+ကျွန်ုပ်တို့က "one-size-fits-all" solution ကို မယုံကြည်ပါ။ သင်က images ကို ရိုးရိုး save လုပ်ချင်တာဖြစ်ဖြစ်၊ albums ကို bulk manage လုပ်ချင်တာဖြစ်ဖြစ်၊ notes အနည်းငယ်ရေးချင်တာဖြစ်ဖြစ်၊ lightweight public resource site တစ်ခုတည်ဆောက်ချင်တာဖြစ်ဖြစ်၊ ImgBed က သင့်ရွေးချယ်မှုကို လေးစားပြီး maximum flexibility ပေးထားပါတယ်။
+
+## အသင့်သုံးနိုင်တဲ့ အစွမ်းထက် features
+
+- 🌍 28 interface languages ကို support လုပ်ပြီး global users အတွက် အဆင်ပြေစေပါတယ်
+- 📦 13 built-in mainstream upload channels: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, pCloud
+- 🧩 pure modular design ဖြစ်ပြီး feature တိုင်းကို လိုအပ်သလို enable လုပ်နိုင်လို့ resources မဖြုန်းပါ
+- 🔒 data က သင့် control အောက်မှာ အပြည့်အဝရှိပါတယ်။ third party တစ်ဦးဦးက သင့် content ကို ကြည့်ရှုခြင်း သို့မဟုတ် delete လုပ်ခြင်း မပြုနိုင်ပါ
+
+ဒီ project က ဆက်လက်တိုးတက်နေဆဲပါ။ ကျွန်ုပ်တို့ရဲ့ စွမ်းရည်မှာ ကန့်သတ်ချက်ရှိပေမဲ့ feature တစ်ခုချင်းစီကို clear, stable, easy to use ဖြစ်အောင် အကောင်းဆုံးကြိုးစားသွားပါမယ်။ ImgBed က သင့်ကို ကိုယ်ပိုင် image host, blog, file sharing space တစ်ခု ပိုလွယ်ကူစွာ ပိုင်ဆိုင်နိုင်အောင် ကူညီပေးနိုင်ရင် ကျွန်ုပ်တို့ အလွန်ဝမ်းသာပါမယ်။
 
 ## အပိုင်းများ
 

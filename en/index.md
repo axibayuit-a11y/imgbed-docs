@@ -1,12 +1,25 @@
-# ImgBed User Documentation
+# ImgBed
 
-ImgBed is an image hosting and file sharing project built around the Cloudflare ecosystem. It started with image uploads and link management, and has grown into a more complete personal content hosting tool: you can upload files to multiple storage providers, publish a public gallery, run your own blog, transfer files from magnet links, and join other ImgBed nodes through a federated file index.
+An all-in-one personal content hosting tool built on the Cloudflare ecosystem.
 
-We hope ImgBed can be more than a tool that uploads an image and returns a link. It is meant to help more people own a simple image host, blog, and file sharing space. Whether you want to keep images, manage albums, write posts, or publish a lightweight resource page, ImgBed tries to leave room for your own way of using it.
+ImgBed started with image uploads and link management. It has now grown into a complete personal content hosting solution. You can use it to:
 
-ImgBed currently supports 28 localized languages and many upload channels, including Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, and pCloud. You can choose a storage option based on your region, accounts, and habits.
+- Upload files to any storage channel you prefer
+- Publicly share images and files of any format
+- Set up a personal blog in one minute
+- Save files from magnet links with one click
+- Join the ImgBed node federation and share open file indexes
 
-This project is still being improved. Our ability is limited, but we will keep trying to make each feature clear, stable, and useful. If ImgBed helps you build your own image host, blog, or file sharing space, we will be very happy.
+We do not believe in one-size-fits-all solutions. Whether you simply want to save images, manage albums in bulk, write a few notes, or build a lightweight public resource site, ImgBed respects your choices and keeps as much flexibility as possible in your hands.
+
+## Powerful Features Out of the Box
+
+- 🌍 28 interface languages for users around the world
+- 📦 13 built-in mainstream upload channels: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, and pCloud
+- 🧩 Fully modular design, so every feature can be enabled only when needed
+- 🔒 Your data stays under your control. No third party can view or delete your content
+
+This project is still being improved. Our ability is limited, but we will do our best to make every feature clear, stable, and pleasant to use. If ImgBed helps you own your own image host, blog, or file sharing space more easily, we will be very happy.
 
 ## Quick Start
 
