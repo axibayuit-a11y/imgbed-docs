@@ -13,6 +13,27 @@
   white-space: normal;
 }
 
+.VPNavBarTranslations .VPMenu {
+  max-height: min(70vh, 520px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.VPNavBarTranslations .VPMenu::-webkit-scrollbar {
+  width: 8px;
+}
+
+.VPNavBarTranslations .VPMenu::-webkit-scrollbar-thumb {
+  background-color: var(--vp-c-divider);
+  border-radius: 999px;
+}
+
+.VPNavScreenTranslations.open .list {
+  max-height: min(60vh, 420px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
 .vp-doc table:has(tr > :nth-child(2):last-child) th,
 .vp-doc table:has(tr > :nth-child(2):last-child) td {
   width: 50%;

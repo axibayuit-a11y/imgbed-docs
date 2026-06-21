@@ -2,40 +2,6 @@ import { defineConfig } from 'vitepress'
 import { sidebar } from './sidebar.mts'
 
 // VitePress 只负责展示静态 Markdown；Cloudflare Pages 负责托管构建产物。
-const languageMenu = {
-  text: 'Language',
-  items: [
-    { text: 'English', link: '/en/' },
-    { text: '简体中文', link: '/cn/' },
-    { text: '繁體中文', link: '/zh-TW/' },
-    { text: '日本語', link: '/ja-JP/' },
-    { text: '한국어', link: '/ko-KR/' },
-    { text: 'Español', link: '/es/' },
-    { text: 'Português do Brasil', link: '/pt-BR/' },
-    { text: 'Français', link: '/fr-FR/' },
-    { text: 'Deutsch', link: '/de-DE/' },
-    { text: 'Italiano', link: '/it-IT/' },
-    { text: 'Nederlands', link: '/nl-NL/' },
-    { text: 'Polski', link: '/pl-PL/' },
-    { text: 'Čeština', link: '/cs-CZ/' },
-    { text: 'Українська', link: '/uk-UA/' },
-    { text: 'Русский', link: '/ru-RU/' },
-    { text: 'Türkçe', link: '/tr-TR/' },
-    { text: 'العربية', link: '/ar-SA/' },
-    { text: 'हिन्दी', link: '/hi/' },
-    { text: 'বাংলা', link: '/bn-BD/' },
-    { text: 'ไทย', link: '/th-TH/' },
-    { text: 'Tiếng Việt', link: '/vi-VN/' },
-    { text: 'Bahasa Melayu', link: '/ms-MY/' },
-    { text: 'Bahasa Indonesia', link: '/id-ID/' },
-    { text: 'اردو', link: '/ur/' },
-    { text: 'தமிழ்', link: '/ta/' },
-    { text: 'فارسی', link: '/fa/' },
-    { text: 'မြန်မာ', link: '/my/' },
-    { text: 'پښتو', link: '/ps/' }
-  ]
-}
-
 export default defineConfig({
   title: 'ImgBed Docs',
   description: 'User documentation for CloudFlare ImgBed',
@@ -51,10 +17,6 @@ export default defineConfig({
     }
   },
   locales: {
-    root: {
-      label: 'English',
-      lang: 'en-US'
-    },
     en: {
       label: 'English',
       lang: 'en-US'
@@ -170,8 +132,7 @@ export default defineConfig({
   },
   themeConfig: {
     nav: [
-      { text: 'Docs', link: '/en/' },
-      languageMenu
+      { text: 'Docs', link: '/en/' }
     ],
     sidebar,
     search: {
