@@ -31,3 +31,9 @@ ImgBed শুরু হয়েছিল image upload এবং link management �
 ## ওপেন সোর্স কৃতজ্ঞতা
 
 ওপেন সোর্স প্রকল্প [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) এবং [Mizuki](https://github.com/LyraVoid/Mizuki)-এর অবদানের জন্য কৃতজ্ঞতা।
+
+## Feedback ও সমস্যা রিপোর্ট
+
+Documentation ব্যবহার করার সময় বা ImgBed deploy করার সময় সমস্যা হলে [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)-এ report করুন। এই docs repository open source, এবং feedback অনুযায়ী আমরা এটি উন্নত করতে থাকব।
+
+Email দিয়েও যোগাযোগ করতে পারেন: <axibayuit@gmail.com>

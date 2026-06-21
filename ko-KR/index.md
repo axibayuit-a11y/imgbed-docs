@@ -31,3 +31,9 @@ ImgBed는 이미지 업로드와 링크 관리에서 시작해, 이제는 개인
 ## 오픈소스 감사
 
 오픈소스 프로젝트 [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed)와 [Mizuki](https://github.com/LyraVoid/Mizuki)의 기여에 감사드립니다.
+
+## 문제 피드백
+
+문서를 사용하거나 ImgBed를 배포하는 중 문제가 있으면 [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)에 남겨 주세요. 이 문서 저장소는 오픈소스이며, 피드백을 바탕으로 계속 개선하겠습니다.
+
+이메일로도 연락할 수 있습니다: <axibayuit@gmail.com>

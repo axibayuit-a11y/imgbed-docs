@@ -31,3 +31,9 @@ ImgBed починався із завантаження зображень і к
 ## Подяка open source
 
 Дякуємо open-source проєктам [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) і [Mizuki](https://github.com/LyraVoid/Mizuki) за їхній внесок.
+
+## Відгуки та проблеми
+
+Якщо у вас виникли проблеми під час використання документації або розгортання ImgBed, повідомте про них у [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues). Цей репозиторій документації є open source, і ми продовжимо покращувати його за відгуками.
+
+Також можна зв'язатися з нами електронною поштою: <axibayuit@gmail.com>

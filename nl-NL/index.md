@@ -31,3 +31,9 @@ Dit project wordt nog steeds verbeterd. Onze mogelijkheden zijn beperkt, maar we
 ## Dank aan open source
 
 Met dank aan de open-sourceprojecten [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) en [Mizuki](https://github.com/LyraVoid/Mizuki) voor hun bijdragen.
+
+## Feedback en problemen
+
+Loop je tegen problemen aan bij het gebruiken van de documentatie of het deployen van ImgBed, meld ze dan via [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues). Deze documentatierepository is open source en we blijven hem verbeteren op basis van feedback.
+
+Je kunt ook contact opnemen per e-mail: <axibayuit@gmail.com>

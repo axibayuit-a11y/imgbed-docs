@@ -31,3 +31,9 @@
 ## شكر للمشاريع مفتوحة المصدر
 
 نتوجه بالشكر إلى مشروعي المصدر المفتوح [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) و [Mizuki](https://github.com/LyraVoid/Mizuki) على مساهمتهما.
+
+## الملاحظات والمشكلات
+
+إذا واجهت مشكلة أثناء استخدام الوثائق أو نشر ImgBed، يمكنك الإبلاغ عنها عبر [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues). مستودع الوثائق هذا مفتوح المصدر، وسنواصل تحسينه بناء على الملاحظات.
+
+يمكنك أيضا التواصل عبر البريد الإلكتروني: <axibayuit@gmail.com>

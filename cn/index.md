@@ -31,3 +31,9 @@
 ## 开源致谢
 
 在此感谢开源项目 [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) 和 [Mizuki](https://github.com/LyraVoid/Mizuki) 的贡献。
+
+## 问题反馈
+
+如果你在使用文档或部署过程中遇到问题，可以在 [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues) 反馈。这个文档仓库是开源的，我们会尽量根据反馈继续完善。
+
+也可以通过邮箱联系：<axibayuit@gmail.com>

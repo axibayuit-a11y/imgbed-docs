@@ -31,3 +31,9 @@ This project is still being improved. Our ability is limited, but we will do our
 ## Open Source Thanks
 
 Special thanks to the open source projects [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) and [Mizuki](https://github.com/LyraVoid/Mizuki) for their contributions.
+
+## Feedback
+
+If you run into issues while using the docs or deploying ImgBed, please report them in [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues). This docs repository is open source, and we will keep improving it based on feedback.
+
+You can also contact us by email: <axibayuit@gmail.com>

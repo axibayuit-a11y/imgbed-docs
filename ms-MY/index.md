@@ -31,3 +31,9 @@ Projek ini masih terus diperbaiki. Keupayaan kami terhad, tetapi kami akan cuba 
 ## Penghargaan sumber terbuka
 
 Terima kasih kepada projek sumber terbuka [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) dan [Mizuki](https://github.com/LyraVoid/Mizuki) atas sumbangan mereka.
+
+## Feedback dan laporan masalah
+
+Jika anda menghadapi masalah semasa menggunakan dokumentasi atau deploy ImgBed, sila laporkan di [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues). Docs repository ini open source, dan kami akan terus menambah baik berdasarkan feedback.
+
+Anda juga boleh hubungi melalui e-mel: <axibayuit@gmail.com>
