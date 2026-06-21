@@ -21,13 +21,6 @@ We do not believe in one-size-fits-all solutions. Whether you simply want to sav
 
 This project is still being improved. Our ability is limited, but we will do our best to make every feature clear, stable, and pleasant to use. If ImgBed helps you own your own image host, blog, or file sharing space more easily, we will be very happy.
 
-## Quick Start
-
-- [Upload channels](./upload/)
-- [Security settings](./Safety/authentication-and-login-devices.md)
-- [Public gallery, blog, federation, and other features](./Other/random-image-api-and-public-gallery.md)
-- [Page settings](./Page/page-settings.md)
-
 ## Open Source Thanks
 
 Special thanks to the open source projects [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) and [Mizuki](https://github.com/LyraVoid/Mizuki) for their contributions.

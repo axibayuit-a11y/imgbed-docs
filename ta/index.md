@@ -21,13 +21,6 @@ ImgBed image upload மற்றும் link management-இல் இருந
 
 இந்த project தொடர்ந்து மேம்படுத்தப்படுகிறது. எங்கள் திறன் வரம்புடையது, ஆனால் ஒவ்வொரு feature-ஐயும் clear, stable, easy to use ஆக உருவாக்க முழு முயற்சி செய்வோம். ImgBed உங்கள் சொந்த image host, blog அல்லது file sharing space-ஐ எளிதாகப் பெற உதவினால், எங்களுக்கு மிகவும் மகிழ்ச்சி.
 
-## பகுதிகள்
-
-- [பதிவேற்ற சேனல்கள்](./upload/)
-- [பாதுகாப்பு அமைப்புகள்](./Safety/authentication-and-login-devices.md)
-- [Public gallery, blog, federation மற்றும் பிற அம்சங்கள்](./Other/random-image-api-and-public-gallery.md)
-- [பக்க அமைப்புகள்](./Page/page-settings.md)
-
 ## திறந்த மூல நன்றி
 
 திறந்த மூல projects ஆன [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) மற்றும் [Mizuki](https://github.com/LyraVoid/Mizuki) ஆகியவற்றின் பங்களிப்புக்கு நன்றி.

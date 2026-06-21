@@ -21,13 +21,6 @@ Wij geloven niet in oplossingen die iedereen in hetzelfde model dwingen. Of je n
 
 Dit project wordt nog steeds verbeterd. Onze mogelijkheden zijn beperkt, maar we doen ons best om elke functie duidelijk, stabiel en prettig bruikbaar te maken. Als ImgBed je helpt om makkelijker je eigen image host, blog of ruimte voor bestandsdeling te hebben, zijn we daar erg blij mee.
 
-## Onderdelen
-
-- [Uploadkanalen](./upload/)
-- [Beveiligingsinstellingen](./Safety/authentication-and-login-devices.md)
-- [Openbare galerij, blog, federatie en andere functies](./Other/random-image-api-and-public-gallery.md)
-- [Pagina-instellingen](./Page/page-settings.md)
-
 ## Dank aan open source
 
 Met dank aan de open-sourceprojecten [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) en [Mizuki](https://github.com/LyraVoid/Mizuki) voor hun bijdragen.

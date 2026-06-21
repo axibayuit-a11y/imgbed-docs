@@ -21,13 +21,6 @@ ImgBed از آپلود تصویر و مدیریت لینک شروع شد. اکن
 
 این پروژه همچنان در حال بهبود است. توان ما محدود است، اما تمام تلاش خود را می‌کنیم تا هر قابلیت روشن، پایدار و خوش‌دست باشد. اگر ImgBed به شما کمک کند راحت‌تر میزبان تصویر، وبلاگ یا فضای اشتراک‌گذاری فایل خودتان را داشته باشید، بسیار خوشحال می‌شویم.
 
-## بخش‌ها
-
-- [کانال‌های آپلود](./upload/)
-- [تنظیمات امنیتی](./Safety/authentication-and-login-devices.md)
-- [گالری عمومی، وبلاگ، فدراسیون و قابلیت‌های دیگر](./Other/random-image-api-and-public-gallery.md)
-- [تنظیمات صفحه](./Page/page-settings.md)
-
 ## سپاس از متن‌باز
 
 از پروژه‌های متن‌باز [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) و [Mizuki](https://github.com/LyraVoid/Mizuki) بابت مشارکتشان سپاسگزاریم.

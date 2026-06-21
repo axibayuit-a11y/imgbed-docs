@@ -21,13 +21,6 @@ Non crediamo nelle soluzioni "uguali per tutti". Che tu voglia solo salvare imma
 
 Questo progetto continua a migliorare. Le nostre capacità sono limitate, ma faremo del nostro meglio per rendere ogni funzione chiara, stabile e piacevole da usare. Se ImgBed ti aiuta ad avere più facilmente il tuo image host, blog o spazio di condivisione file, ne saremo molto felici.
 
-## Sezioni
-
-- [Canali di caricamento](./upload/)
-- [Impostazioni di sicurezza](./Safety/authentication-and-login-devices.md)
-- [Galleria pubblica, blog, federazione e altre funzioni](./Other/random-image-api-and-public-gallery.md)
-- [Impostazioni pagina](./Page/page-settings.md)
-
 ## Ringraziamenti open source
 
 Ringraziamo i progetti open source [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) e [Mizuki](https://github.com/LyraVoid/Mizuki) per il loro contributo.

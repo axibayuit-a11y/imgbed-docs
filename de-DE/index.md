@@ -21,13 +21,6 @@ Wir glauben nicht an Lösungen nach dem Motto "eine für alles". Egal, ob Sie ei
 
 Dieses Projekt wird weiterhin verbessert. Unsere Möglichkeiten sind begrenzt, aber wir werden unser Bestes tun, um jede Funktion klar, stabil und gut nutzbar zu machen. Wenn ImgBed Ihnen hilft, einfacher einen eigenen Bildhost, Blog oder Dateifreigabebereich zu besitzen, freut uns das sehr.
 
-## Bereiche
-
-- [Upload-Kanäle](./upload/)
-- [Sicherheitseinstellungen](./Safety/authentication-and-login-devices.md)
-- [Öffentliche Galerie, Blog, Föderation und weitere Funktionen](./Other/random-image-api-and-public-gallery.md)
-- [Seiteneinstellungen](./Page/page-settings.md)
-
 ## Dank an Open Source
 
 Wir danken den Open-Source-Projekten [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) und [Mizuki](https://github.com/LyraVoid/Mizuki) für ihre Beiträge.

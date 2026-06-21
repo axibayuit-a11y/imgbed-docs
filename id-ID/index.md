@@ -21,13 +21,6 @@ Kami tidak percaya pada solusi "one-size-fits-all". Entah Anda hanya ingin menyi
 
 Proyek ini masih terus disempurnakan. Kemampuan kami terbatas, tetapi kami akan berusaha semaksimal mungkin agar setiap fitur jelas, stabil, dan enak digunakan. Jika ImgBed membantu Anda lebih mudah memiliki image host, blog, atau ruang berbagi file sendiri, kami akan sangat senang.
 
-## Bagian
-
-- [Channel unggahan](./upload/)
-- [Pengaturan keamanan](./Safety/authentication-and-login-devices.md)
-- [Galeri publik, blog, federasi, dan fitur lainnya](./Other/random-image-api-and-public-gallery.md)
-- [Pengaturan halaman](./Page/page-settings.md)
-
 ## Terima kasih untuk open source
 
 Terima kasih kepada proyek open source [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) dan [Mizuki](https://github.com/LyraVoid/Mizuki) atas kontribusinya.

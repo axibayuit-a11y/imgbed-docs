@@ -21,13 +21,6 @@ Nevěříme na řešení typu "jedno pro všechny". Ať už chcete jen ukládat 
 
 Projekt se stále zlepšuje. Naše možnosti jsou omezené, ale uděláme maximum pro to, aby každá funkce byla jasná, stabilní a příjemná k použití. Pokud vám ImgBed pomůže snadněji získat vlastní hosting obrázků, blog nebo prostor pro sdílení souborů, budeme velmi rádi.
 
-## Sekce
-
-- [Kanály nahrávání](./upload/)
-- [Nastavení zabezpečení](./Safety/authentication-and-login-devices.md)
-- [Veřejná galerie, blog, federace a další funkce](./Other/random-image-api-and-public-gallery.md)
-- [Nastavení stránky](./Page/page-settings.md)
-
 ## Poděkování open source
 
 Děkujeme open-source projektům [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) a [Mizuki](https://github.com/LyraVoid/Mizuki) za jejich přínos.

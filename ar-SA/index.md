@@ -21,13 +21,6 @@
 
 ما زال هذا المشروع يتحسن باستمرار. قدراتنا محدودة، لكننا سنبذل كل ما نستطيع لجعل كل ميزة واضحة ومستقرة وسهلة الاستخدام. إذا ساعدك ImgBed على امتلاك مساحة صور أو مدونة أو مساحة مشاركة ملفات خاصة بك بسهولة أكبر، فسنكون سعداء جدا.
 
-## الأقسام
-
-- [قنوات الرفع](./upload/)
-- [إعدادات الأمان](./Safety/authentication-and-login-devices.md)
-- [المعرض العام والمدونة والفهرس الاتحادي وميزات أخرى](./Other/random-image-api-and-public-gallery.md)
-- [إعدادات الصفحة](./Page/page-settings.md)
-
 ## شكر للمشاريع مفتوحة المصدر
 
 نتوجه بالشكر إلى مشروعي المصدر المفتوح [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) و [Mizuki](https://github.com/LyraVoid/Mizuki) على مساهمتهما.

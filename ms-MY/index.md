@@ -21,13 +21,6 @@ Kami tidak percaya pada solusi "one-size-fits-all". Sama ada anda cuma mahu simp
 
 Projek ini masih terus diperbaiki. Keupayaan kami terhad, tetapi kami akan cuba sebaik mungkin untuk menjadikan setiap feature jelas, stabil dan mudah digunakan. Jika ImgBed membantu anda memiliki image host, blog atau file sharing space sendiri dengan lebih mudah, kami sangat gembira.
 
-## Bahagian
-
-- [Saluran muat naik](./upload/)
-- [Tetapan keselamatan](./Safety/authentication-and-login-devices.md)
-- [Galeri awam, blog, federasi dan ciri lain](./Other/random-image-api-and-public-gallery.md)
-- [Tetapan halaman](./Page/page-settings.md)
-
 ## Penghargaan sumber terbuka
 
 Terima kasih kepada projek sumber terbuka [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) dan [Mizuki](https://github.com/LyraVoid/Mizuki) atas sumbangan mereka.

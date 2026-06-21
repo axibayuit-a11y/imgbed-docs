@@ -21,13 +21,6 @@ ImgBed는 이미지 업로드와 링크 관리에서 시작해, 이제는 개인
 
 이 프로젝트는 계속 개선되고 있습니다. 우리의 역량은 제한적이지만, 모든 기능을 명확하고 안정적이며 사용하기 좋게 만들기 위해 최선을 다하겠습니다. ImgBed가 당신만의 이미지 호스트, 블로그, 파일 공유 공간을 더 쉽게 갖는 데 도움이 된다면 매우 기쁩니다.
 
-## 섹션
-
-- [업로드 채널](./upload/)
-- [보안 설정](./Safety/authentication-and-login-devices.md)
-- [공개 갤러리, 블로그, 연합 인덱스 등](./Other/random-image-api-and-public-gallery.md)
-- [페이지 설정](./Page/page-settings.md)
-
 ## 오픈소스 감사
 
 오픈소스 프로젝트 [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed)와 [Mizuki](https://github.com/LyraVoid/Mizuki)의 기여에 감사드립니다.

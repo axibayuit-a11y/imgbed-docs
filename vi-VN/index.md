@@ -21,13 +21,6 @@ Chúng tôi không tin vào giải pháp "một khuôn cho tất cả". Dù bạ
 
 Dự án này vẫn đang tiếp tục hoàn thiện. Khả năng của chúng tôi có giới hạn, nhưng chúng tôi sẽ cố hết sức để từng tính năng rõ ràng, ổn định và dễ dùng. Nếu ImgBed giúp bạn dễ dàng sở hữu nơi lưu ảnh, blog hoặc không gian chia sẻ tệp riêng, chúng tôi sẽ rất vui.
 
-## Phần tài liệu
-
-- [Kênh tải lên](./upload/)
-- [Cài đặt bảo mật](./Safety/authentication-and-login-devices.md)
-- [Thư viện công khai, blog, liên kết node và tính năng khác](./Other/random-image-api-and-public-gallery.md)
-- [Cài đặt trang](./Page/page-settings.md)
-
 ## Cảm ơn mã nguồn mở
 
 Xin cảm ơn đóng góp của các dự án mã nguồn mở [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) và [Mizuki](https://github.com/LyraVoid/Mizuki).

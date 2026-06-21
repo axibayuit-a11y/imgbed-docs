@@ -21,13 +21,6 @@ ImgBed починався із завантаження зображень і к
 
 Проєкт і далі вдосконалюється. Наші можливості обмежені, але ми зробимо все можливе, щоб кожна функція була зрозумілою, стабільною та зручною. Якщо ImgBed допоможе вам легше мати власний хостинг зображень, блог або простір для обміну файлами, ми будемо дуже раді.
 
-## Розділи
-
-- [Канали завантаження](./upload/)
-- [Налаштування безпеки](./Safety/authentication-and-login-devices.md)
-- [Відкрита галерея, блог, федерація та інші функції](./Other/random-image-api-and-public-gallery.md)
-- [Налаштування сторінки](./Page/page-settings.md)
-
 ## Подяка open source
 
 Дякуємо open-source проєктам [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) і [Mizuki](https://github.com/LyraVoid/Mizuki) за їхній внесок.

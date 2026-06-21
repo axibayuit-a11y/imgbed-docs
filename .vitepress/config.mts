@@ -131,9 +131,7 @@ export default defineConfig({
     }
   },
   themeConfig: {
-    nav: [
-      { text: 'Docs', link: '/en/' }
-    ],
+    nav: [],
     sidebar,
     search: {
       provider: 'local'

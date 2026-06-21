@@ -21,13 +21,6 @@
 
 這個專案仍在持續完善。我們能力有限，但會盡全力把每一個功能都做清楚、做穩定、做好用。如果 ImgBed 能幫你更輕鬆地擁有自己的圖床、部落格或檔案分享空間，我們會非常開心。
 
-## 文件章節
-
-- [上傳渠道](./upload/)
-- [安全設定](./Safety/authentication-and-login-devices.md)
-- [公開圖庫、部落格、聯盟索引等功能](./Other/random-image-api-and-public-gallery.md)
-- [頁面設定](./Page/page-settings.md)
-
 ## 開源致謝
 
 在此感謝開源專案 [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) 和 [Mizuki](https://github.com/LyraVoid/Mizuki) 的貢獻。

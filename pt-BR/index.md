@@ -21,13 +21,6 @@ Nós não acreditamos em solução "tamanho único". Se você quer apenas guarda
 
 Este projeto continua em evolução. Nossa capacidade é limitada, mas vamos nos esforçar ao máximo para deixar cada recurso claro, estável e fácil de usar. Se o ImgBed ajudar você a ter seu próprio host de imagens, blog ou espaço de compartilhamento de arquivos com mais facilidade, ficaremos muito felizes.
 
-## Seções
-
-- [Canais de upload](./upload/)
-- [Configurações de segurança](./Safety/authentication-and-login-devices.md)
-- [Galeria pública, blog, federação e outros recursos](./Other/random-image-api-and-public-gallery.md)
-- [Configurações da página](./Page/page-settings.md)
-
 ## Agradecimentos ao código aberto
 
 Agradecemos as contribuições dos projetos de código aberto [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) e [Mizuki](https://github.com/LyraVoid/Mizuki).
