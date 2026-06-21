@@ -34,6 +34,16 @@
   overscroll-behavior: contain;
 }
 
+/* Keep the left docs navigation scrollable without showing the native bar. */
+.VPSidebar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.VPSidebar::-webkit-scrollbar {
+  display: none;
+}
+
 .vp-doc table:has(tr > :nth-child(2):last-child) th,
 .vp-doc table:has(tr > :nth-child(2):last-child) td {
   width: 50%;
