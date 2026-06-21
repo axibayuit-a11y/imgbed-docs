@@ -34,6 +34,5 @@
 
 ## 問題回報
 
-如果你在使用文件或部署過程中遇到問題，可以到 [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues) 回報。這個文件倉庫是開源的，我們會盡量根據回饋持續完善。
-
-也可以透過 Email 聯絡：<axibayuit@gmail.com>
+- 🐛 遇到 Bug 或功能建議：請提交 [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
+- 📧 其他聯絡：axibayuit@gmail.com

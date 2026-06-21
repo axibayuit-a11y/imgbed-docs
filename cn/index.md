@@ -34,6 +34,5 @@
 
 ## 问题反馈
 
-如果你在使用文档或部署过程中遇到问题，可以在 [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues) 反馈。这个文档仓库是开源的，我们会尽量根据反馈继续完善。
-
-也可以通过邮箱联系：<axibayuit@gmail.com>
+- 🐛 遇到 Bug 或功能建议：请提交 [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
+- 📧 其他联系：axibayuit@gmail.com

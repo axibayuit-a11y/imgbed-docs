@@ -32,8 +32,7 @@ Projekt se stále zlepšuje. Naše možnosti jsou omezené, ale uděláme maximu
 
 Děkujeme open-source projektům [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) a [Mizuki](https://github.com/LyraVoid/Mizuki) za jejich přínos.
 
-## Zpětná vazba a problémy
+## Zpětná vazba
 
-Pokud narazíte na problém při používání dokumentace nebo nasazování ImgBed, nahlaste ho v [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues). Tento repozitář dokumentace je open source a budeme ho dál vylepšovat podle zpětné vazby.
-
-Můžete nás také kontaktovat e-mailem: <axibayuit@gmail.com>
+- 🐛 Chyby nebo návrhy funkcí: pošlete do [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
+- 📧 Jiný kontakt: axibayuit@gmail.com

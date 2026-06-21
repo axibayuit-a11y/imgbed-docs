@@ -32,8 +32,7 @@ ImgBed از آپلود تصویر و مدیریت لینک شروع شد. اکن
 
 از پروژه‌های متن‌باز [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) و [Mizuki](https://github.com/LyraVoid/Mizuki) بابت مشارکتشان سپاسگزاریم.
 
-## بازخورد و گزارش مشکل
+## بازخورد
 
-اگر هنگام استفاده از مستندات یا استقرار ImgBed با مشکلی روبه‌رو شدید، آن را در [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues) گزارش کنید. این مخزن مستندات open source است و ما آن را بر اساس بازخوردها بهبود می‌دهیم.
-
-همچنین می‌توانید از طریق ایمیل تماس بگیرید: <axibayuit@gmail.com>
+- 🐛 باگ یا پیشنهاد قابلیت: در [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues) ثبت کنید
+- 📧 تماس دیگر: axibayuit@gmail.com

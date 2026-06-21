@@ -34,6 +34,5 @@ Special thanks to the open source projects [CloudFlare-ImgBed](https://github.co
 
 ## Feedback
 
-If you run into issues while using the docs or deploying ImgBed, please report them in [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues). This docs repository is open source, and we will keep improving it based on feedback.
-
-You can also contact us by email: <axibayuit@gmail.com>
+- 🐛 Bugs or feature requests: please submit [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
+- 📧 Other contact: axibayuit@gmail.com

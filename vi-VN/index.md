@@ -32,8 +32,7 @@ Dự án này vẫn đang tiếp tục hoàn thiện. Khả năng của chúng t
 
 Xin cảm ơn đóng góp của các dự án mã nguồn mở [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) và [Mizuki](https://github.com/LyraVoid/Mizuki).
 
-## Góp ý và báo lỗi
+## Góp ý
 
-Nếu bạn gặp vấn đề khi dùng tài liệu hoặc triển khai ImgBed, hãy báo tại [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues). Kho tài liệu này là open source, và chúng tôi sẽ tiếp tục cải thiện dựa trên phản hồi.
-
-Bạn cũng có thể liên hệ qua email: <axibayuit@gmail.com>
+- 🐛 Bug hoặc đề xuất tính năng: gửi tại [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
+- 📧 Liên hệ khác: axibayuit@gmail.com

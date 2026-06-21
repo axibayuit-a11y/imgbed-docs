@@ -34,6 +34,5 @@ Dziękujemy projektom open source [CloudFlare-ImgBed](https://github.com/MarSeve
 
 ## Opinie i problemy
 
-Jeśli napotkasz problem podczas korzystania z dokumentacji lub wdrażania ImgBed, zgłoś go w [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues). To repozytorium dokumentacji jest open source i będziemy je dalej ulepszać na podstawie zgłoszeń.
-
-Możesz też skontaktować się z nami e-mailowo: <axibayuit@gmail.com>
+- 🐛 Błędy lub sugestie funkcji: zgłoś w [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
+- 📧 Inny kontakt: axibayuit@gmail.com
