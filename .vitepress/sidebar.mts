@@ -59,7 +59,8 @@ const otherItems = [
 ] as const
 
 const pageItems = [
-  'Page/page-settings'
+  'Page/page-settings',
+  'Page/sponsor-coffee'
 ] as const
 
 const sectionLabels: Record<string, Record<string, string>> = {
