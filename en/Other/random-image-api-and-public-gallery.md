@@ -1,4 +1,4 @@
-# Random Image API and Public Gallery
+# Random Images and Public Gallery
 
 Both features are configured under:
 

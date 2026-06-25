@@ -1,4 +1,4 @@
-# API Ảnh Ngẫu Nhiên Và Thư Viện Công Khai
+# Ảnh Ngẫu Nhiên Và Thư Viện Công Khai
 
 Cả hai tính năng đều được cấu hình tại:
 

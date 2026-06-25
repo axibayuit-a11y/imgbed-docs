@@ -1,5 +1,4 @@
-# وصول WebDAV للموقع (Beta)
-
+# وصول WebDAV للموقع
 يعرض إعداد WebDAV في إعدادات الأمان موقع ImgBed لديك كنقطة وصول WebDAV.
 
 بعد تفعيله، يمكنك استخدام Windows أو macOS أو مديري الملفات على الهاتف أو أي عميل متوافق مع WebDAV لتصفح ملفات ImgBed ورفعها وحذفها وإدارتها كما لو كانت مجلدًا بعيدًا.
@@ -165,3 +164,4 @@ https://your-domain.com/dav
 | Yandex Disk | 30 MB |
 | pCloud | 30 MB |
 | WebDAV | 64 MB |
+

@@ -1,4 +1,4 @@
-# API losowych obrazów i publiczna galeria
+# Losowe obrazy i publiczna galeria
 
 Obie funkcje konfiguruje się w:
 

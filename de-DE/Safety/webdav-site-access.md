@@ -1,5 +1,4 @@
-# WebDAV-Zugriff auf die Website (Beta)
-
+# WebDAV-Zugriff auf die Website
 Die WebDAV-Einstellung in den Sicherheitseinstellungen stellt Ihre ImgBed-Website als WebDAV-Endpunkt bereit.
 
 Nach dem Aktivieren können Sie Windows, macOS, mobile Dateimanager oder jeden WebDAV-kompatiblen Client verwenden, um ImgBed-Dateien wie einen entfernten Ordner zu durchsuchen, hochzuladen, zu löschen und zu verwalten.
@@ -165,4 +164,5 @@ WebDAV-Clients verwenden nicht den Chunking-Ablauf für große Dateien der Uploa
 | Yandex Disk | 30 MB |
 | pCloud | 30 MB |
 | WebDAV | 64 MB |
+
 

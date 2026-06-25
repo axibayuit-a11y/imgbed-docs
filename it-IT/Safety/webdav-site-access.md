@@ -1,5 +1,4 @@
-# Accesso WebDAV al sito (Beta)
-
+# Accesso WebDAV al sito
 L'impostazione WebDAV in Sicurezza espone il tuo sito ImgBed come punto di accesso WebDAV.
 
 Dopo l'abilitazione, puoi usare Windows, macOS, gestori di file per dispositivi mobili o qualunque client compatibile con WebDAV per sfogliare, caricare, eliminare e gestire file ImgBed come una cartella remota.
@@ -165,4 +164,5 @@ I client WebDAV non usano il flusso a segmenti per file grandi della pagina di c
 | Yandex Disk | 30 MB |
 | pCloud | 30 MB |
 | WebDAV | 64 MB |
+
 

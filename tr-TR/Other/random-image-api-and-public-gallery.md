@@ -1,4 +1,4 @@
-# Rastgele Görsel API'si ve Herkese Açık Galeri
+# Rastgele Görseller ve Herkese Açık Galeri
 
 Her iki özellik de şuradan yapılandırılır:
 

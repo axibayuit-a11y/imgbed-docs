@@ -1,5 +1,4 @@
-# WebDAV-toegang tot de site (Beta)
-
+# WebDAV-toegang tot de site
 De WebDAV-instelling onder Beveiliging stelt je ImgBed-site beschikbaar als WebDAV-eindpunt.
 
 Na inschakelen kun je Windows, macOS, mobiele bestandsbeheerders of elke WebDAV-compatibele client gebruiken om ImgBed-bestanden te bekijken, uploaden, verwijderen en beheren alsof het een externe map is.
@@ -165,3 +164,4 @@ WebDAV-clients gebruiken niet de chunk-uploadflow van de uploadpagina in de webi
 | Yandex Disk | 30 MB |
 | pCloud | 30 MB |
 | WebDAV | 64 MB |
+

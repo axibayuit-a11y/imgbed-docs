@@ -26,6 +26,8 @@ const VALID_LABELS = new Set(['all-ages', 'r12', 'r16', 'r18', 'None']);
 const VALID_LIST_TYPES = new Set(['None', 'White', 'Block']);
 const VALID_TAG_ACTIONS = new Set(['set', 'add', 'remove']);
 const BATCH_LIMIT = 15;
+const SHORT_UPLOAD_TOKEN_MAX_AGE_MS = 24 * 60 * 60 * 1000;
+const SHORT_UPLOAD_TOKEN_MAX_MINUTES = 1440;
 
 function printHelp() {
   process.stdout.write(`ImgBed API Token manage tool
@@ -88,8 +90,8 @@ Action parameters:
   --owner <owner>               Token owner for --create-upload-token.
   --default-upload-channel <key>
                                 Default upload channel for the short upload token.
-  --expires-in-minutes <n>      Expiration relative to now for --create-upload-token.
-  --expires-at <ms>             Absolute expiration timestamp in milliseconds.
+  --expires-in-minutes <n>      Expiration relative to now for --create-upload-token. Maximum: 1440.
+  --expires-at <ms>             Absolute expiration timestamp in milliseconds. Maximum: 24 hours from now.
 
 Tool options:
   --batch-size <n>              Batch size for batch actions. Default: 15, maximum: 15.
@@ -371,13 +373,17 @@ function parsePositiveInteger(value, label) {
 }
 
 function resolveExpiresAt(args) {
+  const now = Date.now();
   if (args.expiresAt) {
     const parsed = Number(args.expiresAt);
-    if (!Number.isFinite(parsed) || parsed <= Date.now()) throw new Error('--expires-at must be a future millisecond timestamp');
+    if (!Number.isFinite(parsed) || parsed <= now) throw new Error('--expires-at must be a future millisecond timestamp');
+    if (parsed > now + SHORT_UPLOAD_TOKEN_MAX_AGE_MS) throw new Error('--expires-at must be within 24 hours');
     return Math.floor(parsed);
   }
   if (args.expiresInMinutes) {
-    return Date.now() + parsePositiveInteger(args.expiresInMinutes, '--expires-in-minutes') * 60 * 1000;
+    const minutes = parsePositiveInteger(args.expiresInMinutes, '--expires-in-minutes');
+    if (minutes > SHORT_UPLOAD_TOKEN_MAX_MINUTES) throw new Error('--expires-in-minutes must be 1440 or less');
+    return now + minutes * 60 * 1000;
   }
   throw new Error('--create-upload-token requires --expires-in-minutes or --expires-at');
 }

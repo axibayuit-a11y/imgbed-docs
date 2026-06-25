@@ -1,4 +1,4 @@
-# API für zufällige Bilder und öffentliche Galerie
+# Zufällige Bilder und öffentliche Galerie
 
 Beide Funktionen werden hier konfiguriert:
 

@@ -1,5 +1,4 @@
-# WebDAV Site Access (Beta)
-
+# WebDAV Site Access
 The WebDAV setting in Security Settings exposes your ImgBed site as a WebDAV endpoint.
 
 After it is enabled, you can use Windows, macOS, mobile file managers, or any WebDAV-compatible client to browse, upload, delete, and manage ImgBed files like a remote folder.
@@ -165,3 +164,4 @@ WebDAV clients do not use the browser upload page's large-file chunking flow. Fo
 | Yandex Disk | 30 MB |
 | pCloud | 30 MB |
 | WebDAV | 64 MB |
+

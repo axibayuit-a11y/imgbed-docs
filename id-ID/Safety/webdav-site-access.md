@@ -1,5 +1,4 @@
-# Akses Situs WebDAV (Beta)
-
+# Akses Situs WebDAV
 Pengaturan WebDAV di Pengaturan Keamanan membuat situs ImgBed Anda tersedia sebagai titik akhir WebDAV.
 
 Setelah diaktifkan, Anda dapat memakai Windows, macOS, pengelola berkas seluler, atau klien apa pun yang kompatibel dengan WebDAV untuk menelusuri, mengunggah, menghapus, dan mengelola berkas ImgBed seperti folder jarak jauh.
@@ -165,3 +164,4 @@ Klien WebDAV tidak memakai alur pemotongan berkas besar milik halaman unggah per
 | Yandex Disk | 30 MB |
 | pCloud | 30 MB |
 | WebDAV | 64 MB |
+

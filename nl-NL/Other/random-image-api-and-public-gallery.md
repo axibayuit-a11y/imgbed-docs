@@ -1,4 +1,4 @@
-# API voor willekeurige afbeeldingen en openbare galerie
+# Willekeurige afbeeldingen en openbare galerie
 
 Beide functies configureer je onder:
 

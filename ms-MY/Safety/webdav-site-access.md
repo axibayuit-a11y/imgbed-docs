@@ -1,5 +1,4 @@
-# Akses Tapak WebDAV (Beta)
-
+# Akses Tapak WebDAV
 Tetapan WebDAV dalam Tetapan Keselamatan mendedahkan tapak ImgBed anda sebagai titik akhir WebDAV.
 
 Selepas diaktifkan, anda boleh menggunakan Windows, macOS, pengurus fail mudah alih atau mana-mana klien yang serasi dengan WebDAV untuk menyemak imbas, memuat naik, memadam dan mengurus fail ImgBed seperti folder jauh.
@@ -165,3 +164,4 @@ Klien WebDAV tidak menggunakan aliran pemecahan fail besar milik halaman muat na
 | Yandex Disk | 30 MB |
 | pCloud | 30 MB |
 | WebDAV | 64 MB |
+

@@ -1,4 +1,4 @@
-# API náhodných obrázků a veřejná galerie
+# Náhodné obrázky a veřejná galerie
 
 Obě funkce se nastavují zde:
 

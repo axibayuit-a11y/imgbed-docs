@@ -1,5 +1,4 @@
-# WebDAV Site Access (Beta)
-
+# WebDAV Site Access
 Security Settings ထဲရှိ WebDAV setting သည် သင့် ImgBed site ကို WebDAV အဆုံးမှတ် အဖြစ် ထုတ်ပြသည်။
 
 ဖွင့်ပြီးနောက် Windows, macOS, mobile file managers သို့မဟုတ် WebDAV-compatible client မည်သည့်တစ်ခုကိုမဆို အသုံးပြု၍ ImgBed files များကို remote folder ကဲ့သို့ browse, upload, delete နှင့် manage လုပ်နိုင်သည်။
@@ -165,4 +164,5 @@ WebDAV clients များသည် ဘရောက်ဇာ upload page ၏ la
 | Yandex Disk | 30 MB |
 | pCloud | 30 MB |
 | WebDAV | 64 MB |
+
 

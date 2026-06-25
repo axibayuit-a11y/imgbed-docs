@@ -1,4 +1,4 @@
-# API Imej Rawak dan Galeri Awam
+# Imej Rawak dan Galeri Awam
 
 Kedua-dua fungsi dikonfigurasikan di bawah:
 

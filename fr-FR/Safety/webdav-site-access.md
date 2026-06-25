@@ -1,5 +1,4 @@
-# Accès WebDAV au Site (Beta)
-
+# Accès WebDAV au Site
 Le paramètre WebDAV dans les paramètres de sécurité expose votre site ImgBed comme point de terminaison WebDAV.
 
 Une fois activé, vous pouvez utiliser Windows, macOS, des gestionnaires de fichiers mobiles ou tout client compatible WebDAV pour parcourir, téléverser, supprimer et gérer les fichiers ImgBed comme un dossier distant.
@@ -165,4 +164,5 @@ Les clients WebDAV n’utilisent pas le flux de découpage des gros fichiers de 
 | Yandex Disk | 30 MB |
 | pCloud | 30 MB |
 | WebDAV | 64 MB |
+
 

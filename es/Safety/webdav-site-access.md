@@ -1,5 +1,4 @@
-# Acceso WebDAV al sitio (Beta)
-
+# Acceso WebDAV al sitio
 La configuración WebDAV en los ajustes de seguridad expone su sitio ImgBed como un punto de conexión WebDAV.
 
 Después de activarla, puede usar Windows, macOS, gestores de archivos móviles o cualquier cliente compatible con WebDAV para explorar, subir, eliminar y gestionar archivos de ImgBed como si fueran una carpeta remota.
@@ -165,4 +164,5 @@ Los clientes WebDAV no usan el flujo de fragmentación de archivos grandes de la
 | Yandex Disk | 30 MB |
 | pCloud | 30 MB |
 | WebDAV | 64 MB |
+
 

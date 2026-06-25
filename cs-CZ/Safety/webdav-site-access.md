@@ -1,5 +1,4 @@
-# WebDAV přístup k webu (Beta)
-
+# WebDAV přístup k webu
 Nastavení WebDAV v nastavení zabezpečení zpřístupní váš web ImgBed jako koncový bod WebDAV.
 
 Po zapnutí můžete pomocí Windows, macOS, mobilních správců souborů nebo libovolného WebDAV kompatibilního klienta procházet, nahrávat, mazat a spravovat soubory ImgBed jako vzdálenou složku.
@@ -165,6 +164,7 @@ WebDAV klienti nepoužívají dělené nahrávání velkých souborů ze stránk
 | Yandex Disk | 30 MB |
 | pCloud | 30 MB |
 | WebDAV | 64 MB |
+
 
 
 

@@ -1,4 +1,4 @@
-# API per immagini casuali e galleria pubblica
+# Immagini casuali e galleria pubblica
 
 Entrambe le funzioni si configurano in:
 

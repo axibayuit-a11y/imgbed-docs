@@ -1,5 +1,4 @@
-# Truy cập trang qua WebDAV (Beta)
-
+# Truy cập trang qua WebDAV
 Cài đặt WebDAV trong Security Settings hiển thị trang ImgBed của bạn như một điểm cuối WebDAV.
 
 Sau khi bật, bạn có thể dùng Windows, macOS, trình quản lý tệp trên thiết bị di động hoặc bất kỳ máy khách tương thích WebDAV nào để duyệt, tải lên, xóa và quản lý tệp ImgBed như một thư mục từ xa.
@@ -165,3 +164,4 @@ Máy khách WebDAV không dùng quy trình tải lên tệp lớn theo từng ph
 | Yandex Disk | 30 MB |
 | pCloud | 30 MB |
 | WebDAV | 64 MB |
+

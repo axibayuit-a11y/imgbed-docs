@@ -1,4 +1,4 @@
-# API d’image aléatoire et galerie publique
+# Images aléatoires et galerie publique
 
 Ces deux fonctionnalités se configurent sous :
 

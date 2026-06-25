@@ -1,4 +1,4 @@
-# API de imagem aleatória e galeria pública
+# Imagens aleatórias e galeria pública
 
 Ambos os recursos são configurados em:
 

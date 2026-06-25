@@ -1,5 +1,4 @@
-# Dostęp WebDAV do strony (Beta)
-
+# Dostęp WebDAV do strony
 Ustawienie WebDAV w Ustawieniach bezpieczeństwa udostępnia Twoją stronę ImgBed jako punkt końcowy WebDAV.
 
 Po włączeniu możesz używać Windows, macOS, mobilnych menedżerów plików lub dowolnego klienta zgodnego z WebDAV do przeglądania, przesyłania, usuwania i zarządzania plikami ImgBed jak zdalnym katalogiem.
@@ -165,3 +164,4 @@ Klienci WebDAV nie używają przeglądarkowego mechanizmu przesyłania częścio
 | Yandex Disk | 30 MB |
 | pCloud | 30 MB |
 | WebDAV | 64 MB |
+

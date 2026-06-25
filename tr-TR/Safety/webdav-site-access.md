@@ -1,5 +1,4 @@
-# WebDAV Site Access (Beta)
-
+# WebDAV Site Access
 Güvenlik Ayarları içindeki WebDAV ayarı, ImgBed sitenizi bir WebDAV uç noktası olarak sunar.
 
 Etkinleştirildikten sonra Windows, macOS, mobil dosya yöneticileri veya WebDAV uyumlu herhangi bir istemciyle ImgBed dosyalarını uzak klasör gibi gezebilir, yükleyebilir, silebilir ve yönetebilirsiniz.
@@ -165,3 +164,4 @@ WebDAV istemcileri, tarayıcı yükleme sayfasının büyük dosya parçalama ak
 | Yandex Disk | 30 MB |
 | pCloud | 30 MB |
 | WebDAV | 64 MB |
+

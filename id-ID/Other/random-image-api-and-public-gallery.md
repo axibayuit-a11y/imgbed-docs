@@ -1,4 +1,4 @@
-# API Gambar Acak dan Galeri Publik
+# Gambar Acak dan Galeri Publik
 
 Kedua fitur ini dikonfigurasi di:
 
