@@ -2,7 +2,7 @@
 
 Uploaden met een API Token is bedoeld voor scripts, automatisering en programma's van derden. Je hoeft de webpagina niet te openen: met het ImgBed-adres, het Token, het bestandspad en een echt uploadkanaal kan het bestand worden geüpload en krijg je na afloop de bestandslink terug.
 
-![API Token bewerken](../../image/Safety/apitoken/编辑api token.png)
+![API Token bewerken](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Voorbereiding
 

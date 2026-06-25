@@ -4,7 +4,7 @@ La gestion avec API Token est destinée aux scripts d’automatisation, outils d
 
 Le droit de gestion n’expose que les opérations légères adaptées aux scripts. Les opérations lourdes qui exigent une confirmation dans le navigateur, des tâches par lots côté interface web ou un nettoyage d’index fédéré doivent rester traitées dans le panneau d’administration du navigateur.
 
-![Modifier l’API Token](../../image/Safety/apitoken/编辑api token.png)
+![Modifier l’API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Préparation
 

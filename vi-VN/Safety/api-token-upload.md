@@ -2,7 +2,7 @@
 
 Tải lên bằng API Token dành cho tập lệnh, tác vụ tự động và chương trình của bên thứ ba. Bạn không cần mở giao diện web. Chỉ cần cung cấp URL trang, token, đường dẫn tệp cục bộ và một kênh tải lên thật, tệp có thể được tải lên ImgBed và phản hồi sẽ bao gồm URL của tệp.
 
-![Chỉnh sửa API Token](../../image/Safety/apitoken/编辑api token.png)
+![Chỉnh sửa API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Trước khi bắt đầu
 

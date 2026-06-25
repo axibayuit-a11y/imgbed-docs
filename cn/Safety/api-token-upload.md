@@ -2,7 +2,7 @@
 
 API Token 上传适合给脚本、自动化任务和第三方程序使用。它不需要打开网页，只要带上站点地址、Token、文件路径和上传渠道，就可以把文件上传到图床，并在成功后拿到文件链接。
 
-![编辑 API Token](../../image/Safety/apitoken/编辑api token.png)
+![编辑 API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## 准备工作
 

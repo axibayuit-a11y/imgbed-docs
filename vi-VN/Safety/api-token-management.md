@@ -4,7 +4,7 @@ Quản lý cấu hình bằng API Token dành cho tập lệnh tự động, cô
 
 Quyền quản lý chỉ cung cấp các thao tác nhẹ phù hợp cho tập lệnh. Những thao tác nặng cần xác nhận trong trình duyệt, tác vụ hàng loạt ở giao diện, hoặc dọn dẹp chỉ mục liên kết vẫn cần được xử lý trong bảng quản trị trên trình duyệt.
 
-![Chỉnh sửa API Token](../../image/Safety/apitoken/编辑api token.png)
+![Chỉnh sửa API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Trước khi bắt đầu
 

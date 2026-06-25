@@ -2,7 +2,7 @@
 
 Przesyłanie za pomocą API Token jest przeznaczone dla skryptów, zadań automatyzacji i programów zewnętrznych. Nie trzeba otwierać interfejsu WWW. Jeśli podasz adres URL witryny, token, lokalną ścieżkę pliku oraz rzeczywisty kanał przesyłania, plik zostanie przesłany do ImgBed, a odpowiedź będzie zawierać jego adres URL.
 
-![Edycja API Token](../../image/Safety/apitoken/编辑api token.png)
+![Edycja API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Zanim zaczniesz
 

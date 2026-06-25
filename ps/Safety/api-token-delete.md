@@ -4,7 +4,7 @@
 
 ړنګول د بدلون راوستلو عمل دی. کله چې امر وچلېږي، فایلونه په رښتیا ړنګېږي. ښه ده چې لومړی په `imgbed-token-list.mjs` سره د ړنګولو لپاره اړین `fileId` کره وګورئ، بیا هغه ID د ړنګولو سکریپټ ته ورکړئ.
 
-![API Token سمول](../../image/Safety/apitoken/编辑api token.png)
+![API Token سمول](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## چمتووالی
 

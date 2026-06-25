@@ -4,7 +4,7 @@ La eliminación con API Token está pensada para scripts, tareas automatizadas y
 
 Eliminar es una operación de escritura y borra datos reales cuando se ejecuta el comando. Se recomienda usar primero `imgbed-token-list.mjs` para confirmar los valores de `fileId` que quieres borrar, y después pasarlos al script de eliminación.
 
-![Editar API Token](../../image/Safety/apitoken/编辑api token.png)
+![Editar API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Preparación
 

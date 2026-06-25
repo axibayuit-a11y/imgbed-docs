@@ -2,7 +2,7 @@
 
 API Token ile yükleme; betikler, otomasyon işleri ve üçüncü taraf programlar için tasarlanmıştır. Web UI'yi açmanız gerekmez. Site URL'sini, token değerini, yerel dosya yolunu ve gerçek bir yükleme kanalını sağladığınız sürece dosya ImgBed'e yüklenebilir ve yanıt dosya URL'sini içerir.
 
-![API Token düzenleme](../../image/Safety/apitoken/编辑api token.png)
+![API Token düzenleme](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Başlamadan Önce
 

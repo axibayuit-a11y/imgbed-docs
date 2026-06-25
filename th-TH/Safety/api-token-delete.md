@@ -4,7 +4,7 @@
 
 การลบเป็นการดำเนินการเขียน และจะลบข้อมูลจริงหลังจากคำสั่งทำงาน ใช้ `imgbed-token-list.mjs` ก่อนเพื่อยืนยันค่า `fileId` ที่ต้องการลบ แล้วจึงส่ง ID เหล่านั้นให้สคริปต์ลบ
 
-![แก้ไข API Token](../../image/Safety/apitoken/编辑api token.png)
+![แก้ไข API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## ก่อนเริ่ม
 

@@ -4,7 +4,7 @@ Das Löschen per API Token ist für Skripte, Automatisierungen und externe Progr
 
 Löschen ist eine schreibende Operation. Nach Ausführung des Befehls werden die Daten tatsächlich entfernt. Prüfe am besten zuerst mit `imgbed-token-list.mjs`, welche `fileId`-Werte gelöscht werden sollen, und übergib diese IDs danach an das Löschskript.
 
-![API Token bearbeiten](../../image/Safety/apitoken/编辑api token.png)
+![API Token bearbeiten](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Vorbereitung
 

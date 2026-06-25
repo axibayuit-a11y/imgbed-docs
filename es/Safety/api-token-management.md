@@ -4,7 +4,7 @@ La gestión con API Token está pensada para scripts de automatización, herrami
 
 El permiso de gestión solo expone operaciones ligeras aptas para scripts. Las operaciones pesadas que requieren confirmación en navegador, tareas por lotes de la interfaz web o limpieza de índices federados deben seguir haciéndose desde el panel en el navegador.
 
-![Editar API Token](../../image/Safety/apitoken/编辑api token.png)
+![Editar API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Preparación
 

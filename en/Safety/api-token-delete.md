@@ -4,7 +4,7 @@ API Token file deletion is intended for scripts, automation jobs, and third-part
 
 Deletion is a write operation and really deletes data after the command runs. Use `imgbed-token-list.mjs` first to confirm the `fileId` values you want to delete, then pass those IDs to the deletion script.
 
-![Edit API Token](../../image/Safety/apitoken/编辑api token.png)
+![Edit API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Before You Start
 

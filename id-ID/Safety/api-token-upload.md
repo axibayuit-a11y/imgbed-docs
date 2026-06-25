@@ -2,7 +2,7 @@
 
 Unggahan melalui API Token ditujukan untuk skrip, pekerjaan otomatis, dan aplikasi pihak ketiga. Anda tidak perlu membuka antarmuka web ImgBed; cukup berikan alamat situs, API Token, jalur berkas lokal, dan kanal unggahan yang nyata. Setelah unggahan berhasil, skrip akan mengembalikan tautan berkas.
 
-![Edit API Token](../../image/Safety/apitoken/编辑api token.png)
+![Edit API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Persiapan
 

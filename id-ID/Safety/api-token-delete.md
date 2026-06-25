@@ -4,7 +4,7 @@ Penghapusan berkas melalui API Token ditujukan untuk skrip, pekerjaan otomatis, 
 
 Penghapusan adalah operasi tulis. Setelah perintah dijalankan, data benar-benar dihapus. Sebaiknya periksa dahulu nilai `fileId` yang akan dihapus dengan `imgbed-token-list.mjs`, lalu kirim ID tersebut ke skrip penghapusan.
 
-![Edit API Token](../../image/Safety/apitoken/编辑api token.png)
+![Edit API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Persiapan
 

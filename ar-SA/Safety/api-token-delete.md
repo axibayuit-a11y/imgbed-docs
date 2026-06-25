@@ -4,7 +4,7 @@
 
 الحذف عملية كتابة، وهو يحذف البيانات فعليًا بعد تشغيل الأمر. استخدم `imgbed-token-list.mjs` أولًا لتأكيد قيم `fileId` التي تريد حذفها، ثم مرّر هذه المعرّفات إلى سكربت الحذف.
 
-![تعديل API Token](../../image/Safety/apitoken/编辑api token.png)
+![تعديل API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## قبل البدء
 

@@ -4,7 +4,7 @@ API Token দিয়ে ফাইল মুছে ফেলা স্ক্রি
 
 মুছে ফেলা একটি লেখার কাজ এবং কমান্ড চালানোর পর ডেটা সত্যিই মুছে যায়. আগে `imgbed-token-list.mjs` ব্যবহার করে যে `fileId` মানগুলো মুছতে চান সেগুলো নিশ্চিত করুন, তারপর সেই IDগুলো মুছে ফেলার স্ক্রিপ্টে দিন.
 
-![API Token সম্পাদনা](../../image/Safety/apitoken/编辑api token.png)
+![API Token সম্পাদনা](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## শুরু করার আগে
 

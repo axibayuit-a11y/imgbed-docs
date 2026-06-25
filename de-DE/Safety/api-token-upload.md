@@ -2,7 +2,7 @@
 
 Das Hochladen per API Token ist für Skripte, Automatisierungen und externe Programme gedacht. Die Weboberfläche muss nicht geöffnet werden: Website-Adresse, API Token, lokaler Dateipfad und ein echter Hochladekanal reichen aus. Nach erfolgreichem Hochladen gibt das Skript den Dateilink zurück.
 
-![API Token bearbeiten](../../image/Safety/apitoken/编辑api token.png)
+![API Token bearbeiten](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Vorbereitung
 

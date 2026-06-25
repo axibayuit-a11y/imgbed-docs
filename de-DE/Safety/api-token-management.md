@@ -4,7 +4,7 @@ Die Konfigurationsverwaltung per API Token ist für Automatisierungsskripte, Bet
 
 Die Verwaltungsberechtigung ist nur für leichte, skriptgeeignete Operationen vorgesehen. Schwere Operationen mit Bestätigung in der Weboberfläche, stapelweiser Verarbeitung im Weboberfläche oder Bereinigung von Föderationsindizes bleiben im Administrationsbereich der Weboberfläche.
 
-![API Token bearbeiten](../../image/Safety/apitoken/编辑api token.png)
+![API Token bearbeiten](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Vorbereitung
 

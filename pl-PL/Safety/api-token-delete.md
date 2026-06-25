@@ -4,7 +4,7 @@ Usuwanie przez API Token jest przeznaczone dla skryptów, automatyzacji i progra
 
 Usuwanie jest operacją zapisu. Po wykonaniu polecenia pliki zostaną naprawdę usunięte. Najpierw sprawdź w `imgbed-token-list.mjs`, które `fileId` mają zostać usunięte, a dopiero potem przekaż te ID do skryptu usuwania.
 
-![Edycja API Token](../../image/Safety/apitoken/编辑api token.png)
+![Edycja API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Przygotowanie
 

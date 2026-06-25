@@ -4,7 +4,7 @@ La suppression de fichiers avec API Token est destinée aux scripts, tâches aut
 
 La suppression est une opération d’écriture. Une fois la commande exécutée, les données sont réellement supprimées. Il est recommandé d’utiliser d’abord `imgbed-token-list.mjs` pour vérifier les valeurs `fileId` à supprimer, puis de transmettre ces identifiants au script de suppression.
 
-![Modifier l’API Token](../../image/Safety/apitoken/编辑api token.png)
+![Modifier l’API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Préparation
 

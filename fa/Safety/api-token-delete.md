@@ -4,7 +4,7 @@
 
 حذف یک عملیات نوشتنی است و پس از اجرای فرمان، داده‌ها واقعاً حذف می‌شوند. بهتر است ابتدا با `imgbed-token-list.mjs` مقدارهای `fileId` مورد نظر را بررسی کنید و سپس همان شناسه‌ها را به اسکریپت حذف بدهید.
 
-![ویرایش API Token](../../image/Safety/apitoken/编辑api token.png)
+![ویرایش API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## آماده‌سازی
 

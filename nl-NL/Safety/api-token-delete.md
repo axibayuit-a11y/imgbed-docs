@@ -4,7 +4,7 @@ Verwijderen met een API Token is bedoeld voor scripts, automatisering en program
 
 Verwijderen is een schrijfactie. Nadat de opdracht is uitgevoerd, worden de bestanden echt verwijderd. Controleer daarom eerst met `imgbed-token-list.mjs` welke `fileId` je wilt verwijderen en geef die ID's daarna door aan het verwijderingsscript.
 
-![API Token bewerken](../../image/Safety/apitoken/编辑api token.png)
+![API Token bewerken](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Voorbereiding
 

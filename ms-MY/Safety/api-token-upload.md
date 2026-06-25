@@ -2,7 +2,7 @@
 
 Muat naik melalui API Token sesuai untuk skrip, tugas automasi dan aplikasi pihak ketiga. Anda tidak perlu membuka antara muka web ImgBed. Selagi anda memberikan alamat tapak, API Token, laluan fail tempatan dan saluran muat naik sebenar, skrip akan mengembalikan pautan fail selepas muat naik berjaya.
 
-![Sunting API Token](../../image/Safety/apitoken/编辑api token.png)
+![Sunting API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Sebelum Bermula
 

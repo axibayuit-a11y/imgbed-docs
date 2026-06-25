@@ -4,7 +4,7 @@ Skrip padam melalui API Token sesuai untuk skrip, automasi dan aplikasi pihak ke
 
 Pemadaman ialah operasi tulis. Selepas arahan dijalankan, fail benar-benar akan dipadam. Sebaiknya semak dahulu `fileId` yang hendak dipadam dengan `imgbed-token-list.mjs`, kemudian serahkan ID tersebut kepada skrip padam.
 
-![Sunting API Token](../../image/Safety/apitoken/编辑api token.png)
+![Sunting API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Persediaan
 

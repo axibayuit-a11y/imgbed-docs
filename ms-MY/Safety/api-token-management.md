@@ -4,7 +4,7 @@ Pengurusan konfigurasi melalui API Token sesuai untuk skrip automasi, alat opera
 
 Kebenaran pengurusan ini hanya membuka operasi ringan yang sesuai untuk skrip. Operasi berat yang memerlukan pengesahan dalam pelayar, kerja berperingkat dalam antara muka web atau pembersihan indeks federasi tetap perlu dilakukan daripada panel pentadbir dalam pelayar.
 
-![Sunting API Token](../../image/Safety/apitoken/编辑api token.png)
+![Sunting API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Sebelum Bermula
 

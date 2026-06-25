@@ -4,7 +4,7 @@ API Token configuration management is intended for automation scripts, operation
 
 Management permission only exposes lightweight operations suitable for scripts. Heavy operations that require browser confirmation, frontend batch jobs, or federation index cleanup still need to be handled in the browser admin panel.
 
-![Edit API Token](../../image/Safety/apitoken/编辑api token.png)
+![Edit API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Before You Start
 

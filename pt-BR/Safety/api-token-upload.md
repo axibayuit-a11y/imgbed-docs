@@ -2,7 +2,7 @@
 
 O upload com API Token é indicado para scripts, tarefas automatizadas e programas de terceiros. Você não precisa abrir a página do site: basta informar o endereço do ImgBed, o Token, o caminho do arquivo e o canal real de upload para enviar o arquivo e receber o link final.
 
-![Editar API Token](../../image/Safety/apitoken/编辑api token.png)
+![Editar API Token](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## Preparação
 

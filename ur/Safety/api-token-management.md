@@ -4,7 +4,7 @@ API Token configuration management خودکار اسکرپٹس، operations tool
 
 Management permission صرف ایسی lightweight operations ظاہر کرتی ہے جو scripts کے لیے مناسب ہوں۔ Heavy operations جن کے لیے براؤزر confirmation، فرنٹ اینڈ batch jobs، یا federation index cleanup درکار ہو، اب بھی براؤزر ایڈمن پینل میں سنبھالنی ہوں گی۔
 
-![API Token میں ترمیم](../../image/Safety/apitoken/编辑api token.png)
+![API Token میں ترمیم](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## شروع کرنے سے پہلے
 

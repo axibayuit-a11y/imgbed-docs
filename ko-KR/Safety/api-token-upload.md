@@ -2,7 +2,7 @@
 
 API Token 업로드는 스크립트, 자동화 작업, 외부 프로그램에서 ImgBed로 파일을 올릴 때 사용합니다. 웹 화면을 열지 않아도 사이트 주소, Token, 로컬 파일 경로, 실제 업로드 채널을 지정하면 파일을 업로드하고 결과로 파일 URL을 받을 수 있습니다.
 
-![API Token 편집](../../image/Safety/apitoken/编辑api token.png)
+![API Token 편집](../../image/Safety/apitoken/编辑api%20token.png)
 
 ## 준비하기
 
