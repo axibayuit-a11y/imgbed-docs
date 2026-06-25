@@ -1,4 +1,4 @@
-# Como usar o blog
+# Blog
 
 O recurso de blog adiciona uma página de blog independente ao seu site ImgBed.
 
