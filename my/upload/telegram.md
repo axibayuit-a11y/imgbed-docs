@@ -1,122 +1,122 @@
-# Telegram Channel ထည့်သွင်းခြင်း
+# Telegram ချန်နယ် ထည့်သွင်းခြင်း
 
-## စမလုပ်ခင် လိုအပ်တာတွေ
+## မစတင်မီ လိုအပ်သည့်အရာများ
 
-| လိုအပ်ချက် | အသုံးပြုရတဲ့အကြောင်း |
+| လိုအပ်ချက် | ရည်ရွယ်ချက် |
 | --- | --- |
-| Telegram account | bot နဲ့ storage channel ဖန်တီးဖို့ |
-| `@BotFather` | Telegram bot ဖန်တီးဖို့ |
-| Telegram channel | files တွေကို သိမ်းမယ့် နောက်ဆုံးနေရာ |
-| `@userinfobot` | channel `Chat ID` ရှာဖို့ |
+| Telegram အကောင့် | Bot နှင့် storage channel ဖန်တီးရန် အသုံးပြုသည်။ |
+| `@BotFather` | Telegram bot ဖန်တီးရန် အသုံးပြုသည်။ |
+| Telegram channel တစ်ခု | ဖိုင်များအတွက် နောက်ဆုံး storage destination။ |
+| `@userinfobot` | Channel `Chat ID` ကိုရှာရန် အသုံးပြုသည်။ |
 
-## ဘယ်နေရာမှာ ထည့်မလဲ
+## ထည့်သွင်းမည့်နေရာ
 
-1. System Settings ကိုဖွင့်ပါ။
-2. Upload Settings ကိုသွားပါ။
-3. ညာဘက်အပေါ်ထောင့်က Add Channel ကိုနှိပ်ပါ။
+1. စနစ် ဆက်တင်များ ကိုဖွင့်ပါ။
+2. အပ်လုဒ် ဆက်တင်များ သို့သွားပါ။
+3. ညာဘက်အပေါ်ထောင့်ရှိ ချန်နယ် ထည့်ရန် ကိုနှိပ်ပါ။
 4. `Telegram` ကိုရွေးပါ။
 
-## Field Reference
+## အကွက် ရည်ညွှန်းချက်
 
-| Field | အသုံးပြုပုံ | Required |
+| အကွက် | လုပ်ဆောင်ချက် | လိုအပ်မှု |
 | --- | --- | --- |
-| Channel name | ဒီ channel ကိုမှတ်မိလွယ်စေမယ့်အမည်၊ ဥပမာ `Telegram Primary`။ | Required |
-| Active | ဒီ channel ကို enable/disable လုပ်ရန်။ | Recommended |
-| Bot Token | Telegram bot ရဲ့ token။ | Required |
-| Session ID (Chat ID) | Telegram channel ရဲ့ ID။ | Required |
-| Relay Proxy URL (optional) | Telegram access မတည်ငြိမ်တဲ့အခါပဲသုံးပါ။ `https://` ပါတဲ့ full proxy URL ထည့်ပါ။ | Optional |
-| Remark | နောက်ပိုင်း maintenance အတွက် မှတ်ချက်။ | Optional |
+| ချန်နယ်အမည် | ဤ channel အတွက် မှတ်မိလွယ်သောအမည်၊ ဥပမာ "Telegram Primary"။ | လိုအပ်သည် |
+| Active | ဤ channel ကို enable သို့မဟုတ် disable လုပ်သည်။ | အကြံပြုသည် |
+| Bot Token | သင်၏ Telegram bot token။ | လိုအပ်သည် |
+| Session ID (Chat ID) | Telegram channel ၏ ID။ | လိုအပ်သည် |
+| Relay Proxy URL (ရွေးချယ်နိုင်သည်) | Telegram access မတည်ငြိမ်သည့်အခါမှသာ အသုံးပြုပါ။ `https://` ပါဝင်သော proxy URL အပြည့်အစုံကို ထည့်ပါ။ | ရွေးချယ်နိုင်သည် |
+| မှတ်ချက် | နောင် maintenance အတွက် မှတ်ချက်များ။ | ရွေးချယ်နိုင်သည် |
 
-## Setup Steps
+## ပြင်ဆင်မှု အဆင့်များ
 
 ### 1. Telegram Bot ဖန်တီးပါ
 
 1. Telegram ကိုဖွင့်ပြီး `@BotFather` ကိုရှာပါ။
-2. chat ကိုဖွင့်ပြီး `Start` ကိုနှိပ်ပါ။
-3. `/newbot` ပို့ပါ။
-4. prompt အတိုင်း bot display name ထည့်ပါ။
-5. prompt အတိုင်း bot username ထည့်ပါ။ username က များသောအားဖြင့် `bot` နဲ့ဆုံးရပါမယ်။
-6. bot ဖန်တီးပြီးရင် `@BotFather` က bot token ပြန်ပေးပါမယ်။
+2. Chat ကိုဖွင့်ပြီး `Start` ကိုနှိပ်ပါ။
+3. `/newbot` ကိုပို့ပါ။
+4. Bot display name ထည့်ရန် prompt များကိုလိုက်နာပါ။
+5. Bot အသုံးပြုသူအမည် ထည့်ရန် prompt များကိုလိုက်နာပါ။ အသုံးပြုသူအမည် သည် ပုံမှန်အားဖြင့် `bot` ဖြင့်ဆုံးရမည်။
+6. Bot ဖန်တီးပြီးနောက် `@BotFather` သည် bot token ကိုပြန်ပေးမည်။
 
-ဒီ token ကို ImgBed ထဲက `Bot Token` မှာထည့်ရပါမယ်။
+ဤ token သည် ImgBed ထဲတွင် ထည့်ရမည့် `Bot Token` ဖြစ်သည်။
 
-![Save the bot token](../../image/upload/telegram/保存机器人令牌.png)
+![Bot token သိမ်းခြင်း](../../image/upload/telegram/保存机器人令牌.png)
 
 ### 2. Channel ဖန်တီးပါ
 
-1. Telegram မှာ New Channel ကိုနှိပ်ပါ။
-2. channel name ထည့်ပါ။
-3. channel ဖန်တီးမှုကိုပြီးအောင်လုပ်ပါ။
+1. Telegram တွင် `New Channel` ကိုနှိပ်ပါ။
+2. ချန်နယ်အမည် ကိုထည့်ပါ။
+3. Channel ဖန်တီးခြင်းကို ပြီးဆုံးအောင် ဆောင်ရွက်ပါ။
 
-public channel နဲ့ private channel နှစ်မျိုးလုံးသုံးနိုင်ပါတယ်။
+Public channel နှင့် private channel နှစ်မျိုးလုံးကို အသုံးပြုနိုင်သည်။
 
-![Create a channel](../../image/upload/telegram/新建频道.png)
+![Channel ဖန်တီးခြင်း](../../image/upload/telegram/新建频道.png)
 
-### 3. Bot ကို Channel ထဲထည့်ပါ
+### 3. Bot ကို Channel ထဲသို့ ထည့်ပါ
 
-1. ဖန်တီးထားတဲ့ channel ကိုဖွင့်ပါ။
-2. channel settings ကိုဖွင့်ပါ။
-3. member သို့မဟုတ် administrator ထည့်တဲ့နေရာကိုဖွင့်ပါ။
-4. ဖန်တီးထားတဲ့ bot username ကိုရှာပါ။
-5. bot ကို channel ထဲထည့်ပါ။
+1. မကြာသေးမီက ဖန်တီးထားသော channel ကိုဖွင့်ပါ။
+2. Channel settings ကိုဖွင့်ပါ။
+3. Member သို့မဟုတ် administrator ထည့်ပါ။
+4. သင်ဖန်တီးထားသော bot အသုံးပြုသူအမည် ကိုရှာပါ။
+5. Bot ကို channel ထဲသို့ ထည့်ပါ။
 
-upload ပိုယုံကြည်စိတ်ချရအောင် bot ကို administrator permissions ပေးတာကောင်းပါတယ်။
+အပ်လုဒ်များကို အယုံကြည်ရဆုံးဖြစ်စေရန် bot ကို administrator permission ပေးပါ။
 
-![Invite the bot to the channel](../../image/upload/telegram/邀请机器人进频道里.png)
+![Bot ကို channel သို့ ဖိတ်ခေါ်ခြင်း](../../image/upload/telegram/邀请机器人进频道里.png)
 
 ### 4. User Info - Get ID - IDbot ဖြင့် Channel ID ရယူပါ
 
-1. Telegram မှာ `@userinfobot` ကိုရှာပါ။ display name က များသောအားဖြင့် `User Info - Get ID - IDbot` ဖြစ်ပါတယ်။
-2. chat ကိုဖွင့်ပြီး `Start` နှိပ်ပါ။
-3. bot ပေးတဲ့ options ထဲက `Channel` ကိုရွေးပါ။
-4. message picker ထဲမှာ target channel ကိုရွေးပြီး `@userinfobot` ကိုပို့ပါ။
-5. `@userinfobot` က result ပြန်ပေးရင် `Id: -100...` အနေနဲ့ပြထားတဲ့ number ကို copy လုပ်ပါ။
+1. Telegram တွင် `@userinfobot` ကိုရှာပါ။ ၎င်း၏ display name သည် ပုံမှန်အားဖြင့် `User Info - Get ID - IDbot` ဖြစ်သည်။
+2. Chat ကိုဖွင့်ပြီး `Start` ကိုနှိပ်ပါ။
+3. Bot ပေးထားသော option များထဲမှ `Channel` ကိုရွေးပါ။
+4. Message picker တွင် ပစ်မှတ် channel ကိုရွေးပြီး `@userinfobot` သို့ ပို့ပါ။
+5. `@userinfobot` က result ပြန်ပေးသည့်အခါ `Id: -100...` အဖြစ်ပြထားသော နံပါတ်ကိုကူးယူပါ။
 
-`-100` နဲ့စတဲ့ number က ImgBed မှာလိုအပ်တဲ့ `Session ID (Chat ID)` ဖြစ်ပါတယ်။
+`-100` ဖြင့်စတင်သော နံပါတ်သည် ImgBed လိုအပ်သည့် `Session ID (Chat ID)` ဖြစ်သည်။
 
-![Get the channel ID](../../image/upload/telegram/获取频道id.png)
+![Channel ID ရယူခြင်း](../../image/upload/telegram/获取频道id.png)
 
-### 5. ImgBed မှာ Telegram Channel ဖြည့်ပါ
+### 5. ImgBed တွင် Telegram Channel ကိုဖြည့်ပါ
 
-channel configuration dialog ကိုပြန်သွားပြီး fields တွေကို ဒီလိုဖြည့်ပါ:
+Channel configuration dialog သို့ ပြန်သွားပြီး အကွက်များကို အောက်ပါအတိုင်း ဖြည့်ပါ။
 
-| UI Field | Value |
+| UI အကွက် | တန်ဖိုး |
 | --- | --- |
-| Channel Identifier | custom channel name၊ ဥပမာ `TelegramPrimary`။ |
-| Active | Recommended။ |
-| Bot Token | `@BotFather` ကရတဲ့ bot token။ |
-| Session ID (Chat ID) | `@userinfobot` ကပြန်ပေးတဲ့ `-100...` number။ |
-| Relay Proxy URL (optional) | လိုအပ်မှသာ၊ ဥပမာ `https://your-tg-proxy.example.com`။ |
-| Remark | optional notes။ |
+| Channel Identifier | စိတ်ကြိုက် ချန်နယ်အမည်၊ ဥပမာ `TelegramPrimary`။ |
+| Active | အကြံပြုသည်။ |
+| Bot Token | `@BotFather` မှရသော bot token။ |
+| Session ID (Chat ID) | `@userinfobot` ပြန်ပေးသော `-100...` နံပါတ်။ |
+| Relay Proxy URL (ရွေးချယ်နိုင်သည်) | လိုအပ်မှသာ ထည့်ပါ။ ဥပမာ `https://your-tg-proxy.example.com`. |
+| မှတ်ချက် | ရွေးချယ်နိုင်သည် notes။ |
 
-ပြီးရင် Save ကိုနှိပ်ပါ။
+ပြီးပါက `Save` ကိုနှိပ်ပါ။
 
-![Edit the configuration](../../image/upload/telegram/编辑配置.png)
+![Configuration ပြင်ဆင်ခြင်း](../../image/upload/telegram/编辑配置.png)
 
-## စစ်ဆေးနည်း
+## အတည်ပြုနည်း
 
-| Check | စစ်ဆေးပုံ |
+| စစ်ဆေးချက် | အတည်ပြုနည်း |
 | --- | --- |
-| Channel card appears | Save ပြီးနောက် Upload Settings မှာ Telegram channel card ပေါ်လာရပါမယ်။ |
-| Channel can be enabled | Active switch က on အနေအထားမှာရှိရပါမယ်။ |
-| Configuration is saved | detail view မှာ Bot Token နဲ့ Chat ID သိမ်းထားတာမြင်ရပါမယ်။ |
-| Upload works | test image တစ်ခု upload လုပ်ပြီး target Telegram channel ထဲပေါ်လာလားစစ်ပါ။ |
+| ချန်နယ်ကတ် ပေါ်လာသည် | သိမ်းပြီးနောက် အပ်လုဒ် ဆက်တင်များ စာမျက်နှာတွင် Telegram ချန်နယ်ကတ် ပေါ်လာသင့်သည်။ |
+| Channel ကို enable လုပ်နိုင်သည် | Active switch သည် ဖွင့်ထားသည့်အခြေအနေတွင် ရှိသင့်သည်။ |
+| Configuration သိမ်းထားသည် | Detail view တွင် Bot Token နှင့် Chat ID သိမ်းထားကြောင်း ပြသသင့်သည်။ |
+| Upload အလုပ်လုပ်သည် | စမ်းသပ်ပုံတစ်ပုံကို အပ်လုဒ်လုပ်ပြီး ၎င်းသည် ပစ်မှတ် Telegram channel တွင် ပေါ်လာကြောင်း အတည်ပြုပါ။ |
 
-## Quick Checklist
+## အမြန် စစ်ဆေးစာရင်း
 
 ```text
-@BotFather နဲ့ bot ဖန်တီးပါ
--> Bot Token သိမ်းပါ
--> Telegram channel ဖန်တီးပါ
--> bot ကို channel ထဲထည့်ပြီး administrator permissions ပေးပါ
--> @userinfobot ကိုရှာပြီး Channel ရွေးပါ
--> channel ထဲက message တစ်ခုကို @userinfobot ဆီ forward လုပ်ပါ
--> ပြန်လာတဲ့ Id: -100... ကို copy လုပ်ပါ
--> ImgBed မှာ Bot Token နဲ့ Chat ID ထည့်ပါ
--> Save လုပ်ပြီး test image upload လုပ်ပါ
+Create a bot with @BotFather
+-> Save the Bot Token
+-> Create a Telegram channel
+-> Add the bot to the channel and grant administrator permissions
+-> Search for @userinfobot and choose Channel
+-> Forward any message from the channel to @userinfobot
+-> Copy the returned Id: -100...
+-> Enter the Bot Token and Chat ID in ImgBed
+-> Save and upload a test image
 ```
 
-## References
+## ကိုးကားချက်များ
 
 1. Telegram bots: https://core.telegram.org/bots
 2. Telegram Bot API: https://core.telegram.org/bots/api

@@ -1,10 +1,10 @@
 # WebDAV přístup k webu (Beta)
 
-Nastavení WebDAV v Bezpečnostních nastaveních zpřístupní váš web ImgBed jako WebDAV endpoint.
+Nastavení WebDAV v nastavení zabezpečení zpřístupní váš web ImgBed jako koncový bod WebDAV.
 
 Po zapnutí můžete pomocí Windows, macOS, mobilních správců souborů nebo libovolného WebDAV kompatibilního klienta procházet, nahrávat, mazat a spravovat soubory ImgBed jako vzdálenou složku.
 
-Toto je WebDAV přístup k samotnému webu. Liší se od WebDAV úložného kanálu v Nastavení nahrávání. Upload kanál ukládá soubory do externí WebDAV služby. Toto nastavení naopak umožní, aby váš web ImgBed poskytoval WebDAV přístup klientům.
+Toto je WebDAV přístup k samotnému webu. Liší se od WebDAV úložného kanálu v nastavení nahrávání. Nahrávací kanál ukládá soubory do externí WebDAV služby. Toto nastavení naopak umožní, aby váš web ImgBed poskytoval WebDAV přístup klientům.
 
 ## Kde nastavit
 
@@ -16,11 +16,11 @@ System Settings -> Security Settings -> WebDAV
 
 Dostupná nastavení:
 
-- Enable
-- Username
-- Password
-- Image loading mode
-- Default channel
+- Zapnout
+- Uživatelské jméno
+- Heslo
+- Režim načítání obrázků
+- Výchozí kanál
 
 ## Co tato funkce dělá
 
@@ -42,13 +42,13 @@ Vhodné použití:
 
 ## Nastavení
 
-### Enable
+### Zapnout
 
-Zapne WebDAV endpoint.
+Zapne koncový bod WebDAV.
 
 Když je vypnutý, klienti se přes WebDAV nepřipojí.
 
-### Username a Password
+### Uživatelské jméno a heslo
 
 Tyto údaje používají WebDAV klienti při připojení.
 
@@ -56,37 +56,37 @@ Použijte samostatné uživatelské jméno a heslo pro WebDAV. Nepoužívejte zn
 
 Pokud je uživatelské jméno nebo heslo prázdné, WebDAV klienti se nepřipojí správně.
 
-### Image Loading Mode
+### Režim načítání obrázků
 
-Image loading mode určuje, jaký URL obrázku WebDAV klienti preferují při čtení.
+Režim načítání obrázků určuje, jaký URL obrázku WebDAV klienti preferují při čtení.
 
 Běžné volby:
 
 | Režim | Popis |
 | --- | --- |
-| Smart loading | ImgBed vybere podle kontextu. Doporučeno pro běžné použití. |
-| Original | Preferuje původní obrázky. |
-| Thumbnail | Preferuje miniatury. Užitečné pro rychlý náhled. |
+| Chytré načítání | ImgBed vybere podle kontextu. Doporučeno pro běžné použití. |
+| Originál | Preferuje původní obrázky. |
+| Miniatura | Preferuje miniatury. Užitečné pro rychlý náhled. |
 
-Pokud si nejste jistí, ponechte `Smart loading`.
+Pokud si nejste jistí, ponechte "Chytré načítání".
 
-### Default Channel
+### Výchozí kanál
 
-Výchozí kanál se používá pro WebDAV uploady.
+Výchozí kanál se používá pro WebDAV nahrávání.
 
-Když z Windows nebo jiného klienta kopírujete soubory do WebDAV adresáře, ImgBed je nahraje přes vybraný výchozí upload kanál.
+Když z Windows nebo jiného klienta kopírujete soubory do WebDAV adresáře, ImgBed je nahraje přes vybraný výchozí nahrávací kanál.
 
-Pokud není vybraný výchozí kanál, procházení může fungovat, ale uploady mohou selhat.
+Pokud není vybraný výchozí kanál, procházení může fungovat, ale nahrávání může selhat.
 
 ## Přístup přes WebDAV ve Windows 11
 
 Windows 11 umí WebDAV přidat jako síťové umístění.
 
-1. Otevřete `This PC`.
-2. Vyberte `Add a network location`.
+1. Otevřete "Tento počítač".
+2. Vyberte "Přidat síťové umístění".
 3. Zadejte `https://your-domain.com/dav`.
 4. Po výzvě zadejte uživatelské jméno a heslo WebDAV.
-5. Dokončete průvodce. WebDAV adresář pak půjde otevřít v File Explorer.
+5. Dokončete průvodce. WebDAV adresář pak půjde otevřít v Průzkumníku souborů.
 
 ![Přidání WebDAV ve Windows 11](../../image/Safety/webdav在win11配置.png)
 
@@ -107,9 +107,9 @@ Po úspěšném WebDAV připojení obvykle můžete:
 
 WebDAV je vhodný pro každodenní přístup a menší správu souborů. Pro velké přesuny, hromadné mazání nebo složitou organizaci použijte administraci.
 
-## Login Device Management
+## Správa přihlášených zařízení
 
-Úspěšná WebDAV připojení se zobrazují také na kartě WebDAV v Login Device Management.
+Úspěšná WebDAV připojení se zobrazují také na kartě WebDAV ve správě přihlášených zařízení.
 
 Můžete tam kontrolovat WebDAV klienty a podle potřeby vynutit stará zařízení offline.
 
@@ -126,15 +126,15 @@ Zkontrolujte:
 - WebDAV je zapnutý.
 - Web je dostupný přes HTTPS.
 
-### Procházení funguje, ale upload ne
+### Procházení funguje, ale nahrávání ne
 
-Zkontrolujte `Default channel`.
+Zkontrolujte "Výchozí kanál".
 
-WebDAV uploady potřebují výchozí upload kanál. Pokud chybí, je vypnutý nebo špatně nastavený, uploady mohou selhat.
+WebDAV nahrávání potřebuje výchozí nahrávací kanál. Pokud chybí, je vypnutý nebo špatně nastavený, nahrávání může selhat.
 
 ### Rychlost přístupu je nestabilní
 
-Výkon WebDAV závisí na klientovi, síti, počtu souborů a výchozím upload kanálu.
+Výkon WebDAV závisí na klientovi, síti, počtu souborů a výchozím nahrávacím kanálu.
 
 Pokud má adresář mnoho souborů, uspořádejte je do složek místo uložení příliš mnoha souborů na jednom místě.
 
@@ -144,13 +144,13 @@ Pokud má adresář mnoho souborů, uspořádejte je do složek místo uložení
 - Nastavte silné heslo.
 - Nesdílejte WebDAV heslo s nedůvěryhodnými lidmi.
 - WebDAV vypněte, když ho nepoužíváte.
-- Pravidelně čistěte nepoužívaná WebDAV zařízení v Login Device Management.
+- Pravidelně čistěte nepoužívaná WebDAV zařízení ve správě přihlášených zařízení.
 
-## Velikost souboru při WebDAV uploadu
+## Velikost souboru při WebDAV nahrávání
 
-WebDAV klienti nepoužívají prohlížečový chunk upload ze stránky uploadu. Pro soubory nad doporučené limity níže použijte webovou upload stránku.
+WebDAV klienti nepoužívají dělené nahrávání velkých souborů ze stránky pro nahrávání v prohlížeči. Pro soubory nad doporučené limity níže použijte webovou stránku pro nahrávání.
 
-| Výchozí upload kanál | Doporučený limit jednoho WebDAV souboru |
+| Výchozí nahrávací kanál | Doporučený limit jednoho WebDAV souboru |
 | --- | ---: |
 | Telegram | 20 MB |
 | Discord | 10 MB |
@@ -165,3 +165,6 @@ WebDAV klienti nepoužívají prohlížečový chunk upload ze stránky uploadu.
 | Yandex Disk | 30 MB |
 | pCloud | 30 MB |
 | WebDAV | 64 MB |
+
+
+

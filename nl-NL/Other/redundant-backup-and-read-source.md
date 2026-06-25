@@ -9,7 +9,7 @@ Zowel het primaire bestand als het back-upbestand kunnen als leesbron worden geb
 | Functie | Beschrijving |
 | --- | --- |
 | Extra kopie bewaren | Maakt een back-up naar een ander uploadkanaal om het risico van uitval van één kanaal te verkleinen. |
-| Leesbron wisselen | Na een geslaagde back-up kun je lezen wisselen tussen primair kanaal en back-upkanaal. |
+| Leesbron wisselen | Na een geslaagde back-up kun je de leesbron wisselen tussen het primaire kanaal en het back-upkanaal. |
 | Back-up per bestand | Maak een back-up van één bestand vanaf de detailpagina. |
 | Back-up in batch | Selecteer meerdere bestanden in het beheer en maak tegelijk een back-up. |
 | Globale redundante back-up | Maak back-ups per map vanuit Andere instellingen. |
@@ -24,7 +24,7 @@ System Settings -> Other Settings -> Redundant Backup
 
 ![Redundante back-up](../../image/other/冗余备份截图.png)
 
-Deze ingang is vooral handig om back-ups toe te voegen aan een map of aan alle bestanden in bulk.
+Deze ingang is vooral handig om back-ups toe te voegen aan een map of aan alle bestanden in één keer.
 
 Het back-upkanaal kan handmatig worden gekozen, of je kiest automatische selectie en laat ImgBed een geschikt back-upkanaal zoeken.
 
@@ -69,11 +69,11 @@ Deze situaties worden tijdens back-up overgeslagen. Het zijn geen fouten.
 
 | Situatie | Waarom overgeslagen |
 | --- | --- |
-| Al geback-upt | Een bestand dat al een back-up heeft, wordt niet opnieuw geback-upt. |
+| Back-up bestaat al | Een bestand dat al een back-up heeft, wordt niet opnieuw als back-up opgeslagen. |
 | Primair en back-upkanaal zijn hetzelfde | Een back-up moet op een ander kanaal staan om zinvol te zijn. |
 | Geen bruikbaar back-upkanaal | Er is geen geschikt alternatief kanaal beschikbaar. |
 
-Kort gezegd: back-ups moeten naar een ander kanaal, en al geback-upte bestanden verbruiken niet opnieuw extra ruimte.
+Kort gezegd: back-ups moeten naar een ander kanaal, en bestanden waarvoor al een back-up bestaat, verbruiken niet opnieuw extra ruimte.
 
 ## Primair kanaal en back-upkanaal
 
@@ -82,11 +82,11 @@ Kort gezegd: back-ups moeten naar een ander kanaal, en al geback-upte bestanden 
 | Primair kanaal | Het kanaal dat werd gebruikt toen het bestand voor het eerst werd geüpload. |
 | Back-upkanaal | Het kanaal waarin de redundante kopie staat. |
 | Primaire leesbron | Het bestand wordt momenteel gelezen vanaf het primaire kanaal. |
-| Back-up leesbron | Het bestand wordt momenteel gelezen vanaf het back-upkanaal. |
+| Back-up-leesbron | Het bestand wordt momenteel gelezen vanaf het back-upkanaal. |
 
-Primaire en back-up leesbronnen gedragen zich voor gebruikers hetzelfde.
+Primaire en back-up-leesbronnen gedragen zich voor gebruikers hetzelfde.
 
-Zolang het back-upbestand beschikbaar is, blijven afbeeldingen, video's en downloadlinks werken nadat je naar de back-up leesbron wisselt.
+Zolang het back-upbestand beschikbaar is, blijven afbeeldingen, video's en downloadlinks werken nadat je naar de back-up-leesbron wisselt.
 
 ## Wat gebeurt er wanneer een bestand wordt verwijderd
 

@@ -59,11 +59,11 @@
 GitHub Releases працює так:
 
 ```text
-Увійти в GitHub
--> Створити Access Token
--> Повернутися до ImgBed і ввести token та назву репозиторію
--> Зберегти
--> Якщо введено тільки назву repo, ImgBed автоматично додасть поточний username
--> Якщо введено username/repo, ImgBed використає це як є
--> Завантажити тестове зображення
+Sign in to GitHub
+-> Create an Access Token
+-> Return to ImgBed and enter the token and repository name
+-> Save
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

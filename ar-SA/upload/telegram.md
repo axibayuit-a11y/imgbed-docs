@@ -13,7 +13,7 @@
 
 1. افتح إعدادات النظام.
 2. انتقل إلى إعدادات الرفع.
-3. اضغط Add Channel في الزاوية العلوية اليمنى.
+3. اضغط إضافة قناة في الزاوية العلوية اليمنى.
 4. اختر `Telegram`.
 
 ## شرح الحقول
@@ -21,18 +21,18 @@
 | الحقل | وظيفته | مطلوب |
 | --- | --- | --- |
 | اسم القناة | اسم واضح للقناة، مثل "Telegram Primary". | نعم |
-| Active | تفعيل القناة أو تعطيلها. | موصى به |
+| التفعيل | تفعيل القناة أو تعطيلها. | موصى به |
 | Bot Token | رمز بوت Telegram. | نعم |
 | Session ID (Chat ID) | معرّف قناة Telegram. | نعم |
 | Relay Proxy URL (اختياري) | استخدمه فقط إذا كان الوصول إلى Telegram غير مستقر. أدخل الرابط كاملًا مع `https://`. | لا |
-| Remark | ملاحظات للصيانة لاحقًا. | لا |
+| ملاحظة | ملاحظات للصيانة لاحقًا. | لا |
 
 ## خطوات الإعداد
 
 ### 1. أنشئ بوت Telegram
 
 1. افتح Telegram وابحث عن `@BotFather`.
-2. افتح المحادثة واضغط `Start`.
+2. افتح المحادثة واضغط البدء.
 3. أرسل `/newbot`.
 4. اتبع التعليمات لإدخال اسم عرض البوت.
 5. اتبع التعليمات لإدخال اسم مستخدم البوت. غالبًا يجب أن ينتهي الاسم بـ `bot`.
@@ -44,7 +44,7 @@
 
 ### 2. أنشئ قناة
 
-1. في Telegram اضغط New Channel.
+1. في Telegram اضغط إنشاء قناة جديدة.
 2. أدخل اسم القناة.
 3. أكمل إنشاء القناة.
 
@@ -67,8 +67,8 @@
 ### 4. احصل على معرّف القناة عبر User Info - Get ID - IDbot
 
 1. ابحث عن `@userinfobot` في Telegram. غالبًا يظهر باسم `User Info - Get ID - IDbot`.
-2. افتح المحادثة واضغط `Start`.
-3. اختر `Channel` من الخيارات التي يقدمها البوت.
+2. افتح المحادثة واضغط البدء.
+3. اختر القناة من الخيارات التي يقدمها البوت.
 4. من منتقي الرسائل اختر القناة المطلوبة وأرسلها إلى `@userinfobot`.
 5. عندما يعرض `@userinfobot` النتيجة، انسخ الرقم الظاهر بصيغة `Id: -100...`.
 
@@ -82,14 +82,14 @@
 
 | حقل الواجهة | القيمة |
 | --- | --- |
-| Channel Identifier | اسم مخصص للقناة، مثل `TelegramPrimary`. |
-| Active | يُنصح بتفعيله. |
+| معرّف القناة | اسم مخصص للقناة، مثل `TelegramPrimary`. |
+| التفعيل | يُنصح بتفعيله. |
 | Bot Token | رمز البوت من `@BotFather`. |
 | Session ID (Chat ID) | الرقم `-100...` الذي أعاده `@userinfobot`. |
 | Relay Proxy URL (اختياري) | عند الحاجة فقط، مثل `https://your-tg-proxy.example.com`. |
-| Remark | ملاحظات اختيارية. |
+| ملاحظة | ملاحظات اختيارية. |
 
-بعد الانتهاء اضغط Save.
+بعد الانتهاء اضغط حفظ.
 
 ![تعديل الإعداد](../../image/upload/telegram/编辑配置.png)
 
@@ -98,25 +98,25 @@
 | الفحص | طريقة التحقق |
 | --- | --- |
 | ظهور بطاقة القناة | بعد الحفظ يجب أن تظهر بطاقة قناة Telegram في صفحة إعدادات الرفع. |
-| إمكانية تفعيل القناة | يجب أن يبقى مفتاح Active مفعّلًا. |
+| إمكانية تفعيل القناة | يجب أن يبقى مفتاح التفعيل قيد التشغيل. |
 | حفظ الإعداد | يجب أن تظهر في التفاصيل قيم Bot Token و Chat ID محفوظة. |
 | نجاح الرفع | ارفع صورة تجريبية وتأكد من ظهورها في قناة Telegram الهدف. |
 
 ## قائمة تحقق سريعة
 
 ```text
-أنشئ بوتًا عبر @BotFather
--> احفظ Bot Token
--> أنشئ قناة Telegram
--> أضف البوت إلى القناة وامنحه صلاحيات مسؤول
--> ابحث عن @userinfobot واختر Channel
--> أرسل أي رسالة من القناة إلى @userinfobot
--> انسخ القيمة Id: -100...
--> أدخل Bot Token و Chat ID في ImgBed
--> احفظ وارفع صورة تجريبية
+Create a bot with @BotFather
+-> Save the Bot Token
+-> Create a Telegram channel
+-> Add the bot to the channel and grant administrator permissions
+-> Search for @userinfobot and choose Channel
+-> Forward any message from the channel to @userinfobot
+-> Copy the returned Id: -100...
+-> Enter the Bot Token and Chat ID in ImgBed
+-> Save and upload a test image
 ```
 
 ## مراجع
 
-1. Telegram bots: https://core.telegram.org/bots
-2. Telegram Bot API: https://core.telegram.org/bots/api
+1. بوتات Telegram: https://core.telegram.org/bots
+2. واجهة Telegram Bot API: https://core.telegram.org/bots/api

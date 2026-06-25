@@ -1,76 +1,76 @@
-# User Rate Limits
+# အသုံးပြုသူ အကြိမ်နှုန်း ကန့်သတ်ချက်များ
 
-User rate limits က regular users သို့မဟုတ် visitors တွေ homepage မှ files upload လုပ်နိုင်တဲ့ frequency ကိုထိန်းချုပ်ပါတယ်။ public upload pages ကို abuse မဖြစ်စေဖို့ကူညီပါတယ်။
+အသုံးပြုသူ အကြိမ်နှုန်း ကန့်သတ်ချက်များသည် ပုံမှန် အသုံးပြုသူများ သို့မဟုတ် ဧည့်သည်များက ပင်မစာမျက်နှာမှ ဖိုင်များကို မည်မျှ မကြာခဏ အပ်လုဒ် လုပ်နိုင်မည်ကို ထိန်းချုပ်သည်။ ၎င်းသည် အများပြည်သူ အပ်လုဒ် စာမျက်နှာများကို အလွဲသုံးစား ပြုလုပ်ခြင်းမှ ကာကွယ်ရန် ကူညီသည်။
 
-ဒီ feature က homepage uploads ကိုသာသက်ရောက်ပါတယ်။ Admin uploads နဲ့ API Tokens ဖြင့်လုပ်တဲ့ uploads တွေကို user rate limits မကန့်သတ်ပါ။
+ဤ feature သည် ပင်မစာမျက်နှာ uploads များကိုသာ သက်ရောက်စေသည်။ စီမံခန့်ခွဲသူ uploads နှင့် API Tokens အသုံးပြုသော uploads များကို အသုံးပြုသူ အကြိမ်နှုန်း ကန့်သတ်ချက်များက မကန့်သတ်ပါ။
 
-## ဘယ်နေရာမှာ Configure လုပ်မလဲ
+## သတ်မှတ်ရာနေရာ
 
-admin panel ကိုဖွင့်ပြီး သွားပါ:
+စီမံခန့်ခွဲမှု ပန်နယ်ကို ဖွင့်ပြီး အောက်ပါနေရာသို့ သွားပါ။
 
 ```text
 System Settings -> Security Settings -> Upload Management -> User Rate Limits
 ```
 
-![User rate limit settings](../../image/other/用户频控截图.png)
+![အသုံးပြုသူ အကြိမ်နှုန်း ကန့်သတ်ချက် သတ်မှတ်ချက်များ](../../image/other/用户频控截图.png)
 
-## Rate Limits Enable လုပ်ခြင်း
+## အကြိမ်နှုန်း ကန့်သတ်ချက်များ ဖွင့်ခြင်း
 
-`Enable Rate Limits` ကို on လုပ်ပြီးနောက် ImgBed က uploader IP address အလိုက် recent uploads ကို track လုပ်ပါတယ်။
+`အကြိမ်နှုန်း ကန့်သတ်ချက်များ ဖွင့်ရန်` ကို ဖွင့်ပြီးနောက် ImgBed သည် uploader IP address အပေါ် မူတည်၍ လတ်တလော uploads များကို စောင့်ကြည့်သည်။
 
-Default values:
+မူလတန်ဖိုးများ:
 
-| Setting | Default | Description |
+| သတ်မှတ်ချက် | မူလတန်ဖိုး | ဖော်ပြချက် |
 | --- | --- | --- |
-| Detection window | 1.5 hours | upload records ကို ဘယ်လောက်နောက်ပြန်တွက်မလဲ။ |
-| Max file count | 20 | detection window ထဲမှာခွင့်ပြုတဲ့ files အများဆုံးအရေအတွက်။ |
-| Single file size limit | 20 MB | file တစ်ခုရဲ့ maximum size။ |
-| Total upload size limit | 200 MB | detection window ထဲက maximum total upload size။ |
+| စစ်ဆေးချိန် ပြတင်းပေါက် | 1.5 hours | upload records များကို အတိတ်သို့ မည်မျှ အထိ ရေတွက်မည်။ |
+| အများဆုံး ဖိုင်အရေအတွက် | 20 | စစ်ဆေးချိန် ပြတင်းပေါက်အတွင်း ခွင့်ပြုသော အများဆုံး ဖိုင်အရေအတွက်။ |
+| တစ်ဖိုင် အရွယ်အစား ကန့်သတ်ချက် | 20 MB | တစ်ဖိုင်၏ အများဆုံး အရွယ်အစား။ |
+| စုစုပေါင်း upload အရွယ်အစား ကန့်သတ်ချက် | 200 MB | စစ်ဆေးချိန် ပြတင်းပေါက်အတွင်း စုစုပေါင်း upload အရွယ်အစား ကန့်သတ်ချက်။ |
 
-ဥပမာ 1.5 hour window, 20 files, file တစ်ခု 20 MB, total 200 MB ဆိုလျှင် same IP မှ uploads တွေက configured limit တစ်ခုခုကျော်တာနဲ့ blocked ဖြစ်ပါမယ်။
+ဥပမာ 1.5 hours window၊ 20 files၊ တစ်ဖိုင် 20 MB နှင့် စုစုပေါင်း 200 MB ဖြစ်ပါက IP တူမှ uploads များသည် သတ်မှတ်ထားသော limit တစ်ခုခု ကျော်လွန်သည်နှင့် ပိတ်ဆို့ခံရမည်။
 
-## File Types Exclude လုပ်ခြင်း
+## ဖိုင်အမျိုးအစားများ ဖယ်ထုတ်ခြင်း
 
-`Excluded upload file types` က regular users သို့မဟုတ် visitors တွေ selected file categories upload လုပ်တာကိုတားပါတယ်။
+`ဖယ်ထုတ်ထားသော upload file types` သည် ရွေးထားသော ဖိုင်အမျိုးအစားများကို ပုံမှန် အသုံးပြုသူများ သို့မဟုတ် ဧည့်သည်များ အပ်လုဒ် မလုပ်နိုင်အောင် ပိတ်ဆို့သည်။
 
-Available categories:
+အသုံးပြုနိုင်သော အမျိုးအစားများ:
 
-| Type | Description |
+| အမျိုးအစား | ဖော်ပြချက် |
 | --- | --- |
-| Images | jpg, png, webp, gif နဲ့ image files ဆင်တူများ |
-| Videos | mp4, webm, mov နဲ့ video files ဆင်တူများ |
-| Audio | mp3, flac, wav နဲ့ audio files ဆင်တူများ |
-| Documents | pdf, txt, md, docx နဲ့ document files ဆင်တူများ |
-| Other | အထက်ပါ categories ထဲမပါတဲ့ files၊ ဥပမာ zip, rar, exe, apk |
+| ပုံများ | jpg, png, webp, gif နှင့် ဆင်တူသော image files |
+| ဗီဒီယိုများ | mp4, webm, mov နှင့် ဆင်တူသော video files |
+| အသံ | mp3, flac, wav နှင့် ဆင်တူသော audio files |
+| စာရွက်စာတမ်းများ | pdf, txt, md, docx နှင့် ဆင်တူသော document files |
+| အခြား | အထက်ပါ အမျိုးအစားများမှ အပြင်ဘက် ဖိုင်များ၊ ဥပမာ zip, rar, exe, apk |
 
-default အနေနဲ့ type မရွေးထားပါ၊ ဆိုလိုတာက allowed ဖြစ်ပါတယ်။
+မူလအားဖြင့် မည်သည့်အမျိုးအစားမျှ မရွေးထားပါ။ ဆိုလိုသည်မှာ ခွင့်ပြုထားသည်။
 
-type တစ်ခုကို click လုပ်ရင် highlighted ဖြစ်ပြီး အဲဒီ type က blocked ဖြစ်ပါတယ်။
+အမျိုးအစားတစ်ခုကို နှိပ်ပါက ၎င်းကို highlight လုပ်ပြီး ထိုအမျိုးအစားကို ပိတ်ဆို့ထားကြောင်း ဆိုလိုသည်။
 
-`Other` ရွေးထားလျှင် zip သို့မဟုတ် rar files upload လုပ်တဲ့ visitors တွေ blocked ဖြစ်ပြီး ဒီ file type မထောက်ပံ့ဘူးဆိုတဲ့ message မြင်ရပါမယ်။
+`အခြား` ကို ရွေးပါက zip သို့မဟုတ် rar files များကို အပ်လုဒ် လုပ်သော ဧည့်သည်များ ပိတ်ဆို့ခံရပြီး ထိုဖိုင်အမျိုးအစားကို မပံ့ပိုးကြောင်း အသိပေးခံရမည်။
 
-## Block Messages
+## ပိတ်ဆို့ မက်ဆေ့ချ်များ
 
-limit trigger ဖြစ်တဲ့အခါ users တွေက သက်ဆိုင်တဲ့ message မြင်ရပါမယ်:
+ကန့်သတ်ချက် trigger ဖြစ်သောအခါ အသုံးပြုသူများသည် သက်ဆိုင်ရာ မက်ဆေ့ချ်ကို မြင်ရမည်။
 
-![Too frequent upload message](../../image/other/频繁报错提示.png)
+![အပ်လုဒ် အလွန်မကြာခဏ ဖြစ်နေသော မက်ဆေ့ချ်](../../image/other/频繁报错提示.png)
 
-| Scenario | Message Meaning |
+| အခြေအနေ | မက်ဆေ့ချ် အဓိပ္ပါယ် |
 | --- | --- |
-| Single file too large | file ကကြီးလွန်းပြီး upload မလုပ်ခင် compress လုပ်သင့်သည်။ |
-| File type blocked | ဒီ file type ကို support မလုပ်ပါ။ ဖယ်ရှားပြီးထပ်ကြိုးစားပါ။ |
-| Uploads too frequent | recent uploads တွေ frequency မြင့်လွန်းပြီး retry time ပြသည်။ |
-| Total size too high | recent total upload size မြင့်လွန်းပြီး retry time ပြသည်။ |
+| တစ်ဖိုင် အလွန်ကြီးခြင်း | ဖိုင်အလွန်ကြီးပြီး upload မလုပ်မီ compress လုပ်သင့်သည်။ |
+| ဖိုင်အမျိုးအစား ပိတ်ဆို့ထားခြင်း | ဤဖိုင်အမျိုးအစားကို မပံ့ပိုးပါ။ ထိုဖိုင်ကို ဖယ်ရှားပြီး ထပ်စမ်းပါ။ |
+| Uploads အလွန် မကြာခဏ ဖြစ်ခြင်း | လတ်တလော uploads များ အလွန် မကြာခဏ ဖြစ်ပြီး retry time ကို ပြသသည်။ |
+| စုစုပေါင်း အရွယ်အစား အလွန်မြင့်ခြင်း | လတ်တလော စုစုပေါင်း upload size အလွန်မြင့်ပြီး retry time ကို ပြသသည်။ |
 
-## ဘယ်အချိန်မှာ Enable လုပ်သင့်လဲ
+## မည်သည့်အချိန်တွင် ဖွင့်သင့်သလဲ
 
-သင့် upload homepage က public accessible ဖြစ်လျှင် user rate limits enable လုပ်ပါ။
+သင့် ပင်မစာမျက်နှာ upload ကို အများပြည်သူ ဝင်ရောက်နိုင်ပါက အသုံးပြုသူ အကြိမ်နှုန်း ကန့်သတ်ချက်များကို ဖွင့်ပါ။
 
-အသုံးများတဲ့အကြောင်းရင်းများ:
+အများဆုံး အကြောင်းရင်းများ:
 
-- scripted bulk uploads ကိုစိတ်ပူလျှင်။
-- visitor uploads ကြီးကြီးမားမားတွေကို limit လုပ်ချင်လျှင်။
-- regular users တွေကို images ပဲ upload လုပ်စေချင်ပြီး archives သို့မဟုတ် installers မလိုချင်လျှင်။
-- public upload ကိုဖွင့်ထားချင်ပေမယ့် resource usage ကိုထိန်းချင်လျှင်။
+- script ဖြင့် bulk uploads များကို စိုးရိမ်ခြင်း။
+- ဧည့်သည်များ၏ large uploads များကို ကန့်သတ်လိုခြင်း။
+- ပုံများသာ အပ်လုဒ် လုပ်စေလိုပြီး archives သို့မဟုတ် installers မဟုတ်စေလိုခြင်း။
+- အများပြည်သူ အပ်လုဒ်ကို ဆက်လက် ရရှိနိုင်စေပြီး resource usage ကို ထိန်းချုပ်လိုခြင်း။
 
-site က သင့်တစ်ယောက်တည်းအတွက်ဖြစ်လျှင်၊ သို့မဟုတ် administrators တွေသာ upload လုပ်လျှင် ဒီ setting ကို disabled ထားနိုင်ပါတယ်။
+Site ကို သင်တစ်ဦးတည်း အသုံးပြုပါက သို့မဟုတ် စီမံခန့်ခွဲသူများသာ upload လုပ်နိုင်ပါက disabled အတိုင်း ထားနိုင်သည်။

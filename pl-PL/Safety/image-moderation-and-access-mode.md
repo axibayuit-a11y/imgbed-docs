@@ -2,7 +2,7 @@
 
 Moderacja obrazów przypisuje przesłanym obrazom klasyfikację wiekową. Tryb dostępu określa, które klasyfikacje są widoczne publicznie.
 
-Wpływa to na publiczną galerię, publiczne URL-e plików i Random Image API. Nie ogranicza panelu administracyjnego. Administratorzy nadal mogą widzieć i zarządzać wszystkimi plikami.
+Wpływa to na publiczną galerię, publiczne adresy URL plików i API losowych obrazów. Nie ogranicza panelu administracyjnego. Administratorzy nadal mogą widzieć i zarządzać wszystkimi plikami.
 
 ## Gdzie skonfigurować
 
@@ -14,34 +14,34 @@ System Settings -> Security Settings -> Upload Management -> Image Moderation
 
 Główne ustawienia to:
 
-- Access mode
-- Enable moderation
-- Moderation provider
+- Tryb dostępu
+- Włącz moderację
+- Dostawca moderacji
 
-## Co robi Access Mode
+## Co robi tryb dostępu
 
-Access mode określa, które klasyfikacje wiekowe mogą być pokazywane publicznie.
+Tryb dostępu określa, które klasyfikacje wiekowe mogą być pokazywane publicznie.
 
 Aktualne tryby:
 
-| Access Mode | Publicznie widoczne ratingi |
+| Tryb dostępu | Publicznie widoczne klasyfikacje |
 | --- | --- |
-| Adult mode | General, R12, R16, R18 |
-| Youth mode | General, R12, R16 |
-| Teen mode | General, R12 |
-| Child mode | Tylko General |
+| Tryb dla dorosłych | General, R12, R16, R18 |
+| Tryb młodzieżowy | General, R12, R16 |
+| Tryb nastoletni | General, R12 |
+| Tryb dziecięcy | Tylko General |
 
-Domyślny tryb to Adult mode.
+Domyślny tryb to tryb dla dorosłych.
 
-Dla stron prywatnych lub z treściami dla dorosłych Adult mode może być właściwy. Dla bardziej zachowawczej galerii publicznej wybierz Youth, Teen albo Child mode.
+Dla stron prywatnych lub z treściami dla dorosłych tryb dla dorosłych może być właściwy. Dla bardziej zachowawczej galerii publicznej wybierz tryb młodzieżowy, nastoletni albo dziecięcy.
 
 ## Co daje włączenie moderacji
 
-Po włączeniu moderacji ImgBed wywołuje wybranego dostawcę podczas uploadu i zapisuje wykrytą klasyfikację wiekową.
+Po włączeniu moderacji ImgBed wywołuje wybranego dostawcę podczas przesyłania i zapisuje wykrytą klasyfikację wiekową.
 
-Główne ratingi:
+Główne klasyfikacje:
 
-| Rating | Znaczenie |
+| Klasyfikacja | Znaczenie |
 | --- | --- |
 | General | Bezpieczna treść publiczna |
 | R12 | Lekko wrażliwa treść |
@@ -50,7 +50,7 @@ Główne ratingi:
 
 Wynik moderacji jest używany przy decyzji o publicznym dostępie.
 
-Jeśli moderacja nie jest włączona albo stare pliki nie mają ratingu, są traktowane jako niesklasyfikowane. Pliki bez ratingu nie są automatycznie usuwane z publicznej galerii ani Random Image API tylko dlatego, że nie mają wyniku moderacji.
+Jeśli moderacja nie jest włączona albo stare pliki nie mają klasyfikacji, są traktowane jako niesklasyfikowane. Pliki bez klasyfikacji nie są automatycznie usuwane z publicznej galerii ani API losowych obrazów tylko dlatego, że nie mają wyniku moderacji.
 
 ## Wybór dostawcy moderacji
 
@@ -62,11 +62,11 @@ Dostępni dostawcy obejmują:
 
 Każdy dostawca ma inne wymagania:
 
-- moderatecontent.com zwykle wymaga API Key.
-- nsfwjs zwykle wymaga URL-a endpointu API.
-- Sightengine wymaga API user i API secret.
+- moderatecontent.com zwykle wymaga klucza API.
+- nsfwjs zwykle wymaga adresu URL punktu końcowego API.
+- Sightengine wymaga użytkownika API i sekretu API.
 
-Wybierz według konta, dostępności i jakości wykrywania. Jeśli moderacja jest włączona i poprawnie skonfigurowana, ImgBed próbuje zapisać rating obrazu podczas uploadu.
+Wybierz według konta, dostępności i jakości wykrywania. Jeśli moderacja jest włączona i poprawnie skonfigurowana, ImgBed próbuje zapisać klasyfikację obrazu podczas przesyłania.
 
 ## Wpływ na publiczną galerię
 
@@ -74,10 +74,10 @@ Publiczna galeria filtruje pliki zgodnie z trybem dostępu.
 
 Przykłady:
 
-- Adult mode: obrazy R18 mogą się pojawić.
-- Youth mode: obrazy R18 są ukryte.
-- Teen mode: obrazy R16 i R18 są ukryte.
-- Child mode: pokazywane są tylko obrazy General.
+- Tryb dla dorosłych: obrazy R18 mogą się pojawić.
+- Tryb młodzieżowy: obrazy R18 są ukryte.
+- Tryb nastoletni: obrazy R16 i R18 są ukryte.
+- Tryb dziecięcy: pokazywane są tylko obrazy General.
 
 Dotyczy to tylko zwykłego publicznego dostępu. Panel administracyjny nadal pokazuje wszystkie pliki.
 
@@ -85,14 +85,14 @@ Dotyczy to tylko zwykłego publicznego dostępu. Panel administracyjny nadal pok
 
 Publiczne URL-e plików to bezpośrednie linki obrazów otwierane przez odwiedzających.
 
-Jeśli rating pliku jest dozwolony w bieżącym trybie, ImgBed zwraca oryginalny obraz.
+Jeśli klasyfikacja pliku jest dozwolona w bieżącym trybie, ImgBed zwraca oryginalny obraz.
 
-Jeśli rating przekracza dozwolony poziom, zwykły publiczny dostęp nie zwraca oryginalnego obrazu. ImgBed zwraca skonfigurowany wynik blokady albo obraz zastępczy.
+Jeśli klasyfikacja przekracza dozwolony poziom, zwykły publiczny dostęp nie zwraca oryginalnego obrazu. ImgBed zwraca skonfigurowany wynik blokady albo obraz zastępczy.
 
 Przykład:
 
-- Bieżący tryb to Child mode.
-- Obraz ma rating R18.
+- Bieżący tryb to tryb dziecięcy.
+- Obraz ma klasyfikację R18.
 - Odwiedzający otwiera publiczny URL bezpośrednio.
 - ImgBed nie zwraca temu odwiedzającemu oryginalnego obrazu R18.
 
@@ -100,27 +100,27 @@ Przykład:
 
 Administratorzy oglądający pliki w panelu administracyjnym nie są objęci tym ograniczeniem.
 
-## Wpływ na Random Image API
+## Wpływ na API losowych obrazów
 
-Random Image API również filtruje pulę kandydatów według trybu dostępu.
+API losowych obrazów również filtruje pulę kandydatów według trybu dostępu.
 
-W Child mode losowe obrazy są wybierane tylko z plików General.
+W trybie dziecięcym losowe obrazy są wybierane tylko z plików General.
 
-W Youth mode losowe obrazy mogą pochodzić z General, R12 i R16, ale nie z R18.
+W trybie młodzieżowym losowe obrazy mogą pochodzić z General, R12 i R16, ale nie z R18.
 
-Dzięki temu Random Image API nie omija ograniczeń publicznej galerii.
+Dzięki temu API losowych obrazów nie omija ograniczeń publicznej galerii.
 
 ## Relacja z regułami list
 
-Access mode nie jest jedyną regułą publicznego dostępu. Działa razem z allowlist i blocklist.
+Tryb dostępu nie jest jedyną regułą publicznego dostępu. Działa razem z listą dozwolonych i listą blokowanych.
 
 W skrócie:
 
-- Treści z allowlist są publiczne w pierwszej kolejności.
-- Treści z blocklist nie mogą być oglądane bezpośrednio przez zwykłych odwiedzających.
-- Treści poza obiema listami są następnie sprawdzane według access mode.
+- Treści z listy dozwolonych są publiczne w pierwszej kolejności.
+- Treści z listy blokowanych nie mogą być oglądane bezpośrednio przez zwykłych odwiedzających.
+- Treści poza obiema listami są następnie sprawdzane według trybu dostępu.
 
-Jeśli obraz jest ograniczony zarówno przez rating wiekowy, jak i reguły list, zwykli odwiedzający nadal nie mogą zobaczyć oryginalnego pliku bezpośrednio.
+Jeśli obraz jest ograniczony zarówno przez klasyfikację wiekową, jak i reguły list, zwykli odwiedzający nadal nie mogą zobaczyć oryginalnego pliku bezpośrednio.
 
 ## Zalecane ustawienia
 
@@ -128,38 +128,38 @@ Dla stron publicznych:
 
 - Włącz moderację.
 - Wybierz tryb dostępu pasujący do odbiorców strony.
-- Użyj Child mode albo Teen mode dla odwiedzających w każdym wieku.
-- Unikaj Adult mode, jeśli nie chcesz pokazywać dojrzałych treści publicznie.
-- Sprawdzaj ratingi w panelu administracyjnym i poprawiaj ręcznie, gdy trzeba.
+- Użyj trybu dziecięcego albo nastoletniego dla odwiedzających w każdym wieku.
+- Unikaj trybu dla dorosłych, jeśli nie chcesz pokazywać dojrzałych treści publicznie.
+- Sprawdzaj klasyfikacje w panelu administracyjnym i poprawiaj je ręcznie, gdy trzeba.
 
 Dla stron prywatnych lub osobistych:
 
-- Adult mode zwykle jest wystarczający.
+- Tryb dla dorosłych zwykle jest wystarczający.
 - Włącz moderację, jeśli jest przydatna.
-- Sprawdzaj i poprawiaj ratingi w panelu administracyjnym według potrzeb.
+- Sprawdzaj i poprawiaj klasyfikacje w panelu administracyjnym według potrzeb.
 
 ## FAQ
 
-### Czy pliki znikną z panelu administracyjnego po zmianie Access Mode?
+### Czy pliki znikną z panelu administracyjnego po zmianie trybu dostępu?
 
 Nie.
 
-Access mode wpływa tylko na zwykły publiczny dostęp. Nie wpływa na panel administracyjny.
+Tryb dostępu wpływa tylko na zwykły publiczny dostęp. Nie wpływa na panel administracyjny.
 
-### Dlaczego publiczna galeria pokazuje mniej obrazów po przełączeniu na Child mode?
+### Dlaczego publiczna galeria pokazuje mniej obrazów po przełączeniu na tryb dziecięcy?
 
-Child mode pozwala publicznie pokazywać tylko pliki General. R12, R16 i R18 są filtrowane.
+Tryb dziecięcy pozwala publicznie pokazywać tylko pliki General. R12, R16 i R18 są filtrowane.
 
 ### Czy publiczne URL-e mogą nadal otwierać obrazy dla dorosłych?
 
-Jeśli bieżący tryb dostępu nie pozwala na dany rating, zwykłe publiczne URL-e nie zwracają oryginalnego obrazu.
+Jeśli bieżący tryb dostępu nie pozwala na daną klasyfikację, zwykłe publiczne adresy URL nie zwracają oryginalnego obrazu.
 
-### Czy Random Image API może zwrócić ograniczone obrazy?
+### Czy API losowych obrazów może zwrócić ograniczone obrazy?
 
 Nie.
 
-Random Image API filtruje kandydatów według bieżącego trybu dostępu.
+API losowych obrazów filtruje kandydatów według bieżącego trybu dostępu.
 
-### Co ze starymi obrazami bez ratingu?
+### Co ze starymi obrazami bez klasyfikacji?
 
-Obrazy bez ratingu nie są automatycznie ukrywane tylko dlatego, że nie mają wyniku moderacji. Możesz później zmienić ich rating w panelu administracyjnym.
+Obrazy bez klasyfikacji nie są automatycznie ukrywane tylko dlatego, że nie mają wyniku moderacji. Możesz później zmienić ich klasyfikację w panelu administracyjnym.

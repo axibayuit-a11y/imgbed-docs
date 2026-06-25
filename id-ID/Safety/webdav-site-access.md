@@ -1,156 +1,156 @@
-# WebDAV Site Access (Beta)
+# Akses Situs WebDAV (Beta)
 
-WebDAV setting di Security Settings membuat ImgBed site Anda tersedia sebagai WebDAV endpoint.
+Pengaturan WebDAV di Pengaturan Keamanan membuat situs ImgBed Anda tersedia sebagai titik akhir WebDAV.
 
-Setelah diaktifkan, Anda bisa memakai Windows, macOS, mobile file managers, atau WebDAV-compatible client apa pun untuk browse, upload, delete, dan manage ImgBed files seperti remote folder.
+Setelah diaktifkan, Anda dapat memakai Windows, macOS, pengelola berkas seluler, atau klien apa pun yang kompatibel dengan WebDAV untuk menelusuri, mengunggah, menghapus, dan mengelola berkas ImgBed seperti folder jarak jauh.
 
-Ini adalah WebDAV access entry untuk site. Ini berbeda dari WebDAV storage channel di Upload Settings. Upload channel menyimpan files di third-party WebDAV service. Setting ini membuat ImgBed site menyediakan WebDAV access untuk clients.
+Ini adalah entri akses WebDAV untuk situs. Ini berbeda dari kanal penyimpanan WebDAV di Pengaturan Unggahan. Kanal unggahan menyimpan berkas di layanan WebDAV pihak ketiga. Pengaturan ini memungkinkan situs ImgBed Anda menyediakan akses WebDAV untuk klien.
 
 ## Di Mana Mengonfigurasinya
 
-Buka admin panel, lalu masuk ke:
+Buka panel admin, lalu masuk ke:
 
 ```text
 System Settings -> Security Settings -> WebDAV
 ```
 
-Available settings:
+Pengaturan yang tersedia:
 
-- Enable
-- Username
-- Password
-- Image loading mode
-- Default channel
+- Aktifkan
+- Nama pengguna
+- Kata sandi
+- Mode pemuatan gambar
+- Kanal bawaan
 
-## Fungsi Feature Ini
+## Fungsi Fitur Ini
 
-Setelah WebDAV enabled, ImgBed menyediakan fixed access URL:
+Setelah WebDAV diaktifkan, ImgBed menyediakan URL akses tetap:
 
 ```text
 https://your-domain.com/dav
 ```
 
-Gunakan URL ini untuk connect ke ImgBed file directory.
+Gunakan URL ini untuk terhubung ke direktori berkas ImgBed Anda.
 
-Use cases yang cocok:
+Contoh penggunaan yang sesuai:
 
-- Browse ImgBed files langsung dari file manager komputer.
-- Drag images ke WebDAV folder untuk upload.
-- Organize ImgBed folders dari local file manager.
-- Gunakan WebDAV-compatible software untuk sync atau manage images.
-- Access ImgBed content tanpa membuka admin panel.
+- Menelusuri berkas ImgBed langsung dari pengelola berkas komputer.
+- Menyeret gambar ke folder WebDAV untuk mengunggahnya.
+- Mengatur folder ImgBed dari pengelola berkas lokal.
+- Memakai perangkat lunak yang kompatibel dengan WebDAV untuk menyinkronkan atau mengelola gambar.
+- Mengakses konten ImgBed tanpa membuka panel admin.
 
-## Settings
+## Pengaturan
 
-### Enable
+### Aktifkan
 
-Menyalakan WebDAV endpoint.
+Mengaktifkan titik akhir WebDAV.
 
-Saat disabled, clients tidak bisa connect lewat WebDAV.
+Saat dinonaktifkan, klien tidak dapat terhubung melalui WebDAV.
 
-### Username dan Password
+### Nama Pengguna dan Kata Sandi
 
-Credentials ini digunakan oleh WebDAV clients saat connect.
+Kredensial ini digunakan oleh klien WebDAV saat terhubung.
 
-Gunakan WebDAV username dan password khusus. Jangan pakai ulang admin password atau upload password.
+Gunakan nama pengguna dan kata sandi khusus untuk WebDAV. Jangan memakai ulang kata sandi admin atau kata sandi unggah.
 
-Jika username atau password kosong, WebDAV clients tidak dapat connect dengan benar.
+Jika nama pengguna atau kata sandi kosong, klien WebDAV tidak dapat terhubung dengan benar.
 
-### Image Loading Mode
+### Mode Pemuatan Gambar
 
-Image loading mode menentukan image URL mana yang diprioritaskan WebDAV clients saat membaca images.
+Mode pemuatan gambar menentukan URL gambar mana yang diprioritaskan klien WebDAV saat membaca gambar.
 
-Common choices:
+Pilihan umum:
 
-| Mode | Description |
+| Mode | Keterangan |
 | --- | --- |
-| Smart loading | ImgBed memilih berdasarkan context. Recommended untuk normal use. |
-| Original | Memprioritaskan original images. |
-| Thumbnail | Memprioritaskan thumbnails. Berguna untuk fast preview. |
+| Pemuatan cerdas | ImgBed memilih berdasarkan konteks. Disarankan untuk penggunaan normal. |
+| Asli | Memprioritaskan gambar asli. |
+| Gambar mini | Memprioritaskan gambar mini. Berguna untuk pratinjau cepat. |
 
-Jika ragu, gunakan `Smart loading`.
+Jika ragu, pertahankan `Pemuatan cerdas`.
 
-### Default Channel
+### Kanal Bawaan
 
-Default channel digunakan untuk WebDAV uploads.
+Kanal bawaan digunakan untuk unggahan WebDAV.
 
-Saat Anda copy files ke WebDAV directory dari Windows atau client lain, ImgBed upload files tersebut melalui selected default upload channel.
+Saat Anda menyalin berkas ke direktori WebDAV dari Windows atau klien lain, ImgBed mengunggahnya melalui kanal unggahan bawaan yang dipilih.
 
-Jika tidak ada default channel yang dipilih, browsing mungkin berjalan, tetapi uploads bisa fail.
+Jika tidak ada kanal bawaan yang dipilih, penelusuran mungkin berjalan, tetapi unggahan dapat gagal.
 
 ## Mengakses WebDAV di Windows 11
 
-Windows 11 dapat menambahkan WebDAV sebagai network location.
+Windows 11 dapat menambahkan WebDAV sebagai lokasi jaringan.
 
-1. Buka `This PC`.
-2. Pilih `Add a network location`.
+1. Buka `PC ini`.
+2. Pilih `Tambahkan lokasi jaringan`.
 3. Masukkan `https://your-domain.com/dav`.
-4. Masukkan WebDAV username dan password saat diminta.
-5. Selesaikan wizard. WebDAV directory kemudian bisa dibuka di File Explorer.
+4. Masukkan nama pengguna dan kata sandi WebDAV saat diminta.
+5. Selesaikan panduan. Direktori WebDAV kemudian dapat dibuka di Penjelajah File.
 
-![Add WebDAV in Windows 11](../../image/Safety/webdav在win11配置.png)
+![Tambahkan WebDAV di Windows 11](../../image/Safety/webdav在win11配置.png)
 
-Setelah ditambahkan, WebDAV directory muncul di Windows File Explorer. Anda bisa open, copy, dan manage files seperti folder biasa.
+Setelah ditambahkan, direktori WebDAV muncul di Penjelajah File Windows. Anda dapat membuka, menyalin, dan mengelola berkas seperti folder biasa.
 
-![WebDAV in Windows](../../image/Safety/webdav在win显示效果.png)
+![WebDAV di Windows](../../image/Safety/webdav在win显示效果.png)
 
-## Supported Operations
+## Operasi yang Didukung
 
-Setelah WebDAV connection berhasil, biasanya Anda bisa:
+Setelah koneksi WebDAV berhasil, biasanya Anda dapat:
 
-- View files dan folders.
-- Upload files.
-- Create folders.
-- Rename files atau folders.
-- Move files.
-- Delete files.
+- Melihat berkas dan folder.
+- Mengunggah berkas.
+- Membuat folder.
+- Mengganti nama berkas atau folder.
+- Memindahkan berkas.
+- Menghapus berkas.
 
-WebDAV cocok untuk everyday access dan small-scale file management. Untuk large moves, bulk deletes, atau organization yang kompleks, gunakan admin panel.
+WebDAV paling cocok untuk akses harian dan pengelolaan berkas skala kecil. Untuk pemindahan besar, penghapusan massal, atau pengaturan yang rumit, gunakan panel admin.
 
-## Login Device Management
+## Manajemen Perangkat Login
 
-Successful WebDAV connections juga muncul di WebDAV tab dalam Login Device Management.
+Koneksi WebDAV yang berhasil juga muncul di tab WebDAV dalam Manajemen Perangkat Login.
 
-Anda bisa review WebDAV clients di sana dan force old devices offline jika perlu.
+Anda dapat meninjau klien WebDAV di sana dan memaksa perangkat lama offline jika diperlukan.
 
-Jika WebDAV username atau password diubah, clients lama perlu sign in lagi.
+Jika Anda mengubah nama pengguna atau kata sandi WebDAV, klien lama perlu login lagi.
 
 ## FAQ
 
-### Windows Terus Meminta Username dan Password
+### Windows Terus Meminta Nama Pengguna dan Kata Sandi
 
 Periksa:
 
 - URL adalah `https://your-domain.com/dav`.
-- Username dan password cocok dengan WebDAV settings.
-- WebDAV enabled.
-- Site bisa diakses lewat HTTPS.
+- Nama pengguna dan kata sandi cocok dengan pengaturan WebDAV.
+- WebDAV diaktifkan.
+- Situs dapat diakses melalui HTTPS.
 
-### Browsing Berjalan, tetapi Upload Gagal
+### Penelusuran Berjalan, tetapi Unggahan Gagal
 
-Periksa `Default channel`.
+Periksa `Kanal bawaan`.
 
-WebDAV uploads memerlukan default upload channel. Jika missing, disabled, atau misconfigured, uploads bisa fail.
+Unggahan WebDAV memerlukan kanal unggahan bawaan. Jika kanal ini tidak ada, dinonaktifkan, atau salah konfigurasi, unggahan dapat gagal.
 
-### Access Speed Tidak Stabil
+### Kecepatan Akses Tidak Stabil
 
-WebDAV performance bergantung pada client, network, file count, dan default upload channel.
+Performa WebDAV bergantung pada klien, jaringan, jumlah berkas, dan kanal unggahan bawaan.
 
-Jika sebuah directory punya banyak files, organize ke folders daripada menyimpan terlalu banyak files dalam satu directory.
+Jika sebuah direktori memiliki banyak berkas, atur berkas tersebut ke dalam folder daripada menyimpan terlalu banyak berkas dalam satu direktori.
 
-## Security Recommendations
+## Rekomendasi Keamanan
 
-- Gunakan HTTPS untuk WebDAV access.
-- Set strong password.
-- Jangan share WebDAV password dengan orang yang tidak trusted.
+- Gunakan HTTPS untuk akses WebDAV.
+- Tetapkan kata sandi yang kuat.
+- Jangan bagikan kata sandi WebDAV kepada orang yang tidak dipercaya.
 - Matikan WebDAV saat tidak digunakan.
-- Bersihkan unused WebDAV devices secara berkala di Login Device Management.
+- Bersihkan perangkat WebDAV yang tidak digunakan secara berkala di Manajemen Perangkat Login.
 
-## WebDAV Upload File Size
+## Ukuran Berkas Unggahan WebDAV
 
-WebDAV clients tidak memakai large-file chunking flow milik browser upload page. Untuk files di atas suggested limits berikut, gunakan web upload page.
+Klien WebDAV tidak memakai alur pemotongan berkas besar milik halaman unggah peramban. Untuk berkas yang melebihi batas yang disarankan di bawah, gunakan halaman unggah web.
 
-| Default Upload Channel | Suggested Single-File Limit for WebDAV |
+| Kanal Unggahan Bawaan | Batas Satu Berkas yang Disarankan untuk WebDAV |
 | --- | ---: |
 | Telegram | 20 MB |
 | Discord | 10 MB |

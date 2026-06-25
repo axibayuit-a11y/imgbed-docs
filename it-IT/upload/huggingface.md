@@ -34,7 +34,7 @@ Dopo aver scelto `Hugging Face` nelle Impostazioni di caricamento, compila:
 | Nome repository | Un nome breve come `image`, oppure un percorso completo come `username/image`. |
 | Access Token | Lo User Access Token Hugging Face appena creato. |
 | Repository privato | Attiva o disattiva in base alle tue esigenze. |
-| Nota | Opzionale, per esempio `Primary upload channel`. |
+| Nota | Opzionale, per esempio `Canale di caricamento principale`. |
 
 ![Aggiungi canale](../../image/upload/huggingface/添加渠道.png)
 
@@ -55,13 +55,13 @@ Il sistema gestisce automaticamente questi dettagli:
 ## Checklist rapida
 
 ```text
-Accedi a Hugging Face
--> Crea un Access Token
--> Seleziona permesso write
--> Torna in ImgBed e inserisci token e nome repository
--> Salva
--> Se inserisci solo il nome repo, ImgBed aggiunge automaticamente lo username corrente
--> Se inserisci username/repo, ImgBed lo usa così com'è
--> ImgBed controlla o crea il repository dataset
--> Carica un'immagine di prova
+Sign in to Hugging Face
+-> Create an Access Token
+-> Select write permission
+-> Return to ImgBed and enter the token and repository name
+-> Save
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> ImgBed checks or creates the dataset repository
+-> Upload a test image
 ```

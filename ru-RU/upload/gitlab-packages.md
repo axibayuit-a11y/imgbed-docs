@@ -56,12 +56,12 @@
 ## Короткий чек-лист
 
 ```text
-Войти в GitLab
--> Создать Access Token
--> Выбрать только scope api
--> Вернуться в ImgBed и ввести token и имя проекта
--> Сохранить
--> Если введено только имя проекта, ImgBed автоматически добавит текущий username
--> Если введено username/project, ImgBed использует это как есть
--> Загрузить тестовое изображение
+Sign in to GitLab
+-> Create an Access Token
+-> Select only the api scope
+-> Return to ImgBed and enter the token and project name
+-> Save
+-> If only a project name is entered, ImgBed adds the current username automatically
+-> If username/project is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

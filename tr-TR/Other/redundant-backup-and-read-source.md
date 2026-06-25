@@ -1,93 +1,93 @@
-# Yedek Kopya ve Okuma Kaynağı Değiştirme
+# Yedekli Yedekleme ve Okuma Kaynağı Değiştirme
 
-Redundant backup, zaten yüklenmiş bir dosyanın ek kopyasını saklar.
+Yedekli yedekleme, zaten yüklenmiş bir dosyanın ek bir kopyasını saklar.
 
-Hem birincil dosya hem yedek dosya read sources olarak kullanılabilir. Ziyaretçiler genellikle bir fark görmez. Tek fark dosyanın hangi depolama kanalından sunulduğudur.
+Hem birincil dosya hem de yedek dosya okuma kaynağı olarak kullanılabilir. Ziyaretçiler genellikle fark görmez. Tek fark, dosyanın hangi depolama kanalı tarafından sunulduğudur.
 
-## Redundant Backup Neler Yapabilir?
+## Yedekli Yedekleme Neler Yapabilir?
 
 | Özellik | Açıklama |
 | --- | --- |
-| Ek kopya saklama | Tek bir kanal arızası riskini azaltmak için dosyaları başka bir upload channel içine yedekler. |
-| Read source değiştirme | Backup başarılı olduktan sonra dosya okumayı primary channel ve backup channel arasında değiştirir. |
-| Single-file backup | Dosya ayrıntı sayfasından tek dosyayı yedekler. |
-| Batch backup | Yönetim sayfasında birden fazla dosya seçip birlikte yedekler. |
-| Global redundant backup | Other Settings içinden klasöre göre dosya yedekler. |
+| Ek kopya saklama | Tek bir kanal arızası riskini azaltmak için dosyaları başka bir yükleme kanalına yedekler. |
+| Okuma kaynağı değiştirme | Yedekleme başarılı olduktan sonra dosya okumalarını birincil kanal ile yedek kanal arasında değiştirir. |
+| Tek dosya yedekleme | Dosya ayrıntı sayfasından bir dosyayı yedekler. |
+| Toplu yedekleme | Yönetim sayfasında birden fazla dosya seçip birlikte yedekler. |
+| Genel yedekli yedekleme | Dosyaları Diğer Ayarlar'dan klasör bazında yedekler. |
 
-## Redundant Backup Girişi
+## Yedekli Yedekleme Girişi
 
-Şurayı açın:
+Açın:
 
 ```text
 System Settings -> Other Settings -> Redundant Backup
 ```
 
-![Redundant backup](../../image/other/冗余备份截图.png)
+![Yedekli yedekleme](../../image/other/冗余备份截图.png)
 
-Bu giriş, bir klasöre veya tüm dosyalara toplu yedek eklemek için uygundur.
+Bu giriş, bir klasöre veya tüm dosyalara toplu olarak yedek eklemek için en uygundur.
 
-Backup channel elle seçilebilir veya automatic switching seçilip ImgBed'in uygun yedek kanalı bulması sağlanabilir.
+Yedek kanal elle seçilebilir veya otomatik değiştirmeyi seçip ImgBed'in uygun bir yedek kanal bulmasına izin verebilirsiniz.
 
-## Dosya Ayrıntısından Backup
+## Dosya Ayrıntılarından Yedekleme
 
-Yönetim panelinde dosya ayrıntı sayfasını açın ve backup düğmesine tıklayın.
+Yönetim panelinde bir dosya ayrıntı sayfası açın ve yedeklemeye tıklayın.
 
-![Dosya ayrıntısında backup](../../image/other/文件详情里文件备份.png)
+![Dosya ayrıntılarında yedekleme](../../image/other/文件详情里文件备份.png)
 
-Bu, önemli tek bir dosyayı gerektiğinde yedeklemek için uygundur.
+Bu, önemli bir dosyayı gerektiğinde yedeklemek için en uygundur.
 
-Backup başarılı olduktan sonra dosya ayrıntı sayfası kullanılabilir read sources değerlerini gösterir.
+Yedekleme başarılı olduktan sonra dosya ayrıntı sayfası kullanılabilir okuma kaynaklarını gösterir.
 
-## Seçime Göre Batch Backup
+## Seçime Göre Toplu Yedekleme
 
-Yönetim panelinde birden fazla dosya seçin ve batch backup çalıştırın.
+Yönetim panelinde birden fazla dosya seçin ve toplu yedekleme çalıştırın.
 
-![Batch backup](../../image/other/批量备份截图.png)
+![Toplu yedekleme](../../image/other/批量备份截图.png)
 
-Bu, bir dosya grubunu işlemek için uygundur.
+Bu, bir dosya grubunu işlemek için en uygundur.
 
-Selection backup, file details backup ve Other Settings altındaki redundant backup aynı backup system'i kullanır. Sadece farklı giriş noktalarıdır.
+Seçilen dosyaları yedekleme, dosya ayrıntıları yedeklemesi ve Diğer Ayarlar'daki yedekli yedekleme aynı yedekleme sistemini kullanır. Yalnızca giriş noktaları farklıdır.
 
-## Backup Sonrası Read Source Değiştirme
+## Yedeklemeden Sonra Okuma Kaynağını Değiştirme
 
-Backup tamamlandıktan sonra dosya ayrıntı sayfası read source değiştirmenize izin verir:
+Yedekleme tamamlandıktan sonra dosya ayrıntı sayfası okuma kaynağını değiştirmenizi sağlar:
 
-| Read Source | Açıklama |
+| Okuma Kaynağı | Açıklama |
 | --- | --- |
-| Primary channel | Özgün upload channel üzerinden okur. |
-| Backup channel | Backup channel üzerinden okur. |
+| Birincil kanal | Özgün yükleme kanalından okur. |
+| Yedek kanal | Yedek kanaldan okur. |
 
-![Backup sonrası read source değiştirme](../../image/other/备份成功切换读取源.png)
+![Yedeklemeden sonra okuma kaynağını değiştirme](../../image/other/备份成功切换读取源.png)
 
-Ziyaretçilerin dosyanın primary mi backup channel üzerinden mi sunulduğunu bilmesi gerekmez.
+Ziyaretçilerin dosyanın birincil kanaldan mı yoksa yedek kanaldan mı sunulduğunu bilmesine gerek yoktur.
 
-Seçtiğiniz read source sonraki dosya erişimleri için tercih edilen kaynak olur.
+Seçtiğiniz okuma kaynağı, sonraki dosya erişimleri için tercih edilen kaynak olur.
 
-## Backup Ne Zaman Atlanır?
+## Yedekleme Ne Zaman Atlanır?
 
-Backup sırasında şu durumlar atlanır. Bunlar hata değildir.
+Aşağıdaki durumlar yedekleme sırasında atlanır. Bunlar hata değildir.
 
 | Durum | Neden Atlanır |
 | --- | --- |
-| Already backed up | Zaten backup bulunan dosya tekrar yedeklenmez. |
-| Primary and backup channels are the same | Backup anlamlı olması için başka bir kanalda saklanmalıdır. |
-| No usable backup channel | Uygun alternatif kanal yoktur. |
+| Zaten yedeklenmiş | Zaten yedeği olan bir dosya yeniden yedeklenmez. |
+| Birincil ve yedek kanallar aynı | Yedeklemenin anlamlı olması için başka bir kanalda saklanması gerekir. |
+| Kullanılabilir yedek kanal yok | Uygun bir alternatif kanal yoktur. |
 
-Kısaca: backup başka bir kanala gitmelidir ve zaten yedeklenmiş dosyalar tekrar alan tüketmez.
+Kısaca: yedekler başka bir kanala gitmelidir ve zaten yedeklenmiş dosyalar tekrar ek alan tüketmez.
 
-## Primary Channel ve Backup Channel
+## Birincil Kanal ve Yedek Kanal
 
-| Ad | Anlamı |
+| Ad | Anlam |
 | --- | --- |
-| Primary channel | Dosya ilk yüklendiğinde kullanılan kanal. |
-| Backup channel | Redundant copy saklayan kanal. |
-| Primary read source | Dosya şu anda primary channel üzerinden okunuyor. |
-| Backup read source | Dosya şu anda backup channel üzerinden okunuyor. |
+| Birincil kanal | Dosya ilk yüklendiğinde kullanılan kanal. |
+| Yedek kanal | Yedekli kopyayı saklayan kanal. |
+| Birincil okuma kaynağı | Dosya şu anda birincil kanaldan okunuyor. |
+| Yedek okuma kaynağı | Dosya şu anda yedek kanaldan okunuyor. |
 
-Primary ve backup read sources kullanıcı açısından aynı davranır.
+Birincil ve yedek okuma kaynakları kullanıcıya dönük davranışta aynıdır.
 
-Backup file kullanılabilir olduğu sürece görseller, videolar ve download links backup read source'a geçtikten sonra çalışmaya devam eder.
+Yedek dosya kullanılabilir olduğu sürece, yedek okuma kaynağına geçildikten sonra görseller, videolar ve indirme bağlantıları çalışmaya devam eder.
 
-## Dosya Silindiğinde Ne Olur?
+## Bir Dosya Silindiğinde Ne Olur?
 
-Bir dosya silindiğinde ImgBed hem primary file hem backup file değerini siler.
+Bir dosya silindiğinde ImgBed hem birincil dosyayı hem de yedek dosyayı siler.

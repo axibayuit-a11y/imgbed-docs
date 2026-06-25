@@ -1,152 +1,152 @@
-# Authentication اور Login Device Management
+# توثیق اور لاگ اِن ڈیوائسز کا انتظام
 
-`Authentication Management` اور `Login Device Management` آپ کے ImgBed admin panel، public upload entry، اور WebDAV access کی حفاظت کرتے ہیں۔
+`توثیق کا انتظام` اور `لاگ اِن ڈیوائسز کا انتظام` آپ کے ImgBed ایڈمن پینل، عوامی اپ لوڈ داخلے، اور WebDAV رسائی کی حفاظت کرتے ہیں۔
 
-اس صفحے سے access credentials set کریں، signed-in devices دیکھیں، اور ضرورت پڑنے پر پرانے sessions revoke کریں۔
+اس صفحے سے رسائی اسناد مقرر کریں، سائن اِن شدہ ڈیوائسز دیکھیں، اور ضرورت پڑنے پر پرانے سیشن منسوخ کریں۔
 
-## کہاں Configure کریں
+## کہاں ترتیب دیں
 
-admin panel کھولیں، پھر جائیں:
+ایڈمن پینل کھولیں، پھر یہاں جائیں:
 
 ```text
 System Settings -> Security Settings
 ```
 
-اس page میں دو main areas ہیں:
+صفحے میں دو بنیادی حصے ہیں:
 
-- Authentication Management
-- Login Device Management
+- توثیق کا انتظام
+- لاگ اِن ڈیوائسز کا انتظام
 
-![Authentication management](../../image/Safety/认证管理界面.png)
+![توثیق کا انتظام](../../image/Safety/认证管理界面.png)
 
-## Authentication Management کیا کرتا ہے
+## توثیق کا انتظام کیا کرتا ہے
 
-Authentication Management access credentials محفوظ کرتا ہے۔
+توثیق کا انتظام رسائی اسناد محفوظ کرتا ہے۔
 
-اس کی دو types ہیں:
+اس کی دو اقسام ہیں:
 
-- User-side authentication
-- Admin-side authentication
+- صارف سمت کی توثیق
+- ایڈمن سمت کی توثیق
 
-## User-Side Authentication
+## صارف سمت کی توثیق
 
-User-side authentication upload password ہے۔
+صارف سمت کی توثیق اپ لوڈ پاس ورڈ ہے۔
 
-upload password set ہونے کے بعد عام visitors کو upload page استعمال کرنے سے پہلے password درج کرنا ہوگا۔ یہ اس وقت مفید ہے جب آپ public upload page ہر کسی کے لیے کھلا نہیں رکھنا چاہتے۔
+اپ لوڈ پاس ورڈ مقرر ہونے کے بعد، عام وزٹرز کو اپ لوڈ صفحہ استعمال کرنے سے پہلے اسے درج کرنا ہوتا ہے۔ یہ اس وقت مفید ہے جب آپ عوامی اپ لوڈ صفحہ سب کے لیے کھلا نہیں رکھنا چاہتے۔
 
-![User login page](../../image/Safety/用户端登录界面.png)
+![صارف لاگ اِن صفحہ](../../image/Safety/用户端登录界面.png)
 
-### Upload Password Set کرنا
+### اپ لوڈ پاس ورڈ مقرر کرنا
 
-جب upload password configured ہو:
+جب اپ لوڈ پاس ورڈ ترتیب دیا جاتا ہے:
 
-- visitors کو upload page استعمال کرنے سے پہلے password درج کرنا ہوگا۔
-- upload صرف password قبول ہونے کے بعد دستیاب ہوگا۔
-- اگر user-side device sessions enabled ہوں تو ImgBed اس user-side device کو record کرے گا۔
+- وزٹرز کو اپ لوڈ صفحہ استعمال کرنے سے پہلے پاس ورڈ درج کرنا ہوتا ہے۔
+- اپ لوڈنگ صرف پاس ورڈ قبول ہونے کے بعد دستیاب ہوتی ہے۔
+- اگر صارف سمت ڈیوائس سیشنز فعال ہوں تو ImgBed اس صارف سمت ڈیوائس کو ریکارڈ کرتا ہے۔
 
-upload password تبدیل کرنے سے پرانے user-side sessions invalid ہو جاتے ہیں۔ visitors کو نیا password دوبارہ درج کرنا ہوگا۔
+اپ لوڈ پاس ورڈ تبدیل کرنے سے پرانے صارف سمت سیشن غیر مؤثر ہو جاتے ہیں۔ وزٹرز کو نیا پاس ورڈ دوبارہ درج کرنا پڑتا ہے۔
 
-## Admin-Side Authentication
+## ایڈمن سمت کی توثیق
 
-Admin-side authentication admin username اور password استعمال کرتا ہے۔
+ایڈمن سمت کی توثیق ایڈمن صارف نام اور پاس ورڈ استعمال کرتی ہے۔
 
-یہ admin panel کی حفاظت کرتا ہے۔ production use کے لیے اسے ہمیشہ configure کرنا چاہیے۔
+یہ ایڈمن پینل کی حفاظت کرتی ہے۔ پروڈکشن استعمال کے لیے اسے ہمیشہ ترتیب دینا چاہیے۔
 
-![Admin login page](../../image/Safety/管理端登录界面.png)
+![ایڈمن لاگ اِن صفحہ](../../image/Safety/管理端登录界面.png)
 
-### Admin Credentials Set کرنا
+### ایڈمن اسناد مقرر کرنا
 
-جب admin username اور password configured ہوں:
+جب ایڈمن صارف نام اور پاس ورڈ ترتیب دیے جاتے ہیں:
 
-- admin panel کھولنے کے لیے login ضروری ہوگا۔
-- successful login ایک admin device record بناتا ہے۔
-- Login Device Management میں آپ devices review، clean up، یا force offline کر سکتے ہیں۔
+- ایڈمن پینل کھولنے کے لیے لاگ اِن ضروری ہوتا ہے۔
+- کامیاب لاگ اِن ایک ایڈمن ڈیوائس ریکارڈ بناتا ہے۔
+- آپ لاگ اِن ڈیوائسز کے انتظام میں ڈیوائسز کا جائزہ لے سکتے ہیں، انہیں صاف کر سکتے ہیں، یا زبردستی آف لائن کر سکتے ہیں۔
 
-admin username یا password تبدیل کرنے سے پرانے admin sessions invalid ہو جاتے ہیں۔ آپ کو دوبارہ sign in کرنا ہوگا۔
+ایڈمن صارف نام یا پاس ورڈ تبدیل کرنے سے پرانے ایڈمن سیشن غیر مؤثر ہو جاتے ہیں۔ آپ کو دوبارہ سائن اِن کرنا ہوگا۔
 
-## Login Device Management کیا کرتا ہے
+## لاگ اِن ڈیوائسز کا انتظام کیا کرتا ہے
 
-Login Device Management signed-in devices دکھاتا ہے۔
+لاگ اِن ڈیوائسز کا انتظام وہ ڈیوائسز دکھاتا ہے جنہوں نے سائن اِن کیا ہے۔
 
-یہ چیک کرنے میں مدد دیتا ہے:
+یہ آپ کو جانچنے میں مدد دیتا ہے:
 
-- کن devices نے admin panel access کیا۔
-- کن devices نے user-side upload page access کیا۔
-- کون سے WebDAV clients connect ہوئے۔
-- device session ابھی valid ہے یا نہیں۔
-- پرانے devices کو force offline کرنا چاہیے یا نہیں۔
+- کن ڈیوائسز نے ایڈمن پینل تک رسائی کی ہے۔
+- کن ڈیوائسز نے صارف سمت اپ لوڈ صفحہ تک رسائی کی ہے۔
+- کن WebDAV کلائنٹس نے کنکشن بنایا ہے۔
+- آیا ڈیوائس سیشن اب بھی درست ہے یا نہیں۔
+- آیا پرانی ڈیوائسز کو زبردستی آف لائن کرنا چاہیے یا نہیں۔
 
-page میں تین tabs ہیں:
+صفحے میں تین ٹیبز ہیں:
 
-- Admin
-- User
+- ایڈمن
+- صارف
 - WebDAV
 
-## Global Cookie Security
+## عالمی کوکی سیکیورٹی
 
-Login Device Management کے اوپر آپ global cookie behavior configure کر سکتے ہیں۔
+لاگ اِن ڈیوائسز کے انتظام کے اوپر آپ عالمی کوکی رویہ ترتیب دے سکتے ہیں۔
 
-### User Cookie Lifetime
+### صارف کوکی مدت
 
-یہ کنٹرول کرتا ہے کہ user-side login کتنے دن active رہ سکتا ہے۔
+یہ کنٹرول کرتی ہے کہ صارف سمت لاگ اِن کتنے دن فعال رہ سکتا ہے۔
 
-مثلاً اگر آپ اسے 14 days set کریں، تو visitors کو عموماً 14 دن کے اندر upload password دوبارہ درج نہیں کرنا پڑے گا۔
+مثال کے طور پر، اگر آپ اسے 14 دن مقرر کریں تو وزٹرز کو عموماً 14 دن کے اندر اپ لوڈ پاس ورڈ دوبارہ درج کرنے کی ضرورت نہیں ہوتی۔
 
-### Admin Cookie Lifetime
+### ایڈمن کوکی مدت
 
-یہ کنٹرول کرتا ہے کہ admin login کتنے دن active رہ سکتا ہے۔
+یہ کنٹرول کرتی ہے کہ ایڈمن لاگ اِن کتنے دن فعال رہ سکتا ہے۔
 
-مثلاً اگر 14 days set کریں، تو administrators کو عموماً 14 دن کے اندر دوبارہ sign in نہیں کرنا پڑے گا۔
+مثال کے طور پر، اگر آپ اسے 14 دن مقرر کریں تو administrators کو عموماً 14 دن کے اندر دوبارہ سائن اِن کرنے کی ضرورت نہیں ہوتی۔
 
-### Secure Mode
+### محفوظ موڈ
 
-Secure mode enabled ہو تو browsers login cookies صرف HTTPS پر send کرتے ہیں۔
+محفوظ موڈ فعال ہونے پر براؤزرز لاگ اِن کوکیز صرف HTTPS پر بھیجتے ہیں۔
 
-production HTTPS sites کے لیے اسے enable کریں۔ local HTTP testing کے لیے enable نہ کریں، ورنہ "login succeeded, but refresh logs me out" جیسا behavior آ سکتا ہے۔
+پروڈکشن HTTPS سائٹس کے لیے اسے فعال کریں۔ مقامی HTTP آزمائش کے لیے اسے فعال نہ کریں، ورنہ آپ کو "لاگ اِن کامیاب ہوا، لیکن صفحہ تازہ کرنے پر سیشن ختم ہو جاتا ہے" جیسا رویہ نظر آ سکتا ہے۔
 
-## Admin Login Devices
+## ایڈمن لاگ اِن ڈیوائسز
 
-Admin tab وہ devices دکھاتا ہے جنہوں نے admin panel میں sign in کیا۔
+ایڈمن ٹیب وہ ڈیوائسز دکھاتا ہے جنہوں نے ایڈمن پینل میں سائن اِن کیا۔
 
-device records صرف اس وقت ظاہر ہوتے ہیں جب admin credentials configured ہوں اور admin panel login کے ذریعے access کیا جائے۔
+ڈیوائس ریکارڈز صرف اس وقت ظاہر ہوتے ہیں جب ایڈمن اسناد ترتیب دی گئی ہوں اور ایڈمن پینل تک لاگ اِن کے ذریعے رسائی ہوئی ہو۔
 
-ہر device card یہ دکھا سکتا ہے:
+ہر ڈیوائس کارڈ یہ معلومات دکھا سکتا ہے:
 
-- device اور browser information
-- first login IP
-- last active IP
-- login time
-- last active time
-- expiration time
-- current status
+- ڈیوائس اور براؤزر کی معلومات
+- پہلا لاگ اِن IP
+- آخری فعال IP
+- لاگ اِن وقت
+- آخری فعال وقت
+- میعاد ختم ہونے کا وقت
+- موجودہ حالت
 
-اگر کوئی device unfamiliar لگے تو `Force Offline` سے اسے invalidate کریں۔
+اگر کوئی ناواقف ڈیوائس نظر آئے تو اسے غیر مؤثر کرنے کے لیے `زبردستی آف لائن کریں` استعمال کریں۔
 
-## Clean Up Old Devices
+## پرانی ڈیوائسز صاف کرنا
 
-`Clean Up Old Devices` current tab میں پرانے login records کو bulk میں remove کرتا ہے۔
+`پرانی ڈیوائسز صاف کریں` موجودہ ٹیب میں پرانے لاگ اِن ریکارڈز کو مجموعی طور پر ہٹا دیتا ہے۔
 
-اسے اس وقت استعمال کریں جب آپ کو شک ہو کہ پرانے sessions دوسرے devices پر ابھی active ہو سکتے ہیں۔
+اسے اس وقت استعمال کریں جب آپ کو شبہ ہو کہ دیگر ڈیوائسز پر پرانے سیشن اب بھی فعال ہو سکتے ہیں۔
 
-## Force Offline
+## زبردستی آف لائن کرنا
 
-`Force Offline` ایک device session کو invalidate کرتا ہے۔
+`زبردستی آف لائن کریں` ایک ڈیوائس سیشن کو غیر مؤثر کرتا ہے۔
 
-device force offline ہونے کے بعد:
+ڈیوائس کو زبردستی آف لائن کرنے کے بعد:
 
-- Admin devices کو دوبارہ sign in کرنا ہوگا۔
-- User-side devices کو upload password دوبارہ درج کرنا ہوگا۔
-- WebDAV clients کو دوبارہ authenticate کرنا ہوگا۔
+- ایڈمن ڈیوائسز کو دوبارہ سائن اِن کرنا ہوگا۔
+- صارف سمت ڈیوائسز کو اپ لوڈ پاس ورڈ دوبارہ درج کرنا ہوگا۔
+- WebDAV کلائنٹس کو دوبارہ توثیق کرنی ہوگی۔
 
-Expired یا invalid devices بھی remove کیے جا سکتے ہیں۔
+میعاد ختم یا غیر درست ڈیوائسز کو بھی ہٹایا جا سکتا ہے۔
 
-## Sign Out Current Device
+## موجودہ ڈیوائس سے سائن آؤٹ
 
-current device card پر `Current Device` mark ہوتا ہے۔
+موجودہ ڈیوائس کارڈ کو `موجودہ ڈیوائس` کے طور پر نشان زد کیا جاتا ہے۔
 
-current device سے sign out کرنے کے بعد:
+موجودہ ڈیوائس سے سائن آؤٹ کرنے کے بعد:
 
-- current admin session sign out ہو جاتا ہے۔
-- current user-side session sign out ہو جاتا ہے۔
+- موجودہ ایڈمن سیشن سائن آؤٹ ہو جاتا ہے۔
+- موجودہ صارف سمت سیشن سائن آؤٹ ہو جاتا ہے۔
 
-اس area کا استعمال جاری رکھنے سے پہلے آپ کو دوبارہ sign in کرنا ہوگا۔
+اس حصے کا استعمال جاری رکھنے سے پہلے آپ کو دوبارہ سائن اِن کرنا ہوگا۔

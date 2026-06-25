@@ -1,90 +1,90 @@
-# เพิ่ม Cloudflare R2 Channel
+# เพิ่มช่องทาง Cloudflare R2
 
 ## เหมาะกับกรณีไหน
 
 ใช้ Cloudflare R2 เมื่อ:
 
-- ImgBed site ของคุณ deploy อยู่บน Cloudflare อยู่แล้ว และต้องการเก็บ files ใน R2 bucket ภายใต้ Cloudflare account เดียวกัน
+- ImgBed site ของคุณ deploy อยู่บน Cloudflare อยู่แล้ว และต้องการเก็บไฟล์ใน R2 bucket ภายใต้ Cloudflare account เดียวกัน
 - ไม่ต้องการตั้งค่า S3 endpoint, access key และ secret key แยกต่างหาก
 - ต้องการให้การอ่านและเขียนผ่าน Worker หรือ Pages R2 binding โดยตั้งค่าน้อยที่สุด
 
 สรุปสั้น ๆ:
 
-R2 channel ไม่ได้สร้างด้วยตัวเองใน ImgBed admin panel ก่อนอื่นต้อง bind R2 bucket เข้ากับ Cloudflare project และ binding variable name ต้องเป็น `img_r2`
+ช่องทาง R2 ไม่ได้สร้างด้วยตัวเองในแผงผู้ดูแลของ ImgBed ก่อนอื่นต้อง bind R2 bucket เข้ากับ Cloudflare project และ binding variable name ต้องเป็น `img_r2`
 
 ## สิ่งที่ต้องเตรียมก่อนเริ่ม
 
-- Cloudflare account
+- บัญชี Cloudflare
 - R2 bucket ที่มีอยู่แล้ว
 - สิทธิ์จัดการ Cloudflare project ที่ deploy ImgBed อยู่
 
-## Configure ใน Cloudflare
+## กำหนดค่าใน Cloudflare
 
 ### 1. สร้าง R2 Bucket
 
-1. Log in เข้า Cloudflare Dashboard
+1. เข้าสู่ระบบ Cloudflare Dashboard
 2. เปิด `R2 Object Storage`
-3. คลิก Create bucket
-4. เลือก bucket name เช่น `imgbed`
+3. คลิกสร้าง bucket
+4. เลือกชื่อ bucket เช่น `imgbed`
 
-Bucket นี้คือที่เก็บ uploaded files
+Bucket นี้คือที่เก็บไฟล์ที่อัปโหลด
 
-![Create an R2 bucket](../../image/upload/cloudflare-r2/创建一个存储桶img-r2.png)
+![สร้าง R2 bucket](../../image/upload/cloudflare-r2/创建一个存储桶img-r2.png)
 
 ### 2. Bind Bucket เข้ากับ ImgBed Project
 
-เลือกตำแหน่ง binding ตาม deployment type:
+เลือกตำแหน่ง binding ตามประเภท deployment:
 
-| Deployment Type | Binding Location |
+| ประเภท Deployment | ตำแหน่ง Binding |
 | --- | --- |
-| Pages | Current Pages project -> Settings -> Functions -> R2 bucket bindings |
-| Worker | Current Worker -> Settings -> Bindings -> R2 bucket bindings |
+| Pages | `Current Pages project -> Settings -> Functions -> R2 bucket bindings` |
+| Worker | `Current Worker -> Settings -> Bindings -> R2 bucket bindings` |
 
-ตอนเพิ่ม binding ให้ใส่ field สำคัญดังนี้:
+ตอนเพิ่ม binding ให้ใส่ฟิลด์สำคัญดังนี้:
 
-| Field | Value |
+| ฟิลด์ | ค่า |
 | --- | --- |
 | Variable name | `img_r2` |
 | R2 bucket | เลือก bucket ที่สร้างไว้ |
 
-Variable name ต้องเป็น `img_r2` แบบตรงตัว การ upload, read และ delete R2 files อาศัย binding name นี้ทั้งหมด
+Variable name ต้องเป็น `img_r2` แบบตรงตัว การอัปโหลด อ่าน และลบไฟล์ R2 อาศัย binding name นี้ทั้งหมด
 
-### 3. Redeploy Project
+### 3. Deploy Project ใหม่
 
-หลัง save binding แล้ว ให้ redeploy ImgBed เพื่อให้ Worker หรือ Pages runtime เข้าถึง `img_r2` ได้
+หลังบันทึก binding แล้ว ให้ deploy ImgBed ใหม่ เพื่อให้ Worker หรือ Pages runtime เข้าถึง `img_r2` ได้
 
 ## สิ่งที่จะเห็นใน ImgBed
 
 เมื่อ R2 binding พร้อมใช้งานแล้ว ให้เปิด:
 
-1. System Settings
-2. Upload Settings
-3. `Cloudflare R2` channel
+1. การตั้งค่าระบบ
+2. การตั้งค่าการอัปโหลด
+3. ช่องทาง `Cloudflare R2`
 
-System จะสร้าง fixed channel ให้อัตโนมัติ:
+ระบบจะสร้างช่องทางแบบ fixed ให้อัตโนมัติ:
 
-| Field | Fixed Value |
+| ฟิลด์ | ค่าคงที่ |
 | --- | --- |
 | Channel name | `Cloudflare R2` |
 | Channel type | `cfr2` |
 | Storage mode | `binding` |
 | Configuration source | Environment binding |
 
-นี่คือ fixed binding channel ไม่ต้องคลิก Add Channel เพื่อสร้าง และลบเหมือน regular channel ไม่ได้
+นี่คือช่องทาง fixed binding จึงไม่ต้องคลิกเพิ่มช่องทางเพื่อสร้าง และไม่สามารถลบเหมือนช่องทางทั่วไปได้
 
-## Fields ที่แก้ไขได้ใน Admin Panel
+## ฟิลด์ที่แก้ไขได้ใน Admin Panel
 
-| Field | ใช้ทำอะไร | Required |
+| ฟิลด์ | ใช้ทำอะไร | จำเป็น |
 | --- | --- | --- |
-| Enable channel | ควบคุมว่า R2 จะเข้าร่วม upload selection หรือไม่ | Yes |
-| Account ID | ใช้เมื่อเปิด quota limits และต้อง query official R2 usage | Recommended เมื่อเปิด quota limits |
-| Bucket name | ใช้เมื่อเปิด quota limits และต้อง query official R2 usage | Recommended เมื่อเปิด quota limits |
-| Quota limit | ควบคุมว่า R2 channel นี้จะเข้าร่วม upload selection ตาม capacity หรือไม่ | No |
-| Threshold | หยุดเขียนเข้า channel นี้เมื่อ usage ถึง percentage ที่กำหนด | Required เมื่อเปิด quota limits |
+| Enable channel | ควบคุมว่า R2 จะเข้าร่วมการเลือกช่องทางอัปโหลดหรือไม่ | ใช่ |
+| Account ID | ใช้เมื่อเปิด quota limits และต้อง query official R2 usage | แนะนำเมื่อเปิด quota limits |
+| Bucket name | ใช้เมื่อเปิด quota limits และต้อง query official R2 usage | แนะนำเมื่อเปิด quota limits |
+| Quota limit | ควบคุมว่าช่องทาง R2 นี้จะเข้าร่วมการเลือกช่องทางอัปโหลดตาม capacity หรือไม่ | ไม่ |
+| Threshold | หยุดเขียนเข้าช่องทางนี้เมื่อ usage ถึง percentage ที่กำหนด | จำเป็นเมื่อเปิด quota limits |
 
-คุณ copy Account ID ได้จาก account information panel ใน Cloudflare dashboard ใส่เฉพาะเมื่ออยากให้ ImgBed query และ enforce R2 quota usage
+คุณคัดลอก Account ID ได้จากแผงข้อมูลบัญชีใน Cloudflare dashboard กรอกเฉพาะเมื่ออยากให้ ImgBed query และ enforce R2 quota usage
 
-![Get the Account ID](../../image/upload/cloudflare-r2/获取账户id.png)
+![รับ Account ID](../../image/upload/cloudflare-r2/获取账户id.png)
 
 ## ขั้นตอนตั้งค่า
 
@@ -93,17 +93,17 @@ System จะสร้าง fixed channel ให้อัตโนมัติ:
 3. เพิ่ม R2 bucket binding
 4. ตั้ง `Variable name` เป็น `img_r2`
 5. เลือก R2 bucket ที่สร้างไว้
-6. Save binding แล้ว redeploy ImgBed
-7. กลับไปที่ ImgBed -> System Settings -> Upload Settings
-8. ตรวจสอบว่า `Cloudflare R2` channel แสดงขึ้นและ enabled อยู่
+6. บันทึก binding แล้ว deploy ImgBed ใหม่
+7. กลับไปที่ `ImgBed -> System Settings -> Upload Settings`
+8. ตรวจสอบว่าช่องทาง `Cloudflare R2` แสดงขึ้นและเปิดใช้งานอยู่
 
-ถ้าต้องการให้ R2 เข้าร่วม upload selection ตาม capacity ให้เปิด quota limit แล้วใส่ Account ID, bucket name, quota limit และ threshold ก่อน save
+ถ้าต้องการให้ R2 เข้าร่วมการเลือกช่องทางอัปโหลดตาม capacity ให้เปิด quota limit แล้วใส่ Account ID, bucket name, quota limit และ threshold ก่อนบันทึก
 
-![Configure quota limits](../../image/upload/cloudflare-r2/配置容量限制.png)
+![กำหนด quota limits](../../image/upload/cloudflare-r2/配置容量限制.png)
 
 ## วิธีตรวจสอบ
 
-- เห็น fixed `Cloudflare R2` channel ใน Upload Settings
-- Channel card แสดงว่า enabled
-- Upload small test file ได้สำเร็จ และ returned link เปิดได้ปกติ
+- เห็นช่องทาง fixed `Cloudflare R2` ใน Upload Settings
+- การ์ดช่องทางแสดงว่าเปิดใช้งานอยู่
+- อัปโหลดไฟล์ทดสอบขนาดเล็กได้สำเร็จ และลิงก์ที่ส่งกลับมาเปิดได้ตามปกติ
 - ถ้าเปิด file แล้วขึ้น `R2 database binding is not configured` แปลว่า runtime ยังไม่ได้รับ `img_r2` binding ให้ตรวจ binding name ใน Cloudflare แล้ว redeploy project

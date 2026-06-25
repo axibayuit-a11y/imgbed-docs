@@ -1,14 +1,14 @@
-# Random Image API ve Public Gallery
+# Rastgele Görsel API'si ve Herkese Açık Galeri
 
-İki özellik de şuradan yapılandırılır:
+Her iki özellik de şuradan yapılandırılır:
 
 ```text
 System Settings -> Other Settings
 ```
 
-## Random Image API
+## Rastgele Görsel API'si
 
-Random Image API, seçilen dizinlerden rastgele bir dosya döndürür. Site arka planları, avatar rotasyonu veya dış sayfalardan rastgele görsel çağrıları için kullanışlıdır.
+Rastgele Görsel API'si, seçili dizinlerden rastgele bir dosya döndürür. Site arka planları, avatar döndürme veya harici sayfalardan rastgele görsel çağrıları için kullanışlıdır.
 
 Etkinleştirildikten sonra şunu kullanın:
 
@@ -16,84 +16,84 @@ Etkinleştirildikten sonra şunu kullanın:
 https://your-domain.com/random
 ```
 
-## Random Image API Ayarları
+## Rastgele Görsel API Ayarları
 
 | Seçenek | Amaç |
 | --- | --- |
-| Enable | `/random` endpoint'ini açar veya kapatır. Kapalıyken erişim yasaktır. |
-| Directories | Random API'nin kullanabileceği dizinleri sınırlar. Buraya dahil edilmeyen dizinler API tarafından kullanılamaz. |
-| Call demo | Doğrudan kopyalayabileceğiniz random API bağlantıları oluşturur. |
+| Etkinleştir | `/random` uç noktasını açar veya kapatır. Devre dışı olduğunda erişim reddedilir. |
+| Dizinler | Rastgele API'nin hangi dizinleri kullanabileceğini sınırlar. Buraya dahil edilmeyen dizinler API tarafından kullanılamaz. |
+| Çağrı demosu | Doğrudan kopyalayabileceğiniz rastgele API bağlantıları üretir. |
 
-Birden fazla dizin seçebilirsiniz. Örneğin yalnızca `/landscape/` ve `/portrait/` izinliyse random API yalnızca bu dizinlerden ve alt dizinlerinden dosya seçebilir.
+Birden fazla dizin seçebilirsiniz. Örneğin yalnızca `/landscape/` ve `/portrait/` izinliyse rastgele API yalnızca bu dizinlerden ve alt dizinlerinden dosya seçebilir.
 
-## Random Image API Parametreleri
+## Rastgele Görsel API Parametreleri
 
 | Parametre | Örnek | Amaç |
 | --- | --- | --- |
-| `dir` | `/landscape/` | Random directory belirtir. |
-| `content` | `image` | Media type belirtir. `image`, `video`, `audio` veya virgülle ayrılmış kombinasyonlar kullanın. |
+| `dir` | `/landscape/` | Rastgele dizini belirtir. |
+| `content` | `image` | Medya türünü belirtir. `image`, `video`, `audio` veya virgülle ayrılmış birleşimleri kullanın. |
 | `orientation` | `auto` | Görsel yönünü filtreler. `portrait`, `landscape` veya `auto` kullanın. |
-| `type` | `url` | Dönüş formatı. Boşsa redirect, `url` plain text URL, `json` JSON döndürür. |
-| `origin` | `1` | `type=url` ile birlikte tam URL döndürmek için kullanılır. |
-| `age` | `all-ages,r12` | Age rating değerine göre filtreler. |
-| `tag` | `wallpaper,sky` | Yalnızca bu tags değerlerini içeren dosyaları döndürür. |
-| `ex` | `private` | Bu tags değerlerini içeren dosyaları hariç tutar. |
+| `type` | `url` | Dönüş biçimi. Boş değer yönlendirme anlamına gelir, `url` düz metin URL döndürür, `json` JSON döndürür. |
+| `origin` | `1` | Tam URL döndürmek için `type=url` ile kullanılır. |
+| `age` | `all-ages,r12` | Yaş derecelendirmesine göre filtreler. |
+| `tag` | `wallpaper,sky` | Yalnızca bu etiketleri içeren dosyaları döndürür. |
+| `ex` | `private` | Bu etiketleri içeren dosyaları hariç tutar. |
 
-## Dönüş Formatları
+## Dönüş Biçimleri
 
 `type` olmadan API doğrudan rastgele dosya URL'sine yönlendirir.
 
 `type=url` ile metin URL döndürür.
 
-`type=json` ile file URL, file ID, file name, file type, tags, rating ve ilgili metadata dahil dosya bilgilerini döndürür.
+`type=json` ile dosya URL'si, dosya ID'si, dosya adı, dosya türü, etiketler, derecelendirme ve ilgili üst veriler dahil dosya bilgilerini döndürür.
 
 ## Erişim Kuralları
 
-Random Image API public access rules kurallarına uyar:
+Rastgele Görsel API'si herkese açık erişim kurallarını izler:
 
 | Kural | Etki |
 | --- | --- |
-| Directory restriction | Yalnızca izinli dizinlerdeki dosyalar seçilebilir. |
-| Blocklist | Blocklisted files random pool dışında bırakılır. |
-| Allowlist mode | Etkin olduğunda yalnızca public access için izinli dosyalar döner. |
-| Age rating | R12, R16, R18 ve benzeri içerik geçerli access mode ile filtrelenir. |
+| Dizin kısıtlaması | Yalnızca izin verilen dizinlerdeki dosyalar seçilebilir. |
+| Engelleme listesi | Engelleme listesindeki dosyalar rastgele havuzdan çıkarılır. |
+| İzin listesi modu | Etkin olduğunda yalnızca herkese açık erişime izin verilen dosyalar döndürülür. |
+| Yaş derecelendirmesi | R12, R16, R18 ve benzeri içerik geçerli erişim moduna göre filtrelenir. |
 
-Filtrelemeden sonra eşleşen dosya yoksa API eşleşen sonuç olmadığını döndürür.
+Filtrelemeden sonra eşleşen dosya yoksa API eşleşen sonuç döndürmez.
 
-## Cache
+## Önbellek
 
-Random Image API hız için dizin candidate pools değerlerini önbelleğe alır.
+Rastgele Görsel API'si hızı artırmak için dizin aday havuzlarını önbelleğe alır.
 
-Dosyalar değiştiğinde ImgBed dizin cache version değerini günceller ve sonraki istekler candidate pool'u yeniden oluşturur. Boş dizinler tekrar eden sorguları önlemek için kısa süre önbelleğe alınır.
+Dosyalar değiştikten sonra ImgBed dizin önbelleği sürümünü günceller ve sonraki istekler aday havuzunu yeniden oluşturur. Boş dizinler, tekrarlanan sorguları önlemek için kısa süreliğine önbelleğe alınır.
 
-## Public Gallery
+## Herkese Açık Galeri
 
-Public gallery, ziyaretçilerin görmesine izin verdiğiniz dizinler için salt okunur herkese açık gezinme sayfası sağlar.
+Herkese açık galeri, ziyaretçilerin görmesine izin verdiğiniz dizinler için salt okunur bir herkese açık gezinme sayfası sağlar.
 
-Etkinleştirildikten sonra ziyaretçiler şurayı açabilir:
+Etkinleştirildikten sonra ziyaretçiler şunu açabilir:
 
 ```text
 https://your-domain.com/browse/directory-name
 ```
 
-## Public Gallery Ayarları
+## Herkese Açık Galeri Ayarları
 
 | Seçenek | Amaç |
 | --- | --- |
-| Enable | Public gallery'yi açar veya kapatır. Kapalıyken ziyaretçiler gezemez. |
-| Image loading mode | Önizlemelerin özgün görselleri mi thumbnails değerlerini mi kullanacağını belirler. |
-| Open directories | Ziyaretçilerin erişebileceği dizinleri belirler. |
+| Etkinleştir | Herkese açık galeriyi açar veya kapatır. Devre dışı olduğunda ziyaretçiler galeride gezemez. |
+| Görsel yükleme modu | Önizlemelerin özgün görselleri mi küçük resimleri mi kullanacağını denetler. |
+| Açık dizinler | Ziyaretçilerin hangi dizinlere erişebileceğini ayarlar. |
 
-## Image Loading Mode
+## Görsel Yükleme Modu
 
-| Mode | Amaç |
+| Mod | Amaç |
 | --- | --- |
-| Original | Ziyaretçi sayfası özgün dosyaları doğrudan yükler. |
-| Thumbnail | Ziyaretçi sayfası daha hızlı yükleme için thumbnails tercih eder. |
+| Özgün | Ziyaretçi sayfası özgün dosyaları doğrudan yükler. |
+| Küçük resim | Ziyaretçi sayfası daha hızlı yükleme için küçük resimleri tercih eder. |
 
-## Open Directories
+## Açık Dizinler
 
-Open directories ziyaretçilerin ne görebileceğini belirler.
+Açık dizinler ziyaretçilerin ne görebileceğini belirler.
 
 Örneğin:
 
@@ -101,7 +101,7 @@ Open directories ziyaretçilerin ne görebileceğini belirler.
 /1/,/2/,/landscape/,/portrait/
 ```
 
-Ziyaretçiler şunlara erişebilir:
+Ziyaretçiler daha sonra şunlara erişebilir:
 
 ```text
 https://your-domain.com/browse/1
@@ -110,29 +110,29 @@ https://your-domain.com/browse/landscape
 https://your-domain.com/browse/portrait
 ```
 
-`/2026/lucky/` gibi alt dizinler de açılabilir. Açık olmayan dizinlere ziyaretçiler engellenir.
+`/2026/lucky/` gibi alt dizinler de açılabilir. Açık olmayan dizinlere erişen ziyaretçiler engellenir.
 
-## Public Gallery Özellikleri
+## Herkese Açık Galeri Özellikleri
 
 | Özellik | Açıklama |
 | --- | --- |
-| Browse directories | Açık dizinlerdeki dosyaları ve alt dizinleri görüntüler. |
-| Search | File name, file ID veya tags ile arama yapar. |
-| Type filter | Images, videos, audio veya diğer dosyaları filtreler. |
-| Tag filter | Seçili tags değerlerini dahil eder veya hariç tutar. |
-| Orientation filter | Landscape veya portrait images filtreler. |
-| Time filter | Upload time aralığına göre filtreler. |
-| Extension filter | File extension değerine göre filtreler. |
-| Copy link | File access links kopyalar. |
-| Media preview | Ziyaretçi sayfasında images, videos ve audio görüntüler veya oynatır. |
+| Dizinlerde gezinme | Açık dizinlerdeki dosyaları ve alt dizinleri görüntüler. |
+| Arama | Dosya adı, dosya ID'si veya etiketlere göre arama yapar. |
+| Tür filtresi | Görselleri, videoları, sesleri veya diğer dosyaları filtreler. |
+| Etiket filtresi | Seçili etiketleri dahil eder veya hariç tutar. |
+| Yön filtresi | Yatay veya dikey görselleri filtreler. |
+| Zaman filtresi | Yükleme zamanı aralığına göre filtreler. |
+| Uzantı filtresi | Dosya uzantısına göre filtreler. |
+| Bağlantı kopyalama | Dosya erişim bağlantılarını kopyalar. |
+| Medya önizleme | Ziyaretçi sayfasında görselleri, videoları ve sesleri görüntüler veya oynatır. |
 
-## Public Gallery Erişim Kuralları
+## Herkese Açık Galeri Erişim Kuralları
 
-Public gallery de public access rules kurallarına uyar:
+Herkese açık galeri de herkese açık erişim kurallarını izler:
 
 | Kural | Etki |
 | --- | --- |
-| Open directories | Yalnızca izin verilen dizinler gösterilir. |
-| Access mode | İçerik geçerli age-rating access mode ile filtrelenir. |
-| Allowlist mode | Etkin olduğunda yalnızca public access için izinli dosyalar gösterilir. |
-| Blocklist | Blocklisted files gizlenir. |
+| Açık dizinler | Yalnızca izin verilen dizinler gösterilir. |
+| Erişim modu | İçerik geçerli yaş derecelendirmesi erişim moduna göre filtrelenir. |
+| İzin listesi modu | Etkin olduğunda yalnızca herkese açık erişime izin verilen dosyalar gösterilir. |
+| Engelleme listesi | Engelleme listesindeki dosyalar gizlenir. |

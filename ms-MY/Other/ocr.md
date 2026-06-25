@@ -1,21 +1,21 @@
 # OCR
 
-OCR mengekstrak text daripada images, scans dan document screenshots.
+OCR mengekstrak teks daripada imej, imbasan dan tangkapan skrin dokumen.
 
-Selepas recognition, anda boleh copy result, export sebagai `Markdown`, `PDF` atau `Word`, atau package beberapa formats bersama untuk download.
+Selepas pengecaman, anda boleh menyalin hasil, mengeksportnya sebagai `Markdown`, `PDF` atau `Word`, atau membungkus beberapa format bersama-sama untuk dimuat turun.
 
-## Fungsi OCR
+## Perkara Yang Boleh Dilakukan OCR
 
-| Feature | Description |
+| Ciri | Penerangan |
 | --- | --- |
-| Image text recognition | Mengekstrak text daripada images, screenshots dan scans. |
-| Document layout recognition | Lebih baik untuk tables, formulas, stamps dan mixed text-image layouts. |
-| Multiple services | Menyokong Baidu PaddleOCR, Microsoft Azure Vision dan Google Vision. |
-| Copy results | Copy recognized text selepas processing. |
-| Export files | Export `Markdown`, `PDF` dan `Word`. |
-| Batch packaging | Selepas recognize beberapa files, download results sebagai package. |
+| Pengecaman teks imej | Mengekstrak teks daripada imej, tangkapan skrin dan imbasan. |
+| Pengecaman susun atur dokumen | Lebih sesuai untuk jadual, formula, cop dan susun atur campuran teks-imej. |
+| Berbilang perkhidmatan | Menyokong Baidu PaddleOCR, Microsoft Azure Vision dan Google Vision. |
+| Salin hasil | Menyalin teks yang dikenal pasti selepas pemprosesan. |
+| Eksport fail | Mengeksport `Markdown`, `PDF` dan `Word`. |
+| Pembungkusan kelompok | Selepas mengenal pasti berbilang fail, muat turun hasil sebagai satu pakej. |
 
-## Configure OCR Services Dahulu
+## Konfigurasikan Perkhidmatan OCR Dahulu
 
 Buka:
 
@@ -23,186 +23,186 @@ Buka:
 System Settings -> Other Settings -> OCR
 ```
 
-![IP geolocation and OCR](../../image/other/ip定位和ocr文字识别.png)
+![Geolokasi IP dan OCR](../../image/other/ip定位和ocr文字识别.png)
 
-Isi credentials untuk services yang mahu digunakan:
+Isi kelayakan untuk perkhidmatan yang mahu anda gunakan:
 
-| Service | What To Enter | Best For |
+| Perkhidmatan | Perkara Yang Perlu Diisi | Paling Sesuai Untuk |
 | --- | --- | --- |
-| Baidu PaddleOCR | `PaddleOCR Token` | Recommended first choice. Baik untuk documents, images, tables dan mixed layouts. |
-| Microsoft Azure Vision | `Azure Vision Endpoint` dan `Azure Vision API Key` | Berguna jika anda sudah menggunakan Microsoft cloud services. |
-| Google Vision | `Google Vision API Key`. Service account `JSON` hanya digunakan untuk quota query. | Berguna jika anda menggunakan Google Cloud services. |
+| Baidu PaddleOCR | `PaddleOCR Token` | Pilihan pertama yang disyorkan. Baik untuk dokumen, imej, jadual dan susun atur campuran. |
+| Microsoft Azure Vision | `Azure Vision Endpoint` dan `Azure Vision API Key` | Berguna jika anda sudah menggunakan perkhidmatan awan Microsoft. |
+| Google Vision | `Google Vision API Key`. Akaun perkhidmatan `JSON` hanya digunakan untuk pertanyaan kuota. | Berguna jika anda menggunakan perkhidmatan Google Cloud. |
 
-Save selepas mengisi credentials.
+Simpan selepas mengisi kelayakan.
 
-Untuk initial testing, configure satu service sahaja sudah cukup. Tidak perlu ketiga-tiganya.
+Untuk ujian awal, satu perkhidmatan sahaja sudah mencukupi. Anda tidak perlu mengkonfigurasikan ketiga-tiganya.
 
-## Google Vision Setup
+## Persediaan Google Vision
 
-Google setup mempunyai dua bahagian:
+Persediaan Google mempunyai dua bahagian:
 
-| Goal | Requirement |
+| Matlamat | Keperluan |
 | --- | --- |
-| Menggunakan OCR | Enable `Cloud Vision API`, kemudian cipta `API Key`. |
-| Query usage | Cipta service account, grant `Monitoring Viewer`, kemudian download service account `JSON`. |
+| Menggunakan OCR | Aktifkan `Cloud Vision API`, kemudian cipta `API Key`. |
+| Menyemak penggunaan | Cipta akaun perkhidmatan, berikan `Monitoring Viewer`, kemudian muat turun akaun perkhidmatan `JSON`. |
 
-![Google API key and service account](../../image/other/谷歌api秘钥和服务账号截图.png)
+![Kunci API Google dan akaun perkhidmatan](../../image/other/谷歌api秘钥和服务账号截图.png)
 
-### Gunakan Google Untuk OCR
+### Menggunakan Google Untuk OCR
 
 1. Buka Google Cloud Console.
 2. Pergi ke `APIs & Services`.
-3. Buka `Library`, cari `Cloud Vision API` dan enable.
+3. Buka `Library`, cari `Cloud Vision API` dan aktifkannya.
 4. Kembali ke `Credentials`.
 5. Cipta `API Key`.
-6. Buka API Key dan copy.
-7. Paste ke `Google Vision API Key` dalam ImgBed.
-8. Save.
+6. Buka API Key dan salin.
+7. Tampal ke `Google Vision API Key` dalam ImgBed.
+8. Simpan.
 
-Selepas itu, anda boleh memilih Google Vision dalam OCR dialog.
+Selepas itu, anda boleh memilih Google Vision dalam dialog OCR.
 
-### Query Google Usage
+### Menyemak Penggunaan Google
 
-Quota query tidak required untuk recognition.
+Pertanyaan kuota tidak diperlukan untuk pengecaman.
 
-Ia hanya menunjukkan anggaran berapa banyak Google Vision calls digunakan dalam 30 hari terakhir.
+Ia hanya menunjukkan anggaran bilangan panggilan Google Vision yang digunakan dalam 30 hari terakhir.
 
 1. Dalam Google Cloud Console, buka `IAM & Admin`.
 2. Buka `Service Accounts`.
-3. Cipta service account, contohnya `vision-monitor`.
-4. Grant role `Monitoring Viewer`.
-5. Buka service account details dan create key.
+3. Cipta akaun perkhidmatan, contohnya `vision-monitor`.
+4. Berikan peranan `Monitoring Viewer`.
+5. Buka butiran akaun perkhidmatan dan cipta kunci.
 6. Pilih `JSON`.
-7. Download generated JSON file.
-8. Kembali ke ImgBed dan import di bawah service account `JSON` (optional).
-9. Selepas import berjaya, klik quota query.
+7. Muat turun fail JSON yang dijana.
+8. Kembali ke ImgBed dan import di bawah akaun perkhidmatan `JSON` (pilihan).
+9. Selepas import berjaya, klik pertanyaan kuota.
 
-Selepas import, ImgBed menunjukkan project name yang memiliki service account. Semasa query usage, ImgBed membaca Google monitoring data dan menunjukkan call count bulan ini.
+Selepas import, ImgBed menunjukkan nama projek yang memiliki akaun perkhidmatan tersebut. Semasa menyemak penggunaan, ImgBed membaca data pemantauan Google dan menunjukkan bilangan panggilan bulan ini.
 
 Ringkasnya:
 
-| Item | Purpose |
+| Perkara | Tujuan |
 | --- | --- |
-| `Google Vision API Key` | Melakukan OCR recognition. |
-| Service account `JSON` | Query berapa banyak Google Vision calls digunakan. |
-| `Monitoring Viewer` role | Membenarkan service account membaca usage data. |
+| `Google Vision API Key` | Melakukan pengecaman OCR. |
+| Akaun perkhidmatan `JSON` | Menyemak berapa banyak panggilan Google Vision telah digunakan. |
+| Peranan `Monitoring Viewer` | Membenarkan akaun perkhidmatan membaca data penggunaan. |
 
-## Dapatkan Baidu PaddleOCR Token
+## Mendapatkan Baidu PaddleOCR Token
 
-Baidu PaddleOCR memerlukan access token.
+Baidu PaddleOCR memerlukan token akses.
 
-![Get PaddleOCR token](../../image/other/获取飞浆令牌.png)
+![Dapatkan token PaddleOCR](../../image/other/获取飞浆令牌.png)
 
-Buka `API` call window pada halaman Baidu PaddleOCR, klik untuk mendapatkan token, kemudian copy.
+Buka tetingkap panggilan `API` pada halaman Baidu PaddleOCR, klik untuk mendapatkan token, kemudian salin.
 
-Kembali ke ImgBed, paste ke `PaddleOCR Token` dan save.
+Kembali ke ImgBed, tampal ke `PaddleOCR Token` dan simpan.
 
-## Mulakan Recognition
+## Memulakan Pengecaman
 
-Dalam File Management, pilih image atau document screenshot dan klik `OCR`.
+Dalam Pengurusan Fail, pilih imej atau tangkapan skrin dokumen dan klik `OCR`.
 
-![OCR recognition](../../image/other/ocr识别截图.png)
+![Pengecaman OCR](../../image/other/ocr识别截图.png)
 
-Dalam dialog, pilih recognition service dan model.
+Dalam dialog, pilih perkhidmatan pengecaman dan model.
 
-Common PaddleOCR model choices:
+Pilihan model PaddleOCR yang biasa:
 
-| Model | Best For |
+| Model | Paling Sesuai Untuk |
 | --- | --- |
-| `PP-StructureV3` | Recommended default. Baik untuk documents, tables, formulas, stamps dan mixed layouts. |
-| `PP-OCRv5` | Simple images, ordinary text dan lightweight recognition. |
-| `PaddleOCR-VL` | Multilingual, complex images dan chart-like content. |
-| `PaddleOCR-VL-1.5` | Document pages yang lebih kompleks dan layout recovery. |
+| `PP-StructureV3` | Lalai yang disyorkan. Baik untuk dokumen, jadual, formula, cop dan susun atur campuran. |
+| `PP-OCRv5` | Imej mudah, teks biasa dan pengecaman ringan. |
+| `PaddleOCR-VL` | Berbilang bahasa, imej kompleks dan kandungan seperti carta. |
+| `PaddleOCR-VL-1.5` | Halaman dokumen yang lebih kompleks dan pemulihan susun atur. |
 
 Jika tidak pasti, mulakan dengan `PP-StructureV3`.
 
-## Advanced Options
+## Pilihan Lanjutan
 
-| Option | Description |
+| Pilihan | Penerangan |
 | --- | --- |
-| Orientation correction | Gunakan apabila image rotated atau skewed. |
-| Document flattening | Gunakan untuk photographed documents dengan curvature atau tilt. |
-| Layout detection | Gunakan apabila mahu preserve headings, paragraphs, tables dan image structure. |
-| Chart recognition | Gunakan apabila image mengandungi charts atau structures kompleks. |
-| Beautify `Markdown` | Menjadikan exported Markdown lebih mudah dibaca. |
+| Pembetulan orientasi | Gunakan apabila imej diputar atau condong. |
+| Perataan dokumen | Gunakan untuk dokumen yang difoto dengan lengkungan atau kecondongan. |
+| Pengesanan susun atur | Gunakan apabila anda mahu mengekalkan tajuk, perenggan, jadual dan struktur imej. |
+| Pengecaman carta | Gunakan apabila imej mengandungi carta atau struktur kompleks. |
+| Perkemas `Markdown` | Menjadikan Markdown yang dieksport lebih mudah dibaca. |
 
-Untuk regular screenshots, kekalkan options minimum. Untuk document scans, enable lebih banyak document-related options.
+Untuk tangkapan skrin biasa, kekalkan pilihan pada tahap minimum. Untuk imbasan dokumen, aktifkan lebih banyak pilihan berkaitan dokumen.
 
-## Lihat Results
+## Melihat Hasil
 
-Selepas recognition selesai, dialog menunjukkan result.
+Selepas pengecaman selesai, dialog menunjukkan hasilnya.
 
-Anda boleh copy terus atau pilih export formats.
+Anda boleh menyalinnya terus atau memilih format eksport.
 
-![PDF recognition](../../image/other/pdf识别截图.png)
+![Pengecaman PDF](../../image/other/pdf识别截图.png)
 
-Untuk document pages, exported `PDF` boleh preserve page appearance sambil mengekalkan text searchable. Ini berguna untuk archiving scans dan mencari content kemudian.
+Untuk halaman dokumen, `PDF` yang dieksport boleh mengekalkan rupa halaman sambil memastikan teks boleh dicari. Ini berguna untuk mengarkib imbasan dan mencari kandungan kemudian.
 
-## Memilih Export Format
+## Memilih Format Eksport
 
-| Format | Best For |
+| Format | Paling Sesuai Untuk |
 | --- | --- |
-| `Markdown (.md)` | Notes, documentation systems dan editing kemudian. |
-| `PDF (.pdf)` | Preserve page appearance dan scanned document results. |
-| `Word (.docx)` | Layout editing, text modification dan handoff kepada orang lain. |
-| Export all | Menyimpan beberapa formats dan original image, sesuai untuk archives penting. |
+| `Markdown (.md)` | Nota, sistem dokumentasi dan penyuntingan kemudian. |
+| `PDF (.pdf)` | Mengekalkan rupa halaman dan hasil dokumen imbasan. |
+| `Word (.docx)` | Penyuntingan susun atur, pengubahsuaian teks dan penyerahan kepada orang lain. |
+| Eksport semua | Menyimpan beberapa format dan imej asal, sesuai untuk arkib penting. |
 
-Jika hanya perlukan text, export Markdown.
+Jika anda hanya memerlukan teks, eksport Markdown.
 
-Jika perlukan page appearance, gunakan PDF atau Word.
+Jika anda memerlukan rupa halaman, gunakan PDF atau Word.
 
-## Word Output
+## Output Word
 
-Exported Word documents boleh dibuka dan diedit dengan office software.
+Dokumen Word yang dieksport boleh dibuka dan disunting dengan perisian pejabat.
 
-![Word result](../../image/other/word识别结果.png)
+![Hasil Word](../../image/other/word识别结果.png)
 
-Sesetengah documents mengandungi recognized images, headings dan paragraphs dalam Word output.
+Sesetengah dokumen memasukkan imej, tajuk dan perenggan yang dikenal pasti dalam output Word.
 
-Recognition quality bergantung pada original image clarity, model choice dan document complexity.
+Kualiti pengecaman bergantung pada kejelasan imej asal, pilihan model dan kerumitan dokumen.
 
-## File Types Terbaik Untuk OCR
+## Jenis Fail Terbaik Untuk OCR
 
-| File Type | Recommendation |
+| Jenis Fail | Cadangan |
 | --- | --- |
-| Clear screenshots | Recognize secara terus. |
-| Scans | Prefer `PP-StructureV3`. |
-| Photographed documents | Enable orientation correction dan document flattening. |
-| Tables, formulas, stamps | Prefer structured models. |
-| Simple short text images | `PP-OCRv5` biasanya cukup. |
+| Tangkapan skrin jelas | Kenal pasti secara terus. |
+| Imbasan | Utamakan `PP-StructureV3`. |
+| Dokumen yang difoto | Aktifkan pembetulan orientasi dan perataan dokumen. |
+| Jadual, formula, cop | Utamakan model berstruktur. |
+| Imej teks pendek yang mudah | `PP-OCRv5` biasanya mencukupi. |
 
-Images yang lebih jelas dan text yang lebih lurus biasanya menghasilkan results lebih baik.
+Imej yang lebih jelas dengan teks yang lebih lurus biasanya menghasilkan keputusan yang lebih baik.
 
-## Common Cases
+## Kes Biasa
 
-| Case | Meaning |
+| Kes | Maksud |
 | --- | --- |
-| Recognition fails | Semak service token atau key telah disimpan. |
-| Recognition slow | Complex documents dan large images mengambil masa lebih lama. |
-| Table incomplete | Cuba structured model. |
-| Text ada kesilapan | Blur, glare dan skew meningkatkan recognition errors. Cuba image yang lebih jelas. |
-| Word output mengandungi banyak images | Structured models mungkin preserve beberapa recognized images. Ini normal. |
+| Pengecaman gagal | Semak bahawa token atau kunci perkhidmatan telah disimpan. |
+| Pengecaman perlahan | Dokumen kompleks dan imej besar mengambil masa lebih lama. |
+| Jadual tidak lengkap | Cuba model berstruktur. |
+| Teks mempunyai kesilapan | Kabur, silau dan kecondongan meningkatkan ralat pengecaman. Cuba imej yang lebih jelas. |
+| Output Word mengandungi banyak imej | Model berstruktur mungkin mengekalkan beberapa imej yang dikenal pasti. Ini normal. |
 
-### Google Quota Query Gagal
+### Pertanyaan Kuota Google Gagal
 
 Semak:
 
-1. Service account `JSON` telah diimport.
-2. Service account mempunyai role `Monitoring Viewer`.
-3. `Cloud Vision API` enabled untuk project.
+1. Akaun perkhidmatan `JSON` telah diimport.
+2. Akaun perkhidmatan mempunyai peranan `Monitoring Viewer`.
+3. `Cloud Vision API` telah diaktifkan untuk projek.
 
-Jika anda hanya perlukan OCR dan bukan usage query, abaikan service account JSON dan isi hanya `Google Vision API Key`.
+Jika anda hanya memerlukan OCR dan tidak memerlukan pertanyaan penggunaan, anda boleh mengabaikan JSON akaun perkhidmatan dan hanya mengisi `Google Vision API Key`.
 
-## Quick Flow
+## Aliran Pantas
 
 ```text
-Buka System Settings
--> Buka Other Settings
--> Isi OCR service credentials
+Open System Settings
+-> Open Other Settings
+-> Fill OCR service credentials
 -> Save
--> Kembali ke File Management
--> Pilih file dan klik OCR
--> Pilih model
--> Tunggu recognition
--> Copy results atau export Markdown / PDF / Word
+-> Return to File Management
+-> Select a file and click OCR
+-> Choose a model
+-> Wait for recognition
+-> Copy results or export Markdown / PDF / Word
 ```

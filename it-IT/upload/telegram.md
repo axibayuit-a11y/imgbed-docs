@@ -60,7 +60,7 @@ Puoi usare sia canali pubblici sia privati.
 4. Cerca lo username del bot creato.
 5. Aggiungi il bot al canale.
 
-Per upload più affidabili, concedi al bot permessi di amministratore.
+Per caricamenti più affidabili, concedi al bot permessi di amministratore.
 
 ![Invita il bot nel canale](../../image/upload/telegram/邀请机器人进频道里.png)
 
@@ -100,20 +100,20 @@ Quando hai finito, salva.
 | Scheda canale | Dopo il salvataggio compare una scheda Telegram. |
 | Canale abilitabile | L'interruttore Attivo resta acceso. |
 | Configurazione salvata | La vista dettaglio mostra Bot Token e Chat ID salvati. |
-| Upload funzionante | Carica un'immagine di prova e verifica che compaia nel canale Telegram di destinazione. |
+| Caricamento funzionante | Carica un'immagine di prova e verifica che compaia nel canale Telegram di destinazione. |
 
 ## Checklist rapida
 
 ```text
-Crea un bot con @BotFather
--> Salva il Bot Token
--> Crea un canale Telegram
--> Aggiungi il bot al canale e concedi permessi di amministratore
--> Cerca @userinfobot e scegli Channel
--> Inoltra un messaggio del canale a @userinfobot
--> Copia Id: -100...
--> Inserisci Bot Token e Chat ID in ImgBed
--> Salva e carica un'immagine di prova
+Create a bot with @BotFather
+-> Save the Bot Token
+-> Create a Telegram channel
+-> Add the bot to the channel and grant administrator permissions
+-> Search for @userinfobot and choose Channel
+-> Forward any message from the channel to @userinfobot
+-> Copy the returned Id: -100...
+-> Enter the Bot Token and Chat ID in ImgBed
+-> Save and upload a test image
 ```
 
 ## Riferimenti

@@ -9,11 +9,11 @@ Na herkenning kun je het resultaat kopiëren, exporteren als `Markdown`, `PDF` o
 | Functie | Beschrijving |
 | --- | --- |
 | Tekstherkenning in afbeeldingen | Haalt tekst uit afbeeldingen, screenshots en scans. |
-| Documentlay-outherkenning | Beter voor tabellen, formules, stempels en gemengde tekst-afbeeldinglayouts. |
+| Herkenning van documentlay-out | Beter voor tabellen, formules, stempels en gemengde tekst- en afbeeldingslay-outs. |
 | Meerdere diensten | Ondersteunt Baidu PaddleOCR, Microsoft Azure Vision en Google Vision. |
 | Resultaten kopiëren | Kopieer herkende tekst na verwerking. |
 | Bestanden exporteren | Exporteer `Markdown`, `PDF` en `Word`. |
-| Batchverpakking | Download na herkenning van meerdere bestanden resultaten als pakket. |
+| Batchgewijs verpakken | Download de resultaten als pakket nadat meerdere bestanden zijn herkend. |
 
 ## Configureer eerst OCR-diensten
 
@@ -29,9 +29,9 @@ Vul gegevens in voor de diensten die je wilt gebruiken:
 
 | Dienst | Wat je invult | Beste keuze voor |
 | --- | --- | --- |
-| Baidu PaddleOCR | `PaddleOCR Token` | Aanbevolen eerste keuze. Goed voor documenten, afbeeldingen, tabellen en gemengde layouts. |
+| Baidu PaddleOCR | `PaddleOCR Token` | Aanbevolen eerste keuze. Goed voor documenten, afbeeldingen, tabellen en gemengde lay-outs. |
 | Microsoft Azure Vision | `Azure Vision Endpoint` en `Azure Vision API Key` | Handig als je al Microsoft-cloudservices gebruikt. |
-| Google Vision | `Google Vision API Key`. Serviceaccount-`JSON` wordt alleen gebruikt voor quota-opvraag. | Handig als je Google Cloud gebruikt. |
+| Google Vision | `Google Vision API Key`. Serviceaccount-`JSON` wordt alleen gebruikt voor quotumopvraag. | Handig als je Google Cloud gebruikt. |
 
 Sla op nadat je gegevens hebt ingevuld.
 
@@ -44,9 +44,9 @@ Google heeft twee onderdelen:
 | Doel | Vereiste |
 | --- | --- |
 | OCR gebruiken | Schakel `Cloud Vision API` in en maak daarna een `API Key`. |
-| Gebruik opvragen | Maak een serviceaccount, geef `Monitoring Viewer` en download daarna de serviceaccount-`JSON`. |
+| Gebruik opvragen | Maak een serviceaccount, wijs de rol `Monitoring Viewer` toe en download daarna de serviceaccount-`JSON`. |
 
-![Google API key en serviceaccount](../../image/other/谷歌api秘钥和服务账号截图.png)
+![Google API-sleutel en serviceaccount](../../image/other/谷歌api秘钥和服务账号截图.png)
 
 ### Google gebruiken voor OCR
 
@@ -55,7 +55,7 @@ Google heeft twee onderdelen:
 3. Open `Library`, zoek `Cloud Vision API` en schakel deze in.
 4. Ga terug naar `Credentials`.
 5. Maak een `API Key`.
-6. Open de API Key en kopieer deze.
+6. Open de API-sleutel en kopieer deze.
 7. Plak deze in `Google Vision API Key` in ImgBed.
 8. Sla op.
 
@@ -63,7 +63,7 @@ Daarna kun je Google Vision kiezen in het OCR-venster.
 
 ### Google-gebruik opvragen
 
-Quota-opvraag is niet nodig voor herkenning.
+Quotumopvraag is niet nodig voor herkenning.
 
 Het toont alleen grofweg hoeveel Google Vision-aanroepen in de laatste 30 dagen zijn gebruikt.
 
@@ -71,13 +71,13 @@ Het toont alleen grofweg hoeveel Google Vision-aanroepen in de laatste 30 dagen 
 2. Open `Service Accounts`.
 3. Maak een serviceaccount, bijvoorbeeld `vision-monitor`.
 4. Geef dit account de rol `Monitoring Viewer`.
-5. Open de details van het serviceaccount en maak een key.
+5. Open de details van het serviceaccount en maak een sleutel.
 6. Kies `JSON`.
 7. Download het gegenereerde JSON-bestand.
 8. Ga terug naar ImgBed en importeer het onder serviceaccount `JSON` (optioneel).
 9. Klik na succesvolle import op quota opvragen.
 
-Na import toont ImgBed de projectnaam van het serviceaccount. Bij het opvragen leest ImgBed Google monitoringgegevens en toont het aantal aanroepen van deze maand.
+Na import toont ImgBed de projectnaam die bij het serviceaccount hoort. Bij het opvragen leest ImgBed Google-monitoringgegevens en toont het aantal aanroepen van deze maand.
 
 Kort gezegd:
 
@@ -89,7 +89,7 @@ Kort gezegd:
 
 ## Een Baidu PaddleOCR-token ophalen
 
-Baidu PaddleOCR vereist een access token.
+Baidu PaddleOCR vereist een toegangstoken.
 
 ![PaddleOCR-token ophalen](../../image/other/获取飞浆令牌.png)
 
@@ -109,10 +109,10 @@ Veelgebruikte PaddleOCR-modellen:
 
 | Model | Beste keuze voor |
 | --- | --- |
-| `PP-StructureV3` | Aanbevolen standaard. Goed voor documenten, tabellen, formules, stempels en gemengde layouts. |
+| `PP-StructureV3` | Aanbevolen standaard. Goed voor documenten, tabellen, formules, stempels en gemengde lay-outs. |
 | `PP-OCRv5` | Eenvoudige afbeeldingen, gewone tekst en lichte herkenning. |
 | `PaddleOCR-VL` | Meertalig, complexe afbeeldingen en inhoud met grafieken. |
-| `PaddleOCR-VL-1.5` | Complexere documentpagina's en layoutreconstructie. |
+| `PaddleOCR-VL-1.5` | Complexere documentpagina's en lay-outreconstructie. |
 
 Weet je het niet zeker, begin dan met `PP-StructureV3`.
 
@@ -153,7 +153,7 @@ Heb je paginaweergave nodig, gebruik dan PDF of Word.
 
 ## Word-uitvoer
 
-Geëxporteerde Word-documenten kunnen met office-software worden geopend en bewerkt.
+Geëxporteerde Word-documenten kunnen met kantoorsoftware worden geopend en bewerkt.
 
 ![Word-resultaat](../../image/other/word识别结果.png)
 
@@ -177,13 +177,13 @@ Duidelijkere afbeeldingen met rechtere tekst leveren meestal betere resultaten o
 
 | Situatie | Betekenis |
 | --- | --- |
-| Herkenning mislukt | Controleer of het servicetoken of de key is opgeslagen. |
+| Herkenning mislukt | Controleer of het servicetoken of de sleutel is opgeslagen. |
 | Herkenning is traag | Complexe documenten en grote afbeeldingen kosten meer tijd. |
 | Tabel is onvolledig | Probeer een gestructureerd model. |
 | Tekst bevat fouten | Onscherpte, reflectie en scheefstand vergroten herkenningsfouten. Probeer een duidelijkere afbeelding. |
 | Word-uitvoer bevat veel afbeeldingen | Gestructureerde modellen kunnen sommige herkende afbeeldingen behouden. Dat is normaal. |
 
-### Google quota-opvraag mislukt
+### Google-quotumopvraag mislukt
 
 Controleer:
 
@@ -193,16 +193,16 @@ Controleer:
 
 Heb je alleen OCR nodig en geen gebruiksopvraag, dan kun je de serviceaccount-JSON negeren en alleen `Google Vision API Key` invullen.
 
-## Snelle flow
+## Snelle workflow
 
 ```text
 Open System Settings
 -> Open Other Settings
--> Vul OCR-servicegegevens in
--> Sla op
--> Ga terug naar Bestandsbeheer
--> Selecteer een bestand en klik OCR
--> Kies een model
--> Wacht op herkenning
--> Kopieer resultaten of exporteer Markdown / PDF / Word
+-> Fill OCR service credentials
+-> Save
+-> Return to File Management
+-> Select a file and click OCR
+-> Choose a model
+-> Wait for recognition
+-> Copy results or export Markdown / PDF / Word
 ```

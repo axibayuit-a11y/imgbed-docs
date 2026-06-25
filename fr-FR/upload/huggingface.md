@@ -1,47 +1,67 @@
 # Ajouter un canal Hugging Face
 
-Le canal Hugging Face enregistre les fichiers dans un dépôt Hugging Face.
+## Ce qu’il faut avant de commencer
 
-## À préparer
+Vous n’avez besoin que de trois éléments :
 
-| Élément | Utilité |
+| Élément | Rôle |
 | --- | --- |
-| Compte Hugging Face | Gérer dépôt et token |
-| Repository | Emplacement des fichiers |
-| Access Token | Autoriser l’écriture depuis ImgBed |
-| Dossier | Optionnel |
+| Compte Hugging Face | Utilisé pour générer un jeton d’accès et posséder le dépôt. |
+| Jeton d’accès utilisateur Hugging Face | ImgBed l’utilise pour accéder à l’API Hugging Face, créer des dépôts et téléverser des fichiers. |
+| Nom du dépôt | Vous pouvez saisir uniquement le nom du dépôt, par exemple `image`. |
 
-## Créer le token
+## Étapes de configuration
 
-Dans les paramètres Hugging Face, créez un Access Token ayant le droit d’écrire dans le dépôt.
+### Étape 1 : se connecter à Hugging Face et créer un jeton d’accès
 
-![Créer le token](../../image/upload/huggingface/创建令牌.png)
+1. Connectez-vous à Hugging Face.
+2. Cliquez sur votre avatar en haut à droite et ouvrez `Settings`.
+3. Ouvrez `Access Tokens` dans la barre latérale gauche.
+4. Créez un nouveau jeton.
+5. Donnez au jeton un nom reconnaissable.
+6. Sélectionnez la permission `write`.
+7. Copiez et enregistrez le jeton immédiatement après sa création.
 
-Copiez le token et conservez-le en sécurité.
+![Créer un token](../../image/upload/huggingface/创建令牌.png)
 
-## Renseigner dans ImgBed
+## Étape 2 : compléter le canal Hugging Face dans ImgBed
 
-Dans Paramètres d’upload, choisissez `Hugging Face`.
+Après avoir sélectionné `Hugging Face` dans les paramètres de téléversement, remplissez les champs ainsi :
 
-| Champ | Valeur |
+| Champ d’interface | Valeur à saisir |
 | --- | --- |
-| Nom du canal | Par exemple `HF Storage` |
-| Repository | `utilisateur/depot` |
-| Token | Hugging Face Access Token |
-| Dossier | Optionnel, souvent `imgbed` |
-| Note | Optionnel |
+| Nom du canal | Nom de votre choix, par exemple `hf-primary`. |
+| Nom du dépôt | Nom court de dépôt comme `image`, ou chemin complet comme `username/image`. |
+| Jeton d’accès | Jeton d’accès utilisateur Hugging Face que vous venez de créer. |
+| Dépôt privé | Activez ou désactivez selon vos besoins. |
+| Remarque | Facultatif, par exemple `Primary upload channel`. |
 
 ![Ajouter le canal](../../image/upload/huggingface/添加渠道.png)
 
-## Vérification
+## Étape 3 : enregistrer le canal
 
-1. Enregistrez le canal.
-2. Envoyez une image de test.
-3. Vérifiez que le fichier apparaît dans le dépôt.
-4. Ouvrez le lien via ImgBed.
+Après avoir rempli les champs, cliquez sur Enregistrer.
 
-## Précautions
+Le système gère ces détails :
 
-- Vérifiez si le dépôt est public ou privé. Dans un dépôt public, les fichiers peuvent être visibles.
-- Donnez au token uniquement les droits nécessaires.
-- Pour beaucoup de fichiers ou un trafic élevé, tenez compte des limites Hugging Face.
+| Comportement du système | Description |
+| --- | --- |
+| Nom court du dépôt | ImgBed identifie le compte Hugging Face actuel et étend la valeur vers un chemin complet de dépôt. |
+| Chemin complet du dépôt | ImgBed utilise le chemin `username/repository` exactement tel qu’il a été saisi. |
+| Vérification du dépôt | Si vous utilisez le chemin du compte personnel actuel, ImgBed tente de créer le dépôt lorsqu’il n’existe pas. Si vous saisissez manuellement un chemin complet, ImgBed utilise directement ce chemin. |
+| Type de dépôt | Ce canal utilise un dépôt `dataset`. |
+| État public/privé | La visibilité du dépôt est synchronisée selon l’interrupteur actuel. |
+
+## Liste rapide
+
+```text
+Sign in to Hugging Face
+-> Create an Access Token
+-> Select write permission
+-> Return to ImgBed and enter the token and repository name
+-> Save
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> ImgBed checks or creates the dataset repository
+-> Upload a test image
+```

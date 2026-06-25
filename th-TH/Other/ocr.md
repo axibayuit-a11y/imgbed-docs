@@ -1,21 +1,21 @@
 # OCR
 
-OCR ดึง text ออกจาก images, scans และ document screenshots
+OCR ดึงข้อความจากรูปภาพ สแกน และภาพหน้าจอของเอกสาร
 
-หลัง recognition แล้ว คุณสามารถ copy result, export เป็น `Markdown`, `PDF` หรือ `Word` หรือ package หลาย formats รวมกันเพื่อ download
+หลังรู้จำแล้ว คุณสามารถคัดลอกผลลัพธ์ ส่งออกเป็น `Markdown`, `PDF` หรือ `Word` หรือรวมหลายรูปแบบเป็นแพ็กเกจเพื่อดาวน์โหลดได้
 
 ## OCR ทำอะไรได้บ้าง
 
-| Feature | Description |
+| ฟีเจอร์ | คำอธิบาย |
 | --- | --- |
-| Image text recognition | Extract text จาก images, screenshots และ scans |
-| Document layout recognition | เหมาะกับ tables, formulas, stamps และ mixed text-image layouts |
-| Multiple services | รองรับ Baidu PaddleOCR, Microsoft Azure Vision และ Google Vision |
-| Copy results | Copy recognized text หลัง processing |
-| Export files | Export `Markdown`, `PDF` และ `Word` |
-| Batch packaging | หลัง recognize หลาย files สามารถ download results เป็น package |
+| รู้จำข้อความในรูปภาพ | ดึงข้อความจากรูปภาพ ภาพหน้าจอ และสแกน |
+| รู้จำเลย์เอาต์เอกสาร | เหมาะกับตาราง สูตร ตราประทับ และเลย์เอาต์ที่ผสมข้อความกับรูปภาพ |
+| หลายบริการ | รองรับ Baidu PaddleOCR, Microsoft Azure Vision และ Google Vision |
+| คัดลอกผลลัพธ์ | คัดลอกข้อความที่รู้จำได้หลังประมวลผล |
+| ส่งออกไฟล์ | ส่งออก `Markdown`, `PDF` และ `Word` |
+| รวมเป็นแพ็กเกจแบบชุด | หลังรู้จำหลายไฟล์แล้ว สามารถดาวน์โหลดผลลัพธ์เป็นแพ็กเกจ |
 
-## Configure OCR Services ก่อน
+## ตั้งค่าบริการ OCR ก่อน
 
 เปิด:
 
@@ -23,186 +23,186 @@ OCR ดึง text ออกจาก images, scans และ document screensho
 System Settings -> Other Settings -> OCR
 ```
 
-![IP geolocation and OCR](../../image/other/ip定位和ocr文字识别.png)
+![การระบุตำแหน่งจาก IP และ OCR](../../image/other/ip定位和ocr文字识别.png)
 
-กรอก credentials สำหรับ services ที่ต้องการใช้:
+กรอกข้อมูลรับรองสำหรับบริการที่ต้องการใช้:
 
-| Service | What To Enter | Best For |
+| บริการ | สิ่งที่ต้องกรอก | เหมาะที่สุดสำหรับ |
 | --- | --- | --- |
-| Baidu PaddleOCR | `PaddleOCR Token` | Recommended first choice เหมาะกับ documents, images, tables และ mixed layouts |
-| Microsoft Azure Vision | `Azure Vision Endpoint` และ `Azure Vision API Key` | เหมาะถ้าใช้ Microsoft cloud services อยู่แล้ว |
-| Google Vision | `Google Vision API Key` ส่วน service account `JSON` ใช้เฉพาะ quota query | เหมาะถ้าใช้ Google Cloud services |
+| Baidu PaddleOCR | `PaddleOCR Token` | ตัวเลือกแรกที่แนะนำ เหมาะกับเอกสาร รูปภาพ ตาราง และเลย์เอาต์ผสม |
+| Microsoft Azure Vision | `Azure Vision Endpoint` และ `Azure Vision API Key` | มีประโยชน์หากคุณใช้บริการคลาวด์ของ Microsoft อยู่แล้ว |
+| Google Vision | `Google Vision API Key` โดยบัญชีบริการ `JSON` ใช้เฉพาะสำหรับตรวจสอบโควตา | มีประโยชน์หากคุณใช้บริการ Google Cloud |
 
-กรอก credentials แล้ว save
+บันทึกหลังกรอกข้อมูลรับรองแล้ว
 
-สำหรับ initial testing configure service เดียวก็พอ ไม่จำเป็นต้องครบทั้งสาม
+สำหรับการทดสอบครั้งแรก คุณตั้งค่าเพียงบริการเดียวก็ได้ ไม่จำเป็นต้องตั้งค่าทั้งสามบริการ
 
-## Google Vision Setup
+## การตั้งค่า Google Vision
 
-Google setup มีสองส่วน:
+การตั้งค่า Google มีสองส่วน:
 
-| Goal | Requirement |
+| เป้าหมาย | ข้อกำหนด |
 | --- | --- |
-| ใช้ OCR | Enable `Cloud Vision API` แล้วสร้าง `API Key` |
-| Query usage | สร้าง service account, grant `Monitoring Viewer`, แล้ว download service account `JSON` |
+| ใช้ OCR | เปิดใช้ `Cloud Vision API` แล้วสร้าง `API Key` |
+| ตรวจสอบการใช้งาน | สร้างบัญชีบริการ ให้สิทธิ์ `Monitoring Viewer` แล้วดาวน์โหลดบัญชีบริการ `JSON` |
 
-![Google API key and service account](../../image/other/谷歌api秘钥和服务账号截图.png)
+![คีย์ API และบัญชีบริการของ Google](../../image/other/谷歌api秘钥和服务账号截图.png)
 
 ### ใช้ Google สำหรับ OCR
 
 1. เปิด Google Cloud Console
 2. ไปที่ `APIs & Services`
-3. เปิด `Library`, search `Cloud Vision API` แล้ว enable
+3. เปิด `Library` ค้นหา `Cloud Vision API` แล้วเปิดใช้
 4. กลับไปที่ `Credentials`
-5. Create `API Key`
-6. เปิด API Key แล้ว copy
-7. Paste ใน `Google Vision API Key` ของ ImgBed
-8. Save
+5. สร้าง `API Key`
+6. เปิด API Key แล้วคัดลอก
+7. วางลงใน `Google Vision API Key` ใน ImgBed
+8. บันทึก
 
-จากนั้นเลือก Google Vision ใน OCR dialog ได้
+จากนั้นคุณสามารถเลือก Google Vision ในกล่องโต้ตอบ OCR ได้
 
-### Query Google Usage
+### ตรวจสอบการใช้งาน Google
 
-Quota query ไม่ required สำหรับ recognition
+การตรวจสอบโควตาไม่จำเป็นต่อการรู้จำ
 
-ใช้แสดงคร่าว ๆ ว่า Google Vision calls ถูกใช้ไปเท่าไรใน 30 วันที่ผ่านมา
+ใช้เพื่อแสดงโดยประมาณว่ามีการเรียก Google Vision ไปกี่ครั้งในช่วง 30 วันที่ผ่านมา
 
 1. ใน Google Cloud Console เปิด `IAM & Admin`
 2. เปิด `Service Accounts`
-3. สร้าง service account เช่น `vision-monitor`
-4. Grant role `Monitoring Viewer`
-5. เปิด service account details แล้ว create key
+3. สร้างบัญชีบริการ เช่น `vision-monitor`
+4. ให้บทบาท `Monitoring Viewer`
+5. เปิดรายละเอียดบัญชีบริการแล้วสร้างคีย์
 6. เลือก `JSON`
-7. Download generated JSON file
-8. กลับไป ImgBed แล้ว import ใน service account `JSON` (optional)
-9. หลัง import สำเร็จ คลิก quota query
+7. ดาวน์โหลดไฟล์ JSON ที่สร้างขึ้น
+8. กลับไปที่ ImgBed แล้วนำเข้าไว้ใต้บัญชีบริการ `JSON` (ไม่บังคับ)
+9. เมื่อนำเข้าสำเร็จแล้ว คลิกตรวจสอบโควตา
 
-หลัง import ImgBed จะแสดง project name ที่เป็นเจ้าของ service account เมื่อ query usage ImgBed จะอ่าน Google monitoring data แล้วแสดง call count ของเดือนนี้
+หลังนำเข้า ImgBed จะแสดงชื่อโปรเจกต์ที่เป็นเจ้าของบัญชีบริการ เมื่อตรวจสอบการใช้งาน ImgBed จะอ่านข้อมูลการตรวจสอบของ Google และแสดงจำนวนการเรียกในเดือนนี้
 
 สรุป:
 
-| Item | Purpose |
+| รายการ | จุดประสงค์ |
 | --- | --- |
-| `Google Vision API Key` | ทำ OCR recognition |
-| Service account `JSON` | Query จำนวน Google Vision calls ที่ใช้ |
-| `Monitoring Viewer` role | ให้ service account อ่าน usage data |
+| `Google Vision API Key` | ใช้ทำการรู้จำ OCR |
+| บัญชีบริการ `JSON` | ตรวจสอบจำนวนการเรียก Google Vision ที่ใช้ไป |
+| บทบาท `Monitoring Viewer` | อนุญาตให้บัญชีบริการอ่านข้อมูลการใช้งาน |
 
 ## รับ Baidu PaddleOCR Token
 
-Baidu PaddleOCR ต้องใช้ access token
+Baidu PaddleOCR ต้องใช้โทเค็นการเข้าถึง
 
-![Get PaddleOCR token](../../image/other/获取飞浆令牌.png)
+![รับโทเค็น PaddleOCR](../../image/other/获取飞浆令牌.png)
 
-เปิด `API` call window ในหน้า Baidu PaddleOCR คลิกเพื่อรับ token แล้ว copy
+เปิดหน้าต่างเรียก `API` ในหน้า Baidu PaddleOCR คลิกเพื่อรับโทเค็นแล้วคัดลอก
 
-กลับไป ImgBed paste ใน `PaddleOCR Token` แล้ว save
+กลับไปที่ ImgBed วางลงใน `PaddleOCR Token` แล้วบันทึก
 
-## เริ่ม Recognition
+## เริ่มรู้จำ
 
-ใน File Management เลือก image หรือ document screenshot แล้วคลิก `OCR`
+ในตัวจัดการไฟล์ เลือกรูปภาพหรือภาพหน้าจอของเอกสาร แล้วคลิก `OCR`
 
-![OCR recognition](../../image/other/ocr识别截图.png)
+![การรู้จำ OCR](../../image/other/ocr识别截图.png)
 
-ใน dialog เลือก recognition service และ model
+ในกล่องโต้ตอบ เลือกบริการและโมเดลรู้จำ
 
-Common PaddleOCR model choices:
+ตัวเลือกโมเดล PaddleOCR ที่พบบ่อย:
 
-| Model | Best For |
+| โมเดล | เหมาะที่สุดสำหรับ |
 | --- | --- |
-| `PP-StructureV3` | Recommended default เหมาะกับ documents, tables, formulas, stamps และ mixed layouts |
-| `PP-OCRv5` | Simple images, ordinary text และ lightweight recognition |
-| `PaddleOCR-VL` | Multilingual, complex images และ chart-like content |
-| `PaddleOCR-VL-1.5` | Document pages ที่ซับซ้อนกว่า และ layout recovery |
+| `PP-StructureV3` | ค่าเริ่มต้นที่แนะนำ เหมาะกับเอกสาร ตาราง สูตร ตราประทับ และเลย์เอาต์ผสม |
+| `PP-OCRv5` | รูปภาพธรรมดา ข้อความทั่วไป และการรู้จำแบบเบา |
+| `PaddleOCR-VL` | หลายภาษา รูปภาพซับซ้อน และเนื้อหาลักษณะคล้ายแผนภูมิ |
+| `PaddleOCR-VL-1.5` | หน้าเอกสารที่ซับซ้อนมากขึ้นและการกู้คืนเลย์เอาต์ |
 
-ถ้าไม่แน่ใจ เริ่มด้วย `PP-StructureV3`
+หากไม่แน่ใจ ให้เริ่มด้วย `PP-StructureV3`
 
-## Advanced Options
+## ตัวเลือกขั้นสูง
 
-| Option | Description |
+| ตัวเลือก | คำอธิบาย |
 | --- | --- |
-| Orientation correction | ใช้เมื่อ image หมุนหรือเอียง |
-| Document flattening | ใช้กับ photographed documents ที่มี curvature หรือ tilt |
-| Layout detection | ใช้เมื่อต้องการ preserve headings, paragraphs, tables และ image structure |
-| Chart recognition | ใช้เมื่อ image มี charts หรือ structures ซับซ้อน |
-| Beautify `Markdown` | ทำให้ exported Markdown อ่านง่ายขึ้น |
+| แก้แนวภาพ | ใช้เมื่อรูปภาพหมุนหรือเอียง |
+| ปรับเอกสารให้แบน | ใช้กับเอกสารที่ถ่ายภาพแล้วมีความโค้งหรือเอียง |
+| ตรวจจับเลย์เอาต์ | ใช้เมื่อคุณต้องการรักษาโครงสร้างหัวข้อ ย่อหน้า ตาราง และรูปภาพ |
+| รู้จำแผนภูมิ | ใช้เมื่อรูปภาพมีแผนภูมิหรือโครงสร้างซับซ้อน |
+| ปรับ `Markdown` ให้อ่านง่าย | ทำให้ Markdown ที่ส่งออกอ่านง่ายขึ้น |
 
-สำหรับ regular screenshots ให้ใช้ options น้อยที่สุด สำหรับ document scans ให้ enable document-related options มากขึ้น
+สำหรับภาพหน้าจอทั่วไป ให้เปิดตัวเลือกให้น้อยที่สุด สำหรับสแกนเอกสาร ให้เปิดตัวเลือกที่เกี่ยวกับเอกสารมากขึ้น
 
-## ดู Results
+## ดูผลลัพธ์
 
-หลัง recognition เสร็จ dialog จะแสดง result
+หลังรู้จำเสร็จ กล่องโต้ตอบจะแสดงผลลัพธ์
 
-คุณ copy ได้ทันทีหรือเลือก export formats
+คุณสามารถคัดลอกโดยตรงหรือเลือกชนิดไฟล์ส่งออกได้
 
-![PDF recognition](../../image/other/pdf识别截图.png)
+![การรู้จำ PDF](../../image/other/pdf识别截图.png)
 
-สำหรับ document pages, exported `PDF` สามารถ preserve page appearance พร้อมให้ text searchable เหมาะกับ archiving scans และค้นหา content ภายหลัง
+สำหรับหน้าเอกสาร `PDF` ที่ส่งออกสามารถรักษาหน้าตาเอกสารไว้พร้อมทำให้ค้นหาข้อความได้ เหมาะสำหรับจัดเก็บไฟล์สแกนและค้นหาเนื้อหาในภายหลัง
 
-## เลือก Export Format
+## เลือกรูปแบบส่งออก
 
-| Format | Best For |
+| รูปแบบ | เหมาะที่สุดสำหรับ |
 | --- | --- |
-| `Markdown (.md)` | Notes, documentation systems และการ edit ภายหลัง |
-| `PDF (.pdf)` | Preserve page appearance และ scanned document results |
-| `Word (.docx)` | Layout editing, text modification และส่งต่อให้คนอื่น |
-| Export all | Save multiple formats และ original image เหมาะกับ archives สำคัญ |
+| `Markdown (.md)` | บันทึกย่อ ระบบเอกสาร และการแก้ไขภายหลัง |
+| `PDF (.pdf)` | รักษาหน้าตาเอกสารและผลลัพธ์ของเอกสารสแกน |
+| `Word (.docx)` | แก้เลย์เอาต์ต่อ แก้ข้อความ และส่งต่อให้ผู้อื่น |
+| ส่งออกทั้งหมด | บันทึกหลายรูปแบบและรูปภาพต้นฉบับ เหมาะกับเอกสารสำคัญ |
 
-ถ้าต้องการแค่ text ให้ export Markdown
+หากต้องการเฉพาะข้อความ ให้ส่งออก Markdown
 
-ถ้าต้องการ page appearance ให้ใช้ PDF หรือ Word
+หากต้องการรักษาหน้าตาเอกสาร ให้ใช้ PDF หรือ Word
 
-## Word Output
+## ผลลัพธ์ Word
 
-Exported Word documents เปิดและ edit ด้วย office software ได้
+เอกสาร Word ที่ส่งออกสามารถเปิดและแก้ไขด้วยซอฟต์แวร์สำนักงานได้
 
-![Word result](../../image/other/word识别结果.png)
+![ผลลัพธ์ Word](../../image/other/word识别结果.png)
 
-Documents บางแบบมี recognized images, headings และ paragraphs ใน Word output
+เอกสารบางรายการอาจมีรูปภาพที่รู้จำได้ หัวข้อ และย่อหน้าอยู่ในผลลัพธ์ Word
 
-Recognition quality ขึ้นกับ original image clarity, model choice และ document complexity
+คุณภาพการรู้จำขึ้นอยู่กับความชัดของรูปภาพต้นฉบับ การเลือกโมเดล และความซับซ้อนของเอกสาร
 
-## File Types ที่เหมาะกับ OCR
+## ประเภทไฟล์ที่เหมาะกับ OCR
 
-| File Type | Recommendation |
+| ประเภทไฟล์ | คำแนะนำ |
 | --- | --- |
-| Clear screenshots | Recognize ได้โดยตรง |
-| Scans | Prefer `PP-StructureV3` |
-| Photographed documents | Enable orientation correction และ document flattening |
-| Tables, formulas, stamps | Prefer structured models |
-| Simple short text images | `PP-OCRv5` มักพอ |
+| ภาพหน้าจอชัดเจน | รู้จำโดยตรง |
+| สแกน | แนะนำ `PP-StructureV3` |
+| เอกสารถ่ายภาพ | เปิดแก้แนวภาพและปรับเอกสารให้แบน |
+| ตาราง สูตร ตราประทับ | แนะนำโมเดลเชิงโครงสร้าง |
+| รูปภาพข้อความสั้นธรรมดา | `PP-OCRv5` มักเพียงพอ |
 
-Images ที่ชัดและ text ตรงจะให้ results ดีกว่า
+รูปภาพที่ชัดกว่าและข้อความตรงกว่ามักให้ผลลัพธ์ดีกว่า
 
-## Common Cases
+## กรณีทั่วไป
 
-| Case | Meaning |
+| กรณี | ความหมาย |
 | --- | --- |
-| Recognition fails | ตรวจว่า service token หรือ key ถูก save แล้ว |
-| Recognition slow | Complex documents และ large images ใช้เวลานานกว่า |
-| Table incomplete | ลอง structured model |
-| Text มี mistakes | Blur, glare และ skew เพิ่ม recognition errors ลอง image ที่ชัดกว่า |
-| Word output มี images จำนวนมาก | Structured models อาจ preserve recognized images บางส่วน เป็นเรื่องปกติ |
+| รู้จำไม่สำเร็จ | ตรวจสอบว่าโทเค็นหรือคีย์ของบริการถูกบันทึกแล้ว |
+| รู้จำช้า | เอกสารซับซ้อนและรูปภาพขนาดใหญ่ใช้เวลานานกว่า |
+| ตารางไม่ครบ | ลองใช้โมเดลเชิงโครงสร้าง |
+| ข้อความมีข้อผิดพลาด | ภาพเบลอ แสงสะท้อน และความเอียงเพิ่มข้อผิดพลาดในการรู้จำ ลองใช้รูปภาพที่ชัดกว่า |
+| ผลลัพธ์ Word มีรูปภาพจำนวนมาก | โมเดลเชิงโครงสร้างอาจเก็บรูปภาพที่รู้จำได้บางส่วนไว้ เป็นเรื่องปกติ |
 
-### Google Quota Query Fails
+### ตรวจสอบโควตา Google ไม่สำเร็จ
 
-ตรวจว่า:
+ตรวจสอบ:
 
-1. Import service account `JSON` แล้ว
-2. Service account มี role `Monitoring Viewer`
-3. Project enable `Cloud Vision API`
+1. นำเข้าบัญชีบริการ `JSON` แล้ว
+2. บัญชีบริการมีบทบาท `Monitoring Viewer`
+3. เปิดใช้ `Cloud Vision API` สำหรับโปรเจกต์แล้ว
 
-ถ้าต้องการแค่ OCR ไม่ต้อง query usage สามารถไม่ใส่ service account JSON และกรอกแค่ `Google Vision API Key`
+หากต้องการเฉพาะ OCR และไม่ต้องการตรวจสอบการใช้งาน คุณสามารถข้าม JSON ของบัญชีบริการและกรอกเฉพาะ `Google Vision API Key`
 
-## Quick Flow
+## ขั้นตอนแบบย่อ
 
 ```text
-เปิด System Settings
--> เปิด Other Settings
--> กรอก OCR service credentials
+Open System Settings
+-> Open Other Settings
+-> Fill OCR service credentials
 -> Save
--> กลับไป File Management
--> เลือก file แล้วคลิก OCR
--> เลือก model
--> รอ recognition
--> Copy results หรือ export Markdown / PDF / Word
+-> Return to File Management
+-> Select a file and click OCR
+-> Choose a model
+-> Wait for recognition
+-> Copy results or export Markdown / PDF / Word
 ```

@@ -108,25 +108,25 @@ Po dokončení klikněte na Uložit.
 | Karta kanálu se zobrazuje | Po uložení by se v Nastavení nahrávání měla zobrazit karta Discord. |
 | Kanál lze zapnout | Přepínač Aktivní zůstane zapnutý. |
 | Konfigurace je uložena | Detail ukazuje uložený Bot Token a Channel ID. |
-| Upload funguje | Nahrajte testovací obrázek a ověřte, že se objevil v cílovém textovém kanálu Discord. |
+| Nahrávání funguje | Nahrajte testovací obrázek a ověřte, že se objevil v cílovém textovém kanálu Discord. |
 
-## Rychlý checklist
+## Rychlý kontrolní seznam
 
 ```text
-Vytvořte Discord server
--> Vytvořte textový kanál
--> Vytvořte bota v Discord Developer Portal
--> Uložte Bot Token ze stránky Bot
--> V OAuth2 vyberte bot, View Channels, Send Messages, Attach Files a Read Message History
--> Zkopírujte vygenerovaný URL a autorizujte bota na cílovém serveru
--> Ověřte, že cílový textový kanál povoluje stejná oprávnění
--> Zapněte Developer Mode
--> Klikněte pravým tlačítkem na cílový textový kanál a zkopírujte Channel ID
--> Zadejte Bot Token a Channel ID do ImgBed
--> Uložte a nahrajte testovací obrázek
+Create a Discord server
+-> Create a text channel
+-> Create a bot in the Discord Developer Portal
+-> Save the Bot Token from the Bot page
+-> In OAuth2, select bot, View Channels, Send Messages, Attach Files, and Read Message History
+-> Copy the generated URL and authorize the bot for the target server
+-> Make sure the target text channel grants the same permissions
+-> Enable Developer Mode
+-> Right-click the target text channel and copy the Channel ID
+-> Enter the Bot Token and Channel ID in ImgBed
+-> Save and upload a test image
 ```
 
-## Reference
+## Odkazy
 
 1. Discord Developers Getting Started: https://docs.discord.com/developers/quick-start/getting-started
 2. Discord Help - Where can I find my User/Server/Message ID: https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID

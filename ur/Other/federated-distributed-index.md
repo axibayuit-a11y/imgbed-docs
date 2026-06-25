@@ -1,14 +1,14 @@
-# Federated Distributed Index
+# وفاقی تقسیم شدہ اشاریہ
 
-Federated distributed index کئی ImgBed sites کو ایک دوسرے کے ساتھ file lists share کرنے دیتا ہے۔
+وفاقی تقسیم شدہ اشاریہ کئی ImgBed سائٹس کو ایک دوسرے کے ساتھ فائل فہرستیں شیئر کرنے دیتا ہے۔
 
 سادہ الفاظ میں:
 
-- آپ اپنی site کے selected folders دوسروں کے ساتھ share کر سکتے ہیں۔
-- آپ کسی دوسرے node میں join کر کے اس node کی shared file list اپنے admin panel میں sync کر سکتے ہیں۔
-- federated files بنیادی طور پر browsing، searching، اور links کھولنے کے لیے ہیں۔ یہ آپ کے اپنے storage میں دوبارہ upload نہیں ہوتیں۔
+- آپ اپنی سائٹ کے منتخب فولڈرز دوسروں کے ساتھ شیئر کر سکتے ہیں۔
+- آپ کسی دوسرے نوڈ میں شامل ہو کر اس نوڈ کی شیئر کردہ فائل فہرست اپنے ایڈمن پینل میں ہم وقت کر سکتے ہیں۔
+- وفاقی فائلیں بنیادی طور پر براؤزنگ، تلاش اور لنکس کھولنے کے لیے ہوتی ہیں۔ انہیں آپ کے اپنے اسٹوریج میں دوبارہ اپ لوڈ نہیں کیا جاتا۔
 
-## کہاں Configure کریں
+## کہاں ترتیب دیں
 
 کھولیں:
 
@@ -16,178 +16,178 @@ Federated distributed index کئی ImgBed sites کو ایک دوسرے کے سا
 System Settings -> Other Settings -> Federated Distributed Index
 ```
 
-![Local federation node](../../image/other/联盟图/联盟分布式索引本地节点.png)
+![مقامی وفاقی نوڈ](../../image/other/联盟图/联盟分布式索引本地节点.png)
 
-page میں تین tabs ہیں:
+صفحے میں تین ٹیب ہیں:
 
-| Tab | Purpose |
+| ٹیب | مقصد |
 | --- | --- |
-| Local Node | اپنا node enable کرنا، public domain confirm کرنا، shared folders منتخب کرنا، اور outbound index update کرنا |
-| Nodes I Joined | دوسرے ImgBed nodes manage کرنا جن میں آپ joined ہیں |
-| Nodes Joining Me | ان requests کو manage کرنا جو دوسرے owners آپ کے node میں join کرنے کے لیے بھیجتے ہیں |
+| مقامی نوڈ | اپنا نوڈ فعال کرنا، عوامی ڈومین کی تصدیق کرنا، شیئرڈ فولڈرز منتخب کرنا، اور بیرونی اشاریہ اپ ڈیٹ کرنا |
+| جن نوڈز میں میں شامل ہوں | ان دوسرے ImgBed نوڈز کو منظم کرنا جن میں آپ شامل ہوئے ہیں |
+| جو نوڈز مجھ میں شامل ہو رہے ہیں | ان درخواستوں کو منظم کرنا جو دوسرے لوگ آپ کے نوڈ میں شامل ہونے کے لیے بھیجتے ہیں |
 
-## First-Time Setup
+## پہلی بار ترتیب
 
 1. `Local Node` کھولیں۔
-2. `Enable` on کریں۔
-3. `Sync folders` کے تحت share کرنے والے folders منتخب کریں۔
+2. `Enable` آن کریں۔
+3. `Sync folders` کے تحت شیئر کرنے کے فولڈرز منتخب کریں۔
 4. `Update Outbound Index` پر کلک کریں۔
-5. اگر ImgBed domain change detect کرے، تو continue کرنے سے پہلے confirm کریں کہ current domain درست ہے۔
+5. اگر ImgBed ڈومین تبدیلی کا پتہ لگائے تو جاری رکھنے سے پہلے تصدیق کریں کہ موجودہ ڈومین درست ہے۔
 
-آپ multiple sync folders منتخب کر سکتے ہیں۔
+آپ کئی ہم وقت فولڈرز منتخب کر سکتے ہیں۔
 
-sync folder list empty ہو تو تمام folders share ہوتے ہیں۔
+اگر ہم وقت فولڈر فہرست خالی ہو تو تمام فولڈرز شیئر ہوتے ہیں۔
 
-## Local Node
+## مقامی نوڈ
 
-### Public Domain
+### عوامی ڈومین
 
-public domain وہ site URL ہے جو دوسرے nodes آپ کے node تک access کے لیے استعمال کرتے ہیں۔
+عوامی ڈومین وہ سائٹ URL ہے جسے دوسرے نوڈز آپ کے نوڈ تک رسائی کے لیے استعمال کرتے ہیں۔
 
-ImgBed اسے automatically detect کرتا ہے۔ manually type کرنے کی ضرورت نہیں۔ پہلی بار index update کرتے وقت ImgBed پوچھتا ہے کہ current access URL production domain ہے یا نہیں۔
+ImgBed اسے خودکار طور پر پہچانتا ہے۔ آپ کو اسے دستی طور پر لکھنے کی ضرورت نہیں۔ پہلی بار اشاریہ اپ ڈیٹ کرتے وقت ImgBed آپ سے تصدیق کراتا ہے کہ موجودہ رسائی URL پروڈکشن ڈومین ہے یا نہیں۔
 
-اگر بعد میں domains بدلیں، index update دوبارہ confirmation مانگے گا۔
+اگر آپ بعد میں ڈومین بدلیں تو اشاریہ اپ ڈیٹ دوبارہ تصدیق مانگے گا۔
 
-### Sync Folders
+### ہم وقت فولڈرز
 
-Sync folders طے کرتے ہیں کہ federation nodes کے ساتھ کون سی files share ہوں گی۔
+ہم وقت فولڈرز طے کرتے ہیں کہ وفاقی نوڈز کے ساتھ کون سی فائلیں شیئر ہوں گی۔
 
-مثلاً اگر آپ صرف یہ منتخب کریں:
+مثال کے طور پر اگر آپ صرف یہ منتخب کریں:
 
 ```text
 /1/
 /2/
 ```
 
-تو دوسرے nodes صرف ان دو directories کی files دیکھ سکیں گے۔
+تو دوسرے نوڈز صرف ان دو ڈائریکٹریز میں موجود فائلیں دیکھ سکیں گے۔
 
-### Update Outbound Index
+### بیرونی اشاریہ اپ ڈیٹ کرنا
 
-یہ اس file list کو update کرتا ہے جسے دوسرے nodes آپ سے sync کر سکتے ہیں۔
+یہ اس فائل فہرست کو اپ ڈیٹ کرتا ہے جسے دوسرے نوڈز آپ سے ہم وقت کر سکتے ہیں۔
 
 اسے استعمال کریں جب:
 
-- آپ پہلی بار federation enable کریں۔
-- آپ ایسی files upload کریں جو share کرنا چاہتے ہیں۔
-- آپ sync folders بدلیں۔
-- public domain بدل جائے اور اسے confirm کرنا ہو۔
+- آپ پہلی بار وفاقی خصوصیت فعال کریں۔
+- آپ ایسی فائلیں اپ لوڈ کریں جنہیں شیئر کرنا چاہتے ہیں۔
+- آپ ہم وقت فولڈرز بدلیں۔
+- آپ عوامی ڈومین بدلیں اور اس کی تصدیق کرنی ہو۔
 
-## Nodes I Joined
+## جن نوڈز میں میں شامل ہوں
 
-`Nodes I Joined` وہ جگہ ہے جہاں آپ دوسرے nodes subscribe کرتے ہیں۔
+`Nodes I Joined` وہ جگہ ہے جہاں آپ ان دوسرے نوڈز کو منظم کرتے ہیں جن میں آپ شامل ہوئے ہیں۔
 
-![Nodes I joined](../../image/other/联盟图/我加入的节点.png)
+![جن نوڈز میں میں شامل ہوں](../../image/other/联盟图/我加入的节点.png)
 
-### کسی دوسرے Node میں Join Request بھیجنا
+### دوسرے نوڈ میں شامل ہونے کی درخواست
 
-1. دوسرے owner سے invitation link مانگیں۔
-2. اسے input box میں paste کریں۔
+1. دوسرے مالک سے دعوتی لنک مانگیں۔
+2. اسے ان پٹ باکس میں چسپاں کریں۔
 3. `Request to Join` پر کلک کریں۔
-4. دوسرے owner کے admin panel میں approval کا انتظار کریں۔
+4. دوسرے مالک کے اپنے ایڈمن پینل میں منظوری دینے کا انتظار کریں۔
 
-approval کے بعد node status approved ہو جائے گا۔
+منظوری کے بعد نوڈ کی حالت منظور شدہ ہو جاتی ہے۔
 
-### Update Inbound Index
+### اندرونی اشاریہ اپ ڈیٹ کرنا
 
-`Update Inbound Index` joined nodes سے file lists sync کرتا ہے۔
+`Update Inbound Index` ان نوڈز سے فائل فہرستیں ہم وقت کرتا ہے جن میں آپ شامل ہوئے ہیں۔
 
 اسے استعمال کریں جب:
 
-- دوسرے owner نے ابھی آپ کی request approve کی ہو۔
-- دوسرے owner بتائے کہ shared content update ہو گیا ہے۔
-- آپ تمام joined federation file lists refresh کرنا چاہتے ہوں۔
+- دوسرے مالک نے ابھی آپ کی درخواست منظور کی ہو۔
+- دوسرے مالک نے بتایا ہو کہ شیئرڈ مواد اپ ڈیٹ ہو گیا ہے۔
+- آپ تمام شامل وفاقی فائل فہرستیں تازہ کرنا چاہتے ہوں۔
 
-صرف ایک node update کرنے کے لیے اس node card پر `Update Index` پر کلک کریں۔
+صرف ایک نوڈ اپ ڈیٹ کرنے کے لیے اس نوڈ کارڈ پر `Update Index` پر کلک کریں۔
 
-![Update index](../../image/other/联盟图/更新索引.png)
+![اشاریہ اپ ڈیٹ کریں](../../image/other/联盟图/更新索引.png)
 
-### Unsubscribe
+### شمولیت ختم کرنا
 
-اگر آپ کوئی node sync نہیں کرنا چاہتے تو `Unsubscribe` پر کلک کریں۔
+اگر آپ کسی نوڈ کو مزید ہم وقت نہیں کرنا چاہتے تو `Unsubscribe` پر کلک کریں۔
 
-unsubscribe کے بعد اس node کا federated index آپ کی local site سے remove ہو جاتا ہے۔
+شمولیت ختم کرنے کے بعد اس نوڈ کا وفاقی اشاریہ آپ کی مقامی سائٹ سے ہٹا دیا جاتا ہے۔
 
-## Nodes Joining Me
+## جو نوڈز مجھ میں شامل ہو رہے ہیں
 
-`Nodes Joining Me` وہ جگہ ہے جہاں آپ دوسروں کی requests handle کرتے ہیں۔
+`Nodes Joining Me` وہ جگہ ہے جہاں آپ دوسروں کی درخواستیں سنبھالتے ہیں۔
 
-![Nodes joining me](../../image/other/联盟图/加入我的节点.png)
+![جو نوڈز مجھ میں شامل ہو رہے ہیں](../../image/other/联盟图/加入我的节点.png)
 
-### Invitation Link بنانا
+### دعوتی لنک بنانا
 
-1. یقینی بنائیں کہ local node enabled ہے۔
-2. کم از کم ایک بار `Update Outbound Index` پر کلک کریں تاکہ ImgBed public domain confirm کرے۔
+1. یقینی بنائیں کہ مقامی نوڈ فعال ہے۔
+2. کم از کم ایک بار `Update Outbound Index` پر کلک کریں تاکہ ImgBed عوامی ڈومین کی تصدیق کرے۔
 3. `Nodes Joining Me` کھولیں۔
 4. `Reset Invitation Link` پر کلک کریں۔
-5. invitation link copy کریں اور دوسرے owner کو بھیجیں۔
+5. دعوتی لنک کاپی کریں اور دوسرے مالک کو بھیجیں۔
 
-اگر invitation link empty ہو تو عموماً public domain ابھی confirm نہیں ہوا۔ `Local Node` پر واپس جائیں اور `Update Outbound Index` پر کلک کریں۔
+اگر دعوتی لنک خالی ہو تو عموماً عوامی ڈومین ابھی تصدیق شدہ نہیں ہوتا۔ `Local Node` پر واپس جا کر `Update Outbound Index` پر کلک کریں۔
 
-### Join Requests Handle کرنا
+### شمولیت کی درخواستیں سنبھالنا
 
-جب کوئی request submit کرتا ہے، وہ `Nodes Joining Me` list میں ظاہر ہوتی ہے۔
+جب کوئی درخواست بھیجتا ہے تو وہ `Nodes Joining Me` فہرست میں ظاہر ہوتی ہے۔
 
-| Action | Meaning |
+| عمل | مطلب |
 | --- | --- |
-| Approve | دوسرے node کو آپ کی shared file list sync کرنے دیتا ہے |
-| Reject | join request refuse کرتا ہے |
-| Delete | finished record remove کرتا ہے |
-| Check Status | چیک کرتا ہے کہ دوسری side یہ relationship ابھی رکھتی ہے یا نہیں |
+| منظور کریں | دوسرے نوڈ کو آپ کی شیئرڈ فائل فہرست ہم وقت کرنے کی اجازت دیتا ہے |
+| مسترد کریں | شمولیت کی درخواست مسترد کرتا ہے |
+| حذف کریں | مکمل شدہ ریکارڈ ہٹاتا ہے |
+| حالت چیک کریں | چیک کرتا ہے کہ دوسری طرف یہ تعلق ابھی بھی رکھتا ہے یا نہیں |
 
-approval کے بعد بھی دوسری side کو `Update Inbound Index` پر کلک کرنا ہوگا، تب آپ کی shared files وہاں appear ہوں گی۔
+منظوری کے بعد بھی دوسری طرف کو آپ کی شیئرڈ فائلیں دیکھنے سے پہلے `Update Inbound Index` پر کلک کرنا ہوتا ہے۔
 
-![Approve invited node](../../image/other/联盟图/邀请节点同意.png)
+![مدعو نوڈ کی منظوری](../../image/other/联盟图/邀请节点同意.png)
 
-## Messages
+## پیغامات
 
-relationship approve ہونے کے بعد node card پر `Message` پر کلک کریں۔
+تعلق منظور ہونے کے بعد نوڈ کارڈ پر `Message` پر کلک کریں۔
 
-Messages صرف federation relationship کے بارے میں communication کے لیے ہیں۔ یہ files، tags، directories، یا permissions نہیں بدلتے۔
+پیغامات صرف وفاقی تعلق سے متعلق رابطے کے لیے ہیں۔ یہ فائلیں، ٹیگز، ڈائریکٹریز یا اجازتیں تبدیل نہیں کرتے۔
 
-![Messages](../../image/other/联盟图/留言功能.png)
+![پیغامات](../../image/other/联盟图/留言功能.png)
 
-## Federated Files دیکھنا
+## وفاقی فائلیں دیکھنا
 
-sync مکمل ہونے کے بعد admin file list پر واپس جائیں۔
+ہم وقتی مکمل ہونے کے بعد ایڈمن فائل فہرست پر واپس جائیں۔
 
-page کے اوپر local files اور federated files کے درمیان switch کریں۔ federated files میں synced content browse کیا جا سکتا ہے۔
+صفحے کے اوپر مقامی فائلوں اور وفاقی فائلوں کے درمیان سوئچ کریں۔ وفاقی فائلوں میں آپ ہم وقت شدہ مواد براؤز کر سکتے ہیں۔
 
-Federated files بنیادی طور پر viewing، searching، preview، اور links copy کرنے کے لیے ہیں۔ یہ local files نہیں، اس لیے آپ انہیں اپنی site سے move، delete، retag، یا backup نہیں کر سکتے۔
+وفاقی فائلیں بنیادی طور پر دیکھنے، تلاش، پیش منظر اور لنک کاپی کرنے کے لیے ہیں۔ یہ مقامی فائلیں نہیں، اس لیے آپ انہیں اپنی سائٹ سے منتقل، حذف، دوبارہ ٹیگ یا بیک اپ نہیں کر سکتے۔
 
-![Federated files in admin](../../image/other/联盟图/联盟管理显示效果图.png)
+![ایڈمن میں وفاقی فائلیں](../../image/other/联盟图/联盟管理显示效果图.png)
 
-## FAQ
+## عمومی سوالات
 
-### Relationship Record نہ ہونے کی وجہ سے Reapply کیوں کہتا ہے؟
+### تعلق کا ریکارڈ نہ ہونے کی وجہ سے دوبارہ درخواست کیوں مانگی جاتی ہے؟
 
-عام طور پر اس کا مطلب ہے کہ دوسری side نے آپ کو delete کر کے record remove کر دیا ہے، اس لیے relationship نہیں مل رہی۔ نئی join request submit کریں۔
+عام طور پر اس کا مطلب ہے کہ دوسری طرف نے آپ کو حذف کر کے ریکارڈ بھی ہٹا دیا ہے، اس لیے تعلق مزید نہیں ملتا۔ نئی شمولیت کی درخواست بھیجیں۔
 
-![Reapply when no relationship record exists](../../image/other/联盟图/无关系记录重新申请.png)
+![تعلق کا ریکارڈ نہ ہو تو دوبارہ درخواست](../../image/other/联盟图/无关系记录重新申请.png)
 
-### Join کرنے کے بعد Files کیوں نہیں دکھ رہیں؟
+### شامل ہونے کے بعد فائلیں کیوں نظر نہیں آتیں؟
 
 چیک کریں:
 
-1. دوسرے owner نے آپ کی request approve کی ہے۔
-2. دوسرے owner نے `Update Outbound Index` پر کلک کیا ہے۔
+1. دوسرے مالک نے آپ کی درخواست منظور کی ہے۔
+2. دوسرے مالک نے `Update Outbound Index` پر کلک کیا ہے۔
 3. آپ نے `Update Inbound Index` پر کلک کیا ہے۔
-4. دوسرے owner کے sync folders میں وہ directories شامل ہیں جو وہ share کرنا چاہتے ہیں۔
+4. دوسرے مالک کے ہم وقت فولڈرز میں وہ ڈائریکٹریز شامل ہیں جنہیں وہ شیئر کرنا چاہتا ہے۔
 
-### Domain Change Detect ہو تو کیا کریں؟
+### ڈومین تبدیلی کا پتہ چلے تو کیا کریں؟
 
-اگر آپ admin panel production domain سے کھول رہے ہیں تو confirm کریں اور continue کریں۔
+اگر آپ اس وقت پروڈکشن ڈومین سے ایڈمن پینل کھول رہے ہیں تو تصدیق کریں اور جاری رکھیں۔
 
-اگر temporary address استعمال کر رہے ہیں تو cancel کریں، admin panel production domain سے دوبارہ کھولیں، پھر دوبارہ کوشش کریں۔
+اگر آپ عارضی پتہ استعمال کر رہے ہیں تو منسوخ کریں، پروڈکشن ڈومین سے ایڈمن پینل دوبارہ کھولیں، پھر دوبارہ کوشش کریں۔
 
-### Empty Sync Folder List کا کیا مطلب ہے؟
+### خالی ہم وقت فولڈر فہرست کا کیا مطلب ہے؟
 
-empty sync folder list کا مطلب ہے تمام folders share ہیں۔
+خالی ہم وقت فولڈر فہرست کا مطلب ہے کہ تمام فولڈرز شیئر ہوں گے۔
 
-صرف کچھ directories share کرنی ہوں تو وہ folders manually select کریں۔
+صرف کچھ ڈائریکٹریز شیئر کرنے کے لیے انہیں دستی طور پر منتخب کریں۔
 
-### Outbound اور Inbound Index Updates کا فرق
+### بیرونی اور اندرونی اشاریہ اپ ڈیٹس میں فرق
 
-| Button | Simple Meaning |
+| بٹن | سادہ مطلب |
 | --- | --- |
-| Update Outbound Index | وہ data update کرتا ہے جو دوسرے مجھ سے sync کر سکتے ہیں |
-| Update Inbound Index | وہ data update کرتا ہے جو میں دوسروں سے sync کر چکا ہوں |
+| بیرونی اشاریہ اپ ڈیٹ کریں | یہ اپ ڈیٹ کرتا ہے کہ دوسرے مجھ سے کیا ہم وقت کر سکتے ہیں |
+| اندرونی اشاریہ اپ ڈیٹ کریں | یہ اپ ڈیٹ کرتا ہے کہ میں نے دوسروں سے کیا ہم وقت کیا ہے |

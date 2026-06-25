@@ -6,7 +6,7 @@
 
 | المتطلب | الغرض |
 | --- | --- |
-| حساب GitHub | لإنشاء access token وامتلاك المستودع. |
+| حساب GitHub | لإنشاء رمز وصول وامتلاك المستودع. |
 | GitHub Access Token | يستخدمه ImgBed للوصول إلى GitHub API وإنشاء releases ورفع الملفات. |
 | اسم المستودع | يمكن إدخال اسم المستودع فقط، مثل `image`. |
 
@@ -22,7 +22,7 @@
 6. اضغط `Generate new token (classic)`.
 7. أعطِ الرمز اسمًا واضحًا.
 8. اختر تاريخ انتهاء يناسب أسلوبك في الصيانة.
-9. اختر scopes التالية: `repo` و `workflow`.
+9. اختر نطاقي الأذونات التاليين: `repo` و `workflow`.
 10. انسخ الرمز واحفظه مباشرة بعد إنشائه.
 
 ![إضافة صلاحيات GitHub](../../image/upload/github-releases/添加github权限.png)
@@ -33,17 +33,17 @@
 
 | حقل الواجهة | ما الذي تدخله |
 | --- | --- |
-| Channel name | اسم تختاره، مثل `GitHubPrimary`. |
+| اسم القناة | اسم تختاره، مثل `GitHubPrimary`. |
 | Access Token | GitHub Personal Access Token الذي أنشأته للتو. |
-| Repository name | اسم repo قصير مثل `image`، أو مسار كامل مثل `username/image`. |
-| Private repository | فعّله أو عطّله حسب حاجتك. |
-| Remark | اختياري، مثل `Primary upload channel`. |
+| اسم المستودع | اسم مستودع قصير مثل `image`، أو مسار كامل مثل `username/image`. |
+| مستودع خاص | فعّله أو عطّله حسب حاجتك. |
+| ملاحظة | اختياري، مثل `Primary upload channel`. |
 
 ![ملء إعداد قناة GitHub](../../image/upload/github-releases/填写github渠道配置.png)
 
 ## الخطوة 3: احفظ القناة
 
-بعد ملء الحقول اضغط Save.
+بعد ملء الحقول اضغط حفظ.
 
 سيتولى النظام التفاصيل التالية:
 
@@ -59,11 +59,11 @@
 تعمل GitHub Releases بهذه الطريقة:
 
 ```text
-سجّل الدخول إلى GitHub
--> أنشئ Access Token
--> ارجع إلى ImgBed وأدخل الرمز واسم المستودع
--> احفظ
--> إذا أدخلت اسم repo فقط، يضيف ImgBed اسم المستخدم الحالي تلقائيًا
--> إذا أدخلت username/repo، يستخدمه ImgBed كما هو
--> ارفع صورة تجريبية
+Sign in to GitHub
+-> Create an Access Token
+-> Return to ImgBed and enter the token and repository name
+-> Save
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

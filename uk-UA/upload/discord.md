@@ -13,7 +13,7 @@
 
 1. Відкрийте системні налаштування.
 2. Перейдіть до налаштувань завантаження.
-3. Натисніть Add Channel у правому верхньому куті.
+3. Натисніть Додати канал у правому верхньому куті.
 4. Виберіть `Discord`.
 
 ## Поля налаштування
@@ -78,7 +78,7 @@
 3. Увімкніть Developer Mode.
 4. Поверніться до потрібного текстового каналу.
 5. Натисніть правою кнопкою на назві каналу.
-6. Натисніть Copy Channel ID.
+6. Натисніть Копіювати ID каналу.
 
 Скопійоване число і є `Channel ID`, потрібний ImgBed.
 
@@ -113,17 +113,17 @@
 ## Короткий чекліст
 
 ```text
-Створити сервер Discord
--> Створити текстовий канал
--> Створити бота в Discord Developer Portal
--> Зберегти Bot Token зі сторінки Bot
--> В OAuth2 вибрати bot, View Channels, Send Messages, Attach Files і Read Message History
--> Скопіювати згенерований URL і авторизувати бота для цільового сервера
--> Переконатися, що цільовий текстовий канал має ті самі дозволи
--> Увімкнути Developer Mode
--> Натиснути правою кнопкою на цільовому каналі й скопіювати Channel ID
--> Ввести Bot Token і Channel ID в ImgBed
--> Зберегти та завантажити тестове зображення
+Create a Discord server
+-> Create a text channel
+-> Create a bot in the Discord Developer Portal
+-> Save the Bot Token from the Bot page
+-> In OAuth2, select bot, View Channels, Send Messages, Attach Files, and Read Message History
+-> Copy the generated URL and authorize the bot for the target server
+-> Make sure the target text channel grants the same permissions
+-> Enable Developer Mode
+-> Right-click the target text channel and copy the Channel ID
+-> Enter the Bot Token and Channel ID in ImgBed
+-> Save and upload a test image
 ```
 
 ## Посилання

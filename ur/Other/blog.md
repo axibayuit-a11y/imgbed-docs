@@ -1,87 +1,87 @@
-# Blog
+# بلاگ
 
-Blog feature آپ کی ImgBed site میں ایک الگ blog page شامل کرتا ہے۔
+بلاگ کی خصوصیت آپ کی ImgBed سائٹ میں ایک الگ بلاگ صفحہ شامل کرتی ہے۔
 
-enable ہونے کے بعد visitors کھول سکتے ہیں:
+فعال ہونے کے بعد وزیٹر یہ کھول سکتے ہیں:
 
 ```text
 https://your-domain.com/blog/
 ```
 
-![Blog homepage](../../image/other/博客/博客首页.png)
+![بلاگ ہوم پیج](../../image/other/博客/博客首页.png)
 
-یہ blog open-source [LyraVoid/Mizuki](https://github.com/LyraVoid/Mizuki) project سے adapt کیا گیا ہے۔ ImgBed اسے rewrite کر کے Vue کے ساتھ integrate کرتا ہے تاکہ یہ image hosting site کے حصے کے طور پر چل سکے۔
+بلاگ اوپن سورس [LyraVoid/Mizuki](https://github.com/LyraVoid/Mizuki) منصوبے سے اخذ کیا گیا ہے۔ ImgBed اسے Vue کے ساتھ دوبارہ لکھ کر ضم کرتا ہے تاکہ یہ تصویر ہوسٹنگ سائٹ کے حصے کے طور پر چل سکے۔
 
-## کہاں Configure کریں
+## کہاں ترتیب دیں
 
-Blog settings یہاں ہیں:
+بلاگ کی ترتیبات یہاں ہیں:
 
 ```text
 System Settings -> Other Settings -> Blog
 ```
 
-![Blog settings](../../image/other/博客/QQ20260611-221702.png)
+![بلاگ ترتیبات](../../image/other/博客/QQ20260611-221702.png)
 
-## First-Time Setup
+## پہلی بار ترتیب
 
-1. `Enable` on کریں۔
-2. وہ GitHub account منتخب کریں جو blog configuration store کرے گا۔
+1. `Enable` آن کریں۔
+2. وہ GitHub اکاؤنٹ منتخب کریں جس میں بلاگ ترتیب محفوظ ہو گی۔
 3. `Update Blog` پر کلک کریں۔
-4. success message کا انتظار کریں۔
-5. blog دیکھنے کے لیے `https://your-domain.com/blog/` کھولیں۔
+4. کامیابی کے پیغام کا انتظار کریں۔
+5. بلاگ دیکھنے کے لیے `https://your-domain.com/blog/` کھولیں۔
 
-پہلی بار استعمال پر ImgBed selected account کے تحت ایک private GitHub repository تیار کرتا ہے:
-
-```text
-imgbed-blog-config
-```
-
-یہ repository blog settings اور article content محفوظ کرتی ہے۔
-
-## Posts لکھنا
-
-blog posts اپنی private GitHub repository میں edit کریں:
+پہلی بار استعمال پر ImgBed منتخب اکاؤنٹ کے تحت ایک نجی GitHub ریپوزٹری تیار کرتا ہے:
 
 ```text
 imgbed-blog-config
 ```
 
-عام workflow:
+یہ ریپوزٹری بلاگ ترتیبات اور مضامین کا مواد محفوظ کرتی ہے۔
+
+## پوسٹس لکھنا
+
+بلاگ پوسٹس اپنی نجی GitHub ریپوزٹری میں ترمیم کریں:
+
+```text
+imgbed-blog-config
+```
+
+عام طریقہ کار:
 
 1. GitHub کھولیں۔
-2. private `imgbed-blog-config` repository میں جائیں۔
-3. post files edit یا add کریں۔
-4. changes commit کریں۔
-5. ImgBed admin panel پر واپس آ کر `Update Blog` پر کلک کریں، یا blog homepage کے اوپر بائیں logo کو تین بار click کر کے blog update trigger کریں۔
+2. نجی `imgbed-blog-config` ریپوزٹری میں جائیں۔
+3. پوسٹ فائلیں ترمیم کریں یا نئی شامل کریں۔
+4. تبدیلیاں محفوظ کر کے کمٹ کریں۔
+5. ImgBed ایڈمن پینل میں واپس جا کر `Update Blog` پر کلک کریں، یا بلاگ ہوم پیج کے اوپر بائیں کونے میں لوگو کو تین بار کلک کر کے بلاگ اپ ڈیٹ شروع کریں۔
 
-`Update Blog` آپ کا لکھا ہوا content overwrite نہیں کرتا۔ یہ ضرورت پڑنے پر repository initialize کرتا ہے اور blog cache refresh کرتا ہے۔
+`Update Blog` آپ کے لکھے ہوئے مواد کو نہیں بدلتا۔ یہ ضرورت پڑنے پر ریپوزٹری شروع کرتا ہے اور بلاگ کیش تازہ کرتا ہے۔
 
-## Supported Features
+## معاون خصوصیات
 
-Blog عام blog features support کرتا ہے، جیسے post lists، categories، tags، archives، search، dark mode، اور language switching۔
+بلاگ عام بلاگ خصوصیات، جیسے پوسٹ فہرستیں، زمرے، ٹیگز، آرکائیوز، تلاش، ڈارک موڈ اور زبان تبدیل کرنا، کی حمایت کرتا ہے۔
 
-یہ comments اور visit statistics بھی support کرتا ہے۔
+یہ تبصروں اور وزٹ شماریات کی بھی حمایت کرتا ہے۔
 
-![Blog comments](../../image/other/博客/支持留言.png)
+![بلاگ تبصرے](../../image/other/博客/支持留言.png)
 
-comments posts کے نیچے دکھتے ہیں۔ visitors avatar، nickname، email، اور comment content submit کر سکتے ہیں۔
+تبصرے پوسٹس کے نیچے ظاہر ہوتے ہیں۔ وزیٹر اوتار، عرفی نام، ای میل اور تبصرہ مواد جمع کر سکتے ہیں۔
 
-visit statistics post views اور site visits دکھاتے ہیں، جس سے آپ blog traffic سمجھ سکتے ہیں۔
+وزٹ شماریات پوسٹ ویوز اور سائٹ وزٹس دکھاتی ہیں، جس سے بلاگ ٹریفک سمجھنے میں مدد ملتی ہے۔
 
-## URL
+## بلاگ کا پتہ
 
-Blog ہمیشہ `/blog/` کے تحت serve ہوتا ہے۔
+بلاگ ہمیشہ `/blog/` راستے کے تحت فراہم کیا جاتا ہے۔
 
-مثلاً اگر آپ کا ImgBed domain ہے:
+مثال کے طور پر اگر آپ کا ImgBed ڈومین ہے:
 
 ```text
 https://image.example.com
 ```
 
-تو blog URL ہوگا:
+تو بلاگ کا پتہ یہ ہے:
 
 ```text
 https://image.example.com/blog/
 ```
 
-blog disable ہونے کے بعد visitors blog page access نہیں کر پائیں گے۔
+بلاگ بند ہونے کے بعد وزیٹر بلاگ صفحے تک رسائی حاصل نہیں کر سکیں گے۔

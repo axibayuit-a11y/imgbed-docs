@@ -1,13 +1,13 @@
-# د OneDrive Channel اضافه کول
+# د OneDrive چینل اضافه کول
 
 ## مخکې څه ته اړتیا لرئ
 
 | اړتیا | ولې ورته اړتیا ده |
 | --- | --- |
-| Microsoft account | د Microsoft د اداري پاڼو د خلاصولو او OneDrive د authorize کولو لپاره |
-| ستاسو ImgBed domain | د OAuth callback URL لپاره کارېږي |
-| App registration | د `Client ID` او `Client Secret` جوړولو لپاره |
-| OneDrive account | د فایلونو اصلي storage ځای دی |
+| Microsoft حساب | د Microsoft د اداري پاڼو د خلاصولو او OneDrive د authorize کولو لپاره |
+| ستاسو ImgBed ډومېن | د OAuth کالبک URL لپاره کارېږي |
+| اپ registration | د `Client ID` او `Client Secret` جوړولو لپاره |
+| OneDrive حساب | د فایلونو اصلي زېرمه ځای دی |
 
 ## د تنظیم پړاوونه
 
@@ -25,51 +25,51 @@ Continue searching in Microsoft Entra ID
 5. `App registrations` ته لاړ شئ.
 6. `New registration` کلیک کړئ.
 
-### 2 ګام: App ثبت کړئ
+### 2 ګام: اپ ثبت کړئ
 
 د `New registration` په پاڼه کې دا معلومات ډک کړئ:
 
-| Field | څه ولیکئ |
+| فیلډ | څه ولیکئ |
 | --- | --- |
 | Name | داسې نوم چې وروسته یې وپېژنئ، لکه `imgbed-onedrive` |
-| Supported account types | د لاندې جدول له مخې یې وټاکئ |
+| Supported حساب types | د لاندې جدول له مخې یې وټاکئ |
 | Redirect URI type | `Web` |
 | Redirect URI | `https://your-domain.com/api/oauth/onedrive/callback` |
 
-د account type لارښود:
+د حساب type لارښود:
 
-| ستاسو حالت | Supported Account Types |
+| ستاسو حالت | Supported حساب Types |
 | --- | --- |
-| یوازې شخصي OneDrive | د شخصي Microsoft account اختیار وټاکئ. |
-| شخصي او work/school accounts دواړه | هغه اختیار وټاکئ چې personal او organizational accounts دواړه ملاتړ کوي. |
-| یوازې د شرکت یا ښوونځي OneDrive | د organizational account اختیار وټاکئ. |
+| یوازې شخصي OneDrive | د شخصي Microsoft حساب اختیار وټاکئ. |
+| شخصي او work/school حسابs دواړه | هغه اختیار وټاکئ چې personal او organizational حسابs دواړه ملاتړ کوي. |
+| یوازې د شرکت یا ښوونځي OneDrive | د organizational حساب اختیار وټاکئ. |
 
 له ډکولو وروسته register کلیک کړئ.
 
-![Create OneDrive app](../../image/upload/onedrive/添加应用程序注册.png)
+![Create OneDrive اپ](../../image/upload/onedrive/添加应用程序注册.png)
 
-### 3 ګام: د App معلومات copy کړئ
+### 3 ګام: د اپ معلومات کاپي کړئ
 
-کله چې app جوړ شو، له overview پاڼې څخه دا ارزښتونه copy کړئ:
+کله چې اپ جوړ شو، له overview پاڼې څخه دا ارزښتونه کاپي کړئ:
 
-| Microsoft Field | ImgBed Field |
+| د Microsoft فیلډ | د ImgBed فیلډ |
 | --- | --- |
 | `Application (client) ID` | `Client ID` |
-| `Directory (tenant) ID` | `Tenant ID` د organizational accounts لپاره |
+| `Directory (tenant) ID` | `Tenant ID` د organizational حسابs لپاره |
 
-![Application and tenant IDs](../../image/upload/onedrive/应用程序ID和目录租户ID位.png)
+![اپlication and tenant IDs](../../image/upload/onedrive/应用程序ID和目录租户ID位.png)
 
 ### 4 ګام: Client Secret جوړ کړئ
 
 1. `Certificates & secrets` پرانیزئ.
 2. `New client secret` کلیک کړئ.
-3. هر مناسب description ولیکئ.
+3. هره مناسبه توضیح ولیکئ.
 4. د expiration موده وټاکئ.
-5. له جوړېدو سره سم د `Value` برخه copy کړئ.
+5. له جوړېدو سره سم د `Value` برخه کاپي کړئ.
 
-![Save client secret value](../../image/upload/onedrive/保存客户端密码值.png)
+![خوندي client secret value](../../image/upload/onedrive/保存客户端密码值.png)
 
-### 5 ګام: API Permissions اضافه کړئ
+### 5 ګام: API اجازهs اضافه کړئ
 
 1. `API permissions` پرانیزئ.
 2. `Add a permission` کلیک کړئ.
@@ -77,50 +77,50 @@ Continue searching in Microsoft Entra ID
 4. `Delegated permissions` وټاکئ.
 5. دا permissions اضافه کړئ:
 
-| Permission | موخه |
+| اجازه | موخه |
 | --- | --- |
-| `Files.ReadWrite.All` | فایلونه upload کوي، folders جوړوي او فایلونه ړنګوي |
+| `Files.ReadWrite.All` | فایلونه اپلوډ کوي، folders جوړوي او فایلونه ړنګوي |
 | `offline_access` | ImgBed ته اجازه ورکوي چې `Refresh Token` واخلي |
-| `User.Read` | د account او quota معلومات لولي |
+| `User.Read` | د حساب او کوټه معلومات لولي |
 
-### 6 ګام: د OneDrive Channel ډک کړئ
+### 6 ګام: د OneDrive چینل ډک کړئ
 
-په Upload Settings کې `OneDrive` وټاکئ او دا fields ډک کړئ:
+په د اپلوډ تنظیمات کې `OneDrive` وټاکئ او دا fields ډک کړئ:
 
-| ImgBed Field | څه ولیکئ |
+| د ImgBed فیلډ | څه ولیکئ |
 | --- | --- |
-| Channel name | داسې نوم چې وپېژندل شي، لکه `Main OneDrive` |
+| د چینل نوم | داسې نوم چې وپېژندل شي، لکه `Main OneDrive` |
 | Client ID | د Microsoft `Application (client) ID` |
-| Client Secret | هغه `Client Secret Value` چې copy مو کړی |
+| Client Secret | هغه `Client Secret Value` چې کاپي مو کړی |
 | Tenant ID | لاندې جدول وکاروئ |
-| Refresh Token | اوس یې تش پرېږدئ |
-| Root directory | اختیاري. Default یې `imgbed` دی. |
+| Refresh ټوکن | اوس یې تش پرېږدئ |
+| اصلي ډایرکټري | اختیاري. اصلي یې `imgbed` دی. |
 | Note | اختیاري |
 
-![Fill OneDrive channel config](../../image/upload/onedrive/添加新渠道配置.png)
+![Fill OneDrive چینل config](../../image/upload/onedrive/添加新渠道配置.png)
 
 د `Tenant ID` ډکولو طریقه:
 
-| ټاکل شوی Account Type | د ImgBed `Tenant ID` |
+| ټاکل شوی حساب Type | د ImgBed `Tenant ID` |
 | --- | --- |
-| Personal accounts | `consumers` |
-| Personal + organizational accounts | `common` |
+| Personal حسابs | `consumers` |
+| Personal + organizational حسابs | `common` |
 | یوازې اوسنی organization | د `Directory (tenant) ID` |
 
-### 7 ګام: Refresh Token واخلئ
+### 7 ګام: Refresh ټوکن واخلئ
 
 1. په ImgBed کې `Get Token` کلیک کړئ.
-2. هغه Microsoft account ته sign in وکړئ چې نښلول یې غواړئ.
-3. د authorization غوښتنه approve کړئ.
-4. callback page به `Refresh Token` ښکاره کړي.
-5. هغه copy کړئ.
-6. بېرته ImgBed ته راشئ او د `Refresh Token` field کې یې paste کړئ.
+2. هغه Microsoft حساب ته ننوځئ وکړئ چې نښلول یې غواړئ.
+3. د authorization غوښتنه اپrove کړئ.
+4. کالبک page به `Refresh Token` ښکاره کړي.
+5. هغه کاپي کړئ.
+6. بېرته ImgBed ته راشئ او د `Refresh Token` فیلډ کې یې پیسټ کړئ.
 
-![Copy refresh token](../../image/upload/onedrive/复制刷新令牌.png)
+![کاپي refresh ټوکن](../../image/upload/onedrive/复制刷新令牌.png)
 
-### 8 ګام: Channel خوندي کړئ
+### 8 ګام: چینل خوندي کړئ
 
-کله چې ټول fields ډک شول، channel save کړئ.
+کله چې ټول fields ډک شول، چینل خوندي کړئ.
 
 ## چټک بهیر
 
@@ -143,6 +143,6 @@ Open portal.azure.com
 
 ## ماخذونه
 
-1. Microsoft Entra app registration: https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
+1. Microsoft Entra اپ registration: https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
 2. Microsoft identity platform authorization code flow: https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow
 3. Microsoft Graph user authentication: https://learn.microsoft.com/en-us/graph/auth-v2-user

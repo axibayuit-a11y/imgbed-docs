@@ -2,10 +2,10 @@
 
 ## Geeignet für
 
-- Du hast ein pCloud-Konto und möchtest ImgBed-Bilder dort speichern.
-- Es ist für dich in Ordnung, E-Mail-Adresse und Passwort deines pCloud-Kontos als Kanalzugangsdaten zu verwenden.
+- Sie haben ein pCloud-Konto und möchten ImgBed-Bilder dort speichern.
+- Es ist für sich in Ordnung, E-Mail-Adresse und Passwort Ihres pCloud-Kontos als Kanalzugangsdaten zu verwenden.
 
-## Was du vorher brauchst
+## Was Sie vorher benötigen
 
 | Voraussetzung | Wofür sie gebraucht wird |
 | --- | --- |
@@ -16,22 +16,22 @@
 
 ## Wo hinzufügen
 
-1. Öffne die Systemeinstellungen.
-2. Öffne die Upload-Einstellungen.
-3. Klicke oben rechts auf `Kanal hinzufügen`.
-4. Wähle `pCloud`.
+1. Öffnen Sie die Systemeinstellungen.
+2. Öffnen Sie die Upload-Einstellungen.
+3. Klicken Sie oben rechts auf `Kanal hinzufügen`.
+4. Wählen Sie `pCloud`.
 
 ## Feldübersicht
 
 | Feld | Zweck | Erforderlich |
 | --- | --- | --- |
 | Kanalname | Erkennbarer Name für diesen pCloud-Kanal, z. B. `Personal pCloud` | Ja |
-| Konto-E-Mail | Deine pCloud-Anmelde-E-Mail | Ja |
-| Passwort | Dein pCloud-Passwort | Ja |
+| Konto-E-Mail | Ihre pCloud-Anmelde-E-Mail | Ja |
+| Passwort | Ihr pCloud-Passwort | Ja |
 | API-Host | pCloud-API-Host. Standard ist `api.pcloud.com`. | Nein |
 | Speicherverzeichnis | Ordner zum Speichern der Dateien. Standard ist `imgbed`. | Nein |
 
-Wähle den API-Host passend zur Kontoregion:
+Wählen Sie den API-Host passend zur Kontoregion:
 
 | Kontoregion | API-Host |
 | --- | --- |
@@ -40,15 +40,15 @@ Wähle den API-Host passend zur Kontoregion:
 
 ## Einrichtungsschritte
 
-1. Öffne die Upload-Einstellungen.
-2. Klicke auf `Kanal hinzufügen`.
-3. Wähle `pCloud`.
-4. Gib einen Kanalnamen ein, den du wiedererkennst.
-5. Trage die E-Mail-Adresse deines pCloud-Kontos ein.
-6. Trage dein pCloud-Passwort ein.
-7. Lasse den API-Host bei `api.pcloud.com` oder verwende `eapi.pcloud.com` für EU-Konten.
-8. Lasse das Speicherverzeichnis bei `imgbed` oder ändere es auf den gewünschten Ordner.
-9. Speichere den Kanal.
+1. Öffnen Sie die Upload-Einstellungen.
+2. Klicken Sie auf `Kanal hinzufügen`.
+3. Wählen Sie `pCloud`.
+4. Geben Sie einen Kanalnamen ein, den Sie wiedererkennen.
+5. Tragen Sie die E-Mail-Adresse Ihres pCloud-Kontos ein.
+6. Tragen Sie Ihr pCloud-Passwort ein.
+7. Lassen Sie den API-Host bei `api.pcloud.com` oder verwenden Sie `eapi.pcloud.com` für EU-Konten.
+8. Lassen Sie das Speicherverzeichnis bei `imgbed` oder ändern Sie es auf den gewünschten Ordner.
+9. Speichern Sie den Kanal.
 
 ![Kanal konfigurieren](../../image/upload/pcloud/配置渠道.png)
 
@@ -68,9 +68,9 @@ Wähle den API-Host passend zur Kontoregion:
 
 ### Warum kein OAuth2?
 
-pCloud OAuth2 ist standardmäßig nicht zur Selbstbedienung freigeschaltet. Du musst pCloud per E-Mail bitten, es für dich zu aktivieren.
+pCloud OAuth2 ist standardmäßig nicht zur Selbstbedienung freigeschaltet. Sie müssen pCloud per E-Mail bitten, es für sich zu aktivieren.
 
-Der aktuelle pCloud-OAuth2-Ablauf unterstützt außerdem nicht den kurzlebigen Upload-Link-Ablauf, den ImgBed braucht. Deshalb nutzt dieser Kanal stattdessen Anmeldung per Konto-E-Mail und Passwort.
+Der aktuelle pCloud-OAuth2-Ablauf unterstützt außerdem nicht den kurzlebigen Upload-Link-Ablauf, den ImgBed braucht. Deshalb nutzen dieser Kanal stattdessen Anmeldung per Konto-E-Mail und Passwort.
 
 ### Welchen API-Host soll ich verwenden?
 
@@ -89,14 +89,14 @@ eapi.pcloud.com
 ## Kurzablauf
 
 ```text
-pCloud-E-Mail und Passwort vorbereiten
--> Upload-Einstellungen öffnen
--> Kanal hinzufügen
--> pCloud wählen
--> Kanalname / E-Mail / Passwort eintragen
--> API-Host bei api.pcloud.com lassen, außer dein Konto liegt in Europa
--> Speicherverzeichnis bei imgbed lassen, sofern du keinen anderen Ordner brauchst
--> Speichern
--> Quote abfragen
--> Testbild hochladen
+Prepare your pCloud email and password
+-> Open Upload Settings
+-> Add Channel
+-> Choose pCloud
+-> Fill channel name / email / password
+-> Keep API host as api.pcloud.com unless your account is in Europe
+-> Keep storage directory as imgbed unless you need another folder
+-> Save
+-> Query quota
+-> Upload a test image
 ```

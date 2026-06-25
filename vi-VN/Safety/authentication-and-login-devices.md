@@ -1,12 +1,12 @@
-# Authentication và Login Device Management
+# Quản lý xác thực và thiết bị đăng nhập
 
-`Authentication Management` và `Login Device Management` bảo vệ ImgBed admin panel, public upload entry và WebDAV access.
+`Quản lý xác thực` và `Quản lý thiết bị đăng nhập` bảo vệ bảng quản trị ImgBed, lối vào tải lên công khai và quyền truy cập WebDAV.
 
-Dùng trang này để đặt access credentials, xem các devices đã sign in và revoke sessions cũ khi cần.
+Dùng trang này để đặt thông tin đăng nhập, xem các thiết bị đã đăng nhập và thu hồi các phiên cũ khi cần.
 
-## Cấu hình ở đâu
+## Nơi cấu hình
 
-Mở admin panel, rồi vào:
+Mở bảng quản trị, rồi đi tới:
 
 ```text
 System Settings -> Security Settings
@@ -14,139 +14,139 @@ System Settings -> Security Settings
 
 Trang này có hai khu vực chính:
 
-- Authentication Management
-- Login Device Management
+- Quản lý xác thực
+- Quản lý thiết bị đăng nhập
 
-![Authentication management](../../image/Safety/认证管理界面.png)
+![Quản lý xác thực](../../image/Safety/认证管理界面.png)
 
-## Authentication Management làm gì
+## Quản lý xác thực làm gì
 
-Authentication Management lưu access credentials.
+Quản lý xác thực lưu thông tin đăng nhập.
 
 Có hai loại:
 
-- User-side authentication
-- Admin-side authentication
+- Xác thực phía người dùng
+- Xác thực phía quản trị viên
 
-## User-Side Authentication
+## Xác thực phía người dùng
 
-User-side authentication chính là upload password.
+Xác thực phía người dùng là mật khẩu tải lên.
 
-Sau khi đặt upload password, visitors thông thường phải nhập password trước khi dùng upload page. Tính năng này hữu ích khi bạn không muốn public upload page mở hoàn toàn cho mọi người.
+Sau khi đặt mật khẩu tải lên, khách truy cập thông thường phải nhập mật khẩu trước khi dùng trang tải lên. Điều này hữu ích khi bạn không muốn trang tải lên công khai mở cho tất cả mọi người.
 
-![User login page](../../image/Safety/用户端登录界面.png)
+![Trang đăng nhập phía người dùng](../../image/Safety/用户端登录界面.png)
 
-### Đặt Upload Password
+### Đặt mật khẩu tải lên
 
-Khi upload password đã được cấu hình:
+Khi mật khẩu tải lên được cấu hình:
 
-- Visitors phải nhập password trước khi dùng upload page.
-- Chỉ upload được sau khi password được chấp nhận.
-- Nếu user-side device sessions được bật, ImgBed sẽ ghi lại user-side device đó.
+- Khách truy cập phải nhập mật khẩu trước khi dùng trang tải lên.
+- Chỉ có thể tải lên sau khi mật khẩu được chấp nhận.
+- Nếu phiên thiết bị phía người dùng được bật, ImgBed ghi lại thiết bị phía người dùng đó.
 
-Đổi upload password sẽ làm các user-side sessions cũ invalid. Visitors cần nhập password mới lại.
+Thay đổi mật khẩu tải lên sẽ làm mất hiệu lực các phiên phía người dùng cũ. Khách truy cập cần nhập lại mật khẩu mới.
 
-## Admin-Side Authentication
+## Xác thực phía quản trị viên
 
-Admin-side authentication dùng admin username và password.
+Xác thực phía quản trị viên dùng tên người dùng và mật khẩu quản trị viên.
 
-Phần này bảo vệ admin panel. Với production use, bạn nên luôn cấu hình.
+Điều này bảo vệ bảng quản trị. Khi dùng trong môi trường vận hành thực tế, bạn nên luôn cấu hình mục này.
 
-![Admin login page](../../image/Safety/管理端登录界面.png)
+![Trang đăng nhập quản trị viên](../../image/Safety/管理端登录界面.png)
 
-### Đặt Admin Credentials
+### Đặt thông tin đăng nhập quản trị viên
 
-Khi admin username và password đã được cấu hình:
+Khi tên người dùng và mật khẩu quản trị viên được cấu hình:
 
-- Mở admin panel sẽ yêu cầu login.
-- Login thành công sẽ tạo admin device record.
-- Bạn có thể review, clean up hoặc force devices offline trong Login Device Management.
+- Mở bảng quản trị sẽ yêu cầu đăng nhập.
+- Đăng nhập thành công tạo một bản ghi thiết bị quản trị viên.
+- Bạn có thể xem, dọn dẹp hoặc buộc thiết bị ngoại tuyến trong Quản lý thiết bị đăng nhập.
 
-Đổi admin username hoặc password sẽ làm admin sessions cũ invalid. Bạn cần sign in lại.
+Thay đổi tên người dùng hoặc mật khẩu quản trị viên sẽ làm mất hiệu lực các phiên quản trị viên cũ. Bạn cần đăng nhập lại.
 
-## Login Device Management làm gì
+## Quản lý thiết bị đăng nhập làm gì
 
-Login Device Management hiển thị các devices đã sign in.
+Quản lý thiết bị đăng nhập hiển thị các thiết bị đã đăng nhập.
 
-Nó giúp kiểm tra:
+Tính năng này giúp bạn kiểm tra:
 
-- Devices nào đã access admin panel.
-- Devices nào đã access user-side upload page.
-- WebDAV clients nào đã connected.
-- Device session còn valid hay không.
-- Có nên force offline devices cũ hay không.
+- Thiết bị nào đã truy cập bảng quản trị.
+- Thiết bị nào đã truy cập trang tải lên phía người dùng.
+- Máy khách WebDAV nào đã kết nối.
+- Phiên thiết bị còn hợp lệ hay không.
+- Có nên buộc các thiết bị cũ ngoại tuyến hay không.
 
-Trang có ba tabs:
+Trang có ba thẻ:
 
-- Admin
-- User
+- Quản trị viên
+- Người dùng
 - WebDAV
 
-## Global Cookie Security
+## Bảo mật cookie toàn cục
 
-Ở đầu Login Device Management, bạn có thể cấu hình global cookie behavior.
+Ở đầu phần Quản lý thiết bị đăng nhập, bạn có thể cấu hình hành vi cookie toàn cục.
 
-### User Cookie Lifetime
+### Thời hạn cookie người dùng
 
-Kiểm soát user-side login có thể active trong bao nhiêu ngày.
+Kiểm soát số ngày đăng nhập phía người dùng có thể duy trì hiệu lực.
 
-Ví dụ, nếu đặt 14 days, visitors thường không cần nhập lại upload password trong vòng 14 ngày.
+Ví dụ: nếu đặt là 14 ngày, khách truy cập thường không cần nhập lại mật khẩu tải lên trong vòng 14 ngày.
 
-### Admin Cookie Lifetime
+### Thời hạn cookie quản trị viên
 
-Kiểm soát admin login có thể active trong bao nhiêu ngày.
+Kiểm soát số ngày đăng nhập quản trị viên có thể duy trì hiệu lực.
 
-Ví dụ, nếu đặt 14 days, administrators thường không cần sign in lại trong vòng 14 ngày.
+Ví dụ: nếu đặt là 14 ngày, quản trị viên thường không cần đăng nhập lại trong vòng 14 ngày.
 
-### Secure Mode
+### Chế độ bảo mật
 
-Khi Secure mode được bật, browsers chỉ gửi login cookies qua HTTPS.
+Khi bật chế độ bảo mật, trình duyệt chỉ gửi cookie đăng nhập qua HTTPS.
 
-Hãy bật cho production HTTPS sites. Không bật khi test local HTTP, nếu không có thể gặp tình trạng "login thành công, nhưng refresh lại bị logout".
+Hãy bật mục này cho các trang HTTPS trong môi trường vận hành thực tế. Không bật cho thử nghiệm HTTP cục bộ, nếu không bạn có thể gặp hiện tượng "đăng nhập thành công nhưng làm mới trang lại bị đăng xuất".
 
-## Admin Login Devices
+## Thiết bị đăng nhập quản trị viên
 
-Admin tab hiển thị devices đã sign in vào admin panel.
+Thẻ Quản trị viên hiển thị các thiết bị đã đăng nhập vào bảng quản trị.
 
-Device records chỉ xuất hiện sau khi admin credentials được cấu hình và admin panel được access qua login.
+Bản ghi thiết bị chỉ xuất hiện sau khi thông tin đăng nhập quản trị viên được cấu hình và bảng quản trị được truy cập thông qua đăng nhập.
 
-Mỗi device card có thể hiển thị:
+Mỗi thẻ thiết bị có thể hiển thị:
 
-- Device và browser information
-- First login IP
-- Last active IP
-- Login time
-- Last active time
-- Expiration time
-- Current status
+- Thông tin thiết bị và trình duyệt
+- IP đăng nhập đầu tiên
+- IP hoạt động gần nhất
+- Thời gian đăng nhập
+- Thời gian hoạt động gần nhất
+- Thời gian hết hạn
+- Trạng thái hiện tại
 
-Nếu thấy device lạ, dùng `Force Offline` để invalid nó.
+Nếu thấy thiết bị lạ, hãy dùng `Buộc ngoại tuyến` để làm mất hiệu lực thiết bị đó.
 
-## Clean Up Old Devices
+## Dọn dẹp thiết bị cũ
 
-`Clean Up Old Devices` xóa hàng loạt login records cũ trong tab hiện tại.
+`Dọn dẹp thiết bị cũ` xóa hàng loạt các bản ghi đăng nhập cũ trong thẻ hiện tại.
 
-Dùng khi bạn nghi ngờ sessions cũ vẫn còn active trên devices khác.
+Dùng khi bạn nghi ngờ các phiên cũ vẫn có thể đang hoạt động trên thiết bị khác.
 
-## Force Offline
+## Buộc ngoại tuyến
 
-`Force Offline` invalid một device session.
+`Buộc ngoại tuyến` làm mất hiệu lực một phiên thiết bị.
 
-Sau khi device bị force offline:
+Sau khi một thiết bị bị buộc ngoại tuyến:
 
-- Admin devices phải sign in lại.
-- User-side devices phải nhập lại upload password.
-- WebDAV clients phải authenticate lại.
+- Thiết bị quản trị viên phải đăng nhập lại.
+- Thiết bị phía người dùng phải nhập lại mật khẩu tải lên.
+- Máy khách WebDAV phải xác thực lại.
 
-Expired hoặc invalid devices cũng có thể bị xóa.
+Thiết bị hết hạn hoặc không hợp lệ cũng có thể bị xóa.
 
-## Sign Out Current Device
+## Đăng xuất thiết bị hiện tại
 
-Current device card được đánh dấu `Current Device`.
+Thẻ thiết bị hiện tại được đánh dấu là `Thiết bị hiện tại`.
 
-Sau khi sign out current device:
+Sau khi đăng xuất thiết bị hiện tại:
 
-- Current admin session bị sign out.
-- Current user-side session bị sign out.
+- Phiên quản trị viên hiện tại bị đăng xuất.
+- Phiên phía người dùng hiện tại bị đăng xuất.
 
-Bạn cần sign in lại trước khi tiếp tục dùng khu vực đó.
+Bạn cần đăng nhập lại trước khi tiếp tục dùng khu vực đó.

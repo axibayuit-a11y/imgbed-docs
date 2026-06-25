@@ -1,99 +1,99 @@
-# Random Image API và Public Gallery
+# API Ảnh Ngẫu Nhiên Và Thư Viện Công Khai
 
-Cả hai features được cấu hình tại:
+Cả hai tính năng đều được cấu hình tại:
 
 ```text
 System Settings -> Other Settings
 ```
 
-## Random Image API
+## API Ảnh Ngẫu Nhiên
 
-Random Image API trả về một random file từ selected directories. Hữu ích cho site backgrounds, avatar rotation hoặc random image calls từ external pages.
+API ảnh ngẫu nhiên trả về một tệp ngẫu nhiên từ các thư mục đã chọn. Tính năng này hữu ích cho ảnh nền trang web, xoay vòng ảnh đại diện hoặc gọi ảnh ngẫu nhiên từ các trang bên ngoài.
 
-Sau khi bật, dùng:
+Sau khi bật, hãy dùng:
 
 ```text
 https://your-domain.com/random
 ```
 
-## Random Image API Settings
+## Cài Đặt API Ảnh Ngẫu Nhiên
 
-| Option | Purpose |
+| Tùy chọn | Mục đích |
 | --- | --- |
-| Enable | Bật hoặc tắt endpoint `/random`. Khi disabled, access bị forbidden. |
-| Directories | Giới hạn directories mà random API được dùng. Directories không nằm ở đây sẽ không được API dùng. |
-| Call demo | Generate random API links để bạn copy trực tiếp. |
+| Bật | Bật hoặc tắt điểm cuối `/random`. Khi tắt, truy cập sẽ bị từ chối. |
+| Thư mục | Giới hạn các thư mục mà API ngẫu nhiên có thể dùng. Những thư mục không được đưa vào đây sẽ không thể được API sử dụng. |
+| Demo gọi API | Tạo các liên kết API ngẫu nhiên để bạn có thể sao chép trực tiếp. |
 
-Bạn có thể chọn nhiều directories. Ví dụ, nếu chỉ allow `/landscape/` và `/portrait/`, random API chỉ chọn files từ các directories đó và subdirectories của chúng.
+Bạn có thể chọn nhiều thư mục. Ví dụ, nếu chỉ cho phép `/landscape/` và `/portrait/`, API ngẫu nhiên chỉ có thể chọn tệp từ các thư mục đó và thư mục con của chúng.
 
-## Random Image API Parameters
+## Tham Số API Ảnh Ngẫu Nhiên
 
-| Parameter | Example | Purpose |
+| Tham số | Ví dụ | Mục đích |
 | --- | --- | --- |
-| `dir` | `/landscape/` | Chỉ định random directory. |
-| `content` | `image` | Chỉ định media type. Dùng `image`, `video`, `audio` hoặc comma-separated combinations. |
-| `orientation` | `auto` | Filter image orientation. Dùng `portrait`, `landscape` hoặc `auto`. |
-| `type` | `url` | Return format. Để trống nghĩa là redirect, `url` trả plain text URL, `json` trả JSON. |
-| `origin` | `1` | Dùng với `type=url` để trả full URL. |
-| `age` | `all-ages,r12` | Filter theo age rating. |
-| `tag` | `wallpaper,sky` | Chỉ trả files chứa các tags này. |
-| `ex` | `private` | Exclude files chứa các tags này. |
+| `dir` | `/landscape/` | Chỉ định thư mục ngẫu nhiên. |
+| `content` | `image` | Chỉ định loại phương tiện. Dùng `image`, `video`, `audio` hoặc các tổ hợp phân tách bằng dấu phẩy. |
+| `orientation` | `auto` | Lọc hướng ảnh. Dùng `portrait`, `landscape` hoặc `auto`. |
+| `type` | `url` | Định dạng trả về. Để trống nghĩa là chuyển hướng, `url` trả về URL dạng văn bản thuần, `json` trả về JSON. |
+| `origin` | `1` | Dùng cùng `type=url` để trả về URL đầy đủ. |
+| `age` | `all-ages,r12` | Lọc theo phân loại độ tuổi. |
+| `tag` | `wallpaper,sky` | Chỉ trả về các tệp chứa những thẻ này. |
+| `ex` | `private` | Loại trừ các tệp chứa những thẻ này. |
 
-## Return Formats
+## Định Dạng Trả Về
 
-Không có `type`, API redirect trực tiếp tới random file URL.
+Khi không có `type`, API chuyển hướng trực tiếp đến URL của tệp ngẫu nhiên.
 
-Với `type=url`, API trả text URL.
+Với `type=url`, API trả về URL dạng văn bản.
 
-Với `type=json`, API trả file information, gồm file URL, file ID, file name, file type, tags, rating và metadata liên quan.
+Với `type=json`, API trả về thông tin tệp, bao gồm URL tệp, ID tệp, tên tệp, loại tệp, thẻ, phân loại và siêu dữ liệu liên quan.
 
-## Access Rules
+## Quy Tắc Truy Cập
 
-Random Image API tuân theo public access rules:
+API ảnh ngẫu nhiên tuân theo các quy tắc truy cập công khai:
 
-| Rule | Effect |
+| Quy tắc | Tác dụng |
 | --- | --- |
-| Directory restriction | Chỉ files trong allowed directories mới được chọn. |
-| Blocklist | Blocklisted files bị loại khỏi random pool. |
-| Allowlist mode | Khi enabled, chỉ files allowed cho public access được return. |
-| Age rating | R12, R16, R18 và content tương tự được filter theo current access mode. |
+| Giới hạn thư mục | Chỉ các tệp trong thư mục được phép mới có thể được chọn. |
+| Danh sách chặn | Các tệp trong danh sách chặn bị loại khỏi nhóm ngẫu nhiên. |
+| Chế độ danh sách cho phép | Khi bật, chỉ các tệp được phép truy cập công khai mới được trả về. |
+| Phân loại độ tuổi | Nội dung R12, R16, R18 và nội dung tương tự được lọc theo chế độ truy cập hiện tại. |
 
-Nếu sau filtering không có file match, API trả no matching result.
+Nếu không có tệp nào khớp sau khi lọc, API sẽ không trả về kết quả phù hợp.
 
-## Cache
+## Bộ Nhớ Đệm
 
-Random Image API cache directory candidate pools để tăng speed.
+API ảnh ngẫu nhiên lưu bộ nhớ đệm cho các nhóm ứng viên theo thư mục để cải thiện tốc độ.
 
-Sau khi files thay đổi, ImgBed update directory cache version, và requests sau đó rebuild candidate pool. Empty directories được cache ngắn để tránh repeated queries.
+Sau khi tệp thay đổi, ImgBed cập nhật phiên bản bộ nhớ đệm của thư mục, và các yêu cầu sau đó sẽ tạo lại nhóm ứng viên. Thư mục trống được lưu bộ nhớ đệm trong thời gian ngắn để tránh truy vấn lặp lại.
 
-## Public Gallery
+## Thư Viện Công Khai
 
-Public gallery cung cấp read-only public browsing page cho directories bạn cho phép visitors xem.
+Thư viện công khai cung cấp một trang duyệt công khai chỉ đọc cho các thư mục mà bạn cho phép khách truy cập xem.
 
-Sau khi bật, visitors có thể mở:
+Sau khi bật, khách truy cập có thể mở:
 
 ```text
 https://your-domain.com/browse/directory-name
 ```
 
-## Public Gallery Settings
+## Cài Đặt Thư Viện Công Khai
 
-| Option | Purpose |
+| Tùy chọn | Mục đích |
 | --- | --- |
-| Enable | Bật hoặc tắt public gallery. Khi disabled, visitors không thể browse. |
-| Image loading mode | Kiểm soát previews dùng original images hay thumbnails. |
-| Open directories | Đặt directories visitors được access. |
+| Bật | Bật hoặc tắt thư viện công khai. Khi tắt, khách truy cập không thể duyệt thư viện. |
+| Chế độ tải ảnh | Kiểm soát bản xem trước dùng ảnh gốc hay ảnh thu nhỏ. |
+| Thư mục mở | Đặt các thư mục mà khách truy cập có thể truy cập. |
 
-## Image Loading Mode
+## Chế Độ Tải Ảnh
 
-| Mode | Purpose |
+| Chế độ | Mục đích |
 | --- | --- |
-| Original | Visitor page load original files trực tiếp. |
-| Thumbnail | Visitor page ưu tiên thumbnails để tải nhanh hơn. |
+| Ảnh gốc | Trang khách truy cập tải trực tiếp tệp gốc. |
+| Ảnh thu nhỏ | Trang khách truy cập ưu tiên ảnh thu nhỏ để tải nhanh hơn. |
 
-## Open Directories
+## Thư Mục Mở
 
-Open directories quyết định visitors thấy được gì.
+Thư mục mở quyết định khách truy cập có thể xem nội dung nào.
 
 Ví dụ:
 
@@ -101,7 +101,7 @@ Ví dụ:
 /1/,/2/,/landscape/,/portrait/
 ```
 
-Visitors sau đó có thể access:
+Sau đó khách truy cập có thể truy cập:
 
 ```text
 https://your-domain.com/browse/1
@@ -110,29 +110,29 @@ https://your-domain.com/browse/landscape
 https://your-domain.com/browse/portrait
 ```
 
-Subdirectories cũng có thể được mở, ví dụ `/2026/lucky/`. Visitors bị block khỏi directories không được open.
+Bạn cũng có thể mở thư mục con, chẳng hạn `/2026/lucky/`. Khách truy cập sẽ bị chặn khỏi các thư mục chưa được mở.
 
-## Public Gallery Features
+## Tính Năng Thư Viện Công Khai
 
-| Feature | Description |
+| Tính năng | Mô tả |
 | --- | --- |
-| Browse directories | Xem files và subdirectories trong open directories. |
-| Search | Search theo file name, file ID hoặc tags. |
-| Type filter | Filter images, videos, audio hoặc other files. |
-| Tag filter | Include hoặc exclude selected tags. |
-| Orientation filter | Filter landscape hoặc portrait images. |
-| Time filter | Filter theo upload time range. |
-| Extension filter | Filter theo file extension. |
-| Copy link | Copy file access links. |
-| Media preview | Xem hoặc phát images, videos và audio trên visitor page. |
+| Duyệt thư mục | Xem tệp và thư mục con trong các thư mục đã mở. |
+| Tìm kiếm | Tìm theo tên tệp, ID tệp hoặc thẻ. |
+| Lọc loại tệp | Lọc hình ảnh, video, âm thanh hoặc tệp khác. |
+| Lọc thẻ | Bao gồm hoặc loại trừ các thẻ đã chọn. |
+| Lọc hướng ảnh | Lọc ảnh ngang hoặc ảnh dọc. |
+| Lọc thời gian | Lọc theo khoảng thời gian tải lên. |
+| Lọc phần mở rộng | Lọc theo phần mở rộng tệp. |
+| Sao chép liên kết | Sao chép liên kết truy cập tệp. |
+| Xem trước phương tiện | Xem hoặc phát hình ảnh, video và âm thanh trên trang khách truy cập. |
 
-## Public Gallery Access Rules
+## Quy Tắc Truy Cập Thư Viện Công Khai
 
-Public gallery cũng tuân theo public access rules:
+Thư viện công khai cũng tuân theo các quy tắc truy cập công khai:
 
-| Rule | Effect |
+| Quy tắc | Tác dụng |
 | --- | --- |
-| Open directories | Chỉ allowed directories được hiển thị. |
-| Access mode | Content được filter theo current age-rating access mode. |
-| Allowlist mode | Khi enabled, chỉ files allowed cho public access được hiển thị. |
-| Blocklist | Blocklisted files bị ẩn. |
+| Thư mục mở | Chỉ các thư mục được phép mới được hiển thị. |
+| Chế độ truy cập | Nội dung được lọc theo chế độ truy cập phân loại độ tuổi hiện tại. |
+| Chế độ danh sách cho phép | Khi bật, chỉ các tệp được phép truy cập công khai mới được hiển thị. |
+| Danh sách chặn | Các tệp trong danh sách chặn bị ẩn. |

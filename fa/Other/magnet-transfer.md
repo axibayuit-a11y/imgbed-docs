@@ -1,97 +1,97 @@
-# Magnet Transfer
+# انتقال Magnet
 
-Magnet transfer، files را از magnet link download می‌کند و به‌صورت خودکار در cloud storage channel انتخاب‌شده upload می‌کند.
+انتقال Magnet فایل‌ها را از یک پیوند magnet دانلود می‌کند و به‌صورت خودکار در کانال ذخیره‌سازی ابری انتخاب‌شده شما بارگذاری می‌کند.
 
-برای transfer کردن anime episodes، videos، archives و files مشابه مفید است. magnet link را paste کنید؛ ImgBed یک background download task می‌سازد. پس از پایان download، file در ImgBed upload می‌شود و final link در upload list ظاهر می‌شود.
+این قابلیت برای انتقال قسمت‌های انیمه، ویدئوها، فایل‌های فشرده و فایل‌های مشابه مفید است. یک پیوند magnet را جای‌گذاری کنید تا ImgBed یک وظیفه دانلود در پس‌زمینه ایجاد کند. پس از پایان دانلود، فایل در ImgBed بارگذاری می‌شود و پیوند نهایی در فهرست بارگذاری نمایش داده می‌شود.
 
-![Magnet transfer](../../image/other/磁力链接/磁力链接.png)
+![انتقال Magnet](../../image/other/磁力链接/磁力链接.png)
 
-## کجا استفاده کنیم
+## محل استفاده
 
-entry مربوط به magnet transfer در homepage upload area است.
+ورودی انتقال Magnet در بخش بارگذاری صفحه اصلی قرار دارد.
 
-magnet link را در input box paste کنید، `Transfer` را انتخاب کنید و سپس upload کنید.
+پیوند magnet را در کادر ورودی جای‌گذاری کنید، `Transfer` را انتخاب کنید و سپس بارگذاری کنید.
 
-![Upload anime](../../image/other/磁力链接/上传番剧.png)
+![بارگذاری انیمه](../../image/other/磁力链接/上传番剧.png)
 
 ## پیش از اولین استفاده
 
-ابتدا magnet transfer را در admin panel configure کنید.
+ابتدا انتقال Magnet را در پنل مدیریت پیکربندی کنید.
 
-معمولاً نیاز دارید به:
+معمولاً به این موارد نیاز دارید:
 
-1. GitHub account برای اجرای download task.
-2. cloud upload channel مثل Google Drive یا OneDrive.
-3. target upload directory.
-4. task timeout.
+1. یک حساب GitHub برای اجرای وظیفه دانلود.
+2. یک کانال بارگذاری ابری، مانند Google Drive یا OneDrive.
+3. پوشه مقصد بارگذاری.
+4. مهلت زمانی وظیفه.
 
-پس از آماده شدن settings، به homepage برگردید و magnet link را paste کنید تا transfer شروع شود.
+پس از آماده شدن تنظیمات، به صفحه اصلی برگردید و یک پیوند magnet جای‌گذاری کنید تا انتقال شروع شود.
 
-## Upload کردن Magnet Link
+## بارگذاری پیوند magnet
 
-1. magnet link را در homepage upload box paste کنید.
-2. مطمئن شوید mode روی `Transfer` است.
-3. upload را بزنید.
-4. منتظر بمانید ImgBed magnet task را create کند.
-5. پس از شروع task، از floating panel با نام `Magnet Tasks` در گوشه پایین راست، progress را بررسی کنید.
+1. پیوند magnet را در کادر بارگذاری صفحه اصلی جای‌گذاری کنید.
+2. مطمئن شوید حالت روی `Transfer` تنظیم شده است.
+3. روی بارگذاری کلیک کنید.
+4. منتظر بمانید ImgBed وظیفه magnet را ایجاد کند.
+5. پس از شروع وظیفه، از پنل شناور `Magnet Tasks` در گوشه پایین سمت راست برای بررسی پیشرفت استفاده کنید.
 
-download و upload ممکن است زمان‌بر باشند. speed به magnet resource، GitHub runtime environment و cloud storage channel انتخاب‌شده بستگی دارد.
+دانلود و بارگذاری ممکن است زمان‌بر باشند. سرعت به منبع magnet، محیط اجرای GitHub و کانال ذخیره‌سازی ابری انتخاب‌شده بستگی دارد.
 
-![Magnet downloading](../../image/other/磁力链接/磁力链接下载中.png)
+![در حال دانلود magnet](../../image/other/磁力链接/磁力链接下载中.png)
 
-## پس از Completion
+## پس از تکمیل
 
-پس از complete شدن task، upload list نام file و link را نشان می‌دهد.
+پس از کامل شدن وظیفه، فهرست بارگذاری نام فایل و پیوند را نشان می‌دهد.
 
-videos، video preview نشان می‌دهند؛ images، image preview نشان می‌دهند؛ و other files با regular file icon نمایش داده می‌شوند.
+ویدئوها پیش‌نمایش ویدئو، تصاویر پیش‌نمایش تصویر و فایل‌های دیگر نماد معمولی فایل را نشان می‌دهند.
 
-![Downloaded video](../../image/other/磁力链接/下载好后的视频.png)
+![ویدئوی دانلودشده](../../image/other/磁力链接/下载好后的视频.png)
 
-می‌توانید copy کنید:
+می‌توانید این موارد را کپی کنید:
 
-| Link Type | Use Case |
+| نوع پیوند | کاربرد |
 | --- | --- |
-| Original link | direct file access |
-| Markdown | Markdown posts یا notes |
-| HTML | web page code |
-| BBCode | forums که BBCode پشتیبانی می‌کنند |
+| پیوند اصلی | دسترسی مستقیم به فایل |
+| Markdown | نوشته‌ها یا یادداشت‌های Markdown |
+| HTML | کد صفحه وب |
+| BBCode | انجمن‌هایی که از BBCode پشتیبانی می‌کنند |
 
-## Magnet Task Panel
+## پنل وظایف Magnet
 
-magnet task panel در پایین راست، task count، task name، progress و final status را نشان می‌دهد.
+پنل وظایف Magnet در پایین سمت راست، تعداد وظایف، نام وظیفه، پیشرفت و وضعیت نهایی را نشان می‌دهد.
 
 وضعیت‌های رایج:
 
-| Status | Meaning |
+| وضعیت | معنی |
 | --- | --- |
-| Waiting | task ساخته شده و منتظر اجراست. |
-| Downloading | magnet resource در حال download است. |
-| Uploading | file download شده و در حال upload به cloud storage است. |
-| Completed | upload موفق بوده و link قابل copy است. |
-| Failed | task با موفقیت تمام نشده. message را بررسی کنید و دوباره تلاش کنید. |
+| در انتظار | وظیفه ایجاد شده و منتظر اجراست. |
+| در حال دانلود | منبع magnet در حال دانلود است. |
+| در حال بارگذاری | فایل دانلود شده و در حال بارگذاری در فضای ذخیره‌سازی ابری است. |
+| کامل شد | بارگذاری موفق بود و پیوند قابل کپی است. |
+| ناموفق | وظیفه با موفقیت تمام نشد. پیام را بررسی کنید و دوباره تلاش کنید. |
 
-## Tips
+## نکته‌ها
 
-- اگر magnet link چند file داشته باشد، ImgBed برای display معمولاً main completed file را اولویت می‌دهد.
-- large files زمان بیشتری می‌گیرند. پیش از refresh کردن page صبر کنید task تمام شود.
-- اگر magnet resource peers در دسترس نداشته باشد، ممکن است بسیار کند یا fail شود.
-- اگر cloud account quota تمام شده باشد، authorization expire شده باشد یا upload directory اشتباه باشد، task ممکن است fail شود.
-- video preview ممکن است چند ثانیه بعد از upload complete طول بکشد.
+- اگر پیوند magnet چند فایل داشته باشد، ImgBed برای نمایش، فایل اصلیِ کامل‌شده را در اولویت قرار می‌دهد.
+- فایل‌های بزرگ زمان بیشتری نیاز دارند. پیش از تازه‌سازی صفحه منتظر بمانید وظیفه کامل شود.
+- اگر منبع magnet همتایان در دسترس نداشته باشد، ممکن است بسیار کند شود یا شکست بخورد.
+- اگر سهمیه حساب ابری تمام شده باشد، مجوز منقضی شده باشد یا پوشه بارگذاری اشتباه باشد، وظیفه ممکن است شکست بخورد.
+- پیش‌نمایش ویدئو ممکن است چند ثانیه پس از کامل شدن بارگذاری زمان ببرد.
 
-## FAQ
+## پرسش‌های متداول
 
-### بعد از Paste کردن Magnet Link هیچ چیزی شروع نمی‌شود
+### پس از جای‌گذاری پیوند magnet هیچ چیزی شروع نمی‌شود
 
-مطمئن شوید magnet transfer در admin panel enabled است و GitHub account و cloud channel قابل استفاده انتخاب شده‌اند.
+مطمئن شوید انتقال Magnet در پنل مدیریت فعال است و یک حساب GitHub و کانال ابری قابل استفاده انتخاب شده‌اند.
 
-### Download همیشه کند است
+### دانلود همیشه کند است
 
-magnet speed به خود resource بستگی دارد. اگر peers در دسترس نباشند، download بسیار کند یا غیرممکن می‌شود.
+سرعت magnet به خود منبع بستگی دارد. اگر همتایان در دسترس نباشند، دانلود ممکن است بسیار کند یا غیرممکن باشد.
 
-### بعد از Upload، Preview دیده نمی‌شود
+### پس از بارگذاری پیش‌نمایش نمایش داده نمی‌شود
 
-اول مطمئن شوید file link باز می‌شود. video files ممکن است کمی زمان برای load شدن در browser بخواهند، یا می‌توانید link را مستقیم باز کنید.
+ابتدا مطمئن شوید پیوند فایل باز می‌شود. فایل‌های ویدئویی ممکن است برای بارگیری در مرورگر کمی زمان نیاز داشته باشند، یا می‌توانید پیوند را مستقیم باز کنید.
 
-### اگر Task Fail شد چه چیزهایی را بررسی کنم؟
+### اگر وظیفه شکست خورد چه چیزهایی را بررسی کنم؟
 
-valid بودن magnet link، درست کار کردن cloud channel و صحیح بودن upload directory را بررسی کنید. سپس task را دوباره submit کنید.
+بررسی کنید پیوند magnet معتبر باشد، کانال ابری کار کند و پوشه بارگذاری درست باشد. سپس وظیفه را دوباره ارسال کنید.

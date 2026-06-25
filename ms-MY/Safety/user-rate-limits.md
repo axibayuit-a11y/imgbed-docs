@@ -1,76 +1,76 @@
-# User Rate Limits
+# Had Kekerapan Pengguna
 
-User rate limits mengawal berapa kerap regular users atau visitors boleh upload files dari homepage. Ini membantu mengelakkan public upload pages daripada disalahgunakan.
+Had kekerapan pengguna mengawal seberapa kerap pengguna biasa atau pelawat boleh memuat naik fail daripada halaman utama. Ini membantu mencegah halaman muat naik awam daripada disalahgunakan.
 
-Feature ini hanya mempengaruhi homepage uploads. Admin uploads dan uploads menggunakan API Tokens tidak dihadkan oleh user rate limits.
+Ciri ini hanya mempengaruhi muat naik daripada halaman utama. Muat naik pentadbir dan muat naik menggunakan API Tokens tidak dihadkan oleh had kekerapan pengguna.
 
-## Di Mana Untuk Configure
+## Tempat Mengkonfigurasi
 
-Buka admin panel, kemudian pergi ke:
+Buka panel pentadbir, kemudian pergi ke:
 
 ```text
 System Settings -> Security Settings -> Upload Management -> User Rate Limits
 ```
 
-![User rate limit settings](../../image/other/用户频控截图.png)
+![Tetapan had kekerapan pengguna](../../image/other/用户频控截图.png)
 
-## Mengaktifkan Rate Limits
+## Mengaktifkan Had Kekerapan
 
-Selepas `Enable Rate Limits` dihidupkan, ImgBed track recent uploads berdasarkan uploader IP address.
+Selepas `Aktifkan Had Kekerapan` dihidupkan, ImgBed menjejaki muat naik terkini berdasarkan alamat IP pemuat naik.
 
-Default values:
+Nilai lalai:
 
-| Setting | Default | Description |
+| Tetapan | Lalai | Penerangan |
 | --- | --- | --- |
-| Detection window | 1.5 hours | Sejauh mana upload records ke belakang akan dikira. |
-| Max file count | 20 | Jumlah files maksimum yang dibenarkan dalam detection window. |
-| Single file size limit | 20 MB | Saiz maksimum untuk satu file. |
-| Total upload size limit | 200 MB | Jumlah upload size maksimum dalam detection window. |
+| Tetingkap pengesanan | 1.5 jam | Sejauh mana rekod muat naik dikira ke belakang. |
+| Bilangan fail maksimum | 20 | Bilangan fail maksimum yang dibenarkan dalam tetingkap pengesanan. |
+| Had saiz satu fail | 20 MB | Saiz maksimum untuk satu fail. |
+| Had jumlah saiz muat naik | 200 MB | Jumlah saiz muat naik maksimum dalam tetingkap pengesanan. |
 
-Contohnya, dengan 1.5 hour window, 20 files, 20 MB setiap file dan 200 MB total, uploads dari IP yang sama akan diblock apabila mana-mana configured limit dilebihi.
+Contohnya, dengan tetingkap 1.5 jam, 20 fail, 20 MB setiap fail dan jumlah 200 MB, muat naik daripada IP yang sama akan disekat sebaik sahaja melebihi salah satu had yang dikonfigurasi.
 
-## Excluding File Types
+## Mengecualikan Jenis Fail
 
-`Excluded upload file types` menghalang regular users atau visitors daripada upload file categories yang dipilih.
+`Jenis fail muat naik yang dikecualikan` menyekat pengguna biasa atau pelawat daripada memuat naik kategori fail yang dipilih.
 
-Available categories:
+Kategori yang tersedia:
 
-| Type | Description |
+| Jenis | Penerangan |
 | --- | --- |
-| Images | jpg, png, webp, gif dan image files seumpamanya |
-| Videos | mp4, webm, mov dan video files seumpamanya |
-| Audio | mp3, flac, wav dan audio files seumpamanya |
-| Documents | pdf, txt, md, docx dan document files seumpamanya |
-| Other | Files di luar categories di atas, seperti zip, rar, exe, apk |
+| Imej | jpg, png, webp, gif dan fail imej seumpamanya |
+| Video | mp4, webm, mov dan fail video seumpamanya |
+| Audio | mp3, flac, wav dan fail audio seumpamanya |
+| Dokumen | pdf, txt, md, docx dan fail dokumen seumpamanya |
+| Lain-lain | Fail di luar kategori di atas, seperti zip, rar, exe, apk |
 
-Secara default, tiada type dipilih, bermaksud ia allowed.
+Secara lalai, tiada jenis dipilih, yang bermaksud semuanya dibenarkan.
 
-Klik type akan highlight type tersebut, bermaksud type itu blocked.
+Mengklik satu jenis akan menyerlahkannya, bermaksud jenis tersebut disekat.
 
-Jika `Other` dipilih, visitors yang upload zip atau rar files akan diblock dan diberitahu bahawa file type ini tidak disokong.
+Jika `Lain-lain` dipilih, pelawat yang memuat naik fail zip atau rar akan disekat dan dimaklumkan bahawa jenis fail ini tidak disokong.
 
-## Block Messages
+## Mesej Sekatan
 
-Apabila limit dicetuskan, users melihat message yang sepadan:
+Apabila had tercetus, pengguna akan melihat mesej yang sesuai:
 
-![Too frequent upload message](../../image/other/频繁报错提示.png)
+![Mesej muat naik terlalu kerap](../../image/other/频繁报错提示.png)
 
-| Scenario | Message Meaning |
+| Senario | Maksud Mesej |
 | --- | --- |
-| Single file too large | File terlalu besar dan patut dicompress sebelum upload. |
-| File type blocked | File type ini tidak disokong. Buang file tersebut dan cuba lagi. |
-| Uploads too frequent | Recent uploads terlalu kerap, dengan retry time dipaparkan. |
-| Total size too high | Recent total upload size terlalu tinggi, dengan retry time dipaparkan. |
+| Satu fail terlalu besar | Fail terlalu besar dan sepatutnya dimampatkan sebelum dimuat naik. |
+| Jenis fail disekat | Jenis fail ini tidak disokong. Buang fail tersebut dan cuba lagi. |
+| Muat naik terlalu kerap | Muat naik terkini terlalu kerap, dengan masa cuba semula dipaparkan. |
+| Jumlah saiz terlalu tinggi | Jumlah saiz muat naik terkini terlalu tinggi, dengan masa cuba semula dipaparkan. |
 
-## Bila Patut Enable
+## Bila Perlu Diaktifkan
 
-Enable user rate limits jika upload homepage anda boleh diakses secara public.
+Aktifkan had kekerapan pengguna jika halaman muat naik utama anda boleh diakses secara awam.
 
 Sebab biasa:
 
-- Anda risau tentang scripted bulk uploads.
-- Anda mahu mengehadkan large visitor uploads.
-- Anda hanya mahu regular users upload images, bukan archives atau installers.
-- Anda mahu public upload kekal tersedia sambil mengawal resource usage.
+- Anda bimbang tentang muat naik pukal melalui skrip.
+- Anda mahu mengehadkan muat naik besar daripada pelawat.
+- Anda hanya mahu pengguna biasa memuat naik imej, bukan arkib atau pemasang aplikasi.
+- Anda mahu muat naik awam kekal tersedia sambil mengawal penggunaan sumber.
 
-Jika site hanya untuk diri sendiri, atau hanya administrators boleh upload, anda boleh biarkan disabled.
+Jika tapak hanya untuk anda sendiri, atau hanya pentadbir boleh memuat naik, biarkan ciri ini dimatikan.

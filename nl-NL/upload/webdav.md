@@ -130,14 +130,14 @@ Als je het niet zeker weet, gebruik automatische onderhandeling.
 ## Snelle checklist
 
 ```text
-Bereid WebDAV-endpoint, gebruikersnaam en wachtwoord voor
--> Open Uploadinstellingen
--> Kanaal toevoegen
--> Selecteer WebDAV
--> Vul Endpoint / gebruikersnaam / wachtwoord in
--> Laat authenticatiemodus standaard op Basic
--> Laat opslagmap standaard op imgbed
--> Sla op
--> Vraag capaciteit op
--> Upload een testbestand
+Prepare WebDAV endpoint, username, and password
+-> Open Upload Settings
+-> Add Channel
+-> Select WebDAV
+-> Enter Endpoint / username / password
+-> Keep authentication mode as Basic by default
+-> Keep storage directory as imgbed by default
+-> Save
+-> Query capacity
+-> Upload a test file
 ```

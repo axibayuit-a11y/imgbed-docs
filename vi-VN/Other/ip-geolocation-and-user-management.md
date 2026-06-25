@@ -1,10 +1,10 @@
-# IP Geolocation và User Management
+# Định Vị IP Và Quản Lý Người Dùng
 
-IP geolocation chuyển IP addresses trong uploader records, login devices và logs tương tự thành locations gần đúng.
+Định vị IP chuyển các địa chỉ IP trong bản ghi của người tải lên, thiết bị đăng nhập và các nhật ký tương tự thành vị trí gần đúng.
 
-Sau khi cấu hình, admin panel có thể hiển thị nguồn upload và access rõ hơn. User Management cũng cho phép block hoặc restore upload access cho IP addresses đáng ngờ.
+Sau khi cấu hình, bảng quản trị có thể hiển thị nguồn tải lên và nguồn truy cập rõ ràng hơn. Quản lý người dùng cũng cho phép bạn chặn hoặc khôi phục quyền tải lên đối với các địa chỉ IP đáng ngờ.
 
-## Cấu hình ở đâu
+## Cấu Hình Ở Đâu
 
 Mở:
 
@@ -12,39 +12,39 @@ Mở:
 System Settings -> Other Settings -> IP Geolocation
 ```
 
-![IP geolocation](../../image/other/ip定位/ip定位.png)
+![Định vị IP](../../image/other/ip定位/ip定位.png)
 
-## Available Settings
+## Cài Đặt Có Sẵn
 
-Flow IP geolocation mới hỗ trợ nhiều sources thay vì phụ thuộc một map service.
+Luồng định vị IP mới hỗ trợ nhiều nguồn thay vì phụ thuộc vào một dịch vụ bản đồ duy nhất.
 
-| Setting | Purpose |
+| Cài đặt | Mục đích |
 | --- | --- |
-| IP geolocation language | Chọn display language, như English, Simplified Chinese, Japanese, French và các ngôn ngữ khác. |
-| MaxMind Account ID | MaxMind account ID cho MaxMind GeoLite Web Service. |
-| MaxMind License Key | MaxMind License Key. |
-| Tencent Map Key | Tencent Location Service key. Hữu ích cho Chinese addresses và mainland China IPs. |
-| ipapi Key | APILayer ipapi key. Hỗ trợ multilingual IP geolocation. |
+| Ngôn ngữ định vị IP | Chọn ngôn ngữ hiển thị, như tiếng Anh, tiếng Trung giản thể, tiếng Nhật, tiếng Pháp và các ngôn ngữ khác. |
+| MaxMind Account ID | ID tài khoản MaxMind cho MaxMind GeoLite Web Service. |
+| MaxMind License Key | License Key của MaxMind. |
+| Tencent Map Key | Khóa Tencent Location Service. Hữu ích cho địa chỉ tiếng Trung và IP Trung Quốc đại lục. |
+| ipapi Key | Khóa APILayer ipapi. Hỗ trợ định vị IP đa ngôn ngữ. |
 
-Chỉ điền services bạn cần. Không bắt buộc cấu hình mọi field.
+Chỉ điền các dịch vụ bạn cần. Không cần cấu hình mọi trường.
 
-Nếu không cung cấp key, ImgBed vẫn thử built-in free sources, nhưng stability, language support và precision có thể thấp hơn service bạn tự cấu hình.
+Nếu không cung cấp khóa nào, ImgBed vẫn sẽ thử các nguồn miễn phí tích hợp sẵn, nhưng độ ổn định, hỗ trợ ngôn ngữ và độ chính xác có thể thấp hơn dịch vụ bạn tự cấu hình.
 
-## Recommended Choices
+## Lựa Chọn Khuyến Nghị
 
-Nếu chủ yếu cần Chinese addresses:
+Nếu bạn chủ yếu cần địa chỉ tiếng Trung:
 
-1. Đặt IP geolocation language là Simplified Chinese.
+1. Đặt ngôn ngữ định vị IP thành tiếng Trung giản thể.
 2. Cấu hình Tencent Map Key.
-3. Có thể thêm MaxMind hoặc ipapi làm fallback sources.
+3. Có thể thêm MaxMind hoặc ipapi làm nguồn dự phòng.
 
-Nếu chủ yếu cần English hoặc multilingual addresses:
+Nếu bạn chủ yếu cần địa chỉ tiếng Anh hoặc đa ngôn ngữ:
 
-1. Chọn language bạn cần.
+1. Chọn ngôn ngữ cần dùng.
 2. Cấu hình MaxMind Account ID và License Key.
-3. Thêm ipapi Key nếu cần multilingual results tốt hơn.
+3. Thêm ipapi Key nếu cần kết quả đa ngôn ngữ tốt hơn.
 
-## MaxMind Setup
+## Thiết Lập MaxMind
 
 MaxMind cần:
 
@@ -53,122 +53,122 @@ MaxMind Account ID
 MaxMind License Key
 ```
 
-Tìm account ID trong MaxMind dashboard và generate License Key từ License Keys page.
+Tìm account ID trong bảng điều khiển MaxMind và tạo License Key từ trang License Keys.
 
-![MaxMind key config](../../image/other/ip定位/maxmind的key配置.png)
+![Cấu hình khóa MaxMind](../../image/other/ip定位/maxmind的key配置.png)
 
-Sau khi generate, paste Account ID và License Key vào ImgBed rồi save.
+Sau khi tạo, dán Account ID và License Key vào ImgBed rồi lưu.
 
-Free plan của MaxMind phù hợp everyday use, nhưng có request limits. Nếu quota vượt giới hạn, ImgBed tiếp tục thử sources khả dụng khác.
+Gói miễn phí của MaxMind phù hợp cho sử dụng hằng ngày, nhưng có giới hạn số yêu cầu. Nếu vượt hạn mức, ImgBed tiếp tục thử các nguồn khả dụng khác.
 
-## ipapi Setup
+## Thiết Lập ipapi
 
 ipapi dùng APILayer API Key.
 
-Mở ipapi console và copy API Key hiển thị ở đó.
+Mở bảng điều khiển của ipapi và sao chép API Key hiển thị ở đó.
 
-![ipapi config](../../image/other/ip定位/ipapi配置.png)
+![Cấu hình ipapi](../../image/other/ip定位/ipapi配置.png)
 
-Paste vào field `ipapi Key` trong ImgBed rồi save.
+Dán vào trường `ipapi Key` trong ImgBed rồi lưu.
 
-ipapi hỗ trợ multilingual IP geolocation và hữu ích khi muốn addresses hiển thị bằng selected language. Free plan cũng có request limits. Nếu quota hết, ImgBed tiếp tục thử sources khả dụng khác.
+ipapi hỗ trợ định vị IP đa ngôn ngữ và hữu ích khi bạn muốn địa chỉ hiển thị bằng ngôn ngữ đã chọn. Gói miễn phí cũng có giới hạn số yêu cầu. Nếu hết hạn mức, ImgBed tiếp tục thử các nguồn khả dụng khác.
 
-## Tencent Map Key Setup
+## Thiết Lập Tencent Map Key
 
-Tencent Map Key hữu ích cho Chinese addresses, đặc biệt là mainland China IPs.
+Tencent Map Key hữu ích cho địa chỉ tiếng Trung, đặc biệt là IP Trung Quốc đại lục.
 
-Khi tạo key trong Tencent Location Service, enable:
+Khi tạo khóa trong Tencent Location Service, hãy bật:
 
 ```text
 WebServiceAPI
 ```
 
-Sau khi tạo, paste key vào `Tencent Map Key` và save.
+Sau khi tạo, dán khóa vào `Tencent Map Key` rồi lưu.
 
-Nếu chỉ cần basic Chinese IP geolocation, Tencent Map Key là đủ để bắt đầu.
+Nếu bạn chỉ cần định vị IP Trung Quốc cơ bản, Tencent Map Key là đủ để bắt đầu.
 
-## Cần xem gì trong User Management
+## Cần Xem Gì Trong Quản Lý Người Dùng
 
-User Management có thể mở từ đầu admin panel.
+Quản lý người dùng có ở phần trên của bảng quản trị.
 
-![User management](../../image/other/用户管理显示.png)
+![Quản lý người dùng](../../image/other/用户管理显示.png)
 
-User Management hiển thị upload activity theo IP:
+Quản lý người dùng hiển thị hoạt động tải lên theo IP:
 
-| Field | Description |
+| Trường | Mô tả |
 | --- | --- |
-| IP source | Uploader source IP. |
-| Address | Location gần đúng được resolve từ IP. |
-| Total upload size | Tổng file size đã upload từ IP này. |
-| Upload count | Số uploads từ IP này. |
-| Upload allowed | On nghĩa là uploads được phép. Off nghĩa là uploads bị block. |
+| Nguồn IP | IP nguồn của người tải lên. |
+| Địa chỉ | Vị trí gần đúng được phân giải từ IP. |
+| Tổng dung lượng tải lên | Tổng dung lượng tệp được tải lên từ IP này. |
+| Số lần tải lên | Số lượt tải lên từ IP này. |
+| Cho phép tải lên | Bật nghĩa là cho phép tải lên. Tắt nghĩa là chặn tải lên. |
 
-Nhấn arrow bên trái để mở danh sách files đã upload bởi IP đó.
+Nhấp mũi tên bên trái để mở rộng danh sách tệp đã được tải lên từ IP đó.
 
-File list hiển thị file name, preview, file size, moderation result, file status và upload time. Khi uploads trông đáng ngờ, hãy expand IP trước, review files, rồi quyết định có block uploads tiếp theo không.
+Danh sách tệp hiển thị tên tệp, xem trước, dung lượng tệp, kết quả kiểm duyệt, trạng thái tệp và thời gian tải lên. Khi lượt tải lên có vẻ đáng ngờ, hãy mở rộng IP trước, xem lại các tệp, rồi quyết định có chặn các lượt tải lên tiếp theo hay không.
 
-Nếu một IP đáng ngờ, tắt `Upload allowed`. Future uploads từ IP đó sẽ bị block.
+Nếu một IP đáng ngờ, hãy tắt `Upload allowed`. Các lượt tải lên trong tương lai từ IP đó sẽ bị chặn.
 
-## Search, Sort và Advanced Filters
+## Tìm Kiếm, Sắp Xếp Và Bộ Lọc Nâng Cao
 
-Ở đầu User Management, search theo IP source hoặc address.
+Ở đầu Quản lý người dùng, tìm kiếm theo nguồn IP hoặc địa chỉ.
 
-Sort theo time, upload count hoặc total upload size để tìm recent uploaders, high-frequency uploaders hoặc high-usage IPs.
+Sắp xếp theo thời gian, số lần tải lên hoặc tổng dung lượng tải lên để tìm người tải lên gần đây, người tải lên với tần suất cao hoặc IP dùng nhiều dung lượng.
 
-Để điều tra sâu hơn, mở advanced filters.
+Để điều tra sâu hơn, mở bộ lọc nâng cao.
 
-![Advanced filters](../../image/other/用户管理高级筛选.png)
+![Bộ lọc nâng cao](../../image/other/用户管理高级筛选.png)
 
-Advanced filters hỗ trợ:
+Bộ lọc nâng cao hỗ trợ:
 
-| Filter | Usage |
+| Bộ lọc | Cách dùng |
 | --- | --- |
-| Time range | Hiển thị IPs đã upload files trong khoảng thời gian chọn. |
-| Access status | Filter theo normal, blocked và states tương tự. |
-| Allow/block list | Filter theo allowlist, blocklist hoặc unset. |
-| File type | Hiển thị IPs đã upload images, videos, audio, documents, code hoặc other files. |
-| File size | Filter theo uploaded file size range. |
-| Age rating | Filter theo unset, General, R12+, R16+, R18 và ratings tương tự. |
-| File status | Filter theo current file status để điều tra abnormal files. |
+| Khoảng thời gian | Hiển thị IP đã tải tệp lên trong khoảng thời gian đã chọn. |
+| Trạng thái truy cập | Lọc theo trạng thái bình thường, bị chặn và các trạng thái tương tự. |
+| Danh sách cho phép/chặn | Lọc theo danh sách cho phép, danh sách chặn hoặc chưa đặt. |
+| Loại tệp | Hiển thị IP đã tải lên hình ảnh, video, âm thanh, tài liệu, mã hoặc tệp khác. |
+| Dung lượng tệp | Lọc theo khoảng dung lượng tệp đã tải lên. |
+| Phân loại độ tuổi | Lọc theo chưa đặt, General, R12+, R16+, R18 và các phân loại tương tự. |
+| Trạng thái tệp | Lọc theo trạng thái tệp hiện tại để điều tra tệp bất thường. |
 
-Nhấn `Apply Filters` để áp dụng. Dùng `Reset` để quay lại toàn bộ dữ liệu.
+Nhấp `Apply Filters` để áp dụng. Dùng `Reset` để quay lại toàn bộ dữ liệu.
 
-## Mobile View
+## Giao Diện Di Động
 
-Trên mobile, User Management chuyển sang card layout.
+Trên di động, Quản lý người dùng chuyển sang bố cục thẻ.
 
-![Mobile user management](../../image/other/手机端显示用户管理效果.png)
+![Quản lý người dùng trên di động](../../image/other/手机端显示用户管理效果.png)
 
-Mỗi card hiển thị IP, address, total upload size, upload count và upload allowed switch. Bạn có thể manage users mà không cần scroll table ngang.
+Mỗi thẻ hiển thị IP, địa chỉ, tổng dung lượng tải lên, số lần tải lên và công tắc cho phép tải lên. Bạn có thể quản lý người dùng mà không cần cuộn bảng ngang.
 
-## Nếu Location có vẻ sai
+## Nếu Vị Trí Có Vẻ Sai
 
-IP geolocation là gần đúng. Nó không phải street address chính xác.
+Định vị IP là gần đúng. Đây không phải địa chỉ đường phố chính xác.
 
-Nếu user đứng sau proxy, data center, cloud server hoặc cross-border network, location hiển thị có thể khác location thật.
+Nếu người dùng ở sau proxy, trung tâm dữ liệu, máy chủ đám mây hoặc mạng xuyên biên giới, vị trí hiển thị có thể khác vị trí thật.
 
-Dùng feature này để hiểu rough origin, tìm abnormal uploads và hỗ trợ quyết định blocking. Không nên xem nó là precise tracking.
+Hãy dùng tính năng này để hiểu nguồn gốc gần đúng, tìm lượt tải lên bất thường và hỗ trợ quyết định chặn. Đừng coi đây là theo dõi chính xác.
 
-## Common Cases
+## Trường Hợp Thường Gặp
 
-| Case | Meaning |
+| Trường hợp | Ý nghĩa |
 | --- | --- |
-| Address trống | IP có thể chưa resolve, hoặc current source temporarily unavailable. |
-| Address language sai | Kiểm tra IP geolocation language và source hỗ trợ language đó đã được cấu hình chưa. |
-| Address hiển thị data center | Nhiều proxies, cloud servers và crawlers xuất hiện như data center hoặc ISP addresses. |
-| Upload count cao | Review IP này kỹ và block uploads nếu cần. |
-| Total upload size lớn | Sort hoặc filter, expand IP rồi inspect specific files. |
-| Cần restore sau khi block | Bật lại `Upload allowed`. |
+| Địa chỉ trống | IP có thể chưa được phân giải, hoặc nguồn hiện tại tạm thời không khả dụng. |
+| Ngôn ngữ địa chỉ sai | Kiểm tra ngôn ngữ định vị IP và nguồn hỗ trợ ngôn ngữ đó đã được cấu hình hay chưa. |
+| Địa chỉ hiển thị trung tâm dữ liệu | Nhiều proxy, máy chủ đám mây và trình thu thập dữ liệu xuất hiện dưới dạng địa chỉ trung tâm dữ liệu hoặc ISP. |
+| Số lần tải lên cao | Kiểm tra kỹ IP này và chặn tải lên nếu cần. |
+| Tổng dung lượng tải lên lớn | Sắp xếp hoặc lọc, mở rộng IP và kiểm tra các tệp cụ thể. |
+| Cần khôi phục sau khi chặn | Bật lại `Upload allowed`. |
 
-## Quick Flow
+## Luồng Nhanh
 
 ```text
-Mở IP Geolocation trong Other Settings
--> Chọn IP geolocation language
--> Điền MaxMind, Tencent Map hoặc ipapi credentials nếu cần
+Open IP Geolocation in Other Settings
+-> Choose IP geolocation language
+-> Fill MaxMind, Tencent Map, or ipapi credentials as needed
 -> Save settings
--> Mở User Management
--> Review IP source, address, total upload size và upload count
--> Dùng search, sort hoặc advanced filters để tìm IPs bất thường
--> Allow hoặc block uploads tùy tình huống
+-> Open User Management
+-> Review IP source, address, total upload size, and upload count
+-> Use search, sort, or advanced filters to find abnormal IPs
+-> Allow or block uploads as needed
 ```

@@ -94,19 +94,19 @@ https://your-domain.com/api/oauth/yandex/callback
 ## Короткий сценарій
 
 ```text
-Відкрити Yandex OAuth Console
--> Створити app
--> Додати https://your-domain.com/api/oauth/yandex/callback
--> Перевірити permissions Yandex Disk
--> Скопіювати Client ID і Client Secret
--> Ввести Client ID / Client Secret в ImgBed
--> Натиснути Get Token
--> Скопіювати Refresh Token з callback-сторінки
--> Вставити його назад в ImgBed і зберегти
+Open Yandex OAuth Console
+-> Create an app
+-> Add https://your-domain.com/api/oauth/yandex/callback
+-> Confirm Yandex Disk permissions
+-> Copy Client ID and Client Secret
+-> Fill Client ID / Client Secret into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## Посилання
 
 1. Register a Yandex app: https://yandex.com/dev/id/doc/en/register-client
-2. Get an authorization code through URL: https://yandex.com/dev/id/doc/en/codes/code-url
+2. Отримати authorization code через URL: https://yandex.com/dev/id/doc/en/codes/code-url
 3. Yandex OAuth token endpoint: https://yandex.com/dev/id/doc/en/tokens/token

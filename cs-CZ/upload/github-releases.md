@@ -6,7 +6,7 @@ Potřebujete jen tři věci:
 
 | Požadavek | Účel |
 | --- | --- |
-| Účet GitHub | Pro vytvoření access tokenu a vlastnictví repozitáře. |
+| Účet GitHub | Pro vytvoření přístupového tokenu a vlastnictví repozitáře. |
 | GitHub Access Token | Umožní ImgBed používat GitHub API, vytvářet releases a nahrávat soubory. |
 | Název repozitáře | Můžete zadat jen název repozitáře, například `image`. |
 
@@ -54,16 +54,16 @@ Systém zařídí tyto detaily:
 | Kontrola repozitáře | Pokud použijete cestu aktuálního osobního účtu, ImgBed repozitář automaticky vytvoří, pokud neexistuje. Pokud zadáte plnou cestu ručně, použije ji přímo. |
 | Veřejný/soukromý stav | Viditelnost repozitáře se synchronizuje podle aktuálního přepínače. |
 
-## Rychlý checklist
+## Rychlý kontrolní seznam
 
 GitHub Releases funguje takto:
 
 ```text
-Přihlaste se do GitHub
--> Vytvořte Access Token
--> Vraťte se do ImgBed a zadejte token i název repozitáře
--> Uložte
--> Pokud je zadán jen název repo, ImgBed automaticky přidá aktuální uživatelské jméno
--> Pokud je zadáno username/repo, ImgBed ho použije beze změny
--> Nahrajte testovací obrázek
+Sign in to GitHub
+-> Create an Access Token
+-> Return to ImgBed and enter the token and repository name
+-> Save
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

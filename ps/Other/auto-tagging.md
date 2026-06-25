@@ -1,143 +1,143 @@
-# Auto Tagging
+# اتومات ټګ کول
 
-Auto tagging دلته تنظیمېږي:
+اتومات ټګ کول له دې ځایه تنظیمېږي:
 
 ```text
 System Settings -> Other Settings -> Auto Tagging
 ```
 
-دا په اتومات ډول image tags جوړوي، چې د search، random image filtering، public gallery filtering او age-rating access control لپاره ګټور دي.
+دا ځانګړنه د انځورونو لپاره ټګونه په اتومات ډول جوړوي. دغه ټګونه د لټون، د تصادفي انځور فلټر کولو، د عامه ګالرۍ فلټر کولو او د عمر درجې پر بنسټ د لاسرسي کنټرول لپاره ګټور دي.
 
-## Auto Tagging څه کولای شي
+## اتومات ټګ کول څه کولی شي
 
-| Feature | تشریح |
+| ځانګړنه | تشریح |
 | --- | --- |
-| Generate content tags | د people، scenes، objects، art style او ورته visual content لپاره tags اضافه کوي. |
-| Generate character tags | د anime images او illustrations لپاره ګټور دی. |
-| Add orientation tags | `landscape`، `portrait` یا `square` اضافه کوي. |
-| Add image rating | د general، sensitive، questionable یا explicit content لپاره `G/S/Q/E` rating results خوندي کوي. |
-| Auto-tag on upload | نوي uploaded images په اتومات ډول tagging flow ته داخلېږي. |
-| Batch tagging | زړو images ته په ټولو folders یا ټاکلو folders کې tags اضافه کوي. |
+| د منځپانګې ټګونه جوړول | د خلکو، صحنو، شیانو، هنري سبک او ورته لیدیزې منځپانګې لپاره ټګونه زیاتوي. |
+| د کرکټر ټګونه جوړول | د انیمې انځورونو او انځورګریو لپاره ګټور دي. |
+| د جهت ټګونه زیاتول | `landscape`، `portrait` یا `square` زیاتوي. |
+| د انځور درجه زیاتول | د عمومي، حساس، مشکوک یا څرګندې منځپانګې لپاره د `G/S/Q/E` درجه بندۍ پایلې خوندي کوي. |
+| د اپلوډ پر مهال اتومات ټګ کول | نوي اپلوډ شوي انځورونه په اتومات ډول د ټګ کولو بهیر ته ننوځي. |
+| ډله ییز ټګ کول | په ټولو فولډرونو یا ټاکل شوو فولډرونو کې زړو انځورونو ته ټګونه زیاتوي. |
 
-## مخکې څه ته اړتیا لرئ
+## لومړی څه ته اړتیا لرئ
 
-لږ تر لږه یو accessible Hugging Face Space URL برابر کړئ.
+لږ تر لږه یوه د لاسرسي وړ Hugging Face Space URL چمتو کړئ.
 
-سپارښتنه دا ده چې د SmilingWolf `wd-tagger` Space خپل Hugging Face account ته duplicate کړئ:
+سپارښتنه دا ده چې د SmilingWolf `wd-tagger` Space خپل Hugging Face حساب ته نقل کړئ:
 
 ```text
 https://huggingface.co/spaces/SmilingWolf/wd-tagger
 ```
 
-د لنډې ازموینې لپاره public Space کارولای شئ، خو public Spaces ډېر users شریکوي او ممکن queue، slow down یا unavailable شي. ستاسو په خپل account کې duplicated Space د اوږدمهاله auto tagging لپاره عموما ثابت وي.
+تاسو کولای شئ د لنډمهالې ازموینې لپاره عامه Space وکاروئ، خو عامه Spaces د ډېرو کاروونکو له خوا شریک کارول کېږي او کېدای شي قطار، ورووالی یا لنډمهاله نه شتون ولري. په خپل حساب کې نقل شوی Space د اوږدمهاله اتومات ټګ کولو لپاره ډېر ثابت وي.
 
-## د SmilingWolf Space Duplicate کول
+## د SmilingWolf Space نقل کول
 
-1. Hugging Face ته sign in وکړئ.
+1. Hugging Face ته ننوزئ.
 2. `https://huggingface.co/spaces/SmilingWolf/wd-tagger` پرانیزئ.
 
-![SmilingWolf public Space](../../image/other/微笑狼的公开仓库.png)
+![د SmilingWolf عامه Space](../../image/other/微笑狼的公开仓库.png)
 
-3. په ښي پورتني کونج کې three-dot menu کلیک کړئ.
+3. په ښي پورتني کونج کې د درې ټکو مېنو کلیک کړئ.
 4. `Duplicate this Space` وټاکئ.
-5. default Space name وساتئ یا خپل نوم ورکړئ، لکه `wd-tagger`.
-6. visibility پر `Public` وټاکئ. Public Spaces د ImgBed لپاره call کول اسانه وي.
-7. په پیل کې default free hardware وساتئ. یوازې هغه وخت upgrade وکړئ چې queueing څرګند شي.
-8. Space جوړ کړئ او د build تر بشپړېدو انتظار وکړئ.
+5. د Space اصلي نوم وساتئ یا خپل نوم وټاکئ، لکه `wd-tagger`.
+6. ښکاره والی پر `Public` وټاکئ. عامه Spaces د ImgBed له خوا د غږولو لپاره اسانه وي.
+7. په پیل کې وړیا اصلي هارډویر وساتئ. یوازې هغه وخت یې لوړ کړئ چې قطار څرګند ستونزه شي.
+8. Space جوړ کړئ او د جوړېدو د بشپړېدو انتظار وکړئ.
 
-کله چې build بشپړ شو، خپل Space page پرانیزئ. URL عموما داسې ښکاري:
+د جوړېدو له بشپړېدو وروسته، خپل Space پاڼه پرانیزئ. URL عموما داسې ښکاري:
 
 ```text
 https://huggingface.co/spaces/your-name/wd-tagger
 ```
 
-browser URL copy کړئ او د ImgBed په `Space URLs` کې یې paste کړئ.
+د براوزر URL کاپي کړئ او د ImgBed په `Space URLs` کې یې ولګوئ.
 
 ## څو Space URLs ډکول
 
-په هر line کې یو Space URL ولیکئ.
+په هره کرښه کې یو Space URL ولیکئ.
 
 بېلګې:
 
-| Value | تشریح |
+| ارزښت | تشریح |
 | --- | --- |
-| `https://huggingface.co/spaces/SmilingWolf/wd-tagger` | SmilingWolf public Space. د لنډې ازموینې لپاره ښه دی. |
-| `https://huggingface.co/spaces/lintonxue00/wd-tagger` | د copied Space page URL. |
-| `https://huggingface.co/spaces/your-name/wd-tagger` | ستاسو خپل duplicated Space page URL. |
+| `https://huggingface.co/spaces/SmilingWolf/wd-tagger` | د SmilingWolf عامه Space. د لنډمهالې ازموینې لپاره مناسب دی. |
+| `https://huggingface.co/spaces/lintonxue00/wd-tagger` | د کاپي شوې Space پاڼې URL. |
+| `https://huggingface.co/spaces/your-name/wd-tagger` | ستاسو خپله نقل شوې Space پاڼه. |
 
-څو URLs داخلولای شئ. ImgBed څو Spaces یو ځای کاروي، چې speed ښه کولای شي.
+تاسو کولای شئ څو URLونه دننه کړئ. ImgBed څو Spaces یو ځای کاروي، چې سرعت ښه کولای شي.
 
-که یو Space موقتا unavailable شي، نور Spaces processing ته دوام ورکولای شي.
+که یو Space موقتا موجود نه وي، نور Spaces پروسس ته دوام ورکولای شي.
 
-## Settings
+## تنظیمات
 
-| Option | سپارښتنه |
+| اختیار | سپارښتنه |
 | --- | --- |
-| `Space URLs` | هغه Space URLs ولیکئ چې برابر کړي مو دي. لږ تر لږه یو وکاروئ. |
-| Target folder | د ټولو folders لپاره تش پرېږدئ. یوازې هغه وخت folder وټاکئ چې ځانګړی directory process کوئ. |
-| Recognition model | default `wd-swinv2-tagger-v3` وساتئ. |
-| General tag threshold | default د ډېرو images لپاره ښه کار کوي. ټیټ values ډېر tags جوړوي؛ لوړ values لږ tags جوړوي. |
-| Character tag threshold | default محافظه کار دی او د غلط character tags کمولو کې مرسته کوي. |
-| `MCut` automatic threshold | په پیل کې off پرېږدئ. هغه وخت یې on کړئ چې غواړئ model په اتومات ډول tag count وټاکي. |
-| Auto-tag on upload | که نوي uploaded images باید په اتومات ډول tags واخلي، on یې کړئ. |
-| Start tagging | زاړه images manually batch-tag کوي. |
+| `Space URLs` | هغه Space URLs ولیکئ چې چمتو کړي مو دي. لږ تر لږه یو وکاروئ. |
+| هدف فولډر | د ټولو فولډرونو لپاره یې تش پرېږدئ. یوازې هغه وخت فولډر وټاکئ چې ځانګړی فولډر پروسس کول غواړئ. |
+| د پېژندنې ماډل | په اصلي ډول `wd-swinv2-tagger-v3` وساتئ. |
+| د عمومي ټګ حد | اصلي ارزښت د ډېرو انځورونو لپاره کار کوي. ټیټ ارزښتونه ډېر ټګونه جوړوي؛ لوړ ارزښتونه لږ ټګونه جوړوي. |
+| د کرکټر ټګ حد | اصلي ارزښت محافظه کار دی او د ناسمو کرکټر ټګونو په مخنیوي کې مرسته کوي. |
+| د `MCut` اتومات حد | په پیل کې یې بند پرېږدئ. هغه وخت یې فعال کړئ چې غواړئ ماډل د ټګونو شمېر په خپله وټاکي. |
+| د اپلوډ پر مهال اتومات ټګ کول | فعال یې کړئ که نوي اپلوډ شوي انځورونه باید په اتومات ډول ټګونه واخلي. |
+| ټګ کول پیلول | زاړه انځورونه په لاس ډله ییز ټګ کوي. |
 
-## سپارښتل شوي پیل values
+## سپارښتل شوي پیل ارزښتونه
 
-| Option | Recommended Value |
+| اختیار | سپارښتل شوی ارزښت |
 | --- | --- |
-| Recognition model | `wd-swinv2-tagger-v3` |
-| General tag threshold | `0.35` |
-| Character tag threshold | `0.85` |
-| `MCut` | په پیل کې Off |
-| Auto-tag on upload | د اړتیا پر وخت Enable |
+| د پېژندنې ماډل | `wd-swinv2-tagger-v3` |
+| د عمومي ټګ حد | `0.35` |
+| د کرکټر ټګ حد | `0.85` |
+| `MCut` | په پیل کې بند |
+| د اپلوډ پر مهال اتومات ټګ کول | د اړتیا په صورت کې فعال کړئ |
 
-که tags ډېر وي، general threshold لږ لوړ کړئ.
+که ټګونه ډېر وي، عمومي حد لږ لوړ کړئ.
 
-که tags کم وي، general threshold لږ ټیټ کړئ.
+که ټګونه کم وي، عمومي حد لږ ټیټ کړئ.
 
-## Batch Tagging
+## ډله ییز ټګ کول
 
 1. `Space URLs` ډک کړئ.
-2. target folder وټاکئ.
-3. start tagging کلیک کړئ.
-4. د progress تر بشپړېدو انتظار وکړئ.
+2. هدف فولډر وټاکئ.
+3. د ټګ کولو د پیل تڼۍ کلیک کړئ.
+4. د پرمختګ د بشپړېدو انتظار وکړئ.
 
-که target folder تش وي، ImgBed ټول folders process کوي.
+که هدف فولډر تش وي، ImgBed ټول فولډرونه پروسس کوي.
 
-Batch tagging د زړو images لپاره ښه دی. د نویو images لپاره auto-tag on upload فعال کړئ، څو هر ځل یې manually ونه چلوئ.
+ډله ییز ټګ کول د زړو انځورونو لپاره تر ټولو مناسب دي. د نویو انځورونو لپاره د اپلوډ پر مهال اتومات ټګ کول فعال کړئ، څو هر ځل یې په لاس ونه چلوئ.
 
-## Auto-Tag on Upload
+## د اپلوډ پر مهال اتومات ټګ کول
 
-کله چې auto-tag on upload فعال شي، نوي uploaded images په اتومات ډول configured `Space URLs` call کوي.
+کله چې د اپلوډ پر مهال اتومات ټګ کول فعال شي، نوي اپلوډ شوي انځورونه په اتومات ډول تنظیم شوي `Space URLs` غږوي.
 
 دا د اوږدمهاله کارونې لپاره مناسب دی.
 
-که ستاسو Space queue ولري، upload پخپله مخکې بشپړېدای شي او tagging وروسته دوام کوي.
+که ستاسو Space په قطار کې وي، اپلوډ پخپله لومړی بشپړېدای شي او ټګ کول وروسته دوام کوي.
 
-## کوم Images Process کېږي
+## کوم انځورونه پروسس کېږي
 
-Auto tagging عموما image files process کوي.
+اتومات ټګ کول تر ډېره د انځور فایلونه پروسس کوي.
 
-هغه images چې complete tags، orientation، rating، width او height لا لري، skipped کېږي څو unnecessary Space calls ونه شي.
+هغه انځورونه چې بشپړ ټګونه، جهت، درجه، پلنوالی او لوړوالی لا لري، پرېښودل کېږي څو بې اړتیا Space غوښتنې ونه شي.
 
-ImgBed د امکان تر حده یوازې missing information ډکوي. د بېلګې په توګه، که یوازې orientation missing وي، هڅه کوي orientation اضافه کړي، پرته له دې چې full content tag flow call کړي.
+ImgBed د امکان تر حده یوازې ورک معلومات ډکوي. د بېلګې په توګه، که یوازې جهت ورک وي، هڅه کوي جهت زیات کړي پرته له دې چې د منځپانګې د بشپړ ټګ کولو بهیر وغږوي.
 
-## FAQ
+## عامې پوښتنې
 
-### ولې خپل Space Duplicate کړم؟
+### ولې خپل Space نقل کړم؟
 
-Public Spaces ډېر users شریکوي. ستاسو خپل duplicated Space عموما یوازې ستاسو ImgBed site کاروي، نو معمولا چټک او reliable وي.
+عامه Spaces د ډېرو کاروونکو له خوا شریک کارول کېږي. ستاسو خپله نقل شوې Space تر ډېره ستاسو د ImgBed سایټ له خوا کارېږي، نو عموما چټکه او باوري وي.
 
-### Space تل Starting Up ښيي
+### Space تل د پیل په حال کې ښکاري
 
-له لومړي جوړېدو وروسته، یا له اوږده idle وخت وروسته، Space ښايي د start لپاره وخت وغواړي.
+له لومړي جوړېدو وروسته، یا له اوږدې بې کارۍ وروسته، Space ښايي د پیل لپاره وخت وغواړي.
 
-لومړی خپل Space page پرانیزئ. کله چې image عادي recognize کړي، بېرته ImgBed ته راشئ او tagging پیل کړئ.
+لومړی خپل Space پاڼه پرانیزئ. کله چې عادي ډول یو انځور وپېژني، ImgBed ته بېرته لاړ شئ او ټګ کول پیل کړئ.
 
-### Space URL څنګه Copy کړم؟
+### Space URL څنګه کاپي کړم؟
 
-خپل Hugging Face Space page پرانیزئ او browser address copy کړئ.
+خپله Hugging Face Space پاڼه پرانیزئ او د براوزر پته کاپي کړئ.
 
 بېلګې:
 
@@ -146,23 +146,23 @@ https://huggingface.co/spaces/lintonxue00/wd-tagger
 https://huggingface.co/spaces/SmilingWolf/wd-tagger
 ```
 
-### څو Spaces اضافه کولای شم؟
+### ایا څو Spaces زیاتولای شم؟
 
-هو. په هر line کې یو Space URL ولیکئ.
+هو. په هره کرښه کې یو Space URL ولیکئ.
 
-څو Spaces images یو ځای process کوي او هغه وخت ګټور دي چې ډېر images لرئ.
+څو Spaces انځورونه یو ځای پروسس کوي او هغه وخت ګټور دي چې ډېر انځورونه لرئ.
 
-### ولې Tags په English دي؟
+### ولې ټګونه په انګلیسي دي؟
 
-SmilingWolf models English tags output کوي. دا عادي خبره ده.
+د SmilingWolf ماډلونه انګلیسي ټګونه راوباسي. دا تمه کېدونکې خبره ده.
 
-tags عموما د search، filtering، random image API او public gallery filters لپاره کارېږي.
+ټګونه تر ډېره د لټون، فلټر کولو، د تصادفي انځور API او د عامه ګالرۍ فلټرونو لپاره کارېږي.
 
-### Rating Tags د څه لپاره کارېږي؟
+### د درجه بندۍ ټګونه د څه لپاره کارېږي؟
 
-rating results د Security Settings له access mode سره کار کوي.
+د درجه بندۍ پایلې د امنیتي تنظیماتو د لاسرسي حالت سره کار کوي.
 
-د بېلګې په توګه، که visitor access د age rating له مخې محدود وي، public browsing او random image features د هماغو rules له مخې images filter کوي.
+د بېلګې په توګه، کله چې د لیدونکو لاسرسی د عمر درجې له مخې محدود وي، عامه کتنه او د تصادفي انځور ځانګړنې د هماغو قواعدو له مخې انځورونه فلټر کوي.
 
 ## چټک بهیر
 

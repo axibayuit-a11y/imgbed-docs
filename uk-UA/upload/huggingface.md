@@ -55,13 +55,13 @@
 ## Короткий чекліст
 
 ```text
-Увійти в Hugging Face
--> Створити Access Token
--> Вибрати дозвіл write
--> Повернутися до ImgBed і ввести token та назву репозиторію
--> Зберегти
--> Якщо введено тільки назву repo, ImgBed автоматично додасть поточний username
--> Якщо введено username/repo, ImgBed використає це як є
--> ImgBed перевірить або створить dataset repository
--> Завантажити тестове зображення
+Sign in to Hugging Face
+-> Create an Access Token
+-> Select write permission
+-> Return to ImgBed and enter the token and repository name
+-> Save
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> ImgBed checks or creates the dataset repository
+-> Upload a test image
 ```

@@ -1,21 +1,21 @@
 # OCR
 
-OCR trích xuất text từ images, scans và document screenshots.
+OCR trích xuất văn bản từ hình ảnh, bản quét và ảnh chụp màn hình tài liệu.
 
-Sau recognition, bạn có thể copy result, export thành `Markdown`, `PDF` hoặc `Word`, hoặc package nhiều formats lại để download.
+Sau khi nhận dạng, bạn có thể sao chép kết quả, xuất dưới dạng `Markdown`, `PDF` hoặc `Word`, hoặc đóng gói nhiều định dạng để tải xuống.
 
-## OCR làm được gì
+## OCR Có Thể Làm Gì
 
-| Feature | Description |
+| Tính năng | Mô tả |
 | --- | --- |
-| Image text recognition | Extract text từ images, screenshots và scans. |
-| Document layout recognition | Tốt hơn cho tables, formulas, stamps và mixed text-image layouts. |
-| Multiple services | Hỗ trợ Baidu PaddleOCR, Microsoft Azure Vision và Google Vision. |
-| Copy results | Copy recognized text sau khi processing. |
-| Export files | Export `Markdown`, `PDF` và `Word`. |
-| Batch packaging | Sau khi recognize nhiều files, download results dưới dạng package. |
+| Nhận dạng văn bản trong ảnh | Trích xuất văn bản từ hình ảnh, ảnh chụp màn hình và bản quét. |
+| Nhận dạng bố cục tài liệu | Phù hợp hơn với bảng, công thức, con dấu và bố cục trộn văn bản-hình ảnh. |
+| Nhiều dịch vụ | Hỗ trợ Baidu PaddleOCR, Microsoft Azure Vision và Google Vision. |
+| Sao chép kết quả | Sao chép văn bản đã nhận dạng sau khi xử lý. |
+| Xuất tệp | Xuất `Markdown`, `PDF` và `Word`. |
+| Đóng gói hàng loạt | Sau khi nhận dạng nhiều tệp, tải kết quả xuống dưới dạng gói. |
 
-## Cấu hình OCR Services trước
+## Cấu Hình Dịch Vụ OCR Trước
 
 Mở:
 
@@ -23,186 +23,186 @@ Mở:
 System Settings -> Other Settings -> OCR
 ```
 
-![IP geolocation and OCR](../../image/other/ip定位和ocr文字识别.png)
+![Định vị IP và OCR](../../image/other/ip定位和ocr文字识别.png)
 
-Điền credentials cho services bạn muốn dùng:
+Điền thông tin xác thực cho các dịch vụ bạn muốn dùng:
 
-| Service | What To Enter | Best For |
+| Dịch vụ | Cần nhập gì | Phù hợp nhất cho |
 | --- | --- | --- |
-| Baidu PaddleOCR | `PaddleOCR Token` | Recommended first choice. Tốt cho documents, images, tables và mixed layouts. |
-| Microsoft Azure Vision | `Azure Vision Endpoint` và `Azure Vision API Key` | Hữu ích nếu bạn đã dùng Microsoft cloud services. |
-| Google Vision | `Google Vision API Key`. Service account `JSON` chỉ dùng cho quota query. | Hữu ích nếu bạn dùng Google Cloud services. |
+| Baidu PaddleOCR | `PaddleOCR Token` | Lựa chọn đầu tiên được khuyến nghị. Tốt cho tài liệu, hình ảnh, bảng và bố cục trộn. |
+| Microsoft Azure Vision | `Azure Vision Endpoint` và `Azure Vision API Key` | Hữu ích nếu bạn đã dùng dịch vụ đám mây Microsoft. |
+| Google Vision | `Google Vision API Key`. `JSON` của tài khoản dịch vụ chỉ dùng để truy vấn hạn mức. | Hữu ích nếu bạn dùng dịch vụ Google Cloud. |
 
-Điền credentials xong thì save.
+Lưu sau khi điền thông tin xác thực.
 
-Bạn chỉ cần cấu hình một service để test ban đầu. Không cần cả ba.
+Bạn có thể chỉ cấu hình một dịch vụ để kiểm thử ban đầu. Không cần cấu hình cả ba.
 
-## Google Vision Setup
+## Thiết Lập Google Vision
 
-Google setup có hai phần:
+Thiết lập Google có hai phần:
 
-| Goal | Requirement |
+| Mục tiêu | Yêu cầu |
 | --- | --- |
-| Dùng OCR | Enable `Cloud Vision API`, rồi tạo `API Key`. |
-| Query usage | Tạo service account, grant `Monitoring Viewer`, rồi download service account `JSON`. |
+| Dùng OCR | Bật `Cloud Vision API`, rồi tạo `API Key`. |
+| Truy vấn mức dùng | Tạo tài khoản dịch vụ, cấp `Monitoring Viewer`, rồi tải `JSON` của tài khoản dịch vụ. |
 
-![Google API key and service account](../../image/other/谷歌api秘钥和服务账号截图.png)
+![Khóa API Google và tài khoản dịch vụ](../../image/other/谷歌api秘钥和服务账号截图.png)
 
-### Dùng Google cho OCR
+### Dùng Google Cho OCR
 
 1. Mở Google Cloud Console.
 2. Vào `APIs & Services`.
-3. Mở `Library`, tìm `Cloud Vision API` và enable.
+3. Mở `Library`, tìm `Cloud Vision API` và bật.
 4. Quay lại `Credentials`.
-5. Tạo một `API Key`.
-6. Mở API Key và copy.
-7. Paste vào `Google Vision API Key` trong ImgBed.
-8. Save.
+5. Tạo `API Key`.
+6. Mở khóa API và sao chép.
+7. Dán vào `Google Vision API Key` trong ImgBed.
+8. Lưu.
 
-Sau đó bạn có thể chọn Google Vision trong OCR dialog.
+Sau đó bạn có thể chọn Google Vision trong hộp thoại OCR.
 
-### Query Google Usage
+### Truy Vấn Mức Dùng Google
 
-Quota query không required cho recognition.
+Truy vấn hạn mức không bắt buộc để nhận dạng.
 
-Nó chỉ hiển thị sơ bộ số Google Vision calls đã dùng trong 30 ngày gần nhất.
+Nó chỉ hiển thị xấp xỉ số lần gọi Google Vision đã dùng trong 30 ngày gần đây.
 
 1. Trong Google Cloud Console, mở `IAM & Admin`.
 2. Mở `Service Accounts`.
-3. Tạo service account, ví dụ `vision-monitor`.
-4. Grant role `Monitoring Viewer`.
-5. Mở service account details và create key.
+3. Tạo tài khoản dịch vụ, ví dụ `vision-monitor`.
+4. Cấp vai trò `Monitoring Viewer`.
+5. Mở chi tiết tài khoản dịch vụ và tạo khóa.
 6. Chọn `JSON`.
-7. Download generated JSON file.
-8. Quay lại ImgBed và import dưới service account `JSON` (optional).
-9. Sau khi import thành công, nhấn quota query.
+7. Tải tệp JSON đã tạo.
+8. Quay lại ImgBed và nhập tệp đó trong mục `JSON` của tài khoản dịch vụ (tùy chọn).
+9. Sau khi nhập thành công, nhấp truy vấn hạn mức.
 
-Sau import, ImgBed hiển thị project name sở hữu service account. Khi query usage, ImgBed đọc Google monitoring data và hiển thị call count của tháng này.
+Sau khi nhập, ImgBed hiển thị tên dự án sở hữu tài khoản dịch vụ. Khi truy vấn mức dùng, ImgBed đọc dữ liệu giám sát của Google và hiển thị số lần gọi trong tháng này.
 
-Tóm lại:
+Tóm tắt:
 
-| Item | Purpose |
+| Mục | Mục đích |
 | --- | --- |
-| `Google Vision API Key` | Thực hiện OCR recognition. |
-| Service account `JSON` | Query số Google Vision calls đã dùng. |
-| `Monitoring Viewer` role | Cho phép service account đọc usage data. |
+| `Google Vision API Key` | Thực hiện nhận dạng OCR. |
+| `JSON` của tài khoản dịch vụ | Truy vấn số lần gọi Google Vision đã dùng. |
+| Vai trò `Monitoring Viewer` | Cho phép tài khoản dịch vụ đọc dữ liệu sử dụng. |
 
 ## Lấy Baidu PaddleOCR Token
 
-Baidu PaddleOCR cần access token.
+Baidu PaddleOCR cần token truy cập.
 
-![Get PaddleOCR token](../../image/other/获取飞浆令牌.png)
+![Lấy PaddleOCR token](../../image/other/获取飞浆令牌.png)
 
-Mở cửa sổ `API` call trên trang Baidu PaddleOCR, click để lấy token, rồi copy.
+Mở cửa sổ gọi `API` trên trang Baidu PaddleOCR, nhấp để lấy token, rồi sao chép.
 
-Quay lại ImgBed, paste vào `PaddleOCR Token`, rồi save.
+Quay lại ImgBed, dán vào `PaddleOCR Token` và lưu.
 
-## Bắt đầu Recognition
+## Bắt Đầu Nhận Dạng
 
-Trong File Management, chọn image hoặc document screenshot và nhấn `OCR`.
+Trong Quản lý tệp, chọn một hình ảnh hoặc ảnh chụp màn hình tài liệu rồi nhấp `OCR`.
 
-![OCR recognition](../../image/other/ocr识别截图.png)
+![Nhận dạng OCR](../../image/other/ocr识别截图.png)
 
-Trong dialog, chọn recognition service và model.
+Trong hộp thoại, chọn dịch vụ và mô hình nhận dạng.
 
-Common PaddleOCR model choices:
+Các lựa chọn mô hình PaddleOCR thường dùng:
 
-| Model | Best For |
+| Mô hình | Phù hợp nhất cho |
 | --- | --- |
-| `PP-StructureV3` | Recommended default. Tốt cho documents, tables, formulas, stamps và mixed layouts. |
-| `PP-OCRv5` | Simple images, ordinary text và lightweight recognition. |
-| `PaddleOCR-VL` | Multilingual, complex images và chart-like content. |
-| `PaddleOCR-VL-1.5` | Document pages phức tạp hơn và layout recovery. |
+| `PP-StructureV3` | Mặc định được khuyến nghị. Tốt cho tài liệu, bảng, công thức, con dấu và bố cục trộn. |
+| `PP-OCRv5` | Hình ảnh đơn giản, văn bản thông thường và nhận dạng nhẹ. |
+| `PaddleOCR-VL` | Nội dung đa ngôn ngữ, hình ảnh phức tạp và nội dung giống biểu đồ. |
+| `PaddleOCR-VL-1.5` | Trang tài liệu phức tạp hơn và khôi phục bố cục. |
 
-Nếu chưa chắc, bắt đầu với `PP-StructureV3`.
+Nếu không chắc, hãy bắt đầu với `PP-StructureV3`.
 
-## Advanced Options
+## Tùy Chọn Nâng Cao
 
-| Option | Description |
+| Tùy chọn | Mô tả |
 | --- | --- |
-| Orientation correction | Dùng khi image bị xoay hoặc nghiêng. |
-| Document flattening | Dùng cho photographed documents có cong hoặc nghiêng. |
-| Layout detection | Dùng khi muốn preserve headings, paragraphs, tables và image structure. |
-| Chart recognition | Dùng khi image có charts hoặc structures phức tạp. |
-| Beautify `Markdown` | Làm exported Markdown dễ đọc hơn. |
+| Sửa hướng | Dùng khi ảnh bị xoay hoặc lệch. |
+| Làm phẳng tài liệu | Dùng cho tài liệu chụp có cong hoặc nghiêng. |
+| Phát hiện bố cục | Dùng khi muốn giữ cấu trúc tiêu đề, đoạn văn, bảng và hình ảnh. |
+| Nhận dạng biểu đồ | Dùng khi ảnh chứa biểu đồ hoặc cấu trúc phức tạp. |
+| Làm đẹp `Markdown` | Giúp Markdown xuất ra dễ đọc hơn. |
 
-Với regular screenshots, giữ options tối giản. Với document scans, bật thêm document-related options.
+Với ảnh chụp màn hình thông thường, giữ tùy chọn ở mức tối thiểu. Với bản quét tài liệu, bật thêm các tùy chọn liên quan đến tài liệu.
 
-## Xem Results
+## Xem Kết Quả
 
-Sau khi recognition xong, dialog hiển thị result.
+Sau khi nhận dạng xong, hộp thoại hiển thị kết quả.
 
-Bạn có thể copy trực tiếp hoặc chọn export formats.
+Bạn có thể sao chép trực tiếp hoặc chọn định dạng xuất.
 
-![PDF recognition](../../image/other/pdf识别截图.png)
+![Nhận dạng PDF](../../image/other/pdf识别截图.png)
 
-Với document pages, exported `PDF` có thể preserve page appearance và vẫn giữ text searchable. Điều này hữu ích để archive scans và tìm content sau này.
+Với trang tài liệu, `PDF` xuất ra có thể giữ giao diện trang đồng thời giữ văn bản có thể tìm kiếm. Điều này hữu ích để lưu trữ bản quét và tìm nội dung sau này.
 
-## Chọn Export Format
+## Chọn Định Dạng Xuất
 
-| Format | Best For |
+| Định dạng | Phù hợp nhất cho |
 | --- | --- |
-| `Markdown (.md)` | Notes, documentation systems và chỉnh sửa sau này. |
-| `PDF (.pdf)` | Preserve page appearance và scanned document results. |
-| `Word (.docx)` | Layout editing, text modification và handoff cho người khác. |
-| Export all | Save nhiều formats và original image, phù hợp với archives quan trọng. |
+| `Markdown (.md)` | Ghi chú, hệ thống tài liệu và chỉnh sửa sau này. |
+| `PDF (.pdf)` | Giữ giao diện trang và kết quả tài liệu đã quét. |
+| `Word (.docx)` | Tiếp tục chỉnh sửa bố cục, sửa văn bản và chuyển giao cho người khác. |
+| Xuất tất cả | Lưu nhiều định dạng và ảnh gốc, phù hợp cho lưu trữ quan trọng. |
 
-Nếu chỉ cần text, export Markdown.
+Nếu bạn chỉ cần văn bản, hãy xuất Markdown.
 
-Nếu cần page appearance, dùng PDF hoặc Word.
+Nếu cần giữ giao diện trang, dùng PDF hoặc Word.
 
-## Word Output
+## Đầu Ra Word
 
-Exported Word documents có thể mở và edit bằng office software.
+Tài liệu Word đã xuất có thể mở và chỉnh sửa bằng phần mềm văn phòng.
 
-![Word result](../../image/other/word识别结果.png)
+![Kết quả Word](../../image/other/word识别结果.png)
 
-Một số documents có recognized images, headings và paragraphs trong Word output.
+Một số tài liệu có thể đưa hình ảnh đã nhận dạng, tiêu đề và đoạn văn vào đầu ra Word.
 
-Recognition quality phụ thuộc vào original image clarity, model choice và document complexity.
+Chất lượng nhận dạng phụ thuộc vào độ rõ của ảnh gốc, lựa chọn mô hình và độ phức tạp của tài liệu.
 
-## File Types phù hợp với OCR
+## Loại Tệp Phù Hợp Nhất Cho OCR
 
-| File Type | Recommendation |
+| Loại tệp | Khuyến nghị |
 | --- | --- |
-| Clear screenshots | Recognize trực tiếp. |
-| Scans | Ưu tiên `PP-StructureV3`. |
-| Photographed documents | Enable orientation correction và document flattening. |
-| Tables, formulas, stamps | Ưu tiên structured models. |
-| Simple short text images | `PP-OCRv5` thường đủ. |
+| Ảnh chụp màn hình rõ | Nhận dạng trực tiếp. |
+| Bản quét | Ưu tiên `PP-StructureV3`. |
+| Tài liệu chụp ảnh | Bật sửa hướng và làm phẳng tài liệu. |
+| Bảng, công thức, con dấu | Ưu tiên mô hình có cấu trúc. |
+| Ảnh văn bản ngắn đơn giản | `PP-OCRv5` thường là đủ. |
 
-Images càng rõ và text càng thẳng thì results thường càng tốt.
+Ảnh rõ hơn và chữ thẳng hơn thường cho kết quả tốt hơn.
 
-## Common Cases
+## Trường Hợp Thường Gặp
 
-| Case | Meaning |
+| Trường hợp | Ý nghĩa |
 | --- | --- |
-| Recognition fails | Kiểm tra service token hoặc key đã save chưa. |
-| Recognition slow | Complex documents và large images mất thời gian hơn. |
-| Table incomplete | Thử structured model. |
-| Text có lỗi | Blur, glare và skew làm tăng recognition errors. Thử image rõ hơn. |
-| Word output có nhiều images | Structured models có thể preserve một số recognized images. Đây là bình thường. |
+| Nhận dạng thất bại | Kiểm tra token hoặc khóa của dịch vụ đã được lưu chưa. |
+| Nhận dạng chậm | Tài liệu phức tạp và ảnh lớn mất nhiều thời gian hơn. |
+| Bảng không đầy đủ | Thử mô hình có cấu trúc. |
+| Văn bản có lỗi | Mờ, lóa và lệch làm tăng lỗi nhận dạng. Thử ảnh rõ hơn. |
+| Đầu ra Word chứa nhiều hình ảnh | Mô hình có cấu trúc có thể giữ một số hình ảnh đã nhận dạng. Đây là bình thường. |
 
-### Google Quota Query Fails
+### Truy Vấn Hạn Mức Google Thất Bại
 
 Kiểm tra:
 
-1. Service account `JSON` đã được import.
-2. Service account có role `Monitoring Viewer`.
-3. `Cloud Vision API` đã enabled cho project.
+1. `JSON` của tài khoản dịch vụ đã được nhập.
+2. Tài khoản dịch vụ có vai trò `Monitoring Viewer`.
+3. `Cloud Vision API` đã bật cho dự án.
 
-Nếu chỉ cần OCR và không cần usage query, có thể bỏ qua service account JSON và chỉ điền `Google Vision API Key`.
+Nếu bạn chỉ cần OCR và không cần truy vấn mức dùng, có thể bỏ qua `JSON` của tài khoản dịch vụ và chỉ điền `Google Vision API Key`.
 
-## Quick Flow
+## Luồng Nhanh
 
 ```text
-Mở System Settings
--> Mở Other Settings
--> Điền OCR service credentials
+Open System Settings
+-> Open Other Settings
+-> Fill OCR service credentials
 -> Save
--> Quay lại File Management
--> Chọn file và nhấn OCR
--> Chọn model
--> Chờ recognition
--> Copy results hoặc export Markdown / PDF / Word
+-> Return to File Management
+-> Select a file and click OCR
+-> Choose a model
+-> Wait for recognition
+-> Copy results or export Markdown / PDF / Word
 ```

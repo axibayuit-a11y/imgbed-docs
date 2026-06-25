@@ -1,54 +1,67 @@
-# Añadir un canal GitLab Packages
+# Añadir un canal de GitLab Packages
 
-El canal GitLab Packages usa Generic Package Registry de GitLab como almacenamiento.
+## Qué necesita antes de empezar
 
-## Qué preparar
+Solo necesita tres cosas:
 
-| Requisito | Uso |
+| Requisito | Propósito |
 | --- | --- |
-| Cuenta de GitLab | Gestionar proyecto y token |
-| Proyecto GitLab | Lugar donde se guardará el paquete |
-| Access Token | Subir archivos al Package Registry |
-| Project ID | Identificar el proyecto desde ImgBed |
+| Cuenta de GitLab | Se usa para generar un token de acceso y ser propietario del proyecto. |
+| Token de acceso personal de GitLab | ImgBed lo usa para acceder a la API de GitLab, crear proyectos y cargar archivos en Generic Packages. |
+| Nombre del proyecto | Puede introducir solo el nombre del proyecto, por ejemplo `imgbed`. |
 
-## Crear Token
+## Pasos de configuración
 
-Desde GitLab, crea un Access Token con los permisos necesarios.
+### Paso 1: Iniciar sesión en GitLab y crear un token de acceso
 
-![Generar Token](../../image/upload/gitlab-packages/点击生成旧版令牌.png)
+1. Inicie sesión en GitLab.
+2. Haga clic en su avatar en la esquina superior derecha y abra `Preferences`.
+3. Abra `Access Tokens` en la barra lateral izquierda.
+4. Asigne al token un nombre reconocible.
+5. Elija una fecha de expiración según sus preferencias de mantenimiento.
+6. Seleccione el ámbito `api`.
+7. Copie y guarde el token inmediatamente después de crearlo.
 
-Marca permisos de lectura y escritura necesarios para paquetes.
+![Crear un token legacy](../../image/upload/gitlab-packages/点击生成旧版令牌.png)
 
-![Permisos Token](../../image/upload/gitlab-packages/勾选令牌权限.png)
+![Seleccionar permisos del token](../../image/upload/gitlab-packages/勾选令牌权限.png)
 
-El token puede mostrarse solo una vez. Cópialo y guárdalo.
+## Paso 2: Completar el canal GitLab Packages en ImgBed
 
-## Rellenar en ImgBed
+Después de seleccionar `GitLab Packages` en Ajustes de carga, complete los campos así:
 
-En Configuración de subida, elige `GitLab Packages`.
-
-| Campo | Valor |
+| Campo de UI | Qué introducir |
 | --- | --- |
-| Nombre del canal | Por ejemplo `GitLab Packages` |
-| GitLab Host | `https://gitlab.com` o tu instancia propia |
-| Project ID | ID del proyecto |
-| Token | Access Token |
-| Package Name | Nombre del paquete |
-| Version | Versión |
-| Ruta | Opcional |
+| Nombre del canal | Un nombre de su elección, como `GitLabPrincipal`. |
+| Token de acceso | El token de acceso personal de GitLab que acaba de crear. |
+| Nombre del proyecto | Un nombre corto de proyecto como `imgbed`, o una ruta completa como `username/imgbed`. |
+| Repositorio privado | Actívelo o desactívelo según sus necesidades. |
+| Observación | Opcional, por ejemplo `Canal de carga principal`. |
 
-![Configuración GitLab](../../image/upload/gitlab-packages/配置渠道内容.png)
+![Configurar el canal](../../image/upload/gitlab-packages/配置渠道内容.png)
 
-## Verificación
+## Paso 3: Guardar el canal
 
-1. Guarda el canal.
-2. Sube un archivo de prueba.
-3. Comprueba que aparece en Package Registry.
-4. Abre el enlace desde ImgBed.
+Después de completar los campos, haga clic en Guardar.
 
-## Errores habituales
+El sistema gestionará estos detalles:
 
-- Project ID incorrecto.
-- Token sin permiso de escritura en Package Registry.
-- GitLab Host mal escrito.
-- Package Registry deshabilitado en el proyecto.
+| Comportamiento del sistema | Descripción |
+| --- | --- |
+| Nombre corto de proyecto | ImgBed identifica la cuenta actual de GitLab y expande el valor a una ruta completa de proyecto. |
+| Ruta completa de proyecto | ImgBed usa la ruta `username/project` exactamente como se introdujo. |
+| Comprobación de proyecto | Si usa la ruta de la cuenta personal actual, ImgBed crea automáticamente el proyecto cuando no existe. Si introduce manualmente una ruta completa, ImgBed usa esa ruta directamente. |
+| Estado público/privado | La visibilidad del proyecto se sincroniza según el interruptor actual. |
+
+## Lista rápida
+
+```text
+Sign in to GitLab
+-> Create an Access Token
+-> Select only the api scope
+-> Return to ImgBed and enter the token and project name
+-> Save
+-> If only a project name is entered, ImgBed adds the current username automatically
+-> If username/project is entered, ImgBed uses it as-is
+-> Upload a test image
+```

@@ -47,7 +47,7 @@ Se sotto `Yandex ID API` vedi anche questi permessi, sono opzionali:
 | `Access to username, first name and surname, gender` | Opzionale |
 | `Access to email address` | Opzionale |
 
-Upload, download, eliminazione e quote dipendono soprattutto dai quattro permessi `Yandex.Disk REST API` indicati sopra.
+Le funzioni principali di caricamento, download, eliminazione e quota dipendono soprattutto dai quattro permessi `Yandex.Disk REST API` indicati sopra.
 
 ![Configura permessi Yandex Disk](../../image/upload/yandex/dataaccess配置软盘权限.png)
 
@@ -72,7 +72,7 @@ In Impostazioni di caricamento scegli `Yandex` e compila:
 | Client ID | `Client ID` dell'app Yandex |
 | Client Secret | `Client Secret` dell'app Yandex |
 | Refresh Token | Lascialo vuoto per ora |
-| Directory radice | Opzionale. Default `imgbed`. |
+| Directory radice | Opzionale. Valore predefinito `imgbed`. |
 
 ![Modifica configurazione canale](../../image/upload/yandex/编辑配置渠道.png)
 
@@ -94,19 +94,19 @@ Quando tutti i campi sono compilati, salva il canale.
 ## Flusso rapido
 
 ```text
-Apri Yandex OAuth Console
--> Crea un'app
--> Aggiungi https://your-domain.com/api/oauth/yandex/callback
--> Conferma i permessi Yandex Disk
--> Copia Client ID e Client Secret
--> Inserisci Client ID / Client Secret in ImgBed
--> Clicca Get Token
--> Copia il Refresh Token dalla pagina di callback
--> Incollalo in ImgBed e salva
+Open Yandex OAuth Console
+-> Create an app
+-> Add https://your-domain.com/api/oauth/yandex/callback
+-> Confirm Yandex Disk permissions
+-> Copy Client ID and Client Secret
+-> Fill Client ID / Client Secret into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## Riferimenti
 
 1. Registrare un'app Yandex: https://yandex.com/dev/id/doc/en/register-client
-2. Ottenere un authorization code via URL: https://yandex.com/dev/id/doc/en/codes/code-url
+2. Ottenere un codice di autorizzazione tramite URL: https://yandex.com/dev/id/doc/en/codes/code-url
 3. Endpoint token OAuth Yandex: https://yandex.com/dev/id/doc/en/tokens/token

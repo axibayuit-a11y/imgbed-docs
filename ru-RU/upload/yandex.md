@@ -94,15 +94,15 @@ https://your-domain.com/api/oauth/yandex/callback
 ## Короткий сценарий
 
 ```text
-Открыть Yandex OAuth Console
--> Создать app
--> Добавить https://your-domain.com/api/oauth/yandex/callback
--> Проверить permissions Yandex Disk
--> Скопировать Client ID и Client Secret
--> Ввести Client ID / Client Secret в ImgBed
--> Нажать Get Token
--> Скопировать Refresh Token с callback-страницы
--> Вставить его обратно в ImgBed и сохранить
+Open Yandex OAuth Console
+-> Create an app
+-> Add https://your-domain.com/api/oauth/yandex/callback
+-> Confirm Yandex Disk permissions
+-> Copy Client ID and Client Secret
+-> Fill Client ID / Client Secret into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## Ссылки

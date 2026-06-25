@@ -1,106 +1,138 @@
 # API de imagem aleatória e galeria pública
 
-As duas funções são configuradas em:
+Ambos os recursos são configurados em:
 
 ```text
-Configurações do sistema -> Outras configurações
+System Settings -> Other Settings
 ```
 
 ## API de imagem aleatória
 
-A API de imagem aleatória escolhe um arquivo aleatoriamente a partir dos diretórios definidos. Ela serve para fundos de site, rotação de avatar ou chamadas externas de imagens aleatórias.
+A API de imagem aleatória retorna um arquivo aleatório dos diretórios selecionados. Ela é útil para fundos de site, rotação de avatar ou chamadas de imagens aleatórias em páginas externas.
 
 Depois de ativada, use:
 
 ```text
-https://seu-dominio/random
+https://your-domain.com/random
 ```
 
-## Configurações da API
+## Configurações da API de imagem aleatória
 
-| Opção | Descrição |
+| Opção | Finalidade |
 | --- | --- |
-| Habilitar | Liga ou desliga `/random`; desligada, a rota nega acesso |
-| Diretórios | Limita de quais diretórios os arquivos podem ser escolhidos |
-| Exemplo de chamada | Gera um link de API pronto para copiar |
+| Ativar | Ativa ou desativa o endpoint `/random`. Quando desativado, o acesso é proibido. |
+| Diretórios | Limita quais diretórios a API de imagem aleatória pode usar. Diretórios não incluídos aqui não podem ser usados pela API. |
+| Demonstração de chamada | Gera links da API de imagem aleatória que você pode copiar diretamente. |
 
-Você pode escolher vários diretórios. Se permitir apenas `/landscape/` e `/portrait/`, a API só escolherá arquivos nesses diretórios ou subdiretórios.
+Você pode selecionar vários diretórios. Por exemplo, se apenas `/landscape/` e `/portrait/` forem permitidos, a API de imagem aleatória só poderá escolher arquivos desses diretórios e de seus subdiretórios.
 
-## Parâmetros principais
+## Parâmetros da API de imagem aleatória
 
-| Parâmetro | Exemplo | Descrição |
+| Parâmetro | Exemplo | Finalidade |
 | --- | --- | --- |
-| `dir` | `/landscape/` | Diretório alvo |
-| `content` | `image` | Tipo de mídia: `image`, `video`, `audio` ou combinação por vírgula |
-| `orientation` | `auto` | `portrait`, `landscape` ou `auto` |
-| `type` | `url` | Vazio redireciona; `url` retorna texto; `json` retorna JSON |
-| `origin` | `1` | Com `type=url`, retorna link completo |
-| `age` | `all-ages,r12` | Filtra por classificação etária |
-| `tag` | `wallpaper,sky` | Apenas arquivos com essas tags |
-| `ex` | `private` | Exclui arquivos com essas tags |
+| `dir` | `/landscape/` | Especifica o diretório aleatório. |
+| `content` | `image` | Especifica o tipo de mídia. Use `image`, `video`, `audio` ou combinações separadas por vírgula. |
+| `orientation` | `auto` | Filtra a orientação da imagem. Use `portrait`, `landscape` ou `auto`. |
+| `type` | `url` | Formato de retorno. Vazio significa redirecionamento, `url` retorna URL em texto simples, `json` retorna JSON. |
+| `origin` | `1` | Usado com `type=url` para retornar uma URL completa. |
+| `age` | `all-ages,r12` | Filtra por classificação etária. |
+| `tag` | `wallpaper,sky` | Retorna apenas arquivos que contêm essas tags. |
+| `ex` | `private` | Exclui arquivos que contêm essas tags. |
 
-## Formatos de resposta
+## Formatos de retorno
 
-Sem `type`, a API redireciona diretamente para o arquivo aleatório.
+Sem `type`, a API redireciona diretamente para a URL do arquivo aleatório.
 
-`type=url` retorna um link em texto puro.
+Com `type=url`, ela retorna uma URL em texto.
 
-`type=json` retorna informações do arquivo: link, ID, nome, tipo, tags, classificação e outros dados.
+Com `type=json`, ela retorna informações do arquivo, incluindo URL do arquivo, ID do arquivo, nome do arquivo, tipo do arquivo, tags, classificação e metadados relacionados.
 
-## Restrições de acesso
+## Regras de acesso
 
-A API respeita as regras públicas definidas no painel.
+A API de imagem aleatória segue as regras de acesso público:
 
 | Regra | Efeito |
 | --- | --- |
-| Limite de diretórios | Escolhe apenas arquivos em diretórios permitidos |
-| Lista negra | Arquivos bloqueados ficam fora do conjunto aleatório |
-| Modo lista branca | Retorna apenas arquivos permitidos explicitamente |
-| Classificação etária | Filtra R12, R16, R18 conforme o modo de acesso |
+| Restrição de diretório | Apenas arquivos em diretórios permitidos podem ser selecionados. |
+| Lista de bloqueio | Arquivos na lista de bloqueio são excluídos do conjunto aleatório. |
+| Modo de lista de permissões | Quando ativado, apenas arquivos permitidos para acesso público são retornados. |
+| Classificação etária | Conteúdo R12, R16, R18 e semelhante é filtrado pelo modo de acesso atual. |
 
-Se nenhum arquivo atender aos filtros, a API informa que não há resultado.
+Se nenhum arquivo corresponder após a filtragem, a API não retorna resultado correspondente.
+
+## Cache
+
+A API de imagem aleatória armazena em cache os conjuntos de candidatos dos diretórios para melhorar a velocidade.
+
+Depois que os arquivos mudam, o ImgBed atualiza a versão do cache do diretório, e as solicitações posteriores recriam o conjunto de candidatos. Diretórios vazios são armazenados em cache por pouco tempo para evitar consultas repetidas.
 
 ## Galeria pública
 
-A galeria pública oferece uma página somente leitura para visitantes navegarem pelos diretórios que você permite publicar.
+A galeria pública oferece uma página pública de navegação somente leitura para os diretórios que você permite que visitantes vejam.
+
+Depois de ativada, os visitantes podem abrir:
 
 ```text
-https://seu-dominio/browse/nome-do-diretorio
+https://your-domain.com/browse/directory-name
 ```
 
-## Configurações da galeria
+## Configurações da galeria pública
 
-| Opção | Descrição |
+| Opção | Finalidade |
 | --- | --- |
-| Habilitar | Liga ou desliga a galeria pública |
-| Modo de carregamento | Decide se usa arquivo original ou miniatura |
-| Diretórios públicos | Define quais diretórios visitantes podem abrir |
+| Ativar | Ativa ou desativa a galeria pública. Quando desativada, os visitantes não podem navegar por ela. |
+| Modo de carregamento de imagem | Controla se as prévias usam imagens originais ou miniaturas. |
+| Diretórios abertos | Define quais diretórios visitantes podem acessar. |
 
-Exemplo:
+## Modo de carregamento de imagem
+
+| Modo | Finalidade |
+| --- | --- |
+| Original | A página do visitante carrega os arquivos originais diretamente. |
+| Miniatura | A página do visitante prefere miniaturas para carregar mais rápido. |
+
+## Diretórios abertos
+
+Diretórios abertos determinam o que os visitantes podem ver.
+
+Por exemplo:
 
 ```text
 /1/,/2/,/landscape/,/portrait/
 ```
 
-Com essa configuração, visitantes podem acessar:
+Os visitantes podem então acessar:
 
 ```text
-https://seu-dominio/browse/1
-https://seu-dominio/browse/2
-https://seu-dominio/browse/landscape
-https://seu-dominio/browse/portrait
+https://your-domain.com/browse/1
+https://your-domain.com/browse/2
+https://your-domain.com/browse/landscape
+https://your-domain.com/browse/portrait
 ```
 
-Diretórios não publicados serão recusados.
+Subdiretórios também podem ser abertos, como `/2026/lucky/`. Os visitantes são bloqueados em diretórios que não estão abertos.
 
-## Recursos da galeria
+## Recursos da galeria pública
 
 | Recurso | Descrição |
 | --- | --- |
-| Navegar por diretórios | Ver arquivos e subdiretórios publicados |
-| Buscar | Buscar por nome, ID do arquivo ou tag |
-| Filtrar por tipo | Imagem, vídeo, áudio ou outros arquivos |
-| Filtrar por tag | Incluir ou excluir tags |
-| Filtrar por orientação | Horizontal, vertical e outros critérios |
-| Copiar link | Copiar o link público do arquivo |
-| Pré-visualizar mídia | Ver imagens, vídeos e áudio na página |
+| Navegar por diretórios | Visualiza arquivos e subdiretórios em diretórios abertos. |
+| Pesquisa | Pesquisa por nome do arquivo, ID do arquivo ou tags. |
+| Filtro de tipo | Filtra imagens, vídeos, áudio ou outros arquivos. |
+| Filtro de tags | Inclui ou exclui tags selecionadas. |
+| Filtro de orientação | Filtra imagens em paisagem ou retrato. |
+| Filtro de tempo | Filtra por intervalo de tempo de upload. |
+| Filtro de extensão | Filtra por extensão de arquivo. |
+| Copiar link | Copia links de acesso ao arquivo. |
+| Prévia de mídia | Visualiza ou reproduz imagens, vídeos e áudio na página do visitante. |
+
+## Regras de acesso da galeria pública
+
+A galeria pública também segue as regras de acesso público:
+
+| Regra | Efeito |
+| --- | --- |
+| Diretórios abertos | Apenas diretórios permitidos são exibidos. |
+| Modo de acesso | O conteúdo é filtrado pelo modo de acesso de classificação etária atual. |
+| Modo de lista de permissões | Quando ativado, apenas arquivos permitidos para acesso público são exibidos. |
+| Lista de bloqueio | Arquivos na lista de bloqueio ficam ocultos. |

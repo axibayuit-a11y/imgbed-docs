@@ -1,165 +1,166 @@
-# Image Moderation और Access Mode
+# छवि समीक्षा और पहुँच मोड
 
-Image moderation uploaded images को age rating देता है। Access mode तय करता है कि public access में कौन सी ratings दिख सकती हैं।
+छवि समीक्षा अपलोड की गई छवियों को आयु रेटिंग देती है। पहुँच मोड नियंत्रित करता है कि सार्वजनिक पहुँच में कौन-सी रेटिंग दिखाई देंगी।
 
-यह public gallery, public file URLs और random image API पर असर डालता है। Admin panel पर restriction नहीं लगती। Administrators सभी files देख और manage कर सकते हैं।
+यह सार्वजनिक गैलरी, सार्वजनिक फ़ाइल URL और यादृच्छिक छवि API को प्रभावित करता है। यह प्रशासन पैनल को सीमित नहीं करता। व्यवस्थापक अब भी सभी फ़ाइलें देख और प्रबंधित कर सकते हैं।
 
 ## कहाँ सेट करें
 
-Admin panel खोलें, फिर यहाँ जाएँ:
+प्रशासन पैनल खोलें, फिर यहाँ जाएँ:
 
 ```text
 System Settings -> Security Settings -> Upload Management -> Image Moderation
 ```
 
-मुख्य settings हैं:
+मुख्य सेटिंग हैं:
 
-- Access mode
-- Enable moderation
-- Moderation provider
+- पहुँच मोड
+- समीक्षा सक्षम करें
+- समीक्षा प्रदाता
 
-## Access Mode क्या करता है
+## पहुँच मोड क्या करता है
 
-Access mode तय करता है कि कौन सी age ratings publicly दिख सकती हैं।
+पहुँच मोड तय करता है कि कौन-सी आयु रेटिंग सार्वजनिक रूप से दिखाई जा सकती हैं।
 
-Current modes:
+मौजूदा मोड:
 
-| Access Mode | Publicly Visible Ratings |
+| पहुँच मोड | सार्वजनिक रूप से दिखने वाली रेटिंग |
 | --- | --- |
-| Adult mode | General, R12, R16, R18 |
-| Youth mode | General, R12, R16 |
-| Teen mode | General, R12 |
-| Child mode | केवल General |
+| वयस्क मोड | सामान्य, R12, R16, R18 |
+| युवा मोड | सामान्य, R12, R16 |
+| किशोर मोड | सामान्य, R12 |
+| बाल मोड | केवल सामान्य |
 
-Default `Adult mode` है।
+डिफ़ॉल्ट वयस्क मोड है।
 
-Private sites या mature content वाली sites के लिए Adult mode ठीक हो सकता है। अगर public gallery ज़्यादा conservative रखनी है, तो Youth, Teen या Child mode चुनें।
+निजी साइटों या वयस्क सामग्री वाली साइटों के लिए वयस्क मोड उपयुक्त हो सकता है। अधिक सावधान सार्वजनिक गैलरी के लिए युवा, किशोर या बाल मोड चुनें।
 
-## Moderation Enable करने पर क्या होता है
+## समीक्षा सक्षम करने से क्या होता है
 
-Moderation enabled होने पर ImgBed upload के दौरान selected moderation provider को call करता है और detected age rating save करता है।
+समीक्षा सक्षम होने पर ImgBed अपलोड के दौरान चुने गए समीक्षा प्रदाता को कॉल करता है और पहचानी गई आयु रेटिंग सहेजता है।
 
-मुख्य ratings:
+मुख्य रेटिंग:
 
-| Rating | Meaning |
+| रेटिंग | अर्थ |
 | --- | --- |
-| General | Safe public content |
-| R12 | हल्का sensitive content |
-| R16 | मध्यम sensitive content |
-| R18 | Adult content |
+| सामान्य | सुरक्षित सार्वजनिक सामग्री |
+| R12 | हल्की संवेदनशील सामग्री |
+| R16 | मध्यम संवेदनशील सामग्री |
+| R18 | वयस्क सामग्री |
 
-Public access तय करते समय moderation result इस्तेमाल होता है।
+सार्वजनिक पहुँच तय करते समय समीक्षा परिणाम का उपयोग होता है।
 
-अगर moderation enabled नहीं है, या पुरानी files में rating नहीं है, तो वे files unrated मानी जाती हैं। सिर्फ rating न होने की वजह से unrated files public gallery या random image API से automatically नहीं हटतीं।
+यदि समीक्षा सक्षम नहीं है, या पुरानी फ़ाइलों में रेटिंग नहीं है, तो उन फ़ाइलों को बिना रेटिंग माना जाता है। केवल रेटिंग न होने के कारण बिना रेटिंग वाली फ़ाइलें सार्वजनिक गैलरी या यादृच्छिक छवि API से स्वतः नहीं हटाई जातीं।
 
-## Moderation Provider चुनना
+## समीक्षा प्रदाता चुनना
 
-Available providers में शामिल हैं:
+उपलब्ध प्रदाता हैं:
 
 - moderatecontent.com
 - nsfwjs
 - Sightengine
 
-हर provider की requirements अलग होती हैं:
+हर प्रदाता की आवश्यकताएँ अलग हैं:
 
 - moderatecontent.com को आम तौर पर API Key चाहिए।
-- nsfwjs को आम तौर पर API endpoint URL चाहिए।
+- nsfwjs को आम तौर पर API अंतिम बिंदु URL चाहिए।
 - Sightengine को API user और API secret चाहिए।
 
-अपने account, availability और detection quality के हिसाब से provider चुनें। जब moderation enabled और सही तरह configured हो, ImgBed upload के दौरान image rating लिखने की कोशिश करता है।
+अपने खाते, उपलब्धता और पहचान गुणवत्ता के आधार पर चुनें। यदि समीक्षा सक्षम और सही तरह कॉन्फ़िगर है, तो ImgBed अपलोड के दौरान छवि रेटिंग लिखने की कोशिश करता है।
 
-## Public Gallery पर असर
+## सार्वजनिक गैलरी पर प्रभाव
 
-Public gallery access mode के हिसाब से files filter करती है।
-
-उदाहरण:
-
-- Adult mode: R18 images दिख सकती हैं।
-- Youth mode: R18 images छिप जाती हैं।
-- Teen mode: R16 और R18 images छिप जाती हैं।
-- Child mode: केवल General images दिखती हैं।
-
-यह सिर्फ normal public access पर असर डालता है। Admin panel सभी files दिखाता रहेगा।
-
-## Public File URLs पर असर
-
-Public file URLs वे direct image links हैं जिन्हें visitors खोलते हैं।
-
-अगर file rating current access mode में allowed है, तो ImgBed original image return करता है।
-
-अगर rating allowed level से ऊपर है, तो normal public access original image return नहीं करता। इसके बजाय ImgBed configured blocked result या blocked fallback image return करता है।
+सार्वजनिक गैलरी पहुँच मोड के अनुसार फ़ाइलें फ़िल्टर करती है।
 
 उदाहरण:
 
-- Current mode `Child mode` है।
-- एक image की rating R18 है।
-- Visitor public URL direct खोलता है।
-- ImgBed उस visitor को R18 original image return नहीं करता।
+- वयस्क मोड: R18 छवियाँ दिखाई दे सकती हैं।
+- युवा मोड: R18 छवियाँ छिपाई जाती हैं।
+- किशोर मोड: R16 और R18 छवियाँ छिपाई जाती हैं।
+- बाल मोड: केवल सामान्य रेटिंग वाली छवियाँ दिखाई जाती हैं।
 
-![Restricted file image](../../image/Safety/文件受限图.png)
+यह केवल सामान्य सार्वजनिक पहुँच को प्रभावित करता है। प्रशासन पैनल अब भी सभी फ़ाइलें दिखाता है।
 
-Admin panel में files देखने वाले administrators पर यह restriction लागू नहीं होती।
+## सार्वजनिक फ़ाइल URL पर प्रभाव
 
-## Random Image API पर असर
+सार्वजनिक फ़ाइल URL सीधे छवि लिंक होते हैं जिन्हें आगंतुक खोलते हैं।
 
-Random image API भी access mode के हिसाब से candidate pool filter करता है।
+यदि फ़ाइल की रेटिंग मौजूदा पहुँच मोड में अनुमत है, तो ImgBed मूल छवि लौटाता है।
 
-Child mode में random images केवल General-rated files से चुनी जाती हैं।
+यदि रेटिंग अनुमत स्तर से ऊपर है, तो सामान्य सार्वजनिक पहुँच मूल छवि नहीं लौटाती। इसके बजाय ImgBed कॉन्फ़िगर किया गया अवरुद्ध परिणाम या placeholder छवि लौटाता है।
 
-Youth mode में random images General, R12 और R16 files से आ सकती हैं, लेकिन R18 files से नहीं।
+उदाहरण:
 
-इससे random image API public gallery restrictions bypass नहीं कर पाता।
+- मौजूदा मोड बाल मोड है।
+- एक छवि की रेटिंग R18 है।
+- आगंतुक सार्वजनिक URL सीधे खोलता है।
+- ImgBed उस आगंतुक को मूल R18 छवि नहीं लौटाता।
 
-## List Rules से संबंध
+![सीमित फ़ाइल छवि](../../image/Safety/文件受限图.png)
 
-Access mode अकेला public access rule नहीं है। यह allow/block list rules के साथ मिलकर काम करता है।
+प्रशासन पैनल में फ़ाइलें देखने वाले व्यवस्थापक इस प्रतिबंध से प्रभावित नहीं होते।
+
+## यादृच्छिक छवि API पर प्रभाव
+
+यादृच्छिक छवि API भी अपने उम्मीदवार समूह को पहुँच मोड के अनुसार फ़िल्टर करता है।
+
+बाल मोड में यादृच्छिक छवियाँ केवल सामान्य रेटिंग वाली फ़ाइलों से चुनी जाती हैं।
+
+युवा मोड में यादृच्छिक छवियाँ सामान्य, R12 और R16 फ़ाइलों से आ सकती हैं, लेकिन R18 फ़ाइलों से नहीं।
+
+इससे यादृच्छिक छवि API सार्वजनिक गैलरी प्रतिबंधों को पार नहीं कर सकता।
+
+## सूची नियमों से संबंध
+
+पहुँच मोड सार्वजनिक पहुँच का अकेला नियम नहीं है। यह अनुमति सूची और अवरोध सूची नियमों के साथ काम करता है।
 
 सरल रूप में:
 
-- Allowlisted content पहले public माना जाता है।
-- Blocklisted content regular visitors द्वारा सीधे नहीं देखा जा सकता।
-- जो content किसी भी list में नहीं है, उसे फिर access mode के हिसाब से check किया जाता है।
+- अनुमति सूची की सामग्री पहले सार्वजनिक मानी जाती है।
+- अवरोध सूची की सामग्री सामान्य आगंतुक सीधे नहीं देख सकते।
+- जो सामग्री किसी सूची में नहीं है, उसे फिर पहुँच मोड से जाँचा जाता है।
 
-अगर कोई image age rating और list rules दोनों से restricted है, तो regular visitors original file direct नहीं देख पाएँगे।
+यदि कोई छवि आयु रेटिंग और सूची नियमों दोनों से सीमित है, तो सामान्य आगंतुक फिर भी मूल फ़ाइल सीधे नहीं देख सकते।
 
-## Recommended Settings
+## सुझाई गई सेटिंग
 
-Public sites के लिए:
+सार्वजनिक साइटों के लिए:
 
-- Moderation enable करें।
-- Site audience के हिसाब से access mode चुनें।
-- All-age visitors के लिए Child mode या Teen mode इस्तेमाल करें।
-- अगर mature content publicly नहीं दिखाना चाहते, तो Adult mode से बचें।
-- Admin panel में file ratings review करें और ज़रूरत पड़ने पर manually adjust करें।
+- समीक्षा सक्षम करें।
+- साइट के दर्शकों के अनुरूप पहुँच मोड चुनें।
+- सभी आयु के आगंतुकों के लिए बाल मोड या किशोर मोड उपयोग करें।
+- यदि वयस्क सामग्री सार्वजनिक रूप से नहीं दिखानी है, तो वयस्क मोड से बचें।
+- प्रशासन पैनल में फ़ाइल रेटिंग की समीक्षा करें और ज़रूरत होने पर हाथ से समायोजित करें।
 
-Private या personal sites के लिए:
+निजी या व्यक्तिगत साइटों के लिए:
 
-- Adult mode आम तौर पर ठीक रहता है।
-- उपयोगी लगे तो moderation enable करें।
-- Admin panel में ratings review और adjust करते रहें।
+- वयस्क मोड सामान्यतः ठीक है।
+- उपयोगी हो तो समीक्षा सक्षम करें।
+- प्रशासन पैनल में रेटिंग देखें और ज़रूरत के अनुसार बदलें।
 
-## FAQ
+## सामान्य प्रश्न
 
-### Access Mode बदलने के बाद क्या files Admin Panel से गायब हो जाएँगी?
-
-नहीं।
-
-Access mode केवल normal public access पर असर डालता है। Admin panel पर इसका असर नहीं होता।
-
-### Child Mode पर switch करने के बाद Public Gallery में कम Images क्यों दिखीं?
-
-Child mode केवल General-rated files को publicly दिखाता है। R12, R16 और R18 files filter हो जाती हैं।
-
-### क्या Public URLs अभी भी Adult Images खोल सकते हैं?
-
-अगर current access mode उस rating को allow नहीं करता, तो normal public URLs original image return नहीं करते।
-
-### क्या Random Image API Restricted Images return कर सकता है?
+### पहुँच मोड बदलने पर फ़ाइलें प्रशासन पैनल से गायब होंगी?
 
 नहीं।
 
-Random image API current access mode के हिसाब से candidates filter करता है।
+पहुँच मोड केवल सामान्य सार्वजनिक पहुँच को प्रभावित करता है। यह प्रशासन पैनल को प्रभावित नहीं करता।
 
-### पुरानी Unrated Images का क्या होगा?
+### बाल मोड पर जाने के बाद सार्वजनिक गैलरी कम छवियाँ क्यों दिखाती है?
 
-Unrated images सिर्फ moderation result न होने की वजह से automatically hidden नहीं होतीं। आप बाद में admin panel में उनकी ratings adjust कर सकते हैं।
+बाल मोड केवल सामान्य रेटिंग वाली फ़ाइलों को सार्वजनिक रूप से दिखाने देता है। R12, R16 और R18 फ़ाइलें फ़िल्टर हो जाती हैं।
+
+### क्या सार्वजनिक URL वयस्क छवियाँ खोल सकते हैं?
+
+यदि मौजूदा पहुँच मोड उस रेटिंग की अनुमति नहीं देता, तो सामान्य सार्वजनिक URL मूल छवि नहीं लौटाते।
+
+### क्या यादृच्छिक छवि API सीमित छवियाँ लौटा सकता है?
+
+नहीं।
+
+यादृच्छिक छवि API मौजूदा पहुँच मोड के अनुसार उम्मीदवारों को फ़िल्टर करता है।
+
+### पुरानी बिना रेटिंग वाली छवियों का क्या होता है?
+
+बिना रेटिंग वाली छवियाँ केवल इसलिए स्वतः नहीं छिपतीं कि उनके पास समीक्षा परिणाम नहीं है। आप बाद में प्रशासन पैनल में उनकी रेटिंग समायोजित कर सकते हैं।
+

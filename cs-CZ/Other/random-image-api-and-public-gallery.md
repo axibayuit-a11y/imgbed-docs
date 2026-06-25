@@ -1,14 +1,14 @@
-# Random Image API a veřejná galerie
+# API náhodných obrázků a veřejná galerie
 
-Obě funkce se nastavují v:
+Obě funkce se nastavují zde:
 
 ```text
 System Settings -> Other Settings
 ```
 
-## Random Image API
+## API náhodných obrázků
 
-Random Image API vrací jeden náhodný soubor z vybraných adresářů. Hodí se pro pozadí webu, rotaci avatarů nebo volání náhodných obrázků z externích stránek.
+API náhodných obrázků vrací jeden náhodný soubor z vybraných adresářů. Hodí se pro pozadí webu, rotaci avatarů nebo volání náhodných obrázků z externích stránek.
 
 Po zapnutí použijte:
 
@@ -16,59 +16,59 @@ Po zapnutí použijte:
 https://your-domain.com/random
 ```
 
-## Nastavení Random Image API
+## Nastavení API náhodných obrázků
 
 | Volba | Účel |
 | --- | --- |
-| Enable | Zapne nebo vypne endpoint `/random`. Při vypnutí je přístup zakázán. |
-| Directories | Omezuje adresáře, které může random API používat. Adresáře mimo seznam API nepoužije. |
-| Call demo | Vygeneruje odkazy random API, které můžete rovnou zkopírovat. |
+| Povolit | Zapne nebo vypne koncový bod `/random`. Když je vypnutý, přístup je zakázán. |
+| Adresáře | Omezuje adresáře, které může náhodné API používat. Adresáře mimo tento seznam API použít nemůže. |
+| Ukázka volání | Vygeneruje odkazy náhodného API, které můžete rovnou zkopírovat. |
 
-Můžete vybrat více adresářů. Pokud jsou povolené jen `/landscape/` a `/portrait/`, random API vybírá soubory jen z těchto adresářů a jejich podadresářů.
+Můžete vybrat více adresářů. Pokud jsou například povolené jen `/landscape/` a `/portrait/`, náhodné API může vybírat soubory jen z těchto adresářů a jejich podadresářů.
 
-## Parametry Random Image API
+## Parametry API náhodných obrázků
 
 | Parametr | Příklad | Účel |
 | --- | --- | --- |
 | `dir` | `/landscape/` | Určuje náhodný adresář. |
 | `content` | `image` | Určuje typ média. Použijte `image`, `video`, `audio` nebo kombinace oddělené čárkou. |
 | `orientation` | `auto` | Filtruje orientaci obrázku. Použijte `portrait`, `landscape` nebo `auto`. |
-| `type` | `url` | Formát odpovědi. Prázdné znamená redirect, `url` vrátí textový URL, `json` vrátí JSON. |
-| `origin` | `1` | S `type=url` vrátí plný URL. |
-| `age` | `all-ages,r12` | Filtruje podle věkového ratingu. |
-| `tag` | `wallpaper,sky` | Vrátí jen soubory obsahující tyto tagy. |
-| `ex` | `private` | Vyloučí soubory obsahující tyto tagy. |
+| `type` | `url` | Formát odpovědi. Prázdná hodnota znamená přesměrování, `url` vrátí textovou URL, `json` vrátí JSON. |
+| `origin` | `1` | S `type=url` vrátí úplnou URL. |
+| `age` | `all-ages,r12` | Filtruje podle věkového hodnocení. |
+| `tag` | `wallpaper,sky` | Vrátí jen soubory obsahující tyto štítky. |
+| `ex` | `private` | Vyloučí soubory obsahující tyto štítky. |
 
 ## Formáty odpovědi
 
 Bez `type` API přesměruje přímo na URL náhodného souboru.
 
-S `type=url` vrátí textový URL.
+S `type=url` vrátí textovou URL.
 
-S `type=json` vrátí informace o souboru včetně URL, ID souboru, názvu, typu, tagů, ratingu a metadat.
+S `type=json` vrátí informace o souboru včetně URL souboru, ID souboru, názvu souboru, typu souboru, štítků, hodnocení a souvisejících metadat.
 
 ## Pravidla přístupu
 
-Random Image API respektuje pravidla veřejného přístupu:
+API náhodných obrázků dodržuje pravidla veřejného přístupu:
 
 | Pravidlo | Dopad |
 | --- | --- |
-| Omezení adresáře | Vybrány mohou být jen soubory v povolených adresářích. |
-| Blocklist | Soubory na blocklist jsou vyloučené z náhodné množiny. |
-| Allowlist režim | Po zapnutí se vracejí jen soubory povolené pro veřejný přístup. |
-| Věkový rating | R12, R16, R18 a podobný obsah se filtruje podle aktuálního režimu přístupu. |
+| Omezení adresářů | Vybrány mohou být jen soubory v povolených adresářích. |
+| Seznam blokovaných | Soubory na seznamu blokovaných jsou z náhodného výběru vyloučeny. |
+| Režim seznamu povolených | Po zapnutí se vracejí jen soubory povolené pro veřejný přístup. |
+| Věkové hodnocení | R12, R16, R18 a podobný obsah se filtruje podle aktuálního režimu přístupu. |
 
-Pokud po filtrování nezůstane žádný soubor, API nevrátí odpovídající výsledek.
+Pokud po filtrování neodpovídá žádný soubor, API nevrátí žádný odpovídající výsledek.
 
-## Cache
+## Mezipaměť
 
-Random Image API cacheuje kandidátní množiny adresářů kvůli rychlosti.
+API náhodných obrázků ukládá kandidátní množiny adresářů do mezipaměti, aby zlepšilo rychlost.
 
-Po změnách souborů ImgBed aktualizuje verzi cache adresáře a další požadavky množinu kandidátů znovu sestaví. Prázdné adresáře se cacheují krátce, aby se zamezilo opakovaným dotazům.
+Po změně souborů ImgBed aktualizuje verzi mezipaměti adresáře a další požadavky kandidátní množinu znovu sestaví. Prázdné adresáře se ukládají do mezipaměti krátce, aby se zamezilo opakovaným dotazům.
 
 ## Veřejná galerie
 
-Veřejná galerie poskytuje návštěvníkům read-only stránku pro adresáře, které jim chcete zpřístupnit.
+Veřejná galerie poskytuje veřejnou stránku jen pro čtení pro adresáře, které chcete návštěvníkům zpřístupnit.
 
 Po zapnutí mohou návštěvníci otevřít:
 
@@ -80,16 +80,16 @@ https://your-domain.com/browse/directory-name
 
 | Volba | Účel |
 | --- | --- |
-| Enable | Zapne nebo vypne veřejnou galerii. Při vypnutí ji návštěvníci nemohou procházet. |
-| Image loading mode | Určuje, zda náhledy používají originály nebo miniatury. |
-| Open directories | Nastavuje, které adresáře mohou návštěvníci otevřít. |
+| Povolit | Zapne nebo vypne veřejnou galerii. Když je vypnutá, návštěvníci ji nemohou procházet. |
+| Režim načítání obrázků | Určuje, zda náhledy používají původní obrázky nebo miniatury. |
+| Otevřené adresáře | Nastavuje, ke kterým adresářům mohou návštěvníci přistupovat. |
 
 ## Režim načítání obrázků
 
 | Režim | Účel |
 | --- | --- |
-| Original | Stránka návštěvníka načítá přímo původní soubory. |
-| Thumbnail | Stránka návštěvníka preferuje miniatury pro rychlejší načítání. |
+| Původní | Stránka návštěvníka načítá původní soubory přímo. |
+| Miniatura | Stránka návštěvníka upřednostňuje miniatury pro rychlejší načítání. |
 
 ## Otevřené adresáře
 
@@ -110,29 +110,29 @@ https://your-domain.com/browse/landscape
 https://your-domain.com/browse/portrait
 ```
 
-Lze otevřít i podadresáře, například `/2026/lucky/`. Adresáře, které nejsou otevřené, jsou pro návštěvníky blokované.
+Otevřít lze i podadresáře, například `/2026/lucky/`. Adresáře, které nejsou otevřené, jsou pro návštěvníky blokované.
 
 ## Funkce veřejné galerie
 
 | Funkce | Popis |
 | --- | --- |
 | Procházení adresářů | Zobrazení souborů a podadresářů v otevřených adresářích. |
-| Vyhledávání | Hledání podle názvu souboru, ID souboru nebo tagů. |
+| Vyhledávání | Hledání podle názvu souboru, ID souboru nebo štítků. |
 | Filtr typu | Filtrování obrázků, videí, audia nebo jiných souborů. |
-| Filtr tagů | Zahrnutí nebo vyloučení vybraných tagů. |
+| Filtr štítků | Zahrnutí nebo vyloučení vybraných štítků. |
 | Filtr orientace | Filtrování obrázků na šířku nebo na výšku. |
-| Časový filtr | Filtrování podle rozsahu času uploadu. |
+| Časový filtr | Filtrování podle rozsahu času nahrání. |
 | Filtr přípony | Filtrování podle přípony souboru. |
 | Kopírování odkazu | Kopírování přístupových odkazů k souborům. |
 | Náhled médií | Zobrazení nebo přehrání obrázků, videí a audia na stránce návštěvníka. |
 
 ## Pravidla přístupu veřejné galerie
 
-Veřejná galerie také respektuje pravidla veřejného přístupu:
+Veřejná galerie také dodržuje pravidla veřejného přístupu:
 
 | Pravidlo | Dopad |
 | --- | --- |
 | Otevřené adresáře | Zobrazují se jen povolené adresáře. |
-| Access mode | Obsah se filtruje podle aktuálního režimu věkového ratingu. |
-| Allowlist režim | Po zapnutí se zobrazují jen soubory povolené pro veřejný přístup. |
-| Blocklist | Soubory na blocklist jsou skryté. |
+| Režim přístupu | Obsah se filtruje podle aktuálního režimu přístupu s věkovým hodnocením. |
+| Režim seznamu povolených | Po zapnutí se zobrazují jen soubory povolené pro veřejný přístup. |
+| Seznam blokovaných | Soubory na seznamu blokovaných jsou skryté. |

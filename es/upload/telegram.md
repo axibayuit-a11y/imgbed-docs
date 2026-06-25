@@ -1,83 +1,122 @@
-# Añadir un canal Telegram
+# Añadir un canal de Telegram
 
-Para usar Telegram como almacenamiento, crea un bot y añádelo al canal donde se guardarán los archivos.
+## Qué necesita antes de empezar
 
-## Qué preparar
-
-| Requisito | Uso |
+| Requisito | Propósito |
 | --- | --- |
-| Cuenta de Telegram | Crear bot y canal |
-| `@BotFather` | Crear el bot |
-| Canal de Telegram | Destino de archivos |
-| `@userinfobot` | Obtener el Chat ID del canal |
+| Cuenta de Telegram | Se usa para crear el bot y el canal de almacenamiento. |
+| `@BotFather` | Se usa para crear un bot de Telegram. |
+| Un canal de Telegram | Destino final de almacenamiento de los archivos. |
+| `@userinfobot` | Se usa para consultar el `Chat ID` del canal. |
 
-## Crear bot
+## Dónde añadirlo
 
-1. Busca `@BotFather` en Telegram.
-2. Abre el chat y envía `/newbot`.
-3. Introduce nombre visible y username. El username suele tener que terminar en `bot`.
-4. Copia el Token que devuelve BotFather.
+1. Abra Ajustes del sistema.
+2. Vaya a Ajustes de carga.
+3. Haga clic en Añadir canal en la esquina superior derecha.
+4. Seleccione `Telegram`.
 
-![Bot Token](../../image/upload/telegram/保存机器人令牌.png)
+## Referencia de campos
 
-## Crear canal de almacenamiento
+| Campo | Qué hace | Obligatorio |
+| --- | --- | --- |
+| Nombre del canal | Un nombre fácil de reconocer para este canal, como "Telegram Principal". | Obligatorio |
+| Activo | Activa o desactiva este canal. | Recomendado |
+| Bot Token | El token de su bot de Telegram. | Obligatorio |
+| Session ID (Chat ID) | El ID del canal de Telegram. | Obligatorio |
+| URL del proxy de retransmisión (opcional) | Úselo solo si el acceso a Telegram es inestable. Introduzca la URL completa del proxy, incluido `https://`. | Opcional |
+| Observación | Notas para mantenimiento futuro. | Opcional |
 
-Crea un nuevo canal en Telegram. Puede ser público o privado.
+## Pasos de configuración
 
-![Crear canal](../../image/upload/telegram/新建频道.png)
+### 1. Crear un bot de Telegram
 
-## Añadir el bot al canal
+1. Abra Telegram y busque `@BotFather`.
+2. Abra el chat y haga clic en `Start`.
+3. Envíe `/newbot`.
+4. Siga las instrucciones para introducir el nombre visible del bot.
+5. Siga las instrucciones para introducir el nombre de usuario del bot. Normalmente debe terminar en `bot`.
+6. Cuando se cree el bot, `@BotFather` devolverá un token de bot.
 
-Desde la configuración del canal, añade el bot como miembro o administrador.
+Este token es el `Bot Token` que debe introducir en ImgBed.
 
-![Añadir bot al canal](../../image/upload/telegram/邀请机器人进频道里.png)
+![Guardar el token del bot](../../image/upload/telegram/保存机器人令牌.png)
 
-Para subidas más estables, conviene darle permisos de administrador.
+### 2. Crear un canal
 
-## Obtener Chat ID
+1. En Telegram, haga clic en Nuevo canal.
+2. Introduzca un nombre de canal.
+3. Termine de crear el canal.
 
-1. Busca `@userinfobot` en Telegram.
-2. Pulsa `Start`.
-3. Elige `Channel`.
-4. Envía al bot un mensaje del canal objetivo.
-5. Copia el número que aparece como `Id: -100...`.
+Se pueden usar canales públicos y privados.
 
-![Obtener Chat ID](../../image/upload/telegram/获取频道id.png)
+![Crear un canal](../../image/upload/telegram/新建频道.png)
 
-## Rellenar en ImgBed
+### 3. Añadir el bot al canal
 
-En Configuración de subida, elige `Telegram`.
+1. Abra el canal que acaba de crear.
+2. Abra los ajustes del canal.
+3. Añada un miembro o administrador.
+4. Busque el nombre de usuario del bot que creó.
+5. Añada el bot al canal.
 
-| Campo | Valor |
+Para cargas más fiables, conceda permisos de administrador al bot.
+
+![Invitar el bot al canal](../../image/upload/telegram/邀请机器人进频道里.png)
+
+### 4. Obtener el Channel ID con User Info - Get ID - IDbot
+
+1. Busque `@userinfobot` en Telegram. Su nombre visible suele ser `User Info - Get ID - IDbot`.
+2. Abra el chat y haga clic en `Start`.
+3. Elija `Channel` entre las opciones del bot.
+4. En el selector de mensajes, seleccione el canal de destino y envíelo a `@userinfobot`.
+5. Cuando `@userinfobot` devuelva el resultado, copie el número que aparece como `Id: -100...`.
+
+El número que empieza por `-100` es el `Session ID (Chat ID)` que necesita ImgBed.
+
+![Obtener el Channel ID](../../image/upload/telegram/获取频道id.png)
+
+### 5. Completar el canal de Telegram en ImgBed
+
+Vuelva al diálogo de configuración del canal y complete los campos así:
+
+| Campo de la interfaz | Valor |
 | --- | --- |
-| Nombre del canal | Por ejemplo `Telegram Main` |
-| Bot Token | Token de `@BotFather` |
-| Session ID / Chat ID | ID del canal que empieza por `-100` |
-| Relay Proxy URL | Opcional, solo si Telegram va inestable |
-| Nota | Opcional |
+| Identificador del canal | Nombre personalizado del canal, por ejemplo `TelegramPrincipal`. |
+| Activo | Recomendado. |
+| Bot Token | El token del bot obtenido de `@BotFather`. |
+| Session ID (Chat ID) | El número `-100...` devuelto por `@userinfobot`. |
+| URL del proxy de retransmisión (opcional) | Solo si es necesario, por ejemplo `https://your-tg-proxy.example.com`. |
+| Observación | Notas opcionales. |
 
-![Configuración Telegram](../../image/upload/telegram/编辑配置.png)
+Cuando termine, haga clic en Guardar.
 
-## Verificación
+![Editar la configuración](../../image/upload/telegram/编辑配置.png)
 
-1. Guarda el canal.
-2. Sube una imagen de prueba.
-3. Comprueba que aparece en el canal de Telegram.
-4. Abre el enlace de ImgBed.
+## Cómo verificarlo
 
-## Flujo rápido
+| Comprobación | Cómo verificarlo |
+| --- | --- |
+| Aparece la tarjeta del canal | Después de guardar, la página Ajustes de carga debería mostrar una tarjeta de canal Telegram. |
+| El canal se puede activar | El interruptor Activo debería permanecer activado. |
+| La configuración está guardada | La vista de detalle debería mostrar que Bot Token y Chat ID quedaron guardados. |
+| La carga funciona | Cargue una imagen de prueba y confirme que aparece en el canal de Telegram de destino. |
+
+## Lista rápida
 
 ```text
-Crear bot con @BotFather
--> Copiar Bot Token
--> Crear canal de Telegram
--> Añadir bot al canal y darle permisos
--> Obtener Chat ID -100 con @userinfobot
--> Rellenar Bot Token y Chat ID en ImgBed
--> Guardar y probar subida
+Create a bot with @BotFather
+-> Save the Bot Token
+-> Create a Telegram channel
+-> Add the bot to the channel and grant administrator permissions
+-> Search for @userinfobot and choose Channel
+-> Forward any message from the channel to @userinfobot
+-> Copy the returned Id: -100...
+-> Enter the Bot Token and Chat ID in ImgBed
+-> Save and upload a test image
 ```
 
 ## Referencias
 
-1. Telegram Bot: https://core.telegram.org/bots
+1. Telegram bots: https://core.telegram.org/bots
 2. Telegram Bot API: https://core.telegram.org/bots/api

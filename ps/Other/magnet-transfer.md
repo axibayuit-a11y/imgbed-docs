@@ -1,97 +1,97 @@
-# Magnet Transfer
+# د Magnet لینک انتقال
 
-Magnet transfer له magnet link څخه files download کوي او په اتومات ډول یې هغه cloud storage channel ته upload کوي چې تاسې ټاکلی وي.
+د Magnet انتقال د Magnet لینک له لارې فایلونه ډاونلوډوي او په اتومات ډول یې هغه د کلاوډ ذخیرې چینل ته اپلوډوي چې تاسو ټاکلی وي.
 
-دا د anime episodes، videos، archives او ورته files د transfer لپاره ګټور دی. magnet link paste کړئ، ImgBed background download task جوړوي. کله چې download بشپړ شي، file ImgBed ته upload کېږي او final link د upload list کې ښکاري.
+دا د انیمې برخو، ویډیوګانو، ارشیف فایلونو او ورته فایلونو د انتقال لپاره ګټور دی. Magnet لینک ولګوئ، ImgBed په شالید کې د ډاونلوډ دنده جوړوي. کله چې ډاونلوډ بشپړ شي، فایل ImgBed ته اپلوډېږي او وروستی لینک د اپلوډ په لست کې ښکاري.
 
-![Magnet transfer](../../image/other/磁力链接/磁力链接.png)
+![د Magnet لینک انتقال](../../image/other/磁力链接/磁力链接.png)
 
 ## چېرته یې وکاروئ
 
-د magnet transfer entry د homepage upload area کې دی.
+د Magnet انتقال د کارولو ځای د کورپاڼې د اپلوډ په برخه کې دی.
 
-magnet link input box ته paste کړئ، `Transfer` وټاکئ، بیا upload وکړئ.
+Magnet لینک د داخلولو په خانه کې ولګوئ، `Transfer` وټاکئ، بیا اپلوډ وکړئ.
 
-![Upload anime](../../image/other/磁力链接/上传番剧.png)
+![د انیمې اپلوډ](../../image/other/磁力链接/上传番剧.png)
 
 ## له لومړي استعمال مخکې
 
-لومړی په admin panel کې magnet transfer تنظیم کړئ.
+لومړی په اداري پنل کې Magnet انتقال تنظیم کړئ.
 
-عموما دې ته اړتیا لرئ:
+عموما دې شیانو ته اړتیا وي:
 
-1. د download task چلولو لپاره GitHub account.
-2. cloud upload channel، لکه Google Drive یا OneDrive.
-3. target upload directory.
-4. task timeout.
+1. د ډاونلوډ دندې د چلولو لپاره GitHub حساب.
+2. د کلاوډ اپلوډ چینل، لکه Google Drive یا OneDrive.
+3. د اپلوډ هدف ډایرکټري.
+4. د دندې وخت‌حد.
 
-کله چې settings تیار شول، homepage ته راشئ او د transfer پیل لپاره magnet link paste کړئ.
+کله چې تنظیمات چمتو شي، کورپاڼې ته بېرته لاړ شئ او د انتقال د پیل لپاره Magnet لینک ولګوئ.
 
-## Magnet Link Upload کول
+## د Magnet لینک اپلوډ
 
-1. magnet link د homepage upload box ته paste کړئ.
-2. ډاډه شئ mode پر `Transfer` ټاکل شوی دی.
-3. upload کلیک کړئ.
-4. انتظار وکړئ چې ImgBed magnet task جوړ کړي.
-5. کله چې task پیل شي، د progress کتلو لپاره په ښي ښکته کونج کې `Magnet Tasks` floating panel وکاروئ.
+1. Magnet لینک د کورپاڼې د اپلوډ په خانه کې ولګوئ.
+2. ډاډه شئ چې حالت پر `Transfer` ټاکل شوی دی.
+3. د اپلوډ تڼۍ کلیک کړئ.
+4. انتظار وکړئ چې ImgBed د Magnet دنده جوړه کړي.
+5. کله چې دنده پیل شي، د پرمختګ د کتلو لپاره په ښي ښکته کونج کې خوځنده `Magnet Tasks` پنل وکاروئ.
 
-Download او upload وخت نیولای شي. speed د magnet resource، GitHub runtime environment او ټاکل شوي cloud storage channel پورې تړلی دی.
+ډاونلوډ او اپلوډ وخت نیولای شي. سرعت د Magnet سرچینې، د GitHub د اجرا چاپېریال او ټاکل شوي د کلاوډ ذخیرې چینل پورې تړلی دی.
 
-![Magnet downloading](../../image/other/磁力链接/磁力链接下载中.png)
+![Magnet ډاونلوډ کېږي](../../image/other/磁力链接/磁力链接下载中.png)
 
 ## له بشپړېدو وروسته
 
-کله چې task بشپړ شي، upload list د file name او link ښيي.
+کله چې دنده بشپړه شي، د اپلوډ لست د فایل نوم او لینک ښيي.
 
-videos د video preview ښيي، images د image preview، او نور files عادي file icon ښيي.
+ویډیوګانې د ویډیو مخکتنه ښيي، انځورونه د انځور مخکتنه ښيي، او نور فایلونه عادي فایل نښه ښيي.
 
-![Downloaded video](../../image/other/磁力链接/下载好后的视频.png)
+![ډاونلوډ شوې ویډیو](../../image/other/磁力链接/下载好后的视频.png)
 
-دا copy کولای شئ:
+تاسو دا کاپي کولای شئ:
 
-| Link Type | Use Case |
+| د لینک ډول | کارونه |
 | --- | --- |
-| Original link | مستقیم file access |
-| Markdown | Markdown posts یا notes |
-| HTML | Web page code |
-| BBCode | هغه forums چې BBCode ملاتړ کوي |
+| اصلي لینک | فایل ته مستقیم لاسرسی |
+| Markdown | Markdown لیکنې یا یادښتونه |
+| HTML | د وېب پاڼې کوډ |
+| BBCode | هغه فورمونه چې BBCode ملاتړ کوي |
 
-## Magnet Task Panel
+## د Magnet دندو پنل
 
-د ښي ښکته magnet task panel د task count، task name، progress او final status ښيي.
+د ښي ښکته Magnet دندو پنل د دندو شمېر، د دندې نوم، پرمختګ او وروستی حالت ښيي.
 
-عام states:
+عام حالتونه:
 
-| Status | معنا |
+| حالت | معنا |
 | --- | --- |
-| Waiting | task جوړ شوی او د چلولو انتظار کوي. |
-| Downloading | magnet resource download کېږي. |
-| Uploading | file download شوی او cloud storage ته upload کېږي. |
-| Completed | upload بریالی دی او link copy کېدای شي. |
-| Failed | task بریالی بشپړ نه شو. message وګورئ او بیا هڅه وکړئ. |
+| په انتظار | دنده جوړه شوې او د چلولو انتظار کوي. |
+| ډاونلوډ کېږي | Magnet سرچینه ډاونلوډېږي. |
+| اپلوډ کېږي | فایل ډاونلوډ شوی او کلاوډ زېرمه ته اپلوډېږي. |
+| بشپړ شو | اپلوډ بریالی شو او لینک کاپي کېدای شي. |
+| ناکام شو | دنده په بریالیتوب بشپړه نه شوه. پیغام وګورئ او بیا هڅه وکړئ. |
 
-## Tips
+## سپارښتنې
 
-- که magnet link څو files ولري، ImgBed د display لپاره اصلي completed file ته priority ورکوي.
-- لوی files ډېر وخت نیسي. د task تر بشپړېدو مخکې page refresh مه کوئ.
-- که magnet resource available peers ونه لري، ډېر slow یا fail کېدای شي.
-- که cloud account quota نه لري، authorization expire شوی وي، یا upload directory غلط وي، task fail کېدای شي.
-- Video preview د upload تر بشپړېدو وروسته څو ثانیې وخت نیولای شي.
+- که Magnet لینک څو فایلونه ولري، ImgBed د ښودلو لپاره اصلي بشپړ شوي فایل ته لومړیتوب ورکوي.
+- لوی فایلونه ډېر وخت نیسي. د پاڼې د تازه کولو مخکې د دندې تر بشپړېدو انتظار وکړئ.
+- که Magnet سرچینه شته همتاوې ونه لري، دنده ډېره ورو کېدای شي یا ناکامه کېدای شي.
+- که د کلاوډ حساب سهمیه ختمه وي، اجازه پای ته رسېدلې وي، یا د اپلوډ ډایرکټري غلطه وي، دنده ناکامه کېدای شي.
+- د ویډیو مخکتنه ښايي د اپلوډ له بشپړېدو وروسته څو ثانیې وخت واخلي.
 
-## FAQ
+## پرله‌پسې پوښتنې
 
-### له Magnet Link Paste وروسته هېڅ نه پیلېږي
+### د Magnet لینک له لګولو وروسته هېڅ نه پیلېږي
 
-ډاډه شئ magnet transfer په admin panel کې enabled دی او usable GitHub account او cloud channel ټاکل شوي دي.
+ډاډه شئ چې Magnet انتقال په اداري پنل کې فعال دی او کارېدونکی GitHub حساب او کلاوډ چینل ټاکل شوي دي.
 
-### Download تل Slow دی
+### ډاونلوډ تل ورو دی
 
-Magnet speed پخپله resource پورې تړلی دی. که available peers نه وي، download ډېر slow یا ناشونی کېدای شي.
+د Magnet سرعت پخپله سرچینې پورې تړلی دی. که شته همتاوې نه وي، ډاونلوډ ډېر ورو یا ناشونی کېدای شي.
 
-### له Upload وروسته Preview نه ښکاري
+### له اپلوډ وروسته مخکتنه نه ښکاري
 
-لومړی وګورئ file link پرانیستل کېږي. Video files ښايي په browser کې د load لپاره لږ وخت وغواړي، یا link مستقیم پرانیزئ.
+لومړی تایید کړئ چې د فایل لینک پرانیستل کېږي. ویډیو فایلونه ښايي په براوزر کې د بارېدو لپاره لږ وخت وغواړي، یا لینک مستقیم پرانیزئ.
 
-### که Task Fail شي څه وګورم؟
+### که دنده ناکامه شي څه وګورم؟
 
-وګورئ magnet link valid دی، cloud channel کار کوي، او upload directory سمه ده. بیا task submit کړئ.
+وګورئ چې Magnet لینک سم دی، کلاوډ چینل کار کوي، او د اپلوډ ډایرکټري سمه ده. بیا دنده له سره وسپارئ.

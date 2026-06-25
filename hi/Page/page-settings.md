@@ -1,67 +1,67 @@
-# Page Settings
+# पृष्ठ सेटिंग्स
 
-Page settings site display, upload page defaults, background images और admin panel appearance control करती हैं।
+पृष्ठ सेटिंग्स साइट के प्रदर्शन, अपलोड पृष्ठ के डिफ़ॉल्ट मानों, पृष्ठभूमि छवियों और प्रशासन पैनल के स्वरूप को नियंत्रित करती हैं।
 
-## Global Settings
+## वैश्विक सेटिंग्स
 
-| Option | Purpose |
+| विकल्प | उद्देश्य |
 | --- | --- |
-| Site title | Browser tab में दिखने वाला title। |
-| Site icon | Browser tab में दिखने वाला छोटा icon। |
-| ImgBed name | Frontend pages पर दिखने वाला नाम। |
-| ImgBed logo | Frontend pages पर दिखने वाली logo image। |
-| Logo link | Logo या avatar click करने पर खुलने वाला URL। |
-| Background switch interval | Multiple backgrounds के rotation interval, milliseconds में। `60000` मतलब 60 seconds। |
-| Background opacity | Background image opacity `0` से `1` तक। Lower values हल्की दिखती हैं। |
-| Default URL prefix | Image links generate करते समय इस्तेमाल होने वाला prefix। Empty होने पर current site domain इस्तेमाल होता है। |
+| साइट शीर्षक | ब्राउज़र टैब में दिखने वाला शीर्षक। |
+| साइट आइकन | ब्राउज़र टैब में दिखने वाला छोटा आइकन। |
+| ImgBed नाम | सार्वजनिक इंटरफ़ेस के पृष्ठों पर दिखने वाला नाम। |
+| ImgBed लोगो | सार्वजनिक इंटरफ़ेस के पृष्ठों पर दिखने वाली लोगो छवि। |
+| लोगो लिंक | लोगो या अवतार पर क्लिक करने पर खुलने वाला URL। |
+| पृष्ठभूमि बदलने का अंतराल | कई पृष्ठभूमियों के रोटेशन का अंतराल, मिलीसेकंड में। `60000` का अर्थ 60 सेकंड है। |
+| पृष्ठभूमि की अपारदर्शिता | पृष्ठभूमि छवि की अपारदर्शिता `0` से `1` तक। कम मान छवि को हल्का दिखाते हैं। |
+| डिफ़ॉल्ट URL उपसर्ग | छवि लिंक बनाते समय उपयोग किया जाने वाला उपसर्ग। खाली होने पर वर्तमान साइट डोमेन उपयोग होता है। |
 
-## Client Settings
+## क्लाइंट सेटिंग्स
 
-| Option | Purpose |
+| विकल्प | उद्देश्य |
 | --- | --- |
-| Announcement | Upload page के top पर दिखने वाला announcement। HTML supported है। |
-| Default upload channel | Upload page पर default selected upload channel। Smart Dispatch भी चुन सकते हैं। |
-| Default upload directory | Default upload directory, जैसे `/user/`। Empty या `/` मतलब root। |
-| Default naming method | Upload के बाद filename generate करने की default strategy। नीचे देखें। |
-| Convert to WebP by default | Upload से पहले images को WebP में convert करता है। |
-| Enable compression by default | Upload से पहले browser में locally images compress करता है। |
-| Default compression threshold | Image इस size से बड़ी होने पर automatically compress होगी, MB में। |
-| Default target size | Compression के बाद target file size, MB में। |
-| Login page background | User login page की background image। |
-| Upload page background | Upload page की background image। |
-| Footer portal link | Footer portal button click करने पर खुलने वाला URL। |
-| Hide footer | Enabled होने पर frontend footer hide करता है। |
+| घोषणा | अपलोड पृष्ठ के शीर्ष पर दिखने वाली घोषणा। HTML समर्थित है। |
+| डिफ़ॉल्ट अपलोड चैनल | अपलोड पृष्ठ पर डिफ़ॉल्ट रूप से चुना गया अपलोड चैनल। Smart Dispatch भी चुना जा सकता है। |
+| डिफ़ॉल्ट अपलोड निर्देशिका | डिफ़ॉल्ट अपलोड निर्देशिका, जैसे `/user/`। खाली या `/` का अर्थ रूट है। |
+| डिफ़ॉल्ट नामकरण विधि | अपलोड के बाद फ़ाइल नाम बनाने की डिफ़ॉल्ट रणनीति। नीचे देखें। |
+| डिफ़ॉल्ट रूप से WebP में बदलें | अपलोड से पहले छवियों को WebP में बदलता है। |
+| डिफ़ॉल्ट रूप से संपीड़न सक्षम करें | अपलोड से पहले ब्राउज़र में स्थानीय रूप से छवियों को संपीड़ित करता है। |
+| डिफ़ॉल्ट संपीड़न सीमा | छवि इस आकार से अधिक होने पर अपने-आप संपीड़ित होगी, इकाई MB। |
+| डिफ़ॉल्ट लक्ष्य आकार | संपीड़न के बाद लक्ष्य फ़ाइल आकार, इकाई MB। |
+| लॉगिन पृष्ठ की पृष्ठभूमि | उपयोगकर्ता लॉगिन पृष्ठ की पृष्ठभूमि छवि। |
+| अपलोड पृष्ठ की पृष्ठभूमि | अपलोड पृष्ठ की पृष्ठभूमि छवि। |
+| पादलेख पोर्टल लिंक | पादलेख पोर्टल बटन द्वारा खोला जाने वाला URL। |
+| पादलेख छिपाएँ | सक्षम होने पर सार्वजनिक इंटरफ़ेस का पादलेख छिपाता है। |
 
-## Admin Settings
+## प्रशासन सेटिंग्स
 
-| Option | Purpose |
+| विकल्प | उद्देश्य |
 | --- | --- |
-| Admin login background | Admin login page की background image। |
-| Admin background | Admin pages की background image। एक image URL या multiple URLs इस्तेमाल करें। |
-| Image loading mode | Admin file list के लिए preview loading mode। Original original images load करता है। Smart loading public images के लिए thumbnails और restricted images के लिए originals prefer करता है। |
-| Thumbnail source | Thumbnails generate करने वाली service: wsrv.nl, Cloudflare Image Resizing या WordPress Photon। Cloudflare Image Resizing select करने से पहले Cloudflare में enabled होना चाहिए। |
-| Live2D widget | Admin panel में Live2D character दिखाता है। |
-| Firework click effect | Page click करने पर firework effect दिखाता है। |
-| Star cursor trail | Mouse move करने पर star trail दिखाता है। |
+| प्रशासन लॉगिन पृष्ठ की पृष्ठभूमि | प्रशासन लॉगिन पृष्ठ की पृष्ठभूमि छवि। |
+| प्रशासन पृष्ठभूमि | प्रशासन पृष्ठों की पृष्ठभूमि छवि। एक छवि URL या कई URL उपयोग करें। |
+| छवि लोडिंग मोड | प्रशासन फ़ाइल सूची में पूर्वावलोकन लोड करने का मोड। मूल छवि मोड मूल छवियाँ लोड करता है। स्मार्ट लोडिंग सार्वजनिक छवियों के लिए लघुचित्रों और प्रतिबंधित छवियों के लिए मूल छवियों को प्राथमिकता देती है। |
+| लघुचित्र स्रोत | लघुचित्र बनाने के लिए उपयोग की जाने वाली सेवा: wsrv.nl, Cloudflare Image Resizing या WordPress Photon। Cloudflare Image Resizing चुनने से पहले इसे Cloudflare में सक्षम होना चाहिए। |
+| Live2D विजेट | प्रशासन पैनल में Live2D पात्र दिखाता है। |
+| क्लिक पर आतिशबाज़ी प्रभाव | पृष्ठ पर क्लिक करने पर आतिशबाज़ी प्रभाव दिखाता है। |
+| कर्सर की सितारा ट्रेल | माउस हिलाने पर सितारों की ट्रेल दिखाता है। |
 
-## Background Image Formats
+## पृष्ठभूमि छवि प्रारूप
 
-Login page background, upload page background और admin login background ये formats support करते हैं:
+लॉगिन पृष्ठ की पृष्ठभूमि, अपलोड पृष्ठ की पृष्ठभूमि और प्रशासन लॉगिन पृष्ठ की पृष्ठभूमि ये प्रारूप समर्थित करती हैं:
 
-| Value | Effect |
+| मान | प्रभाव |
 | --- | --- |
-| `bing` | Bing wallpaper rotation इस्तेमाल करता है। |
-| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | Multiple images rotate करता है। |
-| `["https://example.com/1.jpg"]` | Single background image इस्तेमाल करता है। |
-| `["https://your-domain.com/random?..."]` | Random image API link इस्तेमाल करता है। Other Settings में अपना Random Image API configure करें, फिर generated random image link को single-background entry के रूप में यहाँ paste करें। |
+| `bing` | Bing वॉलपेपर रोटेशन का उपयोग करता है। |
+| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | कई छवियों को रोटेट करता है। |
+| `["https://example.com/1.jpg"]` | एक पृष्ठभूमि छवि का उपयोग करता है। |
+| `["https://your-domain.com/random?..."]` | यादृच्छिक छवि API लिंक का उपयोग करता है। आप अन्य सेटिंग्स में अपनी यादृच्छिक छवि API कॉन्फ़िगर कर सकते हैं, फिर बनाए गए यादृच्छिक छवि लिंक को यहाँ एकल-पृष्ठभूमि प्रविष्टि के रूप में पेस्ट कर सकते हैं। |
 
-Admin background image URLs support करता है। Page पर prompt के अनुसार multiple URLs English commas से separate किए जा सकते हैं। Empty होने पर default background इस्तेमाल होता है।
+प्रशासन पृष्ठभूमि छवि URL समर्थित करती है। पृष्ठ पर दिए गए संकेत के अनुसार कई URL को अंग्रेज़ी कॉमा से अलग किया जा सकता है। खाली होने पर डिफ़ॉल्ट पृष्ठभूमि उपयोग होती है।
 
-## Default Naming Method
+## डिफ़ॉल्ट नामकरण विधि
 
-| Method | Result |
+| विधि | परिणाम |
 | --- | --- |
-| Default | Time-random prefix + original filename, जैसे `1760000000000_cat.png`। |
-| Prefix only | केवल time-random prefix और extension, जैसे `1760000000000.png`। |
-| Original name only | Original filename रखता है, जैसे `cat.png`। Duplicate होने पर ImgBed `(1)`, `(2)` आदि जोड़ता है। |
-| Short link | 8-character short ID और extension इस्तेमाल करता है, जैसे `a1b2c3d4.png`। |
+| डिफ़ॉल्ट | समय-आधारित यादृच्छिक उपसर्ग + मूल फ़ाइल नाम, जैसे `1760000000000_cat.png`। |
+| केवल उपसर्ग | केवल समय-आधारित यादृच्छिक उपसर्ग और एक्सटेंशन, जैसे `1760000000000.png`। |
+| केवल मूल नाम | मूल फ़ाइल नाम रखता है, जैसे `cat.png`। नाम दोहराने पर ImgBed `(1)`, `(2)` आदि जोड़ता है। |
+| छोटा लिंक | एक्सटेंशन सहित 8 वर्णों वाली छोटी ID का उपयोग करता है, जैसे `a1b2c3d4.png`। |

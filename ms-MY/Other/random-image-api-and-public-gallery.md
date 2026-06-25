@@ -1,14 +1,14 @@
-# Random Image API dan Public Gallery
+# API Imej Rawak dan Galeri Awam
 
-Kedua-dua features dikonfigurasi di bawah:
+Kedua-dua fungsi dikonfigurasikan di bawah:
 
 ```text
 System Settings -> Other Settings
 ```
 
-## Random Image API
+## API Imej Rawak
 
-Random Image API return satu random file daripada selected directories. Ia berguna untuk site backgrounds, avatar rotation atau random image calls dari external pages.
+API Imej Rawak mengembalikan satu fail rawak daripada direktori yang dipilih. Ia berguna untuk latar belakang laman, putaran avatar atau panggilan imej rawak daripada halaman luaran.
 
 Selepas diaktifkan, gunakan:
 
@@ -16,84 +16,84 @@ Selepas diaktifkan, gunakan:
 https://your-domain.com/random
 ```
 
-## Random Image API Settings
+## Tetapan API Imej Rawak
 
-| Option | Purpose |
+| Pilihan | Tujuan |
 | --- | --- |
-| Enable | Menghidupkan atau mematikan endpoint `/random`. Apabila disabled, access forbidden. |
-| Directories | Mengehadkan directories yang boleh digunakan oleh random API. Directories yang tidak termasuk di sini tidak boleh digunakan oleh API. |
-| Call demo | Menjana random API links yang boleh dicopy terus. |
+| Aktifkan | Menghidupkan atau mematikan titik akhir `/random`. Apabila dimatikan, akses dilarang. |
+| Direktori | Mengehadkan direktori yang boleh digunakan oleh API Imej Rawak. Direktori yang tidak termasuk di sini tidak boleh digunakan oleh API. |
+| Demo panggilan | Menjana pautan API Imej Rawak yang boleh anda salin terus. |
 
-Anda boleh memilih beberapa directories. Contohnya, jika hanya `/landscape/` dan `/portrait/` dibenarkan, random API hanya boleh memilih files daripada directories tersebut dan subdirectories.
+Anda boleh memilih berbilang direktori. Contohnya, jika hanya `/landscape/` dan `/portrait/` dibenarkan, API Imej Rawak hanya boleh memilih fail daripada direktori tersebut dan subdirektorinya.
 
-## Random Image API Parameters
+## Parameter API Imej Rawak
 
-| Parameter | Example | Purpose |
+| Parameter | Contoh | Tujuan |
 | --- | --- | --- |
-| `dir` | `/landscape/` | Menentukan random directory. |
-| `content` | `image` | Menentukan media type. Gunakan `image`, `video`, `audio` atau comma-separated combinations. |
-| `orientation` | `auto` | Filter image orientation. Gunakan `portrait`, `landscape` atau `auto`. |
-| `type` | `url` | Return format. Kosong bermaksud redirect, `url` return plain text URL, `json` return JSON. |
-| `origin` | `1` | Digunakan dengan `type=url` untuk return full URL. |
-| `age` | `all-ages,r12` | Filter mengikut age rating. |
-| `tag` | `wallpaper,sky` | Hanya return files yang mengandungi tags ini. |
-| `ex` | `private` | Exclude files yang mengandungi tags ini. |
+| `dir` | `/landscape/` | Menentukan direktori rawak. |
+| `content` | `image` | Menentukan jenis media. Gunakan `image`, `video`, `audio` atau gabungan yang dipisahkan dengan koma. |
+| `orientation` | `auto` | Menapis orientasi imej. Gunakan `portrait`, `landscape` atau `auto`. |
+| `type` | `url` | Format pulangan. Kosong bermaksud ubah hala, `url` mengembalikan URL teks biasa, `json` mengembalikan JSON. |
+| `origin` | `1` | Digunakan dengan `type=url` untuk mengembalikan URL penuh. |
+| `age` | `all-ages,r12` | Menapis mengikut penarafan umur. |
+| `tag` | `wallpaper,sky` | Hanya mengembalikan fail yang mengandungi tag ini. |
+| `ex` | `private` | Mengecualikan fail yang mengandungi tag ini. |
 
-## Return Formats
+## Format Pulangan
 
-Tanpa `type`, API redirect terus ke random file URL.
+Tanpa `type`, API akan terus mengubah hala ke URL fail rawak.
 
-Dengan `type=url`, ia return text URL.
+Dengan `type=url`, ia mengembalikan URL berbentuk teks.
 
-Dengan `type=json`, ia return file information, termasuk file URL, file ID, file name, file type, tags, rating dan metadata berkaitan.
+Dengan `type=json`, ia mengembalikan maklumat fail, termasuk URL fail, ID fail, nama fail, jenis fail, tag, penarafan dan metadata berkaitan.
 
-## Access Rules
+## Peraturan Akses
 
-Random Image API mengikut public access rules:
+API Imej Rawak mengikut peraturan akses awam:
 
-| Rule | Effect |
+| Peraturan | Kesan |
 | --- | --- |
-| Directory restriction | Hanya files dalam allowed directories boleh dipilih. |
-| Blocklist | Blocklisted files dikeluarkan daripada random pool. |
-| Allowlist mode | Apabila enabled, hanya files yang allowed untuk public access akan return. |
-| Age rating | R12, R16, R18 dan content seumpamanya difilter mengikut current access mode. |
+| Sekatan direktori | Hanya fail dalam direktori yang dibenarkan boleh dipilih. |
+| Senarai sekat | Fail dalam senarai sekat dikeluarkan daripada kumpulan rawak. |
+| Mod senarai benarkan | Apabila diaktifkan, hanya fail yang dibenarkan untuk akses awam akan dikembalikan. |
+| Penarafan umur | Kandungan R12, R16, R18 dan yang seumpamanya ditapis mengikut mod akses semasa. |
 
-Jika tiada file match selepas filtering, API return no matching result.
+Jika tiada fail yang sepadan selepas penapisan, API mengembalikan tiada hasil yang sepadan.
 
 ## Cache
 
-Random Image API cache directory candidate pools untuk meningkatkan speed.
+API Imej Rawak menyimpan cache kumpulan calon direktori untuk meningkatkan kelajuan.
 
-Selepas files berubah, ImgBed update directory cache version, dan requests kemudian rebuild candidate pool. Empty directories dicache seketika untuk mengelakkan repeated queries.
+Selepas fail berubah, ImgBed mengemas kini versi cache direktori, dan permintaan seterusnya membina semula kumpulan calon. Direktori kosong dicache seketika untuk mengelakkan pertanyaan berulang.
 
-## Public Gallery
+## Galeri Awam
 
-Public gallery menyediakan read-only public browsing page untuk directories yang anda benarkan visitors lihat.
+Galeri awam menyediakan halaman pelayaran awam baca sahaja untuk direktori yang anda benarkan pelawat lihat.
 
-Selepas diaktifkan, visitors boleh membuka:
+Selepas diaktifkan, pelawat boleh membuka:
 
 ```text
 https://your-domain.com/browse/directory-name
 ```
 
-## Public Gallery Settings
+## Tetapan Galeri Awam
 
-| Option | Purpose |
+| Pilihan | Tujuan |
 | --- | --- |
-| Enable | Menghidupkan atau mematikan public gallery. Apabila disabled, visitors tidak boleh browse. |
-| Image loading mode | Mengawal sama ada previews menggunakan original images atau thumbnails. |
-| Open directories | Menetapkan directories yang boleh diakses oleh visitors. |
+| Aktifkan | Menghidupkan atau mematikan galeri awam. Apabila dimatikan, pelawat tidak boleh melayarinya. |
+| Mod pemuatan imej | Mengawal sama ada pratonton menggunakan imej asal atau imej kecil. |
+| Direktori terbuka | Menetapkan direktori yang boleh diakses oleh pelawat. |
 
-## Image Loading Mode
+## Mod Pemuatan Imej
 
-| Mode | Purpose |
+| Mod | Tujuan |
 | --- | --- |
-| Original | Visitor page load original files secara langsung. |
-| Thumbnail | Visitor page mengutamakan thumbnails untuk loading lebih laju. |
+| Asal | Halaman pelawat memuatkan fail asal secara terus. |
+| Imej kecil | Halaman pelawat mengutamakan imej kecil untuk pemuatan yang lebih pantas. |
 
-## Open Directories
+## Direktori Terbuka
 
-Open directories menentukan apa yang visitors boleh lihat.
+Direktori terbuka menentukan perkara yang boleh dilihat oleh pelawat.
 
 Contoh:
 
@@ -101,7 +101,7 @@ Contoh:
 /1/,/2/,/landscape/,/portrait/
 ```
 
-Visitors kemudian boleh mengakses:
+Pelawat kemudian boleh mengakses:
 
 ```text
 https://your-domain.com/browse/1
@@ -110,29 +110,29 @@ https://your-domain.com/browse/landscape
 https://your-domain.com/browse/portrait
 ```
 
-Subdirectories juga boleh dibuka, seperti `/2026/lucky/`. Visitors diblock daripada directories yang tidak open.
+Subdirektori juga boleh dibuka, seperti `/2026/lucky/`. Pelawat disekat daripada direktori yang tidak dibuka.
 
-## Public Gallery Features
+## Ciri Galeri Awam
 
-| Feature | Description |
+| Ciri | Penerangan |
 | --- | --- |
-| Browse directories | Lihat files dan subdirectories dalam open directories. |
-| Search | Search mengikut file name, file ID atau tags. |
-| Type filter | Filter images, videos, audio atau other files. |
-| Tag filter | Include atau exclude selected tags. |
-| Orientation filter | Filter landscape atau portrait images. |
-| Time filter | Filter mengikut upload time range. |
-| Extension filter | Filter mengikut file extension. |
-| Copy link | Copy file access links. |
-| Media preview | Lihat atau mainkan images, videos dan audio pada visitor page. |
+| Melayari direktori | Melihat fail dan subdirektori dalam direktori terbuka. |
+| Carian | Mencari mengikut nama fail, ID fail atau tag. |
+| Penapis jenis | Menapis imej, video, audio atau fail lain. |
+| Penapis tag | Menyertakan atau mengecualikan tag yang dipilih. |
+| Penapis orientasi | Menapis imej landskap atau potret. |
+| Penapis masa | Menapis mengikut julat masa muat naik. |
+| Penapis sambungan | Menapis mengikut sambungan fail. |
+| Salin pautan | Menyalin pautan akses fail. |
+| Pratonton media | Melihat atau memainkan imej, video dan audio pada halaman pelawat. |
 
-## Public Gallery Access Rules
+## Peraturan Akses Galeri Awam
 
-Public gallery juga mengikut public access rules:
+Galeri awam juga mengikut peraturan akses awam:
 
-| Rule | Effect |
+| Peraturan | Kesan |
 | --- | --- |
-| Open directories | Hanya allowed directories dipaparkan. |
-| Access mode | Content difilter mengikut current age-rating access mode. |
-| Allowlist mode | Apabila enabled, hanya files yang allowed untuk public access dipaparkan. |
-| Blocklist | Blocklisted files disembunyikan. |
+| Direktori terbuka | Hanya direktori yang dibenarkan dipaparkan. |
+| Mod akses | Kandungan ditapis mengikut mod akses penarafan umur semasa. |
+| Mod senarai benarkan | Apabila diaktifkan, hanya fail yang dibenarkan untuk akses awam dipaparkan. |
+| Senarai sekat | Fail dalam senarai sekat disembunyikan. |

@@ -1,20 +1,20 @@
-# Redundant Backup và Read Source Switching
+# Sao Lưu Dự Phòng Và Chuyển Nguồn Đọc
 
-Redundant backup lưu một bản copy bổ sung của file đã upload.
+Sao lưu dự phòng lưu thêm một bản sao của tệp đã được tải lên.
 
-Cả primary file và backup file đều có thể dùng làm read sources. Visitors thường không thấy khác biệt. Khác biệt duy nhất là storage channel nào serve file.
+Cả tệp chính và tệp sao lưu đều có thể dùng làm nguồn đọc. Với khách truy cập, thường không có khác biệt. Điểm khác duy nhất là kênh lưu trữ nào phục vụ tệp.
 
-## Redundant Backup làm được gì
+## Sao Lưu Dự Phòng Có Thể Làm Gì
 
-| Feature | Description |
+| Tính năng | Mô tả |
 | --- | --- |
-| Store an extra copy | Back up files sang upload channel khác để giảm rủi ro khi một channel lỗi. |
-| Switch read source | Sau khi backup thành công, switch file reads giữa primary channel và backup channel. |
-| Single-file backup | Back up một file từ file details page. |
-| Batch backup | Chọn nhiều files trong admin page và back up cùng lúc. |
-| Global redundant backup | Back up files theo folder từ Other Settings. |
+| Lưu thêm một bản sao | Sao lưu tệp sang kênh tải lên khác để giảm rủi ro khi một kênh bị lỗi. |
+| Chuyển nguồn đọc | Sau khi sao lưu thành công, chuyển việc đọc tệp giữa kênh chính và kênh sao lưu. |
+| Sao lưu một tệp | Sao lưu một tệp từ trang chi tiết tệp. |
+| Sao lưu hàng loạt | Chọn nhiều tệp trong trang quản trị và sao lưu cùng lúc. |
+| Sao lưu dự phòng toàn cục | Sao lưu tệp theo thư mục trong Cài đặt khác. |
 
-## Redundant Backup Entry
+## Lối Vào Sao Lưu Dự Phòng
 
 Mở:
 
@@ -22,72 +22,72 @@ Mở:
 System Settings -> Other Settings -> Redundant Backup
 ```
 
-![Redundant backup](../../image/other/冗余备份截图.png)
+![Sao lưu dự phòng](../../image/other/冗余备份截图.png)
 
-Entry này phù hợp để thêm backups cho một folder hoặc tất cả files theo dạng bulk.
+Lối vào này phù hợp nhất để thêm bản sao lưu cho một thư mục hoặc cho tất cả tệp theo lô.
 
-Backup channel có thể chọn thủ công, hoặc bạn chọn automatic switching để ImgBed tìm backup channel phù hợp.
+Kênh sao lưu có thể được chọn thủ công, hoặc bạn có thể chọn chuyển tự động và để ImgBed tìm kênh sao lưu phù hợp.
 
-## Backup từ File Details
+## Sao Lưu Từ Chi Tiết Tệp
 
-Mở file details page trong admin panel và nhấn backup.
+Mở trang chi tiết tệp trong bảng quản trị và nhấp sao lưu.
 
-![Backup in file details](../../image/other/文件详情里文件备份.png)
+![Sao lưu trong chi tiết tệp](../../image/other/文件详情里文件备份.png)
 
-Phù hợp nhất khi muốn back up một important file theo nhu cầu.
+Cách này phù hợp nhất để sao lưu một tệp quan trọng theo nhu cầu.
 
-Sau khi backup thành công, file details page hiển thị available read sources.
+Sau khi sao lưu thành công, trang chi tiết tệp hiển thị các nguồn đọc khả dụng.
 
-## Batch Backup bằng Selection
+## Sao Lưu Hàng Loạt Theo Lựa Chọn
 
-Trong admin panel, chọn nhiều files và run batch backup.
+Trong bảng quản trị, chọn nhiều tệp và chạy sao lưu hàng loạt.
 
-![Batch backup](../../image/other/批量备份截图.png)
+![Sao lưu hàng loạt](../../image/other/批量备份截图.png)
 
-Phù hợp để xử lý một nhóm files.
+Cách này phù hợp nhất để xử lý một nhóm tệp.
 
-Selection backup, file details backup và redundant backup trong Other Settings đều dùng cùng backup system. Chúng chỉ là entry points khác nhau.
+Sao lưu theo lựa chọn, sao lưu từ chi tiết tệp và sao lưu dự phòng trong Cài đặt khác đều dùng cùng một hệ thống sao lưu. Chúng chỉ là các điểm vào khác nhau.
 
-## Switch Read Source sau Backup
+## Chuyển Nguồn Đọc Sau Khi Sao Lưu
 
-Sau khi backup hoàn tất, file details page cho phép switch read source:
+Sau khi sao lưu hoàn tất, trang chi tiết tệp cho phép bạn chuyển nguồn đọc:
 
-| Read Source | Description |
+| Nguồn đọc | Mô tả |
 | --- | --- |
-| Primary channel | Đọc từ original upload channel. |
-| Backup channel | Đọc từ backup channel. |
+| Kênh chính | Đọc từ kênh tải lên ban đầu. |
+| Kênh sao lưu | Đọc từ kênh sao lưu. |
 
-![Switch read source after backup](../../image/other/备份成功切换读取源.png)
+![Chuyển nguồn đọc sau khi sao lưu](../../image/other/备份成功切换读取源.png)
 
-Visitors không cần biết file đang được serve từ primary hay backup channel.
+Khách truy cập không cần biết tệp được phục vụ từ kênh chính hay kênh sao lưu.
 
-Read source bạn chọn sẽ trở thành preferred source cho file access sau này.
+Nguồn đọc bạn chọn sẽ trở thành nguồn ưu tiên cho các lần truy cập tệp sau.
 
-## Khi nào Backup bị Skip
+## Khi Nào Sao Lưu Bị Bỏ Qua
 
-Các trường hợp sau sẽ bị skip trong quá trình backup. Chúng không phải lỗi.
+Các trường hợp sau sẽ bị bỏ qua khi sao lưu. Đây không phải lỗi.
 
-| Case | Why It Is Skipped |
+| Trường hợp | Vì sao bị bỏ qua |
 | --- | --- |
-| Already backed up | File đã có backup sẽ không được back up lại. |
-| Primary và backup channels giống nhau | Backup phải được lưu ở channel khác thì mới có ý nghĩa. |
-| No usable backup channel | Không có alternative channel phù hợp. |
+| Đã có sao lưu | Tệp đã có bản sao lưu sẽ không được sao lưu lại. |
+| Kênh chính và kênh sao lưu giống nhau | Bản sao lưu phải được lưu ở kênh khác thì mới có ý nghĩa. |
+| Không có kênh sao lưu dùng được | Không có kênh thay thế phù hợp. |
 
-Tóm lại: backups phải đi sang channel khác, và files đã backed-up không tiêu tốn thêm dung lượng lần nữa.
+Tóm lại: bản sao lưu phải đi sang kênh khác, và tệp đã được sao lưu sẽ không tiêu tốn thêm dung lượng lần nữa.
 
-## Primary Channel vs Backup Channel
+## Kênh Chính Và Kênh Sao Lưu
 
-| Name | Meaning |
+| Tên | Ý nghĩa |
 | --- | --- |
-| Primary channel | Channel được dùng khi file được upload lần đầu. |
-| Backup channel | Channel lưu redundant copy. |
-| Primary read source | File hiện được read từ primary channel. |
-| Backup read source | File hiện được read từ backup channel. |
+| Kênh chính | Kênh được dùng khi tệp được tải lên lần đầu. |
+| Kênh sao lưu | Kênh lưu bản sao dự phòng. |
+| Nguồn đọc chính | Tệp hiện được đọc từ kênh chính. |
+| Nguồn đọc sao lưu | Tệp hiện được đọc từ kênh sao lưu. |
 
-Primary và backup read sources có user-facing behavior giống nhau.
+Nguồn đọc chính và nguồn đọc sao lưu có hành vi giống nhau đối với người dùng.
 
-Miễn là backup file available, images, videos và download links vẫn hoạt động sau khi switch sang backup read source.
+Miễn là tệp sao lưu khả dụng, hình ảnh, video và liên kết tải xuống vẫn hoạt động sau khi chuyển sang nguồn đọc sao lưu.
 
-## Điều gì xảy ra khi File bị Delete
+## Điều Gì Xảy Ra Khi Xóa Tệp
 
-Khi file bị delete, ImgBed delete cả primary file và backup file.
+Khi một tệp bị xóa, ImgBed xóa cả tệp chính và tệp sao lưu.

@@ -1,4 +1,4 @@
-# د GitHub Releases Channel اضافه کول
+# د GitHub Releases چینل اضافه کول
 
 ## د پیل مخکې اړتیاوې
 
@@ -6,64 +6,64 @@
 
 | اړتیا | موخه |
 | --- | --- |
-| GitHub account | د access token جوړولو او repository مالکیت لپاره. |
-| GitHub Access Token | د ImgBed لپاره GitHub API access، releases جوړول او files upload کول. |
-| Repository name | یوازې repository name لیکلی شئ، لکه `image`. |
+| GitHub حساب | د لاسرسی ټوکن جوړولو او ریپازېټري مالکیت لپاره. |
+| GitHub لاسرسی ټوکن | د ImgBed لپاره GitHub API لاسرسی، releases جوړول او فایلونه اپلوډ کول. |
+| د ریپازېټري نوم | یوازې ریپازېټري name لیکلی شئ، لکه `image`. |
 
-## Setup Steps
+## د تنظیم ګامونه
 
-### Step 1: GitHub ته Sign in او Access Token جوړول
+### ګام 1: GitHub ته ننوځئ او لاسرسی ټوکن جوړول
 
-1. GitHub ته sign in شئ.
+1. GitHub ته ننوځئ شئ.
 2. په پورته ښي لوري کې avatar کلیک او `Settings` پرانیزئ.
-3. له left sidebar څخه `Developer settings` پرانیزئ.
+3. له کیڼ اړخ پټه څخه `Developer settings` پرانیزئ.
 4. `Personal access tokens` پرانیزئ.
 5. `Tokens (classic)` پرانیزئ.
 6. `Generate new token (classic)` کلیک کړئ.
-7. token ته پېژندل کېدونکی نوم ورکړئ.
-8. د خپل maintenance preference له مخې expiration date وټاکئ.
-9. `repo` او `workflow` scopes وټاکئ.
-10. token چې جوړ شي، سملاسي یې copy او خوندي کړئ.
+7. ټوکن ته پېژندل کېدونکی نوم ورکړئ.
+8. د خپل د ساتنې غوره توب له مخې د پای نېټه وټاکئ.
+9. `repo` او `workflow` سکوپونه وټاکئ.
+10. ټوکن چې جوړ شي، سملاسي یې کاپي او خوندي کړئ.
 
 ![Add GitHub permissions](../../image/upload/github-releases/添加github权限.png)
 
-## Step 2: په ImgBed کې GitHub Releases Channel ډک کړئ
+## ګام 2: په ImgBed کې GitHub Releases چینل ډک کړئ
 
-په Upload Settings کې د `GitHub Releases` له ټاکلو وروسته:
+په د اپلوډ تنظیمات کې د `GitHub Releases` له ټاکلو وروسته:
 
-| UI Field | What to Enter |
+| د UI فیلډ | څه داخل کړئ |
 | --- | --- |
-| Channel name | ستاسې ټاکلی نوم، لکه `GitHubPrimary`. |
-| Access Token | همدا GitHub Personal Access Token چې جوړ مو کړی. |
-| Repository name | short repo name لکه `image`، یا full path لکه `username/image`. |
-| Private repository | د اړتیا له مخې on یا off کړئ. |
-| Remark | اختیاري، لکه `Primary upload channel`. |
+| د چینل نوم | ستاسې ټاکلی نوم، لکه `GitHubPrimary`. |
+| لاسرسی ټوکن | همدا GitHub Personal لاسرسی ټوکن چې جوړ مو کړی. |
+| د ریپازېټري نوم | لنډ repo نوم لکه `image`، یا بشپړه لاره لکه `username/image`. |
+| شخصي ریپازېټري | د اړتیا له مخې on یا off کړئ. |
+| یادښت | اختیاري، لکه `Primary upload channel`. |
 
-![Fill in the GitHub channel configuration](../../image/upload/github-releases/填写github渠道配置.png)
+![Fill in the GitHub چینل تنظیمات](../../image/upload/github-releases/填写github渠道配置.png)
 
-## Step 3: Channel Save کړئ
+## ګام 3: چینل خوندي کړئ
 
-له fields ډکولو وروسته Save کلیک کړئ.
+له fields ډکولو وروسته خوندي کلیک کړئ.
 
 system دا کارونه خپله ترسره کوي:
 
-| System Behavior | Description |
+| د سیستم چلند | توضیح |
 | --- | --- |
-| Short repository name | ImgBed current GitHub account پېژني او value full repository path ته expand کوي. |
-| Full repository path | ImgBed د `username/repository` path هماغسې کاروي لکه داخل شوی. |
-| Repository check | که current personal account path وي، ImgBed repository اتومات جوړوي که موجود نه وي. که full path manual ورکړئ، هماغه path کاروي. |
-| Public/private state | repository visibility د current switch له مخې synchronized کېږي. |
+| لنډ ریپازېټري نوم | ImgBed اوسنی GitHub حساب پېژني او ارزښت بشپړ ریپازېټري لارې ته غځوي. |
+| Full ریپازېټري path | ImgBed د `username/repository` path هماغسې کاروي لکه داخل شوی. |
+| د ریپازېټري کتنه | که د اوسني شخصي حساب لاره وکاروئ، ImgBed ریپازېټري اتومات جوړوي که موجوده نه وي. که بشپړه لاره په لاسي ډول ورکړئ، ImgBed هماغه لاره کاروي. |
+| عام/شخصي حالت | د ریپازېټري لید د اوسني switch له مخې همغږي کېږي. |
 
-## Quick Checklist
+## چټک چک‌لېست
 
 GitHub Releases داسې کار کوي:
 
 ```text
-GitHub ته sign in شئ
--> Access Token جوړ کړئ
--> ImgBed ته بېرته ولاړ شئ او token او repository name ولیکئ
+Sign in to GitHub
+-> Create an Access Token
+-> Return to ImgBed and enter the token and repository name
 -> Save
--> که یوازې repo name ورکړئ، ImgBed current username اتومات اضافه کوي
--> که username/repo ورکړئ، هماغه کاروي
--> test image upload کړئ
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

@@ -1,67 +1,67 @@
-# Menambahkan GitLab Packages Channel
+# Menambahkan Kanal GitLab Packages
 
-## Yang Perlu Disiapkan Sebelum Mulai
+## Yang Diperlukan Sebelum Memulai
 
-Anda hanya perlu tiga hal:
+Anda hanya memerlukan tiga hal:
 
-| Requirement | Purpose |
+| Kebutuhan | Tujuan |
 | --- | --- |
-| GitLab account | Digunakan untuk generate access token dan memiliki project. |
-| GitLab Personal Access Token | Digunakan ImgBed untuk mengakses GitLab API, membuat projects, dan upload files ke Generic Packages. |
-| Project name | Anda bisa memasukkan project name saja, misalnya `imgbed`. |
+| Akun GitLab | Digunakan untuk membuat token akses dan memiliki proyek. |
+| GitLab Personal Access Token | Digunakan oleh ImgBed untuk mengakses GitLab API, membuat proyek, dan mengunggah berkas ke Generic Packages. |
+| Nama proyek | Anda dapat memasukkan nama proyek saja, misalnya `imgbed`. |
 
-## Langkah Setup
+## Langkah Konfigurasi
 
-### Step 1: Sign in ke GitLab dan Buat Access Token
+### Langkah 1: Masuk ke GitLab dan Buat Access Token
 
-1. Sign in ke GitLab.
-2. Klik avatar di kanan atas dan buka `Preferences`.
-3. Buka `Access Tokens` dari left sidebar.
-4. Beri nama token yang mudah dikenali.
-5. Pilih expiration date sesuai preferensi maintenance Anda.
-6. Pilih scope `api`.
-7. Copy dan simpan token segera setelah dibuat.
+1. Masuk ke GitLab.
+2. Klik avatar Anda di sudut kanan atas, lalu buka `Preferences`.
+3. Buka `Access Tokens` dari sidebar kiri.
+4. Beri token nama yang mudah dikenali.
+5. Pilih tanggal kedaluwarsa sesuai preferensi pemeliharaan Anda.
+6. Pilih cakupan `api`.
+7. Salin dan simpan token segera setelah dibuat.
 
-![Create a legacy token](../../image/upload/gitlab-packages/点击生成旧版令牌.png)
+![Membuat token legacy](../../image/upload/gitlab-packages/点击生成旧版令牌.png)
 
-![Select token permissions](../../image/upload/gitlab-packages/勾选令牌权限.png)
+![Memilih izin token](../../image/upload/gitlab-packages/勾选令牌权限.png)
 
-## Step 2: Isi GitLab Packages Channel di ImgBed
+## Langkah 2: Isi Kanal GitLab Packages di ImgBed
 
-Setelah memilih `GitLab Packages` di Upload Settings, isi field sebagai berikut:
+Setelah memilih `GitLab Packages` di Pengaturan Unggah, isi kolom sebagai berikut:
 
-| UI Field | Yang Diisi |
+| Kolom UI | Yang Harus Diisi |
 | --- | --- |
-| Channel name | Nama pilihan Anda, misalnya `GitLabPrimary`. |
-| Access Token | GitLab Personal Access Token yang baru dibuat. |
-| Project name | Project name pendek seperti `imgbed`, atau full path seperti `username/imgbed`. |
-| Private repository | Aktifkan atau nonaktifkan sesuai kebutuhan. |
-| Remark | Optional, misalnya `Primary upload channel`. |
+| Nama kanal | Nama pilihan Anda, misalnya `GitLabPrimary`. |
+| Access Token | GitLab Personal Access Token yang baru Anda buat. |
+| Nama proyek | Nama proyek pendek seperti `imgbed`, atau jalur lengkap seperti `username/imgbed`. |
+| Repositori privat | Aktifkan atau nonaktifkan sesuai kebutuhan. |
+| Catatan | Opsional, misalnya `Primary upload channel`. |
 
-![Configure the channel](../../image/upload/gitlab-packages/配置渠道内容.png)
+![Mengonfigurasi kanal](../../image/upload/gitlab-packages/配置渠道内容.png)
 
-## Step 3: Save Channel
+## Langkah 3: Simpan Kanal
 
-Setelah mengisi field, klik Save.
+Setelah semua kolom diisi, klik Simpan.
 
-System akan menangani detail berikut:
+Sistem akan menangani detail berikut:
 
-| System Behavior | Description |
+| Perilaku Sistem | Deskripsi |
 | --- | --- |
-| Short project name | ImgBed mengenali current GitLab account dan memperluas value menjadi full project path. |
-| Full project path | ImgBed memakai path `username/project` persis seperti yang dimasukkan. |
-| Project check | Jika memakai current personal account path, ImgBed otomatis membuat project saat belum ada. Jika memasukkan full path manual, ImgBed langsung memakai path tersebut. |
-| Public/private state | Project visibility disinkronkan sesuai current switch. |
+| Nama proyek pendek | ImgBed mengidentifikasi akun GitLab saat ini dan memperluas nilainya menjadi jalur proyek lengkap. |
+| Jalur proyek lengkap | ImgBed menggunakan jalur `username/project` persis seperti yang dimasukkan. |
+| Pemeriksaan proyek | Jika Anda menggunakan jalur akun pribadi saat ini, ImgBed otomatis membuat proyek saat belum ada. Jika Anda memasukkan jalur lengkap secara manual, ImgBed langsung menggunakan jalur tersebut. |
+| Status publik/privat | Visibilitas proyek disinkronkan sesuai sakelar saat ini. |
 
-## Quick Checklist
+## Daftar Periksa Cepat
 
 ```text
-Sign in ke GitLab
--> Buat Access Token
--> Pilih hanya scope api
--> Kembali ke ImgBed dan masukkan token serta project name
+Sign in to GitLab
+-> Create an Access Token
+-> Select only the api scope
+-> Return to ImgBed and enter the token and project name
 -> Save
--> Jika hanya project name yang dimasukkan, ImgBed menambahkan current username otomatis
--> Jika username/project dimasukkan, ImgBed memakainya apa adanya
--> Upload test image
+-> If only a project name is entered, ImgBed adds the current username automatically
+-> If username/project is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

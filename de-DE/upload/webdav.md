@@ -2,28 +2,28 @@
 
 ## Geeignet für
 
-Nutze den WebDAV-Kanal, wenn:
+Verwenden Sie den WebDAV-Kanal, wenn:
 
-- du ein NAS, einen Cloudspeicher oder einen Objektspeicherdienst mit WebDAV-Endpunkt hast.
-- hochgeladene Bilder in deinem eigenen WebDAV-Verzeichnis gespeichert werden sollen.
+- Sie ein NAS, einen Cloudspeicher oder einen Objektspeicherdienst mit WebDAV-Endpunkt haben.
+- hochgeladene Bilder in Ihrem eigenen WebDAV-Verzeichnis gespeichert werden sollen.
 - Zugangsdaten in der D1-Tabelle `upload_channels` gespeichert werden sollen, statt dauerhaft im Frontend sichtbar zu sein.
 
-## Was du vorher brauchst
+## Was Sie vorher benötigen
 
 | Voraussetzung | Zweck |
 | --- | --- |
 | WebDAV Endpoint | Serverseitige WebDAV-URL, z. B. `https://nas.example.com/dav`. |
 | Benutzername | Für die Anmeldung am WebDAV-Dienst. |
 | Passwort | Für die Anmeldung am WebDAV-Dienst. |
-| Authentifizierungsmodus | Standard ist `Basic`. Nutze `Digest` oder automatische Aushandlung nur, wenn der Server es verlangt. |
+| Authentifizierungsmodus | Standard ist `Basic`. Verwenden Sie `Digest` oder automatische Aushandlung nur, wenn der Server es verlangt. |
 | Speicherverzeichnis | Ordner, in dem Dateien gespeichert werden. Standard ist `imgbed`. |
 
 ## Wo hinzufügen
 
-1. Öffne die Systemeinstellungen.
-2. Gehe zu Upload-Einstellungen.
-3. Klicke oben rechts auf Kanal hinzufügen.
-4. Wähle `WebDAV`.
+1. Öffnen Sie die Systemeinstellungen.
+2. Gehen Sie zu Upload-Einstellungen.
+3. Klicken Sie oben rechts auf Kanal hinzufügen.
+4. Wählen Sie `WebDAV`.
 
 ## Feldübersicht
 
@@ -33,32 +33,32 @@ Nutze den WebDAV-Kanal, wenn:
 | Endpoint | Vollständiger WebDAV-Endpunkt inklusive `https://`. | Ja |
 | Benutzername | WebDAV-Anmeldename. | Ja |
 | Passwort | WebDAV-Passwort. | Ja |
-| Authentifizierungsmodus | Meist `Basic`; nutze `Digest`, wenn der Server Digest-Authentifizierung verlangt. | Ja |
+| Authentifizierungsmodus | Meist `Basic`; verwenden Sie `Digest`, wenn der Server Digest-Authentifizierung verlangt. | Ja |
 | Speicherverzeichnis | Ordner, in dem Dateien abgelegt werden. Standard ist `imgbed`. | Nein |
 
 ## Beispiel: fie.nl.tab.digital
 
 ### 1. App-Passwort erstellen
 
-Öffne die Sicherheitseinstellungen deines Kontos, suche die App-Passwörter und erstelle ein neues App-Passwort.
+Öffnen Sie die Sicherheitseinstellungen Ihres Kontos, suchen Sie die App-Passwörter und erstellen Sie ein neues App-Passwort.
 
 ![App-Passwort erstellen](../../image/upload/webdav/创建应用密码.png)
 
-Kopiere und speichere das neue App-Passwort direkt nach dem Erstellen. In der Regel wird es nur einmal angezeigt.
+Kopieren Sie und speichern Sie das neue App-Passwort direkt nach dem Erstellen. In der Regel wird es nur einmal angezeigt.
 
 ![Neues App-Passwort speichern](../../image/upload/webdav/记住新应用程序密码.png)
 
 ### 2. WebDAV-Konfiguration in ImgBed ausfüllen
 
-Kehre zu ImgBed zurück und füge einen WebDAV-Kanal hinzu:
+Kehren Sie zu ImgBed zurück und fügen Sie einen WebDAV-Kanal hinzu:
 
 | UI-Feld | Wert |
 | --- | --- |
 | Endpoint | Die von `https://fie.nl.tab.digital/` bereitgestellte WebDAV-URL. |
-| Benutzername | Dein WebDAV-Benutzername. |
+| Benutzername | Ihr WebDAV-Benutzername. |
 | Passwort | Das gerade erstellte App-Passwort. |
-| Authentifizierungsmodus | Starte in den meisten Fällen mit `Basic`. |
-| Speicherverzeichnis | Standard ist `imgbed`; du kannst auch einen eigenen Ordner verwenden. |
+| Authentifizierungsmodus | Starten Sie in den meisten Fällen mit `Basic`. |
+| Speicherverzeichnis | Standard ist `imgbed`; Sie können auch einen eigenen Ordner verwenden. |
 
 ![Konfiguration ausfüllen](../../image/upload/webdav/填写配置.png)
 
@@ -81,25 +81,25 @@ Das Chunk-Verzeichnis betrifft nur die Ablage im entfernten Speicher. Die Datei-
 
 ## Einrichtungsschritte
 
-1. Öffne die Upload-Einstellungen.
-2. Klicke auf Kanal hinzufügen.
-3. Wähle `WebDAV`.
-4. Trage einen gut erkennbaren Kanalnamen ein, z. B. `koofr`.
-5. Trage den WebDAV-Endpunkt ein, z. B. `https://app.koofr.net/dav/Koofr`.
-6. Trage Benutzername und Passwort ein.
-7. Lasse den Authentifizierungsmodus standardmäßig auf `Basic`.
-8. Lasse das Speicherverzeichnis bei `imgbed` oder ändere es auf deinen eigenen Ordner.
-9. Klicke auf Speichern.
-10. Prüfe nach dem Speichern die Kanalkarte, frage bei Bedarf die Kapazität ab und lade eine Testdatei hoch.
+1. Öffnen Sie die Upload-Einstellungen.
+2. Klicken Sie auf Kanal hinzufügen.
+3. Wählen Sie `WebDAV`.
+4. Tragen Sie einen gut erkennbaren Kanalnamen ein, z. B. `koofr`.
+5. Tragen Sie den WebDAV-Endpunkt ein, z. B. `https://app.koofr.net/dav/Koofr`.
+6. Tragen Sie Benutzername und Passwort ein.
+7. Lassen Sie den Authentifizierungsmodus standardmäßig auf `Basic`.
+8. Lassen Sie das Speicherverzeichnis bei `imgbed` oder ändern Sie es auf Ihren eigenen Ordner.
+9. Klicken Sie auf Speichern.
+10. Prüfen Sie nach dem Speichern die Kanalkarte, fragen Sie bei Bedarf die Kapazität ab und laden Sie eine Testdatei hoch.
 
 ## Prüfung
 
-| Prüfung | So prüfst du es |
+| Prüfung | So prüfen Sie es |
 | --- | --- |
 | Kanalkarte erscheint | Nach dem Speichern sollte in den Upload-Einstellungen eine WebDAV-Kanalkarte sichtbar sein. |
 | Kanal ist aktiv | Der Schalter oben rechts auf der Karte bleibt eingeschaltet. |
 | Zugangsdaten sind gespeichert | Die Detailansicht zeigt Endpoint, Benutzername, Authentifizierungsmodus und Speicherverzeichnis. |
-| Kleine Datei lädt hoch | Lade ein Testbild hoch und prüfe, ob es im WebDAV-Verzeichnis erscheint. |
+| Kleine Datei lädt hoch | Laden Sie ein Testbild hoch und prüfen Sie, ob es im WebDAV-Verzeichnis erscheint. |
 | Regel für große Dateien greift | Dateien über 64 MiB nutzen Chunk-Upload und erzeugen ein Remote-Chunk-Verzeichnis. |
 | Kapazitätsabfrage funktioniert | Wenn der Server Kapazitätsinformationen unterstützt, werden belegter und gesamter Speicher angezeigt. |
 
@@ -115,29 +115,29 @@ Dateien über 64 MiB werden nicht zu einer einzelnen großen Remote-Datei zusamm
 
 ### Was sollte ich zuerst prüfen, wenn große Uploads fehlschlagen?
 
-Prüfe zuerst Endpoint, Benutzername, Passwort und Speicherverzeichnis. Stelle danach sicher, dass der WebDAV-Dienst Ordner anlegen, Dateien schreiben und Dateien lesen darf.
+Prüfen Sie zuerst Endpoint, Benutzername, Passwort und Speicherverzeichnis. Stellen Sie danach sicher, dass der WebDAV-Dienst Ordner anlegen, Dateien schreiben und Dateien lesen darf.
 
 Wenn die Kapazitätsabfrage fehlschlägt, kleine Uploads aber funktionieren, unterstützt der Server die Kapazitätsauskunft möglicherweise nicht oder schränkt sie ein. Das bedeutet nicht automatisch, dass Uploads unmöglich sind.
 
 ### Welchen Authentifizierungsmodus soll ich wählen?
 
-Starte mit `Basic`.
+Starten Sie mit `Basic`.
 
-Wenn der Server ausdrücklich Digest-Authentifizierung verlangt, nutze `Digest`.
+Wenn der Server ausdrücklich Digest-Authentifizierung verlangt, verwenden Sie `Digest`.
 
-Wenn du unsicher bist, nutze automatische Aushandlung.
+Wenn Sie unsicher sind, verwenden Sie automatische Aushandlung.
 
 ## Kurzcheck
 
 ```text
-WebDAV-Endpunkt, Benutzername und Passwort vorbereiten
--> Upload-Einstellungen öffnen
--> Kanal hinzufügen
--> WebDAV wählen
--> Endpoint / Benutzername / Passwort eintragen
--> Authentifizierungsmodus standardmäßig auf Basic lassen
--> Speicherverzeichnis standardmäßig auf imgbed lassen
--> Speichern
--> Kapazität abfragen
--> Testdatei hochladen
+Prepare WebDAV endpoint, username, and password
+-> Open Upload Settings
+-> Add Channel
+-> Select WebDAV
+-> Enter Endpoint / username / password
+-> Keep authentication mode as Basic by default
+-> Keep storage directory as imgbed by default
+-> Save
+-> Query capacity
+-> Upload a test file
 ```

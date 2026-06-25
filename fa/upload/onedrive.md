@@ -1,21 +1,21 @@
-# افزودن OneDrive Channel
+# افزودن کانال OneDrive
 
 ## پیش از شروع چه چیزهایی لازم است
 
 | مورد | چرا لازم است |
 | --- | --- |
-| Microsoft account | برای دسترسی به Microsoft admin pages و authorize کردن OneDrive |
-| دامنه ImgBed شما | برای OAuth callback URL |
-| App registration | برای ساخت `Client ID` و `Client Secret` |
-| OneDrive account | به‌عنوان محل واقعی ذخیره files |
+| حساب Microsoft | برای دسترسی به صفحه‌های مدیریتی Microsoft و مجوزدهی OneDrive استفاده می‌شود |
+| دامنه ImgBed شما | به‌عنوان URL بازگشت OAuth استفاده می‌شود |
+| ثبت برنامه | برای تولید `Client ID` و `Client Secret` استفاده می‌شود |
+| حساب OneDrive | محل واقعی ذخیره فایل‌ها خواهد بود |
 
-## مراحل setup
+## مراحل پیکربندی
 
-### Step 1: باز کردن Microsoft Entra ID
+### مرحله 1: باز کردن Microsoft Entra ID
 
 1. `portal.azure.com` را باز کنید.
-2. بالای صفحه `Microsoft Entra ID` را جست‌وجو کنید.
-3. اگر target page در dropdown دیده نشد، انتخاب کنید:
+2. در بالای صفحه `Microsoft Entra ID` را جست‌وجو کنید.
+3. اگر صفحه مقصد در فهرست کشویی نمایش داده نشد، این گزینه را انتخاب کنید:
 
 ```text
 Continue searching in Microsoft Entra ID
@@ -23,126 +23,126 @@ Continue searching in Microsoft Entra ID
 
 4. `Microsoft Entra ID` را باز کنید.
 5. `App registrations` را باز کنید.
-6. `New registration` را بزنید.
+6. روی `New registration` کلیک کنید.
 
-### Step 2: Register کردن App
+### مرحله 2: ثبت برنامه
 
-در صفحه `New registration` این fields را پر کنید:
+در صفحه `New registration` این فیلدها را تکمیل کنید:
 
-| Field | What To Enter |
+| فیلد | مقدار لازم |
 | --- | --- |
-| Name | نام قابل‌تشخیص، مثل `imgbed-onedrive` |
-| Supported account types | بر اساس جدول پایین انتخاب کنید |
+| Name | نامی قابل تشخیص، مانند `imgbed-onedrive` |
+| Supported account types | بر اساس جدول زیر انتخاب کنید |
 | Redirect URI type | `Web` |
 | Redirect URI | `https://your-domain.com/api/oauth/onedrive/callback` |
 
-راهنمای account type:
+راهنمای نوع حساب:
 
-| سناریو شما | Supported Account Types |
+| سناریوی شما | Supported Account Types |
 | --- | --- |
-| فقط personal OneDrive | گزینه personal Microsoft account را انتخاب کنید. |
-| هم personal و هم work/school accounts | گزینه‌ای را انتخاب کنید که هر دو personal و organizational accounts را پشتیبانی کند. |
-| فقط company یا school OneDrive | گزینه organizational account را انتخاب کنید. |
+| فقط OneDrive شخصی | گزینه حساب شخصی Microsoft را انتخاب کنید. |
+| حساب‌های شخصی و کاری/آموزشی | گزینه‌ای را انتخاب کنید که از حساب‌های شخصی و سازمانی پشتیبانی کند. |
+| فقط OneDrive کاری یا آموزشی | گزینه حساب سازمانی را انتخاب کنید. |
 
-پس از پر کردن form، register را بزنید.
+پس از تکمیل فرم، روی ثبت کلیک کنید.
 
-![Create OneDrive app](../../image/upload/onedrive/添加应用程序注册.png)
+![ساخت برنامه OneDrive](../../image/upload/onedrive/添加应用程序注册.png)
 
-### Step 3: Copy کردن App Information
+### مرحله 3: کپی کردن اطلاعات برنامه
 
-پس از ساخت app، این values را از overview page copy کنید:
+پس از ساخت برنامه، این مقدارها را از صفحه خلاصه کپی کنید:
 
-| Microsoft Field | ImgBed Field |
+| فیلد Microsoft | فیلد ImgBed |
 | --- | --- |
 | `Application (client) ID` | `Client ID` |
-| `Directory (tenant) ID` | `Tenant ID` برای organizational accounts |
+| `Directory (tenant) ID` | `Tenant ID` برای حساب‌های سازمانی |
 
-![Application and tenant IDs](../../image/upload/onedrive/应用程序ID和目录租户ID位.png)
+![شناسه‌های برنامه و tenant](../../image/upload/onedrive/应用程序ID和目录租户ID位.png)
 
-### Step 4: ساخت Client Secret
+### مرحله 4: ساخت Client Secret
 
 1. `Certificates & secrets` را باز کنید.
-2. `New client secret` را بزنید.
-3. description دلخواه وارد کنید.
-4. expiration period انتخاب کنید.
-5. پس از ساخت، `Value` را بلافاصله copy کنید.
+2. روی `New client secret` کلیک کنید.
+3. توضیح دلخواه را وارد کنید.
+4. دوره انقضا را انتخاب کنید.
+5. پس از ساخت، مقدار `Value` را فوراً کپی کنید.
 
-![Save client secret value](../../image/upload/onedrive/保存客户端密码值.png)
+![ذخیره مقدار client secret](../../image/upload/onedrive/保存客户端密码值.png)
 
-### Step 5: افزودن API Permissions
+### مرحله 5: افزودن مجوزهای API
 
 1. `API permissions` را باز کنید.
-2. `Add a permission` را بزنید.
+2. روی `Add a permission` کلیک کنید.
 3. `Microsoft Graph` را انتخاب کنید.
 4. `Delegated permissions` را انتخاب کنید.
-5. این permissions را اضافه کنید:
+5. این مجوزها را اضافه کنید:
 
-| Permission | Purpose |
+| مجوز | کاربرد |
 | --- | --- |
-| `Files.ReadWrite.All` | upload files، ساخت folders و delete files |
-| `offline_access` | اجازه می‌دهد ImgBed `Refresh Token` بگیرد |
-| `User.Read` | خواندن account و quota information |
+| `Files.ReadWrite.All` | بارگذاری فایل‌ها، ساخت پوشه‌ها و حذف فایل‌ها |
+| `offline_access` | به ImgBed اجازه می‌دهد `Refresh Token` دریافت کند |
+| `User.Read` | خواندن اطلاعات حساب و سهمیه |
 
-### Step 6: پر کردن OneDrive Channel در ImgBed
+### مرحله 6: تکمیل کانال OneDrive
 
-در Upload Settings، `OneDrive` را انتخاب کنید و این fields را پر کنید:
+در تنظیمات بارگذاری، `OneDrive` را انتخاب کنید و این فیلدها را تکمیل کنید:
 
-| ImgBed Field | What To Enter |
+| فیلد ImgBed | مقدار لازم |
 | --- | --- |
-| Channel name | نام قابل‌تشخیص، مثل `Main OneDrive` |
-| Client ID | Microsoft `Application (client) ID` |
-| Client Secret | مقدار `Client Secret Value` که copy کردید |
-| Tenant ID | بر اساس جدول پایین |
+| نام کانال | نامی قابل تشخیص، مانند `Main OneDrive` |
+| Client ID | مقدار `Application (client) ID` در Microsoft |
+| Client Secret | مقدار `Client Secret Value` که کپی کرده‌اید |
+| Tenant ID | بر اساس جدول زیر |
 | Refresh Token | فعلاً خالی بگذارید |
-| Root directory | اختیاری. پیش‌فرض `imgbed`. |
-| Note | اختیاری |
+| دایرکتوری ریشه | اختیاری. مقدار پیش‌فرض `imgbed` است. |
+| یادداشت | اختیاری |
 
-![Fill OneDrive channel config](../../image/upload/onedrive/添加新渠道配置.png)
+![تکمیل پیکربندی کانال OneDrive](../../image/upload/onedrive/添加新渠道配置.png)
 
-روش پر کردن `Tenant ID`:
+روش تکمیل `Tenant ID`:
 
-| Account Type انتخاب‌شده | ImgBed `Tenant ID` |
+| نوع حساب انتخاب‌شده | `Tenant ID` در ImgBed |
 | --- | --- |
-| Personal accounts | `consumers` |
-| Personal + organizational accounts | `common` |
-| فقط current organization | `Directory (tenant) ID` |
+| حساب‌های شخصی | `consumers` |
+| حساب‌های شخصی + سازمانی | `common` |
+| فقط سازمان فعلی | `Directory (tenant) ID` |
 
-### Step 7: گرفتن Refresh Token
+### مرحله 7: دریافت Refresh Token
 
-1. در ImgBed، `Get Token` را بزنید.
-2. وارد Microsoft account موردنظر شوید.
-3. authorization prompt را approve کنید.
-4. callback page یک `Refresh Token` نمایش می‌دهد.
-5. آن را copy کنید.
-6. به ImgBed برگردید و در field `Refresh Token` paste کنید.
+1. در ImgBed روی `Get Token` کلیک کنید.
+2. وارد حساب Microsoft موردنظر برای اتصال شوید.
+3. درخواست مجوزدهی را تأیید کنید.
+4. صفحه بازگشت یک `Refresh Token` نمایش می‌دهد.
+5. آن را کپی کنید.
+6. به ImgBed برگردید و آن را در فیلد `Refresh Token` قرار دهید.
 
-![Copy refresh token](../../image/upload/onedrive/复制刷新令牌.png)
+![کپی کردن refresh token](../../image/upload/onedrive/复制刷新令牌.png)
 
-### Step 8: Save کردن Channel
+### مرحله 8: ذخیره کانال
 
-بعد از پر شدن همه fields، channel را save کنید.
+پس از تکمیل همه فیلدها، کانال را ذخیره کنید.
 
-## Quick Flow
+## جریان سریع
 
 ```text
-portal.azure.com را باز کنید
--> Microsoft Entra ID را جست‌وجو کنید
--> App registrations را باز کنید
--> app جدید register کنید
--> Name / Supported account types / Web redirect URI را پر کنید
+Open portal.azure.com
+-> Search for Microsoft Entra ID
+-> Open App registrations
+-> Register a new app
+-> Fill Name / Supported account types / Web redirect URI
 -> Register
--> Application (client) ID را copy کنید
--> callback URL را در Authentication بررسی کنید
--> در Certificates & secrets یک Client Secret بسازید
--> در API permissions دسترسی‌ها را اضافه کنید
--> Client ID / Client Secret / Tenant ID را در ImgBed وارد کنید
--> Get Token را بزنید
--> Refresh Token را از callback page copy کنید
--> در ImgBed paste و save کنید
+-> Copy Application (client) ID
+-> Check the callback URL in Authentication
+-> Create a Client Secret in Certificates & secrets
+-> Add permissions in API permissions
+-> Fill Client ID / Client Secret / Tenant ID into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
-## References
+## منابع
 
-1. Microsoft Entra app registration: https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
-2. Microsoft identity platform authorization code flow: https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow
-3. Microsoft Graph user authentication: https://learn.microsoft.com/en-us/graph/auth-v2-user
+1. ثبت برنامه در Microsoft Entra: https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
+2. جریان کد مجوزدهی در Microsoft identity platform: https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow
+3. احراز هویت کاربر در Microsoft Graph: https://learn.microsoft.com/en-us/graph/auth-v2-user

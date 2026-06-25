@@ -1,156 +1,156 @@
-# WebDAV Site Access (Beta)
+# Truy cập trang qua WebDAV (Beta)
 
-WebDAV setting trong Security Settings đưa ImgBed site của bạn thành một WebDAV endpoint.
+Cài đặt WebDAV trong Security Settings hiển thị trang ImgBed của bạn như một điểm cuối WebDAV.
 
-Sau khi bật, bạn có thể dùng Windows, macOS, mobile file managers hoặc bất kỳ WebDAV-compatible client nào để browse, upload, delete và manage ImgBed files như một remote folder.
+Sau khi bật, bạn có thể dùng Windows, macOS, trình quản lý tệp trên thiết bị di động hoặc bất kỳ máy khách tương thích WebDAV nào để duyệt, tải lên, xóa và quản lý tệp ImgBed như một thư mục từ xa.
 
-Đây là WebDAV access entry của site. Nó khác với WebDAV storage channel trong Upload Settings. Upload channel lưu files vào third-party WebDAV service. Setting này cho phép ImgBed site cung cấp WebDAV access cho clients.
+Đây là lối vào truy cập WebDAV của trang. Nó khác với kênh lưu trữ WebDAV trong Upload Settings. Kênh tải lên lưu tệp vào một dịch vụ WebDAV của bên thứ ba. Cài đặt này cho phép trang ImgBed của bạn cung cấp quyền truy cập WebDAV cho máy khách.
 
-## Cấu hình ở đâu
+## Nơi cấu hình
 
-Mở admin panel, rồi vào:
+Mở bảng quản trị, rồi đi tới:
 
 ```text
 System Settings -> Security Settings -> WebDAV
 ```
 
-Available settings:
+Các cài đặt có sẵn:
 
-- Enable
-- Username
-- Password
-- Image loading mode
-- Default channel
+- Bật
+- Tên người dùng
+- Mật khẩu
+- Chế độ tải hình ảnh
+- Kênh mặc định
 
-## Feature này làm gì
+## Tính năng này làm gì
 
-Sau khi WebDAV được bật, ImgBed cung cấp fixed access URL:
+Sau khi bật WebDAV, ImgBed cung cấp một URL truy cập cố định:
 
 ```text
 https://your-domain.com/dav
 ```
 
-Dùng URL này để connect tới ImgBed file directory.
+Dùng URL này để kết nối tới thư mục tệp ImgBed của bạn.
 
-Các use cases phù hợp:
+Trường hợp sử dụng phù hợp:
 
-- Browse ImgBed files trực tiếp từ file manager trên máy tính.
-- Kéo images vào WebDAV folder để upload.
-- Organize ImgBed folders từ local file manager.
-- Dùng WebDAV-compatible software để sync hoặc manage images.
-- Access ImgBed content mà không cần mở admin panel.
+- Duyệt tệp ImgBed trực tiếp từ trình quản lý tệp trên máy tính.
+- Kéo hình ảnh vào thư mục WebDAV để tải lên.
+- Sắp xếp thư mục ImgBed từ trình quản lý tệp cục bộ.
+- Dùng phần mềm tương thích WebDAV để đồng bộ hoặc quản lý hình ảnh.
+- Truy cập nội dung ImgBed mà không mở bảng quản trị.
 
-## Settings
+## Cài đặt
 
-### Enable
+### Bật
 
-Bật WebDAV endpoint.
+Bật điểm cuối WebDAV.
 
-Khi disabled, clients không thể connect qua WebDAV.
+Khi tắt, máy khách không thể kết nối qua WebDAV.
 
-### Username và Password
+### Tên người dùng và mật khẩu
 
-WebDAV clients dùng credentials này khi connect.
+Các thông tin xác thực này được máy khách WebDAV dùng khi kết nối.
 
-Hãy dùng WebDAV username và password riêng. Không dùng lại admin password hoặc upload password.
+Hãy dùng tên người dùng và mật khẩu WebDAV riêng. Không dùng lại mật khẩu quản trị viên hoặc mật khẩu tải lên.
 
-Nếu username hoặc password trống, WebDAV clients sẽ không connect đúng cách.
+Nếu tên người dùng hoặc mật khẩu bị trống, máy khách WebDAV sẽ không thể kết nối đúng cách.
 
-### Image Loading Mode
+### Chế độ tải hình ảnh
 
-Image loading mode quyết định WebDAV clients ưu tiên image URL nào khi đọc images.
+Chế độ tải hình ảnh quyết định URL hình ảnh nào mà máy khách WebDAV ưu tiên khi đọc hình ảnh.
 
-Common choices:
+Các lựa chọn thường gặp:
 
-| Mode | Description |
+| Chế độ | Mô tả |
 | --- | --- |
-| Smart loading | ImgBed chọn theo context. Recommended cho normal use. |
-| Original | Ưu tiên original images. |
-| Thumbnail | Ưu tiên thumbnails. Hữu ích cho fast preview. |
+| Tải thông minh | ImgBed chọn theo ngữ cảnh. Khuyến nghị cho sử dụng thông thường. |
+| Gốc | Ưu tiên hình ảnh gốc. |
+| Hình thu nhỏ | Ưu tiên hình thu nhỏ. Hữu ích cho xem trước nhanh. |
 
-Nếu chưa chắc, giữ `Smart loading`.
+Nếu không chắc, hãy giữ `Tải thông minh`.
 
-### Default Channel
+### Kênh mặc định
 
-Default channel được dùng cho WebDAV uploads.
+Kênh mặc định được dùng cho lượt tải lên qua WebDAV.
 
-Khi bạn copy files vào WebDAV directory từ Windows hoặc client khác, ImgBed upload chúng qua selected default upload channel.
+Khi bạn sao chép tệp vào thư mục WebDAV từ Windows hoặc máy khách khác, ImgBed tải chúng lên qua kênh tải lên mặc định đã chọn.
 
-Nếu không chọn default channel, browsing có thể hoạt động, nhưng uploads có thể fail.
+Nếu chưa chọn kênh mặc định, việc duyệt có thể hoạt động, nhưng tải lên có thể thất bại.
 
-## Access WebDAV trong Windows 11
+## Truy cập WebDAV trong Windows 11
 
-Windows 11 có thể thêm WebDAV như một network location.
+Windows 11 có thể thêm WebDAV dưới dạng vị trí mạng.
 
-1. Mở `This PC`.
-2. Chọn `Add a network location`.
+1. Mở `PC này`.
+2. Chọn `Thêm vị trí mạng`.
 3. Nhập `https://your-domain.com/dav`.
-4. Khi được hỏi, nhập WebDAV username và password.
-5. Hoàn tất wizard. Sau đó có thể mở WebDAV directory trong File Explorer.
+4. Nhập tên người dùng và mật khẩu WebDAV khi được yêu cầu.
+5. Hoàn tất trình hướng dẫn. Sau đó có thể mở thư mục WebDAV trong Trình khám phá tệp.
 
-![Add WebDAV in Windows 11](../../image/Safety/webdav在win11配置.png)
+![Thêm WebDAV trong Windows 11](../../image/Safety/webdav在win11配置.png)
 
-Sau khi thêm, WebDAV directory xuất hiện trong Windows File Explorer. Bạn có thể open, copy và manage files như folder bình thường.
+Sau khi được thêm, thư mục WebDAV xuất hiện trong Trình khám phá tệp của Windows. Bạn có thể mở, sao chép và quản lý tệp như thư mục thông thường.
 
-![WebDAV in Windows](../../image/Safety/webdav在win显示效果.png)
+![WebDAV trong Windows](../../image/Safety/webdav在win显示效果.png)
 
-## Supported Operations
+## Thao tác được hỗ trợ
 
-Sau khi WebDAV connection thành công, thường bạn có thể:
+Sau khi kết nối WebDAV thành công, bạn thường có thể:
 
-- View files và folders.
-- Upload files.
-- Create folders.
-- Rename files hoặc folders.
-- Move files.
-- Delete files.
+- Xem tệp và thư mục.
+- Tải tệp lên.
+- Tạo thư mục.
+- Đổi tên tệp hoặc thư mục.
+- Di chuyển tệp.
+- Xóa tệp.
 
-WebDAV phù hợp cho everyday access và small-scale file management. Với large moves, bulk deletes hoặc organization phức tạp, hãy dùng admin panel.
+WebDAV phù hợp nhất cho truy cập hằng ngày và quản lý tệp quy mô nhỏ. Với di chuyển lớn, xóa hàng loạt hoặc tổ chức phức tạp, hãy dùng bảng quản trị.
 
-## Login Device Management
+## Quản lý thiết bị đăng nhập
 
-Successful WebDAV connections cũng xuất hiện trong WebDAV tab của Login Device Management.
+Các kết nối WebDAV thành công cũng xuất hiện trong thẻ WebDAV của Quản lý thiết bị đăng nhập.
 
-Bạn có thể review WebDAV clients ở đó và force old devices offline khi cần.
+Bạn có thể xem máy khách WebDAV tại đó và buộc thiết bị cũ ngoại tuyến khi cần.
 
-Nếu đổi WebDAV username hoặc password, clients cũ cần sign in lại.
+Nếu bạn thay đổi tên người dùng hoặc mật khẩu WebDAV, máy khách cũ cần đăng nhập lại.
 
-## FAQ
+## Câu hỏi thường gặp
 
-### Windows liên tục hỏi Username và Password
+### Windows liên tục hỏi tên người dùng và mật khẩu
 
 Kiểm tra:
 
 - URL là `https://your-domain.com/dav`.
-- Username và password khớp với WebDAV settings.
-- WebDAV đã enabled.
-- Site có thể access qua HTTPS.
+- Tên người dùng và mật khẩu khớp với cài đặt WebDAV.
+- WebDAV đã được bật.
+- Trang có thể truy cập qua HTTPS.
 
-### Browsing hoạt động, nhưng Upload fail
+### Duyệt được nhưng tải lên thất bại
 
-Kiểm tra `Default channel`.
+Kiểm tra `Kênh mặc định`.
 
-WebDAV uploads cần default upload channel. Nếu thiếu, disabled hoặc misconfigured, uploads có thể fail.
+Tải lên qua WebDAV cần kênh tải lên mặc định. Nếu kênh này bị thiếu, bị tắt hoặc cấu hình sai, tải lên có thể thất bại.
 
-### Access Speed không ổn định
+### Tốc độ truy cập không ổn định
 
-WebDAV performance phụ thuộc vào client, network, file count và default upload channel.
+Hiệu năng WebDAV phụ thuộc vào máy khách, mạng, số lượng tệp và kênh tải lên mặc định.
 
-Nếu một directory có nhiều files, hãy chia vào folders thay vì giữ quá nhiều files trong một directory.
+Nếu một thư mục có nhiều tệp, hãy sắp xếp chúng vào các thư mục thay vì để quá nhiều tệp trong một thư mục.
 
-## Security Recommendations
+## Khuyến nghị bảo mật
 
-- Dùng HTTPS cho WebDAV access.
-- Đặt strong password.
-- Không share WebDAV password với người không trusted.
-- Tắt WebDAV khi không dùng.
-- Periodically clean up unused WebDAV devices trong Login Device Management.
+- Dùng HTTPS cho truy cập WebDAV.
+- Đặt mật khẩu mạnh.
+- Không chia sẻ mật khẩu WebDAV với người không đáng tin cậy.
+- Tắt WebDAV khi không sử dụng.
+- Định kỳ dọn dẹp thiết bị WebDAV không dùng trong Quản lý thiết bị đăng nhập.
 
-## WebDAV Upload File Size
+## Dung lượng tệp tải lên qua WebDAV
 
-WebDAV clients không dùng large-file chunking flow của browser upload page. Với files vượt suggested limits bên dưới, hãy dùng web upload page.
+Máy khách WebDAV không dùng quy trình tải lên tệp lớn theo từng phần của trang tải lên trên trình duyệt. Với tệp lớn hơn các giới hạn khuyến nghị bên dưới, hãy dùng trang tải lên web.
 
-| Default Upload Channel | Suggested Single-File Limit for WebDAV |
+| Kênh tải lên mặc định | Giới hạn một tệp khuyến nghị cho WebDAV |
 | --- | ---: |
 | Telegram | 20 MB |
 | Discord | 10 MB |

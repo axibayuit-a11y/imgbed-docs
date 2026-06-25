@@ -1,71 +1,86 @@
-# Añadir un canal pCloud
-
-El canal pCloud usa tu cuenta de pCloud como destino de almacenamiento.
+# Añadir un canal de pCloud
 
 ## Cuándo conviene
 
-- Ya tienes cuenta de pCloud.
-- Quieres guardar imágenes o archivos en tu espacio pCloud.
-- Puedes usar correo y contraseña como credenciales del canal.
+- Tiene una cuenta de pCloud y quiere que ImgBed almacene imágenes en pCloud.
+- No le importa usar el correo y la contraseña de su cuenta de pCloud como credenciales del canal.
 
-## Qué preparar
+## Qué necesita primero
 
-| Requisito | Uso |
+| Requisito | Por qué lo necesita |
 | --- | --- |
-| Correo de pCloud | Inicio de sesión en la API |
-| Contraseña de pCloud | Inicio de sesión en la API |
-| Host | Normalmente `api.pcloud.com`; para Europa `eapi.pcloud.com` |
-| Directorio | Opcional, normalmente `imgbed` |
+| Correo de la cuenta de pCloud | Se usa para iniciar sesión en la API de pCloud |
+| Contraseña de pCloud | Se usa para iniciar sesión en la API de pCloud |
+| Host de API | El valor predeterminado es `api.pcloud.com`. Las cuentas de la UE pueden usar `eapi.pcloud.com`. |
+| Directorio de almacenamiento | Donde se almacenan los archivos. El valor predeterminado es `imgbed`. |
 
-## Dónde se añade
+## Dónde añadirlo
 
-1. Abre Configuración del sistema.
-2. Entra en Configuración de subida.
-3. Haz clic en `Añadir canal`.
-4. Selecciona `pCloud`.
+1. Abra Ajustes del sistema.
+2. Abra Ajustes de carga.
+3. Haga clic en Añadir canal en la esquina superior derecha.
+4. Elija `pCloud`.
 
-## Campos
+## Referencia de campos
 
-| Campo | Valor |
+| Campo | Propósito | Obligatorio |
+| --- | --- | --- |
+| Nombre del canal | Identifica este canal pCloud, por ejemplo `pCloud personal` | Sí |
+| Correo de la cuenta | Su correo de inicio de sesión en pCloud | Sí |
+| Contraseña | Su contraseña de pCloud | Sí |
+| Host de API | Host de la API de pCloud. El valor predeterminado es `api.pcloud.com`. | No |
+| Directorio de almacenamiento | Directorio usado para almacenar archivos. El valor predeterminado es `imgbed`. | No |
+
+Elija el host de API según la región de su cuenta:
+
+| Región de la cuenta | Host de API |
 | --- | --- |
-| Nombre del canal | Por ejemplo `pCloud Main` |
-| Correo | Correo de inicio de sesión de pCloud |
-| Contraseña | Contraseña de pCloud |
-| Host | Normalmente `api.pcloud.com` |
-| Directorio | Opcional, por defecto `imgbed` |
-
-El Host depende de la región de la cuenta.
-
-| Región | Host |
-| --- | --- |
-| Predeterminada / Estados Unidos | `api.pcloud.com` |
+| Predeterminada / EE. UU. | `api.pcloud.com` |
 | Europa | `eapi.pcloud.com` |
 
-![Configuración pCloud](../../image/upload/pcloud/配置渠道.png)
+## Pasos de configuración
 
-## Verificación
+1. Abra Ajustes de carga.
+2. Haga clic en Añadir canal.
+3. Elija `pCloud`.
+4. Introduzca un nombre de canal que pueda reconocer.
+5. Introduzca el correo de su cuenta de pCloud.
+6. Introduzca su contraseña de pCloud.
+7. Mantenga el host de API como `api.pcloud.com`, o use `eapi.pcloud.com` para cuentas de la UE.
+8. Mantenga el directorio de almacenamiento como `imgbed`, o cámbielo por la carpeta que prefiera.
+9. Guarde el canal.
 
-Después de guardar, debe aparecer la tarjeta del canal. Si la consulta de capacidad funciona, la conexión está bien.
+![Configurar canal](../../image/upload/pcloud/配置渠道.png)
 
-![Consulta de capacidad](../../image/upload/pcloud/查询额度成功.png)
+## Cómo verificarlo
 
-Luego sube una imagen de prueba y comprueba que aparece en el directorio de pCloud.
+| Comprobación | Resultado esperado |
+| --- | --- |
+| Tarjeta del canal | La tarjeta del canal pCloud aparece después de guardar. |
+| Interruptor del canal | El interruptor de la tarjeta permanece activado. |
+| Visualización del correo | La tarjeta muestra el correo de pCloud conectado. |
+| Consulta de cuota | Después de una consulta correcta, se muestran la capacidad usada y total. |
+| Prueba de carga | Una imagen de prueba aparece en el directorio de almacenamiento configurado de pCloud. |
 
-## Preguntas habituales
+![Consulta de cuota correcta](../../image/upload/pcloud/查询额度成功.png)
+
+## Solución de problemas
 
 ### ¿Por qué no OAuth2?
 
-OAuth2 de pCloud no está disponible como flujo abierto por defecto y requiere activación oficial. Además, el flujo actual no encaja bien con las URLs temporales de subida que necesita ImgBed, por eso se usa correo y contraseña.
+pCloud OAuth2 no es autoservicio de forma predeterminada. Debe escribir a pCloud y pedir que lo activen.
 
-### ¿Qué Host pongo?
+El flujo OAuth2 actual de pCloud tampoco admite el flujo de enlaces de carga de corta duración que ImgBed necesita, por lo que este canal usa inicio de sesión con correo y contraseña.
 
-Normalmente:
+### ¿Qué host de API debo usar?
+
+Predeterminado:
 
 ```text
 api.pcloud.com
 ```
 
-Para cuentas europeas:
+Para cuentas de la UE:
 
 ```text
 eapi.pcloud.com
@@ -74,13 +89,14 @@ eapi.pcloud.com
 ## Flujo rápido
 
 ```text
-Preparar correo y contraseña de pCloud
--> Abrir Configuración de subida
--> Añadir canal
--> Elegir pCloud
--> Rellenar nombre / correo / contraseña
--> Revisar Host
--> Guardar
--> Consultar capacidad
--> Subir imagen de prueba
+Prepare your pCloud email and password
+-> Open Upload Settings
+-> Add Channel
+-> Choose pCloud
+-> Fill channel name / email / password
+-> Keep API host as api.pcloud.com unless your account is in Europe
+-> Keep storage directory as imgbed unless you need another folder
+-> Save
+-> Query quota
+-> Upload a test image
 ```

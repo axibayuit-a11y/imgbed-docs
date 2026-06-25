@@ -1,6 +1,6 @@
 # IP-geolocatie en gebruikersbeheer
 
-IP-geolocatie zet IP-adressen in uploaderrecords, loginapparaten en vergelijkbare logs om naar geschatte locaties.
+IP-geolocatie zet IP-adressen in uploadrecords, inlogapparaten en vergelijkbare logboeken om naar geschatte locaties.
 
 Na configuratie kan het beheer duidelijker tonen waar uploads en toegang vandaan komen. Gebruikersbeheer laat je ook uploadtoegang voor verdachte IP-adressen blokkeren of herstellen.
 
@@ -16,19 +16,19 @@ System Settings -> Other Settings -> IP Geolocation
 
 ## Beschikbare instellingen
 
-De nieuwere IP-geolocatieflow ondersteunt meerdere bronnen, in plaats van afhankelijk te zijn van één kaartdienst.
+De nieuwere werkwijze voor IP-geolocatie ondersteunt meerdere bronnen, in plaats van afhankelijk te zijn van één kaartdienst.
 
 | Instelling | Doel |
 | --- | --- |
 | IP-geolocatietaal | Kiest de weergavetaal, zoals Engels, Vereenvoudigd Chinees, Japans, Frans en andere talen. |
-| MaxMind Account ID | MaxMind account-ID voor MaxMind GeoLite Web Service. |
+| MaxMind Account ID | MaxMind-account-ID voor MaxMind GeoLite Web Service. |
 | MaxMind License Key | MaxMind License Key. |
-| Tencent Map Key | Tencent Location Service key. Handig voor Chinese adressen en IP's op het Chinese vasteland. |
-| ipapi Key | APILayer ipapi key. Ondersteunt meertalige IP-geolocatie. |
+| Tencent Map Key | Sleutel voor Tencent Location Service. Handig voor Chinese adressen en IP's op het Chinese vasteland. |
+| ipapi Key | APILayer ipapi-sleutel. Ondersteunt meertalige IP-geolocatie. |
 
 Vul alleen de diensten in die je nodig hebt. Je hoeft niet elk veld te configureren.
 
-Als je geen key invult, probeert ImgBed nog steeds ingebouwde gratis bronnen, maar stabiliteit, taalondersteuning en nauwkeurigheid kunnen lager zijn dan bij een eigen geconfigureerde dienst.
+Als je geen sleutel invult, probeert ImgBed nog steeds ingebouwde gratis bronnen, maar stabiliteit, taalondersteuning en nauwkeurigheid kunnen lager zijn dan bij een eigen geconfigureerde dienst.
 
 ## Aanbevolen keuzes
 
@@ -59,7 +59,7 @@ Zoek de account-ID in het MaxMind-dashboard en genereer een License Key op de pa
 
 Plak na het genereren Account ID en License Key in ImgBed en sla op.
 
-Het gratis plan van MaxMind is geschikt voor dagelijks gebruik, maar heeft verzoeklimieten. Als de quota op is, probeert ImgBed andere beschikbare bronnen.
+Het gratis plan van MaxMind is geschikt voor dagelijks gebruik, maar heeft aanvraaglimieten. Als het quotum is overschreden, blijft ImgBed andere beschikbare bronnen proberen.
 
 ## ipapi instellen
 
@@ -71,19 +71,19 @@ Open de ipapi-console en kopieer de API Key die daar wordt getoond.
 
 Plak deze in het veld `ipapi Key` in ImgBed en sla op.
 
-ipapi ondersteunt meertalige IP-geolocatie en is handig wanneer je adressen in een gekozen taal wilt tonen. Ook het gratis plan heeft verzoeklimieten. Als de quota op raakt, probeert ImgBed andere beschikbare bronnen.
+ipapi ondersteunt meertalige IP-geolocatie en is handig wanneer je adressen in een gekozen taal wilt tonen. Ook het gratis plan heeft aanvraaglimieten. Als het quotum opraakt, blijft ImgBed andere beschikbare bronnen proberen.
 
 ## Tencent Map Key instellen
 
 Tencent Map Key is nuttig voor Chinese adressen, vooral IP's op het Chinese vasteland.
 
-Schakel bij het maken van een key in Tencent Location Service in:
+Schakel bij het maken van een sleutel in Tencent Location Service in:
 
 ```text
 WebServiceAPI
 ```
 
-Plak na het aanmaken de key in `Tencent Map Key` en sla op.
+Plak na het aanmaken de sleutel in `Tencent Map Key` en sla op.
 
 Als je alleen basis-IP-geolocatie voor Chinese adressen nodig hebt, is Tencent Map Key genoeg om te beginnen.
 
@@ -105,7 +105,7 @@ Gebruikersbeheer toont uploadactiviteit per IP:
 
 Klik op de pijl links om de lijst met door dat IP geüploade bestanden uit te klappen.
 
-De bestandslijst toont bestandsnaam, preview, bestandsgrootte, moderatieresultaat, bestandsstatus en uploadtijd. Lijken uploads verdacht, klap dan eerst het IP uit, bekijk de bestanden en beslis daarna of verdere uploads moeten worden geblokkeerd.
+De bestandslijst toont bestandsnaam, voorbeeldweergave, bestandsgrootte, moderatieresultaat, bestandsstatus en uploadtijd. Lijken uploads verdacht, klap dan eerst het IP uit, bekijk de bestanden en beslis daarna of verdere uploads moeten worden geblokkeerd.
 
 Is een IP verdacht, zet `Upload allowed` uit. Toekomstige uploads vanaf dat IP worden geblokkeerd.
 
@@ -125,7 +125,7 @@ Geavanceerde filters ondersteunen:
 | --- | --- |
 | Tijdsbereik | Toon IP's die in een gekozen periode bestanden hebben geüpload. |
 | Toegangsstatus | Filter op normaal, geblokkeerd en vergelijkbare statussen. |
-| Allow/block list | Filter op allowlist, blocklist of niet ingesteld. |
+| Toestaan-/blokkeerlijst | Filter op toestaanlijst, blokkeerlijst of niet ingesteld. |
 | Bestandstype | Toon IP's die afbeeldingen, video's, audio, documenten, code of andere bestanden hebben geüpload. |
 | Bestandsgrootte | Filter op geüploade bestandsgrootte. |
 | Leeftijdsrating | Filter op niet ingesteld, General, R12+, R16+, R18 en vergelijkbare ratings. |
@@ -147,28 +147,28 @@ IP-geolocatie is bij benadering. Het is geen precies straatadres.
 
 Als een gebruiker via een proxy, datacenter, cloudserver of grensoverschrijdend netwerk werkt, kan de getoonde locatie verschillen van de werkelijke locatie.
 
-Gebruik deze functie om herkomst grof te begrijpen, afwijkende uploads te vinden en blokkeerbeslissingen te ondersteunen. Behandel het niet als nauwkeurige tracking.
+Gebruik deze functie om de herkomst globaal te begrijpen, afwijkende uploads te vinden en blokkeerbeslissingen te ondersteunen. Behandel het niet als nauwkeurige tracering.
 
 ## Veelvoorkomende situaties
 
 | Situatie | Betekenis |
 | --- | --- |
-| Adres is leeg | Het IP is mogelijk nog niet opgelost, of de huidige bron is tijdelijk niet beschikbaar. |
+| Adres is leeg | De locatie van het IP is mogelijk nog niet opgehaald, of de huidige bron is tijdelijk niet beschikbaar. |
 | Adrestaal is verkeerd | Controleer de IP-geolocatietaal en of een bron is ingesteld die die taal ondersteunt. |
 | Adres toont een datacenter | Veel proxy's, cloudservers en crawlers verschijnen als datacenter- of ISP-adressen. |
 | Aantal uploads is hoog | Bekijk dit IP zorgvuldig en blokkeer uploads indien nodig. |
 | Totale uploadgrootte is groot | Sorteer of filter, klap het IP uit en inspecteer specifieke bestanden. |
 | Herstellen na blokkeren | Zet `Upload allowed` weer aan. |
 
-## Snelle flow
+## Snelle workflow
 
 ```text
 Open IP Geolocation in Other Settings
--> Kies IP-geolocatietaal
--> Vul MaxMind, Tencent Map of ipapi in waar nodig
--> Sla instellingen op
--> Open Gebruikersbeheer
--> Controleer IP-bron, adres, totale uploadgrootte en aantal uploads
--> Gebruik zoeken, sorteren of geavanceerde filters om afwijkende IP's te vinden
--> Sta uploads toe of blokkeer ze waar nodig
+-> Choose IP geolocation language
+-> Fill MaxMind, Tencent Map, or ipapi credentials as needed
+-> Save settings
+-> Open User Management
+-> Review IP source, address, total upload size, and upload count
+-> Use search, sort, or advanced filters to find abnormal IPs
+-> Allow or block uploads as needed
 ```

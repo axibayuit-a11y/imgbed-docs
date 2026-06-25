@@ -89,14 +89,14 @@ eapi.pcloud.com
 ## Szybki przebieg
 
 ```text
-Przygotuj e-mail i hasło pCloud
--> Otwórz Ustawienia przesyłania
--> Dodaj kanał
--> Wybierz pCloud
--> Wpisz nazwę kanału / e-mail / hasło
--> Zostaw API host jako api.pcloud.com, chyba że konto jest w Europie
--> Zostaw katalog jako imgbed, chyba że potrzebujesz innego
--> Zapisz
--> Odpytaj limit
--> Prześlij obraz testowy
+Prepare your pCloud email and password
+-> Open Upload Settings
+-> Add Channel
+-> Choose pCloud
+-> Fill channel name / email / password
+-> Keep API host as api.pcloud.com unless your account is in Europe
+-> Keep storage directory as imgbed unless you need another folder
+-> Save
+-> Query quota
+-> Upload a test image
 ```

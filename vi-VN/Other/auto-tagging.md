@@ -1,178 +1,178 @@
-# Auto Tagging
+# Gắn Thẻ Tự Động
 
-Auto tagging được cấu hình tại:
+Gắn thẻ tự động được cấu hình tại:
 
 ```text
 System Settings -> Other Settings -> Auto Tagging
 ```
 
-Tính năng này tự động tạo image tags, hữu ích cho search, random image filtering, public gallery filtering và age-rating access control.
+Tính năng này tự động tạo thẻ cho hình ảnh. Các thẻ này hữu ích cho tìm kiếm, lọc ảnh ngẫu nhiên, lọc thư viện công khai và kiểm soát truy cập theo phân loại độ tuổi.
 
-## Auto Tagging làm được gì
+## Gắn Thẻ Tự Động Có Thể Làm Gì
 
-| Feature | Description |
+| Tính năng | Mô tả |
 | --- | --- |
-| Generate content tags | Thêm tags cho people, scenes, objects, art style và visual content tương tự. |
-| Generate character tags | Hữu ích cho anime images và illustrations. |
-| Add orientation tags | Thêm `landscape`, `portrait` hoặc `square`. |
-| Add image rating | Lưu kết quả rating `G/S/Q/E` cho general, sensitive, questionable hoặc explicit content. |
-| Auto-tag on upload | Newly uploaded images tự động đi vào tagging flow. |
-| Batch tagging | Thêm tags cho old images trong tất cả folders hoặc selected folders. |
+| Tạo thẻ nội dung | Thêm thẻ cho con người, cảnh, vật thể, phong cách nghệ thuật và các nội dung hình ảnh tương tự. |
+| Tạo thẻ nhân vật | Hữu ích cho ảnh anime và minh họa. |
+| Thêm thẻ hướng ảnh | Thêm `landscape`, `portrait` hoặc `square`. |
+| Thêm phân loại ảnh | Lưu kết quả phân loại `G/S/Q/E` cho nội dung phổ thông, nhạy cảm, đáng ngờ hoặc lộ liễu. |
+| Tự gắn thẻ khi tải lên | Ảnh mới tải lên sẽ tự động đi vào luồng gắn thẻ. |
+| Gắn thẻ hàng loạt | Thêm thẻ cho ảnh cũ trong tất cả thư mục hoặc các thư mục đã chọn. |
 
-## Cần chuẩn bị trước
+## Cần Chuẩn Bị Trước
 
-Chuẩn bị ít nhất một Hugging Face Space URL có thể truy cập.
+Chuẩn bị ít nhất một URL Hugging Face Space có thể truy cập.
 
-Cách recommended là duplicate Space `wd-tagger` của SmilingWolf vào Hugging Face account của bạn:
+Cách được khuyến nghị là nhân bản Space `wd-tagger` của SmilingWolf vào tài khoản Hugging Face của bạn:
 
 ```text
 https://huggingface.co/spaces/SmilingWolf/wd-tagger
 ```
 
-Bạn có thể tạm dùng public Space, nhưng public Spaces được nhiều users dùng chung nên có thể queue, chậm hoặc unavailable. Space duplicate dưới account của bạn ổn định hơn cho auto tagging dài hạn.
+Bạn có thể tạm dùng Space công khai để kiểm thử, nhưng các Space công khai được nhiều người dùng chung nên có thể phải xếp hàng, chậm hoặc tạm thời không khả dụng. Space được nhân bản trong tài khoản của bạn ổn định hơn cho gắn thẻ tự động lâu dài.
 
-## Duplicate Space của SmilingWolf
+## Nhân Bản Space Của SmilingWolf
 
-1. Sign in vào Hugging Face.
+1. Đăng nhập vào Hugging Face.
 2. Mở `https://huggingface.co/spaces/SmilingWolf/wd-tagger`.
 
-![SmilingWolf public Space](../../image/other/微笑狼的公开仓库.png)
+![Space công khai của SmilingWolf](../../image/other/微笑狼的公开仓库.png)
 
-3. Nhấn menu ba chấm ở góc trên bên phải.
+3. Nhấp vào menu ba chấm ở góc trên bên phải.
 4. Chọn `Duplicate this Space`.
-5. Giữ Space name mặc định hoặc chọn tên riêng, ví dụ `wd-tagger`.
-6. Đặt visibility là `Public`. Public Spaces dễ để ImgBed call hơn.
-7. Ban đầu giữ default free hardware. Chỉ upgrade sau nếu queueing rõ rệt.
-8. Create Space và chờ build xong.
+5. Giữ tên Space mặc định hoặc chọn tên riêng, chẳng hạn `wd-tagger`.
+6. Đặt quyền hiển thị là `Public`. Các Space công khai dễ được ImgBed gọi hơn.
+7. Ban đầu giữ phần cứng miễn phí mặc định. Chỉ nâng cấp sau nếu tình trạng xếp hàng trở nên rõ ràng.
+8. Tạo Space và chờ quá trình xây dựng hoàn tất.
 
-Sau khi build xong, mở Space page của bạn. URL thường có dạng:
+Sau khi quá trình xây dựng hoàn tất, mở trang Space của bạn. URL thường có dạng:
 
 ```text
 https://huggingface.co/spaces/your-name/wd-tagger
 ```
 
-Copy browser URL và paste vào `Space URLs` của ImgBed.
+Sao chép URL trên trình duyệt và dán vào `Space URLs` trong ImgBed.
 
-## Điền nhiều Space URLs
+## Điền Nhiều Space URLs
 
-Mỗi dòng nhập một Space URL.
+Nhập mỗi Space URL trên một dòng.
 
-Examples:
+Ví dụ:
 
-| Value | Description |
+| Giá trị | Mô tả |
 | --- | --- |
-| `https://huggingface.co/spaces/SmilingWolf/wd-tagger` | SmilingWolf public Space. Phù hợp để test tạm thời. |
-| `https://huggingface.co/spaces/lintonxue00/wd-tagger` | Copied Space page URL. |
-| `https://huggingface.co/spaces/your-name/wd-tagger` | Space bạn tự duplicate. |
+| `https://huggingface.co/spaces/SmilingWolf/wd-tagger` | Space công khai của SmilingWolf. Phù hợp để kiểm thử tạm thời. |
+| `https://huggingface.co/spaces/lintonxue00/wd-tagger` | URL trang Space đã sao chép. |
+| `https://huggingface.co/spaces/your-name/wd-tagger` | Trang Space do bạn tự nhân bản. |
 
-Bạn có thể nhập nhiều URLs. ImgBed dùng nhiều Spaces cùng lúc, giúp cải thiện speed.
+Bạn có thể nhập nhiều URL. ImgBed sử dụng nhiều Space cùng lúc, nhờ đó có thể cải thiện tốc độ.
 
-Nếu một Space temporarily unavailable, các Space khác vẫn có thể tiếp tục processing.
+Nếu một Space tạm thời không khả dụng, các Space khác vẫn có thể tiếp tục xử lý.
 
-## Settings
+## Cài Đặt
 
-| Option | Recommendation |
+| Tùy chọn | Khuyến nghị |
 | --- | --- |
-| `Space URLs` | Nhập Space URLs đã chuẩn bị. Cần ít nhất một URL. |
-| Target folder | Để trống cho tất cả folders. Chỉ chọn folder khi muốn process một directory cụ thể. |
-| Recognition model | Giữ mặc định `wd-swinv2-tagger-v3`. |
-| General tag threshold | Default phù hợp với hầu hết images. Giá trị thấp tạo nhiều tags hơn; giá trị cao tạo ít tags hơn. |
-| Character tag threshold | Default khá thận trọng và giúp tránh character tags sai. |
-| `MCut` automatic threshold | Ban đầu để off. Bật khi muốn model tự quyết định số lượng tags. |
-| Auto-tag on upload | Bật nếu muốn newly uploaded images tự động có tags. |
-| Start tagging | Batch-tag old images thủ công. |
+| `Space URLs` | Nhập các Space URL bạn đã chuẩn bị. Dùng ít nhất một URL. |
+| Thư mục đích | Để trống cho tất cả thư mục. Chỉ chọn thư mục khi bạn muốn xử lý một thư mục cụ thể. |
+| Mô hình nhận diện | Giữ mặc định `wd-swinv2-tagger-v3`. |
+| Ngưỡng thẻ chung | Giá trị mặc định phù hợp với hầu hết ảnh. Giá trị thấp tạo nhiều thẻ hơn; giá trị cao tạo ít thẻ hơn. |
+| Ngưỡng thẻ nhân vật | Giá trị mặc định thận trọng và giúp tránh thẻ nhân vật sai. |
+| Ngưỡng tự động `MCut` | Ban đầu để tắt. Bật khi bạn muốn mô hình tự quyết định số lượng thẻ. |
+| Tự gắn thẻ khi tải lên | Bật nếu ảnh mới tải lên cần tự động có thẻ. |
+| Bắt đầu gắn thẻ | Gắn thẻ hàng loạt thủ công cho ảnh cũ. |
 
-## Recommended Starting Values
+## Giá Trị Bắt Đầu Khuyến Nghị
 
-| Option | Recommended Value |
+| Tùy chọn | Giá trị khuyến nghị |
 | --- | --- |
-| Recognition model | `wd-swinv2-tagger-v3` |
-| General tag threshold | `0.35` |
-| Character tag threshold | `0.85` |
-| `MCut` | Ban đầu Off |
-| Auto-tag on upload | Enable nếu cần |
+| Mô hình nhận diện | `wd-swinv2-tagger-v3` |
+| Ngưỡng thẻ chung | `0.35` |
+| Ngưỡng thẻ nhân vật | `0.85` |
+| `MCut` | Ban đầu tắt |
+| Tự gắn thẻ khi tải lên | Bật nếu cần |
 
-Nếu tags quá nhiều, tăng nhẹ general threshold.
+Nếu có quá nhiều thẻ, hãy tăng nhẹ ngưỡng thẻ chung.
 
-Nếu tags quá ít, giảm nhẹ general threshold.
+Nếu có quá ít thẻ, hãy giảm nhẹ ngưỡng thẻ chung.
 
-## Batch Tagging
+## Gắn Thẻ Hàng Loạt
 
 1. Điền `Space URLs`.
-2. Chọn target folder.
-3. Nhấn start tagging.
-4. Chờ progress hoàn tất.
+2. Chọn thư mục đích.
+3. Nhấp bắt đầu gắn thẻ.
+4. Chờ tiến trình hoàn tất.
 
-Nếu target folder trống, ImgBed process tất cả folders.
+Nếu thư mục đích trống, ImgBed xử lý tất cả thư mục.
 
-Batch tagging phù hợp với old images. Với new images, enable auto-tag on upload để không cần chạy thủ công mỗi lần.
+Gắn thẻ hàng loạt phù hợp nhất cho ảnh cũ. Với ảnh mới, hãy bật tự gắn thẻ khi tải lên để không cần chạy thủ công mỗi lần.
 
-## Auto-Tag on Upload
+## Tự Gắn Thẻ Khi Tải Lên
 
-Sau khi auto-tag on upload được bật, newly uploaded images tự động call `Space URLs` đã cấu hình.
+Sau khi bật tự gắn thẻ khi tải lên, ảnh mới tải lên sẽ tự động gọi các `Space URLs` đã cấu hình.
 
-Phù hợp cho sử dụng lâu dài.
+Tùy chọn này phù hợp cho sử dụng lâu dài.
 
-Nếu Space đang queue, upload vẫn có thể hoàn tất trước và tagging tiếp tục sau đó.
+Nếu Space của bạn đang xếp hàng, quá trình tải lên vẫn có thể hoàn tất trước, còn gắn thẻ sẽ tiếp tục sau.
 
-## Images nào được process
+## Ảnh Nào Được Xử Lý
 
-Auto tagging chủ yếu process image files.
+Gắn thẻ tự động chủ yếu xử lý tệp hình ảnh.
 
-Images đã có đủ tags, orientation, rating, width và height sẽ bị skip để tránh Space calls không cần thiết.
+Ảnh đã có đủ thẻ, hướng, phân loại, chiều rộng và chiều cao sẽ bị bỏ qua để tránh gọi Space không cần thiết.
 
-ImgBed chỉ điền thông tin còn thiếu khi có thể. Ví dụ, nếu chỉ thiếu orientation, nó sẽ cố thêm orientation mà không gọi full content tag flow.
+ImgBed chỉ điền thông tin còn thiếu khi có thể. Ví dụ, nếu chỉ thiếu hướng ảnh, hệ thống cố gắng thêm hướng mà không gọi toàn bộ luồng gắn thẻ nội dung.
 
-## FAQ
+## Câu Hỏi Thường Gặp
 
-### Vì sao nên duplicate Space riêng?
+### Vì Sao Nên Nhân Bản Space Riêng?
 
-Public Spaces được nhiều users dùng chung. Space duplicate của bạn chủ yếu phục vụ ImgBed site của bạn nên thường nhanh và đáng tin cậy hơn.
+Các Space công khai được nhiều người dùng chung. Space do bạn tự nhân bản chủ yếu được trang ImgBed của bạn dùng, nên thường nhanh hơn và đáng tin cậy hơn.
 
-### Space liên tục Starting Up
+### Space Liên Tục Khởi Động
 
-Sau lần tạo đầu tiên, hoặc sau thời gian idle dài, Space có thể cần thời gian để start.
+Sau lần tạo đầu tiên hoặc sau thời gian dài không hoạt động, Space có thể cần thời gian để khởi động.
 
-Hãy mở Space page trước. Khi nó nhận diện image bình thường, quay lại ImgBed và start tagging.
+Trước tiên hãy mở trang Space của bạn. Khi nó có thể nhận diện ảnh bình thường, hãy quay lại ImgBed và bắt đầu gắn thẻ.
 
-### Copy Space URL thế nào?
+### Sao Chép Space URL Như Thế Nào?
 
-Mở Hugging Face Space page của bạn và copy browser address.
+Mở trang Hugging Face Space của bạn và sao chép địa chỉ trên trình duyệt.
 
-Examples:
+Ví dụ:
 
 ```text
 https://huggingface.co/spaces/lintonxue00/wd-tagger
 https://huggingface.co/spaces/SmilingWolf/wd-tagger
 ```
 
-### Có thể thêm nhiều Spaces không?
+### Có Thể Thêm Nhiều Space Không?
 
-Có. Nhập một Space URL mỗi dòng.
+Có. Nhập mỗi Space URL trên một dòng.
 
-Multiple Spaces process images cùng nhau và hữu ích khi có nhiều images.
+Nhiều Space sẽ cùng xử lý ảnh và hữu ích khi bạn có nhiều ảnh.
 
-### Vì sao Tags bằng English?
+### Vì Sao Thẻ Bằng Tiếng Anh?
 
-SmilingWolf models output English tags. Đây là behavior bình thường.
+Các mô hình SmilingWolf xuất thẻ bằng tiếng Anh. Đây là hành vi dự kiến.
 
-Tags chủ yếu dùng cho search, filtering, random image API và public gallery filters.
+Thẻ chủ yếu dùng cho tìm kiếm, lọc, API ảnh ngẫu nhiên và bộ lọc thư viện công khai.
 
-### Rating Tags dùng để làm gì?
+### Thẻ Phân Loại Dùng Để Làm Gì?
 
-Rating results làm việc cùng access mode trong Security Settings.
+Kết quả phân loại hoạt động cùng chế độ truy cập trong Cài đặt bảo mật.
 
-Ví dụ, khi visitor access bị giới hạn theo age rating, public browsing và random image features sẽ filter images theo các rules đó.
+Ví dụ, khi quyền truy cập của khách bị giới hạn theo phân loại độ tuổi, duyệt công khai và tính năng ảnh ngẫu nhiên sẽ lọc ảnh theo các quy tắc đó.
 
-## Quick Flow
+## Luồng Nhanh
 
 ```text
-Sign in vào Hugging Face
--> Mở SmilingWolf/wd-tagger
+Sign in to Hugging Face
+-> Open SmilingWolf/wd-tagger
 -> Duplicate this Space
--> Chờ Space build xong
--> Copy Space URL của bạn
--> Điền Space URLs trong ImgBed
--> Chọn model và thresholds
--> Start tagging hoặc enable auto-tag on upload
+-> Wait for the Space to build
+-> Copy your Space URL
+-> Fill Space URLs in ImgBed
+-> Choose model and thresholds
+-> Start tagging or enable auto-tag on upload
 ```

@@ -1,178 +1,178 @@
-# Auto Tagging
+# Penandaan Automatik
 
-Auto tagging dikonfigurasi di bawah:
+Penandaan automatik dikonfigurasikan di bawah:
 
 ```text
 System Settings -> Other Settings -> Auto Tagging
 ```
 
-Ia menjana image tags secara automatik. Tags ini berguna untuk search, random image filtering, public gallery filtering dan age-rating access control.
+Fungsi ini menjana tag imej secara automatik. Tag ini berguna untuk carian, penapisan imej rawak, penapisan galeri awam dan kawalan akses berdasarkan penarafan umur.
 
-## Fungsi Auto Tagging
+## Perkara Yang Boleh Dilakukan Oleh Penandaan Automatik
 
-| Feature | Description |
+| Ciri | Penerangan |
 | --- | --- |
-| Generate content tags | Menambah tags untuk people, scenes, objects, art style dan visual content yang seumpamanya. |
-| Generate character tags | Berguna untuk anime images dan illustrations. |
-| Add orientation tags | Menambah `landscape`, `portrait` atau `square`. |
-| Add image rating | Menyimpan rating results `G/S/Q/E` untuk general, sensitive, questionable atau explicit content. |
-| Auto-tag on upload | Newly uploaded images masuk ke tagging flow secara automatik. |
-| Batch tagging | Menambah tags kepada old images dalam semua folders atau selected folders. |
+| Menjana tag kandungan | Menambah tag untuk orang, pemandangan, objek, gaya seni dan kandungan visual yang seumpamanya. |
+| Menjana tag watak | Berguna untuk imej anime dan ilustrasi. |
+| Menambah tag orientasi | Menambah `landscape`, `portrait` atau `square`. |
+| Menambah penarafan imej | Menyimpan hasil penarafan `G/S/Q/E` untuk kandungan umum, sensitif, meragukan atau eksplisit. |
+| Penandaan automatik semasa muat naik | Imej yang baru dimuat naik masuk ke aliran penandaan secara automatik. |
+| Penandaan kelompok | Menambah tag pada imej lama dalam semua folder atau folder yang dipilih. |
 
 ## Perkara Yang Diperlukan Dahulu
 
-Sediakan sekurang-kurangnya satu Hugging Face Space URL yang boleh diakses.
+Sediakan sekurang-kurangnya satu URL Hugging Face Space yang boleh diakses.
 
-Cara recommended ialah duplicate Space `wd-tagger` milik SmilingWolf ke Hugging Face account anda sendiri:
+Kaedah yang disyorkan ialah menduplikasi Space `wd-tagger` milik SmilingWolf ke akaun Hugging Face anda sendiri:
 
 ```text
 https://huggingface.co/spaces/SmilingWolf/wd-tagger
 ```
 
-Anda boleh menggunakan public Space sementara, tetapi public Spaces dikongsi oleh ramai users dan mungkin queue, perlahan atau unavailable. Space yang diduplicate di bawah account anda sendiri lebih stabil untuk auto tagging jangka panjang.
+Anda boleh menggunakan Space awam buat sementara waktu, tetapi Space awam dikongsi oleh ramai pengguna dan mungkin beratur, menjadi perlahan atau tidak tersedia. Space yang diduplikasi di bawah akaun anda sendiri lebih stabil untuk penandaan automatik jangka panjang.
 
-## Duplicate Space SmilingWolf
+## Menduplikasi Space SmilingWolf
 
-1. Sign in ke Hugging Face.
+1. Log masuk ke Hugging Face.
 2. Buka `https://huggingface.co/spaces/SmilingWolf/wd-tagger`.
 
-![SmilingWolf public Space](../../image/other/微笑狼的公开仓库.png)
+![Space awam SmilingWolf](../../image/other/微笑狼的公开仓库.png)
 
 3. Klik menu tiga titik di penjuru kanan atas.
 4. Pilih `Duplicate this Space`.
-5. Kekalkan Space name default atau pilih nama sendiri, contohnya `wd-tagger`.
-6. Tetapkan visibility kepada `Public`. Public Spaces lebih mudah dipanggil oleh ImgBed.
-7. Mulakan dengan default free hardware dahulu. Upgrade kemudian hanya jika queueing jelas berlaku.
-8. Cipta Space dan tunggu build selesai.
+5. Kekalkan nama Space lalai atau pilih nama sendiri, seperti `wd-tagger`.
+6. Tetapkan keterlihatan kepada `Public`. Public Space lebih mudah dipanggil oleh ImgBed.
+7. Mulakan dengan perkakasan percuma lalai dahulu. Naik taraf kemudian hanya jika baris giliran menjadi jelas.
+8. Cipta Space dan tunggu binaan selesai.
 
-Selepas build selesai, buka Space page anda. URL biasanya kelihatan seperti:
+Selepas binaan selesai, buka halaman Space anda. URL biasanya kelihatan seperti:
 
 ```text
 https://huggingface.co/spaces/your-name/wd-tagger
 ```
 
-Copy browser URL dan paste ke `Space URLs` dalam ImgBed.
+Salin URL pelayar dan tampalkannya ke `Space URLs` dalam ImgBed.
 
-## Mengisi Multiple Space URLs
+## Mengisi Berbilang Space URL
 
-Masukkan satu Space URL setiap baris.
+Masukkan satu Space URL bagi setiap baris.
 
-Examples:
+Contoh:
 
-| Value | Description |
+| Nilai | Penerangan |
 | --- | --- |
-| `https://huggingface.co/spaces/SmilingWolf/wd-tagger` | SmilingWolf public Space. Baik untuk temporary testing. |
-| `https://huggingface.co/spaces/lintonxue00/wd-tagger` | Copied Space page URL. |
-| `https://huggingface.co/spaces/your-name/wd-tagger` | Space yang anda duplicate sendiri. |
+| `https://huggingface.co/spaces/SmilingWolf/wd-tagger` | Space awam SmilingWolf. Sesuai untuk ujian sementara. |
+| `https://huggingface.co/spaces/lintonxue00/wd-tagger` | URL halaman Space yang disalin. |
+| `https://huggingface.co/spaces/your-name/wd-tagger` | URL halaman Space yang anda duplikasi sendiri. |
 
-Anda boleh masukkan beberapa URLs. ImgBed menggunakan beberapa Spaces bersama-sama, yang boleh meningkatkan speed.
+Anda boleh memasukkan berbilang URL. ImgBed menggunakan beberapa Space bersama-sama, yang boleh meningkatkan kelajuan.
 
-Jika satu Space temporarily unavailable, Space lain masih boleh terus processing.
+Jika satu Space tidak tersedia buat sementara waktu, Space lain masih boleh meneruskan pemprosesan.
 
-## Settings
+## Tetapan
 
-| Option | Recommendation |
+| Pilihan | Cadangan |
 | --- | --- |
-| `Space URLs` | Masukkan Space URLs yang disediakan. Gunakan sekurang-kurangnya satu. |
-| Target folder | Biarkan kosong untuk semua folders. Pilih folder hanya jika mahu process directory tertentu. |
-| Recognition model | Kekalkan `wd-swinv2-tagger-v3` secara default. |
-| General tag threshold | Default sesuai untuk kebanyakan images. Nilai lebih rendah menghasilkan lebih banyak tags; nilai lebih tinggi menghasilkan kurang tags. |
-| Character tag threshold | Default lebih conservative dan membantu mengelakkan character tags yang salah. |
-| `MCut` automatic threshold | Biarkan off pada permulaan. Hidupkan apabila mahu model menentukan jumlah tags secara automatik. |
-| Auto-tag on upload | Hidupkan jika newly uploaded images patut mendapat tags secara automatik. |
-| Start tagging | Batch-tag old images secara manual. |
+| `Space URLs` | Masukkan Space URL yang telah anda sediakan. Gunakan sekurang-kurangnya satu. |
+| Folder sasaran | Biarkan kosong untuk semua folder. Pilih folder hanya apabila anda mahu memproses direktori tertentu. |
+| Model pengecaman | Kekalkan `wd-swinv2-tagger-v3` sebagai lalai. |
+| Ambang tag umum | Nilai lalai sesuai untuk kebanyakan imej. Nilai lebih rendah menghasilkan lebih banyak tag; nilai lebih tinggi menghasilkan lebih sedikit tag. |
+| Ambang tag watak | Nilai lalai lebih berhati-hati dan membantu mengelakkan tag watak yang salah. |
+| Ambang automatik `MCut` | Biarkan tidak aktif pada permulaan. Hidupkan apabila anda mahu model menentukan bilangan tag secara automatik. |
+| Penandaan automatik semasa muat naik | Hidupkan jika imej yang baru dimuat naik perlu mendapat tag secara automatik. |
+| Mulakan penandaan | Menandakan imej lama secara kelompok secara manual. |
 
-## Recommended Starting Values
+## Nilai Permulaan Yang Disyorkan
 
-| Option | Recommended Value |
+| Pilihan | Nilai Yang Disyorkan |
 | --- | --- |
-| Recognition model | `wd-swinv2-tagger-v3` |
-| General tag threshold | `0.35` |
-| Character tag threshold | `0.85` |
-| `MCut` | Off pada permulaan |
-| Auto-tag on upload | Enable jika perlu |
+| Model pengecaman | `wd-swinv2-tagger-v3` |
+| Ambang tag umum | `0.35` |
+| Ambang tag watak | `0.85` |
+| `MCut` | Tidak aktif pada permulaan |
+| Penandaan automatik semasa muat naik | Aktifkan jika perlu |
 
-Jika tags terlalu banyak, naikkan general threshold sedikit.
+Jika tag terlalu banyak, naikkan sedikit ambang umum.
 
-Jika tags terlalu sedikit, turunkan general threshold sedikit.
+Jika tag terlalu sedikit, turunkan sedikit ambang umum.
 
-## Batch Tagging
+## Penandaan Kelompok
 
 1. Isi `Space URLs`.
-2. Pilih target folder.
-3. Klik start tagging.
-4. Tunggu progress selesai.
+2. Pilih folder sasaran.
+3. Klik mulakan penandaan.
+4. Tunggu sehingga kemajuan selesai.
 
-Jika target folder kosong, ImgBed process semua folders.
+Jika folder sasaran kosong, ImgBed memproses semua folder.
 
-Batch tagging paling sesuai untuk old images. Untuk new images, enable auto-tag on upload supaya tidak perlu run secara manual setiap kali.
+Penandaan kelompok paling sesuai untuk imej lama. Untuk imej baharu, aktifkan penandaan automatik semasa muat naik supaya anda tidak perlu menjalankannya secara manual setiap kali.
 
-## Auto-Tag on Upload
+## Penandaan Automatik Semasa Muat Naik
 
-Selepas auto-tag on upload diaktifkan, newly uploaded images memanggil `Space URLs` yang dikonfigurasi secara automatik.
+Selepas penandaan automatik semasa muat naik diaktifkan, ImgBed akan memanggil `Space URLs` yang dikonfigurasikan secara automatik untuk imej yang baru dimuat naik.
 
 Ini sesuai untuk penggunaan jangka panjang.
 
-Jika Space sedang queueing, upload masih boleh selesai dahulu dan tagging diteruskan selepas itu.
+Jika Space anda sedang beratur, muat naik itu sendiri masih boleh selesai dahulu dan penandaan diteruskan selepas itu.
 
-## Images Yang Diproses
+## Imej Yang Diproses
 
-Auto tagging terutama memproses image files.
+Penandaan automatik terutamanya memproses fail imej.
 
-Images yang sudah mempunyai tags, orientation, rating, width dan height lengkap akan diskip untuk mengelakkan Space calls yang tidak perlu.
+Imej yang sudah mempunyai tag, orientasi, penarafan, lebar dan tinggi yang lengkap akan dilangkau untuk mengelakkan panggilan Space yang tidak perlu.
 
-ImgBed hanya mengisi maklumat yang hilang apabila boleh. Contohnya, jika hanya orientation hilang, ia cuba menambah orientation tanpa memanggil full content tag flow.
+Jika boleh, ImgBed hanya mengisi maklumat yang hilang. Contohnya, jika hanya orientasi yang hilang, ia cuba menambah orientasi tanpa memanggil keseluruhan aliran tag kandungan.
 
-## FAQ
+## Soalan Lazim
 
-### Mengapa Perlu Duplicate Space Sendiri?
+### Mengapa Perlu Menduplikasi Space Sendiri?
 
-Public Spaces dikongsi oleh ramai users. Space duplicate anda digunakan terutamanya oleh ImgBed site anda, jadi biasanya lebih laju dan reliable.
+Space awam dikongsi oleh ramai pengguna. Space yang anda duplikasi sendiri digunakan terutamanya oleh laman ImgBed anda, jadi biasanya lebih pantas dan lebih boleh dipercayai.
 
-### Space Asyik Starting Up
+### Space Terus Dimulakan
 
-Selepas creation pertama, atau selepas idle lama, Space mungkin memerlukan masa untuk start.
+Selepas penciptaan pertama, atau selepas tempoh melahu yang panjang, Space mungkin memerlukan masa untuk bermula.
 
-Buka Space page anda dahulu. Selepas ia boleh recognize image secara normal, kembali ke ImgBed dan start tagging.
+Buka halaman Space anda dahulu. Selepas ia boleh mengecam imej secara normal, kembali ke ImgBed dan mulakan penandaan.
 
-### Bagaimana Copy Space URL?
+### Bagaimana Saya Menyalin Space URL?
 
-Buka Hugging Face Space page anda dan copy browser address.
+Buka halaman Hugging Face Space anda dan salin alamat pelayar.
 
-Examples:
+Contoh:
 
 ```text
 https://huggingface.co/spaces/lintonxue00/wd-tagger
 https://huggingface.co/spaces/SmilingWolf/wd-tagger
 ```
 
-### Bolehkah Tambah Multiple Spaces?
+### Bolehkah Saya Menambah Berbilang Space?
 
-Boleh. Masukkan satu Space URL setiap baris.
+Boleh. Masukkan satu Space URL bagi setiap baris.
 
-Multiple Spaces process images bersama-sama dan berguna apabila anda mempunyai banyak images.
+Berbilang Space memproses imej bersama-sama dan berguna apabila anda mempunyai banyak imej.
 
-### Mengapa Tags Dalam English?
+### Mengapa Tag Dalam Bahasa Inggeris?
 
-SmilingWolf models output English tags. Ini normal.
+Model SmilingWolf menghasilkan tag dalam bahasa Inggeris. Ini memang dijangka.
 
-Tags digunakan terutamanya untuk search, filtering, random image API dan public gallery filters.
+Tag digunakan terutamanya untuk carian, penapisan, API imej rawak dan penapis galeri awam.
 
-### Rating Tags Digunakan Untuk Apa?
+### Untuk Apa Tag Penarafan Digunakan?
 
-Rating results berfungsi bersama access mode dalam Security Settings.
+Hasil penarafan berfungsi bersama mod akses dalam Security Settings.
 
-Contohnya, apabila visitor access dihadkan oleh age rating, public browsing dan random image features akan filter images mengikut rules tersebut.
+Contohnya, apabila akses pelawat dihadkan mengikut penarafan umur, fungsi pelayaran awam dan imej rawak akan menapis imej mengikut peraturan tersebut.
 
-## Quick Flow
+## Aliran Pantas
 
 ```text
-Sign in ke Hugging Face
--> Buka SmilingWolf/wd-tagger
+Sign in to Hugging Face
+-> Open SmilingWolf/wd-tagger
 -> Duplicate this Space
--> Tunggu Space selesai build
--> Copy Space URL anda
--> Isi Space URLs dalam ImgBed
--> Pilih model dan thresholds
--> Start tagging atau enable auto-tag on upload
+-> Wait for the Space to build
+-> Copy your Space URL
+-> Fill Space URLs in ImgBed
+-> Choose model and thresholds
+-> Start tagging or enable auto-tag on upload
 ```

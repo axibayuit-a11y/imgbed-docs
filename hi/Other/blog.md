@@ -1,87 +1,87 @@
-# Blog
+# ब्लॉग
 
-Blog feature आपके ImgBed site में एक standalone blog page जोड़ता है।
+ब्लॉग सुविधा आपकी ImgBed साइट में एक स्वतंत्र ब्लॉग पेज जोड़ती है।
 
-Enable करने के बाद visitors यह खोल सकते हैं:
+इसे चालू करने के बाद, आगंतुक यह खोल सकते हैं:
 
 ```text
 https://your-domain.com/blog/
 ```
 
-![Blog homepage](../../image/other/博客/博客首页.png)
+![ब्लॉग होमपेज](../../image/other/博客/博客首页.png)
 
-Blog open-source [LyraVoid/Mizuki](https://github.com/LyraVoid/Mizuki) project से adapted है। ImgBed इसे rewrite करके Vue के साथ integrate करता है, ताकि यह image hosting site का हिस्सा बनकर चल सके।
+ब्लॉग को ओपन-सोर्स [LyraVoid/Mizuki](https://github.com/LyraVoid/Mizuki) प्रोजेक्ट से रूपांतरित किया गया है। ImgBed इसे Vue के साथ दोबारा लिखकर एकीकृत करता है, ताकि यह इमेज होस्टिंग साइट के हिस्से के रूप में चल सके।
 
-## कहाँ सेट करें
+## इसे कहाँ कॉन्फ़िगर करें
 
-Blog settings यहाँ हैं:
+ब्लॉग सेटिंग्स यहाँ हैं:
 
 ```text
 System Settings -> Other Settings -> Blog
 ```
 
-![Blog settings](../../image/other/博客/QQ20260611-221702.png)
+![ब्लॉग सेटिंग्स](../../image/other/博客/QQ20260611-221702.png)
 
-## First-Time Setup
+## पहली बार सेटअप
 
-1. `Enable` on करें।
-2. Blog configuration store करने के लिए GitHub account select करें।
-3. `Update Blog` पर click करें।
-4. Success message आने तक इंतज़ार करें।
-5. Blog देखने के लिए `https://your-domain.com/blog/` खोलें।
+1. `Enable` चालू करें।
+2. ब्लॉग कॉन्फ़िगरेशन सहेजने के लिए उपयोग किया जाने वाला GitHub खाता चुनें।
+3. `Update Blog` पर क्लिक करें।
+4. सफलता संदेश आने तक प्रतीक्षा करें।
+5. ब्लॉग देखने के लिए `https://your-domain.com/blog/` खोलें।
 
-पहली बार इस्तेमाल करते समय ImgBed selected account के तहत एक private GitHub repository तैयार करता है:
-
-```text
-imgbed-blog-config
-```
-
-यह repository blog settings और article content store करती है।
-
-## Posts लिखना
-
-Blog posts अपनी private GitHub repository में edit करें:
+पहली बार उपयोग करने पर, ImgBed चुने गए खाते के अंतर्गत एक निजी GitHub रिपॉज़िटरी तैयार करता है:
 
 ```text
 imgbed-blog-config
 ```
 
-Typical workflow:
+यह रिपॉज़िटरी ब्लॉग सेटिंग्स और लेख सामग्री सहेजती है।
+
+## पोस्ट लिखना
+
+ब्लॉग पोस्ट अपनी निजी GitHub रिपॉज़िटरी में संपादित करें:
+
+```text
+imgbed-blog-config
+```
+
+सामान्य कार्यप्रवाह:
 
 1. GitHub खोलें।
-2. Private `imgbed-blog-config` repository में जाएँ।
-3. Post files edit या add करें।
-4. Changes commit करें।
-5. ImgBed admin panel पर लौटकर `Update Blog` click करें, या blog homepage के upper-left corner में logo पर तीन बार click करके blog update trigger करें।
+2. निजी `imgbed-blog-config` रिपॉज़िटरी में जाएँ।
+3. पोस्ट फ़ाइलें संपादित करें या नई फ़ाइलें जोड़ें।
+4. बदलाव कमिट करें।
+5. ImgBed एडमिन पैनल पर लौटकर `Update Blog` पर क्लिक करें, या ब्लॉग होमपेज के ऊपर बाएँ कोने में लोगो पर तीन बार क्लिक करके ब्लॉग अपडेट ट्रिगर करें।
 
-`Update Blog` आपके लिखे हुए content को overwrite नहीं करता। यह ज़रूरत पड़ने पर repository initialize करता है और blog cache refresh करता है।
+`Update Blog` आपकी लिखी हुई सामग्री को अधिलेखित नहीं करता। यह आवश्यकता होने पर रिपॉज़िटरी को आरंभ करता है और ब्लॉग कैश को रिफ़्रेश करता है।
 
-## Supported Features
+## समर्थित सुविधाएँ
 
-Blog में post lists, categories, tags, archives, search, dark mode और language switching जैसी common blog features supported हैं।
+ब्लॉग पोस्ट सूची, श्रेणियाँ, टैग, आर्काइव, खोज, डार्क मोड और भाषा स्विचिंग जैसी सामान्य ब्लॉग सुविधाओं का समर्थन करता है।
 
-Comments और visit statistics भी supported हैं।
+यह टिप्पणियों और विज़िट आँकड़ों का भी समर्थन करता है।
 
-![Blog comments](../../image/other/博客/支持留言.png)
+![ब्लॉग टिप्पणियाँ](../../image/other/博客/支持留言.png)
 
-Comments posts के नीचे दिखते हैं। Visitors avatar, nickname, email और comment content submit कर सकते हैं।
+टिप्पणियाँ पोस्ट के नीचे दिखाई देती हैं। आगंतुक अवतार, उपनाम, ईमेल और टिप्पणी सामग्री भेज सकते हैं।
 
-Visit statistics post views और site visits दिखाते हैं, जिससे blog traffic समझने में मदद मिलती है।
+विज़िट आँकड़े पोस्ट व्यू और साइट विज़िट दिखाते हैं, जिससे आपको ब्लॉग ट्रैफ़िक समझने में मदद मिलती है।
 
 ## URL
 
-Blog हमेशा `/blog/` के तहत serve होता है।
+ब्लॉग हमेशा `/blog/` के अंतर्गत उपलब्ध रहता है।
 
-उदाहरण के लिए, अगर आपका ImgBed domain है:
+उदाहरण के लिए, यदि आपका ImgBed डोमेन है:
 
 ```text
 https://image.example.com
 ```
 
-तो blog URL होगा:
+तो ब्लॉग URL है:
 
 ```text
 https://image.example.com/blog/
 ```
 
-Blog disabled होने के बाद visitors blog page access नहीं कर पाएँगे।
+ब्लॉग बंद करने के बाद आगंतुक ब्लॉग पेज तक पहुँच नहीं पाएँगे।

@@ -1,54 +1,69 @@
-# Adicionar canal GitHub Releases
+# Adicionar um canal GitHub Releases
 
-O canal GitHub Releases salva arquivos como Release Assets em um repositório do GitHub.
+## O que você precisa antes de começar
 
-## Quando usar
+Você só precisa de três coisas:
 
-- Você já usa GitHub com frequência.
-- Quer guardar arquivos pequenos ou recursos de distribuição em Releases.
-- Prefere um destino gerenciado por GitHub Token.
-
-## O que preparar
-
-| Item | Uso |
+| Requisito | Finalidade |
 | --- | --- |
-| Conta GitHub | Gerenciar repositório e token |
-| Repositório | Local dos Releases |
-| Personal Access Token | Enviar assets ao Release |
-| Release Tag | Release ao qual os arquivos serão associados |
+| Conta GitHub | Usada para gerar um access token e ser proprietária do repositório. |
+| GitHub Access Token | Usado pelo ImgBed para acessar a GitHub API, criar releases e fazer upload de arquivos. |
+| Repository name | Você pode informar somente o nome do repositório, por exemplo `image`. |
 
-## Permissões do token
+## Etapas de configuração
 
-O Personal Access Token precisa operar Releases do repositório alvo.
+### Etapa 1: Entre no GitHub e crie um Access Token
 
-![Permissões GitHub](../../image/upload/github-releases/添加github权限.png)
+1. Entre no GitHub.
+2. Clique no avatar no canto superior direito e abra `Settings`.
+3. Abra `Developer settings` na barra lateral esquerda.
+4. Abra `Personal access tokens`.
+5. Abra `Tokens (classic)`.
+6. Clique em `Generate new token (classic)`.
+7. Dê ao token um nome que você reconheça.
+8. Escolha uma data de expiração conforme sua preferência de manutenção.
+9. Selecione os scopes `repo` e `workflow`.
+10. Copie e salve o token imediatamente depois que ele for criado.
 
-Se o repositório for privado, inclua acesso a repositórios privados.
+![Adicionar permissões do GitHub](../../image/upload/github-releases/添加github权限.png)
 
-## Preencher no ImgBed
+## Etapa 2: Preencha o canal GitHub Releases no ImgBed
 
-Em Configurações de upload, escolha `GitHub Releases`.
+Depois de selecionar `GitHub Releases` em Configurações de upload, preencha os campos assim:
 
-| Campo | Valor |
+| Campo da UI | O que inserir |
 | --- | --- |
-| Nome do canal | Por exemplo `GitHub Release` |
-| Owner | Dono do repositório |
-| Repo | Nome do repositório |
-| Token | Personal Access Token |
-| Release Tag | Tag do Release |
-| Caminho | Opcional |
+| Nome do canal | Um nome de sua escolha, como `GitHubPrimary`. |
+| Access Token | O GitHub Personal Access Token que você acabou de criar. |
+| Repository name | Um nome curto de repo, como `image`, ou um caminho completo, como `username/image`. |
+| Private repository | Ative ou desative conforme sua necessidade. |
+| Remark | Opcional, por exemplo `Primary upload channel`. |
 
-![Configuração GitHub](../../image/upload/github-releases/填写github渠道配置.png)
+![Preencher configuração do canal GitHub](../../image/upload/github-releases/填写github渠道配置.png)
 
-## Verificação
+## Etapa 3: Salve o canal
 
-1. Salve o canal.
-2. Envie uma imagem de teste.
-3. Confira se ela aparece nos Release Assets do repositório.
-4. Abra o link retornado pelo ImgBed.
+Depois de preencher os campos, clique em Salvar.
 
-## Observações
+O sistema cuidará destes detalhes:
 
-- GitHub Releases não é armazenamento especializado para grande volume ou tráfego alto.
-- Limite o token ao repositório necessário.
-- Se você excluir assets ou releases manualmente, links do ImgBed podem parar de funcionar.
+| Comportamento do sistema | Descrição |
+| --- | --- |
+| Nome curto do repositório | O ImgBed identifica a conta GitHub atual e expande o valor para um caminho completo de repositório. |
+| Caminho completo do repositório | O ImgBed usa o caminho `username/repository` exatamente como informado. |
+| Verificação do repositório | Se você usar o caminho da conta pessoal atual, o ImgBed cria o repositório automaticamente quando ele não existe. Se informar manualmente um caminho completo, o ImgBed usa esse caminho diretamente. |
+| Estado público/privado | A visibilidade do repositório é sincronizada conforme o switch atual. |
+
+## Lista de verificação rápida
+
+GitHub Releases funciona assim:
+
+```text
+Sign in to GitHub
+-> Create an Access Token
+-> Return to ImgBed and enter the token and repository name
+-> Save
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> Upload a test image
+```

@@ -1,87 +1,87 @@
-# Blog
+# บล็อก
 
-Blog feature เพิ่ม blog page แบบ standalone ให้ ImgBed site ของคุณ
+ฟีเจอร์บล็อกเพิ่มหน้าบล็อกแบบแยกต่างหากให้กับไซต์ ImgBed ของคุณ
 
-หลัง enable แล้ว visitors เปิดได้ที่:
+หลังจากเปิดใช้งาน ผู้เยี่ยมชมสามารถเปิดได้ที่:
 
 ```text
 https://your-domain.com/blog/
 ```
 
-![Blog homepage](../../image/other/博客/博客首页.png)
+![หน้าแรกของบล็อก](../../image/other/博客/博客首页.png)
 
-Blog ดัดแปลงมาจาก open-source project [LyraVoid/Mizuki](https://github.com/LyraVoid/Mizuki) โดย ImgBed rewrite และ integrate กับ Vue เพื่อให้ทำงานเป็นส่วนหนึ่งของ image hosting site
+บล็อกนี้ดัดแปลงจากโครงการโอเพนซอร์ส [LyraVoid/Mizuki](https://github.com/LyraVoid/Mizuki) ImgBed เขียนใหม่และผสานกับ Vue เพื่อให้ทำงานเป็นส่วนหนึ่งของไซต์ฝากรูปได้
 
 ## ตั้งค่าที่ไหน
 
-Blog settings อยู่ที่:
+การตั้งค่าบล็อกอยู่ที่:
 
 ```text
 System Settings -> Other Settings -> Blog
 ```
 
-![Blog settings](../../image/other/博客/QQ20260611-221702.png)
+![การตั้งค่าบล็อก](../../image/other/博客/QQ20260611-221702.png)
 
-## First-Time Setup
+## การตั้งค่าครั้งแรก
 
 1. เปิด `Enable`
-2. เลือก GitHub account ที่ใช้เก็บ blog configuration
+2. เลือกบัญชี GitHub ที่ใช้จัดเก็บการตั้งค่าบล็อก
 3. คลิก `Update Blog`
-4. รอ success message
-5. เปิด `https://your-domain.com/blog/` เพื่อดู blog
+4. รอข้อความสำเร็จ
+5. เปิด `https://your-domain.com/blog/` เพื่อดูบล็อก
 
-ครั้งแรกที่ใช้ ImgBed จะเตรียม private GitHub repository ภายใต้ account ที่เลือก:
-
-```text
-imgbed-blog-config
-```
-
-Repository นี้เก็บ blog settings และ article content
-
-## เขียน Posts
-
-Edit blog posts ใน private GitHub repository:
+เมื่อใช้งานครั้งแรก ImgBed จะเตรียมคลังส่วนตัวของ GitHub ในบัญชีที่เลือก:
 
 ```text
 imgbed-blog-config
 ```
 
-Typical workflow:
+คลังนี้ใช้เก็บการตั้งค่าบล็อกและเนื้อหาบทความ
+
+## การเขียนโพสต์
+
+แก้ไขโพสต์บล็อกในคลังส่วนตัวของ GitHub:
+
+```text
+imgbed-blog-config
+```
+
+ขั้นตอนทั่วไป:
 
 1. เปิด GitHub
-2. เข้า private repository `imgbed-blog-config`
-3. Edit หรือ add post files
-4. Commit changes
-5. กลับไปที่ ImgBed admin panel แล้วคลิก `Update Blog` หรือคลิก logo มุมซ้ายบนของ blog homepage สามครั้งเพื่อ trigger blog update
+2. เข้าไปยังคลังส่วนตัว `imgbed-blog-config`
+3. แก้ไขหรือเพิ่มไฟล์โพสต์
+4. คอมมิตการเปลี่ยนแปลง
+5. กลับไปที่แผงผู้ดูแลของ ImgBed แล้วคลิก `Update Blog` หรือคลิกโลโก้มุมซ้ายบนของหน้าแรกบล็อกสามครั้งเพื่อเริ่มอัปเดตบล็อก
 
-`Update Blog` จะไม่ overwrite content ที่คุณเขียนไว้ แต่ใช้ initialize repository เมื่อจำเป็นและ refresh blog cache
+`Update Blog` จะไม่เขียนทับเนื้อหาที่คุณเขียนไว้ ฟังก์ชันนี้ใช้เริ่มต้นคลังเมื่อจำเป็นและรีเฟรชแคชของบล็อก
 
-## Supported Features
+## ฟีเจอร์ที่รองรับ
 
-Blog รองรับ features ทั่วไป เช่น post lists, categories, tags, archives, search, dark mode และ language switching
+บล็อกรองรับฟีเจอร์บล็อกทั่วไป เช่น รายการโพสต์ หมวดหมู่ แท็ก คลังบทความ การค้นหา โหมดมืด และการสลับภาษา
 
-รองรับ comments และ visit statistics ด้วย
+ยังรองรับความคิดเห็นและสถิติการเข้าชมด้วย
 
-![Blog comments](../../image/other/博客/支持留言.png)
+![ความคิดเห็นของบล็อก](../../image/other/博客/支持留言.png)
 
-Comments จะแสดงใต้ posts Visitors สามารถ submit avatar, nickname, email และ comment content ได้
+ความคิดเห็นจะแสดงใต้โพสต์ ผู้เยี่ยมชมสามารถส่งอวาตาร์ ชื่อเล่น อีเมล และเนื้อหาความคิดเห็นได้
 
-Visit statistics แสดง post views และ site visits ช่วยให้เข้าใจ blog traffic
+สถิติการเข้าชมจะแสดงจำนวนการดูโพสต์และการเข้าชมไซต์ ช่วยให้เข้าใจทราฟฟิกของบล็อก
 
-## URL
+## ที่อยู่บล็อก
 
-Blog จะ serve ใต้ `/blog/` เสมอ
+บล็อกจะให้บริการภายใต้เส้นทาง `/blog/` เสมอ
 
-เช่น ถ้า ImgBed domain คือ:
+ตัวอย่างเช่น หากโดเมน ImgBed ของคุณคือ:
 
 ```text
 https://image.example.com
 ```
 
-Blog URL คือ:
+ที่อยู่ของบล็อกคือ:
 
 ```text
 https://image.example.com/blog/
 ```
 
-หลัง disable blog แล้ว visitors จะเข้าถึง blog page ไม่ได้
+หลังจากปิดใช้งานบล็อก ผู้เยี่ยมชมจะไม่สามารถเข้าถึงหน้าบล็อกได้อีก

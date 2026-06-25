@@ -1,132 +1,132 @@
-# افزودن Discord Channel
+# افزودن کانال Discord
 
 ## پیش از شروع چه چیزهایی لازم است
 
 | مورد | کاربرد |
 | --- | --- |
-| Discord account | برای ساخت server، channel و developer application. |
-| Discord server | bot قبل از دسترسی به channel باید عضو server باشد. |
-| Text channel | images و files به این channel ارسال می‌شوند. |
-| Discord Developer Portal | برای ساخت application، ساخت bot و گرفتن `Bot Token`. |
+| حساب Discord | برای ساخت سرور، کانال و برنامه توسعه‌دهنده استفاده می‌شود. |
+| سرور Discord | پیش از دسترسی به کانال، bot باید عضو یک سرور باشد. |
+| کانال متنی | تصاویر و فایل‌ها به این کانال ارسال می‌شوند. |
+| Discord Developer Portal | برای ساخت برنامه، ساخت ربات و دریافت `Bot Token` استفاده می‌شود. |
 
 ## کجا اضافه کنیم
 
-1. System Settings را باز کنید.
-2. وارد Upload Settings شوید.
-3. از گوشه بالا سمت راست Add Channel را بزنید.
+1. تنظیمات سیستم را باز کنید.
+2. به تنظیمات بارگذاری بروید.
+3. در گوشه بالا سمت راست روی افزودن کانال کلیک کنید.
 4. `Discord` را انتخاب کنید.
 
-## Field Reference
+## مرجع فیلدها
 
-| Field | کاربرد | Required |
+| فیلد | کاربرد | الزامی |
 | --- | --- | --- |
-| Channel name | نام قابل‌تشخیص برای این channel، مثل `Discord Primary`. | Required |
-| Bot Token | Discord bot token. | Required |
-| Channel ID | ID مربوط به target text channel. | Required |
-| Proxy URL (optional) | فقط اگر Discord CDN access ناپایدار است. URL کامل را همراه `https://` وارد کنید. | Optional |
+| نام کانال | نامی قابل تشخیص برای این کانال، مانند `Discord Primary`. | الزامی |
+| Bot Token | توکن ربات در Discord. | الزامی |
+| Channel ID | شناسه کانال متنی مقصد. | الزامی |
+| URL پروکسی (اختیاری) | فقط زمانی استفاده کنید که دسترسی به Discord CDN ناپایدار است. URL کامل را همراه با `https://` وارد کنید. | اختیاری |
 
-## مراحل setup
+## مراحل پیکربندی
 
-### 1. ساخت Discord Server و Text Channel
+### 1. ساخت سرور و کانال متنی در Discord
 
 1. Discord را باز کنید.
-2. server جدید بسازید، یا از server موجودی که مالک آن هستید استفاده کنید.
-3. در همان server یک text channel بسازید.
+2. یک سرور جدید بسازید یا از سروری که مالک آن هستید استفاده کنید.
+3. در آن سرور یک کانال متنی بسازید.
 
-![Create a server](../../image/upload/discord/创建服务器.png)
+![ساخت سرور](../../image/upload/discord/创建服务器.png)
 
-### 2. ساخت Bot در Discord Developer Portal
+### 2. ساخت ربات در Discord Developer Portal
 
 1. Discord Developer Portal را باز کنید: `https://discord.com/developers/applications`
-2. `New Application` را بزنید.
-3. application name را وارد و create کنید.
-4. از left sidebar صفحه `Bot` را باز کنید.
-5. در صفحه `Bot`، token را generate یا reset کنید.
-6. token را ذخیره کنید.
+2. روی `New Application` کلیک کنید.
+3. نام برنامه را وارد کنید و آن را بسازید.
+4. صفحه `Bot` را از نوار کناری چپ باز کنید.
+5. در صفحه `Bot` توکن را ایجاد یا بازنشانی کنید.
+6. توکن را ذخیره کنید.
 
-این مقدار همان `Bot Token` است که باید در ImgBed وارد کنید.
+این توکن همان `Bot Token` است که باید در ImgBed وارد کنید.
 
-![View the bot token](../../image/upload/discord/查看机器人令牌.png)
+![مشاهده توکن bot](../../image/upload/discord/查看机器人令牌.png)
 
-### 3. ساخت OAuth2 Invite Link و نصب Bot
+### 3. ساخت لینک دعوت OAuth2 و نصب ربات
 
-1. از left sidebar صفحه `OAuth2` را باز کنید.
-2. زیر scopes، `bot` را انتخاب کنید.
-3. در permission area این permissions را enable کنید:
+1. صفحه `OAuth2` را از نوار کناری چپ باز کنید.
+2. در بخش محدوده‌های دسترسی، `bot` را انتخاب کنید.
+3. در بخش مجوزها، این مجوزها را فعال کنید:
 
-| Permission | Required |
+| مجوز | الزامی |
 | --- | --- |
-| View Channels | Yes |
-| Send Messages | Yes |
-| Attach Files | Yes |
-| Read Message History | Yes |
+| View Channels | بله |
+| Send Messages | بله |
+| Attach Files | بله |
+| Read Message History | بله |
 
-4. پایین صفحه confirm کنید integration type برابر `Guild Install` باشد.
-5. generated URL را copy کنید.
-6. آن URL را در browser باز کنید.
-7. target server را انتخاب کنید.
-8. authorization flow را کامل کنید.
+4. در پایین صفحه مطمئن شوید نوع یکپارچه‌سازی `Guild Install` است.
+5. URL تولیدشده را کپی کنید.
+6. آن URL را در مرورگر باز کنید.
+7. سرور مقصد را انتخاب کنید.
+8. جریان مجوزدهی را کامل کنید.
 
-![Select bot permissions in OAuth2](../../image/upload/discord/在oa2勾选机器人权限.png)
+![انتخاب مجوزهای ربات در OAuth2](../../image/upload/discord/在oa2勾选机器人权限.png)
 
-![Invite the bot to the channel](../../image/upload/discord/邀请机器人到频道.png)
+![دعوت ربات به کانال](../../image/upload/discord/邀请机器人到频道.png)
 
-### 4. Enable کردن Developer Mode و Copy کردن Channel ID
+### 4. فعال کردن Developer Mode و کپی کردن Channel ID
 
-1. در Discord، پایین سمت چپ کنار avatar روی gear icon بزنید.
-2. از left sidebar بخش Advanced را باز کنید.
-3. Developer Mode را enable کنید.
-4. به target text channel برگردید.
-5. روی channel name راست‌کلیک کنید.
-6. Copy Channel ID را بزنید.
+1. در Discord، روی آیکن چرخ‌دنده کنار آواتار خود در گوشه پایین چپ کلیک کنید.
+2. بخش `Advanced` را از نوار کناری چپ باز کنید.
+3. `Developer Mode` را فعال کنید.
+4. به کانال متنی مقصد برگردید.
+5. روی نام کانال راست‌کلیک کنید.
+6. روی `Copy Channel ID` کلیک کنید.
 
-عدد copy‌شده همان `Channel ID` موردنیاز ImgBed است.
+عدد کپی‌شده همان `Channel ID` موردنیاز ImgBed است.
 
-![Enable developer mode](../../image/upload/discord/开启开发者权限.png)
+![فعال کردن Developer Mode](../../image/upload/discord/开启开发者权限.png)
 
-![Copy the channel ID](../../image/upload/discord/复制群频道id.png)
+![کپی کردن Channel ID](../../image/upload/discord/复制群频道id.png)
 
-### 5. پر کردن Discord Channel در ImgBed
+### 5. تکمیل کانال Discord در ImgBed
 
-به channel configuration dialog برگردید و fields را این‌گونه پر کنید:
+به پنجره پیکربندی کانال برگردید و فیلدها را این‌گونه تکمیل کنید:
 
-| UI Field | Value |
+| فیلد رابط کاربری | مقدار |
 | --- | --- |
-| Channel name | custom channel name، مثل `DiscordPrimary`. |
-| Bot Token | token ذخیره‌شده از صفحه `Bot` در Discord Developer Portal. |
-| Channel ID | channel ID کپی‌شده از Discord. |
-| Proxy URL (optional) | فقط در صورت نیاز، مثل `https://your-proxy.example.com`. |
+| نام کانال | نام سفارشی کانال، برای مثال `DiscordPrimary`. |
+| Bot Token | توکنی که از صفحه `Bot` در Discord Developer Portal ذخیره کرده‌اید. |
+| Channel ID | شناسه کانالی که از Discord کپی کرده‌اید. |
+| URL پروکسی (اختیاری) | فقط در صورت نیاز، برای مثال `https://your-proxy.example.com`. |
 
-در پایان Save را بزنید.
+در پایان روی ذخیره کلیک کنید.
 
-![Add the Discord channel configuration](../../image/upload/discord/添加dc新渠道配置.png)
+![افزودن پیکربندی کانال Discord](../../image/upload/discord/添加dc新渠道配置.png)
 
 ## روش بررسی
 
-| Check | روش بررسی |
+| بررسی | روش بررسی |
 | --- | --- |
-| Channel card appears | پس از Save، صفحه Upload Settings باید Discord channel card را نشان دهد. |
-| Channel can be enabled | Active switch باید روشن بماند. |
-| Configuration is saved | detail view باید نشان دهد Bot Token و Channel ID ذخیره شده‌اند. |
-| Upload works | یک test image upload کنید و مطمئن شوید در target Discord text channel ظاهر می‌شود. |
+| کارت کانال نمایش داده می‌شود | پس از ذخیره، صفحه تنظیمات بارگذاری باید کارت کانال Discord را نشان دهد. |
+| کانال قابل فعال‌سازی است | کلید فعال‌سازی باید روشن بماند. |
+| پیکربندی ذخیره شده است | نمای جزئیات باید نشان دهد Bot Token و Channel ID ذخیره شده‌اند. |
+| بارگذاری کار می‌کند | یک تصویر آزمایشی بارگذاری کنید و مطمئن شوید در کانال متنی مقصد Discord ظاهر می‌شود. |
 
-## Quick Checklist
+## فهرست سریع
 
 ```text
-Discord server بسازید
--> text channel بسازید
--> در Discord Developer Portal یک bot بسازید
--> Bot Token را از صفحه Bot ذخیره کنید
--> در OAuth2 گزینه‌های bot, View Channels, Send Messages, Attach Files و Read Message History را انتخاب کنید
--> generated URL را copy کنید و bot را برای target server authorize کنید
--> مطمئن شوید target text channel همین permissions را دارد
--> Developer Mode را enable کنید
--> روی target text channel راست‌کلیک کنید و Channel ID را copy کنید
--> Bot Token و Channel ID را در ImgBed وارد کنید
--> Save کنید و test image upload کنید
+Create a Discord server
+-> Create a text channel
+-> Create a bot in the Discord Developer Portal
+-> Save the Bot Token from the Bot page
+-> In OAuth2, select bot, View Channels, Send Messages, Attach Files, and Read Message History
+-> Copy the generated URL and authorize the bot for the target server
+-> Make sure the target text channel grants the same permissions
+-> Enable Developer Mode
+-> Right-click the target text channel and copy the Channel ID
+-> Enter the Bot Token and Channel ID in ImgBed
+-> Save and upload a test image
 ```
 
-## References
+## منابع
 
-1. Discord Developers Getting Started: https://docs.discord.com/developers/quick-start/getting-started
-2. Discord Help - Where can I find my User/Server/Message ID: https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID
+1. راهنمای شروع برای توسعه‌دهندگان Discord: https://docs.discord.com/developers/quick-start/getting-started
+2. راهنمای Discord برای پیدا کردن شناسه کاربر، سرور یا پیام: https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID

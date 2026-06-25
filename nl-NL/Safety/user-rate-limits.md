@@ -1,8 +1,8 @@
 # Uploadlimieten voor gebruikers
 
-Uploadlimieten bepalen hoe vaak gewone gebruikers of bezoekers vanaf de homepage bestanden mogen uploaden. Dit helpt misbruik van openbare uploadpagina's voorkomen.
+Uploadlimieten bepalen hoe vaak gewone gebruikers of bezoekers vanaf de startpagina bestanden mogen uploaden. Dit helpt misbruik van openbare uploadpagina's voorkomen.
 
-Deze functie geldt alleen voor uploads vanaf de homepage. Beheerdersuploads en uploads met API Tokens worden niet door deze gebruikerslimieten beperkt.
+Deze functie geldt alleen voor uploads vanaf de startpagina. Beheerdersuploads en uploads met API Tokens worden niet door deze gebruikerslimieten beperkt.
 
 ## Waar je dit configureert
 
@@ -64,7 +64,7 @@ Wanneer een limiet wordt geraakt, zien gebruikers een passende melding:
 
 ## Wanneer inschakelen
 
-Schakel gebruikerslimieten in als je uploadhomepage openbaar bereikbaar is.
+Schakel gebruikerslimieten in als je uploadstartpagina openbaar bereikbaar is.
 
 Veelvoorkomende redenen:
 

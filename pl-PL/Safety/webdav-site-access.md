@@ -1,10 +1,10 @@
 # Dostęp WebDAV do strony (Beta)
 
-Ustawienie WebDAV w Ustawieniach bezpieczeństwa udostępnia Twoją stronę ImgBed jako endpoint WebDAV.
+Ustawienie WebDAV w Ustawieniach bezpieczeństwa udostępnia Twoją stronę ImgBed jako punkt końcowy WebDAV.
 
 Po włączeniu możesz używać Windows, macOS, mobilnych menedżerów plików lub dowolnego klienta zgodnego z WebDAV do przeglądania, przesyłania, usuwania i zarządzania plikami ImgBed jak zdalnym katalogiem.
 
-To wejście WebDAV strony. Różni się od kanału przechowywania WebDAV w Ustawieniach przesyłania. Kanał uploadu zapisuje pliki w zewnętrznej usłudze WebDAV. To ustawienie sprawia, że Twoja strona ImgBed sama udostępnia dostęp WebDAV klientom.
+To wejście WebDAV strony. Różni się od kanału przechowywania WebDAV w Ustawieniach przesyłania. Kanał przesyłania zapisuje pliki w zewnętrznej usłudze WebDAV. To ustawienie sprawia, że Twoja strona ImgBed sama udostępnia dostęp WebDAV klientom.
 
 ## Gdzie skonfigurować
 
@@ -16,11 +16,11 @@ System Settings -> Security Settings -> WebDAV
 
 Dostępne ustawienia:
 
-- Enable
-- Username
-- Password
-- Image loading mode
-- Default channel
+- Włącz
+- Nazwa użytkownika
+- Hasło
+- Tryb ładowania obrazów
+- Kanał domyślny
 
 ## Co robi ta funkcja
 
@@ -42,51 +42,51 @@ Dobre zastosowania:
 
 ## Ustawienia
 
-### Enable
+### Włącz
 
-Włącza endpoint WebDAV.
+Włącza punkt końcowy WebDAV.
 
 Gdy jest wyłączony, klienci nie mogą łączyć się przez WebDAV.
 
-### Username i Password
+### Nazwa użytkownika i hasło
 
 Tych danych używają klienci WebDAV podczas połączenia.
 
-Użyj osobnej nazwy użytkownika i hasła dla WebDAV. Nie używaj ponownie hasła administratora ani hasła uploadu.
+Użyj osobnej nazwy użytkownika i hasła dla WebDAV. Nie używaj ponownie hasła administratora ani hasła do przesyłania.
 
 Jeśli nazwa użytkownika lub hasło są puste, klienci WebDAV nie połączą się poprawnie.
 
-### Image Loading Mode
+### Tryb ładowania obrazów
 
-Image loading mode określa, który URL obrazu preferują klienci WebDAV przy odczycie.
+Tryb ładowania obrazów określa, który adres URL obrazu preferują klienci WebDAV przy odczycie.
 
 Typowe opcje:
 
 | Tryb | Opis |
 | --- | --- |
-| Smart loading | ImgBed wybiera według kontekstu. Zalecane do normalnego użycia. |
-| Original | Preferuje oryginalne obrazy. |
-| Thumbnail | Preferuje miniatury. Przydatne do szybkiego podglądu. |
+| Inteligentne ładowanie | ImgBed wybiera według kontekstu. Zalecane do normalnego użycia. |
+| Oryginał | Preferuje oryginalne obrazy. |
+| Miniatura | Preferuje miniatury. Przydatne do szybkiego podglądu. |
 
-Jeśli nie masz pewności, zostaw `Smart loading`.
+Jeśli nie masz pewności, zostaw `Inteligentne ładowanie`.
 
-### Default Channel
+### Kanał domyślny
 
-Domyślny kanał jest używany do uploadów WebDAV.
+Domyślny kanał jest używany do przesyłania WebDAV.
 
-Gdy kopiujesz pliki do katalogu WebDAV z Windows lub innego klienta, ImgBed przesyła je przez wybrany domyślny kanał uploadu.
+Gdy kopiujesz pliki do katalogu WebDAV z Windows lub innego klienta, ImgBed przesyła je przez wybrany domyślny kanał przesyłania.
 
-Jeśli domyślny kanał nie jest wybrany, przeglądanie może działać, ale upload może się nie udać.
+Jeśli domyślny kanał nie jest wybrany, przeglądanie może działać, ale przesyłanie może się nie udać.
 
 ## Dostęp WebDAV w Windows 11
 
 Windows 11 może dodać WebDAV jako lokalizację sieciową.
 
-1. Otwórz `This PC`.
-2. Wybierz `Add a network location`.
+1. Otwórz `Ten komputer`.
+2. Wybierz `Dodaj lokalizację sieciową`.
 3. Wpisz `https://your-domain.com/dav`.
 4. Po wyświetleniu prośby wpisz nazwę użytkownika i hasło WebDAV.
-5. Zakończ kreatora. Katalog WebDAV będzie można otworzyć w File Explorer.
+5. Zakończ kreatora. Katalog WebDAV będzie można otworzyć w Eksploratorze plików.
 
 ![Dodawanie WebDAV w Windows 11](../../image/Safety/webdav在win11配置.png)
 
@@ -107,9 +107,9 @@ Po udanym połączeniu WebDAV zwykle możesz:
 
 WebDAV najlepiej sprawdza się do codziennego dostępu i lekkiego zarządzania plikami. Do dużych przenosin, masowego usuwania albo złożonej organizacji użyj panelu administracyjnego.
 
-## Login Device Management
+## Zarządzanie urządzeniami logowania
 
-Udane połączenia WebDAV pojawiają się też na karcie WebDAV w Login Device Management.
+Udane połączenia WebDAV pojawiają się też na karcie WebDAV w Zarządzaniu urządzeniami logowania.
 
 Możesz tam sprawdzać klientów WebDAV i wymuszać wylogowanie starych urządzeń.
 
@@ -126,15 +126,15 @@ Sprawdź:
 - WebDAV jest włączony.
 - Strona jest dostępna przez HTTPS.
 
-### Przeglądanie działa, ale upload nie
+### Przeglądanie działa, ale przesyłanie nie
 
-Sprawdź `Default channel`.
+Sprawdź `Kanał domyślny`.
 
-Upload WebDAV wymaga domyślnego kanału przesyłania. Jeśli go nie ma, jest wyłączony lub źle skonfigurowany, upload może się nie udać.
+Przesyłanie WebDAV wymaga domyślnego kanału przesyłania. Jeśli go nie ma, jest wyłączony lub źle skonfigurowany, przesyłanie może się nie udać.
 
 ### Szybkość dostępu jest niestabilna
 
-Wydajność WebDAV zależy od klienta, sieci, liczby plików i domyślnego kanału uploadu.
+Wydajność WebDAV zależy od klienta, sieci, liczby plików i domyślnego kanału przesyłania.
 
 Jeśli katalog ma dużo plików, uporządkuj je w podkatalogach zamiast trzymać zbyt wiele w jednym miejscu.
 
@@ -144,13 +144,13 @@ Jeśli katalog ma dużo plików, uporządkuj je w podkatalogach zamiast trzymać
 - Ustaw silne hasło.
 - Nie udostępniaj hasła WebDAV osobom niezaufanym.
 - Wyłącz WebDAV, gdy go nie używasz.
-- Okresowo czyść nieużywane urządzenia WebDAV w Login Device Management.
+- Okresowo czyść nieużywane urządzenia WebDAV w Zarządzaniu urządzeniami logowania.
 
-## Rozmiar pliku przy uploadzie WebDAV
+## Rozmiar pliku przy przesyłaniu WebDAV
 
-Klienci WebDAV nie używają przeglądarkowego mechanizmu uploadu częściowego ze strony uploadu. Dla plików powyżej poniższych zalecanych limitów użyj strony web uploadu.
+Klienci WebDAV nie używają przeglądarkowego mechanizmu przesyłania częściowego ze strony przesyłania. Dla plików powyżej poniższych zalecanych limitów użyj strony przesyłania w przeglądarce.
 
-| Domyślny kanał uploadu | Zalecany limit jednego pliku WebDAV |
+| Domyślny kanał przesyłania | Zalecany limit jednego pliku WebDAV |
 | --- | ---: |
 | Telegram | 20 MB |
 | Discord | 10 MB |

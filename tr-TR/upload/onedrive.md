@@ -67,7 +67,7 @@ Uygulama oluşturulduktan sonra overview sayfasından şu değerleri kopyalayın
 4. Son kullanma süresi seçin.
 5. Oluşturulur oluşturulmaz `Value` değerini kopyalayın.
 
-![Client secret value değerini kaydetme](../../image/upload/onedrive/保存客户端密码值.png)
+![Client secret değerini kaydetme](../../image/upload/onedrive/保存客户端密码值.png)
 
 ### 5. API Permissions Ekleyin
 
@@ -125,20 +125,20 @@ Tüm alanlar dolduktan sonra kanalı kaydedin.
 ## Kısa Akış
 
 ```text
-portal.azure.com aç
--> Microsoft Entra ID ara
--> App registrations aç
--> Yeni app kaydet
--> Name / Supported account types / Web redirect URI doldur
+Open portal.azure.com
+-> Search for Microsoft Entra ID
+-> Open App registrations
+-> Register a new app
+-> Fill Name / Supported account types / Web redirect URI
 -> Register
--> Application (client) ID kopyala
--> Authentication içinde callback URL kontrol et
--> Certificates & secrets içinde Client Secret oluştur
--> API permissions içinde izinleri ekle
--> Client ID / Client Secret / Tenant ID değerlerini ImgBed'e gir
--> Get Token tıkla
--> Callback sayfasından Refresh Token kopyala
--> ImgBed'e yapıştır ve kaydet
+-> Copy Application (client) ID
+-> Check the callback URL in Authentication
+-> Create a Client Secret in Certificates & secrets
+-> Add permissions in API permissions
+-> Fill Client ID / Client Secret / Tenant ID into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## Kaynaklar

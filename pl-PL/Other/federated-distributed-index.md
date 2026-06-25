@@ -6,7 +6,7 @@ W prostych słowach:
 
 - Możesz udostępnić wybrane katalogi ze swojej strony innym.
 - Możesz dołączyć do innego węzła i zsynchronizować jego udostępnioną listę plików do swojego panelu administracyjnego.
-- Pliki federacyjne służą głównie do przeglądania, wyszukiwania i otwierania linków. Nie są ponownie przesyłane do Twojej pamięci.
+- Pliki federacyjne służą głównie do przeglądania, wyszukiwania i otwierania linków. Nie są ponownie przesyłane do Twojej własnej pamięci masowej.
 
 ## Gdzie skonfigurować
 
@@ -23,7 +23,7 @@ Strona ma trzy karty:
 | Karta | Cel |
 | --- | --- |
 | Local Node | Włącz własny węzeł, potwierdź publiczną domenę, wybierz katalogi współdzielone i zaktualizuj indeks wychodzący |
-| Nodes I Joined | Zarządzaj innymi węzłami ImgBed, do których dołączono |
+| Nodes I Joined | Zarządzaj innymi węzłami ImgBed, do których dołączyłeś |
 | Nodes Joining Me | Zarządzaj prośbami innych osób o dołączenie do Twojego węzła |
 
 ## Pierwsza konfiguracja
@@ -38,19 +38,19 @@ Możesz wybrać wiele katalogów synchronizacji.
 
 Jeśli lista katalogów synchronizacji jest pusta, udostępniane są wszystkie katalogi.
 
-## Local Node
+## Lokalny węzeł
 
 ### Publiczna domena
 
-Publiczna domena to URL strony, którego inne węzły używają, aby uzyskać dostęp do Twojego węzła.
+Publiczna domena to adres URL strony, którego inne węzły używają, aby uzyskać dostęp do Twojego węzła.
 
 ImgBed wykrywa ją automatycznie. Nie trzeba wpisywać ręcznie. Przy pierwszej aktualizacji indeksu ImgBed zapyta, czy bieżący URL dostępu jest domeną produkcyjną.
 
 Jeśli później zmienisz domenę, aktualizacja indeksu ponownie poprosi o potwierdzenie.
 
-### Sync Folders
+### Katalogi synchronizacji
 
-Sync folders określają, które pliki są udostępniane węzłom federacji.
+Katalogi synchronizacji określają, które pliki są udostępniane węzłom federacji.
 
 Na przykład jeśli wybierzesz tylko:
 
@@ -61,7 +61,7 @@ Na przykład jeśli wybierzesz tylko:
 
 inne węzły zobaczą tylko pliki w tych dwóch katalogach.
 
-### Update Outbound Index
+### Aktualizacja indeksu wychodzącego
 
 Aktualizuje listę plików, którą inne węzły mogą synchronizować od Ciebie.
 
@@ -72,29 +72,29 @@ Użyj tego, gdy:
 - zmieniasz katalogi synchronizacji.
 - zmieniasz publiczną domenę i musisz ją potwierdzić.
 
-## Nodes I Joined
+## Węzły, do których dołączono
 
-`Nodes I Joined` to miejsce subskrybowania innych węzłów.
+`Nodes I Joined` to miejsce, w którym subskrybujesz inne węzły.
 
 ![Węzły, do których dołączono](../../image/other/联盟图/我加入的节点.png)
 
 ### Prośba o dołączenie do innego węzła
 
 1. Poproś drugiego właściciela o link zaproszenia.
-2. Wklej go w polu wejściowym.
+2. Wklej go w polu tekstowym.
 3. Kliknij `Request to Join`.
-4. Poczekaj, aż drugi właściciel zatwierdzi prośbę w swoim panelu administracyjnym.
+4. Poczekaj, aż właściciel drugiego węzła zatwierdzi prośbę w swoim panelu administracyjnym.
 
-Po zatwierdzeniu status węzła zmieni się na approved.
+Po zatwierdzeniu status węzła zmieni się na zatwierdzony.
 
-### Update Inbound Index
+### Aktualizacja indeksu przychodzącego
 
 `Update Inbound Index` synchronizuje listy plików z węzłów, do których dołączono.
 
 Użyj tego, gdy:
 
-- drugi właściciel właśnie zatwierdził Twoją prośbę.
-- drugi właściciel informuje, że udostępniona zawartość została zaktualizowana.
+- właściciel drugiego węzła właśnie zatwierdził Twoją prośbę.
+- właściciel drugiego węzła informuje, że udostępniona zawartość została zaktualizowana.
 - chcesz odświeżyć wszystkie listy plików z dołączonych węzłów.
 
 Aby zaktualizować tylko jeden węzeł, kliknij `Update Index` na jego karcie.
@@ -107,7 +107,7 @@ Jeśli nie chcesz już synchronizować węzła, kliknij `Unsubscribe`.
 
 Po rezygnacji indeks federacyjny tego węzła zostanie usunięty z Twojej lokalnej strony.
 
-## Nodes Joining Me
+## Węzły dołączające do mnie
 
 `Nodes Joining Me` to miejsce obsługi próśb od innych.
 
@@ -129,10 +129,10 @@ Gdy ktoś wyśle prośbę, pojawi się ona na liście `Nodes Joining Me`.
 
 | Akcja | Znaczenie |
 | --- | --- |
-| Approve | Pozwala drugiemu węzłowi synchronizować Twoją udostępnioną listę plików |
-| Reject | Odrzuca prośbę |
-| Delete | Usuwa zakończony rekord |
-| Check Status | Sprawdza, czy druga strona nadal utrzymuje tę relację |
+| Zatwierdź | Pozwala drugiemu węzłowi synchronizować Twoją udostępnioną listę plików |
+| Odrzuć | Odrzuca prośbę |
+| Usuń | Usuwa zakończony wpis |
+| Sprawdź status | Sprawdza, czy druga strona nadal utrzymuje tę relację |
 
 Po zatwierdzeniu druga strona nadal musi kliknąć `Update Inbound Index`, zanim Twoje udostępnione pliki się tam pojawią.
 
@@ -146,23 +146,23 @@ Wiadomości służą tylko do komunikacji o relacji federacyjnej. Nie zmieniają
 
 ![Wiadomości](../../image/other/联盟图/留言功能.png)
 
-## Oglądanie plików federacyjnych
+## Wyświetlanie plików federacyjnych
 
 Po zakończeniu synchronizacji wróć do listy plików w panelu administracyjnym.
 
 Na górze strony przełączaj się między plikami lokalnymi i federacyjnymi. W plikach federacyjnych możesz przeglądać zsynchronizowaną zawartość.
 
-Pliki federacyjne służą głównie do oglądania, wyszukiwania, podglądu i kopiowania linków. Nie są lokalnymi plikami, więc nie możesz ich przenosić, usuwać, ponownie tagować ani tworzyć ich kopii z własnej strony.
+Pliki federacyjne służą głównie do wyświetlania, wyszukiwania, podglądu i kopiowania linków. Nie są lokalnymi plikami, więc nie możesz ich przenosić, usuwać, ponownie tagować ani tworzyć ich kopii zapasowych z własnej strony.
 
 ![Pliki federacyjne w panelu administracyjnym](../../image/other/联盟图/联盟管理显示效果图.png)
 
-## FAQ
+## Najczęstsze pytania
 
-### Dlaczego prosi o ponowne zgłoszenie, bo nie ma rekordu relacji?
+### Dlaczego pojawia się prośba o ponowne zgłoszenie z powodu braku wpisu relacji?
 
-Zwykle oznacza to, że druga strona usunęła Cię i skasowała rekord, więc relacja nie może zostać znaleziona. Wyślij nową prośbę o dołączenie.
+Zwykle oznacza to, że druga strona usunęła Cię i skasowała wpis, więc relacja nie może zostać znaleziona. Wyślij nową prośbę o dołączenie.
 
-![Ponowne zgłoszenie bez rekordu relacji](../../image/other/联盟图/无关系记录重新申请.png)
+![Ponowne zgłoszenie bez wpisu relacji](../../image/other/联盟图/无关系记录重新申请.png)
 
 ### Dlaczego nie widzę plików po dołączeniu?
 
@@ -177,15 +177,15 @@ Sprawdź:
 
 Jeśli aktualnie otwierasz panel administracyjny przez domenę produkcyjną, potwierdź i kontynuuj.
 
-Jeśli używasz tymczasowego adresu, anuluj, otwórz panel przez domenę produkcyjną i spróbuj ponownie.
+Jeśli używasz tymczasowego adresu, anuluj, otwórz panel ponownie przez domenę produkcyjną i spróbuj ponownie.
 
-### Co oznacza pusta lista Sync Folder?
+### Co oznacza pusta lista katalogów synchronizacji?
 
-Pusta lista Sync Folder oznacza, że udostępniane są wszystkie katalogi.
+Pusta lista katalogów synchronizacji oznacza, że udostępniane są wszystkie katalogi.
 
 Aby udostępnić tylko wybrane katalogi, zaznacz je ręcznie.
 
-### Różnica między aktualizacją outbound i inbound
+### Różnica między aktualizacją indeksu wychodzącego i przychodzącego
 
 | Przycisk | Proste znaczenie |
 | --- | --- |

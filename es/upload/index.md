@@ -1,14 +1,14 @@
-# Ajustes de subida
+# Ajustes de carga
 
-Los ajustes de subida conectan ImgBed con tus propios canales de almacenamiento. Después de configurar un canal, las imágenes y los archivos subidos se guardan en el servicio que elijas. ImgBed se encarga de los enlaces de acceso, los registros de archivos, las vistas previas, la galería pública, la API de imagen aleatoria, el acceso WebDAV y otros flujos relacionados.
+Los ajustes de carga conectan ImgBed con sus propios canales de almacenamiento. Después de configurar un canal, las imágenes y los archivos cargados se guardan en el servicio que elija. ImgBed gestiona los registros de archivos, los enlaces de acceso, las vistas previas, las funciones de galería pública, el acceso a la API de imagen aleatoria, el acceso WebDAV y los flujos relacionados.
 
-Cada usuario puede preferir un canal distinto. Si quieres empezar de forma sencilla, Telegram, Discord o GitHub Releases son buenas opciones. Si te importan más la capacidad, la velocidad y la estabilidad a largo plazo, considera Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud o tu propio servicio WebDAV.
+Cada usuario puede preferir canales distintos. Si desea una configuración sencilla, Telegram, Discord o GitHub Releases pueden ser buenos puntos de partida. Si le importan más la capacidad, la velocidad y la estabilidad a largo plazo, considere Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud o su propio servicio WebDAV.
 
 ## Antes de empezar
 
-- Prepara la cuenta de almacenamiento o las credenciales API que vas a usar.
-- Comprueba que tu dominio de ImgBed esté disponible, porque los canales OAuth necesitan URL de callback.
-- Después de añadir un canal, sube primero una imagen de prueba para confirmar que se guarda y se abre correctamente.
+- Prepare la cuenta de almacenamiento o las credenciales de API que quiera usar.
+- Asegúrese de que su dominio de ImgBed sea accesible, porque los canales basados en OAuth necesitan URL de callback.
+- Después de añadir un canal, cargue primero una imagen de prueba para confirmar que los archivos se guardan y se abren correctamente.
 
 ## Directorio de canales
 
@@ -28,6 +28,6 @@ Cada usuario puede preferir un canal distinto. Si quieres empezar de forma senci
 
 ## Qué cubre este capítulo
 
-- Qué necesita cada canal antes de configurarlo.
+- Qué necesita cada canal de carga antes de configurarlo.
 - Cómo crear aplicaciones, copiar claves o autorizar tokens en plataformas externas.
-- Cómo completar la configuración en ImgBed y comprobar que la subida funciona.
+- Cómo completar la configuración del canal en ImgBed y confirmar que las cargas funcionan.

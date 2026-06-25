@@ -1,12 +1,12 @@
 # Cloudflare API Token
 
-Cloudflare API credentials memungkinkan ImgBed purge Cloudflare CDN cache setelah files berubah.
+Kredensial Cloudflare API memungkinkan ImgBed membersihkan tembolok CDN Cloudflare setelah berkas berubah.
 
-![Cloudflare API Token settings](../../image/Safety/cloudflare%20api%20token截图.png)
+![Pengaturan Cloudflare API Token](../../image/Safety/cloudflare%20api%20token截图.png)
 
 ## Di Mana Mengonfigurasinya
 
-Buka admin panel, lalu masuk ke:
+Buka panel admin, lalu masuk ke:
 
 ```text
 System Settings -> Security Settings -> Cloudflare API Token
@@ -15,45 +15,45 @@ System Settings -> Security Settings -> Cloudflare API Token
 Anda perlu mengisi:
 
 - Zone ID
-- Account email
+- Email akun
 - API Key
 
-## Fungsi Setting Ini
+## Fungsi Pengaturan Ini
 
-Cloudflare dapat cache public image URLs.
+Cloudflare dapat menyimpan URL gambar publik di tembolok.
 
-Caching membuat image delivery lebih cepat, tetapi juga bisa membuat content lama tetap terlihat beberapa saat setelah Anda delete, block, replace, atau move file.
+Tembolok membuat pengiriman gambar lebih cepat, tetapi juga dapat membuat konten lama tetap terlihat beberapa saat setelah Anda menghapus, memblokir, mengganti, atau memindahkan berkas.
 
-Setelah Cloudflare API credentials dikonfigurasi, ImgBed mencoba purge Cloudflare cache terkait saat operasi tersebut selesai.
+Setelah kredensial Cloudflare API dikonfigurasi, ImgBed akan mencoba membersihkan tembolok Cloudflare terkait saat operasi tersebut selesai.
 
 Ini berguna saat:
 
-- Anda delete image dan ingin public link berhenti bekerja secepat mungkin.
-- Anda block image dan ingin visitors berhenti melihat original file.
-- Anda replace file dengan nama yang sama dan ingin visitors melihat versi baru lebih cepat.
-- Anda move atau rename files dan ingin old path cache refresh lebih cepat.
-- Anda mengubah public access rules dan ingin public gallery atau random image cache update lebih cepat.
+- Anda menghapus gambar dan ingin tautan publik berhenti bekerja secepat mungkin.
+- Anda memblokir gambar dan ingin pengunjung berhenti melihat berkas asli.
+- Anda mengganti berkas dengan nama yang sama dan ingin pengunjung melihat versi baru lebih cepat.
+- Anda memindahkan atau mengganti nama berkas dan ingin tembolok jalur lama disegarkan lebih cepat.
+- Anda mengubah aturan akses publik dan ingin tembolok galeri publik atau gambar acak diperbarui lebih cepat.
 
 ## Jika Dibiarkan Kosong
 
-ImgBed tetap berjalan normal tanpa setting ini.
+ImgBed tetap berjalan normal tanpa pengaturan ini.
 
-Perbedaannya, ImgBed tidak akan actively purge Cloudflare CDN cache. Visitors mungkin tetap melihat content lama sampai Cloudflare cache expire secara alami.
+Perbedaannya, ImgBed tidak akan secara aktif membersihkan tembolok CDN Cloudflare. Pengunjung mungkin tetap melihat konten lama sampai tembolok Cloudflare kedaluwarsa secara alami.
 
 ## Cara Menemukan Zone ID
 
-Zone ID adalah Cloudflare Zone ID dari site yang dipakai oleh ImgBed domain Anda.
+Zone ID adalah Cloudflare Zone ID untuk situs yang dipakai oleh domain ImgBed Anda.
 
-1. Sign in ke Cloudflare dashboard.
-2. Buka site yang berisi ImgBed domain Anda.
-3. Cari `Zone ID` di site overview page.
-4. Copy ke field `Zone ID` di ImgBed.
+1. Login ke dashboard Cloudflare.
+2. Buka situs yang berisi domain ImgBed Anda.
+3. Cari `Zone ID` di halaman ringkasan situs.
+4. Salin ke kolom `Zone ID` di ImgBed.
 
-Ini adalah site Zone ID, bukan account ID.
+Ini adalah Zone ID situs, bukan account ID.
 
-## Account Email
+## Email Akun
 
-Masukkan email address yang Anda gunakan untuk sign in ke Cloudflare.
+Masukkan alamat email yang Anda gunakan untuk login ke Cloudflare.
 
 Email ini harus cocok dengan API Key di bawah.
 
@@ -61,20 +61,20 @@ Email ini harus cocok dengan API Key di bawah.
 
 Masukkan Cloudflare Global API Key.
 
-1. Sign in ke Cloudflare dashboard.
-2. Buka profile.
-3. Masuk ke API Tokens page.
+1. Login ke dashboard Cloudflare.
+2. Buka profil.
+3. Masuk ke halaman API Tokens.
 4. Cari `Global API Key`.
-5. View dan copy.
-6. Paste ke field `API Key` di ImgBed.
+5. Lihat dan salin.
+6. Tempel ke kolom `API Key` di ImgBed.
 
-![View global API key](../../image/Safety/查看全局令牌.png)
+![Lihat global API key](../../image/Safety/查看全局令牌.png)
 
 ## Kapan Berlaku
 
-Setelah field diisi, save settings.
+Setelah kolom diisi, simpan pengaturan.
 
-File changes setelah itu akan otomatis mencoba purge Cloudflare cache. Past operations tidak dipurge secara retroaktif. Jika Anda delete atau replace file sebelum setup ini, tunggu Cloudflare cache expire atau purge manual di Cloudflare.
+Perubahan berkas setelah itu akan otomatis mencoba membersihkan tembolok Cloudflare. Operasi sebelumnya tidak dibersihkan secara retroaktif. Jika Anda menghapus atau mengganti berkas sebelum pengaturan ini dibuat, tunggu tembolok Cloudflare kedaluwarsa atau bersihkan secara manual di Cloudflare.
 
 ## FAQ
 
@@ -82,22 +82,23 @@ File changes setelah itu akan otomatis mencoba purge Cloudflare cache. Past oper
 
 Tidak.
 
-Jika domain Anda tidak memakai Cloudflare, atau Anda tidak masalah dengan CDN cache delay, biarkan kosong.
+Jika domain Anda tidak memakai Cloudflare, atau Anda tidak keberatan dengan jeda tembolok CDN, biarkan kosong.
 
-### Apakah Credentials Salah Akan Merusak Uploads?
+### Apakah Kredensial yang Salah Akan Merusak Unggahan?
 
 Biasanya tidak.
 
-Credentials salah hanya membuat ImgBed gagal purge Cloudflare cache. Upload dan normal file access seharusnya tetap berjalan.
+Kredensial yang salah hanya membuat ImgBed gagal membersihkan tembolok Cloudflare. Unggahan dan akses berkas normal seharusnya tetap berjalan.
 
-### Mengapa Deleted Image Masih Bisa Dibuka?
+### Mengapa Gambar yang Dihapus Masih Bisa Dibuka?
 
-Penyebab paling umum adalah Cloudflare masih menyimpan file lama di cache.
+Penyebab paling umum adalah Cloudflare masih menyimpan berkas lama di tembolok.
 
-Dengan Cloudflare API credentials yang benar, ImgBed purge related URL cache saat file dihapus.
+Dengan kredensial Cloudflare API yang benar, ImgBed membersihkan tembolok URL terkait saat berkas dihapus.
 
-### Mengapa Setelah Replace File Masih Melihat Image Lama?
+### Mengapa Setelah Mengganti Berkas Saya Masih Melihat Gambar Lama?
 
-Ini juga biasanya disebabkan CDN cache.
+Ini juga biasanya disebabkan oleh tembolok CDN.
 
-Setelah setting ini dikonfigurasi, ImgBed mencoba purge old URL cache saat file dengan nama yang sama dioverwrite.
+Setelah pengaturan ini dikonfigurasi, ImgBed mencoba membersihkan tembolok URL lama saat berkas dengan nama yang sama ditimpa.
+

@@ -1,67 +1,67 @@
-# Menambahkan Hugging Face Channel
+# Menambahkan Kanal Hugging Face
 
-## Yang Perlu Disiapkan Sebelum Mulai
+## Yang Diperlukan Sebelum Memulai
 
-Anda hanya perlu tiga hal:
+Anda hanya memerlukan tiga hal:
 
-| Requirement | Purpose |
+| Kebutuhan | Tujuan |
 | --- | --- |
-| Hugging Face account | Digunakan untuk generate access token dan memiliki repository. |
-| Hugging Face User Access Token | Digunakan ImgBed untuk mengakses Hugging Face API, membuat repositories, dan upload files. |
-| Repository name | Anda bisa memasukkan repository name saja, misalnya `image`. |
+| Akun Hugging Face | Digunakan untuk membuat token akses dan memiliki repositori. |
+| Hugging Face User Access Token | Digunakan oleh ImgBed untuk mengakses Hugging Face API, membuat repositori, dan mengunggah berkas. |
+| Nama repositori | Anda dapat memasukkan nama repositori saja, misalnya `image`. |
 
-## Langkah Setup
+## Langkah Konfigurasi
 
-### Step 1: Sign in ke Hugging Face dan Buat Access Token
+### Langkah 1: Masuk ke Hugging Face dan Buat Access Token
 
-1. Sign in ke Hugging Face.
-2. Klik avatar di kanan atas dan buka `Settings`.
-3. Buka `Access Tokens` dari left sidebar.
+1. Masuk ke Hugging Face.
+2. Klik avatar Anda di sudut kanan atas, lalu buka `Settings`.
+3. Buka `Access Tokens` dari sidebar kiri.
 4. Buat token baru.
-5. Beri nama token yang mudah dikenali.
-6. Pilih permission `write`.
-7. Copy dan simpan token segera setelah dibuat.
+5. Beri token nama yang mudah dikenali.
+6. Pilih izin `write`.
+7. Salin dan simpan token segera setelah dibuat.
 
-![Create a token](../../image/upload/huggingface/创建令牌.png)
+![Membuat token](../../image/upload/huggingface/创建令牌.png)
 
-## Step 2: Isi Hugging Face Channel di ImgBed
+## Langkah 2: Isi Kanal Hugging Face di ImgBed
 
-Setelah memilih `Hugging Face` di Upload Settings, isi field sebagai berikut:
+Setelah memilih `Hugging Face` di Pengaturan Unggah, isi kolom sebagai berikut:
 
-| UI Field | Yang Diisi |
+| Kolom UI | Yang Harus Diisi |
 | --- | --- |
-| Channel name | Nama pilihan Anda, misalnya `hf-primary`. |
-| Repository name | Repo name pendek seperti `image`, atau full path seperti `username/image`. |
-| Access Token | Hugging Face User Access Token yang baru dibuat. |
-| Private repository | Aktifkan atau nonaktifkan sesuai kebutuhan. |
-| Remark | Optional, misalnya `Primary upload channel`. |
+| Nama kanal | Nama pilihan Anda, misalnya `hf-primary`. |
+| Nama repositori | Nama repositori pendek seperti `image`, atau jalur lengkap seperti `username/image`. |
+| Access Token | Hugging Face User Access Token yang baru Anda buat. |
+| Repositori privat | Aktifkan atau nonaktifkan sesuai kebutuhan. |
+| Catatan | Opsional, misalnya `Primary upload channel`. |
 
-![Add the channel](../../image/upload/huggingface/添加渠道.png)
+![Menambahkan kanal](../../image/upload/huggingface/添加渠道.png)
 
-## Step 3: Save Channel
+## Langkah 3: Simpan Kanal
 
-Setelah mengisi field, klik Save.
+Setelah semua kolom diisi, klik Simpan.
 
-System akan menangani detail berikut:
+Sistem kemudian akan menangani detail berikut:
 
-| System Behavior | Description |
+| Perilaku Sistem | Deskripsi |
 | --- | --- |
-| Short repository name | ImgBed mengenali current Hugging Face account dan memperluas value menjadi full repository path. |
-| Full repository path | ImgBed memakai path `username/repository` persis seperti yang dimasukkan. |
-| Repository check | Jika memakai current personal account path, ImgBed mencoba membuat repository saat belum ada. Jika memasukkan full path manual, ImgBed langsung memakai path tersebut. |
-| Repository type | Channel ini memakai `dataset` repository. |
-| Public/private state | Repository visibility disinkronkan sesuai current switch. |
+| Nama repositori pendek | ImgBed mengidentifikasi akun Hugging Face saat ini dan memperluas nilainya menjadi jalur repositori lengkap. |
+| Jalur repositori lengkap | ImgBed menggunakan jalur `username/repository` persis seperti yang dimasukkan. |
+| Pemeriksaan repositori | Jika Anda menggunakan jalur akun pribadi saat ini, ImgBed mencoba membuat repositori saat belum ada. Jika Anda memasukkan jalur lengkap secara manual, ImgBed langsung menggunakan jalur tersebut. |
+| Jenis repositori | Kanal ini menggunakan repositori `dataset`. |
+| Status publik/privat | Visibilitas repositori disinkronkan sesuai sakelar saat ini. |
 
-## Quick Checklist
+## Daftar Periksa Cepat
 
 ```text
-Sign in ke Hugging Face
--> Buat Access Token
--> Pilih write permission
--> Kembali ke ImgBed dan masukkan token serta repository name
+Sign in to Hugging Face
+-> Create an Access Token
+-> Select write permission
+-> Return to ImgBed and enter the token and repository name
 -> Save
--> Jika hanya repo name yang dimasukkan, ImgBed menambahkan current username otomatis
--> Jika username/repo dimasukkan, ImgBed memakainya apa adanya
--> ImgBed check atau membuat dataset repository
--> Upload test image
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> ImgBed checks or creates the dataset repository
+-> Upload a test image
 ```

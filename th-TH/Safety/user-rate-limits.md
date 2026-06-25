@@ -1,76 +1,76 @@
-# User Rate Limits
+# ขีดจำกัดความถี่การอัปโหลดของผู้ใช้
 
-User rate limits ควบคุมว่า regular users หรือ visitors จะ upload files จาก homepage ได้ถี่แค่ไหน ช่วยลดการ abuse ของ public upload pages
+ขีดจำกัดความถี่การอัปโหลดของผู้ใช้ควบคุมว่าผู้ใช้ทั่วไปหรือผู้เยี่ยมชมสามารถอัปโหลดไฟล์จากหน้าแรกได้บ่อยเพียงใด วิธีนี้ช่วยป้องกันไม่ให้หน้าสาธารณะสำหรับอัปโหลดถูกใช้งานในทางที่ผิด
 
-Feature นี้มีผลเฉพาะ homepage uploads Admin uploads และ uploads ที่ทำด้วย API Tokens จะไม่ถูกจำกัดโดย user rate limits
+ฟีเจอร์นี้มีผลกับการอัปโหลดจากหน้าแรกเท่านั้น การอัปโหลดของผู้ดูแลระบบและการอัปโหลดผ่าน API Tokens จะไม่ถูกจำกัดด้วยขีดจำกัดความถี่ของผู้ใช้
 
 ## ตั้งค่าที่ไหน
 
-เปิด admin panel แล้วไปที่:
+เปิดแผงผู้ดูแลระบบ แล้วไปที่:
 
 ```text
 System Settings -> Security Settings -> Upload Management -> User Rate Limits
 ```
 
-![User rate limit settings](../../image/other/用户频控截图.png)
+![การตั้งค่าขีดจำกัดความถี่ของผู้ใช้](../../image/other/用户频控截图.png)
 
-## Enable Rate Limits
+## การเปิดใช้ขีดจำกัดความถี่
 
-หลังเปิด `Enable Rate Limits` ImgBed จะ track recent uploads ตาม uploader IP address
+หลังจากเปิด `เปิดใช้ขีดจำกัดความถี่` แล้ว ImgBed จะติดตามการอัปโหลดล่าสุดตามที่อยู่ IP ของผู้อัปโหลด
 
-Default values:
+ค่าเริ่มต้น:
 
-| Setting | Default | Description |
+| การตั้งค่า | ค่าเริ่มต้น | คำอธิบาย |
 | --- | --- | --- |
-| Detection window | 1.5 hours | นับ upload records ย้อนหลังนานแค่ไหน |
-| Max file count | 20 | จำนวน files สูงสุดที่ allowed ใน detection window |
-| Single file size limit | 20 MB | ขนาดสูงสุดของ file เดียว |
-| Total upload size limit | 200 MB | Total upload size สูงสุดใน detection window |
+| ช่วงเวลาตรวจจับ | 1.5 hours | ระยะเวลาย้อนหลังที่ใช้ในการนับบันทึกการอัปโหลด |
+| จำนวนไฟล์สูงสุด | 20 | จำนวนไฟล์สูงสุดที่อนุญาตในช่วงเวลาตรวจจับ |
+| ขีดจำกัดขนาดไฟล์เดี่ยว | 20 MB | ขนาดสูงสุดของไฟล์หนึ่งไฟล์ |
+| ขีดจำกัดขนาดอัปโหลดรวม | 200 MB | ขนาดรวมสูงสุดของการอัปโหลดในช่วงเวลาตรวจจับ |
 
-ตัวอย่าง ถ้าตั้ง 1.5 hour window, 20 files, 20 MB ต่อ file และ 200 MB total uploads จาก IP เดียวกันจะถูก block เมื่อเกิน limit ใด limit หนึ่ง
+ตัวอย่างเช่น หากตั้งช่วงเวลาไว้ที่ 1.5 ชั่วโมง, 20 ไฟล์, 20 MB ต่อไฟล์ และรวม 200 MB การอัปโหลดจาก IP เดียวกันจะถูกบล็อกทันทีเมื่อเกินขีดจำกัดที่ตั้งไว้ข้อใดข้อหนึ่ง
 
-## Excluding File Types
+## การยกเว้นประเภทไฟล์
 
-`Excluded upload file types` block regular users หรือ visitors ไม่ให้ upload file categories ที่เลือก
+`ประเภทไฟล์อัปโหลดที่ถูกยกเว้น` จะบล็อกไม่ให้ผู้ใช้ทั่วไปหรือผู้เยี่ยมชมอัปโหลดหมวดหมู่ไฟล์ที่เลือกไว้
 
-Available categories:
+หมวดหมู่ที่ใช้ได้:
 
-| Type | Description |
+| ประเภท | คำอธิบาย |
 | --- | --- |
-| Images | jpg, png, webp, gif และ image files ใกล้เคียง |
-| Videos | mp4, webm, mov และ video files ใกล้เคียง |
-| Audio | mp3, flac, wav และ audio files ใกล้เคียง |
-| Documents | pdf, txt, md, docx และ document files ใกล้เคียง |
-| Other | Files นอก categories ด้านบน เช่น zip, rar, exe, apk |
+| รูปภาพ | jpg, png, webp, gif และไฟล์รูปภาพที่คล้ายกัน |
+| วิดีโอ | mp4, webm, mov และไฟล์วิดีโอที่คล้ายกัน |
+| เสียง | mp3, flac, wav และไฟล์เสียงที่คล้ายกัน |
+| เอกสาร | pdf, txt, md, docx และเอกสารที่คล้ายกัน |
+| อื่น ๆ | ไฟล์นอกเหนือจากหมวดหมู่ข้างต้น เช่น zip, rar, exe, apk |
 
-ค่าเริ่มต้นคือไม่มี type ถูกเลือก แปลว่า allowed
+โดยค่าเริ่มต้น ประเภทไฟล์จะไม่ถูกเลือก ซึ่งหมายความว่าอนุญาตให้อัปโหลดได้
 
-เมื่อคลิก type จะ highlight ซึ่งหมายถึง type นั้นถูก block
+เมื่อคลิกประเภทหนึ่ง ประเภทนั้นจะถูกไฮไลต์ ซึ่งหมายความว่าประเภทนั้นถูกบล็อก
 
-ถ้าเลือก `Other` visitors ที่ upload zip หรือ rar files จะถูก block และเห็นข้อความว่า file type นี้ไม่ supported
+หากเลือก `อื่น ๆ` ผู้เยี่ยมชมที่อัปโหลดไฟล์ zip หรือ rar จะถูกบล็อกและได้รับแจ้งว่าไม่รองรับไฟล์ประเภทนี้
 
-## Block Messages
+## ข้อความเมื่อถูกบล็อก
 
-เมื่อ limit ถูก trigger users จะเห็น message ที่ตรงกับสถานการณ์:
+เมื่อขีดจำกัดถูกเรียกใช้ ผู้ใช้จะเห็นข้อความที่ตรงกับสถานการณ์:
 
-![Too frequent upload message](../../image/other/频繁报错提示.png)
+![ข้อความอัปโหลดถี่เกินไป](../../image/other/频繁报错提示.png)
 
-| Scenario | Message Meaning |
+| สถานการณ์ | ความหมายของข้อความ |
 | --- | --- |
-| Single file too large | File ใหญ่เกินไป ควร compress ก่อน upload |
-| File type blocked | File type นี้ไม่ supported ให้เอาออกแล้วลองใหม่ |
-| Uploads too frequent | Recent uploads ถี่เกินไป พร้อมแสดง retry time |
-| Total size too high | Recent total upload size สูงเกินไป พร้อมแสดง retry time |
+| ไฟล์เดี่ยวใหญ่เกินไป | ไฟล์มีขนาดใหญ่เกินไปและควรบีบอัดก่อนอัปโหลด |
+| ประเภทไฟล์ถูกบล็อก | ไม่รองรับไฟล์ประเภทนี้ ให้นำไฟล์ออกแล้วลองอีกครั้ง |
+| อัปโหลดถี่เกินไป | การอัปโหลดล่าสุดถี่เกินไป และจะแสดงเวลาที่ลองใหม่ได้ |
+| ขนาดรวมสูงเกินไป | ขนาดรวมของการอัปโหลดล่าสุดสูงเกินไป และจะแสดงเวลาที่ลองใหม่ได้ |
 
-## ควร Enable เมื่อไร
+## ควรเปิดใช้เมื่อใด
 
-Enable user rate limits ถ้า upload homepage เปิดให้ public เข้าถึงได้
+เปิดใช้ขีดจำกัดความถี่ของผู้ใช้หากหน้าแรกสำหรับอัปโหลดของคุณเปิดให้สาธารณะเข้าถึงได้
 
 เหตุผลที่พบบ่อย:
 
-- กังวล scripted bulk uploads
-- ต้องการจำกัด large visitor uploads
-- ต้องการให้ regular users upload ได้เฉพาะ images ไม่ใช่ archives หรือ installers
-- ต้องการให้ public upload ยังใช้งานได้ แต่ควบคุม resource usage
+- คุณกังวลเรื่องการอัปโหลดจำนวนมากด้วยสคริปต์
+- คุณต้องการจำกัดการอัปโหลดไฟล์ขนาดใหญ่จากผู้เยี่ยมชม
+- คุณต้องการให้ผู้ใช้ทั่วไปอัปโหลดเฉพาะรูปภาพ ไม่ใช่ไฟล์บีบอัดหรือตัวติดตั้ง
+- คุณต้องการเปิดการอัปโหลดสาธารณะไว้ แต่ควบคุมการใช้ทรัพยากร
 
-ถ้า site ใช้เองเท่านั้น หรือมีเฉพาะ administrators ที่ upload ได้ สามารถปิดไว้ได้
+หากไซต์นี้ใช้เฉพาะคุณเอง หรือมีเพียงผู้ดูแลระบบที่อัปโหลดได้ คุณสามารถปิดฟีเจอร์นี้ไว้ได้

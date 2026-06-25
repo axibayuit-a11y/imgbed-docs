@@ -1,87 +1,87 @@
-# Blog
+# வலைப்பதிவு
 
-Blog feature உங்கள் ImgBed site-க்கு தனி blog page சேர்க்கும்.
+வலைப்பதிவு அம்சம் உங்கள் ImgBed தளத்தில் தனி வலைப்பதிவு பக்கத்தை சேர்க்கிறது.
 
-enable செய்த பிறகு visitors திறக்கலாம்:
+இதை இயக்கிய பிறகு, பார்வையாளர்கள் இதை திறக்கலாம்:
 
 ```text
 https://your-domain.com/blog/
 ```
 
-![Blog homepage](../../image/other/博客/博客首页.png)
+![வலைப்பதிவு முகப்பு](../../image/other/博客/博客首页.png)
 
-இந்த blog open-source [LyraVoid/Mizuki](https://github.com/LyraVoid/Mizuki) project-இல் இருந்து adapt செய்யப்பட்டது. ImgBed அதை rewrite செய்து Vue-உடன் integrate செய்கிறது, அதனால் image hosting site-இன் பகுதியாக இயங்கும்.
+வலைப்பதிவு திறந்த மூல [LyraVoid/Mizuki](https://github.com/LyraVoid/Mizuki) திட்டத்தை அடிப்படையாகக் கொண்டு மாற்றப்பட்டுள்ளது. ImgBed அதை Vue உடன் மறுஎழுதி ஒருங்கிணைக்கிறது, அதனால் அது பட ஹோஸ்டிங் தளத்தின் ஒரு பகுதியாக இயங்க முடியும்.
 
-## எங்கு Configure செய்வது
+## எங்கு அமைப்பது
 
-Blog settings:
+வலைப்பதிவு அமைப்புகள் இங்கு உள்ளன:
 
 ```text
 System Settings -> Other Settings -> Blog
 ```
 
-![Blog settings](../../image/other/博客/QQ20260611-221702.png)
+![வலைப்பதிவு அமைப்புகள்](../../image/other/博客/QQ20260611-221702.png)
 
-## First-Time Setup
+## முதல் முறை அமைப்பு
 
-1. `Enable` on செய்யவும்.
-2. blog configuration சேமிக்க வேண்டிய GitHub account தேர்வு செய்யவும்.
+1. `Enable`-ஐ இயக்கவும்.
+2. வலைப்பதிவு அமைப்புகளை சேமிக்க பயன்படுத்தப்படும் GitHub கணக்கை தேர்வு செய்யவும்.
 3. `Update Blog` கிளிக் செய்யவும்.
-4. success message வர காத்திருக்கவும்.
-5. `https://your-domain.com/blog/` திறந்து blog பார்க்கவும்.
+4. வெற்றிச் செய்தி வரும் வரை காத்திருக்கவும்.
+5. வலைப்பதிவைப் பார்க்க `https://your-domain.com/blog/` திறக்கவும்.
 
-முதல் பயன்படுத்தும்போது ImgBed selected account கீழ் private GitHub repository உருவாக்கும்:
-
-```text
-imgbed-blog-config
-```
-
-இந்த repository blog settings மற்றும் article content சேமிக்கும்.
-
-## Posts எழுதுவது
-
-blog posts-ஐ உங்கள் private GitHub repository-ல் edit செய்யவும்:
+முதல் முறையாக பயன்படுத்தும்போது, தேர்ந்தெடுத்த கணக்கின் கீழ் ImgBed ஒரு தனிப்பட்ட GitHub களஞ்சியத்தை தயார் செய்கிறது:
 
 ```text
 imgbed-blog-config
 ```
 
-சாதாரண workflow:
+இந்த களஞ்சியம் வலைப்பதிவு அமைப்புகளையும் கட்டுரை உள்ளடக்கத்தையும் சேமிக்கிறது.
+
+## பதிவுகள் எழுதுதல்
+
+உங்கள் தனிப்பட்ட GitHub களஞ்சியத்தில் வலைப்பதிவு பதிவுகளை திருத்தவும்:
+
+```text
+imgbed-blog-config
+```
+
+வழக்கமான நடைமுறை:
 
 1. GitHub திறக்கவும்.
-2. private `imgbed-blog-config` repository-க்கு செல்லவும்.
-3. post files edit அல்லது add செய்யவும்.
-4. changes commit செய்யவும்.
-5. ImgBed admin panel-க்கு திரும்பி `Update Blog` கிளிக் செய்யவும், அல்லது blog homepage மேல் இடது logo-ஐ மூன்று முறை click செய்து blog update trigger செய்யவும்.
+2. தனிப்பட்ட `imgbed-blog-config` களஞ்சியத்துக்குள் செல்லவும்.
+3. பதிவு கோப்புகளை திருத்தவும் அல்லது சேர்க்கவும்.
+4. மாற்றங்களை commit செய்யவும்.
+5. ImgBed நிர்வாக பலகைக்கு திரும்பி `Update Blog` கிளிக் செய்யவும். அல்லது வலைப்பதிவு முகப்பின் மேல் இடது மூலையில் உள்ள லோகோவை மூன்று முறை கிளிக் செய்து வலைப்பதிவு புதுப்பிப்பை தொடங்கவும்.
 
-`Update Blog` நீங்கள் எழுதிய content-ஐ overwrite செய்யாது. தேவைப்பட்டால் repository initialize செய்து blog cache refresh செய்யும்.
+`Update Blog` நீங்கள் எழுதிய உள்ளடக்கத்தை மேலெழுதாது. தேவையானபோது களஞ்சியத்தை தொடக்க நிலைப்படுத்தி, வலைப்பதிவு கேஷை புதுப்பிக்கும்.
 
-## Supported Features
+## ஆதரிக்கப்படும் அம்சங்கள்
 
-Blog post lists, categories, tags, archives, search, dark mode, language switching போன்ற பொதுவான blog features support செய்கிறது.
+வலைப்பதிவு பதிவுப் பட்டியல், வகைகள், குறிச்சொற்கள், காப்பகங்கள், தேடல், இருண்ட முறை மற்றும் மொழி மாற்றம் போன்ற பொதுவான வலைப்பதிவு அம்சங்களை ஆதரிக்கிறது.
 
-comments மற்றும் visit statistics-யும் support செய்கிறது.
+கருத்துகள் மற்றும் வருகை புள்ளிவிவரங்களையும் ஆதரிக்கிறது.
 
-![Blog comments](../../image/other/博客/支持留言.png)
+![வலைப்பதிவு கருத்துகள்](../../image/other/博客/支持留言.png)
 
-comments posts கீழே தெரியும். visitors avatar, nickname, email, comment content submit செய்யலாம்.
+கருத்துகள் பதிவுகளின் கீழே தோன்றும். பார்வையாளர்கள் அவதார், புனைப்பெயர், மின்னஞ்சல் மற்றும் கருத்து உள்ளடக்கத்தை சமர்ப்பிக்கலாம்.
 
-visit statistics post views மற்றும் site visits காட்டும்; blog traffic புரிய உதவும்.
+வருகை புள்ளிவிவரங்கள் பதிவு பார்வைகளையும் தள வருகைகளையும் காட்டுகின்றன; இது வலைப்பதிவு போக்குவரத்தை புரிந்துகொள்ள உதவும்.
 
-## URL
+## அணுகல் முகவரி
 
-Blog எப்போதும் `/blog/` கீழ் serve ஆகும்.
+வலைப்பதிவு எப்போதும் `/blog/` பாதையின் கீழ் வழங்கப்படும்.
 
-உங்கள் ImgBed domain:
+உதாரணமாக, உங்கள் ImgBed டொமைன்:
 
 ```text
 https://image.example.com
 ```
 
-blog URL:
+வலைப்பதிவு முகவரி:
 
 ```text
 https://image.example.com/blog/
 ```
 
-blog disabled ஆன பிறகு visitors blog page access செய்ய முடியாது.
+வலைப்பதிவை முடக்கிய பிறகு, பார்வையாளர்கள் வலைப்பதிவு பக்கத்தை அணுக முடியாது.

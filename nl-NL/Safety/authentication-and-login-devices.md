@@ -1,6 +1,6 @@
 # Authenticatie en beheer van aanmeldapparaten
 
-`Authentication Management` en `Login Device Management` beschermen het ImgBed-beheer, de openbare uploadpagina en WebDAV-toegang.
+`Authenticatiebeheer` en `Beheer van aanmeldapparaten` beschermen het ImgBed-beheer, de openbare uploadpagina en WebDAV-toegang.
 
 Gebruik deze pagina om toegangsgegevens in te stellen, ingelogde apparaten te bekijken en oude sessies in te trekken wanneer dat nodig is.
 
@@ -14,14 +14,14 @@ System Settings -> Security Settings
 
 De pagina bevat twee hoofdonderdelen:
 
-- Authentication Management
-- Login Device Management
+- Authenticatiebeheer
+- Beheer van aanmeldapparaten
 
 ![Authenticatiebeheer](../../image/Safety/认证管理界面.png)
 
-## Wat Authentication Management doet
+## Wat authenticatiebeheer doet
 
-Authentication Management bewaart toegangsgegevens.
+Authenticatiebeheer bewaart toegangsgegevens.
 
 Er zijn twee typen:
 
@@ -60,13 +60,13 @@ Wanneer een beheerdersnaam en wachtwoord zijn ingesteld:
 
 - Het openen van het beheerpaneel vereist aanmelding.
 - Een succesvolle aanmelding maakt een apparaatrecord voor de beheerder aan.
-- Je kunt apparaten bekijken, opschonen of offline forceren in Login Device Management.
+- Je kunt apparaten bekijken, opschonen of offline forceren in Beheer van aanmeldapparaten.
 
 Als je de beheerdersnaam of het wachtwoord wijzigt, worden oude beheerderssessies ongeldig. Je moet opnieuw inloggen.
 
-## Wat Login Device Management doet
+## Wat Beheer van aanmeldapparaten doet
 
-Login Device Management toont apparaten die zijn ingelogd.
+Beheer van aanmeldapparaten toont apparaten die zijn ingelogd.
 
 Het helpt je controleren:
 
@@ -84,7 +84,7 @@ De pagina heeft drie tabbladen:
 
 ## Globale cookiebeveiliging
 
-Bovenaan Login Device Management kun je het globale cookiegedrag instellen.
+Bovenaan Beheer van aanmeldapparaten kun je het globale cookiegedrag instellen.
 
 ### Levensduur gebruikerscookie
 
@@ -98,9 +98,9 @@ Bepaalt hoeveel dagen een beheerderslogin actief blijft.
 
 Bijvoorbeeld: stel je dit in op 14 dagen, dan hoeven beheerders meestal 14 dagen lang niet opnieuw in te loggen.
 
-### Secure Mode
+### Veilige modus
 
-Wanneer Secure mode is ingeschakeld, sturen browsers login-cookies alleen via HTTPS.
+Wanneer de veilige modus is ingeschakeld, worden aanmeldcookies alleen via HTTPS verzonden.
 
 Schakel dit in voor productiesites met HTTPS. Schakel het niet in voor lokale HTTP-tests, anders kun je gedrag zien als "login gelukt, maar na verversen ben ik weer uitgelogd".
 
@@ -112,7 +112,7 @@ Apparaatrecords verschijnen pas nadat beheerdersgegevens zijn ingesteld en het b
 
 Elke apparaatkaart kan tonen:
 
-- apparaat- en browserinformatie
+- apparaat- en webclientinformatie
 - IP van eerste login
 - IP van laatste activiteit
 - inlogtijd
@@ -120,17 +120,17 @@ Elke apparaatkaart kan tonen:
 - verloopdatum
 - huidige status
 
-Zie je een onbekend apparaat, gebruik dan `Force Offline` om de sessie ongeldig te maken.
+Zie je een onbekend apparaat, gebruik dan `Offline forceren` om de sessie ongeldig te maken.
 
 ## Oude apparaten opschonen
 
-`Clean Up Old Devices` verwijdert oude loginrecords in het huidige tabblad in één keer.
+`Oude apparaten opschonen` verwijdert oude aanmeldrecords in het huidige tabblad in één keer.
 
 Gebruik dit wanneer je vermoedt dat oude sessies nog actief zijn op andere apparaten.
 
 ## Offline forceren
 
-`Force Offline` maakt één apparaatsessie ongeldig.
+`Offline forceren` maakt één apparaatsessie ongeldig.
 
 Daarna geldt:
 
@@ -142,7 +142,7 @@ Verlopen of ongeldige apparaten kunnen ook worden verwijderd.
 
 ## Huidig apparaat uitloggen
 
-De kaart van het huidige apparaat is gemarkeerd als `Current Device`.
+De kaart van het huidige apparaat is gemarkeerd als `Huidig apparaat`.
 
 Na uitloggen van het huidige apparaat:
 

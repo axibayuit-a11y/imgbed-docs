@@ -1,87 +1,87 @@
-# Blog
+# بلاګ
 
-Blog feature ستاسو ImgBed site ته جلا blog page اضافه کوي.
+د بلاګ ځانګړنه ستاسو د ImgBed سایټ ته یوه جلا بلاګ پاڼه زیاتوي.
 
-له فعالېدو وروسته visitors دا پرانیستلای شي:
+له فعالېدو وروسته، لیدونکي دا پته پرانیستلای شي:
 
 ```text
 https://your-domain.com/blog/
 ```
 
-![Blog homepage](../../image/other/博客/博客首页.png)
+![د بلاګ کورپاڼه](../../image/other/博客/博客首页.png)
 
-blog د open-source [LyraVoid/Mizuki](https://github.com/LyraVoid/Mizuki) project څخه adapted شوی دی. ImgBed دا rewrite او له Vue سره integrate کوي، څو د image hosting site د یوې برخې په توګه وچلېږي.
+بلاګ د پرانیستې سرچینې [LyraVoid/Mizuki](https://github.com/LyraVoid/Mizuki) پروژې پر بنسټ جوړ شوی دی. ImgBed دا بیا لیکي او له Vue سره یې یوځای کوي، څو د انځور کوربه توب سایټ د یوې برخې په توګه وچلېږي.
 
 ## چېرته یې تنظیم کړئ
 
-Blog settings دلته دي:
+د بلاګ تنظیمات دلته دي:
 
 ```text
 System Settings -> Other Settings -> Blog
 ```
 
-![Blog settings](../../image/other/博客/QQ20260611-221702.png)
+![د بلاګ تنظیمات](../../image/other/博客/QQ20260611-221702.png)
 
-## لومړی Setup
+## د لومړي ځل تنظیم
 
 1. `Enable` فعال کړئ.
-2. هغه GitHub account وټاکئ چې د blog configuration ساتلو لپاره کارېږي.
+2. هغه GitHub حساب وټاکئ چې د بلاګ تنظیمات پکې ساتل کېږي.
 3. `Update Blog` کلیک کړئ.
-4. د success message تر راتلو انتظار وکړئ.
-5. د blog کتلو لپاره `https://your-domain.com/blog/` پرانیزئ.
+4. د بریا پیغام ته انتظار وکړئ.
+5. د بلاګ د کتلو لپاره `https://your-domain.com/blog/` پرانیزئ.
 
-په لومړي استعمال کې، ImgBed د ټاکل شوي account لاندې private GitHub repository برابروي:
-
-```text
-imgbed-blog-config
-```
-
-دا repository د blog settings او article content ساتي.
-
-## Posts لیکل
-
-blog posts په خپل private GitHub repository کې edit کړئ:
+په لومړي استعمال کې، ImgBed د ټاکل شوي حساب لاندې یو شخصي GitHub زېرمتون چمتو کوي:
 
 ```text
 imgbed-blog-config
 ```
 
-عادي workflow:
+دا زېرمتون د بلاګ تنظیمات او د لیکنو منځپانګه ساتي.
+
+## د لیکنو جوړول
+
+د بلاګ لیکنې په خپل شخصي GitHub زېرمتون کې سمې کړئ:
+
+```text
+imgbed-blog-config
+```
+
+معمولي بهیر:
 
 1. GitHub پرانیزئ.
-2. private `imgbed-blog-config` repository ته لاړ شئ.
-3. post files edit یا add کړئ.
-4. changes commit کړئ.
-5. بېرته ImgBed admin panel ته راشئ او `Update Blog` کلیک کړئ، یا د blog homepage په چپ پورتني کونج کې logo درې ځله کلیک کړئ څو blog update trigger شي.
+2. شخصي `imgbed-blog-config` زېرمتون ته ننوځئ.
+3. د لیکنو فایلونه سم کړئ یا نوي فایلونه زیات کړئ.
+4. بدلونونه ثبت کړئ.
+5. بېرته د ImgBed اداري پنل ته لاړ شئ او `Update Blog` کلیک کړئ، یا د بلاګ کورپاڼې په چپ پورتني کونج کې لوګو درې ځله کلیک کړئ څو د بلاګ تازه کول پیل شي.
 
-`Update Blog` هغه content نه overwrite کوي چې تاسې لیکلی وي. دا د اړتیا پر وخت repository initialize کوي او blog cache refresh کوي.
+`Update Blog` هغه منځپانګه نه بدلوي چې تاسو لیکلې وي. دا د اړتیا پر مهال زېرمتون پیلوي او د بلاګ کېش تازه کوي.
 
-## Supported Features
+## ملاتړ شوې ځانګړنې
 
-blog عادي blog features ملاتړ کوي، لکه post lists، categories، tags، archives، search، dark mode او language switching.
+بلاګ د عامو بلاګ ځانګړنو ملاتړ کوي، لکه د لیکنو لستونه، کټګورۍ، ټګونه، ارشیفونه، لټون، تیاره حالت او د ژبې بدلول.
 
-comments او visit statistics هم ملاتړ کوي.
+دا د تبصرو او د لیدنو د احصایو ملاتړ هم کوي.
 
-![Blog comments](../../image/other/博客/支持留言.png)
+![د بلاګ تبصرې](../../image/other/博客/支持留言.png)
 
-Comments د posts لاندې ښکاري. visitors کولای شي avatar، nickname، email او comment content submit کړي.
+تبصرې د لیکنو لاندې ښکاري. لیدونکي کولای شي اواتار، مستعار نوم، برېښنالیک او د تبصرې منځپانګه ولیکي او وسپاري.
 
-Visit statistics د post views او site visits ښيي، څو د blog traffic ښه درک ولرئ.
+د لیدنو احصایې د لیکنو لیدنې او د سایټ لیدنې ښيي، چې د بلاګ د ترافیک په پوهېدو کې مرسته کوي.
 
-## URL
+## د لاسرسي پته
 
-blog تل د `/blog/` لاندې serve کېږي.
+بلاګ تل د `/blog/` لاندې وړاندې کېږي.
 
-د بېلګې په توګه، که ستاسو ImgBed domain دا وي:
+د بېلګې په توګه، که ستاسو د ImgBed ډومېن دا وي:
 
 ```text
 https://image.example.com
 ```
 
-blog URL دا دی:
+د بلاګ پته دا ده:
 
 ```text
 https://image.example.com/blog/
 ```
 
-کله چې blog disabled شي، visitors نور blog page ته access نه شي کولای.
+کله چې بلاګ غیر فعال شي، لیدونکي نور د بلاګ پاڼې ته لاسرسی نه شي کولی.

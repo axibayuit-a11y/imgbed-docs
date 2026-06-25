@@ -130,14 +130,14 @@ WebDAV-сервису не нужно поддерживать `partial update` 
 ## Короткий чек-лист
 
 ```text
-Подготовить WebDAV endpoint, username и password
--> Открыть настройки загрузки
--> Добавить канал
--> Выбрать WebDAV
--> Ввести Endpoint / username / password
--> По умолчанию оставить authentication mode как Basic
--> По умолчанию оставить storage directory как imgbed
--> Сохранить
--> Запросить емкость
--> Загрузить тестовый файл
+Prepare WebDAV endpoint, username, and password
+-> Open Upload Settings
+-> Add Channel
+-> Select WebDAV
+-> Enter Endpoint / username / password
+-> Keep authentication mode as Basic by default
+-> Keep storage directory as imgbed by default
+-> Save
+-> Query capacity
+-> Upload a test file
 ```

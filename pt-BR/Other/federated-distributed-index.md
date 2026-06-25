@@ -4,109 +4,143 @@ O índice distribuído federado permite que vários sites ImgBed compartilhem li
 
 Em termos simples:
 
-- Você pode compartilhar algumas pastas do seu site com outras pessoas.
-- Pode entrar no nó de outra pessoa e sincronizar a lista compartilhada dela no seu painel.
-- Arquivos federados servem para navegar, buscar, pré-visualizar e copiar links. Eles não são reenviados para o seu armazenamento.
+- Você pode compartilhar pastas selecionadas do seu site com outras pessoas.
+- Você pode entrar em outro nó e sincronizar a lista de arquivos compartilhada desse nó no seu painel administrativo.
+- Arquivos federados servem principalmente para navegar, buscar e abrir links. Eles não são reenviados para o seu próprio armazenamento.
 
 ## Onde configurar
 
+Abra:
+
 ```text
-Configurações do sistema -> Outras configurações -> Índice distribuído federado
+System Settings -> Other Settings -> Federated Distributed Index
 ```
 
-![Nó local](../../image/other/联盟图/联盟分布式索引本地节点.png)
+![Nó local de federação](../../image/other/联盟图/联盟分布式索引本地节点.png)
 
 A página tem três abas:
 
-| Aba | Uso |
+| Aba | Finalidade |
 | --- | --- |
-| Nó local | Configurar seu nó, domínio público, pastas compartilhadas e índice de saída |
-| Nós que entrei | Gerenciar nós de outros sites que você acompanha |
-| Solicitações ao meu nó | Gerenciar pedidos de outras pessoas para entrar no seu nó |
+| Nó local | Ativar seu nó, confirmar o domínio público, selecionar pastas compartilhadas e atualizar o índice de saída |
+| Nós em que entrei | Gerenciar outros nós ImgBed aos quais você entrou |
+| Nós que querem entrar no meu nó | Gerenciar solicitações de outras pessoas que querem entrar no seu nó |
 
 ## Configuração inicial
 
-1. Abra `Nó local`.
-2. Ative `Habilitar`.
-3. Escolha as pastas em `Pastas de sincronização`.
-4. Clique em `Atualizar índice de saída`.
-5. Se o ImgBed detectar mudança de domínio, confirme se o domínio atual é o domínio real de produção.
+1. Abra `Local Node`.
+2. Ative `Enable`.
+3. Selecione as pastas que serão compartilhadas em `Sync folders`.
+4. Clique em `Update Outbound Index`.
+5. Se o ImgBed detectar uma mudança de domínio, confirme que o domínio atual está correto antes de continuar.
 
-Você pode escolher várias pastas. Se a lista ficar vazia, todas as pastas serão compartilhadas.
+Você pode selecionar várias pastas de sincronização.
+
+Se a lista de pastas de sincronização estiver vazia, todas as pastas serão compartilhadas.
 
 ## Nó local
 
 ### Domínio público
 
-O domínio público é o endereço usado por outros nós para acessar seu site.
+O domínio público é a URL do site que outros nós usam para acessar o seu nó.
 
-O ImgBed detecta isso automaticamente. Normalmente você não precisa digitar nada. Na primeira atualização do índice, ou após troca de domínio, ele pede confirmação.
+O ImgBed detecta isso automaticamente. Você não precisa digitar manualmente. Na primeira vez que atualizar o índice, o ImgBed pedirá que você confirme se a URL de acesso atual é o domínio de produção.
+
+Se você trocar de domínio depois, a atualização do índice pedirá confirmação novamente.
 
 ### Pastas de sincronização
 
-Essas pastas definem quais arquivos serão compartilhados.
+As pastas de sincronização definem quais arquivos são compartilhados com nós federados.
 
-Exemplo:
+Por exemplo, se você selecionar apenas:
 
 ```text
 /1/
 /2/
 ```
 
-Nesse caso, outros nós verão apenas arquivos dentro desses dois diretórios.
+Outros nós só poderão ver arquivos nesses dois diretórios.
 
 ### Atualizar índice de saída
 
-Atualiza a lista de arquivos que outros nós podem sincronizar a partir do seu site.
+Isso atualiza a lista de arquivos que outros nós podem sincronizar a partir de você.
 
 Use quando:
 
-- Ativar a federação pela primeira vez.
-- Enviar novos arquivos que deseja compartilhar.
-- Alterar as pastas compartilhadas.
-- Trocar o domínio público e precisar confirmar novamente.
+- Você ativar a federação pela primeira vez.
+- Você enviar arquivos que deseja compartilhar.
+- Você alterar as pastas de sincronização.
+- Você alterar o domínio público e precisar confirmá-lo.
 
-## Entrar em outros nós
+## Nós em que entrei
 
-`Nós que entrei` é onde você acompanha nós de outros sites ImgBed.
+`Nodes I Joined` é onde você gerencia os nós dos quais participa.
 
-![Nós que entrei](../../image/other/联盟图/我加入的节点.png)
+![Nós em que entrei](../../image/other/联盟图/我加入的节点.png)
 
-1. Peça ao dono do outro nó um link de convite.
-2. Cole o link no campo.
-3. Clique em `Solicitar entrada`.
-4. Aguarde a aprovação no painel da outra pessoa.
+### Solicitar entrada em outro nó
 
-Depois da aprovação, use `Atualizar índice de entrada` para sincronizar os arquivos compartilhados.
+1. Peça ao outro proprietário um link de convite.
+2. Cole-o na caixa de entrada.
+3. Clique em `Request to Join`.
+4. Aguarde o outro proprietário aprovar no painel administrativo dele.
 
-Se quiser atualizar apenas um nó, use `Atualizar índice` no cartão desse nó.
+Após a aprovação, o status do nó passa a ser aprovado.
+
+### Atualizar índice de entrada
+
+`Update Inbound Index` sincroniza listas de arquivos dos nós em que você entrou.
+
+Use quando:
+
+- O outro proprietário acabou de aprovar sua solicitação.
+- O outro proprietário avisar que o conteúdo compartilhado foi atualizado.
+- Você quiser atualizar todas as listas de arquivos federados dos nós em que entrou.
+
+Para atualizar apenas um nó, clique em `Update Index` no cartão desse nó.
 
 ![Atualizar índice](../../image/other/联盟图/更新索引.png)
 
-## Gerenciar solicitações ao seu nó
+### Cancelar assinatura
 
-`Solicitações ao meu nó` mostra quem quer entrar no seu nó.
+Se você não quiser mais sincronizar um nó, clique em `Unsubscribe`.
 
-![Solicitações ao meu nó](../../image/other/联盟图/加入我的节点.png)
+Após cancelar a assinatura, o índice federado desse nó é removido do seu site local.
 
-Para gerar um convite, habilite o nó local, execute `Atualizar índice de saída` ao menos uma vez para confirmar o domínio público e clique em `Redefinir link de convite`.
+## Nós que querem entrar no meu nó
 
-Ao receber uma solicitação, você pode escolher:
+`Nodes Joining Me` é onde você trata solicitações de outras pessoas.
 
-| Ação | Resultado |
+![Nós que querem entrar no meu nó](../../image/other/联盟图/加入我的节点.png)
+
+### Gerar um link de convite
+
+1. Confirme que o nó local está ativado.
+2. Clique em `Update Outbound Index` pelo menos uma vez para que o ImgBed confirme o domínio público.
+3. Abra `Nodes Joining Me`.
+4. Clique em `Reset Invitation Link`.
+5. Copie o link de convite e envie ao outro proprietário.
+
+Se o link de convite estiver vazio, normalmente o domínio público ainda não foi confirmado. Volte para `Local Node` e clique em `Update Outbound Index`.
+
+### Tratar solicitações de entrada
+
+Quando alguém envia uma solicitação, ela aparece na lista `Nodes Joining Me`.
+
+| Ação | Significado |
 | --- | --- |
-| Aprovar | Permite que a outra parte sincronize sua lista compartilhada |
-| Recusar | Não permite a entrada |
-| Excluir | Remove um registro encerrado |
-| Verificar status | Confere se a outra parte ainda mantém a relação |
+| Aprovar | Permite que o outro nó sincronize sua lista de arquivos compartilhada |
+| Rejeitar | Recusa a solicitação de entrada |
+| Excluir | Remove um registro concluído |
+| Verificar status | Verifica se o outro lado ainda mantém essa relação |
 
-Depois da aprovação, a outra parte ainda precisa atualizar o índice de entrada para ver seus arquivos.
+Após a aprovação, o outro lado ainda precisa clicar em `Update Inbound Index` antes que seus arquivos compartilhados apareçam lá.
 
-![Aprovar nó](../../image/other/联盟图/邀请节点同意.png)
+![Aprovar nó convidado](../../image/other/联盟图/邀请节点同意.png)
 
 ## Mensagens
 
-Quando a relação já estiver aprovada, é possível usar `Mensagem` no cartão do nó.
+Depois que uma relação é aprovada, clique em `Message` no cartão do nó.
 
 As mensagens servem apenas para comunicação sobre a relação federada. Elas não alteram arquivos, tags, diretórios nem permissões.
 
@@ -114,25 +148,46 @@ As mensagens servem apenas para comunicação sobre a relação federada. Elas n
 
 ## Ver arquivos federados
 
-Depois da sincronização, volte à lista de arquivos do painel. No topo, alterne entre arquivos locais e arquivos federados.
+Depois que a sincronização terminar, volte à lista de arquivos do painel administrativo.
 
-Arquivos federados não são locais: você pode visualizar, buscar, pré-visualizar e copiar links, mas não pode mover, excluir, alterar tags ou fazer backup deles a partir do seu site.
+No topo da página, alterne entre arquivos locais e arquivos federados. Em arquivos federados, você pode navegar pelo conteúdo sincronizado.
 
-![Vista no painel](../../image/other/联盟图/联盟管理显示效果图.png)
+Arquivos federados servem principalmente para visualizar, buscar, pré-visualizar e copiar links. Eles não são arquivos locais, então você não pode movê-los, excluí-los, alterar tags nem fazer backup deles a partir do seu próprio site.
 
-## Perguntas comuns
+![Arquivos federados no painel administrativo](../../image/other/联盟图/联盟管理显示效果图.png)
 
-### Aparece que não existe relação
+## Perguntas frequentes
 
-Geralmente significa que a outra parte removeu seu registro. Nesse caso, envie uma nova solicitação.
+### Por que o sistema pede uma nova solicitação por falta de registro de relação?
 
-![Solicitar novamente](../../image/other/联盟图/无关系记录重新申请.png)
+Isso geralmente significa que o outro lado removeu você e apagou o registro, então a relação não pode mais ser encontrada. Envie uma nova solicitação de entrada.
 
-### Entrei no nó, mas não vejo arquivos
+![Solicitar novamente quando não há registro de relação](../../image/other/联盟图/无关系记录重新申请.png)
 
-Confira:
+### Por que não vejo arquivos depois de entrar?
 
-1. A outra parte aprovou sua solicitação.
-2. A outra parte atualizou o índice de saída.
-3. Você atualizou o índice de entrada.
-4. As pastas sincronizadas da outra parte incluem os diretórios compartilhados.
+Verifique:
+
+1. O outro proprietário aprovou sua solicitação.
+2. O outro proprietário clicou em `Update Outbound Index`.
+3. Você clicou em `Update Inbound Index`.
+4. As pastas de sincronização do outro proprietário incluem os diretórios que ele quer compartilhar.
+
+### O que fazer quando uma mudança de domínio é detectada?
+
+Se você está abrindo o painel administrativo pelo domínio de produção, confirme e continue.
+
+Se estiver usando um endereço temporário, cancele, reabra o painel administrativo usando o domínio de produção e tente novamente.
+
+### O que significa uma lista vazia de pastas de sincronização?
+
+Uma lista vazia de pastas de sincronização significa que todas as pastas são compartilhadas.
+
+Para compartilhar apenas alguns diretórios, selecione essas pastas manualmente.
+
+### Diferença entre atualizações de índice de saída e de entrada
+
+| Botão | Significado simples |
+| --- | --- |
+| Update Outbound Index | Atualiza o que outras pessoas podem sincronizar de mim |
+| Update Inbound Index | Atualiza o que eu sincronizei de outras pessoas |

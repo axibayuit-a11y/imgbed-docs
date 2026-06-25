@@ -113,17 +113,17 @@
 ## Короткий чек-лист
 
 ```text
-Создать сервер Discord
--> Создать текстовый канал
--> Создать бота в Discord Developer Portal
--> Сохранить Bot Token со страницы Bot
--> В OAuth2 выбрать bot, View Channels, Send Messages, Attach Files и Read Message History
--> Скопировать сгенерированный URL и авторизовать бота для целевого сервера
--> Убедиться, что целевой текстовый канал имеет те же разрешения
--> Включить Developer Mode
--> Щелкнуть правой кнопкой по целевому каналу и скопировать Channel ID
--> Ввести Bot Token и Channel ID в ImgBed
--> Сохранить и загрузить тестовое изображение
+Create a Discord server
+-> Create a text channel
+-> Create a bot in the Discord Developer Portal
+-> Save the Bot Token from the Bot page
+-> In OAuth2, select bot, View Channels, Send Messages, Attach Files, and Read Message History
+-> Copy the generated URL and authorize the bot for the target server
+-> Make sure the target text channel grants the same permissions
+-> Enable Developer Mode
+-> Right-click the target text channel and copy the Channel ID
+-> Enter the Bot Token and Channel ID in ImgBed
+-> Save and upload a test image
 ```
 
 ## Ссылки

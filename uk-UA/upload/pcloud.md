@@ -35,7 +35,7 @@
 
 | Регіон акаунта | API Host |
 | --- | --- |
-| Default / US | `api.pcloud.com` |
+| За замовчуванням / США | `api.pcloud.com` |
 | Europe | `eapi.pcloud.com` |
 
 ## Налаштування
@@ -89,14 +89,14 @@ eapi.pcloud.com
 ## Короткий сценарій
 
 ```text
-Підготувати email і пароль pCloud
--> Відкрити налаштування завантаження
--> Додати канал
--> Вибрати pCloud
--> Заповнити назву каналу / email / пароль
--> Залишити API host як api.pcloud.com, якщо акаунт не в Європі
--> Залишити storage directory як imgbed, якщо не потрібна інша папка
--> Зберегти
--> Запитати квоту
--> Завантажити тестове зображення
+Prepare your pCloud email and password
+-> Open Upload Settings
+-> Add Channel
+-> Choose pCloud
+-> Fill channel name / email / password
+-> Keep API host as api.pcloud.com unless your account is in Europe
+-> Keep storage directory as imgbed unless you need another folder
+-> Save
+-> Query quota
+-> Upload a test image
 ```

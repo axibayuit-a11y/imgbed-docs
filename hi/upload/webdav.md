@@ -1,143 +1,143 @@
 # WebDAV चैनल जोड़ना
 
-## कब सबसे सही है
+## कब उपयुक्त है
 
-WebDAV channel का उपयोग तब करें जब:
+WebDAV चैनल का उपयोग करें जब:
 
-- आपके पास NAS, cloud drive या object storage service है जो WebDAV endpoint देती है।
-- आप uploaded images को अपने WebDAV directory में रखना चाहते हैं।
-- आप credentials को लंबे समय तक frontend में expose करने के बजाय D1 `upload_channels` table में save करना चाहते हैं।
+- आपके पास NAS, क्लाउड ड्राइव या ऑब्जेक्ट स्टोरेज सेवा है जो WebDAV एंडपॉइंट देती है।
+- आप अपलोड की गई छवियों को अपनी WebDAV डायरेक्टरी में सहेजना चाहते हैं।
+- आप क्रेडेंशियल को लंबे समय तक फ्रंटएंड में उजागर करने के बजाय D1 `upload_channels` तालिका में सहेजना चाहते हैं।
 
 ## शुरू करने से पहले क्या चाहिए
 
-| ज़रूरत | उपयोग |
+| आवश्यकता | उद्देश्य |
 | --- | --- |
-| WebDAV Endpoint | server-side WebDAV URL, जैसे `https://nas.example.com/dav`। |
-| Username | WebDAV service में sign in करने के लिए। |
-| Password | WebDAV service में sign in करने के लिए। |
-| Authentication mode | default `Basic` है। `Digest` या auto negotiation केवल तब use करें जब server मांगे। |
-| Storage directory | files store करने की directory। default `imgbed`। |
+| WebDAV एंडपॉइंट | WebDAV सर्वर का URL, जैसे `https://nas.example.com/dav`. |
+| उपयोगकर्ता नाम | WebDAV सेवा में लॉग इन करने के लिए। |
+| पासवर्ड | WebDAV सेवा में लॉग इन करने के लिए। |
+| प्रमाणीकरण मोड | डिफ़ॉल्ट `Basic` है। `Digest` या स्वचालित नेगोशिएशन केवल तब उपयोग करें जब सर्वर इसकी माँग करे। |
+| स्टोरेज डायरेक्टरी | फ़ाइलें सहेजने की डायरेक्टरी। डिफ़ॉल्ट `imgbed` है। |
 
 ## कहाँ जोड़ें
 
-1. System Settings खोलें।
-2. Upload Settings पर जाएँ।
-3. ऊपर दाएँ कोने में Add Channel पर क्लिक करें।
+1. सिस्टम सेटिंग्स खोलें।
+2. अपलोड सेटिंग्स पर जाएँ।
+3. ऊपर दाएँ कोने में चैनल जोड़ें पर क्लिक करें।
 4. `WebDAV` चुनें।
 
 ## फ़ील्ड संदर्भ
 
-| Field | क्या करता है | आवश्यक |
+| फ़ील्ड | कार्य | आवश्यक |
 | --- | --- | --- |
-| Channel name | WebDAV channel का आसान नाम, जैसे `koofr` या `nas`। | हाँ |
-| Endpoint | `https://` सहित पूरा WebDAV endpoint। | हाँ |
-| Username | WebDAV login username। | हाँ |
-| Password | WebDAV login password। | हाँ |
-| Authentication mode | आम तौर पर `Basic`; server digest authentication मांगे तो `Digest` use करें। | हाँ |
-| Storage directory | जहाँ files रखी जाती हैं। default `imgbed`। | नहीं |
+| चैनल नाम | WebDAV चैनल का पहचानने योग्य नाम, जैसे `koofr` या `nas`। | हाँ |
+| Endpoint | `https://` सहित पूरा WebDAV एंडपॉइंट। | हाँ |
+| उपयोगकर्ता नाम | WebDAV लॉगिन उपयोगकर्ता नाम। | हाँ |
+| पासवर्ड | WebDAV लॉगिन पासवर्ड। | हाँ |
+| प्रमाणीकरण मोड | आम तौर पर `Basic`; यदि सर्वर Digest प्रमाणीकरण माँगे तो `Digest` उपयोग करें। | हाँ |
+| स्टोरेज डायरेक्टरी | जहाँ फ़ाइलें सहेजी जाती हैं। डिफ़ॉल्ट `imgbed` है। | नहीं |
 
 ## उदाहरण: fie.nl.tab.digital
 
-### 1. App Password बनाएँ
+### 1. ऐप पासवर्ड बनाएँ
 
-अपने account security settings खोलें, application passwords खोजें, और नया app password बनाएँ।
+अपने खाते की सुरक्षा सेटिंग्स खोलें, ऐप्लिकेशन पासवर्ड खोजें और नया ऐप पासवर्ड बनाएँ।
 
-![App password बनाएँ](../../image/upload/webdav/创建应用密码.png)
+![ऐप पासवर्ड बनाएँ](../../image/upload/webdav/创建应用密码.png)
 
-बनने के बाद नया app password copy और save करें। यह आम तौर पर केवल एक बार दिखता है।
+बनाने के बाद नया ऐप पासवर्ड कॉपी और सहेज लें। आम तौर पर यह केवल एक बार दिखाया जाता है।
 
-![नया app password save करें](../../image/upload/webdav/记住新应用程序密码.png)
+![नया ऐप पासवर्ड सहेजें](../../image/upload/webdav/记住新应用程序密码.png)
 
-### 2. ImgBed में WebDAV configuration भरें
+### 2. ImgBed में WebDAV कॉन्फ़िगरेशन भरें
 
-ImgBed पर लौटें और WebDAV channel जोड़ें:
+ImgBed पर लौटें और WebDAV चैनल जोड़ें:
 
-| UI Field | Value |
+| UI फ़ील्ड | मान |
 | --- | --- |
 | Endpoint | `https://fie.nl.tab.digital/` द्वारा दिया गया WebDAV URL। |
-| Username | आपका WebDAV username। |
-| Password | अभी बनाया गया app password। |
-| Authentication mode | अधिकतर मामलों में `Basic` से शुरू करें। |
-| Storage directory | default `imgbed`; चाहें तो custom directory use करें। |
+| उपयोगकर्ता नाम | आपका WebDAV उपयोगकर्ता नाम। |
+| पासवर्ड | अभी बनाया गया ऐप पासवर्ड। |
+| प्रमाणीकरण मोड | अधिकतर मामलों में `Basic` से शुरू करें। |
+| स्टोरेज डायरेक्टरी | डिफ़ॉल्ट `imgbed` है; आप कस्टम डायरेक्टरी भी दे सकते हैं। |
 
-![Configuration भरें](../../image/upload/webdav/填写配置.png)
+![कॉन्फ़िगरेशन भरें](../../image/upload/webdav/填写配置.png)
 
-## बड़ी फ़ाइलों का upload behavior
+## बड़ी फ़ाइलों के अपलोड का व्यवहार
 
-WebDAV channel अब real session-based chunked upload का उपयोग करता है।
+WebDAV चैनल अब वास्तविक सत्र-आधारित खंडित अपलोड का उपयोग करता है।
 
-छोटी files एक complete file के रूप में upload होती हैं। 64 MiB से बड़ी files लगभग 10 MiB chunks में अपने आप split होकर remote chunk directory में upload होती हैं।
+छोटी फ़ाइलें एक पूर्ण फ़ाइल के रूप में अपलोड होती हैं। 64 MiB से बड़ी फ़ाइलें अपने आप लगभग 10 MiB के खंडों में विभाजित होकर दूरस्थ खंड डायरेक्टरी में अपलोड होती हैं।
 
-WebDAV service को `partial update` या offset-based writes support करने की ज़रूरत नहीं है। ImgBed remote server पर chunks को एक बड़ी file में merge नहीं करता। इसके बजाय chunk manifest store करता है और file request होने पर chunks को क्रम से पढ़ता है।
+WebDAV सेवा को `partial update` या offset-आधारित लिखाई का समर्थन करने की आवश्यकता नहीं है। ImgBed दूरस्थ सर्वर पर खंडों को एक बड़ी फ़ाइल में नहीं मिलाता। इसके बजाय खंड मैनिफ़ेस्ट सहेजा जाता है, और फ़ाइल माँगे जाने पर खंड क्रम से पढ़े जाते हैं।
 
 व्यवहार में:
 
-| File Size | Upload Method | Remote Storage Layout |
+| फ़ाइल आकार | अपलोड विधि | दूरस्थ स्टोरेज संरचना |
 | --- | --- | --- |
-| 64 MiB या कम | Normal upload | एक complete file |
-| 64 MiB से अधिक | Real session chunked upload | कई chunk files वाली chunk directory |
+| 64 MiB या कम | सामान्य अपलोड | एक पूर्ण फ़ाइल |
+| 64 MiB से अधिक | वास्तविक सत्र-आधारित खंडित अपलोड | कई खंड फ़ाइलों वाली खंड डायरेक्टरी |
 
-chunk directory केवल remote storage layout को प्रभावित करती है। ImgBed में file URL नहीं बदलता। उपयोगकर्ता file को वही original `/file/...` link से access करते हैं।
+खंड डायरेक्टरी केवल दूरस्थ स्टोरेज संरचना को प्रभावित करती है। ImgBed में फ़ाइल URL नहीं बदलता। उपयोगकर्ता उसी मूल `/file/...` लिंक से फ़ाइल तक पहुँचते हैं।
 
-## Setup Steps
+## कॉन्फ़िगरेशन चरण
 
-1. Upload Settings खोलें।
-2. Add Channel पर क्लिक करें।
+1. अपलोड सेटिंग्स खोलें।
+2. चैनल जोड़ें पर क्लिक करें।
 3. `WebDAV` चुनें।
-4. पहचानने लायक channel name डालें, जैसे `koofr`।
-5. WebDAV endpoint डालें, जैसे `https://app.koofr.net/dav/Koofr`।
-6. username और password डालें।
-7. authentication mode default रूप से `Basic` रखें।
-8. storage directory को `imgbed` रखें, या अपनी directory डालें।
-9. Save पर क्लिक करें।
-10. save के बाद channel card जाँचें, उपलब्ध हो तो capacity query करें, और test file upload करें।
+4. पहचानने योग्य चैनल नाम दर्ज करें, जैसे `koofr`।
+5. WebDAV एंडपॉइंट दर्ज करें, जैसे `https://app.koofr.net/dav/Koofr`.
+6. उपयोगकर्ता नाम और पासवर्ड दर्ज करें।
+7. प्रमाणीकरण मोड को डिफ़ॉल्ट रूप से `Basic` रखें।
+8. स्टोरेज डायरेक्टरी को `imgbed` रखें, या अपनी डायरेक्टरी दर्ज करें।
+9. सहेजें पर क्लिक करें।
+10. सहेजने के बाद चैनल कार्ड जाँचें, उपलब्ध हो तो क्षमता क्वेरी करें और परीक्षण फ़ाइल अपलोड करें।
 
-## कैसे जाँचें
+## सत्यापन
 
-| जाँच | कैसे verify करें |
+| जाँच | जाँचने का तरीका |
 | --- | --- |
-| Channel card दिखता है | save करने के बाद Upload Settings page में WebDAV channel card दिखना चाहिए। |
-| Channel enabled है | card के ऊपर दाएँ switch को on रहना चाहिए। |
-| Credentials save हैं | detail view में Endpoint, username, authentication mode और storage directory दिखने चाहिए। |
-| छोटी file upload होती है | test image upload करें और file WebDAV directory में दिखाई दे। |
-| बड़ी file rule काम करता है | 64 MiB से बड़ी files chunked upload use करती हैं और remote chunk directory बनाती हैं। |
-| Capacity query काम करती है | server capacity info support करता हो तो query used और total capacity दिखाएगी। |
+| चैनल कार्ड दिखाई देता है | सहेजने के बाद अपलोड सेटिंग्स पेज पर WebDAV चैनल कार्ड दिखना चाहिए। |
+| चैनल सक्षम है | कार्ड के ऊपर दाएँ का स्विच सक्षम रहना चाहिए। |
+| क्रेडेंशियल सहेजे गए हैं | विवरण दृश्य में Endpoint, उपयोगकर्ता नाम, प्रमाणीकरण मोड और स्टोरेज डायरेक्टरी दिखने चाहिए। |
+| छोटी फ़ाइल अपलोड होती है | परीक्षण छवि अपलोड करें और देखें कि फ़ाइल WebDAV डायरेक्टरी में दिखाई देती है। |
+| बड़ी फ़ाइल नियम काम करता है | 64 MiB से बड़ी फ़ाइलें खंडित अपलोड का उपयोग करती हैं और दूरस्थ खंड डायरेक्टरी बनाती हैं। |
+| क्षमता क्वेरी काम करती है | यदि सर्वर क्षमता जानकारी का समर्थन करता है, तो क्वेरी उपयोग की गई और कुल क्षमता दिखाती है। |
 
-![Quota query successful](../../image/upload/webdav/查询额度成功.png)
+![सफल कोटा क्वेरी](../../image/upload/webdav/查询额度成功.png)
 
 ## FAQ
 
-### बड़ी WebDAV files chunk directory क्यों बनाती हैं?
+### बड़ी WebDAV फ़ाइलें खंड डायरेक्टरी क्यों बनाती हैं?
 
-यह बड़ी files के लिए वर्तमान storage method है।
+बड़ी फ़ाइलों के लिए यह वर्तमान स्टोरेज विधि है।
 
-64 MiB से बड़ी files एक बड़ी remote file में merge नहीं होतीं। वे chunk directory के रूप में रखी जाती हैं। ImgBed chunk manifest record करता है और chunks को क्रम से पढ़कर पूरा content लौटाता है।
+64 MiB से बड़ी फ़ाइलें दूरस्थ पक्ष पर एक बड़ी फ़ाइल में नहीं मिलाई जातीं। वे खंड डायरेक्टरी के रूप में सहेजी जाती हैं। ImgBed खंड मैनिफ़ेस्ट रिकॉर्ड करता है और खंडों को क्रम से पढ़कर पूरा कंटेंट लौटाता है।
 
-### बड़ी file upload fail हो तो पहले क्या जाँचें?
+### बड़ी फ़ाइल का अपलोड विफल हो तो पहले क्या जाँचें?
 
-पहले Endpoint, username, password और storage directory जाँचें। फिर confirm करें कि WebDAV service directory creation, file writing और file reading allow करती है।
+पहले Endpoint, उपयोगकर्ता नाम, पासवर्ड और स्टोरेज डायरेक्टरी जाँचें। फिर पुष्टि करें कि WebDAV सेवा डायरेक्टरी बनाना, फ़ाइल लिखना और फ़ाइल पढ़ना अनुमति देती है।
 
-अगर capacity query fail हो लेकिन छोटी file upload काम करे, तो server शायद capacity reporting support नहीं करता या restrict करता है। इसका मतलब upload unavailable होना ज़रूरी नहीं।
+यदि क्षमता क्वेरी विफल होती है लेकिन छोटी फ़ाइल अपलोड काम करती है, तो सर्वर शायद क्षमता जानकारी का समर्थन नहीं करता या उसे सीमित करता है। इसका अर्थ यह नहीं कि अपलोड अनुपलब्ध है।
 
-### कौन सा authentication mode इस्तेमाल करें?
+### कौन सा प्रमाणीकरण मोड उपयोग करूँ?
 
 `Basic` से शुरू करें।
 
-server स्पष्ट रूप से digest authentication मांगे तो `Digest` use करें।
+यदि सर्वर स्पष्ट रूप से Digest प्रमाणीकरण माँगता है, तो `Digest` उपयोग करें।
 
-अगर unsure हों, automatic negotiation use करें।
+यदि निश्चित नहीं हैं, तो स्वचालित नेगोशिएशन उपयोग करें।
 
-## Quick Checklist
+## त्वरित सूची
 
 ```text
-WebDAV endpoint, username और password तैयार करें
--> Upload Settings खोलें
+Prepare WebDAV endpoint, username, and password
+-> Open Upload Settings
 -> Add Channel
--> WebDAV चुनें
--> Endpoint / username / password डालें
--> authentication mode को default Basic रखें
--> storage directory को default imgbed रखें
+-> Select WebDAV
+-> Enter Endpoint / username / password
+-> Keep authentication mode as Basic by default
+-> Keep storage directory as imgbed by default
 -> Save
--> capacity query करें
--> test file upload करें
+-> Query capacity
+-> Upload a test file
 ```

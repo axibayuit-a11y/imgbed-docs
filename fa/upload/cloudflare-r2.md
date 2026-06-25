@@ -1,109 +1,109 @@
-# افزودن Cloudflare R2 Channel
+# افزودن کانال Cloudflare R2
 
-## مناسب برای چه زمانی است
+## چه زمانی مناسب است
 
-Cloudflare R2 را زمانی استفاده کنید که:
+از Cloudflare R2 زمانی استفاده کنید که:
 
-- ImgBed شما روی Cloudflare deploy شده و می‌خواهید files در R2 bucket همان Cloudflare account ذخیره شوند.
-- نمی‌خواهید جداگانه S3 endpoint، access key و secret key تنظیم کنید.
-- می‌خواهید read و write با setup کم از طریق Worker یا Pages R2 binding انجام شود.
+- سایت ImgBed شما از قبل روی Cloudflare مستقر شده باشد و بخواهید فایل‌ها را در یک باکت R2 در همان حساب Cloudflare ذخیره کنید.
+- نخواهید یک اندپوینت S3، کلید دسترسی و کلید محرمانه جداگانه پیکربندی کنید.
+- بخواهید خواندن و نوشتن با کمترین پیکربندی از طریق binding مربوط به R2 در Worker یا Pages انجام شود.
 
 خلاصه:
 
-R2 channel به‌صورت manual داخل ImgBed admin panel ساخته نمی‌شود. ابتدا باید R2 bucket را به Cloudflare project bind کنید و نام binding variable دقیقاً `img_r2` باشد.
+کانال R2 به‌صورت دستی داخل پنل مدیریت ImgBed ساخته نمی‌شود. ابتدا باید یک باکت R2 را به پروژه Cloudflare متصل کنید و نام متغیر binding باید دقیقاً `img_r2` باشد.
 
 ## پیش از شروع چه چیزهایی لازم است
 
-- Cloudflare account.
-- یک R2 bucket موجود.
-- permission برای مدیریت Cloudflare project که ImgBed روی آن deploy شده است.
+- یک حساب Cloudflare.
+- یک باکت R2 موجود.
+- مجوز مدیریت پروژه Cloudflare که ImgBed روی آن مستقر شده است.
 
-## Configure در Cloudflare
+## پیکربندی در Cloudflare
 
-### 1. ساخت R2 Bucket
+### 1. ساخت باکت R2
 
 1. وارد Cloudflare Dashboard شوید.
 2. `R2 Object Storage` را باز کنید.
-3. Create bucket را بزنید.
-4. یک bucket name انتخاب کنید، مثل `imgbed`.
+3. روی ساخت باکت کلیک کنید.
+4. یک نام باکت انتخاب کنید، برای مثال `imgbed`.
 
-uploaded files در همین bucket ذخیره می‌شوند.
+فایل‌های بارگذاری‌شده در همین باکت ذخیره می‌شوند.
 
-![Create an R2 bucket](../../image/upload/cloudflare-r2/创建一个存储桶img-r2.png)
+![ساخت باکت R2](../../image/upload/cloudflare-r2/创建一个存储桶img-r2.png)
 
-### 2. Bind کردن Bucket به ImgBed Project
+### 2. اتصال باکت به پروژه ImgBed
 
-بر اساس deployment type، محل binding را انتخاب کنید:
+محل binding را بر اساس نوع استقرار انتخاب کنید:
 
-| Deployment Type | Binding Location |
+| نوع استقرار | محل binding |
 | --- | --- |
-| Pages | Current Pages project -> Settings -> Functions -> R2 bucket bindings |
-| Worker | Current Worker -> Settings -> Bindings -> R2 bucket bindings |
+| Pages | پروژه فعلی Pages -> Settings -> Functions -> R2 bucket bindings |
+| Worker | Worker فعلی -> Settings -> Bindings -> R2 bucket bindings |
 
-هنگام افزودن binding، fields مهم:
+هنگام افزودن binding، این فیلدها مهم هستند:
 
-| Field | Value |
+| فیلد | مقدار |
 | --- | --- |
-| Variable name | `img_r2` |
-| R2 bucket | bucket ساخته‌شده را انتخاب کنید. |
+| نام متغیر | `img_r2` |
+| باکت R2 | باکتی را که ساخته‌اید انتخاب کنید. |
 
-Variable name باید دقیقاً `img_r2` باشد. upload، read و delete فایل‌های R2 به همین binding name وابسته است.
+نام متغیر باید دقیقاً `img_r2` باشد. بارگذاری، خواندن و حذف فایل‌های R2 همگی به همین نام binding وابسته‌اند.
 
-### 3. Redeploy کردن Project
+### 3. استقرار دوباره پروژه
 
-پس از save کردن binding، ImgBed را redeploy کنید تا Worker یا Pages runtime به `img_r2` دسترسی داشته باشد.
+پس از ذخیره کردن binding، ImgBed را دوباره مستقر کنید تا محیط اجرای Worker یا Pages بتواند به `img_r2` دسترسی داشته باشد.
 
 ## در ImgBed چه می‌بینید
 
-بعد از آماده شدن R2 binding، باز کنید:
+وقتی binding مربوط به R2 آماده شد، این مسیر را باز کنید:
 
-1. System Settings.
-2. Upload Settings.
-3. channel با نام `Cloudflare R2`.
+1. تنظیمات سیستم.
+2. تنظیمات بارگذاری.
+3. کانال `Cloudflare R2`.
 
-system به‌صورت خودکار یک fixed channel می‌سازد:
+سیستم به‌صورت خودکار یک کانال ثابت ایجاد می‌کند:
 
-| Field | Fixed Value |
+| فیلد | مقدار ثابت |
 | --- | --- |
-| Channel name | `Cloudflare R2` |
-| Channel type | `cfr2` |
-| Storage mode | `binding` |
-| Configuration source | Environment binding |
+| نام کانال | `Cloudflare R2` |
+| نوع کانال | `cfr2` |
+| حالت ذخیره‌سازی | `binding` |
+| منبع پیکربندی | binding محیط اجرا |
 
-این fixed binding channel است. لازم نیست برای ساخت آن Add Channel بزنید و مانند channel معمولی قابل delete نیست.
+این کانال از نوع binding ثابت است. برای ساخت آن لازم نیست روی افزودن کانال کلیک کنید و مانند کانال‌های عادی نیز قابل حذف نیست.
 
-## Fields قابل ویرایش در Admin Panel
+## فیلدهای قابل ویرایش در پنل مدیریت
 
-| Field | کاربرد | Required |
+| فیلد | کاربرد | الزامی |
 | --- | --- | --- |
-| Enable channel | مشخص می‌کند R2 در upload selection شرکت کند یا نه. | Yes |
-| Account ID | فقط وقتی quota limits enabled است و official R2 usage query لازم است. | Recommended when quota limits are enabled |
-| Bucket name | فقط وقتی quota limits enabled است و official R2 usage query لازم است. | Recommended when quota limits are enabled |
-| Quota limit | مشخص می‌کند این R2 channel بر اساس capacity در upload selection شرکت کند یا نه. | No |
-| Threshold | وقتی usage به درصد مشخصی رسید، نوشتن روی این channel متوقف می‌شود. | Required when quota limits are enabled |
+| فعال‌سازی کانال | مشخص می‌کند R2 در انتخاب مقصد بارگذاری شرکت کند یا نه. | بله |
+| Account ID | فقط زمانی استفاده می‌شود که محدودیت‌های سهمیه فعال باشند و نیاز به استعلام مصرف رسمی R2 وجود داشته باشد. | پیشنهادی هنگام فعال بودن محدودیت‌های سهمیه |
+| نام باکت | فقط زمانی استفاده می‌شود که محدودیت‌های سهمیه فعال باشند و نیاز به استعلام مصرف رسمی R2 وجود داشته باشد. | پیشنهادی هنگام فعال بودن محدودیت‌های سهمیه |
+| محدودیت سهمیه | مشخص می‌کند این کانال R2 بر اساس ظرفیت در انتخاب مقصد بارگذاری شرکت کند یا نه. | خیر |
+| آستانه | وقتی مصرف به درصد مشخص‌شده برسد، نوشتن روی این کانال متوقف می‌شود. | الزامی هنگام فعال بودن محدودیت‌های سهمیه |
 
-Account ID را از account information panel در Cloudflare dashboard copy کنید. فقط اگر می‌خواهید ImgBed R2 quota usage را query و enforce کند، آن را وارد کنید.
+می‌توانید Account ID را از پنل اطلاعات حساب در Cloudflare Dashboard کپی کنید. فقط زمانی آن را وارد کنید که می‌خواهید ImgBed مصرف سهمیه R2 را استعلام و اعمال کند.
 
-![Get the Account ID](../../image/upload/cloudflare-r2/获取账户id.png)
+![دریافت Account ID](../../image/upload/cloudflare-r2/获取账户id.png)
 
-## مراحل setup
+## مراحل پیکربندی
 
-1. در Cloudflare یک R2 bucket بسازید.
-2. Cloudflare settings مربوط به ImgBed project را باز کنید.
-3. R2 bucket binding اضافه کنید.
-4. `Variable name` را `img_r2` بگذارید.
-5. R2 bucket ساخته‌شده را انتخاب کنید.
-6. binding را save کنید و ImgBed را redeploy کنید.
-7. به ImgBed -> System Settings -> Upload Settings برگردید.
-8. بررسی کنید `Cloudflare R2` channel دیده می‌شود و enabled است.
+1. در Cloudflare یک باکت R2 بسازید.
+2. تنظیمات Cloudflare مربوط به پروژه ImgBed را باز کنید.
+3. یک binding برای باکت R2 اضافه کنید.
+4. نام متغیر را `img_r2` قرار دهید.
+5. باکت R2 ساخته‌شده را انتخاب کنید.
+6. binding را ذخیره کنید و ImgBed را دوباره مستقر کنید.
+7. به ImgBed -> تنظیمات سیستم -> تنظیمات بارگذاری برگردید.
+8. مطمئن شوید کانال `Cloudflare R2` نمایش داده می‌شود و فعال است.
 
-اگر می‌خواهید R2 بر اساس capacity در upload selection شرکت کند، quota limit را enable کنید و سپس Account ID، bucket name، quota limit و threshold را وارد و save کنید.
+اگر می‌خواهید R2 بر اساس ظرفیت در انتخاب مقصد بارگذاری شرکت کند، محدودیت سهمیه را فعال کنید و پیش از ذخیره، Account ID، نام باکت، محدودیت سهمیه و آستانه را وارد کنید.
 
-![Configure quota limits](../../image/upload/cloudflare-r2/配置容量限制.png)
+![پیکربندی محدودیت‌های سهمیه](../../image/upload/cloudflare-r2/配置容量限制.png)
 
 ## روش بررسی
 
-- fixed `Cloudflare R2` channel در Upload Settings دیده شود.
-- channel card نشان دهد enabled است.
-- یک test file کوچک upload شود و returned link باز شود.
-- اگر هنگام باز کردن file پیام `R2 database binding is not configured` دیدید، runtime binding `img_r2` را دریافت نکرده است. binding name را در Cloudflare بررسی کنید و project را redeploy کنید.
+- کانال ثابت `Cloudflare R2` در تنظیمات بارگذاری نمایش داده شود.
+- کارت کانال نشان دهد که کانال فعال است.
+- یک فایل آزمایشی کوچک با موفقیت بارگذاری شود و لینک برگشتی به‌درستی باز شود.
+- اگر هنگام باز کردن فایل پیام `R2 database binding is not configured` را دیدید، محیط اجرا binding با نام `img_r2` را دریافت نکرده است. نام binding را در Cloudflare بررسی کنید و پروژه را دوباره مستقر کنید.

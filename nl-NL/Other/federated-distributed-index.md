@@ -5,7 +5,7 @@ De gefedereerde gedistribueerde index laat meerdere ImgBed-sites bestandslijsten
 Kort gezegd:
 
 - Je kunt geselecteerde mappen van je site met anderen delen.
-- Je kunt deelnemen aan een ander knooppunt en de gedeelde bestandslijst van dat knooppunt naar je beheer synchroniseren.
+- Je kunt deelnemen aan een ander knooppunt en de gedeelde bestandslijst van dat knooppunt naar je beheerpaneel synchroniseren.
 - Gefedereerde bestanden zijn vooral bedoeld om te bekijken, te zoeken en links te openen. Ze worden niet opnieuw naar je eigen opslag geüpload.
 
 ## Waar je dit configureert
@@ -38,7 +38,7 @@ Je kunt meerdere synchronisatiemappen selecteren.
 
 Als de lijst met synchronisatiemappen leeg is, worden alle mappen gedeeld.
 
-## Local Node
+## Lokaal knooppunt
 
 ### Publiek domein
 
@@ -48,9 +48,9 @@ ImgBed detecteert dit automatisch. Je hoeft het niet handmatig in te voeren. De 
 
 Als je later van domein verandert, vraagt een indexupdate opnieuw om bevestiging.
 
-### Sync Folders
+### Synchronisatiemappen
 
-Sync folders bepalen welke bestanden worden gedeeld met federatieknooppunten.
+Synchronisatiemappen bepalen welke bestanden worden gedeeld met federatieknooppunten.
 
 Als je bijvoorbeeld alleen selecteert:
 
@@ -59,9 +59,9 @@ Als je bijvoorbeeld alleen selecteert:
 /2/
 ```
 
-kunnen andere knooppunten alleen bestanden in die twee directories zien.
+kunnen andere knooppunten alleen bestanden in die twee mappen zien.
 
-### Update Outbound Index
+### Uitgaande index bijwerken
 
 Dit werkt de bestandslijst bij die anderen vanaf jouw site kunnen synchroniseren.
 
@@ -72,7 +72,7 @@ Gebruik dit wanneer:
 - je synchronisatiemappen wijzigt.
 - je publieke domein verandert en je dit moet bevestigen.
 
-## Nodes I Joined
+## Knooppunten waaraan ik deelneem
 
 `Nodes I Joined` is waar je je abonneert op andere knooppunten.
 
@@ -83,11 +83,11 @@ Gebruik dit wanneer:
 1. Vraag de andere eigenaar om een uitnodigingslink.
 2. Plak deze in het invoerveld.
 3. Klik op `Request to Join`.
-4. Wacht tot de andere eigenaar het verzoek goedkeurt in zijn beheer.
+4. Wacht tot de andere eigenaar het verzoek in het eigen beheer goedkeurt.
 
-Na goedkeuring wordt de knooppuntstatus approved.
+Na goedkeuring wordt de knooppuntstatus goedgekeurd.
 
-### Update Inbound Index
+### Inkomende index bijwerken
 
 `Update Inbound Index` synchroniseert bestandslijsten vanaf knooppunten waaraan je deelneemt.
 
@@ -95,7 +95,7 @@ Gebruik dit wanneer:
 
 - de andere eigenaar je verzoek net heeft goedgekeurd.
 - de andere eigenaar meldt dat gedeelde inhoud is bijgewerkt.
-- je alle verbonden federatieve bestandslijsten wilt verversen.
+- je alle verbonden gefedereerde bestandslijsten wilt verversen.
 
 Om slechts één knooppunt bij te werken, klik je op `Update Index` op de kaart van dat knooppunt.
 
@@ -107,7 +107,7 @@ Wil je een knooppunt niet meer synchroniseren, klik dan op `Unsubscribe`.
 
 Na afmelden wordt de federatieve index van dat knooppunt van je lokale site verwijderd.
 
-## Nodes Joining Me
+## Knooppunten die bij mij willen aansluiten
 
 `Nodes Joining Me` is waar je verzoeken van anderen afhandelt.
 
@@ -129,12 +129,12 @@ Wanneer iemand een verzoek indient, verschijnt dit in de lijst `Nodes Joining Me
 
 | Actie | Betekenis |
 | --- | --- |
-| Approve | Staat toe dat het andere knooppunt jouw gedeelde bestandslijst synchroniseert |
-| Reject | Weigert het deelnameverzoek |
-| Delete | Verwijdert een afgerond record |
-| Check Status | Controleert of de andere kant deze relatie nog behoudt |
+| Goedkeuren | Staat toe dat het andere knooppunt jouw gedeelde bestandslijst synchroniseert |
+| Weigeren | Weigert het deelnameverzoek |
+| Verwijderen | Verwijdert een afgeronde vermelding |
+| Status controleren | Controleert of de andere kant deze relatie nog behoudt |
 
-Na goedkeuring moet de andere kant nog `Update Inbound Index` klikken voordat jouw gedeelde bestanden daar verschijnen.
+Na goedkeuring moet de andere kant nog op `Update Inbound Index` klikken voordat jouw gedeelde bestanden daar verschijnen.
 
 ![Uitgenodigd knooppunt goedkeuren](../../image/other/联盟图/邀请节点同意.png)
 
@@ -142,7 +142,7 @@ Na goedkeuring moet de andere kant nog `Update Inbound Index` klikken voordat jo
 
 Nadat een relatie is goedgekeurd, klik je op `Message` op de knooppuntkaart.
 
-Berichten zijn alleen bedoeld voor communicatie over de federatierelatie. Ze wijzigen geen bestanden, tags, directories of rechten.
+Berichten zijn alleen bedoeld voor communicatie over de federatierelatie. Ze wijzigen geen bestanden, tags, mappen of rechten.
 
 ![Berichten](../../image/other/联盟图/留言功能.png)
 
@@ -152,17 +152,17 @@ Ga na synchronisatie terug naar de bestandslijst in het beheer.
 
 Bovenaan de pagina kun je wisselen tussen lokale bestanden en gefedereerde bestanden. Bij gefedereerde bestanden kun je gesynchroniseerde inhoud bekijken.
 
-Gefedereerde bestanden zijn vooral bedoeld om te bekijken, zoeken, previewen en links te kopiëren. Het zijn geen lokale bestanden, dus je kunt ze niet verplaatsen, verwijderen, opnieuw taggen of back-uppen vanaf je eigen site.
+Gefedereerde bestanden zijn vooral bedoeld om te bekijken, te zoeken, vooraf te bekijken en links te kopiëren. Het zijn geen lokale bestanden, dus je kunt ze niet vanaf je eigen site verplaatsen, verwijderen, opnieuw taggen of er een back-up van maken.
 
 ![Gefedereerde bestanden in beheer](../../image/other/联盟图/联盟管理显示效果图.png)
 
-## FAQ
+## Veelgestelde vragen
 
-### Waarom moet ik opnieuw aanvragen omdat er geen relatierecord is?
+### Waarom moet ik opnieuw aanvragen omdat er geen relatievermelding is?
 
-Dit betekent meestal dat de andere kant je heeft verwijderd en het record heeft weggehaald, waardoor de relatie niet meer gevonden wordt. Dien een nieuw verzoek in.
+Dit betekent meestal dat de andere kant je heeft verwijderd en de vermelding heeft weggehaald, waardoor de relatie niet meer gevonden wordt. Dien een nieuw verzoek in.
 
-![Opnieuw aanvragen zonder relatierecord](../../image/other/联盟图/无关系记录重新申请.png)
+![Opnieuw aanvragen zonder relatievermelding](../../image/other/联盟图/无关系记录重新申请.png)
 
 ### Waarom zie ik geen bestanden na deelname?
 
@@ -171,7 +171,7 @@ Controleer:
 1. De andere eigenaar heeft je verzoek goedgekeurd.
 2. De andere eigenaar heeft `Update Outbound Index` geklikt.
 3. Jij hebt `Update Inbound Index` geklikt.
-4. De synchronisatiemappen van de andere eigenaar bevatten de directories die gedeeld moeten worden.
+4. De synchronisatiemappen van de andere eigenaar bevatten de mappen die gedeeld moeten worden.
 
 ### Wat moet ik doen bij een gedetecteerde domeinwijziging?
 
@@ -179,13 +179,13 @@ Open je het beheer momenteel via het productiedomein, bevestig dan en ga door.
 
 Gebruik je een tijdelijk adres, annuleer dan, open het beheer opnieuw via het productiedomein en probeer het opnieuw.
 
-### Wat betekent een lege Sync Folder-lijst?
+### Wat betekent een lege lijst met synchronisatiemappen?
 
-Een lege Sync Folder-lijst betekent dat alle mappen worden gedeeld.
+Een lege lijst met synchronisatiemappen betekent dat alle mappen worden gedeeld.
 
-Wil je alleen sommige directories delen, selecteer die mappen dan handmatig.
+Wil je alleen sommige mappen delen, selecteer die mappen dan handmatig.
 
-### Verschil tussen outbound en inbound indexupdates
+### Verschil tussen uitgaande en inkomende indexupdates
 
 | Knop | Simpele betekenis |
 | --- | --- |

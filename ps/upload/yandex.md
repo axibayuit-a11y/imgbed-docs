@@ -1,95 +1,95 @@
-# د Yandex Channel اضافه کول
+# د Yandex چینل اضافه کول
 
 ## مخکې څه ته اړتیا لرئ
 
 | اړتیا | ولې ورته اړتیا ده |
 | --- | --- |
-| Yandex account | sign in او Yandex Disk authorize کولو لپاره |
-| Yandex OAuth app | د `Client ID` او `Client Secret` جوړولو لپاره |
-| ستاسو ImgBed domain | د OAuth redirect URI لپاره |
-| کافي Yandex Disk storage | د فایلونو اصلي storage ځای |
+| Yandex حساب | ننوځئ او Yandex Disk authorize کولو لپاره |
+| Yandex OAuth اپ | د `Client ID` او `Client Secret` جوړولو لپاره |
+| ستاسو ImgBed ډومېن | د OAuth ریډایرکټ URI لپاره |
+| کافي Yandex Disk زېرمه | د فایلونو اصلي زېرمه ځای |
 
 ## د تنظیم پړاوونه
 
-### 1 ګام: Yandex OAuth App جوړ کړئ
+### 1 ګام: Yandex OAuth اپ جوړ کړئ
 
-1. د Yandex OAuth app جوړولو پاڼه پرانیزئ:
+1. د Yandex OAuth اپ جوړولو پاڼه پرانیزئ:
 
 ```text
 https://oauth.yandex.com/client/new
 ```
 
-2. که sign in ته ولېږدول شوئ، لومړی خپل Yandex account ته sign in وکړئ.
-3. نوی app جوړ کړئ.
-4. app ته داسې نوم ورکړئ چې وپېژندل شي، لکه `imgbed-yandex`.
-5. د callback یا redirect URL settings ومومئ.
+2. که ننوځئ ته ولېږدول شوئ، لومړی خپل Yandex حساب ته ننوځئ وکړئ.
+3. نوی اپ جوړ کړئ.
+4. اپ ته داسې نوم ورکړئ چې وپېژندل شي، لکه `imgbed-yandex`.
+5. د کالبک یا ریډایرکټ URL settings ومومئ.
 6. دا ولیکئ:
 
 ```text
 https://your-domain.com/api/oauth/yandex/callback
 ```
 
-### 2 ګام: Permissions تایید کړئ
+### 2 ګام: اجازهs تایید کړئ
 
 د اوسني ImgBed Yandex integration لپاره، د `Yandex.Disk REST API` لاندې دا څلور permissions وساتئ:
 
-| Permission | موخه |
+| اجازه | موخه |
 | --- | --- |
-| `cloud_api:disk.app_folder` | ImgBed ته اجازه ورکوي چې فایلونه په app folder کې وساتي |
+| `cloud_api:disk.app_folder` | ImgBed ته اجازه ورکوي چې فایلونه په اپ folder کې وساتي |
 | `cloud_api:disk.read` | فایلونه او download links لولي |
-| `cloud_api:disk.write` | فایلونه upload کوي، folders جوړوي او فایلونه ړنګوي |
-| `Access to information about Yandex.Disk` | disk quota او used space لولي |
+| `cloud_api:disk.write` | فایلونه اپلوډ کوي، folders جوړوي او فایلونه ړنګوي |
+| `Access to information about Yandex.Disk` | disk کوټه او used space لولي |
 
 که د `Yandex ID API` لاندې دا permissions هم ښکاره شي، اختیاري دي:
 
-| Permission Text | سپارښتنه |
+| د اجازې متن | سپارښتنه |
 | --- | --- |
 | `Access to username, first name and surname, gender` | اختیاري |
 | `Access to email address` | اختیاري |
 
-د upload، download، deletion او quota اصلي ځانګړنې تر ډېره پر همدې پورته څلورو `Yandex.Disk REST API` permissions ولاړې دي.
+د اپلوډ، download، deletion او کوټه اصلي ځانګړنې تر ډېره پر همدې پورته څلورو `Yandex.Disk REST API` permissions ولاړې دي.
 
-![Configure Yandex Disk permissions](../../image/upload/yandex/dataaccess配置软盘权限.png)
+![تنظیم Yandex Disk permissions](../../image/upload/yandex/dataaccess配置软盘权限.png)
 
-### 3 ګام: App Credentials copy کړئ
+### 3 ګام: اپ اعتبارلیکونه کاپي کړئ
 
-کله چې app جوړ شو، دا copy کړئ:
+کله چې اپ جوړ شو، دا کاپي کړئ:
 
-| Yandex Field | ImgBed Field |
+| د Yandex فیلډ | د ImgBed فیلډ |
 | --- | --- |
 | `Client ID` | `Client ID` |
 | `Client Secret` | `Client Secret` |
 
 ![Record Client ID and Secret](../../image/upload/yandex/记录客户端id和secret.png)
 
-### 4 ګام: د Yandex Channel ډک کړئ
+### 4 ګام: د Yandex چینل ډک کړئ
 
-په Upload Settings کې `Yandex` وټاکئ او دا fields ډک کړئ:
+په د اپلوډ تنظیمات کې `Yandex` وټاکئ او دا fields ډک کړئ:
 
-| ImgBed Field | څه ولیکئ |
+| د ImgBed فیلډ | څه ولیکئ |
 | --- | --- |
-| Channel name | داسې نوم چې وپېژندل شي، لکه `Main Yandex` |
-| Client ID | د Yandex app `Client ID` |
-| Client Secret | د Yandex app `Client Secret` |
-| Refresh Token | اوس یې تش پرېږدئ |
-| Root directory | اختیاري. Default یې `imgbed` دی. |
+| د چینل نوم | داسې نوم چې وپېژندل شي، لکه `Main Yandex` |
+| Client ID | د Yandex اپ `Client ID` |
+| Client Secret | د Yandex اپ `Client Secret` |
+| Refresh ټوکن | اوس یې تش پرېږدئ |
+| اصلي ډایرکټري | اختیاري. اصلي یې `imgbed` دی. |
 
-![Edit channel config](../../image/upload/yandex/编辑配置渠道.png)
+![Edit چینل config](../../image/upload/yandex/编辑配置渠道.png)
 
-### 5 ګام: Refresh Token واخلئ
+### 5 ګام: Refresh ټوکن واخلئ
 
 1. په ImgBed کې `Get Token` کلیک کړئ.
-2. هغه Yandex account ته sign in وکړئ چې نښلول یې غواړئ.
-3. د authorization غوښتنه approve کړئ.
-4. callback page به `Refresh Token` ښکاره کړي.
-5. هغه copy کړئ.
-6. بېرته ImgBed ته راشئ او د `Refresh Token` field کې یې paste کړئ.
+2. هغه Yandex حساب ته ننوځئ وکړئ چې نښلول یې غواړئ.
+3. د authorization غوښتنه اپrove کړئ.
+4. کالبک page به `Refresh Token` ښکاره کړي.
+5. هغه کاپي کړئ.
+6. بېرته ImgBed ته راشئ او د `Refresh Token` فیلډ کې یې پیسټ کړئ.
 
-![Copy refresh token after authorization](../../image/upload/yandex/授权后复制刷新令牌.png)
+![کاپي refresh ټوکن after authorization](../../image/upload/yandex/授权后复制刷新令牌.png)
 
-### 6 ګام: Channel خوندي کړئ
+### 6 ګام: چینل خوندي کړئ
 
-کله چې ټول fields ډک شول، channel save کړئ.
+کله چې ټول fields ډک شول، چینل خوندي کړئ.
 
 ## چټک بهیر
 
@@ -107,6 +107,6 @@ Open Yandex OAuth Console
 
 ## ماخذونه
 
-1. Register a Yandex app: https://yandex.com/dev/id/doc/en/register-client
+1. Register a Yandex اپ: https://yandex.com/dev/id/doc/en/register-client
 2. Get an authorization code through URL: https://yandex.com/dev/id/doc/en/codes/code-url
-3. Yandex OAuth token endpoint: https://yandex.com/dev/id/doc/en/tokens/token
+3. Yandex OAuth ټوکن endpoint: https://yandex.com/dev/id/doc/en/tokens/token

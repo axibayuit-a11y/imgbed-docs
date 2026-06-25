@@ -1,6 +1,6 @@
 # Ověřování a správa přihlášených zařízení
 
-`Authentication Management` a `Login Device Management` chrání administraci ImgBed, veřejný vstup pro nahrávání a přístup WebDAV.
+Správa ověřování a správa přihlášených zařízení chrání administraci ImgBed, veřejný vstup pro nahrávání a přístup WebDAV.
 
 Na této stránce nastavíte přístupové údaje, zkontrolujete přihlášená zařízení a podle potřeby zneplatníte staré relace.
 
@@ -14,14 +14,14 @@ System Settings -> Security Settings
 
 Stránka obsahuje dvě hlavní části:
 
-- Authentication Management
-- Login Device Management
+- Správa ověřování
+- Správa přihlášených zařízení
 
 ![Správa ověřování](../../image/Safety/认证管理界面.png)
 
-## Co dělá Authentication Management
+## Co dělá správa ověřování
 
-Authentication Management ukládá přístupové údaje.
+Správa ověřování ukládá přístupové údaje.
 
 Existují dva typy:
 
@@ -60,13 +60,13 @@ Když jsou nastavené administrátorské jméno a heslo:
 
 - otevření administrace vyžaduje přihlášení.
 - úspěšné přihlášení vytvoří záznam administrátorského zařízení.
-- zařízení můžete kontrolovat, čistit nebo vynutit offline v Login Device Management.
+- zařízení můžete kontrolovat, čistit nebo vynutit offline ve správě přihlášených zařízení.
 
 Změna administrátorského jména nebo hesla zneplatní staré administrátorské relace. Musíte se přihlásit znovu.
 
-## Co dělá Login Device Management
+## Co dělá správa přihlášených zařízení
 
-Login Device Management ukazuje zařízení, která se přihlásila.
+Správa přihlášených zařízení ukazuje zařízení, která se přihlásila.
 
 Pomáhá zkontrolovat:
 
@@ -84,7 +84,7 @@ Stránka má tři karty:
 
 ## Globální zabezpečení cookies
 
-V horní části Login Device Management můžete nastavit globální chování cookies.
+V horní části správy přihlášených zařízení můžete nastavit globální chování cookies.
 
 ### Životnost cookie uživatele
 
@@ -98,9 +98,9 @@ Určuje, kolik dní zůstane administrátorské přihlášení aktivní.
 
 Například při nastavení na 14 dní se administrátoři obvykle nemusí znovu přihlašovat po dobu 14 dní.
 
-### Secure Mode
+### Zabezpečený režim
 
-Když je Secure mode zapnutý, prohlížeče posílají přihlašovací cookies pouze přes HTTPS.
+Když je zabezpečený režim zapnutý, prohlížeče posílají přihlašovací cookies pouze přes HTTPS.
 
 Zapněte ho pro produkční HTTPS weby. Nezapínejte ho při lokálním HTTP testování, jinak můžete vidět chování typu „přihlášení proběhlo, ale po obnovení jsem odhlášený“.
 
@@ -150,3 +150,6 @@ Po odhlášení aktuálního zařízení:
 - aktuální uživatelská relace se odhlásí.
 
 Před dalším používáním dané části je potřeba se znovu přihlásit.
+
+
+

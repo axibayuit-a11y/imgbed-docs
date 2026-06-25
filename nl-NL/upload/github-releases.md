@@ -59,11 +59,11 @@ Het systeem handelt deze details af:
 GitHub Releases werkt zo:
 
 ```text
-Log in bij GitHub
--> Maak een Access Token
--> Ga terug naar ImgBed en vul token en repositorynaam in
--> Sla op
--> Als alleen een repo-naam is ingevuld, voegt ImgBed automatisch de huidige gebruikersnaam toe
--> Als username/repo is ingevuld, gebruikt ImgBed dit zoals het is
--> Upload een testafbeelding
+Sign in to GitHub
+-> Create an Access Token
+-> Return to ImgBed and enter the token and repository name
+-> Save
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

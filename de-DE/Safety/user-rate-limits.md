@@ -1,47 +1,76 @@
-# Benutzer-Frequenzlimits
+# Upload-Limits für Benutzer
 
-Frequenzlimits begrenzen Aktionen, wenn eine IP oder ein Benutzer in kurzer Zeit zu viele Vorgänge ausführt.
+Upload-Limits für Benutzer steuern, wie oft normale Benutzer oder Besucher Dateien von der Startseite hochladen können. Das hilft, Missbrauch öffentlicher Upload-Seiten zu verhindern.
 
-Bei öffentlichen Uploads hilft das gegen Spam, Missbrauch und unerwünschte Massen-Uploads.
+Diese Funktion betrifft nur Uploads von der Startseite. Administrator-Uploads und Uploads mit API Tokens werden durch Benutzerlimits nicht eingeschränkt.
 
-## Wo einstellen
+## Wo Sie es konfigurieren
+
+Öffnen Sie den Administrationsbereich und gehen Sie zu:
 
 ```text
-Systemeinstellungen -> Sicherheit -> Frequenzlimits
+System Settings -> Security Settings -> Upload Management -> User Rate Limits
 ```
 
-![Frequenzlimits](../../image/other/用户频控截图.png)
+![Einstellungen für Benutzer-Upload-Limits](../../image/other/用户频控截图.png)
 
-## Wichtige Optionen
+## Limits aktivieren
 
-| Option | Beschreibung |
+Nachdem "Limits aktivieren" eingeschaltet wurde, verfolgt ImgBed aktuelle Uploads anhand der IP-Adresse des Uploaders.
+
+Standardwerte:
+
+| Einstellung | Standard | Beschreibung |
+| --- | --- | --- |
+| Erkennungsfenster | 1,5 Stunden | Wie weit zurück Upload-Einträge gezählt werden. |
+| Maximale Dateianzahl | 20 | Maximale Anzahl von Dateien, die im Erkennungsfenster erlaubt ist. |
+| Größenlimit für eine Datei | 20 MB | Maximale Größe einer einzelnen Datei. |
+| Limit für gesamte Upload-Größe | 200 MB | Maximale gesamte Upload-Größe im Erkennungsfenster. |
+
+Bei einem Fenster von 1,5 Stunden, 20 Dateien, 20 MB pro Datei und 200 MB insgesamt werden Uploads von derselben IP zum Beispiel blockiert, sobald ein konfiguriertes Limit überschritten wird.
+
+## Dateitypen ausschließen
+
+"Ausgeschlossene Upload-Dateitypen" blockiert normale Benutzer oder Besucher daran, ausgewählte Dateikategorien hochzuladen.
+
+Verfügbare Kategorien:
+
+| Typ | Beschreibung |
 | --- | --- |
-| Aktivieren | Limit ein- oder ausschalten |
-| Zeitfenster | Zeitraum, in dem Aktionen gezählt werden |
-| Maximale Anzahl | Erlaubte Aktionen innerhalb des Zeitfensters |
-| Zielaktion | Upload oder andere zu begrenzende Aktion |
-| Sperrdauer | Dauer der Sperre nach Überschreitung |
+| Bilder | jpg, png, webp, gif und ähnliche Bilddateien |
+| Videos | mp4, webm, mov und ähnliche Videodateien |
+| Audio | mp3, flac, wav und ähnliche Audiodateien |
+| Dokumente | pdf, txt, md, docx und ähnliche Dokumentdateien |
+| Andere | Dateien außerhalb der oben genannten Kategorien, zum Beispiel zip, rar, exe, apk |
 
-## Sinnvoller Startwert
+Standardmäßig ist kein Typ ausgewählt, was bedeutet, dass er erlaubt ist.
 
-Bei öffentlichen Uploads beginne moderat und passe später anhand echter Nutzung an.
+Wenn ein Typ angeklickt und hervorgehoben wird, ist dieser Typ blockiert.
 
-```text
-30 Aktionen pro 10 Minuten
-30 Minuten Sperre bei Überschreitung
-```
+Wenn "Andere" ausgewählt ist, werden Besucher beim Hochladen von zip- oder rar-Dateien blockiert und darüber informiert, dass dieser Dateityp nicht unterstützt wird.
 
-Das erlaubt normalen Nutzern ausreichend Spielraum und bremst auffällige Muster.
+## Blockiermeldungen
 
-## Hinweis bei Überschreitung
+Wenn ein Limit ausgelöst wird, sehen Benutzer eine passende Meldung:
 
-Wenn das Limit überschritten wird, sieht der Benutzer eine Meldung, dass die Aktion abgelehnt wurde.
+![Meldung zu zu häufigem Upload](../../image/other/频繁报错提示.png)
 
-![Häufige Fehlermeldung](../../image/other/频繁报错提示.png)
+| Situation | Bedeutung der Meldung |
+| --- | --- |
+| Einzelne Datei zu groß | Die Datei ist zu groß und sollte vor dem Upload komprimiert werden. |
+| Dateityp blockiert | Dieser Dateityp wird nicht unterstützt. Entfernen Sie ihn und versuchen Sie es erneut. |
+| Uploads zu häufig | Aktuelle Uploads sind zu häufig, mit angezeigter Zeit bis zum erneuten Versuch. |
+| Gesamtgröße zu hoch | Die aktuelle gesamte Upload-Größe ist zu hoch, mit angezeigter Zeit bis zum erneuten Versuch. |
 
-## Hinweise
+## Wann Sie es aktivieren sollten
 
-- Zu strenge Limits können legitime Stapel-Uploads blockieren.
-- Öffentliche Uploads sollten nicht komplett unbegrenzt bleiben.
-- In Kombination mit IP-Geolokalisierung und Benutzerverwaltung lassen sich Missbrauchsmuster besser prüfen.
-- Bei erwarteten Lastspitzen kannst du Limits vorübergehend lockern.
+Aktivieren Sie Benutzer-Upload-Limits, wenn Ihre Upload-Startseite öffentlich zugänglich ist.
+
+Häufige Gründe:
+
+- Sie sorgen sich über skriptgesteuerte Massen-Uploads.
+- Sie möchten große Besucher-Uploads begrenzen.
+- Normale Benutzer sollen nur Bilder hochladen, keine Archive oder Installationsdateien.
+- Öffentlicher Upload soll verfügbar bleiben, während die Ressourcennutzung kontrolliert wird.
+
+Wenn die Website nur für Sie selbst gedacht ist oder nur Administratoren hochladen können, können Sie diese Funktion deaktiviert lassen.

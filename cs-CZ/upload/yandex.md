@@ -81,7 +81,7 @@ V Nastavení nahrávání vyberte `Yandex` a vyplňte:
 1. V ImgBed klikněte na `Get Token`.
 2. Přihlaste se k účtu Yandex, který chcete připojit.
 3. Potvrďte autorizaci.
-4. Callback stránka zobrazí `Refresh Token`.
+4. Stránka callbacku zobrazí `Refresh Token`.
 5. Zkopírujte ho.
 6. Vraťte se do ImgBed a vložte ho do pole `Refresh Token`.
 
@@ -94,19 +94,19 @@ Po vyplnění všech polí kanál uložte.
 ## Rychlý postup
 
 ```text
-Otevřete Yandex OAuth Console
--> Vytvořte aplikaci
--> Přidejte https://your-domain.com/api/oauth/yandex/callback
--> Potvrďte oprávnění Yandex Disk
--> Zkopírujte Client ID a Client Secret
--> Zadejte Client ID / Client Secret do ImgBed
--> Klikněte Get Token
--> Zkopírujte Refresh Token z callback stránky
--> Vložte ho zpět do ImgBed a uložte
+Open Yandex OAuth Console
+-> Create an app
+-> Add https://your-domain.com/api/oauth/yandex/callback
+-> Confirm Yandex Disk permissions
+-> Copy Client ID and Client Secret
+-> Fill Client ID / Client Secret into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
-## Reference
+## Odkazy
 
 1. Registrace aplikace Yandex: https://yandex.com/dev/id/doc/en/register-client
-2. Získání authorization code přes URL: https://yandex.com/dev/id/doc/en/codes/code-url
-3. Yandex OAuth token endpoint: https://yandex.com/dev/id/doc/en/tokens/token
+2. Získání autorizačního kódu přes URL: https://yandex.com/dev/id/doc/en/codes/code-url
+3. Endpoint tokenu Yandex OAuth: https://yandex.com/dev/id/doc/en/tokens/token

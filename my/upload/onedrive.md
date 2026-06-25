@@ -1,21 +1,21 @@
-# OneDrive Channel ထည့်သွင်းခြင်း
+# OneDrive ချန်နယ် ထည့်သွင်းခြင်း
 
-## စမလုပ်ခင် လိုအပ်တာတွေ
+## ဦးစွာ လိုအပ်သည့်အရာများ
 
-| လိုအပ်ချက် | ဘာကြောင့်လိုလဲ |
+| လိုအပ်ချက် | လိုအပ်ရသည့်အကြောင်းရင်း |
 | --- | --- |
-| Microsoft account | Microsoft admin pages ကို access လုပ်ရန်နှင့် OneDrive ကို authorize လုပ်ရန် |
-| သင့် ImgBed domain | OAuth callback URL အတွက် |
-| App registration | `Client ID` နဲ့ `Client Secret` ဖန်တီးရန် |
-| OneDrive account | file storage location အဖြစ်သုံးရန် |
+| Microsoft အကောင့်တစ်ခု | Microsoft admin page များကို access လုပ်ရန်နှင့် OneDrive ကို authorize လုပ်ရန် အသုံးပြုသည် |
+| သင်၏ ImgBed ဒိုမိန်း | OAuth callback URL အတွက် အသုံးပြုသည် |
+| App registration တစ်ခု | `Client ID` နှင့် `Client Secret` ထုတ်လုပ်ရန် အသုံးပြုသည် |
+| OneDrive အကောင့်တစ်ခု | လက်တွေ့ဖိုင်သိုလှောင်ရာနေရာအဖြစ် အသုံးပြုသည် |
 
-## Setup Steps
+## ပြင်ဆင်မှု အဆင့်များ
 
-### Step 1: Microsoft Entra ID ဖွင့်ပါ
+### အဆင့် 1: Microsoft Entra ID ကိုဖွင့်ပါ
 
 1. `portal.azure.com` ကိုဖွင့်ပါ။
-2. အပေါ် search မှာ `Microsoft Entra ID` ရှာပါ။
-3. target page ကို dropdown မှာမတွေ့လျှင် ဒီကိုရွေးပါ:
+2. အပေါ်ဘက်တွင် `Microsoft Entra ID` ကိုရှာပါ။
+3. Target page ကို dropdown တွင် မပြပါက အောက်ပါကိုရွေးပါ။
 
 ```text
 Continue searching in Microsoft Entra ID
@@ -25,123 +25,123 @@ Continue searching in Microsoft Entra ID
 5. `App registrations` ကိုဖွင့်ပါ။
 6. `New registration` ကိုနှိပ်ပါ။
 
-### Step 2: App Register လုပ်ပါ
+### အဆင့် 2: App ကို Register လုပ်ပါ
 
-`New registration` page မှာ:
+`New registration` စာမျက်နှာတွင် အောက်ပါအတိုင်း ဖြည့်ပါ။
 
-| Field | What To Enter |
+| အကွက် | ထည့်ရန်အရာ |
 | --- | --- |
-| Name | မှတ်မိလွယ်တဲ့အမည်၊ ဥပမာ `imgbed-onedrive` |
-| Supported account types | အောက်က table အတိုင်းရွေးပါ |
+| Name | မှတ်မိလွယ်သောအမည်၊ ဥပမာ `imgbed-onedrive` |
+| Supported account types | အောက်ပါဇယားအပေါ်မူတည်၍ ရွေးပါ |
 | Redirect URI type | `Web` |
 | Redirect URI | `https://your-domain.com/api/oauth/onedrive/callback` |
 
-Account type guidance:
+Account type ရွေးချယ်မှုလမ်းညွှန်-
 
-| သင့် Scenario | Supported Account Types |
+| သင်၏အခြေအနေ | Supported Account Types |
 | --- | --- |
-| Personal OneDrive ပဲသုံးမယ် | personal Microsoft account option ကိုရွေးပါ။ |
-| personal နဲ့ work/school accounts နှစ်မျိုးလုံး | personal နဲ့ organizational accounts နှစ်မျိုးလုံး support လုပ်တဲ့ option ကိုရွေးပါ။ |
-| Company သို့မဟုတ် school OneDrive ပဲသုံးမယ် | organizational account option ကိုရွေးပါ။ |
+| Personal OneDrive သာ | Personal Microsoft account option ကိုရွေးပါ။ |
+| Personal account နှင့် work/school account နှစ်မျိုးလုံး | Personal နှင့် organizational account နှစ်မျိုးလုံးကို ပံ့ပိုးသော option ကိုရွေးပါ။ |
+| Company သို့မဟုတ် school OneDrive သာ | Organizational account option ကိုရွေးပါ။ |
 
-form ဖြည့်ပြီး register ကိုနှိပ်ပါ။
+Form ဖြည့်ပြီးနောက် register ကိုနှိပ်ပါ။
 
-![Create OneDrive app](../../image/upload/onedrive/添加应用程序注册.png)
+![OneDrive app ဖန်တီးခြင်း](../../image/upload/onedrive/添加应用程序注册.png)
 
-### Step 3: App Information Copy လုပ်ပါ
+### အဆင့် 3: App Information ကိုကူးယူပါ
 
-app ဖန်တီးပြီးနောက် overview page မှ values တွေကို copy လုပ်ပါ:
+App ဖန်တီးပြီးနောက် overview page မှ အောက်ပါတန်ဖိုးများကို ကူးယူပါ။
 
-| Microsoft Field | ImgBed Field |
+| Microsoft အကွက် | ImgBed အကွက် |
 | --- | --- |
 | `Application (client) ID` | `Client ID` |
-| `Directory (tenant) ID` | organizational accounts အတွက် `Tenant ID` |
+| `Directory (tenant) ID` | Organizational account များအတွက် `Tenant ID` |
 
-![Application and tenant IDs](../../image/upload/onedrive/应用程序ID和目录租户ID位.png)
+![Application နှင့် tenant ID](../../image/upload/onedrive/应用程序ID和目录租户ID位.png)
 
-### Step 4: Client Secret ဖန်တီးပါ
+### အဆင့် 4: Client Secret ဖန်တီးပါ
 
 1. `Certificates & secrets` ကိုဖွင့်ပါ။
 2. `New client secret` ကိုနှိပ်ပါ။
-3. description တစ်ခုထည့်ပါ။
-4. expiration period ရွေးပါ။
-5. ဖန်တီးပြီးတာနဲ့ `Value` ကိုချက်ချင်း copy လုပ်ပါ။
+3. သင်နှစ်သက်သည့် description တစ်ခုကို ထည့်ပါ။
+4. Expiration period ကိုရွေးပါ။
+5. ဖန်တီးပြီးသည်နှင့် `Value` ကို ချက်ချင်း ကူးယူပါ။
 
-![Save client secret value](../../image/upload/onedrive/保存客户端密码值.png)
+![Client secret value သိမ်းခြင်း](../../image/upload/onedrive/保存客户端密码值.png)
 
-### Step 5: API Permissions ထည့်ပါ
+### အဆင့် 5: API Permission များ ထည့်ပါ
 
 1. `API permissions` ကိုဖွင့်ပါ။
 2. `Add a permission` ကိုနှိပ်ပါ။
 3. `Microsoft Graph` ကိုရွေးပါ။
 4. `Delegated permissions` ကိုရွေးပါ။
-5. ဒီ permissions တွေထည့်ပါ:
+5. အောက်ပါ permission များကို ထည့်ပါ။
 
-| Permission | Purpose |
+| Permission | ရည်ရွယ်ချက် |
 | --- | --- |
-| `Files.ReadWrite.All` | files upload လုပ်ရန်၊ folders ဖန်တီးရန်၊ files delete လုပ်ရန် |
-| `offline_access` | ImgBed က `Refresh Token` ရယူနိုင်ရန် |
-| `User.Read` | account နဲ့ quota information ဖတ်ရန် |
+| `Files.ReadWrite.All` | ဖိုင်များကို အပ်လုဒ်လုပ်ခြင်း၊ folder များဖန်တီးခြင်းနှင့် ဖိုင်များဖျက်ခြင်း |
+| `offline_access` | ImgBed ကို `Refresh Token` ရယူခွင့်ပြုသည် |
+| `User.Read` | Account နှင့် quota information ကိုဖတ်သည် |
 
-### Step 6: ImgBed မှာ OneDrive Channel ဖြည့်ပါ
+### အဆင့် 6: OneDrive Channel ကိုဖြည့်ပါ
 
-Upload Settings မှာ `OneDrive` ကိုရွေးပြီး:
+အပ်လုဒ် ဆက်တင်များ တွင် `OneDrive` ကိုရွေးပြီး အောက်ပါအတိုင်း ဖြည့်ပါ။
 
-| ImgBed Field | What To Enter |
+| ImgBed အကွက် | ထည့်ရန်အရာ |
 | --- | --- |
-| Channel name | မှတ်မိလွယ်တဲ့အမည်၊ ဥပမာ `Main OneDrive` |
+| ချန်နယ်အမည် | မှတ်မိလွယ်သောအမည်၊ ဥပမာ `Main OneDrive` |
 | Client ID | Microsoft `Application (client) ID` |
-| Client Secret | copy လုပ်ထားတဲ့ `Client Secret Value` |
-| Tenant ID | အောက်က table အတိုင်း |
-| Refresh Token | အခုခဏဗလာထားပါ |
-| Root directory | Optional။ default က `imgbed`။ |
-| Note | Optional |
+| Client Secret | သင်ကူးယူထားသော `Client Secret Value` |
+| Tenant ID | အောက်ပါဇယားကို အသုံးပြုပါ |
+| Refresh Token | ယခုအချိန်တွင် အလွတ်ထားပါ |
+| အမြစ် ဖိုင်တွဲ | ရွေးချယ်နိုင်သည်။ မူရင်း သည် `imgbed` ဖြစ်သည်။ |
+| Note | ရွေးချယ်နိုင်သည် |
 
-![Fill OneDrive channel config](../../image/upload/onedrive/添加新渠道配置.png)
+![OneDrive channel config ဖြည့်ခြင်း](../../image/upload/onedrive/添加新渠道配置.png)
 
-`Tenant ID` ဖြည့်နည်း:
+`Tenant ID` ဖြည့်နည်း-
 
-| ရွေးထားတဲ့ Account Type | ImgBed `Tenant ID` |
+| သင်ရွေးထားသော Account Type | ImgBed `Tenant ID` |
 | --- | --- |
 | Personal accounts | `consumers` |
 | Personal + organizational accounts | `common` |
 | Current organization only | `Directory (tenant) ID` |
 
-### Step 7: Refresh Token ရယူပါ
+### အဆင့် 7: Refresh Token ရယူပါ
 
-1. ImgBed မှာ `Get Token` ကိုနှိပ်ပါ။
-2. connect လုပ်ချင်တဲ့ Microsoft account ထဲ sign in ဝင်ပါ။
-3. authorization prompt ကို approve လုပ်ပါ။
-4. callback page မှာ `Refresh Token` ပြပါမယ်။
-5. အဲဒါကို copy လုပ်ပါ။
-6. ImgBed ကိုပြန်သွားပြီး `Refresh Token` field ထဲ paste လုပ်ပါ။
+1. ImgBed တွင် `Get Token` ကိုနှိပ်ပါ။
+2. ချိတ်ဆက်လိုသော Microsoft အကောင့်သို့ sign in ဝင်ပါ။
+3. Authorization prompt ကို approve လုပ်ပါ။
+4. Callback စာမျက်နှာတွင် `Refresh Token` ကိုပြမည်။
+5. ၎င်းကိုကူးယူပါ။
+6. ImgBed သို့ ပြန်သွားပြီး `Refresh Token` အကွက်ထဲသို့ paste လုပ်ပါ။
 
-![Copy refresh token](../../image/upload/onedrive/复制刷新令牌.png)
+![Refresh token ကူးယူခြင်း](../../image/upload/onedrive/复制刷新令牌.png)
 
-### Step 8: Channel Save လုပ်ပါ
+### အဆင့် 8: Channel ကိုသိမ်းပါ
 
-fields အားလုံးဖြည့်ပြီးနောက် channel ကို save လုပ်ပါ။
+အကွက် အားလုံးဖြည့်ပြီးပါက channel ကိုသိမ်းပါ။
 
-## Quick Flow
+## အမြန် Flow
 
 ```text
-portal.azure.com ဖွင့်ပါ
--> Microsoft Entra ID ရှာပါ
--> App registrations ဖွင့်ပါ
--> app အသစ် register လုပ်ပါ
--> Name / Supported account types / Web redirect URI ဖြည့်ပါ
+Open portal.azure.com
+-> Search for Microsoft Entra ID
+-> Open App registrations
+-> Register a new app
+-> Fill Name / Supported account types / Web redirect URI
 -> Register
--> Application (client) ID copy လုပ်ပါ
--> Authentication မှာ callback URL စစ်ပါ
--> Certificates & secrets မှာ Client Secret ဖန်တီးပါ
--> API permissions ထည့်ပါ
--> ImgBed မှာ Client ID / Client Secret / Tenant ID ဖြည့်ပါ
--> Get Token ကိုနှိပ်ပါ
--> callback page မှ Refresh Token copy လုပ်ပါ
--> ImgBed မှာ paste လုပ်ပြီး save လုပ်ပါ
+-> Copy Application (client) ID
+-> Check the callback URL in Authentication
+-> Create a Client Secret in Certificates & secrets
+-> Add permissions in API permissions
+-> Fill Client ID / Client Secret / Tenant ID into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
-## References
+## ကိုးကားချက်များ
 
 1. Microsoft Entra app registration: https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
 2. Microsoft identity platform authorization code flow: https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow

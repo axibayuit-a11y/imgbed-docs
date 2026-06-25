@@ -1,103 +1,104 @@
 # Cloudflare API Token
 
-Cloudflare API credentials থাকলে files বদলানোর পর ImgBed Cloudflare CDN cache purge করতে পারে।
+Cloudflare API পরিচয়পত্র ImgBed-কে ফাইল পরিবর্তনের পর Cloudflare CDN ক্যাশ মুছতে দেয়.
 
-![Cloudflare API Token settings](../../image/Safety/cloudflare%20api%20token截图.png)
+![Cloudflare API Token সেটিংস](../../image/Safety/cloudflare%20api%20token截图.png)
 
-## কোথায় Configure করবেন
+## কোথায় কনফিগার করবেন
 
-Admin panel খুলে যান:
+অ্যাডমিন প্যানেল খুলে যান:
 
 ```text
 System Settings -> Security Settings -> Cloudflare API Token
 ```
 
-আপনাকে এগুলো পূরণ করতে হবে:
+নিচের তথ্যগুলো পূরণ করতে হবে:
 
 - Zone ID
-- Account email
+- অ্যাকাউন্টের ইমেল
 - API Key
 
-## এই Setting কী করে
+## এই সেটিং কী করে
 
-Cloudflare public image URLs cache করতে পারে।
+Cloudflare প্রকাশ্য ছবির URL ক্যাশে রাখতে পারে.
 
-Caching image delivery দ্রুত করে, কিন্তু file delete, block, replace বা move করার পরও পুরোনো content কিছু সময় visible থাকতে পারে।
+ক্যাশ ছবি দ্রুত সরবরাহ করতে সাহায্য করে, কিন্তু ফাইল মুছে ফেলা, ব্লক করা, প্রতিস্থাপন করা বা সরানোর পর কিছু সময় পুরোনো কনটেন্ট দেখা যেতে পারে.
 
-Cloudflare API credentials configured থাকলে ওই operations শেষ হওয়ার পর ImgBed related Cloudflare cache purge করার চেষ্টা করে।
+Cloudflare API পরিচয়পত্র কনফিগার করার পর এসব কাজ শেষ হলে ImgBed সংশ্লিষ্ট Cloudflare ক্যাশ মুছে ফেলার চেষ্টা করে.
 
 এটি কাজে লাগে যখন:
 
-- Image delete করেছেন এবং public link যত দ্রুত সম্ভব বন্ধ হোক চান।
-- Image block করেছেন এবং visitors যেন original file না দেখে চান।
-- একই নামের file replace করেছেন এবং visitors যেন দ্রুত নতুন version দেখে চান।
-- Files move বা rename করেছেন এবং old path cache দ্রুত refresh করতে চান।
-- Public access rules বদলেছেন এবং public gallery বা random image cache দ্রুত update করতে চান।
+- কোনো ছবি মুছে ফেলার পর আপনি চান প্রকাশ্য লিংক যত দ্রুত সম্ভব কাজ করা বন্ধ করুক.
+- কোনো ছবি ব্লক করার পর আপনি চান দর্শকরা আর মূল ফাইলটি না দেখুক.
+- একই নামে কোনো ফাইল প্রতিস্থাপন করলে আপনি চান দর্শকরা দ্রুত নতুন সংস্করণ দেখুক.
+- ফাইল সরানো বা নাম বদলানোর পর আপনি চান পুরোনো পথের ক্যাশ দ্রুত হালনাগাদ হোক.
+- প্রকাশ্য প্রবেশাধিকার নিয়ম বদলানোর পর আপনি চান প্রকাশ্য গ্যালারি বা র‍্যান্ডম ছবির ক্যাশ দ্রুত হালনাগাদ হোক.
 
-## Empty রাখলে কী হবে
+## খালি রাখলে কী হবে
 
-এই setting ছাড়া ImgBed normalভাবে কাজ করবে।
+এই সেটিং ছাড়া ImgBed স্বাভাবিকভাবেই কাজ করবে.
 
-ফারাক হলো ImgBed Cloudflare CDN cache actively purge করবে না। Cloudflare cache নিজে expire না হওয়া পর্যন্ত visitors পুরোনো content দেখতে পারে।
+শুধু পার্থক্য হলো ImgBed সক্রিয়ভাবে Cloudflare CDN ক্যাশ মুছবে না. Cloudflare ক্যাশ স্বাভাবিকভাবে মেয়াদোত্তীর্ণ না হওয়া পর্যন্ত দর্শকরা পুরোনো কনটেন্ট দেখতে থাকতে পারে.
 
-## Zone ID কীভাবে পাবেন
+## Zone ID কীভাবে খুঁজবেন
 
-Zone ID হলো আপনার ImgBed domain যে site ব্যবহার করছে, সেই site-এর Cloudflare Zone ID।
+Zone ID হলো আপনার ImgBed ডোমেইন যে সাইটে আছে, সেই সাইটের Cloudflare Zone ID.
 
-1. Cloudflare dashboard-এ sign in করুন।
-2. আপনার ImgBed domain থাকা site খুলুন।
-3. Site overview page-এ `Zone ID` খুঁজুন।
-4. ImgBed-এর `Zone ID` field-এ copy করুন।
+1. Cloudflare ড্যাশবোর্ডে সাইন ইন করুন.
+2. আপনার ImgBed ডোমেইন থাকা সাইটটি খুলুন.
+3. সাইটের ওভারভিউ পাতায় `Zone ID` খুঁজুন.
+4. সেটি কপি করে ImgBed-এর `Zone ID` ঘরে দিন.
 
-এটি site Zone ID, account ID নয়।
+এটি সাইটের Zone ID, অ্যাকাউন্ট ID নয়.
 
-## Account Email
+## অ্যাকাউন্টের ইমেল
 
-Cloudflare-এ sign in করতে যে email address ব্যবহার করেন সেটি দিন।
+Cloudflare-এ সাইন ইন করার জন্য যে ইমেল ব্যবহার করেন সেটি দিন.
 
-এটি নিচে দেওয়া API Key-এর সঙ্গে match করতে হবে।
+এটি নিচে দেওয়া API Key-এর সঙ্গে মিলতে হবে.
 
 ## API Key
 
-আপনার Cloudflare Global API Key দিন।
+আপনার Cloudflare Global API Key দিন.
 
-1. Cloudflare dashboard-এ sign in করুন।
-2. Profile খুলুন।
-3. API Tokens page-এ যান।
-4. `Global API Key` খুঁজুন।
-5. View করে copy করুন।
-6. ImgBed-এর `API Key` field-এ paste করুন।
+1. Cloudflare ড্যাশবোর্ডে সাইন ইন করুন.
+2. আপনার প্রোফাইল খুলুন.
+3. API Tokens পাতায় যান.
+4. `Global API Key` খুঁজুন.
+5. দেখে কপি করুন.
+6. ImgBed-এর `API Key` ঘরে পেস্ট করুন.
 
-![View global API key](../../image/Safety/查看全局令牌.png)
+![Global API Key দেখা](../../image/Safety/查看全局令牌.png)
 
-## কখন কার্যকর হয়
+## কখন কার্যকর হবে
 
-Fields পূরণ করার পর settings save করুন।
+ঘরগুলো পূরণ করার পর সেটিংস সংরক্ষণ করুন.
 
-এরপর future file changes হলে ImgBed automatically Cloudflare cache purge করার চেষ্টা করবে। Past operations retroactively purge হয় না। Setup-এর আগে file delete বা replace করে থাকলে Cloudflare cache expire হওয়া পর্যন্ত অপেক্ষা করুন, অথবা Cloudflare-এ manually purge করুন।
+এরপর ভবিষ্যতের ফাইল পরিবর্তনে Cloudflare ক্যাশ স্বয়ংক্রিয়ভাবে মুছে ফেলার চেষ্টা করা হবে. আগের কাজগুলো পেছন থেকে পরিষ্কার করা হবে না. এই সেটিং দেওয়ার আগে কোনো ফাইল মুছে বা প্রতিস্থাপন করে থাকলে Cloudflare ক্যাশ স্বাভাবিকভাবে মেয়াদোত্তীর্ণ হওয়া পর্যন্ত অপেক্ষা করুন, অথবা Cloudflare-এ গিয়ে হাতে ক্যাশ মুছুন.
 
-## FAQ
+## সাধারণ প্রশ্ন
 
-### এটি কি Required?
+### এটি কি বাধ্যতামূলক?
 
-না।
+না.
 
-আপনার domain Cloudflare ব্যবহার না করলে, বা CDN cache delay নিয়ে সমস্যা না থাকলে empty রাখতে পারেন।
+আপনার ডোমেইন Cloudflare ব্যবহার না করলে, অথবা CDN ক্যাশের দেরি নিয়ে সমস্যা না থাকলে, এটি খালি রাখতে পারেন.
 
-### Wrong Credentials কি Uploads ভেঙে দেবে?
+### ভুল পরিচয়পত্র দিলে কি আপলোড বন্ধ হবে?
 
-সাধারণত না।
+সাধারণত না.
 
-Wrong credentials শুধু ImgBed-কে Cloudflare cache purge করা থেকে আটকাবে। Upload এবং normal file access চলতে থাকা উচিত।
+ভুল পরিচয়পত্র শুধু ImgBed-কে Cloudflare ক্যাশ মুছতে বাধা দেয়. আপলোড এবং সাধারণ ফাইল প্রবেশাধিকার কাজ করা উচিত.
 
-### Deleted Image এখনও কেন খোলে?
+### মুছে ফেলা ছবি এখনও কেন খোলা যাচ্ছে?
 
-সবচেয়ে common কারণ হলো Cloudflare-এর কাছে পুরোনো file cached আছে।
+সবচেয়ে সাধারণ কারণ হলো Cloudflare এখনও পুরোনো ফাইলটি ক্যাশে রেখেছে.
 
-সঠিক Cloudflare API credentials থাকলে file delete করার সময় ImgBed related URL cache purge করে।
+সঠিক Cloudflare API পরিচয়পত্র থাকলে ImgBed ফাইল মুছে ফেলার সময় সংশ্লিষ্ট URL-এর ক্যাশ মুছে দেয়.
 
-### File replace করার পরও পুরোনো Image কেন দেখাচ্ছে?
+### ফাইল প্রতিস্থাপনের পরও পুরোনো ছবি কেন দেখছি?
 
-এটিও সাধারণত CDN cache-এর কারণে হয়।
+এটিও সাধারণত CDN ক্যাশের কারণে হয়.
 
-এই setting configured হলে একই নামের file overwrite করার সময় ImgBed old URL cache purge করার চেষ্টা করে।
+এই সেটিং কনফিগার করার পর একই নামে ফাইল ওভাররাইট হলে ImgBed পুরোনো URL-এর ক্যাশ মুছতে চেষ্টা করে.
+

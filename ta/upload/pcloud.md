@@ -1,102 +1,102 @@
-# pCloud Channel சேர்க்கவும்
+# pCloud சேனல் சேர்க்கவும்
 
 ## எப்போது பொருத்தம்
 
-- உங்களிடம் pCloud account உள்ளது; ImgBed images-ஐ pCloud-ல் சேமிக்க வேண்டும்.
-- pCloud account email மற்றும் password-ஐ channel credentials ஆக பயன்படுத்துவது உங்களுக்கு ஏற்றதாக இருந்தால்.
+- உங்களிடம் pCloud கணக்கு உள்ளது; ImgBed படங்கள்-ஐ pCloud-ல் சேமிக்க வேண்டும்.
+- pCloud கணக்கு email மற்றும் password-ஐ சேனல் சான்றுகள் ஆக பயன்படுத்துவது உங்களுக்கு ஏற்றதாக இருந்தால்.
 
 ## முதலில் தேவையானவை
 
 | தேவை | ஏன் தேவை |
 | --- | --- |
-| pCloud account email | pCloud API-க்கு sign in செய்ய |
-| pCloud password | pCloud API-க்கு sign in செய்ய |
-| API host | default `api.pcloud.com`. EU accounts `eapi.pcloud.com` பயன்படுத்தலாம். |
-| Storage directory | files சேமிக்கப்படும் இடம். default `imgbed`. |
+| pCloud கணக்கு email | pCloud API-க்கு உள்நுழைய செய்ய |
+| pCloud password | pCloud API-க்கு உள்நுழைய செய்ய |
+| API host | இயல்புநிலை `api.pcloud.com`. EU கணக்குs `eapi.pcloud.com` பயன்படுத்தலாம். |
+| சேமிப்பு அடைவு | கோப்புகள் சேமிக்கப்படும் இடம். இயல்புநிலை `imgbed`. |
 
 ## எங்கு சேர்ப்பது
 
-1. System Settings திறக்கவும்.
-2. Upload Settings திறக்கவும்.
+1. அமைப்பு அமைப்புகள் திறக்கவும்.
+2. பதிவேற்ற அமைப்புகள் திறக்கவும்.
 3. மேல் வலது மூலையில் `Add Channel` கிளிக் செய்யவும்.
 4. `pCloud` தேர்வு செய்யவும்.
 
-## Field Reference
+## புல விவரம்
 
-| Field | Purpose | Required |
+| புலம் | நோக்கம் | அவசியம் |
 | --- | --- | --- |
-| Channel name | இந்த pCloud channel-ஐ அடையாளம் காண, உதா. `Personal pCloud` | Yes |
-| Account email | உங்கள் pCloud login email | Yes |
-| Password | உங்கள் pCloud password | Yes |
-| API host | pCloud API host. default `api.pcloud.com`. | No |
-| Storage directory | files சேமிக்கப்படும் directory. default `imgbed`. | No |
+| சேனல் பெயர் | இந்த pCloud சேனலை அடையாளம் காண, உதா. `Personal pCloud` | ஆம் |
+| கணக்கு மின்னஞ்சல் | உங்கள் pCloud உள்நுழைவு மின்னஞ்சல் | ஆம் |
+| கடவுச்சொல் | உங்கள் pCloud கடவுச்சொல் | ஆம் |
+| API host | pCloud API host. இயல்புநிலை `api.pcloud.com`. | இல்லை |
+| சேமிப்பு அடைவு | கோப்புகள் சேமிக்கப்படும் directory. இயல்புநிலை `imgbed`. | இல்லை |
 
-account region படி API host தேர்வு:
+கணக்கு region படி API host தேர்வு:
 
-| Account Region | API Host |
+| கணக்கு Region | API Host |
 | --- | --- |
-| Default / US | `api.pcloud.com` |
+| இயல்புநிலை / US | `api.pcloud.com` |
 | Europe | `eapi.pcloud.com` |
 
-## Setup Steps
+## அமைப்பு படிகள்
 
-1. Upload Settings திறக்கவும்.
+1. பதிவேற்ற அமைப்புகள் திறக்கவும்.
 2. `Add Channel` கிளிக் செய்யவும்.
 3. `pCloud` தேர்வு செய்யவும்.
-4. அறியக்கூடிய channel name உள்ளிடவும்.
-5. pCloud account email உள்ளிடவும்.
+4. அறியக்கூடிய சேனல் name உள்ளிடவும்.
+5. pCloud கணக்கு email உள்ளிடவும்.
 6. pCloud password உள்ளிடவும்.
-7. API host-ஐ `api.pcloud.com` ஆக வைத்திருக்கவும்; EU account என்றால் `eapi.pcloud.com`.
-8. storage directory-ஐ `imgbed` ஆக வைத்திருக்கவும், அல்லது உங்கள் folder-ஐ கொடுக்கவும்.
-9. channel save செய்யவும்.
+7. API host-ஐ `api.pcloud.com` ஆக வைத்திருக்கவும்; EU கணக்கு என்றால் `eapi.pcloud.com`.
+8. சேமிப்பு directory-ஐ `imgbed` ஆக வைத்திருக்கவும், அல்லது உங்கள் folder-ஐ கொடுக்கவும்.
+9. சேனல் சேமி செய்யவும்.
 
-![Configure channel](../../image/upload/pcloud/配置渠道.png)
+![கட்டமை சேனல்](../../image/upload/pcloud/配置渠道.png)
 
 ## Verify செய்வது
 
-| Check | Expected Result |
+| சரிபார்ப்பு | எதிர்பார்க்கப்படும் முடிவு |
 | --- | --- |
-| Channel card | Save செய்த பிறகு pCloud channel card தெரியும். |
-| Channel switch | card switch enabled ஆக இருக்கும். |
-| Email display | card connected pCloud email காட்டும். |
-| Quota query | successful query பிறகு used மற்றும் total capacity தெரியும். |
-| Upload test | test image configured pCloud storage directory-ல் தெரியும். |
+| சேனல் card | சேமித்த பிறகு pCloud சேனல் card தெரியும். |
+| சேனல் switch | card switch இயக்கத்தில் இருக்கும். |
+| Email காட்சி | card இணைக்கப்பட்ட pCloud email-ஐ காட்டும். |
+| Quota query | வெற்றிகரமான query-க்கு பிறகு used மற்றும் total capacity தெரியும். |
+| பதிவேற்றச் சோதனை | test image கட்டமைக்கப்பட்ட pCloud சேமிப்பு directory-ல் தெரியும். |
 
 ![Quota query success](../../image/upload/pcloud/查询额度成功.png)
 
-## Troubleshooting
+## சிக்கல் தீர்வு
 
 ### ஏன் OAuth2 இல்லை?
 
-pCloud OAuth2 default ஆக self-service இல்லை. அதை enable செய்ய pCloud-க்கு email செய்ய வேண்டும்.
+pCloud OAuth2 இயல்புநிலை ஆக self-சேவை இல்லை. அதை enable செய்ய pCloud-க்கு email செய்ய வேண்டும்.
 
-தற்போதைய pCloud OAuth2 flow ImgBed-க்கு தேவையான short-lived upload link workflow-ஐ support செய்யவில்லை. அதனால் இந்த channel account email/password login பயன்படுத்துகிறது.
+தற்போதைய pCloud OAuth2 flow ImgBed-க்கு தேவையான short-lived பதிவேற்றம் link workflow-ஐ support செய்யவில்லை. அதனால் இந்த சேனல் கணக்கு email/password login பயன்படுத்துகிறது.
 
 ### எந்த API Host பயன்படுத்த வேண்டும்?
 
-Default:
+இயல்புநிலை:
 
 ```text
 api.pcloud.com
 ```
 
-EU accounts:
+EU கணக்குs:
 
 ```text
 eapi.pcloud.com
 ```
 
-## Quick Flow
+## விரைவு ஓட்டம்
 
 ```text
-pCloud email மற்றும் password தயார் செய்யவும்
--> Upload Settings திறக்கவும்
+Prepare your pCloud email and password
+-> Open Upload Settings
 -> Add Channel
--> pCloud தேர்வு செய்யவும்
--> channel name / email / password நிரப்பவும்
--> account Europe அல்ல என்றால் API host api.pcloud.com வைத்திருக்கவும்
--> வேறு தேவை இல்லை என்றால் storage directory imgbed வைத்திருக்கவும்
+-> Choose pCloud
+-> Fill channel name / email / password
+-> Keep API host as api.pcloud.com unless your account is in Europe
+-> Keep storage directory as imgbed unless you need another folder
 -> Save
--> quota query
--> test image upload
+-> Query quota
+-> Upload a test image
 ```

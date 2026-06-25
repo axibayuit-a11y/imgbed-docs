@@ -125,20 +125,20 @@ Po wypełnieniu wszystkich pól zapisz kanał.
 ## Szybki przebieg
 
 ```text
-Otwórz portal.azure.com
--> Wyszukaj Microsoft Entra ID
--> Otwórz App registrations
--> Zarejestruj nową aplikację
--> Wypełnij Name / Supported account types / Web redirect URI
--> Zarejestruj
--> Skopiuj Application (client) ID
--> Sprawdź callback URL w Authentication
--> Utwórz Client Secret w Certificates & secrets
--> Dodaj uprawnienia w API permissions
--> Wpisz Client ID / Client Secret / Tenant ID w ImgBed
--> Kliknij Get Token
--> Skopiuj Refresh Token ze strony callback
--> Wklej go w ImgBed i zapisz
+Open portal.azure.com
+-> Search for Microsoft Entra ID
+-> Open App registrations
+-> Register a new app
+-> Fill Name / Supported account types / Web redirect URI
+-> Register
+-> Copy Application (client) ID
+-> Check the callback URL in Authentication
+-> Create a Client Secret in Certificates & secrets
+-> Add permissions in API permissions
+-> Fill Client ID / Client Secret / Tenant ID into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## Referencje

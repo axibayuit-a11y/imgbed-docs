@@ -1,89 +1,109 @@
-# 新增 Cloudflare R2 渠道
+# Cloudflare R2 渠道新增說明
 
-## 適合什麼情境
+## 適合什麼場景
 
-- 你的 ImgBed 已經部署在 Cloudflare Pages 或 Workers 上。
-- 你想把檔案直接存到同一個 Cloudflare 帳號底下的 R2 Bucket。
-- 你希望檔案讀寫都走 Worker / Pages 的 R2 Binding，設定盡量單純。
+- 你已經把圖床部署在 Cloudflare 上，希望直接使用同一個 Cloudflare 帳號里的 R2 桶保存檔案。
+- 你不想再填寫一套 S3 Endpoint、Access Key、Secret Key。
+- 你希望檔案讀寫都走 Worker / Pages 的 R2 綁定，設定盡量簡單。
+
+一句話：
+
+R2 這條渠道不是在圖床後台手動建立帳號，而是在 Cloudflare 後台先把 R2 桶綁定到專案，綁定變量名必須是 `img_r2`。
 
 ## 新增前要準備什麼
 
-| 需要準備 | 用途 |
-| --- | --- |
-| Cloudflare 帳號 | 建立 R2 Bucket 與專案 Binding |
-| 一個 R2 Bucket | 實際存放上傳檔案 |
-| 目前部署 ImgBed 的 Pages / Worker 專案權限 | 把 Bucket 綁到執行環境 |
+- 一個 Cloudflare 帳號。
+- 一個已經建立好的 R2 Bucket。
+- 當前圖床專案的 Cloudflare 後台管理權限。
 
-R2 渠道不是在 ImgBed 後台手動新增。你需要先在 Cloudflare 把 R2 Bucket 綁到專案，Binding 變數名稱必須是：
+## Cloudflare 後台設定
 
-```text
-img_r2
-```
-
-## 在 Cloudflare 裡設定
-
-### 第一步：建立 R2 Bucket
+### 1. 建立 R2 Bucket
 
 1. 登入 Cloudflare Dashboard。
 2. 進入 `R2 Object Storage`。
-3. 建立一個新的 Bucket。
-4. Bucket 名稱可以自己取，例如 `imgbed`。
+3. 點擊建立 Bucket。
+4. Bucket 名稱自己決定，例如 `imgbed`。
 
-![建立 R2 Bucket](../../image/upload/cloudflare-r2/创建一个存储桶img-r2.png)
+這個 Bucket 就是後面實際保存檔案的地方。
 
-### 第二步：把 Bucket 綁到 ImgBed 專案
+![建立一個存儲桶 img-r2](../../image/upload/cloudflare-r2/创建一个存储桶img-r2.png)
 
-依照你的部署方式找到 Binding 設定：
+### 2. 綁定到圖床專案
 
-| 部署方式 | 設定位置 |
+根據你的部署類型選擇位置：
+
+| 部署類型 | 綁定位置 |
 | --- | --- |
-| Pages | 目前 Pages 專案 -> Settings -> Functions -> R2 bucket bindings |
-| Workers | 目前 Worker 專案 -> Settings -> Bindings |
+| Pages | 當前 Pages 專案 -> Settings -> Functions -> R2 bucket bindings |
+| Worker | 當前 Worker -> Settings -> Bindings -> R2 bucket bindings |
 
-新增一筆 R2 Binding：
+新增綁定時重點只看這一項：
 
-| 欄位 | 填寫內容 |
+| 欄位 | 填寫 |
 | --- | --- |
 | Variable name | `img_r2` |
 | R2 bucket | 選擇剛建立的 Bucket |
 
-儲存 Binding 後，請重新部署一次 ImgBed，讓 Worker / Pages 執行環境真的拿到 `img_r2`。
+變量名必須寫成 `img_r2`，代碼里上傳、讀取、刪除 R2 檔案都只認這個綁定名。
 
-## 回到 ImgBed 後台會看到什麼
+### 3. 重新部署
 
-重新部署後，打開：
+綁定保存後，需要重新部署一次圖床專案，讓 Worker / Pages 運行時真正拿到 `img_r2`。
 
-```text
-系統設定 -> 上傳設定
-```
+## 圖床後台會看到什麼
 
-如果 Binding 正確，會看到固定的 `Cloudflare R2` 渠道。這個渠道由系統自動建立，不需要你再新增一張渠道卡。
+R2 綁定成功後，進入：
 
-常見資訊如下：
+1. 系統設定。
+2. 上傳設定。
+3. 查看 `Cloudflare R2` 渠道。
 
-| 欄位 | 說明 |
+系統會自動生成一條固定渠道：
+
+| 欄位 | 固定值 |
 | --- | --- |
 | 渠道名稱 | `Cloudflare R2` |
-| Binding 名稱 | `img_r2` |
-| 啟用狀態 | 正常情況下可以直接啟用 |
+| 渠道類型 | `cfr2` |
+| 保存方式 | `binding` |
+| 設定來源 | 環境綁定 |
 
-## 容量限制
+這條渠道是固定綁定渠道，不需要點擊“新增渠道”手動建立，也不能像普通渠道一樣刪除。
 
-如果你想讓 R2 參與容量控管，可以填 Cloudflare Account ID，並設定容量上限與提醒門檻。
+## 後台可編輯欄位
 
-Account ID 可以在 Cloudflare 帳號資訊區看到。只有需要查詢或限制 R2 用量時才需要填。
+| 欄位 | 作用 | 是否必填 |
+| --- | --- | --- |
+| 啟用渠道 | 控制 R2 是否參與上傳選擇 | 是 |
+| Account ID | 只在開啟容量限制并查詢官方 R2 用量時使用 | 開啟容量限制時建議填寫 |
+| Bucket 名稱 | 只在開啟容量限制并查詢官方 R2 用量時使用 | 開啟容量限制時建議填寫 |
+| 容量限制 | 控制這個 R2 渠道是否按容量閾值參與上傳選擇 | 否 |
+| 閾值 | 容量達到多少比例後不再繼續寫入 | 開啟容量限制時填寫 |
 
-![取得 Account ID](../../image/upload/cloudflare-r2/获取账户id.png)
+Account ID 可以在 Cloudflare 控制臺右側帳號資訊里複製，開啟容量限制時填到後台即可。
+
+![獲取賬戶 ID](../../image/upload/cloudflare-r2/获取账户id.png)
+
+## 新增步驟
+
+1. 在 Cloudflare 建立 R2 Bucket。
+2. 打開圖床專案的 Cloudflare 設定。
+3. 新增 R2 bucket binding。
+4. `Variable name` 填 `img_r2`。
+5. `R2 bucket` 選擇剛建立的 Bucket。
+6. 保存綁定并重新部署圖床。
+7. 回到圖床後台 -> 系統設定 -> 上傳設定。
+8. 確認 `Cloudflare R2` 渠道已經出現，并保持啟用。
+
+如果要讓 R2 按容量閾值參與上傳選擇，就打開容量限制，填寫 Account ID、Bucket 名稱、容量上限和閾值後保存。
 
 ![設定容量限制](../../image/upload/cloudflare-r2/配置容量限制.png)
 
-## 檢查方式
+## 新增完成後怎么檢查
 
-| 檢查項目 | 正常狀態 |
-| --- | --- |
-| 後台是否出現渠道 | 上傳設定裡看得到 `Cloudflare R2` |
-| Binding 名稱 | Cloudflare 裡的變數名稱是 `img_r2` |
-| 是否重新部署 | 設定 Binding 後有重新部署 ImgBed |
-| 測試上傳 | 上傳圖片後，R2 Bucket 裡會出現檔案 |
+- 上傳設定里是否出現 `Cloudflare R2` 固定渠道。
+- 渠道卡片是否顯示為啟用。
+- 上傳一個小檔案，返回連結能否正常打開。
+- 如果打開檔案時報 `R2 database binding is not configured`，說明專案運行時沒有拿到 `img_r2` 綁定，需要回 Cloudflare 檢查變量名和重新部署。
 
-如果開啟檔案時出現 `R2 database binding is not configured`，通常代表執行環境沒有拿到 `img_r2` Binding。請檢查變數名稱，並重新部署專案。
+

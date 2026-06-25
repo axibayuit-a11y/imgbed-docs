@@ -1,6 +1,6 @@
 # Redundantní záloha a přepínání zdroje čtení
 
-Redundantní záloha uloží extra kopii už nahraného souboru.
+Redundantní záloha uloží dodatečnou kopii souboru, který už byl nahrán.
 
 Primární soubor i záložní soubor mohou sloužit jako zdroje čtení. Návštěvníci obvykle nepoznají rozdíl. Liší se jen úložný kanál, který soubor obsluhuje.
 
@@ -8,11 +8,11 @@ Primární soubor i záložní soubor mohou sloužit jako zdroje čtení. Návš
 
 | Funkce | Popis |
 | --- | --- |
-| Uložit extra kopii | Zálohuje soubory do jiného upload kanálu a snižuje riziko výpadku jednoho kanálu. |
-| Přepnout zdroj čtení | Po úspěšné záloze přepne čtení mezi primárním a záložním kanálem. |
+| Uložit dodatečnou kopii | Zálohuje soubory do jiného kanálu nahrávání a snižuje riziko selhání jediného kanálu. |
+| Přepnout zdroj čtení | Po úspěšné záloze přepíná čtení souboru mezi primárním kanálem a záložním kanálem. |
 | Záloha jednoho souboru | Zálohuje jeden soubor ze stránky detailu souboru. |
-| Hromadná záloha | Vyberte více souborů v administraci a zálohujte je společně. |
-| Globální redundantní záloha | Zálohuje soubory podle adresáře z Dalších nastavení. |
+| Hromadná záloha | Vybere více souborů v administrační stránce a zálohuje je společně. |
+| Globální redundantní záloha | Zálohuje soubory podle složky z dalších nastavení. |
 
 ## Vstup pro redundantní zálohu
 
@@ -24,42 +24,42 @@ System Settings -> Other Settings -> Redundant Backup
 
 ![Redundantní záloha](../../image/other/冗余备份截图.png)
 
-Tento vstup je vhodný pro přidání záloh adresáři nebo všem souborům hromadně.
+Tento vstup je nejvhodnější pro hromadné přidání záloh ke složce nebo ke všem souborům.
 
 Záložní kanál můžete vybrat ručně, nebo zvolit automatické přepínání a nechat ImgBed najít vhodný záložní kanál.
 
 ## Záloha z detailu souboru
 
-Otevřete detail souboru v administraci a klikněte na zálohu.
+Otevřete stránku detailu souboru v administračním panelu a klikněte na zálohu.
 
 ![Záloha v detailu souboru](../../image/other/文件详情里文件备份.png)
 
-Hodí se to pro okamžité zálohování jednoho důležitého souboru.
+To je nejvhodnější pro zálohování jednoho důležitého souboru na vyžádání.
 
-Po úspěšné záloze detail souboru zobrazí dostupné zdroje čtení.
+Po úspěšné záloze stránka detailu souboru zobrazí dostupné zdroje čtení.
 
 ## Hromadná záloha výběrem
 
-V administraci vyberte více souborů a spusťte hromadnou zálohu.
+V administračním panelu vyberte více souborů a spusťte hromadnou zálohu.
 
 ![Hromadná záloha](../../image/other/批量备份截图.png)
 
-Hodí se to pro zpracování skupiny souborů.
+To je nejvhodnější pro zpracování skupiny souborů.
 
-Záloha z výběru, záloha z detailu souboru a redundantní záloha v Dalších nastaveních používají stejný systém. Jsou to jen různé vstupy.
+Záloha z výběru, záloha z detailu souboru a redundantní záloha v dalších nastaveních používají stejný zálohovací systém. Jsou to jen různé vstupní body.
 
 ## Přepnutí zdroje čtení po záloze
 
-Po dokončení zálohy umožní detail souboru přepnout zdroj čtení:
+Po dokončení zálohy stránka detailu souboru umožní přepnout zdroj čtení:
 
 | Zdroj čtení | Popis |
 | --- | --- |
-| Primární kanál | Čte z původního upload kanálu. |
-| Záložní kanál | Čte z kanálu, kde je redundantní kopie. |
+| Primární kanál | Čte z původního kanálu nahrávání. |
+| Záložní kanál | Čte ze záložního kanálu. |
 
 ![Přepnutí zdroje čtení po záloze](../../image/other/备份成功切换读取源.png)
 
-Návštěvníci nemusí vědět, zda je soubor obsluhovaný z primárního nebo záložního kanálu.
+Návštěvníci nemusí vědět, zda je soubor obsluhován z primárního nebo záložního kanálu.
 
 Zvolený zdroj čtení se stane preferovaným zdrojem pro pozdější přístup k souboru.
 
@@ -70,16 +70,16 @@ Následující situace se při zálohování přeskočí. Nejde o chyby.
 | Situace | Proč se přeskočí |
 | --- | --- |
 | Už je zálohováno | Soubor, který už má zálohu, se nezálohuje znovu. |
-| Primární a záložní kanál jsou stejné | Záloha má smysl jen v jiném kanálu. |
+| Primární a záložní kanál jsou stejné | Aby měla záloha smysl, musí být uložená v jiném kanálu. |
 | Není použitelný záložní kanál | Není dostupný vhodný alternativní kanál. |
 
 Stručně: zálohy musí jít do jiného kanálu a už zálohované soubory znovu nespotřebují další místo.
 
-## Primární a záložní kanál
+## Primární kanál vs. záložní kanál
 
 | Název | Význam |
 | --- | --- |
-| Primární kanál | Kanál použitý při prvním uploadu souboru. |
+| Primární kanál | Kanál použitý při prvním nahrání souboru. |
 | Záložní kanál | Kanál, který ukládá redundantní kopii. |
 | Primární zdroj čtení | Soubor se aktuálně čte z primárního kanálu. |
 | Záložní zdroj čtení | Soubor se aktuálně čte ze záložního kanálu. |

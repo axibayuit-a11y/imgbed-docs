@@ -48,10 +48,10 @@ Questo token è il `Bot Token` da inserire in ImgBed.
 
 ![Visualizza Bot Token](../../image/upload/discord/查看机器人令牌.png)
 
-### 3. Genera un link OAuth2 e installa il bot
+### 3. Genera un collegamento OAuth2 e installa il bot
 
 1. Apri `OAuth2` dalla barra laterale.
-2. Sotto scopes seleziona `bot`.
+2. Nella sezione degli ambiti, seleziona `bot`.
 3. Nell'area permessi abilita:
 
 | Permesso | Obbligatorio |
@@ -108,22 +108,22 @@ Quando hai finito, salva.
 | Scheda canale | Dopo il salvataggio compare una scheda Discord. |
 | Canale abilitabile | L'interruttore Attivo resta acceso. |
 | Configurazione salvata | La vista dettaglio mostra Bot Token e Channel ID salvati. |
-| Upload funzionante | Carica un'immagine di prova e verifica che compaia nel canale testuale Discord. |
+| Caricamento funzionante | Carica un'immagine di prova e verifica che compaia nel canale testuale Discord. |
 
 ## Checklist rapida
 
 ```text
-Crea un server Discord
--> Crea un canale testuale
--> Crea un bot nel Discord Developer Portal
--> Salva il Bot Token dalla pagina Bot
--> In OAuth2 seleziona bot, View Channels, Send Messages, Attach Files e Read Message History
--> Copia l'URL generato e autorizza il bot nel server di destinazione
--> Verifica che il canale testuale conceda gli stessi permessi
--> Abilita Developer Mode
--> Clicca destro sul canale testuale e copia Channel ID
--> Inserisci Bot Token e Channel ID in ImgBed
--> Salva e carica un'immagine di prova
+Create a Discord server
+-> Create a text channel
+-> Create a bot in the Discord Developer Portal
+-> Save the Bot Token from the Bot page
+-> In OAuth2, select bot, View Channels, Send Messages, Attach Files, and Read Message History
+-> Copy the generated URL and authorize the bot for the target server
+-> Make sure the target text channel grants the same permissions
+-> Enable Developer Mode
+-> Right-click the target text channel and copy the Channel ID
+-> Enter the Bot Token and Channel ID in ImgBed
+-> Save and upload a test image
 ```
 
 ## Riferimenti

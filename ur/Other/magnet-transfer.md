@@ -1,97 +1,97 @@
-# Magnet Transfer
+# مگنیٹ منتقلی
 
-Magnet transfer magnet link سے files download کرتا ہے اور انہیں خودکار طور پر آپ کے منتخب کردہ cloud storage channel میں upload کرتا ہے۔
+مگنیٹ منتقلی مگنیٹ لنک سے فائلیں ڈاؤن لوڈ کرتی ہے اور انہیں آپ کے منتخب کردہ کلاؤڈ اسٹوریج چینل پر خودکار طور پر اپ لوڈ کرتی ہے۔
 
-یہ anime episodes، videos، archives، اور ملتی جلتی files transfer کرنے کے لیے useful ہے۔ magnet link paste کریں، ImgBed background download task بناتا ہے۔ download مکمل ہونے کے بعد file ImgBed میں upload ہوتی ہے اور final link upload list میں دکھتا ہے۔
+یہ اینیمی اقساط، ویڈیوز، آرکائیوز اور اسی طرح کی فائلیں منتقل کرنے کے لیے مفید ہے۔ مگنیٹ لنک چسپاں کریں، اور ImgBed پس منظر میں ڈاؤن لوڈ کام بناتا ہے۔ ڈاؤن لوڈ مکمل ہونے کے بعد فائل ImgBed پر اپ لوڈ ہو جاتی ہے اور آخری لنک اپ لوڈ فہرست میں ظاہر ہوتا ہے۔
 
-![Magnet transfer](../../image/other/磁力链接/磁力链接.png)
+![مگنیٹ منتقلی](../../image/other/磁力链接/磁力链接.png)
 
 ## کہاں استعمال کریں
 
-magnet transfer entry homepage upload area میں ہے۔
+مگنیٹ منتقلی کا داخلہ ہوم پیج کے اپ لوڈ علاقے میں ہے۔
 
-magnet link input box میں paste کریں، `Transfer` منتخب کریں، پھر upload کریں۔
+مگنیٹ لنک ان پٹ باکس میں چسپاں کریں، `Transfer` منتخب کریں، پھر اپ لوڈ کریں۔
 
-![Upload anime](../../image/other/磁力链接/上传番剧.png)
+![اینیمی اپ لوڈ](../../image/other/磁力链接/上传番剧.png)
 
-## First Use سے پہلے
+## پہلی بار استعمال سے پہلے
 
-پہلے admin panel میں magnet transfer configure کریں۔
+پہلے ایڈمن پینل میں مگنیٹ منتقلی ترتیب دیں۔
 
-عموماً آپ کو چاہیے:
+عام طور پر آپ کو چاہیے:
 
-1. download task چلانے کے لیے GitHub account۔
-2. cloud upload channel، جیسے Google Drive یا OneDrive۔
-3. target upload directory۔
-4. task timeout۔
+1. ڈاؤن لوڈ کام چلانے کے لیے GitHub اکاؤنٹ۔
+2. Google Drive یا OneDrive جیسا کلاؤڈ اپ لوڈ چینل۔
+3. ہدف اپ لوڈ ڈائریکٹری۔
+4. کام کا ٹائم آؤٹ۔
 
-settings تیار ہونے کے بعد homepage پر واپس جائیں اور magnet link paste کر کے transfer شروع کریں۔
+ترتیبات تیار ہونے کے بعد ہوم پیج پر واپس جائیں اور منتقلی شروع کرنے کے لیے مگنیٹ لنک چسپاں کریں۔
 
-## Magnet Link Upload کرنا
+## مگنیٹ لنک اپ لوڈ کرنا
 
-1. homepage upload box میں magnet link paste کریں۔
-2. confirm کریں کہ mode `Transfer` پر set ہے۔
-3. upload پر کلک کریں۔
-4. ImgBed کے magnet task create کرنے کا انتظار کریں۔
-5. task شروع ہونے کے بعد bottom-right corner میں floating `Magnet Tasks` panel سے progress چیک کریں۔
+1. ہوم پیج کے اپ لوڈ باکس میں مگنیٹ لنک چسپاں کریں۔
+2. یقینی بنائیں کہ موڈ `Transfer` پر سیٹ ہے۔
+3. اپ لوڈ پر کلک کریں۔
+4. ImgBed کے مگنیٹ کام بنانے کا انتظار کریں۔
+5. کام شروع ہونے کے بعد پیش رفت دیکھنے کے لیے نیچے دائیں کونے میں `Magnet Tasks` فلوٹنگ پینل استعمال کریں۔
 
-download اور upload میں وقت لگ سکتا ہے۔ speed magnet resource، GitHub runtime environment، اور selected cloud storage channel پر depend کرتی ہے۔
+ڈاؤن لوڈ اور اپ لوڈ میں وقت لگ سکتا ہے۔ رفتار مگنیٹ ذریعہ، GitHub چلانے کے ماحول اور منتخب کلاؤڈ اسٹوریج چینل پر منحصر ہے۔
 
-![Magnet downloading](../../image/other/磁力链接/磁力链接下载中.png)
+![مگنیٹ ڈاؤن لوڈ ہو رہا ہے](../../image/other/磁力链接/磁力链接下载中.png)
 
-## Completion کے بعد
+## مکمل ہونے کے بعد
 
-task complete ہونے کے بعد upload list file name اور link دکھاتی ہے۔
+کام مکمل ہونے کے بعد اپ لوڈ فہرست فائل نام اور لنک دکھاتی ہے۔
 
-videos video preview دکھاتے ہیں، images image preview دکھاتی ہیں، اور other files regular file icon دکھاتی ہیں۔
+ویڈیوز ویڈیو پیش منظر دکھاتی ہیں، تصاویر تصویر پیش منظر دکھاتی ہیں، اور دوسری فائلیں عام فائل آئیکن دکھاتی ہیں۔
 
-![Downloaded video](../../image/other/磁力链接/下载好后的视频.png)
+![ڈاؤن لوڈ شدہ ویڈیو](../../image/other/磁力链接/下载好后的视频.png)
 
-آپ copy کر سکتے ہیں:
+آپ کاپی کر سکتے ہیں:
 
-| Link Type | Use Case |
+| لنک قسم | استعمال |
 | --- | --- |
-| Original link | direct file access |
-| Markdown | Markdown posts یا notes |
-| HTML | web page code |
-| BBCode | BBCode support کرنے والے forums |
+| اصل لنک | فائل تک براہ راست رسائی |
+| Markdown | Markdown پوسٹس یا نوٹس |
+| HTML | ویب صفحہ کوڈ |
+| BBCode | BBCode کی حمایت کرنے والے فورمز |
 
-## Magnet Task Panel
+## مگنیٹ کام پینل
 
-bottom-right magnet task panel task count، task name، progress، اور final status دکھاتا ہے۔
+نیچے دائیں کونے میں مگنیٹ کام پینل کاموں کی تعداد، کام کا نام، پیش رفت اور آخری حالت دکھاتا ہے۔
 
-Common states:
+عام حالتیں:
 
-| Status | Meaning |
+| حالت | مطلب |
 | --- | --- |
-| Waiting | task create ہو چکا ہے اور run ہونے کا انتظار کر رہا ہے۔ |
-| Downloading | magnet resource download ہو رہا ہے۔ |
-| Uploading | file download ہو چکی ہے اور cloud storage پر upload ہو رہی ہے۔ |
-| Completed | upload کامیاب ہے اور link copy کیا جا سکتا ہے۔ |
-| Failed | task کامیابی سے complete نہیں ہوا۔ message چیک کریں اور دوبارہ کوشش کریں۔ |
+| انتظار | کام بن چکا ہے اور چلنے کا منتظر ہے۔ |
+| ڈاؤن لوڈ ہو رہا ہے | مگنیٹ ذریعہ ڈاؤن لوڈ ہو رہا ہے۔ |
+| اپ لوڈ ہو رہا ہے | فائل ڈاؤن لوڈ ہو چکی ہے اور کلاؤڈ اسٹوریج پر اپ لوڈ ہو رہی ہے۔ |
+| مکمل | اپ لوڈ کامیاب ہے اور لنک کاپی کیا جا سکتا ہے۔ |
+| ناکام | کام کامیابی سے مکمل نہیں ہوا۔ پیغام دیکھیں اور دوبارہ کوشش کریں۔ |
 
-## Tips
+## تجاویز
 
-- اگر magnet link میں multiple files ہوں تو ImgBed display کے لیے main completed file کو prioritize کرتا ہے۔
-- large files زیادہ وقت لیتی ہیں۔ page refresh کرنے سے پہلے task finish ہونے دیں۔
-- اگر magnet resource کے available peers نہ ہوں تو process بہت slow یا fail ہو سکتا ہے۔
-- cloud account quota ختم ہو، authorization expire ہو، یا upload directory غلط ہو تو task fail ہو سکتا ہے۔
-- upload complete ہونے کے بعد video preview چند seconds لے سکتی ہے۔
+- اگر مگنیٹ لنک میں کئی فائلیں ہوں تو ImgBed دکھانے کے لیے مکمل شدہ مرکزی فائل کو ترجیح دیتا ہے۔
+- بڑی فائلوں میں زیادہ وقت لگتا ہے۔ صفحہ تازہ کرنے سے پہلے کام مکمل ہونے کا انتظار کریں۔
+- اگر مگنیٹ ذریعہ کے دستیاب پیئرز نہ ہوں تو یہ بہت سست ہو سکتا ہے یا ناکام ہو سکتا ہے۔
+- اگر کلاؤڈ اکاؤنٹ کا کوٹا ختم ہو، اجازت ختم ہو چکی ہو، یا اپ لوڈ ڈائریکٹری غلط ہو تو کام ناکام ہو سکتا ہے۔
+- ویڈیو پیش منظر اپ لوڈ مکمل ہونے کے بعد چند سیکنڈ لے سکتا ہے۔
 
-## FAQ
+## عام سوالات
 
-### Magnet Link Paste کرنے کے بعد کچھ Start نہیں ہوتا
+### مگنیٹ لنک چسپاں کرنے کے بعد کچھ شروع نہیں ہوتا
 
-confirm کریں کہ admin panel میں magnet transfer enabled ہے اور usable GitHub account / cloud channel selected ہے۔
+تصدیق کریں کہ ایڈمن پینل میں مگنیٹ منتقلی فعال ہے اور قابل استعمال GitHub اکاؤنٹ اور کلاؤڈ چینل منتخب ہیں۔
 
-### Download ہمیشہ Slow ہے
+### ڈاؤن لوڈ ہمیشہ سست ہے
 
-magnet speed resource پر depend کرتی ہے۔ available peers نہ ہوں تو download بہت slow یا impossible ہو سکتا ہے۔
+مگنیٹ کی رفتار خود ذریعہ پر منحصر ہے۔ اگر دستیاب پیئرز نہ ہوں تو ڈاؤن لوڈ بہت سست یا ناممکن ہو سکتا ہے۔
 
-### Upload کے بعد Preview نہیں آتا
+### اپ لوڈ کے بعد پیش منظر نہیں آتا
 
-پہلے confirm کریں کہ file link کھلتا ہے۔ video files browser میں load ہونے کے لیے تھوڑا وقت لے سکتی ہیں، یا آپ link directly کھول سکتے ہیں۔
+پہلے تصدیق کریں کہ فائل لنک کھلتا ہے۔ ویڈیو فائلوں کو براؤزر میں لوڈ ہونے کے لیے تھوڑا وقت لگ سکتا ہے، یا آپ لنک براہ راست کھول سکتے ہیں۔
 
-### Task Fail ہو تو کیا چیک کریں؟
+### کام ناکام ہو تو کیا چیک کریں؟
 
-magnet link valid ہے یا نہیں، cloud channel کام کر رہا ہے یا نہیں، اور upload directory درست ہے یا نہیں چیک کریں۔ پھر task دوبارہ submit کریں۔
+چیک کریں کہ مگنیٹ لنک درست ہے، کلاؤڈ چینل کام کر رہا ہے، اور اپ لوڈ ڈائریکٹری درست ہے۔ پھر کام دوبارہ جمع کریں۔

@@ -1,10 +1,10 @@
-# IP Geolocation နှင့် User Management
+# IP တည်နေရာခန့်မှန်းခြင်းနှင့် အသုံးပြုသူစီမံခန့်ခွဲမှု
 
-IP geolocation က uploader records, login devices နဲ့ logs ဆင်တူတွေထဲက IP addresses တွေကို approximate locations အဖြစ်ပြောင်းပေးပါတယ်။
+IP တည်နေရာခန့်မှန်းခြင်းသည် အပ်လုဒ်တင်သူမှတ်တမ်းများ၊ ဝင်ရောက်သုံးစွဲသောစက်များနှင့် အလားတူမှတ်တမ်းများထဲရှိ IP လိပ်စာများကို ခန့်မှန်းတည်နေရာများအဖြစ် ပြောင်းပေးသည်။
 
-configure ပြီးနောက် admin panel က upload နဲ့ access origins တွေကိုပိုရှင်းရှင်းပြနိုင်ပါတယ်။ User Management ကလည်း suspicious IP addresses အတွက် upload access ကို block သို့မဟုတ် restore လုပ်နိုင်စေပါတယ်။
+သတ်မှတ်ပြီးနောက် စီမံခန့်ခွဲရေးပန်နယ်တွင် အပ်လုဒ်တင်သည့်ရင်းမြစ်နှင့် ဝင်ရောက်သုံးစွဲသည့်ရင်းမြစ်များကို ပိုမိုရှင်းလင်းစွာ မြင်နိုင်သည်။ အသုံးပြုသူစီမံခန့်ခွဲမှုမှလည်း သံသယဖြစ်ဖွယ် IP လိပ်စာများအတွက် အပ်လုဒ်တင်ခွင့်ကို ပိတ်ဆို့ခြင်း သို့မဟုတ် ပြန်လည်ဖွင့်ခြင်း ပြုလုပ်နိုင်သည်။
 
-## ဘယ်နေရာမှာ Configure လုပ်မလဲ
+## မည်သည့်နေရာတွင် သတ်မှတ်ရမည်နည်း
 
 ဖွင့်ပါ:
 
@@ -12,163 +12,163 @@ configure ပြီးနောက် admin panel က upload နဲ့ access or
 System Settings -> Other Settings -> IP Geolocation
 ```
 
-![IP geolocation](../../image/other/ip定位/ip定位.png)
+![IP တည်နေရာခန့်မှန်းခြင်း](../../image/other/ip定位/ip定位.png)
 
-## Available Settings
+## ရနိုင်သော ဆက်တင်များ
 
-IP geolocation flow အသစ်က map service တစ်ခုတည်းပေါ်မမှီခိုဘဲ sources အများကြီး support လုပ်ပါတယ်။
+IP တည်နေရာခန့်မှန်းခြင်း လုပ်ငန်းစဉ်အသစ်သည် မြေပုံဝန်ဆောင်မှုတစ်ခုတည်းကိုသာ မမှီခိုတော့ဘဲ ရင်းမြစ်များစွာကို ထောက်ပံ့သည်။
 
-| Setting | Purpose |
+| ဆက်တင် | ရည်ရွယ်ချက် |
 | --- | --- |
-| IP geolocation language | display language ရွေးရန်၊ ဥပမာ English, Simplified Chinese, Japanese, French စသည်။ |
-| MaxMind Account ID | MaxMind GeoLite Web Service အတွက် MaxMind account ID။ |
-| MaxMind License Key | MaxMind License Key။ |
-| Tencent Map Key | Tencent Location Service key။ Chinese addresses နဲ့ mainland China IPs အတွက်အသုံးဝင်သည်။ |
-| ipapi Key | APILayer ipapi key။ multilingual IP geolocation support လုပ်သည်။ |
+| IP တည်နေရာ ဘာသာစကား | အင်္ဂလိပ်၊ တရုတ်ရိုးရှင်း၊ ဂျပန်၊ ပြင်သစ် စသည်ဖြင့် ပြသမည့်ဘာသာစကားကို ရွေးသည်။ |
+| MaxMind Account ID | MaxMind GeoLite Web Service အတွက် MaxMind အကောင့် ID။ |
+| MaxMind License Key | MaxMind ၏ License Key။ |
+| Tencent Map Key | Tencent Location Service ၏ ကီး။ တရုတ်လိပ်စာများနှင့် တရုတ်ပြည်မ IP များအတွက် အသုံးဝင်သည်။ |
+| ipapi Key | APILayer ipapi key။ ဘာသာစကားအများအပြားဖြင့် IP တည်နေရာခန့်မှန်းခြင်းကို ထောက်ပံ့သည်။ |
 
-လိုအပ်တဲ့ services တွေကိုသာဖြည့်ပါ။ field အားလုံး configure လုပ်ဖို့မလိုပါ။
+လိုအပ်သော ဝန်ဆောင်မှုများကိုသာ ဖြည့်ပါ။ အကွက်အားလုံးကို သတ်မှတ်ရန် မလိုပါ။
 
-key မထည့်လည်း ImgBed က built-in free sources တွေကိုကြိုးစားသုံးပါမယ်။ ဒါပေမယ့် stability, language support, precision က သင်ကိုယ်တိုင် configure လုပ်ထားတဲ့ service ထက်နည်းနိုင်ပါတယ်။
+key မထည့်ထားပါက ImgBed သည် ပါရှိပြီးသား အခမဲ့ရင်းမြစ်များကို ဆက်လက်စမ်းသုံးမည်ဖြစ်သော်လည်း တည်ငြိမ်မှု၊ ဘာသာစကားထောက်ပံ့မှုနှင့် တိကျမှုသည် သင်ကိုယ်တိုင် သတ်မှတ်ထားသော ဝန်ဆောင်မှုထက် နိမ့်နိုင်သည်။
 
-## Recommended Choices
+## အကြံပြု ရွေးချယ်မှုများ
 
-Chinese addresses အဓိကလိုလျှင်:
+အဓိကအားဖြင့် တရုတ်လိပ်စာများ လိုအပ်ပါက:
 
-1. IP geolocation language ကို Simplified Chinese ထားပါ။
-2. Tencent Map Key configure လုပ်ပါ။
-3. optional အနေနဲ့ MaxMind သို့မဟုတ် ipapi ကို fallback source အဖြစ်ထည့်ပါ။
+1. IP တည်နေရာ ဘာသာစကားကို တရုတ်ရိုးရှင်းအဖြစ် သတ်မှတ်ပါ။
+2. Tencent Map Key ကို သတ်မှတ်ပါ။
+3. လိုအပ်ပါက MaxMind သို့မဟုတ် ipapi ကို အရန်ရင်းမြစ်အဖြစ် ထည့်ပါ။
 
-English သို့မဟုတ် multilingual addresses အဓိကလိုလျှင်:
+အဓိကအားဖြင့် အင်္ဂလိပ် သို့မဟုတ် ဘာသာစကားအများအပြားဖြင့် လိပ်စာများ လိုအပ်ပါက:
 
-1. လိုအပ်တဲ့ language ရွေးပါ။
-2. MaxMind Account ID နဲ့ License Key configure လုပ်ပါ။
-3. multilingual results ပိုကောင်းချင်လျှင် ipapi Key ထည့်ပါ။
+1. လိုအပ်သော ဘာသာစကားကို ရွေးပါ။
+2. MaxMind Account ID နှင့် License Key ကို သတ်မှတ်ပါ။
+3. ပိုကောင်းသော ဘာသာစကားအများအပြားရလဒ်များ လိုအပ်ပါက ipapi Key ကို ထည့်ပါ။
 
-## MaxMind Setup
+## MaxMind သတ်မှတ်ခြင်း
 
-MaxMind အတွက်လိုအပ်တာ:
+MaxMind အတွက် အောက်ပါတို့ လိုအပ်သည်:
 
 ```text
 MaxMind Account ID
 MaxMind License Key
 ```
 
-MaxMind dashboard မှာ account ID ရှာပြီး License Keys page မှ License Key generate လုပ်ပါ။
+MaxMind ဒက်ရှ်ဘုတ်တွင် အကောင့် ID ကို ရှာပြီး License Keys စာမျက်နှာမှ License Key ကို ဖန်တီးပါ။
 
-![MaxMind key config](../../image/other/ip定位/maxmind的key配置.png)
+![MaxMind key သတ်မှတ်မှု](../../image/other/ip定位/maxmind的key配置.png)
 
-generation ပြီးနောက် Account ID နဲ့ License Key ကို ImgBed ထဲ paste လုပ်ပြီး save လုပ်ပါ။
+ဖန်တီးပြီးနောက် Account ID နှင့် License Key ကို ImgBed ထဲသို့ ထည့်ပြီး သိမ်းပါ။
 
-MaxMind free plan ကနေ့စဉ်အသုံးအတွက်သင့်တော်ပေမယ့် request limits ရှိပါတယ်။ quota ကျော်လျှင် ImgBed က အခြား available sources တွေကိုဆက်ကြိုးစားပါမယ်။
+MaxMind ၏ အခမဲ့အစီအစဉ်သည် နေ့စဉ်အသုံးပြုရန် သင့်တော်သော်လည်း တောင်းဆိုမှုအကြိမ်ရေ ကန့်သတ်ချက်ရှိသည်။ ခွဲတမ်းကျော်သွားပါက ImgBed သည် ရရှိနိုင်သော အခြားရင်းမြစ်များကို ဆက်လက်စမ်းသုံးမည်။
 
-## ipapi Setup
+## ipapi သတ်မှတ်ခြင်း
 
-ipapi က APILayer API Key ကိုသုံးပါတယ်။
+ipapi သည် APILayer API Key ကို အသုံးပြုသည်။
 
-ipapi console ကိုဖွင့်ပြီး ပြထားတဲ့ API Key ကို copy လုပ်ပါ။
+ipapi ကွန်ဆိုးလ်ကို ဖွင့်ပြီး ထိုနေရာတွင် ပြထားသော API Key ကို ကူးယူပါ။
 
-![ipapi config](../../image/other/ip定位/ipapi配置.png)
+![ipapi သတ်မှတ်မှု](../../image/other/ip定位/ipapi配置.png)
 
-ImgBed ထဲက `ipapi Key` field မှာ paste လုပ်ပြီး save လုပ်ပါ။
+၎င်းကို ImgBed ထဲရှိ `ipapi Key` အကွက်သို့ ထည့်ပြီး သိမ်းပါ။
 
-ipapi က multilingual IP geolocation ကို support လုပ်ပြီး selected language နဲ့ addresses ပြချင်တဲ့အခါအသုံးဝင်ပါတယ်။ free plan မှာလည်း request limits ရှိပါတယ်။ quota ကုန်လျှင် ImgBed က အခြား available sources တွေကိုဆက်ကြိုးစားပါမယ်။
+ipapi သည် ဘာသာစကားအများအပြားဖြင့် IP တည်နေရာခန့်မှန်းခြင်းကို ထောက်ပံ့ပြီး ရွေးထားသောဘာသာစကားဖြင့် လိပ်စာများ ပြလိုသည့်အခါ အသုံးဝင်သည်။ ၎င်း၏ အခမဲ့အစီအစဉ်တွင်လည်း တောင်းဆိုမှုအကြိမ်ရေ ကန့်သတ်ချက်ရှိသည်။ ခွဲတမ်းကုန်သွားပါက ImgBed သည် ရရှိနိုင်သော အခြားရင်းမြစ်များကို ဆက်လက်စမ်းသုံးမည်။
 
-## Tencent Map Key Setup
+## Tencent Map Key သတ်မှတ်ခြင်း
 
-Tencent Map Key က Chinese addresses၊ အထူးသဖြင့် mainland China IPs အတွက်အသုံးဝင်ပါတယ်။
+Tencent Map Key သည် တရုတ်လိပ်စာများ၊ အထူးသဖြင့် တရုတ်ပြည်မ IP များအတွက် အသုံးဝင်သည်။
 
-Tencent Location Service မှာ key ဖန်တီးတဲ့အခါ enable လုပ်ပါ:
+Tencent Location Service တွင် ကီး ဖန်တီးသောအခါ အောက်ပါတို့ကို ဖွင့်ပါ:
 
 ```text
 WebServiceAPI
 ```
 
-ဖန်တီးပြီးနောက် key ကို `Tencent Map Key` ထဲ paste လုပ်ပြီး save လုပ်ပါ။
+ဖန်တီးပြီးနောက် key ကို `Tencent Map Key` ထဲသို့ ထည့်ပြီး သိမ်းပါ။
 
-basic Chinese IP geolocation ပဲလိုလျှင် Tencent Map Key ကစဖို့လုံလောက်ပါတယ်။
+အခြေခံ တရုတ် IP တည်နေရာခန့်မှန်းခြင်းသာ လိုအပ်ပါက Tencent Map Key သည် စတင်အသုံးပြုရန် လုံလောက်သည်။
 
-## User Management မှာ ဘာတွေစစ်မလဲ
+## အသုံးပြုသူစီမံခန့်ခွဲမှုတွင် စစ်ဆေးရမည့်အရာများ
 
-User Management ကို admin panel အပေါ်ပိုင်းကနေဖွင့်နိုင်ပါတယ်။
+အသုံးပြုသူစီမံခန့်ခွဲမှုကို စီမံခန့်ခွဲရေးပန်နယ်၏ အပေါ်ပိုင်းမှ အသုံးပြုနိုင်သည်။
 
-![User management](../../image/other/用户管理显示.png)
+![အသုံးပြုသူစီမံခန့်ခွဲမှု](../../image/other/用户管理显示.png)
 
-User Management က IP အလိုက် upload activity ကိုပြပါတယ်:
+အသုံးပြုသူစီမံခန့်ခွဲမှုသည် IP အလိုက် အပ်လုဒ်လုပ်ဆောင်ချက်ကို ပြသသည်။
 
-| Field | Description |
+| အကွက် | ဖော်ပြချက် |
 | --- | --- |
-| IP source | uploader source IP။ |
-| Address | IP မှ resolve လုပ်ထားတဲ့ approximate location။ |
-| Total upload size | ဒီ IP မှ upload လုပ်ထားတဲ့ total file size။ |
-| Upload count | ဒီ IP မှ upload အရေအတွက်။ |
-| Upload allowed | On ဆို uploads allowed ဖြစ်သည်။ Off ဆို uploads blocked ဖြစ်သည်။ |
+| IP ရင်းမြစ် | အပ်လုဒ်တင်သူ၏ ရင်းမြစ် IP။ |
+| လိပ်စာ | IP မှ ဖြေရှင်းထားသော ခန့်မှန်းတည်နေရာ။ |
+| အပ်လုဒ်စုစုပေါင်းအရွယ်အစား | ဤ IP မှ အပ်လုဒ်တင်ထားသော ဖိုင်စုစုပေါင်းအရွယ်အစား။ |
+| အပ်လုဒ်အကြိမ်ရေ | ဤ IP မှ အပ်လုဒ်တင်ခဲ့သည့် အကြိမ်ရေ။ |
+| အပ်လုဒ်ခွင့်ပြုမှု | ဖွင့်ထားပါက အပ်လုဒ်ခွင့်ပြုထားသည်။ ပိတ်ထားပါက အပ်လုဒ်ပိတ်ဆို့ထားသည်။ |
 
-ဘယ်ဘက် arrow ကိုနှိပ်ပြီး အဲဒီ IP မှ uploaded files list ကို expand လုပ်ပါ။
+ဘယ်ဘက်ရှိ မြှားကို နှိပ်၍ ထို IP မှ အပ်လုဒ်တင်ထားသော ဖိုင်စာရင်းကို ချဲ့ကြည့်ပါ။
 
-file list မှာ file name, preview, file size, moderation result, file status, upload time တို့ကိုပြပါတယ်။ uploads တွေ suspicious ဖြစ်လျှင် IP ကိုအရင် expand လုပ်ပြီး files တွေ review လုပ်ကာ နောက်ထပ် uploads block လုပ်မလားဆုံးဖြတ်ပါ။
+ဖိုင်စာရင်းတွင် ဖိုင်အမည်၊ အစမ်းကြည့်ပုံ၊ ဖိုင်အရွယ်အစား၊ စစ်ဆေးမှုရလဒ်၊ ဖိုင်အခြေအနေနှင့် အပ်လုဒ်တင်ချိန်တို့ကို ပြသည်။ အပ်လုဒ်များ သံသယဖြစ်ဖွယ် ဖြစ်ပါက IP ကို အရင်ချဲ့ကြည့်ပြီး ဖိုင်များကို စစ်ဆေးပါ။ ထို့နောက် နောက်ထပ်အပ်လုဒ်များကို ပိတ်ဆို့မည်ရှိမရှိ ဆုံးဖြတ်ပါ။
 
-IP တစ်ခု suspicious ဖြစ်လျှင် `Upload allowed` ကို off လုပ်ပါ။ အဲဒီ IP မှ future uploads တွေ blocked ဖြစ်ပါမယ်။
+IP တစ်ခု သံသယဖြစ်ဖွယ် ဖြစ်ပါက `Upload allowed` ကို ပိတ်ပါ။ ထို IP မှ နောင်လာမည့် အပ်လုဒ်များကို ပိတ်ဆို့မည်။
 
-## Search, Sort, Advanced Filters
+## ရှာဖွေခြင်း၊ စီခြင်းနှင့် အဆင့်မြင့်စစ်ထုတ်မှုများ
 
-User Management အပေါ်ပိုင်းမှာ IP source သို့မဟုတ် address နဲ့ search လုပ်နိုင်ပါတယ်။
+အသုံးပြုသူစီမံခန့်ခွဲမှု၏ အပေါ်ပိုင်းတွင် IP ရင်းမြစ် သို့မဟုတ် လိပ်စာဖြင့် ရှာဖွေနိုင်သည်။
 
-recent uploaders, high-frequency uploaders, high-usage IPs ကိုရှာဖို့ time, upload count, total upload size နဲ့ sort လုပ်ပါ။
+မကြာသေးမီက အပ်လုဒ်တင်သူများ၊ အကြိမ်ရေမြင့် အပ်လုဒ်တင်သူများ သို့မဟုတ် အသုံးပြုမှုများသော IP များကို ရှာရန် အချိန်၊ အပ်လုဒ်အကြိမ်ရေ သို့မဟုတ် အပ်လုဒ်စုစုပေါင်းအရွယ်အစားအလိုက် စီပါ။
 
-ပိုပြီးအသေးစိတ်စစ်ဖို့ advanced filters ကိုဖွင့်ပါ။
+ပိုမိုနက်ရှိုင်းစွာ စစ်ဆေးရန် အဆင့်မြင့်စစ်ထုတ်မှုများကို ဖွင့်ပါ။
 
-![Advanced filters](../../image/other/用户管理高级筛选.png)
+![အဆင့်မြင့်စစ်ထုတ်မှုများ](../../image/other/用户管理高级筛选.png)
 
-Advanced filters က support လုပ်တာတွေ:
+အဆင့်မြင့်စစ်ထုတ်မှုများသည် အောက်ပါတို့ကို ထောက်ပံ့သည်။
 
-| Filter | Usage |
+| စစ်ထုတ်မှု | အသုံးပြုပုံ |
 | --- | --- |
-| Time range | selected period အတွင်း files upload လုပ်ခဲ့တဲ့ IPs ပြသည်။ |
-| Access status | normal, blocked နဲ့ states ဆင်တူများအလိုက် filter လုပ်သည်။ |
-| Allow/block list | allowlist, blocklist, unset အလိုက် filter လုပ်သည်။ |
-| File type | images, videos, audio, documents, code, other files upload လုပ်ခဲ့တဲ့ IPs ပြသည်။ |
-| File size | uploaded file size range အလိုက် filter လုပ်သည်။ |
-| Age rating | unset, General, R12+, R16+, R18 စတဲ့ ratings အလိုက် filter လုပ်သည်။ |
-| File status | abnormal files စစ်ရန် current file status အလိုက် filter လုပ်သည်။ |
+| အချိန်အပိုင်းအခြား | ရွေးထားသောကာလအတွင်း ဖိုင်များ အပ်လုဒ်တင်ခဲ့သော IP များကို ပြသည်။ |
+| ဝင်ရောက်မှုအခြေအနေ | ပုံမှန်၊ ပိတ်ဆို့ထားသောနှင့် အလားတူအခြေအနေများအလိုက် စစ်ထုတ်သည်။ |
+| ခွင့်ပြုစာရင်း/ပိတ်စာရင်း | ခွင့်ပြုစာရင်း၊ ပိတ်စာရင်း သို့မဟုတ် မသတ်မှတ်ထားသောအခြေအနေအလိုက် စစ်ထုတ်သည်။ |
+| ဖိုင်အမျိုးအစား | ပုံ၊ ဗီဒီယို၊ အသံ၊ စာရွက်စာတမ်း၊ ကုဒ် သို့မဟုတ် အခြားဖိုင်များ အပ်လုဒ်တင်ခဲ့သော IP များကို ပြသည်။ |
+| ဖိုင်အရွယ်အစား | အပ်လုဒ်တင်ထားသော ဖိုင်အရွယ်အစားအပိုင်းအခြားအလိုက် စစ်ထုတ်သည်။ |
+| အသက်အဆင့်သတ်မှတ်ချက် | မသတ်မှတ်ထားသော၊ General၊ R12+၊ R16+၊ R18 နှင့် အလားတူအဆင့်များအလိုက် စစ်ထုတ်သည်။ |
+| ဖိုင်အခြေအနေ | မမှန်ကန်သောဖိုင်များကို စစ်ဆေးရန် လက်ရှိဖိုင်အခြေအနေအလိုက် စစ်ထုတ်သည်။ |
 
-filter apply လုပ်ရန် `Apply Filters` ကိုနှိပ်ပါ။ data အားလုံးကိုပြန်ကြည့်ရန် `Reset` ကိုသုံးပါ။
+အသုံးပြုရန် `Apply Filters` ကို နှိပ်ပါ။ ဒေတာအားလုံးသို့ ပြန်သွားရန် `Reset` ကို အသုံးပြုပါ။
 
-## Mobile View
+## မိုဘိုင်းမြင်ကွင်း
 
-mobile မှာ User Management က card layout အဖြစ်ပြောင်းပါတယ်။
+မိုဘိုင်းတွင် အသုံးပြုသူစီမံခန့်ခွဲမှုသည် ကတ်ပုံစံသို့ ပြောင်းသည်။
 
-![Mobile user management](../../image/other/手机端显示用户管理效果.png)
+![မိုဘိုင်း အသုံးပြုသူစီမံခန့်ခွဲမှု](../../image/other/手机端显示用户管理效果.png)
 
-card တစ်ခုစီမှာ IP, address, total upload size, upload count, upload allowed switch တို့ကိုပြပါတယ်။ horizontal table scrolling မလိုဘဲ users manage လုပ်နိုင်ပါတယ်။
+ကတ်တစ်ခုစီတွင် IP၊ လိပ်စာ၊ အပ်လုဒ်စုစုပေါင်းအရွယ်အစား၊ အပ်လုဒ်အကြိမ်ရေနှင့် အပ်လုဒ်ခွင့်ပြုမှုခလုတ်ကို ပြသည်။ ဇယားကို ဘေးတိုက်လှိမ့်ရန် မလိုဘဲ အသုံးပြုသူများကို စီမံနိုင်သည်။
 
-## Location မှားနေသလိုမြင်ရင်
+## တည်နေရာ မှားနေသည်ဟု ထင်ပါက
 
-IP geolocation က approximate ဖြစ်ပါတယ်။ precise street address မဟုတ်ပါ။
+IP တည်နေရာခန့်မှန်းခြင်းသည် ခန့်မှန်းတည်နေရာသာ ဖြစ်သည်။ တိကျသော လမ်းလိပ်စာ မဟုတ်ပါ။
 
-user က proxy, data center, cloud server, cross-border network အနောက်မှာရှိလျှင် ပြထားတဲ့ location က real location နဲ့ကွာနိုင်ပါတယ်။
+အသုံးပြုသူသည် proxy၊ ဒေတာစင်တာ၊ cloud server သို့မဟုတ် နိုင်ငံဖြတ်ကျော်ကွန်ရက်နောက်ကွယ်တွင် ရှိပါက ပြသထားသောတည်နေရာသည် အမှန်တကယ်တည်နေရာနှင့် ကွာခြားနိုင်သည်။
 
-ဒီ feature ကို rough origin နားလည်ဖို့၊ abnormal uploads ရှာဖို့၊ blocking decisions အတွက်ကူညီဖို့သုံးပါ။ precise tracking အဖြစ်မယူဆပါနှင့်။
+ဤလုပ်ဆောင်ချက်ကို မူလရင်းမြစ်ကို အကြမ်းဖျင်း နားလည်ရန်၊ မမှန်ကန်သောအပ်လုဒ်များကို ရှာရန်နှင့် ပိတ်ဆို့မှုဆုံးဖြတ်ချက်များတွင် အကူအညီဖြစ်စေရန် အသုံးပြုပါ။ ၎င်းကို တိကျသောခြေရာခံကိရိယာအဖြစ် မယူဆပါနှင့်။
 
-## Common Cases
+## တွေ့ရလေ့ရှိသော အခြေအနေများ
 
-| Case | Meaning |
+| အခြေအနေ | အဓိပ္ပါယ် |
 | --- | --- |
-| Address ဗလာ | IP မ resolve လုပ်ရသေးတာ သို့မဟုတ် current source unavailable ဖြစ်နိုင်သည်။ |
-| Address language မှား | IP geolocation language နဲ့ အဲဒီ language support လုပ်တဲ့ source configured ဖြစ်လားစစ်ပါ။ |
-| Address က data center ပြသည် | proxies, cloud servers, crawlers အများအပြားက data center သို့မဟုတ် ISP addresses အနေနဲ့ပေါ်နိုင်သည်။ |
-| Upload count မြင့် | ဒီ IP ကိုဂရုတစိုက် review လုပ်ပြီးလိုအပ်လျှင် uploads block လုပ်ပါ။ |
-| Total upload size ကြီး | sort/filter လုပ်ပါ၊ IP expand လုပ်ပါ၊ specific files စစ်ပါ။ |
-| blocking ပြီးနောက် restore လို | `Upload allowed` ကိုပြန် on လုပ်ပါ။ |
+| လိပ်စာ အလွတ် | IP ကို မဖြေရှင်းရသေးနိုင်သည် သို့မဟုတ် လက်ရှိရင်းမြစ်သည် ယာယီမရနိုင်ပါ။ |
+| လိပ်စာဘာသာစကား မှားနေသည် | IP တည်နေရာ ဘာသာစကားနှင့် ထိုဘာသာစကားကို ထောက်ပံ့သောရင်းမြစ် သတ်မှတ်ထားရှိမရှိ စစ်ဆေးပါ။ |
+| လိပ်စာသည် ဒေတာစင်တာကို ပြသည် | proxy၊ cloud server နှင့် crawler အများအပြားသည် ဒေတာစင်တာ သို့မဟုတ် ISP လိပ်စာများအဖြစ် ပေါ်နိုင်သည်။ |
+| အပ်လုဒ်အကြိမ်ရေ မြင့်သည် | ဤ IP ကို ဂရုတစိုက် စစ်ဆေးပြီး လိုအပ်ပါက အပ်လုဒ်များကို ပိတ်ဆို့ပါ။ |
+| အပ်လုဒ်စုစုပေါင်းအရွယ်အစား ကြီးသည် | စီခြင်း သို့မဟုတ် စစ်ထုတ်ခြင်း ပြုလုပ်ပါ။ IP ကို ချဲ့ပြီး သက်ဆိုင်ရာဖိုင်များကို စစ်ဆေးပါ။ |
+| ပိတ်ဆို့ပြီးနောက် ပြန်ဖွင့်ရန် လိုသည် | `Upload allowed` ကို ပြန်ဖွင့်ပါ။ |
 
-## Quick Flow
+## အမြန်လုပ်ငန်းစဉ်
 
 ```text
-Other Settings ထဲက IP Geolocation ဖွင့်ပါ
--> IP geolocation language ရွေးပါ
--> လိုအပ်သလို MaxMind, Tencent Map, ipapi credentials ဖြည့်ပါ
--> settings save လုပ်ပါ
--> User Management ဖွင့်ပါ
--> IP source, address, total upload size, upload count review လုပ်ပါ
--> abnormal IPs ရှာဖို့ search, sort, advanced filters သုံးပါ
--> လိုအပ်သလို uploads allow/block လုပ်ပါ
+Open IP Geolocation in Other Settings
+-> Choose IP geolocation language
+-> Fill MaxMind, Tencent Map, or ipapi credentials as needed
+-> Save settings
+-> Open User Management
+-> Review IP source, address, total upload size, and upload count
+-> Use search, sort, or advanced filters to find abnormal IPs
+-> Allow or block uploads as needed
 ```

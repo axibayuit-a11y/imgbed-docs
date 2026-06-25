@@ -105,15 +105,15 @@ Po zakończeniu kliknij Zapisz.
 ## Szybka lista
 
 ```text
-Utwórz bota przez @BotFather
--> Zapisz Bot Token
--> Utwórz kanał Telegram
--> Dodaj bota do kanału i nadaj uprawnienia administratora
--> Wyszukaj @userinfobot i wybierz Channel
--> Przekaż dowolną wiadomość z kanału do @userinfobot
--> Skopiuj zwrócone Id: -100...
--> Wpisz Bot Token i Chat ID w ImgBed
--> Zapisz i prześlij obraz testowy
+Create a bot with @BotFather
+-> Save the Bot Token
+-> Create a Telegram channel
+-> Add the bot to the channel and grant administrator permissions
+-> Search for @userinfobot and choose Channel
+-> Forward any message from the channel to @userinfobot
+-> Copy the returned Id: -100...
+-> Enter the Bot Token and Chat ID in ImgBed
+-> Save and upload a test image
 ```
 
 ## Referencje

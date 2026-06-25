@@ -1,8 +1,8 @@
 # Geolokalizacja IP i zarządzanie użytkownikami
 
-Geolokalizacja IP zamienia adresy IP w rekordach uploaderów, urządzeniach logowania i podobnych logach na przybliżone lokalizacje.
+Geolokalizacja IP zamienia adresy IP w rekordach osób przesyłających pliki, urządzeniach logowania i podobnych logach na przybliżone lokalizacje.
 
-Po konfiguracji panel administracyjny może czytelniej pokazywać źródła uploadów i dostępu. Zarządzanie użytkownikami pozwala też blokować lub przywracać upload dla podejrzanych adresów IP.
+Po konfiguracji panel administracyjny może czytelniej pokazywać źródła przesyłania i dostępu. Zarządzanie użytkownikami pozwala też blokować lub przywracać możliwość przesyłania dla podejrzanych adresów IP.
 
 ## Gdzie skonfigurować
 
@@ -21,12 +21,12 @@ Nowszy przepływ geolokalizacji IP obsługuje wiele źródeł zamiast polegać n
 | Ustawienie | Cel |
 | --- | --- |
 | Język geolokalizacji IP | Wybiera język wyświetlania, np. angielski, chiński uproszczony, japoński, francuski i inne. |
-| MaxMind Account ID | Account ID MaxMind dla MaxMind GeoLite Web Service. |
-| MaxMind License Key | License Key MaxMind. |
+| MaxMind Account ID | Identyfikator konta MaxMind dla MaxMind GeoLite Web Service. |
+| MaxMind License Key | Klucz licencyjny MaxMind. |
 | Tencent Map Key | Klucz Tencent Location Service. Przydatny dla chińskich adresów i IP z kontynentalnych Chin. |
 | ipapi Key | Klucz APILayer ipapi. Obsługuje wielojęzyczną geolokalizację IP. |
 
-Wypełnij tylko usługi, których potrzebujesz. Nie trzeba konfigurować każdego pola.
+Wypełnij dane tylko dla usług, których potrzebujesz. Nie trzeba konfigurować każdego pola.
 
 Jeśli nie podasz żadnego klucza, ImgBed nadal spróbuje wbudowanych darmowych źródeł, ale stabilność, obsługa języków i dokładność mogą być niższe niż przy usłudze skonfigurowanej samodzielnie.
 
@@ -53,7 +53,7 @@ MaxMind Account ID
 MaxMind License Key
 ```
 
-Znajdź Account ID w panelu MaxMind i wygeneruj License Key na stronie License Keys.
+Znajdź identyfikator konta w panelu MaxMind i wygeneruj License Key na stronie License Keys.
 
 ![Konfiguracja klucza MaxMind](../../image/other/ip定位/maxmind的key配置.png)
 
@@ -63,9 +63,9 @@ Darmowy plan MaxMind nadaje się do codziennego użycia, ale ma limity zapytań.
 
 ## Konfiguracja ipapi
 
-ipapi używa API Key APILayer.
+ipapi używa klucza API APILayer.
 
-Otwórz konsolę ipapi i skopiuj widoczny tam API Key.
+Otwórz konsolę ipapi i skopiuj widoczny tam klucz API.
 
 ![Konfiguracja ipapi](../../image/other/ip定位/ipapi配置.png)
 
@@ -93,27 +93,27 @@ Zarządzanie użytkownikami jest dostępne u góry panelu administracyjnego.
 
 ![Zarządzanie użytkownikami](../../image/other/用户管理显示.png)
 
-Pokazuje aktywność uploadu według IP:
+Zarządzanie użytkownikami pokazuje aktywność przesyłania według adresu IP:
 
 | Pole | Opis |
 | --- | --- |
 | Źródło IP | Adres IP osoby przesyłającej. |
 | Adres | Przybliżona lokalizacja ustalona z IP. |
-| Łączny rozmiar uploadu | Łączny rozmiar plików przesłanych z tego IP. |
-| Liczba uploadów | Liczba uploadów z tego IP. |
-| Upload dozwolony | Włączone oznacza upload dozwolony. Wyłączone oznacza upload zablokowany. |
+| Łączny rozmiar przesłanych plików | Łączny rozmiar plików przesłanych z tego adresu IP. |
+| Liczba przesłań | Liczba przesłań z tego adresu IP. |
+| Przesyłanie dozwolone | Włączone oznacza, że przesyłanie jest dozwolone. Wyłączone oznacza, że przesyłanie jest zablokowane. |
 
 Kliknij strzałkę po lewej, aby rozwinąć listę plików przesłanych z tego IP.
 
-Lista plików pokazuje nazwę, podgląd, rozmiar, wynik moderacji, status pliku i czas uploadu. Gdy uploady wyglądają podejrzanie, najpierw rozwiń IP, przejrzyj pliki, a potem zdecyduj, czy blokować dalsze uploady.
+Lista plików pokazuje nazwę, podgląd, rozmiar, wynik moderacji, status pliku i czas przesłania. Gdy przesłania wyglądają podejrzanie, najpierw rozwiń wpis IP, przejrzyj pliki, a potem zdecyduj, czy blokować dalsze przesyłanie.
 
-Jeśli IP jest podejrzany, wyłącz `Upload allowed`. Przyszłe uploady z tego IP będą blokowane.
+Jeśli adres IP jest podejrzany, wyłącz `Upload allowed`. Przyszłe przesłania z tego adresu IP będą blokowane.
 
 ## Wyszukiwanie, sortowanie i filtry zaawansowane
 
 U góry Zarządzania użytkownikami możesz wyszukiwać po IP źródłowym lub adresie.
 
-Sortuj po czasie, liczbie uploadów albo łącznym rozmiarze, aby znaleźć ostatnich uploaderów, częstych uploaderów albo IP o dużym użyciu.
+Sortuj po czasie, liczbie przesłań albo łącznym rozmiarze, aby znaleźć ostatnie źródła przesyłania, adresy IP przesyłające często albo adresy IP o dużym wykorzystaniu.
 
 Do głębszej analizy otwórz filtry zaawansowane.
 
@@ -125,10 +125,10 @@ Filtry zaawansowane obsługują:
 | --- | --- |
 | Zakres czasu | Pokazuje IP, które przesyłały pliki w wybranym okresie. |
 | Status dostępu | Filtruje według normalnego, zablokowanego i podobnych statusów. |
-| Allow/block list | Filtruje według allowlist, blocklist albo braku ustawienia. |
+| Lista dozwolonych/blokowanych | Filtruje według listy dozwolonych, listy blokowanych albo braku ustawienia. |
 | Typ pliku | Pokazuje IP, które przesyłały obrazy, wideo, audio, dokumenty, kod lub inne pliki. |
 | Rozmiar pliku | Filtruje według zakresu rozmiaru przesłanych plików. |
-| Rating wiekowy | Filtruje według braku ustawienia, General, R12+, R16+, R18 i podobnych. |
+| Klasyfikacja wiekowa | Filtruje według braku ustawienia, General, R12+, R16+, R18 i podobnych. |
 | Status pliku | Filtruje według bieżącego statusu pliku, aby badać nietypowe pliki. |
 
 Kliknij `Apply Filters`, aby zastosować. Użyj `Reset`, aby wrócić do wszystkich danych.
@@ -139,36 +139,36 @@ Na telefonie Zarządzanie użytkownikami przełącza się na układ kart.
 
 ![Mobilne zarządzanie użytkownikami](../../image/other/手机端显示用户管理效果.png)
 
-Każda karta pokazuje IP, adres, łączny rozmiar uploadu, liczbę uploadów i przełącznik zezwolenia na upload. Możesz zarządzać użytkownikami bez przewijania szerokiej tabeli.
+Każda karta pokazuje IP, adres, łączny rozmiar przesłanych plików, liczbę przesłań i przełącznik zezwolenia na przesyłanie. Możesz zarządzać użytkownikami bez przewijania szerokiej tabeli.
 
 ## Jeśli lokalizacja wygląda niepoprawnie
 
 Geolokalizacja IP jest przybliżona. To nie jest dokładny adres ulicy.
 
-Jeśli użytkownik korzysta z proxy, data center, serwera chmurowego albo sieci transgranicznej, pokazywana lokalizacja może różnić się od rzeczywistej.
+Jeśli użytkownik korzysta z proxy, centrum danych, serwera chmurowego albo sieci transgranicznej, pokazywana lokalizacja może różnić się od rzeczywistej.
 
-Używaj tej funkcji do orientacyjnego zrozumienia źródła, wykrywania nietypowych uploadów i wspierania decyzji o blokadzie. Nie traktuj jej jako precyzyjnego śledzenia.
+Używaj tej funkcji do orientacyjnego zrozumienia źródła, wykrywania nietypowych przesłań i wspierania decyzji o blokadzie. Nie traktuj jej jako precyzyjnego śledzenia.
 
 ## Typowe sytuacje
 
 | Sytuacja | Znaczenie |
 | --- | --- |
-| Adres jest pusty | IP mogło jeszcze nie zostać rozwiązane albo bieżące źródło jest chwilowo niedostępne. |
+| Adres jest pusty | Lokalizacja IP mogła jeszcze nie zostać ustalona albo bieżące źródło jest chwilowo niedostępne. |
 | Język adresu jest zły | Sprawdź język geolokalizacji IP i czy skonfigurowane źródło obsługuje ten język. |
-| Adres pokazuje data center | Wiele proxy, serwerów chmurowych i crawlerów wygląda jak data center lub adres ISP. |
-| Liczba uploadów jest wysoka | Dokładnie sprawdź ten IP i zablokuj uploady, jeśli trzeba. |
-| Łączny rozmiar jest duży | Posortuj lub przefiltruj, rozwiń IP i sprawdź konkretne pliki. |
+| Adres pokazuje centrum danych | Wiele proxy, serwerów chmurowych i robotów indeksujących wygląda jak centrum danych lub adres ISP. |
+| Liczba przesłań jest wysoka | Dokładnie sprawdź ten adres IP i zablokuj przesyłanie, jeśli trzeba. |
+| Łączny rozmiar jest duży | Posortuj lub przefiltruj, rozwiń wpis IP i sprawdź konkretne pliki. |
 | Trzeba przywrócić po blokadzie | Włącz ponownie `Upload allowed`. |
 
-## Szybki przebieg
+## Szybki schemat
 
 ```text
-Otwórz IP Geolocation w Other Settings
--> Wybierz język geolokalizacji IP
--> Wpisz dane MaxMind, Tencent Map lub ipapi według potrzeb
--> Zapisz ustawienia
--> Otwórz Zarządzanie użytkownikami
--> Sprawdź IP, adres, łączny rozmiar i liczbę uploadów
--> Użyj wyszukiwania, sortowania lub filtrów zaawansowanych, aby znaleźć nietypowe IP
--> Zezwól lub zablokuj uploady według potrzeb
+Open IP Geolocation in Other Settings
+-> Choose IP geolocation language
+-> Fill MaxMind, Tencent Map, or ipapi credentials as needed
+-> Save settings
+-> Open User Management
+-> Review IP source, address, total upload size, and upload count
+-> Use search, sort, or advanced filters to find abnormal IPs
+-> Allow or block uploads as needed
 ```

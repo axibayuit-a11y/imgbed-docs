@@ -1,5 +1,5 @@
 import type { DefaultTheme } from 'vitepress'
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -44,7 +44,11 @@ const safetyItems = [
   'Safety/cloudflare-api-token',
   'Safety/image-moderation-and-access-mode',
   'Safety/user-rate-limits',
-  'Safety/webdav-site-access'
+  'Safety/webdav-site-access',
+  'Safety/api-token-upload',
+  'Safety/api-token-list',
+  'Safety/api-token-delete',
+  'Safety/api-token-management'
 ] as const
 
 const otherItems = [
@@ -112,10 +116,12 @@ function getTitleFromMarkdown(locale: string, link: string) {
 function toSidebarItems(prefix: string, items: readonly string[], labels?: Record<string, string>): DefaultTheme.SidebarItem[] {
   const locale = getLocaleFromPrefix(prefix)
 
-  return items.map((link) => ({
-    text: labels?.[link] || getTitleFromMarkdown(locale, link),
-    link: `${prefix}${link}`
-  }))
+  return items
+    .filter((link) => existsSync(getMarkdownPath(locale, link)))
+    .map((link) => ({
+      text: labels?.[link] || getTitleFromMarkdown(locale, link),
+      link: `${prefix}${link}`
+    }))
 }
 
 function buildSidebar(prefix: string): DefaultTheme.SidebarItem[] {

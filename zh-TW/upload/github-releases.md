@@ -1,59 +1,72 @@
-# 新增 GitHub Releases 渠道
+# GitHub Releases 渠道新增說明
 
 ## 新增前要準備什麼
 
+在開始之前，你只需要準備這 3 樣：
+
 | 需要準備 | 用途 |
 | --- | --- |
-| GitHub 帳號 | 用來建立 Token 與儲存檔案 |
-| GitHub Access Token | 讓 ImgBed 呼叫 GitHub API、建立 Release、上傳檔案 |
-| Repository 名稱 | 可以只填 repo 名稱，例如 `image` |
+| GitHub 帳號 | 用來生成 Access Token，并作為倉庫所屬帳號 |
+| GitHub Access Token | 系統通過它訪問 GitHub API、建立 Release、上傳檔案 |
+| 一個倉庫名稱 | 可以只填倉庫名，例如 `image` |
 
 ## 新增步驟
 
-### 第一步：建立 GitHub Token
+### 第一步：登入 GitHub 并生成 Access Token
+
+操作順序如下：
 
 1. 登入 GitHub。
-2. 進入個人設定。
-3. 開啟 Developer settings。
-4. 建立一組 Token。
-5. 權限至少需要可以建立 repo、讀寫 repo 內容與管理 Release。
+2. 點擊右上角頭像，進入 `Settings`。
+3. 在左側找到 `Developer settings`。
+4. 進入 `Personal access tokens`。
+5. 打開 `Tokens (classic)`。
+6. 點擊 `Generate new token (classic)`。
+7. 給這枚令牌起一個名字，方便你自己識別。
+8. 過期時間按你的使用習慣選擇。
+9. 在權限里勾選 `repo` 和 `workflow`。
+10. 建立後立即複製保存。
 
-![新增 GitHub 權限](../../image/upload/github-releases/添加github权限.png)
+![新增github權限](../../image/upload/github-releases/添加github权限.png)
 
-建立完成後，請立刻複製 Token。GitHub 通常只會顯示一次。
 
-### 第二步：回 ImgBed 填寫渠道
+## 第二步：回到系統里填寫 GitHub Releases 渠道
 
-在上傳設定裡選擇 `GitHub Releases`，依照下面填：
+在上傳設定里選擇 `GitHub Releases` 後，按下面這套填：
 
-| 頁面欄位 | 填寫內容 |
+| 頁面欄位 | 你該填什麼 |
 | --- | --- |
-| 渠道名稱 | 自己看得懂的名字，例如 `GitHub主渠道` |
-| Access Token | 剛才建立的 GitHub Token |
-| Repository 名稱 | 可以填 `image`，也可以填完整 `username/image` |
-| 私有倉庫 | 依照需要開啟或關閉 |
-| 備註 | 選填 |
+| 渠道名稱 | 你自己起，比如 `GitHub主仓库` |
+| Access Token | 剛才生成的 GitHub Personal Access Token |
+| 倉庫名稱 | 可以只填倉庫名，例如 `image`；也可以直接填完整路徑，例如 `用户名/image` |
+| 私有倉庫 | 按你的需求決定開或關 |
+| 備注 | 可選，例如 `主上传渠道` |
 
-![填寫 GitHub 渠道設定](../../image/upload/github-releases/填写github渠道配置.png)
 
-## Repository 名稱怎麼填
+![填寫github渠道設定](../../image/upload/github-releases/填写github渠道配置.png)
 
-| 寫法 | 說明 |
+## 第三步：保存渠道設定
+
+欄位填好以後，直接點擊保存。
+這一步系統會做兩件事：
+
+| 系統動作 | 說明 |
 | --- | --- |
-| `image` | 系統會用目前 Token 對應的 GitHub 帳號補成完整 repo 路徑 |
-| `username/image` | 系統會直接使用你填的完整路徑 |
+| 只填倉庫名時 | 系統會先識別當前 GitHub 帳號，再自動拼成完整倉庫地址 |
+| 填完整路徑時 | 系統直接按你填寫的 `名字/仓库名` 執行，不再改寫 |
+| 檢查倉庫是否存在 | 如果你走的是當前個人帳號這條主線，倉庫不存在時會自動建立；如果你手動填寫完整路徑，則按該路徑直接執行 |
+| 同步公開 / 私有狀態 | 會按你當前開關設定處理 |
 
-如果 repo 不存在，系統會嘗試建立。建議一開始先用新的 repo 名稱，避免和既有專案混在一起。
+## 渠道的操作流程總結
 
-## 快速流程
+GitHub Releases 這條線可以直接理解成：
 
 ```text
-登入 GitHub
--> 建立 Access Token
--> 勾選 repo / release 相關權限
--> 複製 Token
--> 回 ImgBed 新增 GitHub Releases 渠道
--> 填 Token 和 Repository 名稱
--> 儲存
--> 上傳測試圖片
+Sign in to GitHub
+-> Create an Access Token
+-> Return to ImgBed and enter the token and repository name
+-> Save
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

@@ -6,7 +6,7 @@ Potřebujete jen tři věci:
 
 | Požadavek | Účel |
 | --- | --- |
-| Účet GitLab | Pro vytvoření access tokenu a vlastnictví projektu. |
+| Účet GitLab | Pro vytvoření přístupového tokenu a vlastnictví projektu. |
 | GitLab Personal Access Token | Umožní ImgBed používat GitLab API, vytvářet projekty a nahrávat soubory do Generic Packages. |
 | Název projektu | Můžete zadat jen název projektu, například `imgbed`. |
 
@@ -53,15 +53,15 @@ Systém zařídí tyto detaily:
 | Kontrola projektu | Pokud použijete cestu aktuálního osobního účtu, ImgBed projekt automaticky vytvoří, pokud neexistuje. Pokud zadáte plnou cestu ručně, použije ji přímo. |
 | Veřejný/soukromý stav | Viditelnost projektu se synchronizuje podle aktuálního přepínače. |
 
-## Rychlý checklist
+## Rychlý kontrolní seznam
 
 ```text
-Přihlaste se do GitLab
--> Vytvořte Access Token
--> Vyberte jen scope api
--> Vraťte se do ImgBed a zadejte token i název projektu
--> Uložte
--> Pokud je zadán jen název projektu, ImgBed automaticky přidá aktuální uživatelské jméno
--> Pokud je zadáno username/project, ImgBed ho použije beze změny
--> Nahrajte testovací obrázek
+Sign in to GitLab
+-> Create an Access Token
+-> Select only the api scope
+-> Return to ImgBed and enter the token and project name
+-> Save
+-> If only a project name is entered, ImgBed adds the current username automatically
+-> If username/project is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

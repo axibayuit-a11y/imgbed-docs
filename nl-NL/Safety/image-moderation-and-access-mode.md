@@ -2,7 +2,7 @@
 
 Afbeeldingsmoderatie geeft geüploade afbeeldingen een leeftijdsclassificatie. De toegangsmodus bepaalt welke classificaties openbaar zichtbaar zijn.
 
-Dit beïnvloedt de openbare gallery, openbare bestands-URL's en de Random Image API. Het beperkt het beheerpaneel niet. Beheerders kunnen alle bestanden blijven bekijken en beheren.
+Dit beïnvloedt de openbare galerij, openbare bestands-URL's en de API voor willekeurige afbeeldingen. Het beperkt het beheerpaneel niet. Beheerders kunnen alle bestanden blijven bekijken en beheren.
 
 ## Waar je dit configureert
 
@@ -14,34 +14,34 @@ System Settings -> Security Settings -> Upload Management -> Image Moderation
 
 De belangrijkste instellingen zijn:
 
-- Access mode
-- Enable moderation
-- Moderation provider
+- Toegangsmodus
+- Moderatie inschakelen
+- Moderatieprovider
 
-## Wat Access Mode doet
+## Wat toegangsmodus doet
 
-Access mode bepaalt welke leeftijdsclassificaties openbaar getoond mogen worden.
+De toegangsmodus bepaalt welke leeftijdsclassificaties openbaar getoond mogen worden.
 
 Huidige modi:
 
-| Access Mode | Openbaar zichtbare ratings |
+| Toegangsmodus | Openbaar zichtbare classificaties |
 | --- | --- |
-| Adult mode | General, R12, R16, R18 |
-| Youth mode | General, R12, R16 |
-| Teen mode | General, R12 |
-| Child mode | Alleen General |
+| Volwassenenmodus | General, R12, R16, R18 |
+| Jongerenmodus | General, R12, R16 |
+| Tienermodus | General, R12 |
+| Kindmodus | Alleen General |
 
-De standaardmodus is Adult mode.
+De standaardmodus is de volwassenenmodus.
 
-Voor privésites of sites met volwassen inhoud kan Adult mode passend zijn. Voor een voorzichtiger openbare gallery kies je Youth, Teen of Child mode.
+Voor privésites of sites met volwassen inhoud kan de volwassenenmodus passend zijn. Voor een voorzichtiger openbare galerij kies je de jongeren-, tiener- of kindmodus.
 
 ## Wat moderatie inschakelen doet
 
 Wanneer moderatie is ingeschakeld, roept ImgBed tijdens upload de gekozen provider aan en slaat de gevonden leeftijdsclassificatie op.
 
-Belangrijkste ratings:
+Belangrijkste classificaties:
 
-| Rating | Betekenis |
+| Classificatie | Betekenis |
 | --- | --- |
 | General | Veilige openbare inhoud |
 | R12 | Licht gevoelige inhoud |
@@ -50,7 +50,7 @@ Belangrijkste ratings:
 
 Het moderatieresultaat wordt gebruikt bij het bepalen van openbare toegang.
 
-Als moderatie niet is ingeschakeld, of oude bestanden geen rating hebben, worden die bestanden als niet-geclassificeerd behandeld. Niet-geclassificeerde bestanden worden niet automatisch uit de openbare gallery of Random Image API verwijderd alleen omdat er geen rating bestaat.
+Als moderatie niet is ingeschakeld, of oude bestanden geen classificatie hebben, worden die bestanden als niet-geclassificeerd behandeld. Niet-geclassificeerde bestanden worden niet automatisch uit de openbare galerij of de API voor willekeurige afbeeldingen verwijderd alleen omdat er geen classificatie bestaat.
 
 ## Een moderatieprovider kiezen
 
@@ -63,21 +63,21 @@ Beschikbare providers zijn onder meer:
 Elke provider heeft eigen vereisten:
 
 - moderatecontent.com vraagt meestal om een API Key.
-- nsfwjs vraagt meestal om een API-endpoint-URL.
+- nsfwjs vraagt meestal om een URL van een API-eindpunt.
 - Sightengine vereist een API user en API secret.
 
-Kies op basis van je account, beschikbaarheid en detectiekwaliteit. Zolang moderatie ingeschakeld en correct ingesteld is, probeert ImgBed tijdens upload een rating op te slaan.
+Kies op basis van je account, beschikbaarheid en detectiekwaliteit. Zolang moderatie ingeschakeld en correct ingesteld is, probeert ImgBed tijdens upload een classificatie op te slaan.
 
-## Effect op de openbare gallery
+## Effect op de openbare galerij
 
-De openbare gallery filtert bestanden volgens de toegangsmodus.
+De openbare galerij filtert bestanden volgens de toegangsmodus.
 
 Voorbeelden:
 
-- Adult mode: R18-afbeeldingen kunnen verschijnen.
-- Youth mode: R18-afbeeldingen worden verborgen.
-- Teen mode: R16- en R18-afbeeldingen worden verborgen.
-- Child mode: alleen General-afbeeldingen worden getoond.
+- Volwassenenmodus: R18-afbeeldingen kunnen verschijnen.
+- Jongerenmodus: R18-afbeeldingen worden verborgen.
+- Tienermodus: R16- en R18-afbeeldingen worden verborgen.
+- Kindmodus: alleen General-afbeeldingen worden getoond.
 
 Dit geldt alleen voor normale openbare toegang. Het beheerpaneel toont nog steeds alle bestanden.
 
@@ -85,14 +85,14 @@ Dit geldt alleen voor normale openbare toegang. Het beheerpaneel toont nog steed
 
 Openbare bestands-URL's zijn directe afbeeldingslinks die bezoekers openen.
 
-Als de rating van het bestand is toegestaan door de huidige toegangsmodus, geeft ImgBed de oorspronkelijke afbeelding terug.
+Als de classificatie van het bestand is toegestaan door de huidige toegangsmodus, geeft ImgBed de oorspronkelijke afbeelding terug.
 
-Is de rating hoger dan toegestaan, dan geeft normale openbare toegang niet de oorspronkelijke afbeelding terug. ImgBed geeft dan de ingestelde geblokkeerde uitvoer of vervangende afbeelding terug.
+Is de classificatie hoger dan toegestaan, dan geeft normale openbare toegang niet de oorspronkelijke afbeelding terug. ImgBed geeft dan de ingestelde geblokkeerde uitvoer of vervangende afbeelding terug.
 
 Voorbeeld:
 
-- De huidige modus is Child mode.
-- Een afbeelding heeft rating R18.
+- De huidige modus is kindmodus.
+- Een afbeelding heeft classificatie R18.
 - Een bezoeker opent de openbare URL direct.
 - ImgBed geeft de oorspronkelijke R18-afbeelding niet terug aan die bezoeker.
 
@@ -100,27 +100,27 @@ Voorbeeld:
 
 Beheerders die bestanden in het beheerpaneel bekijken, worden niet door deze beperking geraakt.
 
-## Effect op de Random Image API
+## Effect op de API voor willekeurige afbeeldingen
 
-De Random Image API filtert de kandidaatpool ook volgens de toegangsmodus.
+De API voor willekeurige afbeeldingen filtert de kandidaatpool ook volgens de toegangsmodus.
 
-In Child mode worden willekeurige afbeeldingen alleen gekozen uit General-bestanden.
+In de kindmodus worden willekeurige afbeeldingen alleen gekozen uit General-bestanden.
 
-In Youth mode kunnen willekeurige afbeeldingen uit General, R12 en R16 komen, maar niet uit R18.
+In de jongerenmodus kunnen willekeurige afbeeldingen uit General, R12 en R16 komen, maar niet uit R18.
 
-Zo kan de Random Image API de regels van de openbare gallery niet omzeilen.
+Zo kan de API voor willekeurige afbeeldingen de regels van de openbare galerij niet omzeilen.
 
 ## Samenhang met lijstregels
 
-Access mode is niet de enige openbare toegangsregel. Het werkt samen met allowlist- en blocklistregels.
+De toegangsmodus is niet de enige openbare toegangsregel. Deze werkt samen met allowlist- en blocklistregels.
 
 Kort gezegd:
 
 - Inhoud op de allowlist is eerst openbaar.
 - Inhoud op de blocklist kan niet direct door gewone bezoekers worden bekeken.
-- Inhoud die op geen van beide lijsten staat, wordt daarna gecontroleerd tegen access mode.
+- Inhoud die op geen van beide lijsten staat, wordt daarna gecontroleerd tegen de toegangsmodus.
 
-Als een afbeelding zowel door leeftijdsrating als door lijstregels wordt beperkt, kunnen gewone bezoekers het oorspronkelijke bestand nog steeds niet direct bekijken.
+Als een afbeelding zowel door leeftijdsclassificatie als door lijstregels wordt beperkt, kunnen gewone bezoekers het oorspronkelijke bestand nog steeds niet direct bekijken.
 
 ## Aanbevolen instellingen
 
@@ -128,38 +128,38 @@ Voor openbare sites:
 
 - Schakel moderatie in.
 - Kies een toegangsmodus die past bij het publiek van de site.
-- Gebruik Child mode of Teen mode voor bezoekers van alle leeftijden.
-- Vermijd Adult mode als je volwassen inhoud niet openbaar wilt tonen.
-- Controleer ratings in het beheerpaneel en pas ze handmatig aan wanneer nodig.
+- Gebruik de kindmodus of tienermodus voor bezoekers van alle leeftijden.
+- Vermijd de volwassenenmodus als je volwassen inhoud niet openbaar wilt tonen.
+- Controleer classificaties in het beheerpaneel en pas ze handmatig aan wanneer nodig.
 
 Voor privé- of persoonlijke sites:
 
-- Adult mode is meestal prima.
+- De volwassenenmodus is meestal prima.
 - Schakel moderatie in als het nuttig is.
-- Controleer en pas ratings in het beheerpaneel aan wanneer nodig.
+- Controleer en pas classificaties in het beheerpaneel aan wanneer nodig.
 
 ## FAQ
 
-### Verdwijnen bestanden uit het beheerpaneel als ik Access Mode wijzig?
+### Verdwijnen bestanden uit het beheerpaneel als ik de toegangsmodus wijzig?
 
 Nee.
 
-Access mode beïnvloedt alleen normale openbare toegang. Het heeft geen effect op het beheerpaneel.
+De toegangsmodus beïnvloedt alleen normale openbare toegang. Deze heeft geen effect op het beheerpaneel.
 
-### Waarom toont de openbare gallery minder afbeeldingen na wisselen naar Child mode?
+### Waarom toont de openbare galerij minder afbeeldingen na wisselen naar de kindmodus?
 
-Child mode staat alleen General-bestanden openbaar toe. R12, R16 en R18 worden weggefilterd.
+De kindmodus staat alleen General-bestanden openbaar toe. R12, R16 en R18 worden weggefilterd.
 
 ### Kunnen openbare URL's nog volwassen afbeeldingen openen?
 
-Als de huidige toegangsmodus die rating niet toestaat, geven normale openbare URL's de oorspronkelijke afbeelding niet terug.
+Als de huidige toegangsmodus die classificatie niet toestaat, geven normale openbare URL's de oorspronkelijke afbeelding niet terug.
 
-### Kan de Random Image API beperkte afbeeldingen teruggeven?
+### Kan de API voor willekeurige afbeeldingen beperkte afbeeldingen teruggeven?
 
 Nee.
 
-De Random Image API filtert kandidaten volgens de huidige toegangsmodus.
+De API voor willekeurige afbeeldingen filtert kandidaten volgens de huidige toegangsmodus.
 
-### Wat gebeurt er met oude afbeeldingen zonder rating?
+### Wat gebeurt er met oude afbeeldingen zonder classificatie?
 
-Afbeeldingen zonder rating worden niet automatisch verborgen alleen omdat ze geen moderatieresultaat hebben. Je kunt hun rating later aanpassen in het beheerpaneel.
+Afbeeldingen zonder classificatie worden niet automatisch verborgen alleen omdat ze geen moderatieresultaat hebben. Je kunt hun classificatie later aanpassen in het beheerpaneel.

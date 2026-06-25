@@ -1,103 +1,112 @@
 # Ajouter un canal Yandex
 
-Le canal Yandex utilise Yandex Disk comme destination de stockage.
+## Ce qu’il faut d’abord
 
-## À préparer
-
-| Élément | Utilité |
+| Élément | Pourquoi c’est nécessaire |
 | --- | --- |
-| Compte Yandex | Autoriser Yandex Disk |
-| Yandex OAuth App | Obtenir Client ID et Client Secret |
-| Domaine ImgBed | Configurer le callback OAuth |
-| Yandex Disk | Enregistrer les fichiers |
+| Compte Yandex | Utilisé pour se connecter et autoriser Yandex Disk |
+| Application OAuth Yandex | Utilisée pour générer `Client ID` et `Client Secret` |
+| Domaine ImgBed | Utilisé comme URI de redirection OAuth |
+| Espace disponible dans Yandex Disk | Utilisé comme emplacement réel de stockage des fichiers |
 
-## Créer une Yandex OAuth App
+## Étapes de configuration
 
-Ouvrez :
+### Étape 1 : créer une application OAuth Yandex
+
+1. Ouvrez la page de création d’application OAuth Yandex :
 
 ```text
 https://oauth.yandex.com/client/new
 ```
 
-Si une connexion est demandée, utilisez le compte Yandex qui servira de stockage.
-
-Créez une application avec un nom reconnaissable :
-
-```text
-imgbed-yandex
-```
-
-Dans callback URL, renseignez :
+2. Si vous êtes redirigé vers la connexion, connectez-vous d’abord avec votre compte Yandex.
+3. Créez une nouvelle application.
+4. Donnez à l’application un nom reconnaissable, par exemple `imgbed-yandex`.
+5. Recherchez les paramètres de retour ou d’URL de redirection.
+6. Saisissez :
 
 ```text
-https://votre-domaine/api/oauth/yandex/callback
+https://your-domain.com/api/oauth/yandex/callback
 ```
 
-## Permissions
+### Étape 2 : confirmer les permissions
 
-ImgBed utilise ces permissions `Yandex.Disk REST API` :
+Pour l’intégration Yandex actuelle dans ImgBed, conservez ces quatre permissions dans `Yandex.Disk REST API` :
 
-| Permission | Utilité |
+| Permission | Rôle |
 | --- | --- |
-| `cloud_api:disk.app_folder` | Enregistrer les fichiers dans le dossier de l’application |
-| `cloud_api:disk.read` | Lire les fichiers et liens de téléchargement |
-| `cloud_api:disk.write` | Envoyer, créer des dossiers et supprimer |
-| `Access to information about Yandex.Disk` | Lire capacité et usage |
+| `cloud_api:disk.app_folder` | Permet à ImgBed de stocker les fichiers dans le dossier de l’application |
+| `cloud_api:disk.read` | Lit les fichiers et les liens de téléchargement |
+| `cloud_api:disk.write` | Téléverse des fichiers, crée des dossiers et supprime des fichiers |
+| `Access to information about Yandex.Disk` | Lit le quota du disque et l’espace utilisé |
 
-Les permissions de nom ou e-mail dans `Yandex ID API` sont optionnelles. Les fonctions principales dépendent des permissions Disk.
+Si vous voyez aussi ces permissions dans `Yandex ID API`, elles sont facultatives :
 
-![Permissions Yandex Disk](../../image/upload/yandex/dataaccess配置软盘权限.png)
+| Texte de permission | Recommandation |
+| --- | --- |
+| `Access to username, first name and surname, gender` | Facultatif |
+| `Access to email address` | Facultatif |
 
-## Copier Client ID et Secret
+Les fonctions principales de téléversement, téléchargement, suppression et quota dépendent surtout des quatre permissions ci-dessus dans `Yandex.Disk REST API`.
 
-Après création de l’application, copiez :
+![Configurer les permissions Yandex Disk](../../image/upload/yandex/dataaccess配置软盘权限.png)
+
+### Étape 3 : copier les identifiants de l’application
+
+Après la création de l’application, copiez :
 
 | Champ Yandex | Champ ImgBed |
 | --- | --- |
 | `Client ID` | `Client ID` |
 | `Client Secret` | `Client Secret` |
 
-![Client ID et Secret](../../image/upload/yandex/记录客户端id和secret.png)
+![Noter Client ID et Secret](../../image/upload/yandex/记录客户端id和secret.png)
 
-## Renseigner dans ImgBed
+### Étape 4 : compléter le canal Yandex
 
-Dans Paramètres d’upload, choisissez `Yandex`.
+Dans les paramètres de téléversement, choisissez `Yandex` et remplissez :
 
-| Champ | Valeur |
+| Champ ImgBed | Valeur à saisir |
 | --- | --- |
-| Nom du canal | Par exemple `Yandex Main` |
-| Client ID | Client ID de l’application |
-| Client Secret | Client Secret de l’application |
-| Refresh Token | Laissez vide au début |
-| Dossier racine | Optionnel, souvent `imgbed` |
+| Nom du canal | Nom reconnaissable, par exemple `Main Yandex` |
+| Client ID | `Client ID` de l’application Yandex |
+| Client Secret | `Client Secret` de l’application Yandex |
+| Refresh Token | Laissez vide pour l’instant |
+| Répertoire racine | Facultatif. La valeur par défaut est `imgbed`. |
 
-![Configuration Yandex](../../image/upload/yandex/编辑配置渠道.png)
+![Modifier la configuration du canal](../../image/upload/yandex/编辑配置渠道.png)
 
-## Obtenir le Refresh Token
+### Étape 5 : obtenir le Refresh Token
 
-1. Dans ImgBed, cliquez sur `Obtenir le token`.
-2. Connectez-vous avec le compte Yandex de destination.
-3. Acceptez les permissions.
-4. Copiez le `Refresh Token` affiché sur la page de callback.
-5. Collez-le dans ImgBed.
+1. Dans ImgBed, cliquez sur `Get Token`.
+2. Connectez-vous au compte Yandex à associer.
+3. Approuvez la demande d’autorisation.
+4. La page de retour affiche un `Refresh Token`.
+5. Copiez-le.
+6. Revenez à ImgBed et collez-le dans le champ `Refresh Token`.
 
-![Refresh Token](../../image/upload/yandex/授权后复制刷新令牌.png)
+![Copier le refresh token après autorisation](../../image/upload/yandex/授权后复制刷新令牌.png)
+
+### Étape 6 : enregistrer le canal
+
+Après avoir rempli tous les champs, enregistrez le canal.
 
 ## Flux rapide
 
 ```text
-Ouvrir Yandex OAuth Console
--> Créer une App
--> Configurer https://votre-domaine/api/oauth/yandex/callback
--> Confirmer les permissions Disk
--> Copier Client ID / Client Secret
--> Renseigner dans ImgBed
--> Obtenir le token
--> Coller Refresh Token et enregistrer
+Open Yandex OAuth Console
+-> Create an app
+-> Add https://your-domain.com/api/oauth/yandex/callback
+-> Confirm Yandex Disk permissions
+-> Copy Client ID and Client Secret
+-> Fill Client ID / Client Secret into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## Références
 
-1. Enregistrer une app Yandex: https://yandex.com/dev/id/doc/en/register-client
-2. Code d’autorisation par URL: https://yandex.com/dev/id/doc/en/codes/code-url
-3. API de token OAuth: https://yandex.com/dev/id/doc/en/tokens/token
+1. Enregistrer une application Yandex : https://yandex.com/dev/id/doc/en/register-client
+2. Obtenir un code d’autorisation via URL : https://yandex.com/dev/id/doc/en/codes/code-url
+3. Point de terminaison du jeton OAuth Yandex : https://yandex.com/dev/id/doc/en/tokens/token

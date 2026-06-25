@@ -1,67 +1,67 @@
-# Page Settings
+# পৃষ্ঠা সেটিংস
 
-Page settings site display, upload page defaults, background images এবং admin panel appearance control করে।
+পৃষ্ঠা সেটিংসের মাধ্যমে সাইটের প্রদর্শন, আপলোড পৃষ্ঠার পূর্বনির্ধারিত বিকল্প, পটভূমির ছবি এবং প্রশাসন প্যানেলের চেহারা নিয়ন্ত্রণ করা যায়।
 
-## Global Settings
+## সাধারণ সেটিংস
 
-| Option | Purpose |
+| বিকল্প | উদ্দেশ্য |
 | --- | --- |
-| Site title | Browser tab-এ দেখা title। |
-| Site icon | Browser tab-এ দেখা ছোট icon। |
-| ImgBed name | Frontend pages-এ দেখা name। |
-| ImgBed logo | Frontend pages-এ দেখা logo image। |
-| Logo link | Logo বা avatar ক্লিক করলে যে URL খুলবে। |
-| Background switch interval | Multiple backgrounds-এর rotation interval, milliseconds-এ। `60000` মানে 60 seconds। |
-| Background opacity | Background image opacity `0` থেকে `1`। Lower values হালকা দেখায়। |
-| Default URL prefix | Image links generate করার সময় ব্যবহৃত prefix। Empty হলে current site domain ব্যবহার হয়। |
+| সাইটের শিরোনাম | ব্রাউজারের ট্যাবে প্রদর্শিত শিরোনাম। |
+| সাইটের আইকন | ব্রাউজারের ট্যাবে প্রদর্শিত ছোট আইকন। |
+| ImgBed-এর নাম | ফ্রন্টএন্ড পৃষ্ঠাগুলিতে প্রদর্শিত নাম। |
+| ImgBed-এর লোগো | ফ্রন্টএন্ড পৃষ্ঠাগুলিতে প্রদর্শিত লোগো ছবি। |
+| লোগোর লিঙ্ক | লোগো বা অবতারে ক্লিক করলে যে URL খোলা হবে। |
+| পটভূমি পরিবর্তনের বিরতি | একাধিক পটভূমি পালাক্রমে বদলানোর বিরতি, মিলিসেকেন্ডে। `60000` মানে 60 সেকেন্ড। |
+| পটভূমির অস্বচ্ছতা | পটভূমি ছবির অস্বচ্ছতা `0` থেকে `1` পর্যন্ত। মান যত কম হবে, ছবি তত হালকা দেখাবে। |
+| পূর্বনির্ধারিত URL উপসর্গ | ছবি লিঙ্ক তৈরি করার সময় ব্যবহৃত উপসর্গ। খালি থাকলে বর্তমান সাইটের ডোমেইন ব্যবহার করা হবে। |
 
-## Client Settings
+## ক্লায়েন্ট সেটিংস
 
-| Option | Purpose |
+| বিকল্প | উদ্দেশ্য |
 | --- | --- |
-| Announcement | Upload page-এর top-এ দেখা announcement। HTML supported। |
-| Default upload channel | Upload page-এ default selected upload channel। Smart Dispatch-ও বেছে নিতে পারেন। |
-| Default upload directory | Default upload directory, যেমন `/user/`। Empty বা `/` মানে root। |
-| Default naming method | Upload-এর পর filename generation strategy। নিচে দেখুন। |
-| Convert to WebP by default | Upload-এর আগে images WebP-তে convert করে। |
-| Enable compression by default | Upload-এর আগে browser-এ locally images compress করে। |
-| Default compression threshold | Image এই size ছাড়ালে automatically compress হবে, MB-তে। |
-| Default target size | Compression-এর পর target file size, MB-তে। |
-| Login page background | User login page-এর background image। |
-| Upload page background | Upload page-এর background image। |
-| Footer portal link | Footer portal button ক্লিক করলে যে URL খুলবে। |
-| Hide footer | Enabled হলে frontend footer hide করে। |
+| ঘোষণা | আপলোড পৃষ্ঠার উপরে প্রদর্শিত ঘোষণা। HTML সমর্থিত। |
+| পূর্বনির্ধারিত আপলোড চ্যানেল | আপলোড পৃষ্ঠায় পূর্বনির্ধারিতভাবে নির্বাচিত আপলোড চ্যানেল। Smart Dispatch-ও নির্বাচন করা যায়। |
+| পূর্বনির্ধারিত আপলোড ডিরেক্টরি | পূর্বনির্ধারিত আপলোড ডিরেক্টরি, যেমন `/user/`। খালি বা `/` মানে রুট। |
+| পূর্বনির্ধারিত নামকরণ পদ্ধতি | আপলোডের পর ফাইলের নাম তৈরির পূর্বনির্ধারিত কৌশল। নিচে দেখুন। |
+| পূর্বনির্ধারিতভাবে WebP-তে রূপান্তর | আপলোডের আগে ছবিকে WebP-তে রূপান্তর করে। |
+| পূর্বনির্ধারিতভাবে কমপ্রেশন চালু | আপলোডের আগে ব্রাউজারে স্থানীয়ভাবে ছবি কমপ্রেস করে। |
+| পূর্বনির্ধারিত কমপ্রেশন সীমা | কোনো ছবির আকার এই মান ছাড়ালে স্বয়ংক্রিয়ভাবে কমপ্রেস হবে, একক MB। |
+| পূর্বনির্ধারিত লক্ষ্য আকার | কমপ্রেশনের পর লক্ষ্য ফাইল আকার, একক MB। |
+| লগইন পৃষ্ঠার পটভূমি | ব্যবহারকারীর লগইন পৃষ্ঠার পটভূমি ছবি। |
+| আপলোড পৃষ্ঠার পটভূমি | আপলোড পৃষ্ঠার পটভূমি ছবি। |
+| ফুটার পোর্টাল লিঙ্ক | ফুটার পোর্টাল বোতাম যে URL খুলবে। |
+| ফুটার লুকান | চালু থাকলে ফ্রন্টএন্ড ফুটার লুকিয়ে রাখে। |
 
-## Admin Settings
+## প্রশাসন সেটিংস
 
-| Option | Purpose |
+| বিকল্প | উদ্দেশ্য |
 | --- | --- |
-| Admin login background | Admin login page-এর background image। |
-| Admin background | Admin pages-এর background image। একটি image URL বা multiple URLs ব্যবহার করুন। |
-| Image loading mode | Admin file list-এর preview loading mode। Original original images load করে। Smart loading public images-এর জন্য thumbnails এবং restricted images-এর জন্য originals prefer করে। |
-| Thumbnail source | Thumbnails generate করার service: wsrv.nl, Cloudflare Image Resizing বা WordPress Photon। Cloudflare Image Resizing নির্বাচন করার আগে Cloudflare-এ enabled থাকতে হবে। |
-| Live2D widget | Admin panel-এ Live2D character দেখায়। |
-| Firework click effect | Page ক্লিক করলে firework effect দেখায়। |
-| Star cursor trail | Mouse move করলে star trail দেখায়। |
+| প্রশাসন লগইন পৃষ্ঠার পটভূমি | প্রশাসন লগইন পৃষ্ঠার পটভূমি ছবি। |
+| প্রশাসন পটভূমি | প্রশাসন পৃষ্ঠাগুলির পটভূমি ছবি। একটি ছবি URL বা একাধিক URL ব্যবহার করা যায়। |
+| ছবি লোড করার মোড | প্রশাসন ফাইল তালিকায় প্রিভিউ লোড করার মোড। মূল ছবি মোডে আসল ছবি লোড হয়। স্মার্ট লোডিং সাধারণ ছবির জন্য ছবির ক্ষুদ্র সংস্করণ এবং সীমাবদ্ধ ছবির জন্য আসল ছবি অগ্রাধিকার দেয়। |
+| ছবির ক্ষুদ্র সংস্করণের উৎস | ছবির ক্ষুদ্র সংস্করণ তৈরি করার পরিষেবা: wsrv.nl, Cloudflare Image Resizing, অথবা WordPress Photon। Cloudflare Image Resizing নির্বাচন করার আগে Cloudflare-এ এটি চালু থাকতে হবে। |
+| Live2D উইজেট | প্রশাসন প্যানেলে Live2D চরিত্র দেখায়। |
+| আতশবাজি ক্লিক প্রভাব | পৃষ্ঠায় ক্লিক করলে আতশবাজির প্রভাব দেখায়। |
+| তারকা কার্সর ট্রেইল | মাউস সরালে তারকার ট্রেইল দেখায়। |
 
-## Background Image Formats
+## পটভূমি ছবির ফরম্যাট
 
-Login page background, upload page background এবং admin login background এই formats support করে:
+লগইন পৃষ্ঠার পটভূমি, আপলোড পৃষ্ঠার পটভূমি এবং প্রশাসন লগইন পৃষ্ঠার পটভূমি এই ফরম্যাটগুলি সমর্থন করে:
 
-| Value | Effect |
+| মান | প্রভাব |
 | --- | --- |
-| `bing` | Bing wallpaper rotation ব্যবহার করে। |
-| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | Multiple images rotate করে। |
-| `["https://example.com/1.jpg"]` | Single background image ব্যবহার করে। |
-| `["https://your-domain.com/random?..."]` | Random image API link ব্যবহার করে। Other Settings-এ নিজের Random Image API configure করে generated random image link এখানে single-background entry হিসেবে paste করুন। |
+| `bing` | Bing ওয়ালপেপার পর্যায়ক্রমে ব্যবহার করে। |
+| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | একাধিক ছবি পর্যায়ক্রমে দেখায়। |
+| `["https://example.com/1.jpg"]` | একটি পটভূমি ছবি ব্যবহার করে। |
+| `["https://your-domain.com/random?..."]` | র্যান্ডম ছবি API লিঙ্ক ব্যবহার করে। অন্যান্য সেটিংসে নিজের র্যান্ডম ছবি API কনফিগার করে তৈরি হওয়া র্যান্ডম ছবি লিঙ্কটি এখানে একক পটভূমি এন্ট্রি হিসেবে পেস্ট করা যায়। |
 
-Admin background image URLs support করে। Page-এর prompt অনুযায়ী multiple URLs English commas দিয়ে separate করা যায়। Empty হলে default background ব্যবহার হয়।
+প্রশাসন পটভূমি ছবি URL সমর্থন করে। পৃষ্ঠার নির্দেশনা অনুযায়ী একাধিক URL ইংরেজি কমা দিয়ে আলাদা করা যায়। খালি থাকলে পূর্বনির্ধারিত পটভূমি ব্যবহার করা হবে।
 
-## Default Naming Method
+## পূর্বনির্ধারিত নামকরণ পদ্ধতি
 
-| Method | Result |
+| পদ্ধতি | ফলাফল |
 | --- | --- |
-| Default | Time-random prefix + original filename, যেমন `1760000000000_cat.png`। |
-| Prefix only | শুধু time-random prefix এবং extension, যেমন `1760000000000.png`। |
-| Original name only | Original filename রাখে, যেমন `cat.png`। Duplicate হলে ImgBed `(1)`, `(2)` ইত্যাদি যোগ করে। |
-| Short link | 8-character short ID এবং extension ব্যবহার করে, যেমন `a1b2c3d4.png`। |
+| পূর্বনির্ধারিত | সময়ভিত্তিক র্যান্ডম উপসর্গ + মূল ফাইলের নাম, যেমন `1760000000000_cat.png`। |
+| শুধু উপসর্গ | শুধু সময়ভিত্তিক র্যান্ডম উপসর্গ এবং এক্সটেনশন, যেমন `1760000000000.png`। |
+| শুধু মূল নাম | মূল ফাইলের নাম রাখে, যেমন `cat.png`। একই নাম হলে ImgBed `(1)`, `(2)` ইত্যাদি যোগ করে। |
+| সংক্ষিপ্ত লিঙ্ক | এক্সটেনশনসহ 8 অক্ষরের সংক্ষিপ্ত ID ব্যবহার করে, যেমন `a1b2c3d4.png`। |

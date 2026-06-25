@@ -60,7 +60,7 @@ Lze použít veřejné i soukromé kanály.
 4. Vyhledejte uživatelské jméno vytvořeného bota.
 5. Přidejte bota do kanálu.
 
-Pro nejspolehlivější uploady dejte botovi oprávnění správce.
+Pro nejspolehlivější nahrávání dejte botovi oprávnění správce.
 
 ![Pozvání bota do kanálu](../../image/upload/telegram/邀请机器人进频道里.png)
 
@@ -100,23 +100,23 @@ Po dokončení klikněte na Uložit.
 | Karta kanálu se zobrazuje | Po uložení by se v Nastavení nahrávání měla zobrazit karta Telegram. |
 | Kanál lze zapnout | Přepínač Aktivní zůstane zapnutý. |
 | Konfigurace je uložena | Detail ukazuje uložený Bot Token a Chat ID. |
-| Upload funguje | Nahrajte testovací obrázek a ověřte, že se objevil v cílovém kanálu Telegram. |
+| Nahrávání funguje | Nahrajte testovací obrázek a ověřte, že se objevil v cílovém kanálu Telegram. |
 
-## Rychlý checklist
+## Rychlý kontrolní seznam
 
 ```text
-Vytvořte bota pomocí @BotFather
--> Uložte Bot Token
--> Vytvořte Telegram kanál
--> Přidejte bota do kanálu a dejte mu oprávnění správce
--> Vyhledejte @userinfobot a zvolte Channel
--> Přepošlete libovolnou zprávu z kanálu do @userinfobot
--> Zkopírujte vrácené Id: -100...
--> Zadejte Bot Token a Chat ID do ImgBed
--> Uložte a nahrajte testovací obrázek
+Create a bot with @BotFather
+-> Save the Bot Token
+-> Create a Telegram channel
+-> Add the bot to the channel and grant administrator permissions
+-> Search for @userinfobot and choose Channel
+-> Forward any message from the channel to @userinfobot
+-> Copy the returned Id: -100...
+-> Enter the Bot Token and Chat ID in ImgBed
+-> Save and upload a test image
 ```
 
-## Reference
+## Odkazy
 
 1. Telegram bots: https://core.telegram.org/bots
 2. Telegram Bot API: https://core.telegram.org/bots/api

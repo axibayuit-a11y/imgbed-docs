@@ -1,6 +1,6 @@
 # WebDAV-toegang tot de site (Beta)
 
-De WebDAV-instelling onder Beveiliging stelt je ImgBed-site beschikbaar als WebDAV-endpoint.
+De WebDAV-instelling onder Beveiliging stelt je ImgBed-site beschikbaar als WebDAV-eindpunt.
 
 Na inschakelen kun je Windows, macOS, mobiele bestandsbeheerders of elke WebDAV-compatibele client gebruiken om ImgBed-bestanden te bekijken, uploaden, verwijderen en beheren alsof het een externe map is.
 
@@ -16,11 +16,11 @@ System Settings -> Security Settings -> WebDAV
 
 Beschikbare instellingen:
 
-- Enable
-- Username
-- Password
-- Image loading mode
-- Default channel
+- Inschakelen
+- Gebruikersnaam
+- Wachtwoord
+- Afbeeldingslaadmodus
+- Standaardkanaal
 
 ## Wat deze functie doet
 
@@ -42,13 +42,13 @@ Goede gebruikssituaties:
 
 ## Instellingen
 
-### Enable
+### Inschakelen
 
-Schakelt het WebDAV-endpoint in.
+Schakelt het WebDAV-eindpunt in.
 
 Wanneer dit uit staat, kunnen clients niet via WebDAV verbinden.
 
-### Username en Password
+### Gebruikersnaam en wachtwoord
 
 Deze gegevens gebruiken WebDAV-clients bij het verbinden.
 
@@ -56,21 +56,21 @@ Gebruik een aparte WebDAV-gebruikersnaam en wachtwoord. Hergebruik niet je behee
 
 Als gebruikersnaam of wachtwoord leeg is, kunnen WebDAV-clients niet goed verbinden.
 
-### Image Loading Mode
+### Afbeeldingslaadmodus
 
-Image loading mode bepaalt welke afbeeldings-URL WebDAV-clients bij lezen gebruiken.
+De afbeeldingslaadmodus bepaalt welke afbeeldings-URL WebDAV-clients bij het lezen gebruiken.
 
 Veelgebruikte keuzes:
 
 | Modus | Beschrijving |
 | --- | --- |
-| Smart loading | ImgBed kiest op basis van context. Aanbevolen voor normaal gebruik. |
-| Original | Geeft voorkeur aan originele afbeeldingen. |
-| Thumbnail | Geeft voorkeur aan thumbnails. Handig voor snelle preview. |
+| Slim laden | ImgBed kiest op basis van context. Aanbevolen voor normaal gebruik. |
+| Origineel | Geeft voorkeur aan originele afbeeldingen. |
+| Miniatuur | Geeft voorkeur aan miniaturen. Handig voor snelle voorvertoning. |
 
-Weet je het niet zeker, laat dan `Smart loading` staan.
+Weet je het niet zeker, laat dan `Slim laden` staan.
 
-### Default Channel
+### Standaardkanaal
 
 Het standaardkanaal wordt gebruikt voor WebDAV-uploads.
 
@@ -82,15 +82,15 @@ Als er geen standaardkanaal is gekozen, kan bladeren werken, maar uploaden mislu
 
 Windows 11 kan WebDAV toevoegen als netwerklocatie.
 
-1. Open `This PC`.
-2. Kies `Add a network location`.
+1. Open `Deze pc`.
+2. Kies `Een netwerklocatie toevoegen`.
 3. Vul `https://your-domain.com/dav` in.
 4. Vul je WebDAV-gebruikersnaam en wachtwoord in wanneer daarom wordt gevraagd.
-5. Rond de wizard af. De WebDAV-map kan daarna in File Explorer worden geopend.
+5. Rond de wizard af. De WebDAV-map kan daarna in Verkenner worden geopend.
 
 ![WebDAV toevoegen in Windows 11](../../image/Safety/webdav在win11配置.png)
 
-Na toevoegen verschijnt de WebDAV-map in Windows File Explorer. Je kunt bestanden openen, kopiëren en beheren zoals in een normale map.
+Na toevoegen verschijnt de WebDAV-map in Windows Verkenner. Je kunt bestanden openen, kopiëren en beheren zoals in een normale map.
 
 ![WebDAV in Windows](../../image/Safety/webdav在win显示效果.png)
 
@@ -107,9 +107,9 @@ Na een succesvolle WebDAV-verbinding kun je meestal:
 
 WebDAV is geschikt voor dagelijkse toegang en kleinschalig bestandsbeheer. Gebruik voor grote verplaatsingen, bulkverwijderingen of complexe ordening het beheerpaneel.
 
-## Login Device Management
+## Beheer van aanmeldapparaten
 
-Succesvolle WebDAV-verbindingen verschijnen ook onder het WebDAV-tabblad in Login Device Management.
+Succesvolle WebDAV-verbindingen verschijnen ook onder het WebDAV-tabblad in Beheer van aanmeldapparaten.
 
 Je kunt WebDAV-clients daar bekijken en oude apparaten offline forceren wanneer nodig.
 
@@ -128,7 +128,7 @@ Controleer:
 
 ### Bladeren werkt, maar uploaden mislukt
 
-Controleer `Default channel`.
+Controleer `Standaardkanaal`.
 
 WebDAV-uploads hebben een standaard uploadkanaal nodig. Als dit ontbreekt, uitgeschakeld is of verkeerd is ingesteld, kunnen uploads mislukken.
 
@@ -144,11 +144,11 @@ Heeft een map veel bestanden, organiseer ze dan in submappen in plaats van te ve
 - Stel een sterk wachtwoord in.
 - Deel het WebDAV-wachtwoord niet met mensen die je niet vertrouwt.
 - Zet WebDAV uit wanneer je het niet gebruikt.
-- Schoon ongebruikte WebDAV-apparaten regelmatig op in Login Device Management.
+- Schoon ongebruikte WebDAV-apparaten regelmatig op in Beheer van aanmeldapparaten.
 
 ## Bestandsgrootte bij WebDAV-upload
 
-WebDAV-clients gebruiken niet de chunk-uploadflow van de browseruploadpagina. Gebruik voor bestanden boven de onderstaande aanbevolen limieten liever de webuploadpagina.
+WebDAV-clients gebruiken niet de chunk-uploadflow van de uploadpagina in de webinterface. Gebruik voor bestanden boven de onderstaande aanbevolen limieten liever de webuploadpagina.
 
 | Standaard uploadkanaal | Aanbevolen limiet per WebDAV-bestand |
 | --- | ---: |

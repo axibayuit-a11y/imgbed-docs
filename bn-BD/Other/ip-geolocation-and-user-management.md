@@ -1,10 +1,10 @@
-# IP Geolocation এবং User Management
+# IP ভূ-অবস্থান ও ব্যবহারকারী ব্যবস্থাপনা
 
-IP geolocation uploader records, login devices এবং similar logs-এর IP addresses-কে approximate locations-এ রূপান্তর করে।
+IP ভূ-অবস্থান আপলোডকারীর রেকর্ড, লগইন ডিভাইস এবং অনুরূপ লগে থাকা IP ঠিকানাকে আনুমানিক অবস্থানে রূপান্তর করে।
 
-Configure করার পর admin panel upload এবং access origins আরও পরিষ্কারভাবে দেখাতে পারে। User Management suspicious IP addresses-এর upload access block বা restore করতেও সাহায্য করে।
+কনফিগার করার পর অ্যাডমিন প্যানেল আপলোড ও অ্যাক্সেসের উৎস আরও পরিষ্কারভাবে দেখাতে পারে। ব্যবহারকারী ব্যবস্থাপনা সন্দেহজনক IP ঠিকানার আপলোড অ্যাক্সেস বন্ধ বা পুনরুদ্ধার করতেও দেয়।
 
-## কোথায় Configure করবেন
+## কোথায় কনফিগার করবেন
 
 খুলুন:
 
@@ -12,39 +12,39 @@ Configure করার পর admin panel upload এবং access origins আর
 System Settings -> Other Settings -> IP Geolocation
 ```
 
-![IP geolocation](../../image/other/ip定位/ip定位.png)
+![IP ভূ-অবস্থান](../../image/other/ip定位/ip定位.png)
 
-## Available Settings
+## উপলভ্য সেটিংস
 
-নতুন IP geolocation flow এক map service-এর ওপর নির্ভর না করে multiple sources support করে।
+নতুন IP ভূ-অবস্থান প্রবাহ একটি মাত্র মানচিত্র পরিষেবার ওপর নির্ভর না করে একাধিক উৎস সমর্থন করে।
 
-| Setting | Purpose |
+| সেটিং | উদ্দেশ্য |
 | --- | --- |
-| IP geolocation language | Display language নির্বাচন করে, যেমন English, Simplified Chinese, Japanese, French ইত্যাদি। |
-| MaxMind Account ID | MaxMind GeoLite Web Service-এর জন্য MaxMind account ID। |
-| MaxMind License Key | MaxMind License Key। |
-| Tencent Map Key | Tencent Location Service key। Chinese addresses এবং mainland China IPs-এর জন্য useful। |
-| ipapi Key | APILayer ipapi key। Multilingual IP geolocation support করে। |
+| IP ভূ-অবস্থানের ভাষা | প্রদর্শনের ভাষা নির্বাচন করে, যেমন ইংরেজি, সরলীকৃত চীনা, জাপানি, ফরাসি ইত্যাদি। |
+| MaxMind অ্যাকাউন্ট ID | MaxMind GeoLite Web Service-এর জন্য MaxMind অ্যাকাউন্ট ID। |
+| MaxMind লাইসেন্স কী | MaxMind License Key। |
+| Tencent Map কী | Tencent Location Service কী। চীনা ঠিকানা এবং চীনের মূল ভূখণ্ডের IP-এর জন্য উপযোগী। |
+| ipapi কী | APILayer ipapi কী। বহু-ভাষিক IP ভূ-অবস্থান সমর্থন করে। |
 
-শুধু প্রয়োজনীয় services পূরণ করুন। সব field configure করার দরকার নেই।
+শুধু যে পরিষেবাগুলো দরকার সেগুলো পূরণ করুন। সব ক্ষেত্র কনফিগার করার প্রয়োজন নেই।
 
-কোনো key না দিলে ImgBed built-in free sources try করে, তবে stability, language support এবং precision নিজের configured service-এর মতো ভালো নাও হতে পারে।
+কোনো কী না দিলে ImgBed বিল্ট-ইন ফ্রি উৎস ব্যবহার করার চেষ্টা করবে, তবে স্থিতিশীলতা, ভাষা সমর্থন এবং নির্ভুলতা নিজের কনফিগার করা পরিষেবার তুলনায় কম হতে পারে।
 
-## Recommended Choices
+## প্রস্তাবিত নির্বাচন
 
-মূলত Chinese addresses দরকার হলে:
+আপনার যদি প্রধানত চীনা ঠিকানা দরকার হয়:
 
-1. IP geolocation language Simplified Chinese সেট করুন।
-2. Tencent Map Key configure করুন।
-3. Optional fallback হিসেবে MaxMind বা ipapi যোগ করুন।
+1. IP ভূ-অবস্থানের ভাষা সরলীকৃত চীনা করুন।
+2. Tencent Map কী কনফিগার করুন।
+3. বিকল্প উৎস হিসেবে MaxMind বা ipapi যোগ করতে পারেন।
 
-মূলত English বা multilingual addresses দরকার হলে:
+আপনার যদি প্রধানত ইংরেজি বা বহু-ভাষিক ঠিকানা দরকার হয়:
 
-1. দরকারি language নির্বাচন করুন।
-2. MaxMind Account ID এবং License Key configure করুন।
-3. আরও ভালো multilingual results চাইলে ipapi Key যোগ করুন।
+1. আপনার প্রয়োজনীয় ভাষা নির্বাচন করুন।
+2. MaxMind অ্যাকাউন্ট ID এবং লাইসেন্স কী কনফিগার করুন।
+3. আরও ভালো বহু-ভাষিক ফলাফল দরকার হলে ipapi কী যোগ করুন।
 
-## MaxMind Setup
+## MaxMind সেটআপ
 
 MaxMind-এর দরকার:
 
@@ -53,122 +53,122 @@ MaxMind Account ID
 MaxMind License Key
 ```
 
-MaxMind dashboard থেকে account ID খুঁজুন এবং License Keys page থেকে License Key generate করুন।
+MaxMind ড্যাশবোর্ডে অ্যাকাউন্ট ID খুঁজুন এবং License Keys পেজ থেকে লাইসেন্স কী তৈরি করুন।
 
-![MaxMind key config](../../image/other/ip定位/maxmind的key配置.png)
+![MaxMind কী কনফিগারেশন](../../image/other/ip定位/maxmind的key配置.png)
 
-Generate করার পর Account ID এবং License Key ImgBed-এ paste করে save করুন।
+তৈরি করার পর অ্যাকাউন্ট ID এবং লাইসেন্স কী ImgBed-এ পেস্ট করে সংরক্ষণ করুন।
 
-MaxMind free plan everyday use-এর জন্য যথেষ্ট, তবে request limits আছে। Quota exceed হলে ImgBed অন্য available sources try করবে।
+MaxMind-এর ফ্রি প্ল্যান দৈনন্দিন ব্যবহারের জন্য উপযোগী, তবে এতে অনুরোধের সীমা আছে। কোটা ছাড়িয়ে গেলে ImgBed অন্য উপলভ্য উৎস চেষ্টা করতে থাকে।
 
-## ipapi Setup
+## ipapi সেটআপ
 
-ipapi APILayer API Key ব্যবহার করে।
+ipapi একটি APILayer API Key ব্যবহার করে।
 
-ipapi console খুলে সেখানে দেখানো API Key copy করুন।
+ipapi কনসোল খুলুন এবং সেখানে দেখানো API Key কপি করুন।
 
-![ipapi config](../../image/other/ip定位/ipapi配置.png)
+![ipapi কনফিগারেশন](../../image/other/ip定位/ipapi配置.png)
 
-ImgBed-এর `ipapi Key` field-এ paste করে save করুন।
+ImgBed-এর `ipapi Key` ক্ষেত্রে এটি পেস্ট করে সংরক্ষণ করুন।
 
-ipapi multilingual IP geolocation support করে এবং selected language-এ addresses দেখাতে চাইলে useful। Free plan-এ request limits আছে। Quota শেষ হলে ImgBed অন্য available sources try করবে।
+ipapi বহু-ভাষিক IP ভূ-অবস্থান সমর্থন করে এবং নির্বাচিত ভাষায় ঠিকানা দেখাতে চাইলে উপযোগী। এর ফ্রি প্ল্যানেও অনুরোধের সীমা আছে। কোটা শেষ হলে ImgBed অন্য উপলভ্য উৎস চেষ্টা করতে থাকে।
 
-## Tencent Map Key Setup
+## Tencent Map কী সেটআপ
 
-Tencent Map Key Chinese addresses, বিশেষ করে mainland China IPs-এর জন্য useful।
+Tencent Map কী চীনা ঠিকানার জন্য উপযোগী, বিশেষ করে চীনের মূল ভূখণ্ডের IP-এর জন্য।
 
-Tencent Location Service-এ key তৈরি করার সময় enable করুন:
+Tencent Location Service-এ কী তৈরি করার সময় চালু করুন:
 
 ```text
 WebServiceAPI
 ```
 
-Creation-এর পর key `Tencent Map Key`-এ paste করে save করুন।
+তৈরি করার পর কীটি `Tencent Map Key`-এ পেস্ট করে সংরক্ষণ করুন।
 
-শুধু basic Chinese IP geolocation দরকার হলে Tencent Map Key দিয়ে শুরু করলেই হয়।
+শুধু মৌলিক চীনা IP ভূ-অবস্থান দরকার হলে Tencent Map কী দিয়েই শুরু করা যথেষ্ট।
 
-## User Management-এ কী দেখবেন
+## ব্যবহারকারী ব্যবস্থাপনায় কী দেখবেন
 
-User Management admin panel-এর top থেকে পাওয়া যায়।
+ব্যবহারকারী ব্যবস্থাপনা অ্যাডমিন প্যানেলের ওপরের অংশ থেকে পাওয়া যায়।
 
-![User management](../../image/other/用户管理显示.png)
+![ব্যবহারকারী ব্যবস্থাপনা](../../image/other/用户管理显示.png)
 
-User Management IP অনুযায়ী upload activity দেখায়:
+ব্যবহারকারী ব্যবস্থাপনা IP অনুযায়ী আপলোড কার্যকলাপ দেখায়:
 
-| Field | Description |
+| ক্ষেত্র | বিবরণ |
 | --- | --- |
-| IP source | Uploader source IP। |
-| Address | IP থেকে resolved approximate location। |
-| Total upload size | এই IP থেকে uploaded total file size। |
-| Upload count | এই IP থেকে uploads সংখ্যা। |
-| Upload allowed | On মানে uploads allowed। Off মানে uploads blocked। |
+| IP উৎস | আপলোডকারীর উৎস IP। |
+| ঠিকানা | IP থেকে নির্ণীত আনুমানিক অবস্থান। |
+| মোট আপলোড আকার | এই IP থেকে আপলোড করা মোট ফাইল আকার। |
+| আপলোড সংখ্যা | এই IP থেকে আপলোডের সংখ্যা। |
+| আপলোড অনুমোদিত | চালু থাকলে আপলোড অনুমোদিত। বন্ধ থাকলে আপলোড অবরুদ্ধ। |
 
-সেই IP থেকে uploaded files-এর list খুলতে left arrow ক্লিক করুন।
+সেই IP থেকে আপলোড করা ফাইলের তালিকা খুলতে বাম দিকের তীর চিহ্নে ক্লিক করুন।
 
-File list file name, preview, file size, moderation result, file status এবং upload time দেখায়। Uploads suspicious লাগলে আগে IP expand করে files review করুন, তারপর further uploads block করবেন কি না সিদ্ধান্ত নিন।
+ফাইল তালিকায় ফাইলের নাম, প্রিভিউ, ফাইল আকার, মডারেশন ফলাফল, ফাইলের অবস্থা এবং আপলোড সময় দেখা যায়। আপলোড সন্দেহজনক মনে হলে আগে IP প্রসারিত করুন, ফাইল পর্যালোচনা করুন, তারপর পরবর্তী আপলোড বন্ধ করবেন কি না সিদ্ধান্ত নিন।
 
-IP suspicious হলে `Upload allowed` off করুন। Future uploads সেই IP থেকে block হবে।
+কোনো IP সন্দেহজনক হলে `Upload allowed` বন্ধ করুন। ভবিষ্যতের আপলোড সেই IP থেকে অবরুদ্ধ হবে।
 
-## Search, Sort এবং Advanced Filters
+## অনুসন্ধান, সাজানো এবং উন্নত ফিল্টার
 
-User Management-এর top-এ IP source বা address দিয়ে search করুন।
+ব্যবহারকারী ব্যবস্থাপনার ওপরে IP উৎস বা ঠিকানা দিয়ে অনুসন্ধান করুন।
 
-Recent uploaders, high-frequency uploaders বা high-usage IPs খুঁজতে time, upload count বা total upload size দিয়ে sort করুন।
+সাম্প্রতিক আপলোডকারী, বেশি-ঘনঘন আপলোডকারী অথবা বেশি ব্যবহৃত IP খুঁজতে সময়, আপলোড সংখ্যা অথবা মোট আপলোড আকার অনুযায়ী সাজান।
 
-আরও গভীর তদন্তের জন্য advanced filters খুলুন।
+আরও গভীর তদন্তের জন্য উন্নত ফিল্টার খুলুন।
 
-![Advanced filters](../../image/other/用户管理高级筛选.png)
+![উন্নত ফিল্টার](../../image/other/用户管理高级筛选.png)
 
-Advanced filters support করে:
+উন্নত ফিল্টার সমর্থন করে:
 
-| Filter | Usage |
+| ফিল্টার | ব্যবহার |
 | --- | --- |
-| Time range | Selected period-এ files upload করা IPs দেখায়। |
-| Access status | Normal, blocked এবং similar states দিয়ে filter করে। |
-| Allow/block list | Allowlist, blocklist বা unset দিয়ে filter করে। |
-| File type | Images, videos, audio, documents, code বা other files upload করা IPs দেখায়। |
-| File size | Uploaded file size range দিয়ে filter করে। |
-| Age rating | Unset, General, R12+, R16+, R18 এবং similar ratings দিয়ে filter করে। |
-| File status | Abnormal files investigate করতে current file status দিয়ে filter করে। |
+| সময়সীমা | নির্বাচিত সময়ের মধ্যে ফাইল আপলোড করা IP দেখায়। |
+| অ্যাক্সেস অবস্থা | স্বাভাবিক, অবরুদ্ধ এবং অনুরূপ অবস্থা অনুযায়ী ফিল্টার করে। |
+| অনুমোদন/অবরোধ তালিকা | অনুমোদন তালিকা, অবরোধ তালিকা অথবা নির্ধারিত নয় অনুযায়ী ফিল্টার করে। |
+| ফাইলের ধরন | ছবি, ভিডিও, অডিও, ডকুমেন্ট, কোড বা অন্যান্য ফাইল আপলোড করা IP দেখায়। |
+| ফাইল আকার | আপলোড করা ফাইল আকারের সীমা অনুযায়ী ফিল্টার করে। |
+| বয়সভিত্তিক রেটিং | নির্ধারিত নয়, General, R12+, R16+, R18 এবং অনুরূপ রেটিং অনুযায়ী ফিল্টার করে। |
+| ফাইলের অবস্থা | অস্বাভাবিক ফাইল তদন্ত করতে বর্তমান ফাইল অবস্থা অনুযায়ী ফিল্টার করে। |
 
-Apply করতে `Apply Filters` ক্লিক করুন। সব data-তে ফিরতে `Reset` ব্যবহার করুন।
+প্রয়োগ করতে `Apply Filters`-এ ক্লিক করুন। সব ডেটায় ফিরতে `Reset` ব্যবহার করুন।
 
-## Mobile View
+## মোবাইল দৃশ্য
 
-Mobile-এ User Management card layout-এ switch করে।
+মোবাইলে ব্যবহারকারী ব্যবস্থাপনা কার্ড লেআউটে বদলে যায়।
 
-![Mobile user management](../../image/other/手机端显示用户管理效果.png)
+![মোবাইলে ব্যবহারকারী ব্যবস্থাপনা](../../image/other/手机端显示用户管理效果.png)
 
-প্রতিটি card IP, address, total upload size, upload count এবং upload allowed switch দেখায়। Horizontal table scrolling ছাড়াই users manage করা যায়।
+প্রতিটি কার্ডে IP, ঠিকানা, মোট আপলোড আকার, আপলোড সংখ্যা এবং আপলোড অনুমোদনের সুইচ দেখা যায়। অনুভূমিক টেবিল স্ক্রল ছাড়াই ব্যবহারকারী পরিচালনা করা যায়।
 
-## Location ভুল মনে হলে
+## অবস্থান ভুল মনে হলে
 
-IP geolocation approximate। এটি precise street address নয়।
+IP ভূ-অবস্থান আনুমানিক। এটি নির্ভুল রাস্তার ঠিকানা নয়।
 
-User proxy, data center, cloud server বা cross-border network-এর পেছনে থাকলে displayed location real location থেকে আলাদা হতে পারে।
+ব্যবহারকারী যদি প্রক্সি, ডেটা সেন্টার, ক্লাউড সার্ভার অথবা সীমান্ত-পারাপার নেটওয়ার্কের পেছনে থাকে, তাহলে প্রদর্শিত অবস্থান প্রকৃত অবস্থান থেকে ভিন্ন হতে পারে।
 
-এই feature rough origin বোঝা, abnormal uploads খোঁজা এবং blocking decisions-এ সহায়তার জন্য ব্যবহার করুন। Precise tracking হিসেবে ধরবেন না।
+এই বৈশিষ্ট্যটি আনুমানিক উৎস বোঝা, অস্বাভাবিক আপলোড খুঁজে বের করা এবং অবরোধের সিদ্ধান্তে সহায়তার জন্য ব্যবহার করুন। এটিকে নির্ভুল ট্র্যাকিং হিসেবে ধরে নেবেন না।
 
-## Common Cases
+## সাধারণ ঘটনা
 
-| Case | Meaning |
+| ঘটনা | অর্থ |
 | --- | --- |
-| Address empty | IP এখনও resolve হয়নি, বা current source temporarily unavailable। |
-| Address language ভুল | IP geolocation language এবং সেই language support করা source configured কি না check করুন। |
-| Address data center দেখাচ্ছে | অনেক proxies, cloud servers এবং crawlers data center বা ISP addresses হিসেবে দেখা যায়। |
-| Upload count high | IP ভালোভাবে review করুন এবং দরকার হলে uploads block করুন। |
-| Total upload size বড় | Sort বা filter করুন, IP expand করে specific files inspect করুন। |
-| Blocking-এর পর restore দরকার | `Upload allowed` আবার on করুন। |
+| ঠিকানা খালি | IP এখনো নির্ণয় হয়নি, অথবা বর্তমান উৎস সাময়িকভাবে অপ্রাপ্য। |
+| ঠিকানার ভাষা ভুল | IP ভূ-অবস্থানের ভাষা এবং সেই ভাষা সমর্থনকারী উৎস কনফিগার করা আছে কি না পরীক্ষা করুন। |
+| ঠিকানায় ডেটা সেন্টার দেখা যাচ্ছে | অনেক প্রক্সি, ক্লাউড সার্ভার এবং ক্রলার ডেটা সেন্টার বা ISP ঠিকানা হিসেবে দেখা যায়। |
+| আপলোড সংখ্যা বেশি | এই IP সতর্কভাবে পর্যালোচনা করুন এবং প্রয়োজনে আপলোড বন্ধ করুন। |
+| মোট আপলোড আকার বড় | সাজান বা ফিল্টার করুন, IP প্রসারিত করুন এবং নির্দিষ্ট ফাইল পরীক্ষা করুন। |
+| অবরোধের পর পুনরুদ্ধার দরকার | `Upload allowed` আবার চালু করুন। |
 
-## Quick Flow
+## দ্রুত ধাপ
 
 ```text
-Other Settings-এ IP Geolocation খুলুন
--> IP geolocation language নির্বাচন করুন
--> দরকার অনুযায়ী MaxMind, Tencent Map বা ipapi credentials পূরণ করুন
--> Settings save করুন
--> User Management খুলুন
--> IP source, address, total upload size এবং upload count review করুন
--> Abnormal IPs খুঁজতে search, sort বা advanced filters ব্যবহার করুন
--> প্রয়োজন অনুযায়ী uploads allow বা block করুন
+Open IP Geolocation in Other Settings
+-> Choose IP geolocation language
+-> Fill MaxMind, Tencent Map, or ipapi credentials as needed
+-> Save settings
+-> Open User Management
+-> Review IP source, address, total upload size, and upload count
+-> Use search, sort, or advanced filters to find abnormal IPs
+-> Allow or block uploads as needed
 ```

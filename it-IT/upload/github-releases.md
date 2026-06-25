@@ -22,7 +22,7 @@ Servono solo tre cose:
 6. Clicca su `Generate new token (classic)`.
 7. Dai al token un nome riconoscibile.
 8. Scegli una scadenza adatta al tuo modo di gestire la manutenzione.
-9. Seleziona gli scope `repo` e `workflow`.
+9. Seleziona gli ambiti `repo` e `workflow`.
 10. Copia e salva subito il token appena viene creato.
 
 ![Aggiungi permessi GitHub](../../image/upload/github-releases/添加github权限.png)
@@ -37,7 +37,7 @@ Dopo aver scelto `GitHub Releases` nelle Impostazioni di caricamento, compila:
 | Access Token | Il GitHub Personal Access Token appena creato. |
 | Nome repository | Un nome breve come `image`, oppure un percorso completo come `username/image`. |
 | Repository privato | Attiva o disattiva in base alle tue esigenze. |
-| Nota | Opzionale, per esempio `Primary upload channel`. |
+| Nota | Opzionale, per esempio `Canale di caricamento principale`. |
 
 ![Compila canale GitHub](../../image/upload/github-releases/填写github渠道配置.png)
 
@@ -57,11 +57,11 @@ Il sistema gestisce automaticamente questi dettagli:
 ## Checklist rapida
 
 ```text
-Accedi a GitHub
--> Crea un Access Token
--> Torna in ImgBed e inserisci token e nome repository
--> Salva
--> Se inserisci solo il nome repo, ImgBed aggiunge automaticamente lo username corrente
--> Se inserisci username/repo, ImgBed lo usa così com'è
--> Carica un'immagine di prova
+Sign in to GitHub
+-> Create an Access Token
+-> Return to ImgBed and enter the token and repository name
+-> Save
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

@@ -1,112 +1,112 @@
-# افزودن Yandex Channel
+# افزودن کانال Yandex
 
 ## ابتدا چه چیزهایی لازم است
 
 | مورد | چرا لازم است |
 | --- | --- |
-| Yandex account | برای sign in و authorize کردن Yandex Disk |
-| Yandex OAuth app | برای ساخت `Client ID` و `Client Secret` |
-| دامنه ImgBed شما | برای OAuth redirect URI |
-| فضای Yandex Disk در دسترس | به‌عنوان محل واقعی ذخیره files |
+| حساب Yandex | برای ورود و مجوزدهی Yandex Disk استفاده می‌شود |
+| برنامه OAuth در Yandex | برای تولید `Client ID` و `Client Secret` استفاده می‌شود |
+| دامنه ImgBed شما | به‌عنوان URI بازگشت OAuth استفاده می‌شود |
+| فضای ذخیره‌سازی در دسترس در Yandex Disk | محل واقعی ذخیره فایل‌ها خواهد بود |
 
-## مراحل setup
+## مراحل پیکربندی
 
-### Step 1: ساخت Yandex OAuth App
+### مرحله 1: ساخت برنامه OAuth در Yandex
 
-1. صفحه ساخت Yandex OAuth app را باز کنید:
+1. صفحه ساخت برنامه OAuth در Yandex را باز کنید:
 
 ```text
 https://oauth.yandex.com/client/new
 ```
 
-2. اگر به sign in هدایت شدید، ابتدا با Yandex account وارد شوید.
-3. app جدید بسازید.
-4. یک نام قابل‌تشخیص بگذارید، مثل `imgbed-yandex`.
-5. تنظیمات callback یا redirect URL را پیدا کنید.
+2. اگر به صفحه ورود هدایت شدید، ابتدا با حساب Yandex خود وارد شوید.
+3. یک برنامه جدید بسازید.
+4. نامی قابل تشخیص برای برنامه انتخاب کنید، مانند `imgbed-yandex`.
+5. تنظیمات URL بازگشت یا تغییرمسیر را پیدا کنید.
 6. وارد کنید:
 
 ```text
 https://your-domain.com/api/oauth/yandex/callback
 ```
 
-### Step 2: Confirm کردن Permissions
+### مرحله 2: تأیید مجوزها
 
-برای integration فعلی ImgBed با Yandex، این چهار permission زیر `Yandex.Disk REST API` را نگه دارید:
+برای یکپارچه‌سازی فعلی Yandex در ImgBed، این چهار مجوز را در `Yandex.Disk REST API` نگه دارید:
 
-| Permission | Purpose |
+| مجوز | کاربرد |
 | --- | --- |
-| `cloud_api:disk.app_folder` | اجازه می‌دهد ImgBed files را در app folder ذخیره کند |
-| `cloud_api:disk.read` | خواندن files و download links |
-| `cloud_api:disk.write` | upload files، ساخت folders و delete files |
-| `Access to information about Yandex.Disk` | خواندن disk quota و used space |
+| `cloud_api:disk.app_folder` | اجازه می‌دهد ImgBed فایل‌ها را در پوشه برنامه ذخیره کند |
+| `cloud_api:disk.read` | خواندن فایل‌ها و لینک‌های دانلود |
+| `cloud_api:disk.write` | بارگذاری فایل‌ها، ساخت پوشه‌ها و حذف فایل‌ها |
+| `Access to information about Yandex.Disk` | خواندن سهمیه دیسک و فضای مصرف‌شده |
 
-اگر این permissions را زیر `Yandex ID API` هم دیدید، اختیاری هستند:
+اگر این مجوزها را در `Yandex ID API` هم دیدید، اختیاری هستند:
 
-| Permission Text | Recommendation |
+| متن مجوز | پیشنهاد |
 | --- | --- |
-| `Access to username, first name and surname, gender` | Optional |
-| `Access to email address` | Optional |
+| `Access to username, first name and surname, gender` | اختیاری |
+| `Access to email address` | اختیاری |
 
-قابلیت‌های اصلی upload، download، deletion و quota عمدتاً به چهار permission مربوط به `Yandex.Disk REST API` بالا وابسته‌اند.
+قابلیت‌های اصلی بارگذاری، دانلود، حذف و سهمیه عمدتاً به چهار مجوز بالا در `Yandex.Disk REST API` وابسته‌اند.
 
-![Configure Yandex Disk permissions](../../image/upload/yandex/dataaccess配置软盘权限.png)
+![پیکربندی مجوزهای Yandex Disk](../../image/upload/yandex/dataaccess配置软盘权限.png)
 
-### Step 3: Copy کردن App Credentials
+### مرحله 3: کپی کردن اعتبارنامه‌های برنامه
 
-پس از ساخت app، copy کنید:
+پس از ساخت برنامه، این موارد را کپی کنید:
 
-| Yandex Field | ImgBed Field |
+| فیلد Yandex | فیلد ImgBed |
 | --- | --- |
 | `Client ID` | `Client ID` |
 | `Client Secret` | `Client Secret` |
 
-![Record Client ID and Secret](../../image/upload/yandex/记录客户端id和secret.png)
+![ثبت Client ID و Secret](../../image/upload/yandex/记录客户端id和secret.png)
 
-### Step 4: پر کردن Yandex Channel
+### مرحله 4: تکمیل کانال Yandex
 
-در Upload Settings، `Yandex` را انتخاب کنید و پر کنید:
+در تنظیمات بارگذاری، `Yandex` را انتخاب کنید و این فیلدها را تکمیل کنید:
 
-| ImgBed Field | What To Enter |
+| فیلد ImgBed | مقدار لازم |
 | --- | --- |
-| Channel name | نام قابل‌تشخیص، مثل `Main Yandex` |
-| Client ID | `Client ID` مربوط به Yandex app |
-| Client Secret | `Client Secret` مربوط به Yandex app |
+| نام کانال | نامی قابل تشخیص، مانند `Main Yandex` |
+| Client ID | `Client ID` برنامه Yandex |
+| Client Secret | `Client Secret` برنامه Yandex |
 | Refresh Token | فعلاً خالی بگذارید |
-| Root directory | اختیاری. پیش‌فرض `imgbed`. |
+| دایرکتوری ریشه | اختیاری. مقدار پیش‌فرض `imgbed` است. |
 
-![Edit channel config](../../image/upload/yandex/编辑配置渠道.png)
+![ویرایش پیکربندی کانال](../../image/upload/yandex/编辑配置渠道.png)
 
-### Step 5: گرفتن Refresh Token
+### مرحله 5: دریافت Refresh Token
 
-1. در ImgBed، `Get Token` را بزنید.
-2. وارد Yandex account موردنظر شوید.
-3. authorization prompt را approve کنید.
-4. callback page یک `Refresh Token` نشان می‌دهد.
-5. آن را copy کنید.
-6. به ImgBed برگردید و در `Refresh Token` paste کنید.
+1. در ImgBed روی `Get Token` کلیک کنید.
+2. وارد حساب Yandex موردنظر برای اتصال شوید.
+3. درخواست مجوزدهی را تأیید کنید.
+4. صفحه بازگشت یک `Refresh Token` نمایش می‌دهد.
+5. آن را کپی کنید.
+6. به ImgBed برگردید و آن را در فیلد `Refresh Token` قرار دهید.
 
-![Copy refresh token after authorization](../../image/upload/yandex/授权后复制刷新令牌.png)
+![کپی کردن refresh token پس از مجوزدهی](../../image/upload/yandex/授权后复制刷新令牌.png)
 
-### Step 6: Save کردن Channel
+### مرحله 6: ذخیره کانال
 
-پس از پر کردن همه fields، channel را save کنید.
+پس از تکمیل همه فیلدها، کانال را ذخیره کنید.
 
-## Quick Flow
+## جریان سریع
 
 ```text
-Yandex OAuth Console را باز کنید
--> app بسازید
--> https://your-domain.com/api/oauth/yandex/callback را اضافه کنید
--> Yandex Disk permissions را confirm کنید
--> Client ID و Client Secret را copy کنید
--> Client ID / Client Secret را در ImgBed وارد کنید
--> Get Token را بزنید
--> Refresh Token را از callback page copy کنید
--> در ImgBed paste و save کنید
+Open Yandex OAuth Console
+-> Create an app
+-> Add https://your-domain.com/api/oauth/yandex/callback
+-> Confirm Yandex Disk permissions
+-> Copy Client ID and Client Secret
+-> Fill Client ID / Client Secret into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
-## References
+## منابع
 
-1. Register a Yandex app: https://yandex.com/dev/id/doc/en/register-client
-2. Get an authorization code through URL: https://yandex.com/dev/id/doc/en/codes/code-url
-3. Yandex OAuth token endpoint: https://yandex.com/dev/id/doc/en/tokens/token
+1. ثبت برنامه Yandex: https://yandex.com/dev/id/doc/en/register-client
+2. دریافت کد مجوزدهی از طریق URL: https://yandex.com/dev/id/doc/en/codes/code-url
+3. اندپوینت توکن OAuth در Yandex: https://yandex.com/dev/id/doc/en/tokens/token

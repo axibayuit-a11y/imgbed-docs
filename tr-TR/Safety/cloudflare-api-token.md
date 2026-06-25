@@ -32,7 +32,7 @@ Cloudflare API kimlik bilgileri yapılandırıldıktan sonra ImgBed bu işlemler
 - Bir görseli engelleyip ziyaretçilerin özgün dosyayı görmesini durdurmak istiyorsanız.
 - Aynı ada sahip bir dosyayı değiştirip ziyaretçilerin yeni sürümü daha hızlı görmesini istiyorsanız.
 - Dosyaları taşıyıp yeniden adlandırıyor ve eski yol önbelleğinin hızlı yenilenmesini istiyorsanız.
-- Herkese açık erişim kurallarını değiştirip public gallery veya random image önbelleğinin daha hızlı güncellenmesini istiyorsanız.
+- Herkese açık erişim kurallarını değiştirip herkese açık galeri veya rastgele görsel önbelleğinin daha hızlı güncellenmesini istiyorsanız.
 
 ## Boş Bırakırsanız Ne Olur?
 

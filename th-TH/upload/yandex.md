@@ -1,25 +1,25 @@
-# เพิ่ม Yandex Channel
+# เพิ่มช่องทาง Yandex
 
 ## สิ่งที่ต้องเตรียมก่อน
 
-| Requirement | ทำไมต้องใช้ |
+| ข้อกำหนด | ทำไมต้องใช้ |
 | --- | --- |
-| Yandex account | ใช้ sign in และ authorize Yandex Disk |
-| Yandex OAuth app | ใช้ generate `Client ID` และ `Client Secret` |
+| Yandex account | ใช้เข้าสู่ระบบและ authorize Yandex Disk |
+| Yandex OAuth app | ใช้สร้าง `Client ID` และ `Client Secret` |
 | ImgBed domain ของคุณ | ใช้เป็น OAuth redirect URI |
-| Available Yandex Disk storage | ใช้เป็นพื้นที่เก็บ file จริง |
+| พื้นที่ Yandex Disk ที่พร้อมใช้งาน | ใช้เป็นพื้นที่เก็บไฟล์จริง |
 
 ## ขั้นตอนตั้งค่า
 
-### Step 1: สร้าง Yandex OAuth App
+### ขั้นตอนที่ 1: สร้าง Yandex OAuth App
 
-1. เปิดหน้า create Yandex OAuth app:
+1. เปิดหน้าสร้าง Yandex OAuth app:
 
 ```text
 https://oauth.yandex.com/client/new
 ```
 
-2. ถ้าถูก redirect ไปหน้า sign in ให้ sign in ด้วย Yandex account ก่อน
+2. ถ้าถูก redirect ไปหน้า sign in ให้เข้าสู่ระบบด้วย Yandex account ก่อน
 3. สร้าง app ใหม่
 4. ตั้งชื่อ app ให้จำง่าย เช่น `imgbed-yandex`
 5. หา callback หรือ redirect URL settings
@@ -29,84 +29,84 @@ https://oauth.yandex.com/client/new
 https://your-domain.com/api/oauth/yandex/callback
 ```
 
-### Step 2: Confirm Permissions
+### ขั้นตอนที่ 2: ยืนยัน Permissions
 
 สำหรับ ImgBed Yandex integration ปัจจุบัน ให้คง permissions สี่ตัวนี้ไว้ใน `Yandex.Disk REST API`:
 
-| Permission | Purpose |
+| Permission | วัตถุประสงค์ |
 | --- | --- |
-| `cloud_api:disk.app_folder` | ให้ ImgBed store files ใน app folder |
-| `cloud_api:disk.read` | อ่าน files และ download links |
-| `cloud_api:disk.write` | Upload files, create folders และ delete files |
+| `cloud_api:disk.app_folder` | ให้ ImgBed จัดเก็บไฟล์ใน app folder |
+| `cloud_api:disk.read` | อ่านไฟล์และ download links |
+| `cloud_api:disk.write` | อัปโหลดไฟล์ สร้างโฟลเดอร์ และลบไฟล์ |
 | `Access to information about Yandex.Disk` | อ่าน disk quota และ used space |
 
-ถ้าเห็น permissions เหล่านี้ใน `Yandex ID API` จะเป็น optional:
+ถ้าเห็น permissions เหล่านี้ใน `Yandex ID API` จะเป็นแบบไม่บังคับ:
 
-| Permission Text | Recommendation |
+| ข้อความ Permission | คำแนะนำ |
 | --- | --- |
-| `Access to username, first name and surname, gender` | Optional |
-| `Access to email address` | Optional |
+| `Access to username, first name and surname, gender` | ไม่บังคับ |
+| `Access to email address` | ไม่บังคับ |
 
-Core upload, download, deletion และ quota features พึ่งพา permissions สี่ตัวใน `Yandex.Disk REST API` เป็นหลัก
+ฟีเจอร์หลักด้านการอัปโหลด ดาวน์โหลด ลบ และ quota พึ่งพา permissions สี่ตัวใน `Yandex.Disk REST API` เป็นหลัก
 
-![Configure Yandex Disk permissions](../../image/upload/yandex/dataaccess配置软盘权限.png)
+![กำหนดค่า Yandex Disk permissions](../../image/upload/yandex/dataaccess配置软盘权限.png)
 
-### Step 3: Copy App Credentials
+### ขั้นตอนที่ 3: คัดลอก App Credentials
 
-หลังสร้าง app แล้ว copy:
+หลังสร้าง app แล้วคัดลอก:
 
-| Yandex Field | ImgBed Field |
+| ฟิลด์ Yandex | ฟิลด์ ImgBed |
 | --- | --- |
 | `Client ID` | `Client ID` |
 | `Client Secret` | `Client Secret` |
 
-![Record Client ID and Secret](../../image/upload/yandex/记录客户端id和secret.png)
+![บันทึก Client ID และ Secret](../../image/upload/yandex/记录客户端id和secret.png)
 
-### Step 4: ใส่ Yandex Channel
+### ขั้นตอนที่ 4: ใส่ช่องทาง Yandex
 
 ใน Upload Settings เลือก `Yandex` แล้วกรอก:
 
-| ImgBed Field | ใส่อะไร |
+| ฟิลด์ ImgBed | ใส่อะไร |
 | --- | --- |
 | Channel name | ชื่อที่จำง่าย เช่น `Main Yandex` |
 | Client ID | Yandex app `Client ID` |
 | Client Secret | Yandex app `Client Secret` |
 | Refresh Token | เว้นว่างไว้ก่อน |
-| Root directory | Optional ค่าเริ่มต้นคือ `imgbed` |
+| Root directory | ไม่บังคับ ค่าเริ่มต้นคือ `imgbed` |
 
-![Edit channel config](../../image/upload/yandex/编辑配置渠道.png)
+![แก้ไขการกำหนดค่าช่องทาง](../../image/upload/yandex/编辑配置渠道.png)
 
-### Step 5: รับ Refresh Token
+### ขั้นตอนที่ 5: รับ Refresh Token
 
 1. ใน ImgBed คลิก `Get Token`
-2. Sign in เข้า Yandex account ที่ต้องการเชื่อมต่อ
-3. Approve authorization prompt
-4. Callback page จะแสดง `Refresh Token`
-5. Copy token นั้น
-6. กลับไปที่ ImgBed แล้ว paste ใน field `Refresh Token`
+2. เข้าสู่ระบบ Yandex account ที่ต้องการเชื่อมต่อ
+3. อนุมัติ authorization prompt
+4. หน้า callback จะแสดง `Refresh Token`
+5. คัดลอก token นั้น
+6. กลับไปที่ ImgBed แล้ววางในฟิลด์ `Refresh Token`
 
-![Copy refresh token after authorization](../../image/upload/yandex/授权后复制刷新令牌.png)
+![คัดลอก refresh token หลัง authorization](../../image/upload/yandex/授权后复制刷新令牌.png)
 
-### Step 6: Save Channel
+### ขั้นตอนที่ 6: บันทึกช่องทาง
 
-เมื่อกรอกครบทุก field แล้วให้ save channel
+เมื่อกรอกครบทุกฟิลด์แล้วให้บันทึกช่องทาง
 
-## Quick Flow
+## ลำดับขั้นตอนด่วน
 
 ```text
-เปิด Yandex OAuth Console
--> สร้าง app
--> เพิ่ม https://your-domain.com/api/oauth/yandex/callback
+Open Yandex OAuth Console
+-> Create an app
+-> Add https://your-domain.com/api/oauth/yandex/callback
 -> Confirm Yandex Disk permissions
--> Copy Client ID และ Client Secret
--> ใส่ Client ID / Client Secret ใน ImgBed
--> คลิก Get Token
--> Copy Refresh Token จาก callback page
--> Paste กลับเข้า ImgBed แล้ว save
+-> Copy Client ID and Client Secret
+-> Fill Client ID / Client Secret into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
-## References
+## เอกสารอ้างอิง
 
-1. Register a Yandex app: https://yandex.com/dev/id/doc/en/register-client
-2. Get an authorization code through URL: https://yandex.com/dev/id/doc/en/codes/code-url
+1. ลงทะเบียน Yandex app: https://yandex.com/dev/id/doc/en/register-client
+2. รับ authorization code ผ่าน URL: https://yandex.com/dev/id/doc/en/codes/code-url
 3. Yandex OAuth token endpoint: https://yandex.com/dev/id/doc/en/tokens/token

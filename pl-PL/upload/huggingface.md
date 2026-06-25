@@ -55,13 +55,13 @@ System obsłuży te szczegóły:
 ## Szybka lista
 
 ```text
-Zaloguj się do Hugging Face
--> Utwórz Access Token
--> Wybierz uprawnienie write
--> Wróć do ImgBed i wpisz token oraz nazwę repozytorium
--> Zapisz
--> Jeśli wpisano tylko nazwę repo, ImgBed automatycznie dodaje bieżącą nazwę użytkownika
--> Jeśli wpisano username/repo, ImgBed używa tego bez zmian
--> ImgBed sprawdza lub tworzy repozytorium dataset
--> Prześlij obraz testowy
+Sign in to Hugging Face
+-> Create an Access Token
+-> Select write permission
+-> Return to ImgBed and enter the token and repository name
+-> Save
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> ImgBed checks or creates the dataset repository
+-> Upload a test image
 ```

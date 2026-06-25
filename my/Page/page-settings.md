@@ -1,67 +1,67 @@
-# Page Settings
+# စာမျက်နှာ ဆက်တင်များ
 
-Page settings က site display, upload page defaults, background images, admin panel appearance တို့ကိုထိန်းချုပ်ပါတယ်။
+စာမျက်နှာ ဆက်တင်များသည် ဆိုက်ပြသမှု၊ တင်ခြင်းစာမျက်နှာ၏ မူလတန်ဖိုးများ၊ နောက်ခံပုံများနှင့် စီမံခန့်ခွဲမှု ပန်နယ်၏ အသွင်အပြင်ကို ထိန်းချုပ်သည်။
 
-## Global Settings
+## အထွေထွေ ဆက်တင်များ
 
-| Option | Purpose |
+| ရွေးချယ်မှု | ရည်ရွယ်ချက် |
 | --- | --- |
-| Site title | browser tab မှာပြတဲ့ title။ |
-| Site icon | browser tab မှာပြတဲ့ icon သေး။ |
-| ImgBed name | frontend pages မှာပြတဲ့အမည်။ |
-| ImgBed logo | frontend pages မှာပြတဲ့ logo image။ |
-| Logo link | logo သို့မဟုတ် avatar နှိပ်တဲ့အခါဖွင့်မယ့် URL။ |
-| Background switch interval | backgrounds အများအပြားအတွက် rotation interval, milliseconds ဖြင့်။ `60000` ဆို 60 seconds။ |
-| Background opacity | background image opacity ကို `0` မှ `1` အထိသတ်မှတ်သည်။ တန်ဖိုးနည်းလျှင်ပိုဖျော့သည်။ |
-| Default URL prefix | image links generate လုပ်တဲ့အခါသုံးတဲ့ prefix။ ဗလာဆို current site domain ကိုသုံးသည်။ |
+| ဆိုက် ခေါင်းစဉ် | ဘရောက်ဇာ tab တွင် ပြသမည့် ခေါင်းစဉ်။ |
+| ဆိုက် အိုင်ကွန် | ဘရောက်ဇာ tab တွင် ပြသမည့် အိုင်ကွန်အသေး။ |
+| ImgBed အမည် | ရှေ့ဖက် စာမျက်နှာများတွင် ပြသမည့် အမည်။ |
+| ImgBed လိုဂို | ရှေ့ဖက် စာမျက်နှာများတွင် ပြသမည့် လိုဂိုပုံ။ |
+| လိုဂို လင့်ခ် | လိုဂို သို့မဟုတ် avatar ကို နှိပ်သောအခါ ဖွင့်မည့် URL။ |
+| နောက်ခံပြောင်းလဲချိန်အကွာအဝေး | နောက်ခံများစွာကို လှည့်ပြောင်းမည့် အချိန်အကွာအဝေး၊ မီလီစက္ကန့်ဖြင့်။ `60000` သည် 60 စက္ကန့်ကို ဆိုလိုသည်။ |
+| နောက်ခံ မထင်ရှားမှု | နောက်ခံပုံ၏ မထင်ရှားမှုကို `0` မှ `1` အထိ သတ်မှတ်သည်။ တန်ဖိုးနည်းလျှင် ပိုဖျော့သည်။ |
+| မူလ URL ရှေ့ဆက် | ပုံလင့်ခ်များ ဖန်တီးရာတွင် အသုံးပြုမည့် ရှေ့ဆက်။ ဗလာထားလျှင် လက်ရှိဆိုက် ဒိုမိန်းကို အသုံးပြုသည်။ |
 
-## Client Settings
+## ကလိုင်းယင့် ဆက်တင်များ
 
-| Option | Purpose |
+| ရွေးချယ်မှု | ရည်ရွယ်ချက် |
 | --- | --- |
-| Announcement | upload page အပေါ်ပိုင်းမှာပြတဲ့ announcement။ HTML support လုပ်သည်။ |
-| Default upload channel | upload page မှာ default selected ဖြစ်တဲ့ upload channel။ Smart Dispatch ကိုလည်းရွေးနိုင်သည်။ |
-| Default upload directory | default upload directory၊ ဥပမာ `/user/`။ ဗလာ သို့မဟုတ် `/` ဆို root။ |
-| Default naming method | upload ပြီးနောက် default filename generation strategy။ အောက်မှာကြည့်ပါ။ |
-| Convert to WebP by default | upload မလုပ်ခင် images ကို WebP ပြောင်းသည်။ |
-| Enable compression by default | upload မလုပ်ခင် browser ထဲ locally images compress လုပ်သည်။ |
-| Default compression threshold | image က ဒီ size ကျော်လျှင် automatically compress လုပ်သည်၊ MB ဖြင့်။ |
-| Default target size | compression ပြီးနောက် target file size, MB ဖြင့်။ |
-| Login page background | user login page အတွက် background image။ |
-| Upload page background | upload page အတွက် background image။ |
-| Footer portal link | footer portal button နှိပ်လျှင်ဖွင့်မယ့် URL။ |
-| Hide footer | enabled ဖြစ်လျှင် frontend footer ကိုဖျောက်သည်။ |
+| ကြေညာချက် | တင်ခြင်းစာမျက်နှာ၏ ထိပ်တွင် ပြသမည့် ကြေညာချက်။ HTML ကို ပံ့ပိုးသည်။ |
+| မူလ တင်ခြင်း ချန်နယ် | တင်ခြင်းစာမျက်နှာတွင် မူလရွေးထားမည့် တင်ခြင်းချန်နယ်။ Smart Dispatch ကိုလည်း ရွေးနိုင်သည်။ |
+| မူလ တင်ခြင်း ဒိုင်ရက်ထရီ | မူလ တင်ခြင်း ဒိုင်ရက်ထရီ၊ ဥပမာ `/user/`။ ဗလာ သို့မဟုတ် `/` သည် root ကို ဆိုလိုသည်။ |
+| မူလ အမည်ပေးနည်း | တင်ပြီးနောက် ဖိုင်အမည် ဖန်တီးရန် မူလနည်းလမ်း။ အောက်တွင် ကြည့်ပါ။ |
+| မူလအတိုင်း WebP သို့ ပြောင်းရန် | တင်ခြင်းမပြုမီ ပုံများကို WebP သို့ ပြောင်းသည်။ |
+| မူလအတိုင်း ချုံ့ခြင်း ဖွင့်ရန် | တင်ခြင်းမပြုမီ ဘရောက်ဇာအတွင်းတွင် ပုံများကို ဒေသတွင်း ချုံ့သည်။ |
+| မူလ ချုံ့ခြင်း ကန့်သတ်တန်ဖိုး | ပုံသည် ဤအရွယ်အစားကို ကျော်လွန်ပါက အလိုအလျောက် ချုံ့သည်။ ယူနစ်မှာ MB ဖြစ်သည်။ |
+| မူလ ရည်မှန်းအရွယ်အစား | ချုံ့ပြီးနောက် ရည်မှန်းထားသော ဖိုင်အရွယ်အစား၊ MB ဖြင့်။ |
+| ဝင်ရောက်မှုစာမျက်နှာ နောက်ခံ | အသုံးပြုသူ ဝင်ရောက်မှုစာမျက်နှာအတွက် နောက်ခံပုံ။ |
+| တင်ခြင်းစာမျက်နှာ နောက်ခံ | တင်ခြင်းစာမျက်နှာအတွက် နောက်ခံပုံ။ |
+| အောက်ခြေ portal လင့်ခ် | အောက်ခြေ portal ခလုတ်က ဖွင့်မည့် URL။ |
+| အောက်ခြေကို ဖျောက်ရန် | ဖွင့်ထားပါက ရှေ့ဖက် အောက်ခြေကို ဖျောက်သည်။ |
 
-## Admin Settings
+## စီမံခန့်ခွဲမှု ဆက်တင်များ
 
-| Option | Purpose |
+| ရွေးချယ်မှု | ရည်ရွယ်ချက် |
 | --- | --- |
-| Admin login background | admin login page အတွက် background image။ |
-| Admin background | admin pages အတွက် background image။ image URL တစ်ခု သို့မဟုတ် multiple URLs သုံးနိုင်သည်။ |
-| Image loading mode | admin file list အတွက် preview loading mode။ Original က original images load လုပ်သည်။ Smart loading က public images အတွက် thumbnails ကိုဦးစားပေးပြီး restricted images အတွက် originals ကိုဦးစားပေးသည်။ |
-| Thumbnail source | thumbnails ဖန်တီးသည့် service: wsrv.nl, Cloudflare Image Resizing, WordPress Photon။ Cloudflare Image Resizing ကိုရွေးမယ်ဆိုရင် Cloudflare ထဲမှာအရင် enable လုပ်ထားရမယ်။ |
-| Live2D widget | admin panel မှာ Live2D character ပြသည်။ |
-| Firework click effect | page နှိပ်တဲ့အခါ firework effect ပြသည်။ |
-| Star cursor trail | mouse ရွှေ့တဲ့အခါ star trail ပြသည်။ |
+| စီမံခန့်ခွဲမှု ဝင်ရောက်မှု နောက်ခံ | စီမံခန့်ခွဲမှု ဝင်ရောက်မှုစာမျက်နှာအတွက် နောက်ခံပုံ။ |
+| စီမံခန့်ခွဲမှု နောက်ခံ | စီမံခန့်ခွဲမှု စာမျက်နှာများအတွက် နောက်ခံပုံ။ ပုံ URL တစ်ခု သို့မဟုတ် URL အများအပြားကို အသုံးပြုနိုင်သည်။ |
+| ပုံတင်ဆွဲမှု မုဒ် | စီမံခန့်ခွဲမှု ဖိုင်စာရင်းတွင် ကြိုတင်မြင်ကွင်း တင်ဆွဲရန် မုဒ်။ မူရင်းပုံ မုဒ်သည် မူရင်းပုံများကို တင်ဆွဲသည်။ ဉာဏ်ရည်မြင့် တင်ဆွဲမှုသည် အများပြည်သူပုံများအတွက် အရွယ်သေးပုံများကို ဦးစားပေးပြီး ကန့်သတ်ထားသောပုံများအတွက် မူရင်းပုံများကို ဦးစားပေးသည်။ |
+| အရွယ်သေးပုံ ရင်းမြစ် | အရွယ်သေးပုံများ ဖန်တီးရန် အသုံးပြုသည့် ဝန်ဆောင်မှု: wsrv.nl, Cloudflare Image Resizing သို့မဟုတ် WordPress Photon။ Cloudflare Image Resizing ကို ရွေးချယ်မည်ဆိုပါက Cloudflare တွင် အရင်ဖွင့်ထားရမည်။ |
+| Live2D ဝစ်ဂျက် | စီမံခန့်ခွဲမှု ပန်နယ်တွင် Live2D ဇာတ်ကောင်ကို ပြသသည်။ |
+| နှိပ်သည့်အခါ မီးရှူးမီးပန်း အကျိုးသက်ရောက်မှု | စာမျက်နှာကို နှိပ်သောအခါ မီးရှူးမီးပန်း အကျိုးသက်ရောက်မှုကို ပြသသည်။ |
+| ကာဆာ ကြယ်ပုံ လမ်းကြောင်း | မောက်စ်ကို ရွှေ့သောအခါ ကြယ်ပုံ လမ်းကြောင်းကို ပြသသည်။ |
 
-## Background Image Formats
+## နောက်ခံပုံ ဖော်မတ်များ
 
-Login page background, upload page background, admin login background တို့က ဒီ formats ကို support လုပ်ပါတယ်:
+ဝင်ရောက်မှုစာမျက်နှာ နောက်ခံ၊ တင်ခြင်းစာမျက်နှာ နောက်ခံနှင့် စီမံခန့်ခွဲမှု ဝင်ရောက်မှု နောက်ခံတို့သည် ဤဖော်မတ်များကို ပံ့ပိုးသည်။
 
-| Value | Effect |
+| တန်ဖိုး | အကျိုးသက်ရောက်မှု |
 | --- | --- |
-| `bing` | Bing wallpaper rotation သုံးသည်။ |
-| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | images အများအပြား rotate လုပ်သည်။ |
-| `["https://example.com/1.jpg"]` | single background image သုံးသည်။ |
-| `["https://your-domain.com/random?..."]` | random image API link သုံးသည်။ Other Settings မှာ ကိုယ်ပိုင် Random Image API configure လုပ်ပြီး generated random image link ကို single-background entry အဖြစ် paste လုပ်နိုင်သည်။ |
+| `bing` | Bing wallpaper rotation ကို အသုံးပြုသည်။ |
+| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | ပုံများစွာကို လှည့်ပြောင်းပြသည်။ |
+| `["https://example.com/1.jpg"]` | နောက်ခံပုံတစ်ပုံကို အသုံးပြုသည်။ |
+| `["https://your-domain.com/random?..."]` | ကျပန်းပုံ API လင့်ခ်ကို အသုံးပြုသည်။ အခြားဆက်တင်များတွင် ကိုယ်ပိုင် ကျပန်းပုံ API ကို သတ်မှတ်ပြီး ဖန်တီးလာသော ကျပန်းပုံလင့်ခ်ကို တစ်ခုတည်းသော နောက်ခံထည့်သွင်းချက်အဖြစ် ဤနေရာတွင် ကူးထည့်နိုင်သည်။ |
 
-admin background က image URLs support လုပ်ပါတယ်။ page prompt အတိုင်း URLs အများအပြားကို English commas နဲ့ခွဲနိုင်ပါတယ်။ ဗလာဆို default background သုံးပါမယ်။
+စီမံခန့်ခွဲမှု နောက်ခံသည် ပုံ URL များကို ပံ့ပိုးသည်။ URL အများအပြားကို စာမျက်နှာတွင် ညွှန်ပြထားသည့်အတိုင်း အင်္ဂလိပ် comma များဖြင့် ခွဲနိုင်သည်။ ဗလာထားလျှင် မူလနောက်ခံကို အသုံးပြုသည်။
 
-## Default Naming Method
+## မူလ အမည်ပေးနည်း
 
-| Method | Result |
+| နည်းလမ်း | ရလဒ် |
 | --- | --- |
-| Default | time-random prefix + original filename၊ ဥပမာ `1760000000000_cat.png`။ |
-| Prefix only | time-random prefix နဲ့ extension ပဲ၊ ဥပမာ `1760000000000.png`။ |
-| Original name only | original filename ကိုထားသည်၊ ဥပမာ `cat.png`။ duplicate ဖြစ်လျှင် ImgBed က `(1)`, `(2)` စသဖြင့်ထည့်သည်။ |
-| Short link | 8-character short ID နဲ့ extension သုံးသည်၊ ဥပမာ `a1b2c3d4.png`။ |
+| မူလ | အချိန်အခြေပြု ကျပန်းရှေ့ဆက် + မူရင်းဖိုင်အမည်၊ ဥပမာ `1760000000000_cat.png`။ |
+| ရှေ့ဆက်သာ | အချိန်အခြေပြု ကျပန်းရှေ့ဆက်နှင့် ဖိုင်နောက်ဆက် သာ၊ ဥပမာ `1760000000000.png`။ |
+| မူရင်းအမည်သာ | မူရင်းဖိုင်အမည်ကို ထိန်းထားသည်၊ ဥပမာ `cat.png`။ ထပ်နေပါက ImgBed သည် `(1)`, `(2)` စသည်တို့ကို ထည့်သည်။ |
+| လင့်ခ်တို | ဖိုင်နောက်ဆက်ပါသော 8 အက္ခရာ လင့်ခ်တို ID ကို အသုံးပြုသည်၊ ဥပမာ `a1b2c3d4.png`။ |

@@ -1,67 +1,67 @@
-# افزودن GitLab Packages Channel
+# افزودن کانال GitLab Packages
 
 ## پیش از شروع چه چیزهایی لازم است
 
-فقط سه مورد نیاز دارید:
+فقط به سه مورد نیاز دارید:
 
 | مورد | کاربرد |
 | --- | --- |
-| GitLab account | برای ساخت access token و مالکیت project. |
-| GitLab Personal Access Token | برای اینکه ImgBed به GitLab API دسترسی داشته باشد، projects بسازد و files را در Generic Packages upload کند. |
-| Project name | می‌توانید فقط project name وارد کنید، مثل `imgbed`. |
+| حساب GitLab | برای ساخت توکن دسترسی و مالکیت پروژه استفاده می‌شود. |
+| توکن دسترسی شخصی GitLab | ImgBed از آن برای دسترسی به API مربوط به GitLab، ساخت پروژه‌ها و بارگذاری فایل‌ها در Generic Packages استفاده می‌کند. |
+| نام پروژه | می‌توانید فقط نام پروژه را وارد کنید، برای مثال `imgbed`. |
 
-## مراحل setup
+## مراحل پیکربندی
 
-### Step 1: ورود به GitLab و ساخت Access Token
+### مرحله 1: ورود به GitLab و ساخت توکن دسترسی
 
 1. وارد GitLab شوید.
-2. در گوشه بالا سمت راست روی avatar بزنید و `Preferences` را باز کنید.
-3. از left sidebar، `Access Tokens` را باز کنید.
-4. برای token نام قابل‌تشخیص بگذارید.
-5. expiration date را بر اساس برنامه نگهداری خودتان انتخاب کنید.
-6. scope `api` را انتخاب کنید.
-7. token ساخته‌شده را بلافاصله copy و ذخیره کنید.
+2. در گوشه بالا سمت راست روی آواتار خود کلیک کنید و `Preferences` را باز کنید.
+3. `Access Tokens` را از نوار کناری چپ باز کنید.
+4. برای توکن نامی قابل تشخیص انتخاب کنید.
+5. تاریخ انقضا را بر اساس برنامه نگهداری خود انتخاب کنید.
+6. محدوده `api` را انتخاب کنید.
+7. توکن تولیدشده را بلافاصله کپی و ذخیره کنید.
 
-![Create a legacy token](../../image/upload/gitlab-packages/点击生成旧版令牌.png)
+![ساخت توکن legacy](../../image/upload/gitlab-packages/点击生成旧版令牌.png)
 
-![Select token permissions](../../image/upload/gitlab-packages/勾选令牌权限.png)
+![انتخاب مجوزهای توکن](../../image/upload/gitlab-packages/勾选令牌权限.png)
 
-## Step 2: پر کردن GitLab Packages Channel در ImgBed
+## مرحله 2: تکمیل کانال GitLab Packages در ImgBed
 
-پس از انتخاب `GitLab Packages` در Upload Settings:
+پس از انتخاب `GitLab Packages` در تنظیمات بارگذاری، فیلدها را این‌گونه تکمیل کنید:
 
-| UI Field | What to Enter |
+| فیلد رابط کاربری | مقدار لازم |
 | --- | --- |
-| Channel name | نام دلخواه، مثل `GitLabPrimary`. |
-| Access Token | GitLab Personal Access Token که تازه ساختید. |
-| Project name | short project name مثل `imgbed`، یا full path مثل `username/imgbed`. |
-| Private repository | بسته به نیاز on یا off کنید. |
-| Remark | اختیاری، مثل `Primary upload channel`. |
+| نام کانال | نامی دلخواه، مانند `GitLabPrimary`. |
+| توکن دسترسی | توکن دسترسی شخصی GitLab که تازه ساخته‌اید. |
+| نام پروژه | نام کوتاه پروژه مانند `imgbed`، یا مسیر کامل مانند `username/imgbed`. |
+| مخزن خصوصی | بسته به نیاز خود آن را فعال یا غیرفعال کنید. |
+| توضیح | اختیاری، برای مثال `کانال اصلی بارگذاری`. |
 
-![Configure the channel](../../image/upload/gitlab-packages/配置渠道内容.png)
+![پیکربندی کانال](../../image/upload/gitlab-packages/配置渠道内容.png)
 
-## Step 3: Save کردن Channel
+## مرحله 3: ذخیره کانال
 
-پس از پر کردن fields، Save را بزنید.
+پس از تکمیل فیلدها، روی ذخیره کلیک کنید.
 
-system این موارد را مدیریت می‌کند:
+سیستم این جزئیات را مدیریت می‌کند:
 
-| System Behavior | Description |
+| رفتار سیستم | توضیح |
 | --- | --- |
-| Short project name | ImgBed current GitLab account را تشخیص می‌دهد و value را به full project path تبدیل می‌کند. |
-| Full project path | ImgBed مسیر `username/project` را دقیقاً همان‌طور که وارد شده استفاده می‌کند. |
-| Project check | اگر current personal account path باشد، ImgBed وقتی project وجود ندارد آن را خودکار create می‌کند. اگر full path را manual وارد کنید، همان path استفاده می‌شود. |
-| Public/private state | project visibility بر اساس current switch synchronized می‌شود. |
+| نام کوتاه پروژه | ImgBed حساب فعلی GitLab را تشخیص می‌دهد و مقدار را به مسیر کامل پروژه گسترش می‌دهد. |
+| مسیر کامل پروژه | ImgBed مسیر `username/project` را دقیقاً همان‌طور که وارد شده استفاده می‌کند. |
+| بررسی پروژه | اگر از مسیر حساب شخصی فعلی استفاده کنید، ImgBed در صورت نبودن پروژه، آن را خودکار می‌سازد. اگر مسیر کامل را دستی وارد کنید، ImgBed همان مسیر را مستقیم استفاده می‌کند. |
+| وضعیت عمومی/خصوصی | نمایانی پروژه بر اساس کلید فعلی همگام می‌شود. |
 
-## Quick Checklist
+## فهرست سریع
 
 ```text
-وارد GitLab شوید
--> Access Token بسازید
--> فقط api scope را انتخاب کنید
--> به ImgBed برگردید و token و project name را وارد کنید
+Sign in to GitLab
+-> Create an Access Token
+-> Select only the api scope
+-> Return to ImgBed and enter the token and project name
 -> Save
--> اگر فقط project name وارد شود، ImgBed current username را خودکار اضافه می‌کند
--> اگر username/project وارد شود، همان را استفاده می‌کند
--> test image upload کنید
+-> If only a project name is entered, ImgBed adds the current username automatically
+-> If username/project is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

@@ -1,17 +1,17 @@
-# เพิ่ม OneDrive Channel
+# เพิ่มช่องทาง OneDrive
 
 ## สิ่งที่ต้องเตรียมก่อน
 
-| Requirement | ทำไมต้องใช้ |
+| ข้อกำหนด | ทำไมต้องใช้ |
 | --- | --- |
-| Microsoft account | ใช้ access Microsoft admin pages และ authorize OneDrive |
+| Microsoft account | ใช้เข้าถึงหน้า admin ของ Microsoft และ authorize OneDrive |
 | ImgBed domain ของคุณ | ใช้เป็น OAuth callback URL |
-| App registration | ใช้ generate `Client ID` และ `Client Secret` |
-| OneDrive account | ใช้เป็นพื้นที่เก็บ file จริง |
+| App registration | ใช้สร้าง `Client ID` และ `Client Secret` |
+| OneDrive account | ใช้เป็นพื้นที่เก็บไฟล์จริง |
 
 ## ขั้นตอนตั้งค่า
 
-### Step 1: เปิด Microsoft Entra ID
+### ขั้นตอนที่ 1: เปิด Microsoft Entra ID
 
 1. เปิด `portal.azure.com`
 2. ค้นหา `Microsoft Entra ID` ด้านบน
@@ -25,11 +25,11 @@ Continue searching in Microsoft Entra ID
 5. เปิด `App registrations`
 6. คลิก `New registration`
 
-### Step 2: Register App
+### ขั้นตอนที่ 2: Register App
 
 ในหน้า `New registration` ให้กรอก:
 
-| Field | ใส่อะไร |
+| ฟิลด์ | ใส่อะไร |
 | --- | --- |
 | Name | ชื่อที่จำง่าย เช่น `imgbed-onedrive` |
 | Supported account types | เลือกตามตารางด้านล่าง |
@@ -46,30 +46,30 @@ Continue searching in Microsoft Entra ID
 
 กรอกครบแล้วคลิก register
 
-![Create OneDrive app](../../image/upload/onedrive/添加应用程序注册.png)
+![สร้าง OneDrive app](../../image/upload/onedrive/添加应用程序注册.png)
 
-### Step 3: Copy App Information
+### ขั้นตอนที่ 3: คัดลอก App Information
 
-หลังสร้าง app แล้ว ให้ copy values เหล่านี้จาก overview page:
+หลังสร้าง app แล้ว ให้คัดลอกค่าเหล่านี้จากหน้า overview:
 
-| Microsoft Field | ImgBed Field |
+| ฟิลด์ Microsoft | ฟิลด์ ImgBed |
 | --- | --- |
 | `Application (client) ID` | `Client ID` |
 | `Directory (tenant) ID` | `Tenant ID` สำหรับ organizational accounts |
 
-![Application and tenant IDs](../../image/upload/onedrive/应用程序ID和目录租户ID位.png)
+![Application และ tenant IDs](../../image/upload/onedrive/应用程序ID和目录租户ID位.png)
 
-### Step 4: สร้าง Client Secret
+### ขั้นตอนที่ 4: สร้าง Client Secret
 
 1. เปิด `Certificates & secrets`
 2. คลิก `New client secret`
-3. ใส่ description ตามต้องการ
-4. เลือก expiration period
-5. Copy ค่า `Value` ทันทีหลังสร้างเสร็จ
+3. ใส่คำอธิบายตามต้องการ
+4. เลือกระยะเวลาหมดอายุ
+5. คัดลอกค่า `Value` ทันทีหลังสร้างเสร็จ
 
-![Save client secret value](../../image/upload/onedrive/保存客户端密码值.png)
+![บันทึกค่า client secret](../../image/upload/onedrive/保存客户端密码值.png)
 
-### Step 5: เพิ่ม API Permissions
+### ขั้นตอนที่ 5: เพิ่ม API Permissions
 
 1. เปิด `API permissions`
 2. คลิก `Add a permission`
@@ -77,72 +77,72 @@ Continue searching in Microsoft Entra ID
 4. เลือก `Delegated permissions`
 5. เพิ่ม permissions เหล่านี้:
 
-| Permission | Purpose |
+| Permission | วัตถุประสงค์ |
 | --- | --- |
-| `Files.ReadWrite.All` | Upload files, create folders และ delete files |
+| `Files.ReadWrite.All` | อัปโหลดไฟล์ สร้างโฟลเดอร์ และลบไฟล์ |
 | `offline_access` | ให้ ImgBed รับ `Refresh Token` ได้ |
-| `User.Read` | อ่าน account และ quota information |
+| `User.Read` | อ่าน account และข้อมูล quota |
 
-### Step 6: ใส่ OneDrive Channel
+### ขั้นตอนที่ 6: ใส่ช่องทาง OneDrive
 
 ใน Upload Settings เลือก `OneDrive` แล้วกรอก:
 
-| ImgBed Field | ใส่อะไร |
+| ฟิลด์ ImgBed | ใส่อะไร |
 | --- | --- |
 | Channel name | ชื่อที่จำง่าย เช่น `Main OneDrive` |
 | Client ID | Microsoft `Application (client) ID` |
-| Client Secret | `Client Secret Value` ที่ copy ไว้ |
+| Client Secret | `Client Secret Value` ที่คัดลอกไว้ |
 | Tenant ID | ใช้ตารางด้านล่าง |
 | Refresh Token | เว้นว่างไว้ก่อน |
-| Root directory | Optional ค่าเริ่มต้นคือ `imgbed` |
-| Note | Optional |
+| Root directory | ไม่บังคับ ค่าเริ่มต้นคือ `imgbed` |
+| Note | ไม่บังคับ |
 
-![Fill OneDrive channel config](../../image/upload/onedrive/添加新渠道配置.png)
+![กรอกการกำหนดค่าช่องทาง OneDrive](../../image/upload/onedrive/添加新渠道配置.png)
 
 วิธีกรอก `Tenant ID`:
 
-| Account Type You Chose | ImgBed `Tenant ID` |
+| ประเภทบัญชีที่เลือก | ImgBed `Tenant ID` |
 | --- | --- |
-| Personal accounts | `consumers` |
-| Personal + organizational accounts | `common` |
-| Current organization only | `Directory (tenant) ID` |
+| บัญชี personal | `consumers` |
+| บัญชี personal + organizational | `common` |
+| เฉพาะองค์กรปัจจุบัน | `Directory (tenant) ID` |
 
-### Step 7: รับ Refresh Token
+### ขั้นตอนที่ 7: รับ Refresh Token
 
 1. ใน ImgBed คลิก `Get Token`
-2. Sign in ด้วย Microsoft account ที่ต้องการเชื่อมต่อ
-3. Approve authorization prompt
-4. Callback page จะแสดง `Refresh Token`
-5. Copy token นั้น
-6. กลับไปที่ ImgBed แล้ว paste ใน field `Refresh Token`
+2. เข้าสู่ระบบด้วย Microsoft account ที่ต้องการเชื่อมต่อ
+3. อนุมัติ authorization prompt
+4. หน้า callback จะแสดง `Refresh Token`
+5. คัดลอก token นั้น
+6. กลับไปที่ ImgBed แล้ววางในฟิลด์ `Refresh Token`
 
-![Copy refresh token](../../image/upload/onedrive/复制刷新令牌.png)
+![คัดลอก refresh token](../../image/upload/onedrive/复制刷新令牌.png)
 
-### Step 8: Save Channel
+### ขั้นตอนที่ 8: บันทึกช่องทาง
 
-เมื่อกรอกครบทุก field แล้วให้ save channel
+เมื่อกรอกครบทุกฟิลด์แล้วให้บันทึกช่องทาง
 
-## Quick Flow
+## ลำดับขั้นตอนด่วน
 
 ```text
-เปิด portal.azure.com
--> ค้นหา Microsoft Entra ID
--> เปิด App registrations
--> Register app ใหม่
--> กรอก Name / Supported account types / Web redirect URI
+Open portal.azure.com
+-> Search for Microsoft Entra ID
+-> Open App registrations
+-> Register a new app
+-> Fill Name / Supported account types / Web redirect URI
 -> Register
 -> Copy Application (client) ID
--> ตรวจ callback URL ใน Authentication
--> สร้าง Client Secret ใน Certificates & secrets
--> เพิ่ม permissions ใน API permissions
--> ใส่ Client ID / Client Secret / Tenant ID ใน ImgBed
--> คลิก Get Token
--> Copy Refresh Token จาก callback page
--> Paste กลับเข้า ImgBed แล้ว save
+-> Check the callback URL in Authentication
+-> Create a Client Secret in Certificates & secrets
+-> Add permissions in API permissions
+-> Fill Client ID / Client Secret / Tenant ID into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
-## References
+## เอกสารอ้างอิง
 
-1. Microsoft Entra app registration: https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
-2. Microsoft identity platform authorization code flow: https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow
-3. Microsoft Graph user authentication: https://learn.microsoft.com/en-us/graph/auth-v2-user
+1. การลงทะเบียน app ใน Microsoft Entra: https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
+2. Authorization code flow ของ Microsoft identity platform: https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow
+3. การยืนยันตัวตนผู้ใช้ของ Microsoft Graph: https://learn.microsoft.com/en-us/graph/auth-v2-user

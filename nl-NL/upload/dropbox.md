@@ -135,17 +135,17 @@ Als quotalimieten actief zijn, klik dan op quota opvragen. Na een geslaagde opvr
 
 ```text
 Open Dropbox App Console
--> Maak een app
--> Kies App folder access
--> Voeg https://your-domain.com/api/oauth/dropbox/callback toe
--> Schakel account_info.read / files.metadata.read / files.metadata.write / files.content.write in
--> Schakel eventueel files.content.read in
--> Klik Submit
--> Kopieer App Key en App Secret
--> Vul ze in ImgBed in
--> Klik Get Token
--> Kopieer het Refresh Token van de callbackpagina
--> Plak het terug in ImgBed en sla op
+-> Create an app
+-> Choose App folder access
+-> Add https://your-domain.com/api/oauth/dropbox/callback
+-> Enable account_info.read / files.metadata.read / files.metadata.write / files.content.write
+-> Optionally enable files.content.read
+-> Click Submit
+-> Copy App Key and App Secret
+-> Fill them into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## Referenties

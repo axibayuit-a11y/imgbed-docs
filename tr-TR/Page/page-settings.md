@@ -1,67 +1,67 @@
 # Sayfa Ayarları
 
-Page settings; site görünümünü, yükleme sayfası varsayılanlarını, arka plan görsellerini ve yönetim paneli görünümünü kontrol eder.
+Sayfa ayarları; site görünümünü, yükleme sayfası varsayılanlarını, arka plan görsellerini ve yönetim panelinin görünümünü kontrol eder.
 
-## Global Settings
-
-| Seçenek | Amaç |
-| --- | --- |
-| Site title | Tarayıcı sekmesinde gösterilen başlık. |
-| Site icon | Tarayıcı sekmesinde gösterilen küçük simge. |
-| ImgBed name | Frontend pages üzerinde gösterilen ad. |
-| ImgBed logo | Frontend pages üzerinde gösterilen logo görseli. |
-| Logo link | Logo veya avatar tıklandığında açılan URL. |
-| Background switch interval | Birden fazla arka plan için milisaniye cinsinden dönüş aralığı. `60000`, 60 saniye demektir. |
-| Background opacity | Arka plan görseli opaklığı, `0` ile `1` arası. Daha düşük değerler daha açık görünür. |
-| Default URL prefix | Görsel bağlantıları oluşturulurken kullanılan prefix. Boşsa geçerli site alan adı kullanılır. |
-
-## Client Settings
+## Genel Ayarlar
 
 | Seçenek | Amaç |
 | --- | --- |
-| Announcement | Yükleme sayfasının üstünde gösterilen duyuru. HTML desteklenir. |
-| Default upload channel | Yükleme sayfasında varsayılan seçili upload channel. Smart Dispatch de seçilebilir. |
-| Default upload directory | Varsayılan yükleme dizini, örneğin `/user/`. Boş veya `/` root anlamına gelir. |
-| Default naming method | Yükleme sonrası varsayılan dosya adı üretme stratejisi. Aşağıya bakın. |
-| Convert to WebP by default | Görselleri yüklemeden önce WebP'ye dönüştürür. |
-| Enable compression by default | Görselleri yüklemeden önce tarayıcıda yerel olarak sıkıştırır. |
-| Default compression threshold | Görsel bu boyutu MB cinsinden aşarsa otomatik sıkıştırır. |
-| Default target size | Sıkıştırma sonrası hedef dosya boyutu, MB cinsinden. |
-| Login page background | Kullanıcı giriş sayfası arka plan görseli. |
-| Upload page background | Yükleme sayfası arka plan görseli. |
-| Footer portal link | Footer portal düğmesinin açtığı URL. |
-| Hide footer | Etkin olduğunda frontend footer gizlenir. |
+| Site başlığı | Tarayıcı sekmesinde gösterilen başlık. |
+| Site simgesi | Tarayıcı sekmesinde gösterilen küçük simge. |
+| ImgBed adı | Genel arayüz sayfalarında gösterilen ad. |
+| ImgBed logosu | Genel arayüz sayfalarında gösterilen logo görseli. |
+| Logo bağlantısı | Logo veya avatar tıklandığında açılan URL. |
+| Arka plan değiştirme aralığı | Birden fazla arka planın dönüş aralığı, milisaniye cinsinden. `60000`, 60 saniye demektir. |
+| Arka plan opaklığı | Arka plan görselinin `0` ile `1` arasındaki opaklığı. Daha düşük değerler görseli daha açık gösterir. |
+| Varsayılan URL öneki | Görsel bağlantıları oluşturulurken kullanılan önek. Boşsa geçerli site alan adı kullanılır. |
 
-## Admin Settings
+## İstemci Ayarları
 
 | Seçenek | Amaç |
 | --- | --- |
-| Admin login background | Yönetici giriş sayfası arka plan görseli. |
-| Admin background | Yönetim sayfaları arka plan görseli. Tek image URL veya birden çok URL kullanılabilir. |
-| Image loading mode | Yönetim dosya listesindeki preview yükleme modu. Original özgün görselleri yükler. Smart loading public images için thumbnails, restricted images için originals tercih eder. |
-| Thumbnail source | Thumbnail oluşturma servisi: wsrv.nl, Cloudflare Image Resizing veya WordPress Photon. Cloudflare Image Resizing seçmeden önce Cloudflare'da etkin olmalıdır. |
-| Live2D widget | Yönetim panelinde Live2D karakter gösterir. |
-| Firework click effect | Sayfaya tıklanınca havai fişek efekti gösterir. |
-| Star cursor trail | Fare hareket ederken yıldız izi gösterir. |
+| Duyuru | Yükleme sayfasının üstünde gösterilen duyuru. HTML desteklenir. |
+| Varsayılan yükleme kanalı | Yükleme sayfasında varsayılan olarak seçilen yükleme kanalı. Smart Dispatch de seçilebilir. |
+| Varsayılan yükleme dizini | Varsayılan yükleme dizini, örneğin `/user/`. Boş değer veya `/` kök dizin anlamına gelir. |
+| Varsayılan adlandırma yöntemi | Yüklemeden sonra dosya adını üretmek için kullanılan varsayılan strateji. Aşağıya bakın. |
+| Varsayılan olarak WebP'ye dönüştür | Görselleri yüklemeden önce WebP'ye dönüştürür. |
+| Varsayılan olarak sıkıştırmayı etkinleştir | Görselleri yüklemeden önce tarayıcıda yerel olarak sıkıştırır. |
+| Varsayılan sıkıştırma eşiği | Görsel bu boyutu aştığında otomatik olarak sıkıştırır, MB cinsinden. |
+| Varsayılan hedef boyut | Sıkıştırmadan sonra hedef dosya boyutu, MB cinsinden. |
+| Giriş sayfası arka planı | Kullanıcı giriş sayfası için arka plan görseli. |
+| Yükleme sayfası arka planı | Yükleme sayfası için arka plan görseli. |
+| Altbilgi portal bağlantısı | Altbilgi portal düğmesinin açtığı URL. |
+| Altbilgiyi gizle | Etkin olduğunda genel arayüz altbilgisini gizler. |
+
+## Yönetim Ayarları
+
+| Seçenek | Amaç |
+| --- | --- |
+| Yönetici girişi arka planı | Yönetici giriş sayfası için arka plan görseli. |
+| Yönetim arka planı | Yönetim sayfaları için arka plan görseli. Tek bir görsel URL'si veya birden fazla URL kullanılabilir. |
+| Görsel yükleme modu | Yönetim dosya listesindeki önizleme yükleme modu. Özgün görsel modu özgün görselleri yükler. Akıllı yükleme, herkese açık görseller için küçük resimleri ve kısıtlı görseller için özgün görselleri tercih eder. |
+| Küçük resim kaynağı | Küçük resim oluşturmak için kullanılan servis: wsrv.nl, Cloudflare Image Resizing veya WordPress Photon. Cloudflare Image Resizing seçilmeden önce Cloudflare'da etkinleştirilmiş olmalıdır. |
+| Live2D widget'ı | Yönetim panelinde Live2D karakteri gösterir. |
+| Tıklamada havai fişek efekti | Sayfaya tıklanınca havai fişek efekti gösterir. |
+| İmleç yıldız izi | Fare hareket ederken yıldız izi gösterir. |
 
 ## Arka Plan Görseli Formatları
 
-Login page background, upload page background ve admin login background şu formatları destekler:
+Giriş sayfası arka planı, yükleme sayfası arka planı ve yönetici girişi arka planı şu formatları destekler:
 
 | Değer | Etki |
 | --- | --- |
-| `bing` | Bing duvar kağıdı rotasyonunu kullanır. |
-| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | Birden fazla görseli döndürür. |
-| `["https://example.com/1.jpg"]` | Tek arka plan görseli kullanır. |
-| `["https://your-domain.com/random?..."]` | Random image API link kullanır. Other Settings içinde kendi Random Image API'nizi yapılandırıp üretilen random image link değerini tek arka plan girdisi olarak buraya yapıştırabilirsiniz. |
+| `bing` | Bing duvar kağıdı döngüsünü kullanır. |
+| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | Birden fazla görseli döngüye alır. |
+| `["https://example.com/1.jpg"]` | Tek bir arka plan görseli kullanır. |
+| `["https://your-domain.com/random?..."]` | Rastgele görsel API bağlantısı kullanır. Kendi rastgele görsel API'nizi Diğer Ayarlar içinde yapılandırabilir, oluşturulan rastgele görsel bağlantısını buraya tek arka plan girdisi olarak yapıştırabilirsiniz. |
 
-Admin background image URLs destekler. Birden fazla URL, sayfadaki ipucunda belirtildiği gibi İngilizce virgülle ayrılabilir. Boşsa default background kullanılır.
+Yönetim arka planı görsel URL'lerini destekler. Birden fazla URL, sayfadaki ipucunda belirtildiği gibi İngilizce virgüllerle ayrılabilir. Boşsa varsayılan arka plan kullanılır.
 
-## Default Naming Method
+## Varsayılan Adlandırma Yöntemi
 
-| Method | Result |
+| Yöntem | Sonuç |
 | --- | --- |
-| Default | Time-random prefix + original filename, örneğin `1760000000000_cat.png`. |
-| Prefix only | Yalnızca time-random prefix ve extension, örneğin `1760000000000.png`. |
-| Original name only | Original filename korunur, örneğin `cat.png`. Aynı ad varsa ImgBed `(1)`, `(2)` ve devamını ekler. |
-| Short link | 8 karakterlik short ID ve extension kullanır, örneğin `a1b2c3d4.png`. |
+| Varsayılan | Zamana dayalı rastgele önek + özgün dosya adı, örneğin `1760000000000_cat.png`. |
+| Yalnızca önek | Yalnızca zamana dayalı rastgele önek ve uzantı, örneğin `1760000000000.png`. |
+| Yalnızca özgün ad | Özgün dosya adını korur, örneğin `cat.png`. Aynı ad varsa ImgBed `(1)`, `(2)` ve devamını ekler. |
+| Kısa bağlantı | Uzantıyla birlikte 8 karakterlik kısa ID kullanır, örneğin `a1b2c3d4.png`. |

@@ -1,156 +1,156 @@
-# د WebDAV Site Access (Beta)
+# د WebDAV له لارې د سایټ لاسرسی (Beta)
 
-په Security Settings کې WebDAV setting ستاسو ImgBed site د WebDAV endpoint په توګه وړاندې کوي.
+په امنیتي تنظیماتو کې د WebDAV تنظیم ستاسو ImgBed سایټ د WebDAV پای ټکي په توګه وړاندې کوي.
 
-له فعالېدو وروسته، Windows، macOS، mobile file managers یا هر WebDAV-compatible client کارولای شئ، څو د ImgBed files لکه remote folder browse، upload، delete او manage کړئ.
+له فعالېدو وروسته، Windows، macOS، د موبایل فایل مدیران یا هر WebDAV-سم کلاینټ کارولای شئ، څو د ImgBed فایلونه د لرې پوښۍ په څېر وګورئ، پورته کړئ، حذف کړئ او مدیریت یې کړئ.
 
-دا د site WebDAV access entry دی. دا له Upload Settings کې WebDAV storage channel سره توپیر لري. upload channel files په third-party WebDAV service کې ساتي. دا setting ستاسو ImgBed site ته اجازه ورکوي چې clients ته WebDAV access ورکړي.
+دا د سایټ د WebDAV لاسرسي ننوتنه ده. دا د پورته کولو تنظیماتو کې د WebDAV زېرمه کولو له چینل څخه بېله ده. د پورته کولو چینل فایلونه د درېيمې ډلې WebDAV خدمت کې ساتي. دا تنظیم ستاسو ImgBed سایټ ته اجازه ورکوي چې کلاینټونو ته WebDAV لاسرسی برابر کړي.
 
 ## چېرته یې تنظیم کړئ
 
-admin panel پرانیزئ، بیا دې ځای ته لاړ شئ:
+د ادارې پینل پرانیزئ، بیا دې ځای ته لاړ شئ:
 
 ```text
 System Settings -> Security Settings -> WebDAV
 ```
 
-شته settings:
+شته تنظیمات:
 
-- Enable
-- Username
-- Password
-- Image loading mode
-- Default channel
+- فعالول
+- کارن‌نوم
+- پاسورډ
+- د انځور د لوستلو حالت
+- اصلي چینل
 
-## دا Feature څه کوي
+## دا ځانګړنه څه کوي
 
-کله چې WebDAV فعال شي، ImgBed یو ثابت access URL ورکوي:
+له WebDAV فعالېدو وروسته، ImgBed یو ثابت د لاسرسي URL برابروي:
 
 ```text
 https://your-domain.com/dav
 ```
 
-دا URL د خپل ImgBed file directory سره د connect لپاره وکاروئ.
+دا URL د خپل ImgBed د فایل ډایرېکټري سره د نښلېدو لپاره وکاروئ.
 
-ښه use cases:
+ښه د کارونې حالتونه:
 
-- د خپل computer file manager څخه ImgBed files مستقیم browse کړئ.
-- images د WebDAV folder ته drag کړئ او upload یې کړئ.
-- د local file manager څخه ImgBed folders organize کړئ.
-- WebDAV-compatible software د images sync یا manage لپاره وکاروئ.
-- admin panel له پرانیستلو پرته ImgBed content ته access وکړئ.
+- د خپل کمپیوټر له فایل مدیر څخه د ImgBed فایلونه مستقیم وګورئ.
+- انځورونه WebDAV پوښۍ ته راکاږئ، څو پورته شي.
+- د ImgBed پوښۍ د خپل ځایي فایل مدیر له لارې منظمې کړئ.
+- د WebDAV-سم سافټویر له لارې انځورونه همغږي یا مدیریت کړئ.
+- د ادارې پینل له خلاصولو پرته د ImgBed منځپانګې ته لاسرسی ومومئ.
 
-## Settings
+## تنظیمات
 
-### Enable
+### فعالول
 
-WebDAV endpoint فعالوي.
+د WebDAV پای ټکی فعالوي.
 
-کله چې disabled وي، clients د WebDAV له لارې connect نه شي کېدای.
+کله چې غیرفعال وي، کلاینټونه د WebDAV له لارې نښلولای نه شي.
 
-### Username او Password
+### کارن‌نوم او پاسورډ
 
-دا credentials د connect پر وخت WebDAV clients کاروي.
+WebDAV کلاینټونه د نښلېدو پر مهال دا معلومات کاروي.
 
-جلا WebDAV username او password وکاروئ. admin password یا upload password مه reuse کوئ.
+د WebDAV لپاره ځانګړی کارن‌نوم او پاسورډ وکاروئ. د مدیر پاسورډ یا د پورته کولو پاسورډ بیا مه کاروئ.
 
-که username یا password تش وي، WebDAV clients سم connect نه شي کېدای.
+که کارن‌نوم یا پاسورډ تش وي، WebDAV کلاینټونه سم نه شي نښلېدای.
 
-### Image Loading Mode
+### د انځور د لوستلو حالت
 
-Image loading mode ټاکي چې WebDAV clients د images د لوستلو پر وخت کوم image URL ته ترجیح ورکړي.
+د انځور د لوستلو حالت ټاکي چې WebDAV کلاینټونه د انځورونو د لوستلو پر مهال کوم انځور URL ته لومړیتوب ورکوي.
 
-عام options:
+عام انتخابونه:
 
-| Mode | تشریح |
+| حالت | تشریح |
 | --- | --- |
-| Smart loading | ImgBed د context له مخې انتخاب کوي. د عادي کارونې لپاره سپارښتنه کېږي. |
-| Original | original images ته ترجیح ورکوي. |
-| Thumbnail | thumbnails ته ترجیح ورکوي. د چټک preview لپاره ګټور دی. |
+| هوښیار لوستل | ImgBed د حالت له مخې ټاکنه کوي. د عادي کارونې لپاره سپارښتنه کېږي. |
+| اصلي | اصلي انځورونو ته لومړیتوب ورکوي. |
+| کوچنی انځور | کوچنیو انځورونو ته لومړیتوب ورکوي. د چټک مخکتنې لپاره ګټور دی. |
 
-که ډاډه نه یاست، `Smart loading` وساتئ.
+که ډاډه نه یاست، `هوښیار لوستل` پرېږدئ.
 
-### Default Channel
+### اصلي چینل
 
-Default channel د WebDAV uploads لپاره کارېږي.
+اصلي چینل د WebDAV پورته کولو لپاره کارېږي.
 
-کله چې له Windows یا بل client څخه files د WebDAV directory ته copy کوئ، ImgBed یې د ټاکل شوي default upload channel له لارې upload کوي.
+کله چې له Windows یا بل کلاینټ څخه فایلونه WebDAV ډایرېکټري ته کاپي کوئ، ImgBed یې د ټاکلي اصلي پورته کولو چینل له لارې پورته کوي.
 
-که default channel ټاکل شوی نه وي، browsing ښايي کار وکړي، خو uploads ناکامېدای شي.
+که اصلي چینل نه وي ټاکل شوی، کتنه ښايي کار وکړي، خو پورته کول ښايي ناکام شي.
 
-## په Windows 11 کې WebDAV ته Access
+## په Windows 11 کې WebDAV ته لاسرسی
 
-Windows 11 کولای شي WebDAV د network location په توګه اضافه کړي.
+Windows 11 WebDAV د شبکې ځای په توګه زیاتولای شي.
 
-1. `This PC` پرانیزئ.
-2. `Add a network location` وټاکئ.
+1. `دا کمپیوټر` پرانیزئ.
+2. `د شبکې ځای زیاتول` وټاکئ.
 3. `https://your-domain.com/dav` ولیکئ.
-4. د غوښتنې پر وخت خپل WebDAV username او password ولیکئ.
-5. wizard بشپړ کړئ. وروسته WebDAV directory په File Explorer کې پرانیستل کېدای شي.
+4. کله چې غوښتنه وشي، خپل WebDAV کارن‌نوم او پاسورډ ولیکئ.
+5. لارښود پای ته ورسوئ. WebDAV ډایرېکټري بیا د فایلونو په سپړونکي کې پرانیستل کېدای شي.
 
-![Add WebDAV in Windows 11](../../image/Safety/webdav在win11配置.png)
+![په Windows 11 کې WebDAV زیاتول](../../image/Safety/webdav在win11配置.png)
 
-له اضافه کېدو وروسته، WebDAV directory په Windows File Explorer کې ښکاري. د عادي folder په څېر files پرانیستل، copy او manage کولای شئ.
+له زیاتېدو وروسته، WebDAV ډایرېکټري د Windows د فایلونو په سپړونکي کې ښکاري. فایلونه د عادي پوښۍ په څېر پرانیستل، کاپي کول او مدیریت کولای شئ.
 
-![WebDAV in Windows](../../image/Safety/webdav在win显示效果.png)
+![WebDAV په Windows کې](../../image/Safety/webdav在win显示效果.png)
 
-## Supported Operations
+## ملاتړ شوې کړنې
 
-له بریالي WebDAV connection وروسته، عموما دا کارونه کولای شئ:
+له بریالۍ WebDAV نښلونې وروسته، عموما دا کارونه کولای شئ:
 
-- files او folders وګورئ.
-- files upload کړئ.
-- folders جوړ کړئ.
-- files یا folders rename کړئ.
-- files move کړئ.
-- files delete کړئ.
+- فایلونه او پوښۍ کتل.
+- فایلونه پورته کول.
+- پوښۍ جوړول.
+- د فایلونو یا پوښیو نوم بدلول.
+- فایلونه لېږدول.
+- فایلونه حذفول.
 
-WebDAV د ورځني access او کوچني file management لپاره مناسب دی. د لویو moves، bulk deletes یا پېچلي organization لپاره admin panel وکاروئ.
+WebDAV د ورځني لاسرسي او وړې کچې فایل مدیریت لپاره غوره دی. د لویو لېږدونو، ډله‌ییزو حذفونو یا پېچلي تنظیم لپاره د ادارې پینل وکاروئ.
 
-## Login Device Management
+## د ننوتلو وسایلو مدیریت
 
-بریالي WebDAV connections د Login Device Management په WebDAV tab کې هم ښکاري.
+بریالۍ WebDAV نښلونې د WebDAV ټب لاندې د ننوتلو وسایلو مدیریت کې هم ښکاري.
 
-هلته WebDAV clients کتلای شئ او د اړتیا پر وخت زاړه devices force offline کولای شئ.
+هلته WebDAV کلاینټونه کتلای شئ او د اړتیا پر مهال زاړه وسایل جبري نالاین کولای شئ.
 
-که WebDAV username یا password بدل کړئ، زاړه clients باید بیا sign in وکړي.
+که د WebDAV کارن‌نوم یا پاسورډ بدل کړئ، زاړه کلاینټونه باید بیا ننوتل وکړي.
 
 ## FAQ
 
-### Windows بیا بیا Username او Password غواړي
+### Windows بیا بیا کارن‌نوم او پاسورډ غواړي
 
 وګورئ:
 
-- URL دا دی: `https://your-domain.com/dav`.
-- username او password له WebDAV settings سره برابر دي.
+- URL `https://your-domain.com/dav` دی.
+- کارن‌نوم او پاسورډ د WebDAV له تنظیماتو سره برابر دي.
 - WebDAV فعال دی.
-- site د HTTPS له لارې access کېدای شي.
+- سایټ د HTTPS له لارې لاسرسی لري.
 
-### Browsing کار کوي، خو Upload ناکامېږي
+### کتنه کار کوي، خو پورته کول ناکامېږي
 
-`Default channel` وګورئ.
+`اصلي چینل` وګورئ.
 
-WebDAV uploads default upload channel غواړي. که missing، disabled یا misconfigured وي، uploads ناکامېدای شي.
+د WebDAV پورته کول اصلي پورته کولو چینل ته اړتیا لري. که دا ورک وي، غیرفعال وي یا ناسم تنظیم شوی وي، پورته کول ناکامېدای شي.
 
-### Access Speed بې ثباته دی
+### د لاسرسي سرعت ناپایدار دی
 
-د WebDAV performance پر client، network، file count او default upload channel پورې تړلی دی.
+د WebDAV کارکردګي پر کلاینټ، شبکه، د فایلونو شمېر او اصلي پورته کولو چینل پورې تړلې ده.
 
-که directory ډېر files ولري، files په folders کې organize کړئ او ټول په یوه directory کې مه ساتئ.
+که یوه ډایرېکټري ډېر فایلونه ولري، فایلونه په پوښیو کې منظم کړئ؛ په یوه ډایرېکټري کې ډېر فایلونه مه ساتئ.
 
-## Security Recommendations
+## امنیتي سپارښتنې
 
-- د WebDAV access لپاره HTTPS وکاروئ.
-- strong password وټاکئ.
-- WebDAV password له نابلدو خلکو سره مه شریکوئ.
-- چې WebDAV نه کاروئ، بند یې کړئ.
-- په Login Device Management کې unused WebDAV devices وخت په وخت پاک کړئ.
+- د WebDAV لاسرسي لپاره HTTPS وکاروئ.
+- پیاوړی پاسورډ وټاکئ.
+- د WebDAV پاسورډ له بې‌باوره خلکو سره مه شریکوئ.
+- WebDAV هغه وخت بند کړئ چې نه یې کاروئ.
+- ناآشنا یا نه کارېدونکي WebDAV وسایل په منظم ډول د ننوتلو وسایلو مدیریت کې پاک کړئ.
 
-## د WebDAV Upload File Size
+## د WebDAV پورته کولو د فایل اندازه
 
-WebDAV clients د browser upload page د large-file chunking flow نه کاروي. د لاندې سپارښتل شوو limits څخه لوړو files لپاره web upload page وکاروئ.
+WebDAV کلاینټونه د براوزر د پورته کولو پاڼې د لویو فایلونو ټوټه کولو جریان نه کاروي. د لاندې سپارښتل شوو حدونو څخه د لویو فایلونو لپاره د ویب پورته کولو پاڼه وکاروئ.
 
-| Default Upload Channel | Suggested Single-File Limit for WebDAV |
+| اصلي پورته کولو چینل | د WebDAV لپاره د یوه فایل سپارښتل شوی حد |
 | --- | ---: |
 | Telegram | 20 MB |
 | Discord | 10 MB |

@@ -1,174 +1,178 @@
-# Auto Tagging
+# தானியக்க குறிச்சொல் சேர்த்தல்
 
-Auto tagging இங்கு configure செய்யப்படுகிறது:
+தானியக்க குறிச்சொல் சேர்த்தல் இங்கு அமைக்கப்படுகிறது:
 
 ```text
 System Settings -> Other Settings -> Auto Tagging
 ```
 
-இது image tags-ஐ தானாக உருவாக்கும். search, random image filtering, public gallery filtering, age-rating access control ஆகியவற்றுக்கு tags உதவும்.
+இது படங்களுக்கு தானாக குறிச்சொற்களை உருவாக்குகிறது. தேடல், சீரற்ற படம் வடிகட்டல், பொது கேலரி வடிகட்டல், வயது மதிப்பீட்டின் அடிப்படையிலான அணுகல் கட்டுப்பாடு ஆகியவற்றில் இக்குறிச்சொற்கள் பயன்படும்.
 
-## Auto Tagging என்ன செய்ய முடியும்
+## தானியக்க குறிச்சொல் சேர்த்தல் செய்யக்கூடியவை
 
-| Feature | Description |
+| அம்சம் | விளக்கம் |
 | --- | --- |
-| content tags உருவாக்குதல் | people, scenes, objects, art style போன்ற visual content tags சேர்க்கும். |
-| character tags உருவாக்குதல் | anime images மற்றும் illustrations-க்கு useful. |
-| orientation tags சேர்த்தல் | `landscape`, `portrait`, அல்லது `square` சேர்க்கும். |
-| image rating சேர்த்தல் | general, sensitive, questionable, explicit content-க்கு `G/S/Q/E` rating results சேமிக்கும். |
-| upload-ல் auto-tag | புதிய images upload ஆனவுடன் tagging flow-க்கு தானாக செல்லும். |
-| Batch tagging | அனைத்து folders அல்லது selected folders-ல் உள்ள பழைய images-க்கு tags சேர்க்கும். |
+| உள்ளடக்க குறிச்சொற்களை உருவாக்குதல் | மனிதர்கள், காட்சிகள், பொருட்கள், கலைப் பாணி மற்றும் இதற்கு ஒத்த காட்சி உள்ளடக்கங்களுக்கு குறிச்சொற்களை சேர்க்கும். |
+| கதாபாத்திர குறிச்சொற்களை உருவாக்குதல் | அனிமே படங்கள் மற்றும் விளக்கப்படங்களுக்கு பயனுள்ளது. |
+| திசை குறிச்சொற்களை சேர்த்தல் | `landscape`, `portrait` அல்லது `square` சேர்க்கும். |
+| பட மதிப்பீட்டை சேர்த்தல் | பொதுவான, உணர்வுப்பூர்வமான, சந்தேகத்திற்குரிய அல்லது வெளிப்படையான உள்ளடக்கங்களுக்கு `G/S/Q/E` மதிப்பீட்டு முடிவுகளை சேமிக்கும். |
+| பதிவேற்றும்போது தானியக்க குறிச்சொல் | புதியதாக பதிவேற்றப்படும் படங்கள் தானாக குறிச்சொல் செயல்முறைக்குள் செல்கின்றன. |
+| தொகுதி குறிச்சொல் சேர்த்தல் | அனைத்து கோப்புறைகளிலோ தேர்ந்தெடுத்த கோப்புறைகளிலோ உள்ள பழைய படங்களுக்கு குறிச்சொற்களை சேர்க்கும். |
 
-## முதலில் தேவையானது
+## முதலில் தேவையானவை
 
-குறைந்தது ஒரு accessible Hugging Face Space URL தயார் செய்யவும்.
+அணுகக்கூடிய குறைந்தது ஒரு Hugging Face Space URL-ஐ தயார் செய்யவும்.
 
-recommended முறையாக SmilingWolf-ன் `wd-tagger` Space-ஐ உங்கள் Hugging Face account-க்கு duplicate செய்யலாம்:
+பரிந்துரைக்கப்படும் முறை: SmilingWolf-ன் `wd-tagger` Space-ஐ உங்கள் சொந்த Hugging Face கணக்கில் நகலெடுக்கவும்:
 
 ```text
 https://huggingface.co/spaces/SmilingWolf/wd-tagger
 ```
 
-public Space temporary testing-க்கு பயன்படுத்தலாம். ஆனால் public Spaces பல users share செய்வதால் queue, slow response, அல்லது temporary unavailable நிலை வரலாம். உங்கள் account-ல் duplicated Space long-term auto tagging-க்கு நிலையாக இருக்கும்.
+பொது Space-ஐ தற்காலிக சோதனைக்கு பயன்படுத்தலாம். ஆனால் பொதுவான Spaces பல பயனர்களால் பகிரப்பட்டிருப்பதால் வரிசை, மந்தம் அல்லது தற்காலிக கிடைக்காமை ஏற்படலாம். உங்கள் கணக்கில் நகலெடுத்த Space நீண்டகால தானியக்க குறிச்சொல் சேர்த்தலுக்கு நிலையானதாக இருக்கும்.
 
-## SmilingWolf Space Duplicate செய்யவும்
+## SmilingWolf Space-ஐ நகலெடுக்குதல்
 
-1. Hugging Face-ல் sign in செய்யவும்.
+1. Hugging Face-ல் உள்நுழையவும்.
 2. `https://huggingface.co/spaces/SmilingWolf/wd-tagger` திறக்கவும்.
 
-![SmilingWolf public Space](../../image/other/微笑狼的公开仓库.png)
+![SmilingWolf பொது Space](../../image/other/微笑狼的公开仓库.png)
 
-3. மேல் வலது three-dot menu கிளிக் செய்யவும்.
-4. `Duplicate this Space` தேர்வு செய்யவும்.
-5. default Space name வைத்திருக்கலாம் அல்லது `wd-tagger` போன்ற பெயர் தரலாம்.
-6. visibility-ஐ `Public` ஆக அமைக்கவும். Public Spaces-ஐ ImgBed call செய்வது எளிது.
-7. ஆரம்பத்தில் default free hardware வைத்திருக்கவும். queue பிரச்சினை தெளிவாக இருந்தால் பின்னர் upgrade செய்யவும்.
-8. Space create செய்து build முடியும் வரை காத்திருக்கவும்.
+3. மேல் வலது மூலையில் உள்ள மூன்று புள்ளி மெனுவை கிளிக் செய்யவும்.
+4. `Duplicate this Space` என்பதை தேர்வு செய்யவும்.
+5. இயல்புநிலை Space பெயரை வைத்திருக்கலாம் அல்லது `wd-tagger` போன்ற உங்கள் சொந்த பெயரை தேர்வு செய்யலாம்.
+6. தெரிவுநிலையை `Public` ஆக அமைக்கவும். பொது Spaces-ஐ ImgBed அழைப்பது எளிதாக இருக்கும்.
+7. ஆரம்பத்தில் இயல்புநிலை இலவச வன்பொருளையே வைத்திருக்கவும். வரிசை பிரச்சினை தெளிவாக தெரிந்தால் மட்டுமே பின்னர் மேம்படுத்தவும்.
+8. Space-ஐ உருவாக்கி கட்டமைப்பு முடியும் வரை காத்திருக்கவும்.
 
-build முடிந்த பிறகு உங்கள் Space page திறக்கவும். URL பொதுவாக:
+கட்டமைப்பு முடிந்தபின் உங்கள் Space பக்கத்தை திறக்கவும். URL பொதுவாக இவ்வாறு இருக்கும்:
 
 ```text
 https://huggingface.co/spaces/your-name/wd-tagger
 ```
 
-browser URL copy செய்து ImgBed `Space URLs`-ல் paste செய்யவும்.
+உலாவி URL-ஐ நகலெடுத்து ImgBed-ன் `Space URLs`-ல் ஒட்டவும்.
 
-## Multiple Space URLs நிரப்புதல்
+## பல Space URLs நிரப்புதல்
 
-ஒரு line-க்கு ஒரு Space URL.
+ஒவ்வொரு வரியிலும் ஒரு Space URL-ஐ உள்ளிடவும்.
 
-| Value | Description |
+உதாரணங்கள்:
+
+| மதிப்பு | விளக்கம் |
 | --- | --- |
-| `https://huggingface.co/spaces/SmilingWolf/wd-tagger` | SmilingWolf public Space. temporary testing-க்கு. |
-| `https://huggingface.co/spaces/lintonxue00/wd-tagger` | copied Space page URL. |
-| `https://huggingface.co/spaces/your-name/wd-tagger` | உங்கள் duplicated Space page URL. |
+| `https://huggingface.co/spaces/SmilingWolf/wd-tagger` | SmilingWolf பொது Space. தற்காலிக சோதனைக்கு ஏற்றது. |
+| `https://huggingface.co/spaces/lintonxue00/wd-tagger` | நகலெடுக்கப்பட்ட Space பக்க URL. |
+| `https://huggingface.co/spaces/your-name/wd-tagger` | உங்கள் சொந்த நகலெடுக்கப்பட்ட Space பக்க URL. |
 
-பல URLs தரலாம். ImgBed பல Spaces-ஐ சேர்த்து பயன்படுத்தும்; speed மேம்படலாம்.
+பல URL-களை உள்ளிடலாம். ImgBed பல Spaces-ஐ ஒன்றாக பயன்படுத்தும்; இதனால் வேகம் மேம்படலாம்.
 
-ஒரு Space unavailable என்றாலும் மற்றவை processing தொடரலாம்.
+ஒரு Space தற்காலிகமாக கிடைக்காவிட்டாலும் மற்றவை செயலாக்கத்தை தொடரலாம்.
 
-## Settings
+## அமைப்புகள்
 
-| Option | Recommendation |
+| விருப்பம் | பரிந்துரை |
 | --- | --- |
-| `Space URLs` | தயார் செய்த Space URLs நிரப்பவும். குறைந்தது ஒன்று. |
-| Target folder | அனைத்து folders-க்கு காலியாக விடவும். specific directory என்றால் மட்டும் folder தேர்வு செய்யவும். |
-| Recognition model | default `wd-swinv2-tagger-v3` வைத்திருக்கவும். |
-| General tag threshold | default பெரும்பாலான images-க்கு பொருந்தும். குறைந்த value அதிக tags; அதிக value குறைந்த tags. |
-| Character tag threshold | default conservative; தவறான character tags குறைக்க உதவும். |
-| `MCut` automatic threshold | ஆரம்பத்தில் off. model தானாக tag count தீர்மானிக்க வேண்டும் என்றால் on. |
-| Auto-tag on upload | புதிய uploaded images தானாக tag பெற வேண்டும் என்றால் on. |
-| Start tagging | பழைய images-க்கு manual batch-tagging. |
+| `Space URLs` | நீங்கள் தயார் செய்த Space URLs-ஐ உள்ளிடவும். குறைந்தது ஒன்றாவது தேவை. |
+| இலக்கு கோப்புறை | அனைத்து கோப்புறைகளுக்கும் காலியாக விடவும். குறிப்பிட்ட அடைவை மட்டும் செயலாக்க வேண்டும் என்றால் மட்டுமே கோப்புறையை தேர்வு செய்யவும். |
+| அடையாளம் காணும் மாதிரி | இயல்பாக `wd-swinv2-tagger-v3` வைத்திருக்கவும். |
+| பொதுக் குறிச்சொல் வரம்பு | இயல்புநிலை பெரும்பாலான படங்களுக்கு பொருந்தும். குறைந்த மதிப்புகள் அதிக குறிச்சொற்களை உருவாக்கும்; அதிக மதிப்புகள் குறைவான குறிச்சொற்களை உருவாக்கும். |
+| கதாபாத்திர குறிச்சொல் வரம்பு | இயல்புநிலை எச்சரிக்கையுடன் இருக்கும்; தவறான கதாபாத்திர குறிச்சொற்களைத் தவிர்க்க உதவும். |
+| `MCut` தானியக்க வரம்பு | ஆரம்பத்தில் அணைக்கப்பட்டிருக்கட்டும். குறிச்சொல் எண்ணிக்கையை மாதிரி தானாக தீர்மானிக்க வேண்டுமெனில் இயக்கவும். |
+| பதிவேற்றும்போது தானியக்க குறிச்சொல் | புதிய படங்கள் தானாக குறிச்சொற்களை பெற வேண்டும் என்றால் இயக்கவும். |
+| குறிச்சொல் சேர்த்தலை தொடங்கு | பழைய படங்களுக்கு கைமுறையாக தொகுதி குறிச்சொல் சேர்த்தலை தொடங்கும். |
 
-## Recommended Starting Values
+## பரிந்துரைக்கப்படும் தொடக்க மதிப்புகள்
 
-| Option | Recommended Value |
+| விருப்பம் | பரிந்துரைக்கப்படும் மதிப்பு |
 | --- | --- |
-| Recognition model | `wd-swinv2-tagger-v3` |
-| General tag threshold | `0.35` |
-| Character tag threshold | `0.85` |
-| `MCut` | ஆரம்பத்தில் Off |
-| Auto-tag on upload | தேவைப்பட்டால் Enable |
+| அடையாளம் காணும் மாதிரி | `wd-swinv2-tagger-v3` |
+| பொதுக் குறிச்சொல் வரம்பு | `0.35` |
+| கதாபாத்திர குறிச்சொல் வரம்பு | `0.85` |
+| `MCut` | ஆரம்பத்தில் அணைப்பு |
+| பதிவேற்றும்போது தானியக்க குறிச்சொல் | தேவையெனில் இயக்கவும் |
 
-tags அதிகமாக இருந்தால் general threshold சிறிது உயர்த்தவும்.
+குறிச்சொற்கள் அதிகமாக இருந்தால் பொதுக் குறிச்சொல் வரம்பை சிறிது உயர்த்தவும்.
 
-tags குறைவாக இருந்தால் general threshold சிறிது குறைக்கவும்.
+குறிச்சொற்கள் மிகக் குறைவாக இருந்தால் பொதுக் குறிச்சொல் வரம்பை சிறிது குறைக்கவும்.
 
-## Batch Tagging
+## தொகுதி குறிச்சொல் சேர்த்தல்
 
 1. `Space URLs` நிரப்பவும்.
-2. target folder தேர்வு செய்யவும்.
-3. start tagging கிளிக் செய்யவும்.
-4. progress முடியும் வரை காத்திருக்கவும்.
+2. இலக்கு கோப்புறையை தேர்வு செய்யவும்.
+3. குறிச்சொல் சேர்த்தலை தொடங்க கிளிக் செய்யவும்.
+4. முன்னேற்றம் முடியும் வரை காத்திருக்கவும்.
 
-target folder empty என்றால் ImgBed அனைத்து folders process செய்யும்.
+இலக்கு கோப்புறை காலியாக இருந்தால், ImgBed அனைத்து கோப்புறைகளையும் செயலாக்கும்.
 
-Batch tagging பழைய images-க்கு சிறந்தது. புதிய images-க்கு auto-tag on upload enable செய்தால் ஒவ்வொரு முறையும் manual run தேவையில்லை.
+தொகுதி குறிச்சொல் சேர்த்தல் பழைய படங்களுக்கு சிறந்தது. புதிய படங்களுக்கு பதிவேற்றும்போது தானியக்க குறிச்சொல் சேர்த்தலை இயக்கினால் ஒவ்வொரு முறையும் அதை கைமுறையாக இயக்க தேவையில்லை.
 
-## Auto-Tag on Upload
+## பதிவேற்றும்போது தானியக்க குறிச்சொல்
 
-auto-tag on upload enabled ஆன பிறகு புதிய uploaded images configured `Space URLs`-ஐ தானாக call செய்யும்.
+பதிவேற்றும்போது தானியக்க குறிச்சொல் இயக்கப்பட்ட பிறகு, புதியதாக பதிவேற்றப்படும் படங்கள் அமைக்கப்பட்ட `Space URLs`-ஐ தானாக அழைக்கும்.
 
-long-term use-க்கு இது பொருத்தம்.
+இது நீண்டகால பயன்பாட்டுக்கு ஏற்றது.
 
-Space queue-ல் இருந்தாலும் upload முதலில் finish ஆகலாம்; tagging பின்னர் தொடரும்.
+உங்கள் Space வரிசையில் இருந்தாலும், பதிவேற்றம் முதலில் முடிந்து, குறிச்சொல் சேர்த்தல் பின்னர் தொடரலாம்.
 
-## எந்த Images Process ஆகும்
+## எந்த படங்கள் செயலாக்கப்படும்
 
-Auto tagging முதன்மையாக image files process செய்கிறது.
+தானியக்க குறிச்சொல் சேர்த்தல் முக்கியமாக படக் கோப்புகளை செயலாக்கும்.
 
-tags, orientation, rating, width, height ஏற்கனவே complete உள்ள images skip செய்யப்படும். unnecessary Space calls தவிர்க்கப்படும்.
+முழுமையான குறிச்சொற்கள், திசை, மதிப்பீடு, அகலம் மற்றும் உயரம் ஏற்கனவே உள்ள படங்கள் தேவையற்ற Space அழைப்புகளைத் தவிர்க்க விடப்படும்.
 
-சாத்தியமானபோது ImgBed missing information மட்டும் நிரப்பும். உதாரணமாக orientation மட்டும் missing என்றால் full content tag flow call செய்யாமல் orientation சேர்க்க முயலும்.
+சாத்தியமானபோது ImgBed இல்லாத தகவல்களை மட்டும் நிரப்பும். உதாரணமாக திசை மட்டும் இல்லையெனில், முழு உள்ளடக்க குறிச்சொல் செயல்முறையை அழைக்காமல் திசையைச் சேர்க்க முயலும்.
 
-## FAQ
+## அடிக்கடி கேட்கப்படும் கேள்விகள்
 
-### என் Space-ஐ ஏன் Duplicate செய்ய வேண்டும்?
+### ஏன் எனது சொந்த Space-ஐ நகலெடுக்க வேண்டும்?
 
-Public Spaces பல users-ஆல் share செய்யப்படும். உங்கள் duplicated Space பெரும்பாலும் உங்கள் ImgBed site மட்டும் பயன்படுத்தும்; எனவே வேகமாகவும் நம்பகமாகவும் இருக்கும்.
+பொது Spaces பல பயனர்களால் பகிரப்படுகின்றன. உங்கள் சொந்த நகலெடுக்கப்பட்ட Space பெரும்பாலும் உங்கள் ImgBed தளத்தால் மட்டுமே பயன்படுத்தப்படும்; எனவே அது பொதுவாக வேகமாகவும் நம்பகமாகவும் இருக்கும்.
 
-### Space தொடர்ந்து Starting Up ஆகிறது
+### Space தொடர்ந்து தொடங்கிக்கொண்டே உள்ளது
 
-முதல் creation பிறகு அல்லது நீண்ட idle period பிறகு Space start ஆக நேரம் எடுக்கலாம்.
+முதல் உருவாக்கத்திற்குப் பிறகோ அல்லது நீண்ட செயலற்ற காலத்திற்குப் பிறகோ, Space தொடங்க சிறிது நேரம் ஆகலாம்.
 
-முதலில் உங்கள் Space page திறக்கவும். image recognize செய்ய ஆரம்பித்த பிறகு ImgBed-க்கு திரும்பி tagging தொடங்கவும்.
+முதலில் உங்கள் Space பக்கத்தை திறக்கவும். அது ஒரு படத்தை வழக்கமாக அடையாளம் காண முடிந்த பிறகு ImgBed-க்கு திரும்பி குறிச்சொல் சேர்த்தலை தொடங்கவும்.
 
-### Space URL எப்படி Copy செய்வது?
+### Space URL-ஐ எப்படி நகலெடுப்பது?
 
-Hugging Face Space page திறந்து browser address copy செய்யவும்.
+உங்கள் Hugging Face Space பக்கத்தை திறந்து உலாவி முகவரியை நகலெடுக்கவும்.
+
+உதாரணங்கள்:
 
 ```text
 https://huggingface.co/spaces/lintonxue00/wd-tagger
 https://huggingface.co/spaces/SmilingWolf/wd-tagger
 ```
 
-### Multiple Spaces சேர்க்கலாமா?
+### பல Spaces சேர்க்கலாமா?
 
-ஆம். ஒரு line-க்கு ஒரு Space URL.
+ஆம். ஒவ்வொரு வரியிலும் ஒரு Space URL-ஐ உள்ளிடவும்.
 
-பல Spaces images-ஐ சேர்ந்து process செய்யும்; images அதிகமானபோது பயனுள்ளது.
+பல Spaces படங்களை ஒன்றாக செயலாக்கும்; படங்கள் அதிகமாக உள்ளபோது இது பயனுள்ளதாக இருக்கும்.
 
-### Tags ஏன் English-ல்?
+### குறிச்சொற்கள் ஏன் ஆங்கிலத்தில் உள்ளன?
 
-SmilingWolf models English tags output செய்கின்றன. இது expected.
+SmilingWolf மாதிரிகள் ஆங்கில குறிச்சொற்களையே வெளியிடுகின்றன. இது எதிர்பார்க்கப்பட்டதே.
 
-tags search, filtering, random image API, public gallery filters ஆகியவற்றுக்கு பயன்படுத்தப்படும்.
+குறிச்சொற்கள் முக்கியமாக தேடல், வடிகட்டல், சீரற்ற பட API மற்றும் பொது கேலரி வடிகட்டல்களுக்கு பயன்படுத்தப்படுகின்றன.
 
-### Rating Tags எதற்கு?
+### மதிப்பீட்டு குறிச்சொற்கள் எதற்காக?
 
-rating results Security Settings-ல் உள்ள access mode உடன் இயங்கும்.
+மதிப்பீட்டு முடிவுகள் பாதுகாப்பு அமைப்புகளில் உள்ள அணுகல் முறையுடன் சேர்ந்து செயல்படும்.
 
-visitor access age rating மூலம் limited என்றால் public browsing மற்றும் random image features அந்த rules படி images filter செய்யும்.
+உதாரணமாக, பார்வையாளர் அணுகல் வயது மதிப்பீட்டின் அடிப்படையில் கட்டுப்படுத்தப்பட்டால், பொது உலாவலும் சீரற்ற பட அம்சங்களும் அந்த விதிகளின் படி படங்களை வடிகட்டும்.
 
-## Quick Flow
+## விரைவு நடைமுறை
 
 ```text
-Hugging Face-ல் sign in
--> SmilingWolf/wd-tagger திறக்கவும்
+Sign in to Hugging Face
+-> Open SmilingWolf/wd-tagger
 -> Duplicate this Space
--> Space build முடியும் வரை காத்திருக்கவும்
--> உங்கள் Space URL copy செய்யவும்
--> ImgBed-ல் Space URLs நிரப்பவும்
--> model மற்றும் thresholds தேர்வு செய்யவும்
--> Start tagging அல்லது auto-tag on upload enable செய்யவும்
+-> Wait for the Space to build
+-> Copy your Space URL
+-> Fill Space URLs in ImgBed
+-> Choose model and thresholds
+-> Start tagging or enable auto-tag on upload
 ```

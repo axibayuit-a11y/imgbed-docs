@@ -1,10 +1,10 @@
-# IP Geolocation और User Management
+# IP जियोलोकेशन और उपयोगकर्ता प्रबंधन
 
-IP geolocation uploader records, login devices और इसी तरह के logs में IP addresses को approximate locations में बदलता है।
+IP जियोलोकेशन अपलोडर रिकॉर्ड, लॉगिन डिवाइस और इसी तरह के लॉग में मौजूद IP पतों को अनुमानित स्थानों में बदलता है।
 
-Configure होने के बाद admin panel upload और access origins को ज़्यादा साफ़ दिखा सकता है। User Management suspicious IP addresses के upload access को block या restore करने की सुविधा भी देता है।
+कॉन्फ़िगर होने के बाद एडमिन पैनल अपलोड और पहुँच के स्रोतों को अधिक स्पष्ट रूप से दिखा सकता है। उपयोगकर्ता प्रबंधन संदिग्ध IP पतों के लिए अपलोड पहुँच को ब्लॉक या फिर से बहाल करने की सुविधा भी देता है।
 
-## कहाँ सेट करें
+## इसे कहाँ कॉन्फ़िगर करें
 
 खोलें:
 
@@ -12,163 +12,163 @@ Configure होने के बाद admin panel upload और access origins
 System Settings -> Other Settings -> IP Geolocation
 ```
 
-![IP geolocation](../../image/other/ip定位/ip定位.png)
+![IP जियोलोकेशन](../../image/other/ip定位/ip定位.png)
 
-## Available Settings
+## उपलब्ध सेटिंग्स
 
-नया IP geolocation flow किसी एक map service पर depend करने के बजाय multiple sources support करता है।
+नया IP जियोलोकेशन प्रवाह किसी एक मानचित्र सेवा पर निर्भर रहने के बजाय कई स्रोतों का समर्थन करता है।
 
-| Setting | Purpose |
+| सेटिंग | उद्देश्य |
 | --- | --- |
-| IP geolocation language | Display language चुनता है, जैसे English, Simplified Chinese, Japanese, French आदि। |
-| MaxMind Account ID | MaxMind GeoLite Web Service के लिए MaxMind account ID। |
+| IP जियोलोकेशन भाषा | प्रदर्शन भाषा चुनती है, जैसे अंग्रेज़ी, सरलीकृत चीनी, जापानी, फ़्रांसीसी और अन्य। |
+| MaxMind Account ID | MaxMind GeoLite Web Service के लिए MaxMind खाता ID। |
 | MaxMind License Key | MaxMind License Key। |
-| Tencent Map Key | Tencent Location Service key। Chinese addresses और mainland China IPs के लिए useful। |
-| ipapi Key | APILayer ipapi key। Multilingual IP geolocation support करता है। |
+| Tencent Map Key | Tencent Location Service कुंजी। चीनी भाषा में पतों और मुख्यभूमि चीन के IP के लिए उपयोगी। |
+| ipapi Key | APILayer ipapi कुंजी। बहुभाषी IP जियोलोकेशन का समर्थन करती है। |
 
-केवल वही services भरें जिनकी आपको ज़रूरत है। हर field configure करना ज़रूरी नहीं।
+केवल वही सेवाएँ भरें जिनकी आपको आवश्यकता है। हर फ़ील्ड को कॉन्फ़िगर करना ज़रूरी नहीं है।
 
-अगर कोई key नहीं दी गई है, तो ImgBed built-in free sources try करता है, लेकिन stability, language support और precision आपके configured service जितनी अच्छी न हो सकती है।
+यदि कोई कुंजी नहीं दी गई है, तो ImgBed फिर भी अंतर्निहित मुफ़्त स्रोतों का प्रयास करता है, लेकिन स्थिरता, भाषा समर्थन और सटीकता आपके द्वारा स्वयं कॉन्फ़िगर की गई सेवा से कम हो सकती है।
 
-## Recommended Choices
+## अनुशंसित विकल्प
 
-अगर आपको मुख्य रूप से Chinese addresses चाहिए:
+यदि आपको मुख्य रूप से चीनी भाषा में पते चाहिए:
 
-1. IP geolocation language को Simplified Chinese पर set करें।
-2. Tencent Map Key configure करें।
-3. Optional fallback के रूप में MaxMind या ipapi जोड़ें।
+1. IP जियोलोकेशन भाषा को सरलीकृत चीनी पर सेट करें।
+2. Tencent Map Key कॉन्फ़िगर करें।
+3. वैकल्पिक रूप से MaxMind या ipapi को बैकअप स्रोत के रूप में जोड़ें।
 
-अगर आपको मुख्य रूप से English या multilingual addresses चाहिए:
+यदि आपको मुख्य रूप से अंग्रेज़ी या बहुभाषी पते चाहिए:
 
-1. अपनी ज़रूरत की language चुनें।
-2. MaxMind Account ID और License Key configure करें।
-3. बेहतर multilingual results चाहिए तो ipapi Key जोड़ें।
+1. अपनी आवश्यक भाषा चुनें।
+2. MaxMind Account ID और License Key कॉन्फ़िगर करें।
+3. बेहतर बहुभाषी परिणामों की आवश्यकता हो तो ipapi Key जोड़ें।
 
-## MaxMind Setup
+## MaxMind सेटअप
 
-MaxMind को चाहिए:
+MaxMind के लिए आवश्यक है:
 
 ```text
 MaxMind Account ID
 MaxMind License Key
 ```
 
-MaxMind dashboard में account ID ढूँढें और License Keys page से License Key generate करें।
+MaxMind डैशबोर्ड में खाता ID खोजें और License Keys पेज से License Key जनरेट करें।
 
-![MaxMind key config](../../image/other/ip定位/maxmind的key配置.png)
+![MaxMind कुंजी कॉन्फ़िगरेशन](../../image/other/ip定位/maxmind的key配置.png)
 
-Generate होने के बाद Account ID और License Key को ImgBed में paste करके save करें।
+जनरेट होने के बाद Account ID और License Key को ImgBed में पेस्ट करें और सहेजें।
 
-MaxMind का free plan everyday use के लिए ठीक है, लेकिन request limits हैं। Quota exceed होने पर ImgBed दूसरे available sources try करता रहेगा।
+MaxMind का मुफ़्त प्लान रोज़मर्रा के उपयोग के लिए उपयुक्त है, लेकिन इसमें अनुरोध सीमा होती है। यदि कोटा पार हो जाता है, तो ImgBed उपलब्ध अन्य स्रोतों का प्रयास जारी रखता है।
 
-## ipapi Setup
+## ipapi सेटअप
 
-ipapi APILayer API Key इस्तेमाल करता है।
+ipapi APILayer API Key का उपयोग करता है।
 
-ipapi console खोलें और वहाँ दिख रही API Key copy करें।
+ipapi कंसोल खोलें और वहाँ दिखाई गई API Key कॉपी करें।
 
-![ipapi config](../../image/other/ip定位/ipapi配置.png)
+![ipapi कॉन्फ़िगरेशन](../../image/other/ip定位/ipapi配置.png)
 
-इसे ImgBed के `ipapi Key` field में paste करें और save करें।
+इसे ImgBed के `ipapi Key` फ़ील्ड में पेस्ट करें और सहेजें।
 
-ipapi multilingual IP geolocation support करता है और तब useful है जब आप selected language में addresses दिखाना चाहते हैं। इसके free plan में भी request limits हैं। Quota खत्म होने पर ImgBed दूसरे available sources try करता रहेगा।
+ipapi बहुभाषी IP जियोलोकेशन का समर्थन करता है और तब उपयोगी है जब आप चयनित भाषा में पते दिखाना चाहते हैं। इसके मुफ़्त प्लान में भी अनुरोध सीमा होती है। कोटा समाप्त होने पर ImgBed उपलब्ध अन्य स्रोतों का प्रयास जारी रखता है।
 
-## Tencent Map Key Setup
+## Tencent Map Key सेटअप
 
-Tencent Map Key Chinese addresses, खासकर mainland China IPs के लिए useful है।
+Tencent Map Key चीनी भाषा में पतों, विशेष रूप से मुख्यभूमि चीन के IP, के लिए उपयोगी है।
 
-Tencent Location Service में key बनाते समय enable करें:
+Tencent Location Service में कुंजी बनाते समय इसे सक्षम करें:
 
 ```text
 WebServiceAPI
 ```
 
-Creation के बाद key को `Tencent Map Key` में paste करें और save करें।
+बनाने के बाद कुंजी को `Tencent Map Key` में पेस्ट करें और सहेजें।
 
-अगर आपको basic Chinese IP geolocation ही चाहिए, तो शुरुआत के लिए Tencent Map Key पर्याप्त है।
+यदि आपको केवल चीनी भाषा में बुनियादी IP जियोलोकेशन चाहिए, तो शुरुआत के लिए Tencent Map Key पर्याप्त है।
 
-## User Management में क्या देखें
+## उपयोगकर्ता प्रबंधन में क्या देखें
 
-User Management admin panel के top से उपलब्ध है।
+उपयोगकर्ता प्रबंधन एडमिन पैनल के शीर्ष से उपलब्ध है।
 
-![User management](../../image/other/用户管理显示.png)
+![उपयोगकर्ता प्रबंधन](../../image/other/用户管理显示.png)
 
-User Management IP के आधार पर upload activity दिखाता है:
+उपयोगकर्ता प्रबंधन IP के अनुसार अपलोड गतिविधि दिखाता है:
 
-| Field | Description |
+| फ़ील्ड | विवरण |
 | --- | --- |
-| IP source | Uploader source IP। |
-| Address | IP से resolve हुई approximate location। |
-| Total upload size | इस IP से uploaded total file size। |
-| Upload count | इस IP से uploads की संख्या। |
-| Upload allowed | On मतलब uploads allowed हैं। Off मतलब uploads blocked हैं। |
+| IP स्रोत | अपलोडर का स्रोत IP। |
+| पता | IP से प्राप्त अनुमानित स्थान। |
+| कुल अपलोड आकार | इस IP द्वारा अपलोड की गई फ़ाइलों का कुल आकार। |
+| अपलोड संख्या | इस IP से हुए अपलोड की संख्या। |
+| अपलोड की अनुमति | चालू होने का अर्थ है कि अपलोड की अनुमति है। बंद होने का अर्थ है कि अपलोड ब्लॉक हैं। |
 
-उस IP द्वारा uploaded files की list खोलने के लिए left side का arrow click करें।
+उस IP द्वारा अपलोड की गई फ़ाइलों की सूची खोलने के लिए बाईं ओर के तीर पर क्लिक करें।
 
-File list में file name, preview, file size, moderation result, file status और upload time दिखते हैं। Uploads suspicious लगें तो पहले IP expand करें, files review करें, फिर decide करें कि future uploads block करने हैं या नहीं।
+फ़ाइल सूची में फ़ाइल नाम, पूर्वावलोकन, फ़ाइल आकार, मॉडरेशन परिणाम, फ़ाइल स्थिति और अपलोड समय दिखता है। जब अपलोड संदिग्ध लगें, तो पहले IP को विस्तृत करें, फ़ाइलों की समीक्षा करें, फिर तय करें कि आगे के अपलोड ब्लॉक करने हैं या नहीं।
 
-अगर IP suspicious है, तो `Upload allowed` off करें। आगे के uploads उस IP से block हो जाएँगे।
+यदि कोई IP संदिग्ध है, तो `Upload allowed` बंद करें। उस IP से भविष्य के अपलोड ब्लॉक हो जाएँगे।
 
-## Search, Sort और Advanced Filters
+## खोज, क्रमबद्ध करना और उन्नत फ़िल्टर
 
-User Management के top पर IP source या address से search करें।
+उपयोगकर्ता प्रबंधन के शीर्ष पर IP स्रोत या पते से खोजें।
 
-Recent uploaders, high-frequency uploaders या high-usage IPs ढूँढने के लिए time, upload count या total upload size से sort करें।
+हाल के अपलोडर, अधिक बार अपलोड करने वाले या अधिक उपयोग वाली IP ढूँढने के लिए समय, अपलोड संख्या या कुल अपलोड आकार के आधार पर क्रमबद्ध करें।
 
-ज़्यादा गहराई से जाँच करनी हो तो advanced filters खोलें।
+गहन जाँच के लिए उन्नत फ़िल्टर खोलें।
 
-![Advanced filters](../../image/other/用户管理高级筛选.png)
+![उन्नत फ़िल्टर](../../image/other/用户管理高级筛选.png)
 
-Advanced filters support करते हैं:
+उन्नत फ़िल्टर इसका समर्थन करते हैं:
 
-| Filter | Usage |
+| फ़िल्टर | उपयोग |
 | --- | --- |
-| Time range | Selected period में files upload करने वाले IPs दिखाता है। |
-| Access status | Normal, blocked और similar states से filter करता है। |
-| Allow/block list | Allowlist, blocklist या unset से filter करता है। |
-| File type | Images, videos, audio, documents, code या other files upload करने वाले IPs दिखाता है। |
-| File size | Uploaded file size range से filter करता है। |
-| Age rating | Unset, General, R12+, R16+, R18 जैसी ratings से filter करता है। |
-| File status | Abnormal files investigate करने के लिए current file status से filter करता है। |
+| समय सीमा | चुनी गई अवधि में फ़ाइलें अपलोड करने वाले IP दिखाता है। |
+| पहुँच स्थिति | सामान्य, ब्लॉक और समान स्थितियों से फ़िल्टर करता है। |
+| अनुमति/ब्लॉक सूची | अनुमति सूची, ब्लॉक सूची या अनसेट के आधार पर फ़िल्टर करता है। |
+| फ़ाइल प्रकार | छवियाँ, वीडियो, ऑडियो, दस्तावेज़, कोड या अन्य फ़ाइलें अपलोड करने वाले IP दिखाता है। |
+| फ़ाइल आकार | अपलोड की गई फ़ाइलों के आकार दायरे से फ़िल्टर करता है। |
+| आयु रेटिंग | अनसेट, General, R12+, R16+, R18 और समान रेटिंग के आधार पर फ़िल्टर करता है। |
+| फ़ाइल स्थिति | असामान्य फ़ाइलों की जाँच के लिए मौजूदा फ़ाइल स्थिति से फ़िल्टर करता है। |
 
-Apply करने के लिए `Apply Filters` click करें। सभी data पर वापस जाने के लिए `Reset` इस्तेमाल करें।
+लागू करने के लिए `Apply Filters` पर क्लिक करें। सभी डेटा पर लौटने के लिए `Reset` का उपयोग करें।
 
-## Mobile View
+## मोबाइल दृश्य
 
-Mobile पर User Management card layout में switch हो जाता है।
+मोबाइल पर उपयोगकर्ता प्रबंधन कार्ड लेआउट में बदल जाता है।
 
-![Mobile user management](../../image/other/手机端显示用户管理效果.png)
+![मोबाइल उपयोगकर्ता प्रबंधन](../../image/other/手机端显示用户管理效果.png)
 
-हर card में IP, address, total upload size, upload count और upload allowed switch दिखता है। Horizontal table scrolling के बिना users manage किए जा सकते हैं।
+हर कार्ड IP, पता, कुल अपलोड आकार, अपलोड संख्या और अपलोड अनुमति स्विच दिखाता है। आप क्षैतिज तालिका स्क्रॉल किए बिना उपयोगकर्ताओं को प्रबंधित कर सकते हैं।
 
-## अगर Location गलत लग रही है
+## यदि स्थान गलत लगे
 
-IP geolocation approximate होती है। यह exact street address नहीं है।
+IP जियोलोकेशन अनुमानित होता है। यह सटीक सड़क पता नहीं है।
 
-अगर user proxy, data center, cloud server या cross-border network के पीछे है, तो displayed location real location से अलग हो सकती है।
+यदि उपयोगकर्ता प्रॉक्सी, डेटा सेंटर, क्लाउड सर्वर या सीमा-पार नेटवर्क के पीछे है, तो दिखाया गया स्थान वास्तविक स्थान से अलग हो सकता है।
 
-इस feature का इस्तेमाल rough origin समझने, abnormal uploads ढूँढने और blocking decisions में मदद के लिए करें। इसे precise tracking न मानें।
+इस सुविधा का उपयोग मोटा स्रोत समझने, असामान्य अपलोड खोजने और ब्लॉक करने के निर्णयों में मदद के लिए करें। इसे सटीक ट्रैकिंग न मानें।
 
-## Common Cases
+## सामान्य स्थितियाँ
 
-| Case | Meaning |
+| स्थिति | अर्थ |
 | --- | --- |
-| Address empty है | IP अभी resolve नहीं हुआ हो सकता है, या current source temporarily unavailable है। |
-| Address language गलत है | IP geolocation language और उस language को support करने वाले source की configuration check करें। |
-| Address data center दिखाता है | कई proxies, cloud servers और crawlers data center या ISP addresses की तरह दिखते हैं। |
-| Upload count high है | इस IP को ध्यान से review करें और ज़रूरत हो तो uploads block करें। |
-| Total upload size बड़ा है | Sort या filter करें, IP expand करें और specific files inspect करें। |
-| Blocking के बाद restore करना है | `Upload allowed` फिर से on करें। |
+| पता खाली है | IP अभी हल नहीं हुआ हो सकता है, या मौजूदा स्रोत अस्थायी रूप से अनुपलब्ध हो सकता है। |
+| पते की भाषा गलत है | IP जियोलोकेशन भाषा और उस भाषा का समर्थन करने वाले स्रोत की कॉन्फ़िगरेशन जाँचें। |
+| पता डेटा सेंटर दिखाता है | कई प्रॉक्सी, क्लाउड सर्वर और क्रॉलर डेटा सेंटर या ISP पते के रूप में दिखाई देते हैं। |
+| अपलोड संख्या अधिक है | इस IP की सावधानी से समीक्षा करें और आवश्यकता होने पर अपलोड ब्लॉक करें। |
+| कुल अपलोड आकार बड़ा है | क्रमबद्ध करें या फ़िल्टर करें, IP को विस्तृत करें और संबंधित फ़ाइलों की जाँच करें। |
+| ब्लॉक करने के बाद बहाल करना है | `Upload allowed` फिर से चालू करें। |
 
-## Quick Flow
+## त्वरित प्रवाह
 
 ```text
-Other Settings में IP Geolocation खोलें
--> IP geolocation language चुनें
--> ज़रूरत के अनुसार MaxMind, Tencent Map या ipapi credentials भरें
--> Settings save करें
--> User Management खोलें
--> IP source, address, total upload size और upload count review करें
--> Abnormal IPs ढूँढने के लिए search, sort या advanced filters इस्तेमाल करें
--> ज़रूरत के अनुसार uploads allow या block करें
+Open IP Geolocation in Other Settings
+-> Choose IP geolocation language
+-> Fill MaxMind, Tencent Map, or ipapi credentials as needed
+-> Save settings
+-> Open User Management
+-> Review IP source, address, total upload size, and upload count
+-> Use search, sort, or advanced filters to find abnormal IPs
+-> Allow or block uploads as needed
 ```

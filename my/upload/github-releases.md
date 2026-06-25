@@ -1,69 +1,69 @@
-# GitHub Releases Channel ထည့်သွင်းခြင်း
+# GitHub Releases ချန်နယ် ထည့်သွင်းခြင်း
 
-## စမလုပ်ခင် လိုအပ်တာတွေ
+## မစတင်မီ လိုအပ်သည့်အရာများ
 
-အချက်သုံးခုပဲလိုပါတယ်:
+လိုအပ်သည့်အရာ သုံးခုသာရှိသည်။
 
-| လိုအပ်ချက် | အသုံးပြုပုံ |
+| လိုအပ်ချက် | ရည်ရွယ်ချက် |
 | --- | --- |
-| GitHub account | access token ဖန်တီးရန်နှင့် repository ပိုင်ရန်။ |
-| GitHub Access Token | ImgBed က GitHub API ကို access လုပ်ရန်၊ releases ဖန်တီးရန်၊ files upload လုပ်ရန်။ |
-| Repository name | repository name ပဲထည့်နိုင်ပါတယ်၊ ဥပမာ `image`။ |
+| GitHub အကောင့် | Access token ထုတ်ရန်နှင့် repository ကိုပိုင်ဆိုင်ရန် အသုံးပြုသည်။ |
+| GitHub Access Token | ImgBed က GitHub API ကို access လုပ်ရန်၊ release များဖန်တီးရန်နှင့် ဖိုင်များအပ်လုဒ်လုပ်ရန် အသုံးပြုသည်။ |
+| Repository အမည် | Repository အမည် သာ ထည့်နိုင်သည်။ ဥပမာ `image`။ |
 
-## Setup Steps
+## ပြင်ဆင်မှု အဆင့်များ
 
-### Step 1: GitHub ထဲ Sign in ဝင်ပြီး Access Token ဖန်တီးပါ
+### အဆင့် 1: GitHub သို့ Sign in ဝင်ပြီး Access Token ဖန်တီးပါ
 
-1. GitHub ထဲ sign in ဝင်ပါ။
-2. ညာဘက်အပေါ်ထောင့်က avatar ကိုနှိပ်ပြီး `Settings` ကိုဖွင့်ပါ။
-3. left sidebar မှ `Developer settings` ကိုဖွင့်ပါ။
+1. GitHub သို့ sign in ဝင်ပါ။
+2. ညာဘက်အပေါ်ထောင့်ရှိ သင်၏ avatar ကိုနှိပ်ပြီး `Settings` ကိုဖွင့်ပါ။
+3. ဘယ်ဘက် sidebar မှ `Developer settings` ကိုဖွင့်ပါ။
 4. `Personal access tokens` ကိုဖွင့်ပါ။
 5. `Tokens (classic)` ကိုဖွင့်ပါ။
 6. `Generate new token (classic)` ကိုနှိပ်ပါ။
-7. token ကိုမှတ်မိလွယ်တဲ့အမည်ပေးပါ။
-8. ကိုယ်တိုင် maintenance လုပ်မယ့်အစီအစဉ်အလိုက် expiration date ရွေးပါ။
-9. `repo` နဲ့ `workflow` scopes ကိုရွေးပါ။
-10. token ဖန်တီးပြီးတာနဲ့ ချက်ချင်း copy လုပ်ပြီးသိမ်းပါ။
+7. Token ကို မှတ်မိလွယ်သောအမည် ပေးပါ။
+8. ကိုယ်တိုင် maintenance လုပ်မည့်စီမံချက်အပေါ်မူတည်၍ expiration date ကိုရွေးပါ။
+9. `repo` နှင့် `workflow` scope များကိုရွေးပါ။
+10. Token ဖန်တီးပြီးသည်နှင့် ချက်ချင်းကူးယူပြီး သိမ်းထားပါ။
 
-![Add GitHub permissions](../../image/upload/github-releases/添加github权限.png)
+![GitHub permission များ ထည့်ခြင်း](../../image/upload/github-releases/添加github权限.png)
 
-## Step 2: ImgBed မှာ GitHub Releases Channel ဖြည့်ပါ
+## အဆင့် 2: ImgBed တွင် GitHub Releases Channel ကိုဖြည့်ပါ
 
-Upload Settings မှာ `GitHub Releases` ရွေးပြီးနောက်:
+အပ်လုဒ် ဆက်တင်များ တွင် `GitHub Releases` ကိုရွေးပြီးနောက် အကွက်များကို အောက်ပါအတိုင်း ဖြည့်ပါ။
 
-| UI Field | What to Enter |
+| UI အကွက် | ထည့်ရန်အရာ |
 | --- | --- |
-| Channel name | ကိုယ်ရွေးတဲ့အမည်၊ ဥပမာ `GitHubPrimary`။ |
-| Access Token | မကြာသေးခင်ဖန်တီးထားတဲ့ GitHub Personal Access Token။ |
-| Repository name | short repo name `image` သို့မဟုတ် full path `username/image`။ |
-| Private repository | လိုအပ်ချက်အရ on/off လုပ်ပါ။ |
-| Remark | optional၊ ဥပမာ `Primary upload channel`။ |
+| ချန်နယ်အမည် | သင်ရွေးချယ်သောအမည်၊ ဥပမာ `GitHubPrimary`။ |
+| Access Token | သင်ယခုဖန်တီးထားသော GitHub Personal Access Token။ |
+| Repository အမည် | `image` ကဲ့သို့ short repo name သို့မဟုတ် `username/image` ကဲ့သို့ full path။ |
+| ပုဂ္ဂလိက repository | သင်၏လိုအပ်ချက်အပေါ်မူတည်၍ ဖွင့်ပါ သို့မဟုတ် ပိတ်ပါ။ |
+| မှတ်ချက် | ရွေးချယ်နိုင်သည်။ ဥပမာ `Primary upload channel`။ |
 
-![Fill in the GitHub channel configuration](../../image/upload/github-releases/填写github渠道配置.png)
+![GitHub channel configuration ဖြည့်ခြင်း](../../image/upload/github-releases/填写github渠道配置.png)
 
-## Step 3: Channel Save လုပ်ပါ
+## အဆင့် 3: Channel ကိုသိမ်းပါ
 
-fields ဖြည့်ပြီးနောက် Save ကိုနှိပ်ပါ။
+အကွက်များဖြည့်ပြီးနောက် `Save` ကိုနှိပ်ပါ။
 
-system က ဒီအချက်တွေကို handle လုပ်ပါမယ်:
+စနစ်သည် အောက်ပါအသေးစိတ်များကို ဆောင်ရွက်ပေးမည်။
 
-| System Behavior | Description |
+| စနစ်၏ လုပ်ဆောင်ပုံ | ဖော်ပြချက် |
 | --- | --- |
-| Short repository name | ImgBed က current GitHub account ကိုသိပြီး value ကို full repository path အဖြစ် expand လုပ်သည်။ |
-| Full repository path | `username/repository` path ကို ထည့်ထားတဲ့အတိုင်းသုံးသည်။ |
-| Repository check | current personal account path ဖြစ်လျှင် repository မရှိသောအခါ ImgBed ကအလိုအလျောက် create လုပ်သည်။ full path ကို manual ထည့်ထားလျှင် အဲဒီ path ကိုပဲသုံးသည်။ |
-| Public/private state | repository visibility ကို current switch အတိုင်း synchronized လုပ်သည်။ |
+| Short repository အမည် | ImgBed သည် လက်ရှိ GitHub အကောင့်ကိုသိရှိပြီး တန်ဖိုးကို full repository path အဖြစ် ချဲ့ထွင်သည်။ |
+| Full repository path | ImgBed သည် `username/repository` path ကို ထည့်သွင်းထားသည့်အတိုင်း အတိအကျ အသုံးပြုသည်။ |
+| Repository check | လက်ရှိ personal account path ကိုအသုံးပြုပါက repository မရှိသေးသည့်အခါ ImgBed က အလိုအလျောက်ဖန်တီးသည်။ Full path ကိုကိုယ်တိုင်ထည့်ပါက ImgBed သည် ထို path ကို တိုက်ရိုက်အသုံးပြုသည်။ |
+| Public/private state | Repository visibility ကို လက်ရှိ switch အတိုင်း sync လုပ်သည်။ |
 
-## Quick Checklist
+## အမြန် စစ်ဆေးစာရင်း
 
-GitHub Releases flow:
+GitHub Releases သည် အောက်ပါအတိုင်း အလုပ်လုပ်သည်။
 
 ```text
-GitHub ထဲ sign in ဝင်ပါ
--> Access Token ဖန်တီးပါ
--> ImgBed ကိုပြန်သွားပြီး token နဲ့ repository name ထည့်ပါ
+Sign in to GitHub
+-> Create an Access Token
+-> Return to ImgBed and enter the token and repository name
 -> Save
--> repo name ပဲထည့်ထားရင် ImgBed က current username ကိုအလိုအလျောက်ထည့်ပါမယ်
--> username/repo ထည့်ထားရင် အဲဒီအတိုင်းသုံးပါမယ်
--> test image upload လုပ်ပါ
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

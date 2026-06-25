@@ -1,14 +1,14 @@
-# Magnet-transfer
+# Magnetoverdracht
 
-Magnet-transfer downloadt bestanden vanaf een magnetlink en uploadt ze automatisch naar het cloudopslagkanaal dat je kiest.
+Magnetoverdracht downloadt bestanden vanaf een magnetlink en uploadt ze automatisch naar het cloudopslagkanaal dat je kiest.
 
 Dit is handig voor anime-afleveringen, video's, archieven en vergelijkbare bestanden. Plak een magnetlink en ImgBed maakt een downloadtaak op de achtergrond. Wanneer de download klaar is, wordt het bestand naar ImgBed geüpload en verschijnt de uiteindelijke link in de uploadlijst.
 
-![Magnet-transfer](../../image/other/磁力链接/磁力链接.png)
+![Magnetoverdracht](../../image/other/磁力链接/磁力链接.png)
 
 ## Waar je dit gebruikt
 
-De ingang voor magnet-transfer staat in het uploadgedeelte van de homepage.
+De ingang voor magnetoverdracht staat in het uploadgedeelte van de homepage.
 
 Plak de magnetlink in het invoerveld, kies `Transfer` en upload.
 
@@ -16,22 +16,22 @@ Plak de magnetlink in het invoerveld, kies `Transfer` en upload.
 
 ## Voor het eerste gebruik
 
-Configureer magnet-transfer eerst in het beheerpaneel.
+Configureer magnetoverdracht eerst in het beheerpaneel.
 
 Meestal heb je nodig:
 
 1. Een GitHub-account om de downloadtaak uit te voeren.
 2. Een cloud-uploadkanaal, zoals Google Drive of OneDrive.
 3. De doelmap voor upload.
-4. Een taak-time-out.
+4. Een time-out voor de taak.
 
-Wanneer de instellingen klaar zijn, ga je terug naar de homepage en plak je een magnetlink om de transfer te starten.
+Wanneer de instellingen klaar zijn, ga je terug naar de homepage en plak je een magnetlink om de overdracht te starten.
 
 ## Een magnetlink uploaden
 
 1. Plak de magnetlink in het uploadveld op de homepage.
 2. Controleer dat de modus op `Transfer` staat.
-3. Klik op upload.
+3. Klik op uploaden.
 4. Wacht tot ImgBed de magnettaak aanmaakt.
 5. Zodra de taak start, gebruik je het zwevende paneel `Magnet Tasks` rechtsonder om de voortgang te volgen.
 
@@ -43,7 +43,7 @@ Downloaden en uploaden kunnen tijd kosten. De snelheid hangt af van de magnetbro
 
 Na afronding toont de uploadlijst de bestandsnaam en link.
 
-Video's tonen een videopreview, afbeeldingen een afbeeldingspreview en andere bestanden een normaal bestandspictogram.
+Video's tonen een videovoorbeeld, afbeeldingen een afbeeldingsvoorbeeld en andere bestanden een normaal bestandspictogram.
 
 ![Gedownloade video](../../image/other/磁力链接/下载好后的视频.png)
 
@@ -64,31 +64,31 @@ Veelvoorkomende statussen:
 
 | Status | Betekenis |
 | --- | --- |
-| Waiting | De taak is aangemaakt en wacht op uitvoering. |
-| Downloading | De magnetbron wordt gedownload. |
-| Uploading | Het bestand is gedownload en wordt naar cloudopslag geüpload. |
-| Completed | Upload gelukt en de link kan worden gekopieerd. |
-| Failed | De taak is niet succesvol afgerond. Controleer de melding en probeer opnieuw. |
+| Wachtend | De taak is aangemaakt en wacht op uitvoering. |
+| Downloaden | De magnetbron wordt gedownload. |
+| Uploaden | Het bestand is gedownload en wordt naar cloudopslag geüpload. |
+| Voltooid | Upload gelukt en de link kan worden gekopieerd. |
+| Mislukt | De taak is niet succesvol afgerond. Controleer de melding en probeer opnieuw. |
 
 ## Tips
 
 - Bevat een magnetlink meerdere bestanden, dan geeft ImgBed prioriteit aan het belangrijkste afgeronde bestand voor weergave.
 - Grote bestanden duren langer. Wacht tot de taak klaar is voordat je de pagina ververst.
 - Heeft de magnetbron geen beschikbare peers, dan kan de download erg langzaam zijn of mislukken.
-- Is het cloudaccount vol, de autorisatie verlopen of de uploadmap verkeerd, dan kan de taak mislukken.
-- Videopreview kan enkele seconden nodig hebben nadat uploaden klaar is.
+- Is het quotum van het cloudaccount opgebruikt, de autorisatie verlopen of de uploadmap verkeerd, dan kan de taak mislukken.
+- Het videovoorbeeld kan enkele seconden nodig hebben nadat uploaden klaar is.
 
-## FAQ
+## Veelgestelde vragen
 
 ### Er start niets nadat ik een magnetlink plak
 
-Controleer of magnet-transfer in het beheer is ingeschakeld en of een bruikbaar GitHub-account en cloudkanaal zijn geselecteerd.
+Controleer of magnetoverdracht in het beheer is ingeschakeld en of een bruikbaar GitHub-account en cloudkanaal zijn geselecteerd.
 
 ### Downloaden is altijd traag
 
 Magnetsnelheid hangt af van de bron zelf. Zijn er geen beschikbare peers, dan kan downloaden heel traag of onmogelijk zijn.
 
-### Er verschijnt geen preview na upload
+### Er verschijnt geen voorbeeld na upload
 
 Controleer eerst of de bestandslink opent. Videobestanden kunnen in de browser wat tijd nodig hebben om te laden, of je kunt de link direct openen.
 

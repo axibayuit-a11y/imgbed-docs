@@ -64,20 +64,20 @@ Vraťte se do ImgBed a přidejte kanál WebDAV:
 
 ## Chování při velkých souborech
 
-Kanál WebDAV nyní používá skutečný relací řízený chunk upload.
+Kanál WebDAV nyní používá skutečné nahrávání po částech řízené relací.
 
-Malé soubory se nahrávají jako jeden celý soubor. Soubory větší než 64 MiB se automaticky rozdělí na části kolem 10 MiB a nahrají do vzdáleného chunk adresáře.
+Malé soubory se nahrávají jako jeden celý soubor. Soubory větší než 64 MiB se automaticky rozdělí na části kolem 10 MiB a nahrají do vzdáleného adresáře s částmi.
 
-Služba WebDAV nemusí podporovat `partial update` ani offsetové zápisy. ImgBed chunk části na vzdáleném serveru neslučuje do jednoho velkého souboru. Místo toho uloží manifest chunků a při požadavku čte části postupně.
+Služba WebDAV nemusí podporovat `partial update` ani offsetové zápisy. ImgBed části na vzdáleném serveru neslučuje do jednoho velkého souboru. Místo toho uloží manifest částí a při požadavku čte části postupně.
 
 Prakticky:
 
-| Velikost souboru | Metoda uploadu | Rozložení ve vzdáleném úložišti |
+| Velikost souboru | Metoda nahrávání | Rozložení ve vzdáleném úložišti |
 | --- | --- | --- |
-| 64 MiB nebo méně | Běžný upload | Jeden celý soubor |
-| Více než 64 MiB | Skutečný relací řízený chunk upload | Chunk adresář s více částmi |
+| 64 MiB nebo méně | Běžné nahrání | Jeden celý soubor |
+| Více než 64 MiB | Nahrávání po částech řízené relací | Adresář s více částmi |
 
-Chunk adresář ovlivňuje jen rozložení ve vzdáleném úložišti. URL souboru v ImgBed se nemění. Uživatelé k souboru stále přistupují přes původní odkaz `/file/...`.
+Adresář s částmi ovlivňuje jen rozložení ve vzdáleném úložišti. URL souboru v ImgBed se nemění. Uživatelé k souboru stále přistupují přes původní odkaz `/file/...`.
 
 ## Postup nastavení
 
@@ -100,24 +100,24 @@ Chunk adresář ovlivňuje jen rozložení ve vzdáleném úložišti. URL soubo
 | Kanál je zapnutý | Přepínač v pravém horním rohu karty zůstává zapnutý. |
 | Přihlašovací údaje jsou uloženy | Detail ukazuje Endpoint, uživatelské jméno, režim ověřování a úložný adresář. |
 | Malý soubor se nahraje | Nahrajte testovací obrázek a ověřte, že se objeví ve WebDAV adresáři. |
-| Pravidlo pro velké soubory funguje | Soubory nad 64 MiB používají chunk upload a vytvoří vzdálený chunk adresář. |
+| Pravidlo pro velké soubory funguje | Soubory nad 64 MiB používají nahrávání po částech a vytvoří vzdálený adresář s částmi. |
 | Dotaz na kapacitu funguje | Pokud server podporuje informace o kapacitě, dotaz ukáže použité a celkové místo. |
 
 ![Dotaz na kvótu byl úspěšný](../../image/upload/webdav/查询额度成功.png)
 
 ## FAQ
 
-### Proč velké WebDAV soubory vytvářejí chunk adresář?
+### Proč velké WebDAV soubory vytvářejí adresář s částmi?
 
 Je to aktuální způsob ukládání velkých souborů.
 
-Soubory větší než 64 MiB se neslučují do jednoho velkého vzdáleného souboru. Ukládají se jako chunk adresář. ImgBed zaznamená manifest a vrací celý obsah čtením částí ve správném pořadí.
+Soubory větší než 64 MiB se neslučují do jednoho velkého vzdáleného souboru. Ukládají se jako adresář s částmi. ImgBed zaznamená manifest a vrací celý obsah čtením částí ve správném pořadí.
 
-### Co zkontrolovat jako první, když selže upload velkých souborů?
+### Co zkontrolovat jako první, když selže nahrávání velkých souborů?
 
 Nejdřív zkontrolujte Endpoint, uživatelské jméno, heslo a úložný adresář. Potom ověřte, že služba WebDAV dovoluje vytvářet adresáře, zapisovat soubory a číst soubory.
 
-Pokud dotaz na kapacitu selže, ale malé soubory se nahrávají, server možná kapacitní informace nepodporuje nebo je omezuje. Neznamená to automaticky, že upload nefunguje.
+Pokud dotaz na kapacitu selže, ale malé soubory se nahrávají, server možná kapacitní informace nepodporuje nebo je omezuje. Neznamená to automaticky, že nahrávání nefunguje.
 
 ### Jaký režim ověřování zvolit?
 
@@ -127,17 +127,17 @@ Pokud server výslovně vyžaduje digest authentication, použijte `Digest`.
 
 Pokud si nejste jistí, použijte automatické vyjednání.
 
-## Rychlý checklist
+## Rychlý kontrolní seznam
 
 ```text
-Připravte WebDAV endpoint, uživatelské jméno a heslo
--> Otevřete Nastavení nahrávání
--> Přidat kanál
--> Vyberte WebDAV
--> Zadejte Endpoint / uživatelské jméno / heslo
--> Režim ověřování nechte výchozí Basic
--> Úložný adresář nechte výchozí imgbed
--> Uložte
--> Dotaz na kapacitu
--> Nahrajte testovací soubor
+Prepare WebDAV endpoint, username, and password
+-> Open Upload Settings
+-> Add Channel
+-> Select WebDAV
+-> Enter Endpoint / username / password
+-> Keep authentication mode as Basic by default
+-> Keep storage directory as imgbed by default
+-> Save
+-> Query capacity
+-> Upload a test file
 ```

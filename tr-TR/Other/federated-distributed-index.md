@@ -1,56 +1,56 @@
-# Federated Distributed Index
+# Federasyon Dağıtık Dizini
 
-Federated distributed index, birden fazla ImgBed sitesinin dosya listelerini birbirleriyle paylaşmasını sağlar.
+Federasyon dağıtık dizini, birden fazla ImgBed sitesinin dosya listelerini birbirleriyle paylaşmasını sağlar.
 
 Basitçe:
 
 - Sitenizdeki seçili klasörleri başkalarıyla paylaşabilirsiniz.
-- Başka bir node'a katılıp o node'un paylaşılan dosya listesini yönetim panelinize senkronize edebilirsiniz.
-- Federated files ağırlıklı olarak gezinme, arama ve bağlantı açma içindir. Kendi depolamanıza yeniden yüklenmezler.
+- Başka bir düğüme katılıp o düğümün paylaşılan dosya listesini yönetim panelinize eşitleyebilirsiniz.
+- Federasyon dosyaları ağırlıklı olarak gezinme, arama ve bağlantı açma içindir. Kendi depolamanıza yeniden yüklenmezler.
 
 ## Nereden Yapılandırılır?
 
-Şurayı açın:
+Açın:
 
 ```text
 System Settings -> Other Settings -> Federated Distributed Index
 ```
 
-![Yerel federation node](../../image/other/联盟图/联盟分布式索引本地节点.png)
+![Yerel federasyon düğümü](../../image/other/联盟图/联盟分布式索引本地节点.png)
 
-Sayfada üç sekme vardır:
+Sayfada üç sekme bulunur:
 
 | Sekme | Amaç |
 | --- | --- |
-| Local Node | Kendi node'unuzu etkinleştirme, public domain doğrulama, paylaşılan klasörleri seçme ve outbound index güncelleme |
-| Nodes I Joined | Katıldığınız diğer ImgBed node'larını yönetme |
-| Nodes Joining Me | Sizin node'unuza katılmak isteyenlerin isteklerini yönetme |
+| Yerel düğüm | Düğümünüzü etkinleştirme, genel alan adını doğrulama, paylaşılan klasörleri seçme ve giden dizini güncelleme |
+| Katıldığım düğümler | Katıldığınız diğer ImgBed düğümlerini yönetme |
+| Bana katılmak isteyen düğümler | Düğümünüze katılmak isteyenlerin isteklerini yönetme |
 
 ## İlk Kurulum
 
-1. `Local Node` sekmesini açın.
-2. `Enable` değerini açın.
+1. `Local Node` öğesini açın.
+2. `Enable` seçeneğini açın.
 3. `Sync folders` altında paylaşılacak klasörleri seçin.
-4. `Update Outbound Index` düğmesine tıklayın.
-5. ImgBed domain değişikliği algılarsa devam etmeden önce geçerli domain'in doğru olduğunu onaylayın.
+4. `Update Outbound Index` öğesine tıklayın.
+5. ImgBed alan adı değişikliği algılarsa, devam etmeden önce geçerli alan adının doğru olduğunu onaylayın.
 
-Birden fazla sync folder seçebilirsiniz.
+Birden fazla eşitleme klasörü seçebilirsiniz.
 
-Sync folder listesi boşsa tüm klasörler paylaşılır.
+Eşitleme klasörü listesi boşsa tüm klasörler paylaşılır.
 
-## Local Node
+## Yerel Düğüm
 
-### Public Domain
+### Genel Alan Adı
 
-Public domain, diğer node'ların sizin node'unuza erişmek için kullandığı site URL'sidir.
+Genel alan adı, diğer düğümlerin düğümünüze erişmek için kullandığı site URL'sidir.
 
-ImgBed bunu otomatik algılar. Elle yazmanıza gerek yoktur. Index'i ilk kez güncellediğinizde ImgBed geçerli erişim URL'sinin production domain olup olmadığını onaylamanızı ister.
+ImgBed bunu otomatik olarak algılar. Elle yazmanız gerekmez. Dizini ilk kez güncellediğinizde ImgBed, geçerli erişim URL'sinin üretim alan adı olup olmadığını onaylamanızı ister.
 
-Domain'i daha sonra değiştirirseniz index güncellemesi tekrar onay ister.
+Alan adını daha sonra değiştirirseniz dizin güncellemesi tekrar onay ister.
 
-### Sync Folders
+### Eşitleme Klasörleri
 
-Sync folders, federation node'larıyla hangi dosyaların paylaşılacağını belirler.
+Eşitleme klasörleri, federasyon düğümleriyle hangi dosyaların paylaşılacağını belirler.
 
 Örneğin yalnızca şunları seçerseniz:
 
@@ -59,135 +59,135 @@ Sync folders, federation node'larıyla hangi dosyaların paylaşılacağını be
 /2/
 ```
 
-diğer node'lar yalnızca bu iki dizindeki dosyaları görür.
+diğer düğümler yalnızca bu iki dizindeki dosyaları görebilir.
 
-### Update Outbound Index
+### Giden Dizini Güncelleme
 
-Diğer node'ların sizden senkronize edebileceği dosya listesini günceller.
+Bu işlem, diğer düğümlerin sizden eşitleyebileceği dosya listesini günceller.
 
 Şu durumlarda kullanın:
 
-- Federation'ı ilk kez etkinleştirirken.
-- Paylaşmak istediğiniz dosyalar yüklediğinizde.
-- Sync folders değiştiğinde.
-- Public domain değiştiğinde ve onay gerektiğinde.
+- Federasyonu ilk kez etkinleştirdiğinizde.
+- Paylaşmak istediğiniz dosyaları yüklediğinizde.
+- Eşitleme klasörlerini değiştirdiğinizde.
+- Genel alan adını değiştirdiğinizde ve onaylamanız gerektiğinde.
 
-## Nodes I Joined
+## Katıldığım Düğümler
 
-`Nodes I Joined`, diğer node'lara abone olduğunuz yerdir.
+`Nodes I Joined`, katıldığınız diğer düğümleri yönettiğiniz bölümdür.
 
-![Nodes I joined](../../image/other/联盟图/我加入的节点.png)
+![Katıldığım düğümler](../../image/other/联盟图/我加入的节点.png)
 
-### Başka Bir Node'a Katılma İsteği Gönderme
+### Başka Bir Düğüme Katılma İsteği
 
-1. Diğer sahibinden invitation link isteyin.
-2. Giriş kutusuna yapıştırın.
-3. `Request to Join` düğmesine tıklayın.
-4. Diğer sahibin kendi yönetim panelinde isteği onaylamasını bekleyin.
+1. Diğer sahibinden davet bağlantısı isteyin.
+2. Bağlantıyı giriş kutusuna yapıştırın.
+3. `Request to Join` öğesine tıklayın.
+4. Diğer sahibin kendi yönetim panelinde onaylamasını bekleyin.
 
-Onaydan sonra node durumu approved olur.
+Onaydan sonra düğüm durumu onaylanmış olur.
 
-### Update Inbound Index
+### Gelen Dizini Güncelleme
 
-`Update Inbound Index`, katıldığınız node'lardan dosya listelerini senkronize eder.
+`Update Inbound Index`, katıldığınız düğümlerden dosya listelerini eşitler.
 
 Şu durumlarda kullanın:
 
 - Diğer sahip isteğinizi yeni onayladıysa.
 - Diğer sahip paylaşılan içeriğin güncellendiğini söylediyse.
-- Katıldığınız tüm federation dosya listelerini yenilemek istiyorsanız.
+- Katıldığınız tüm federasyon dosya listelerini yenilemek istiyorsanız.
 
-Yalnızca tek bir node'u güncellemek için o node kartında `Update Index` düğmesine tıklayın.
+Yalnızca bir düğümü güncellemek için o düğüm kartındaki `Update Index` öğesine tıklayın.
 
-![Index güncelleme](../../image/other/联盟图/更新索引.png)
+![Dizini güncelle](../../image/other/联盟图/更新索引.png)
 
-### Unsubscribe
+### Katılımı İptal Etme
 
-Bir node'u artık senkronize etmek istemiyorsanız `Unsubscribe` düğmesine tıklayın.
+Bir düğümü artık eşitlemek istemiyorsanız `Unsubscribe` öğesine tıklayın.
 
-Abonelikten çıktıktan sonra o node'un federated index'i yerel sitenizden kaldırılır.
+Katılım iptal edildikten sonra o düğümün federasyon dizini yerel sitenizden kaldırılır.
 
-## Nodes Joining Me
+## Bana Katılmak İsteyen Düğümler
 
-`Nodes Joining Me`, başkalarından gelen istekleri yönettiğiniz yerdir.
+`Nodes Joining Me`, başkalarından gelen istekleri ele aldığınız yerdir.
 
-![Nodes joining me](../../image/other/联盟图/加入我的节点.png)
+![Bana katılmak isteyen düğümler](../../image/other/联盟图/加入我的节点.png)
 
-### Invitation Link Oluşturma
+### Davet Bağlantısı Oluşturma
 
-1. Local node'un etkin olduğundan emin olun.
-2. ImgBed'in public domain'i doğrulaması için en az bir kez `Update Outbound Index` tıklayın.
-3. `Nodes Joining Me` sekmesini açın.
-4. `Reset Invitation Link` düğmesine tıklayın.
-5. Invitation link'i kopyalayıp diğer sahibine gönderin.
+1. Yerel düğümün etkin olduğundan emin olun.
+2. ImgBed'in genel alan adını onaylaması için `Update Outbound Index` öğesine en az bir kez tıklayın.
+3. `Nodes Joining Me` öğesini açın.
+4. `Reset Invitation Link` öğesine tıklayın.
+5. Davet bağlantısını kopyalayıp diğer sahibe gönderin.
 
-Invitation link boşsa public domain genellikle henüz doğrulanmamıştır. `Local Node` sekmesine dönüp `Update Outbound Index` tıklayın.
+Davet bağlantısı boşsa genellikle genel alan adı henüz onaylanmamıştır. `Local Node` bölümüne geri dönüp `Update Outbound Index` öğesine tıklayın.
 
-### Katılma İsteklerini Yönetme
+### Katılma İsteklerini Ele Alma
 
-Birisi istek gönderdiğinde `Nodes Joining Me` listesinde görünür.
+Birisi istek gönderdiğinde bu istek `Nodes Joining Me` listesinde görünür.
 
-| Eylem | Anlamı |
+| Eylem | Anlam |
 | --- | --- |
-| Approve | Diğer node'un paylaşılan dosya listenizi senkronize etmesine izin verir |
-| Reject | Katılma isteğini reddeder |
-| Delete | Tamamlanmış kaydı siler |
-| Check Status | Diğer tarafın bu ilişkiyi hâlâ koruyup korumadığını kontrol eder |
+| Onayla | Diğer düğümün paylaşılan dosya listenizi eşitlemesine izin verir |
+| Reddet | Katılma isteğini reddeder |
+| Sil | Tamamlanmış kaydı kaldırır |
+| Durumu kontrol et | Diğer tarafın bu ilişkiyi hâlâ koruyup korumadığını kontrol eder |
 
-Onaydan sonra diğer tarafın, paylaşılan dosyalarınız orada görünmeden önce yine `Update Inbound Index` tıklaması gerekir.
+Onaydan sonra, paylaşılan dosyalarınızın orada görünmesi için diğer tarafın yine `Update Inbound Index` öğesine tıklaması gerekir.
 
-![Davet edilen node'u onaylama](../../image/other/联盟图/邀请节点同意.png)
+![Davet edilen düğümü onaylama](../../image/other/联盟图/邀请节点同意.png)
 
 ## Mesajlar
 
-İlişki onaylandıktan sonra node kartındaki `Message` düğmesine tıklayın.
+Bir ilişki onaylandıktan sonra düğüm kartında `Message` öğesine tıklayın.
 
-Mesajlar yalnızca federation ilişkisi hakkında iletişim içindir. Dosyaları, etiketleri, dizinleri veya permissions değerlerini değiştirmez.
+Mesajlar yalnızca federasyon ilişkisi hakkında iletişim içindir. Dosyaları, etiketleri, dizinleri veya izinleri değiştirmez.
 
 ![Mesajlar](../../image/other/联盟图/留言功能.png)
 
-## Federated Files Görüntüleme
+## Federasyon Dosyalarını Görüntüleme
 
-Senkronizasyon tamamlandıktan sonra yönetim dosya listesine dönün.
+Eşitleme tamamlandıktan sonra yönetim dosya listesine dönün.
 
-Sayfanın üst kısmında yerel dosyalar ve federated files arasında geçiş yapabilirsiniz. Federated files içinde senkronize içeriği gezebilirsiniz.
+Sayfanın üst kısmında yerel dosyalar ile federasyon dosyaları arasında geçiş yapın. Federasyon dosyalarında eşitlenen içeriğe göz atabilirsiniz.
 
-Federated files ağırlıklı olarak görüntüleme, arama, preview ve bağlantı kopyalama içindir. Yerel dosya olmadıkları için kendi sitenizden taşıyamaz, silemez, yeniden etiketleyemez veya yedekleyemezsiniz.
+Federasyon dosyaları ağırlıklı olarak görüntüleme, arama, önizleme ve bağlantı kopyalama içindir. Bunlar yerel dosya olmadığı için kendi sitenizden taşıyamaz, silemez, yeniden etiketleyemez veya yedekleyemezsiniz.
 
-![Yönetimde federated files](../../image/other/联盟图/联盟管理显示效果图.png)
+![Yönetimde federasyon dosyaları](../../image/other/联盟图/联盟管理显示效果图.png)
 
-## FAQ
+## Sık Sorulan Sorular
 
-### Neden İlişki Kaydı Yok Diye Yeniden Başvurmam İsteniyor?
+### İlişki Kaydı Olmadığı İçin Neden Yeniden Başvurmam İsteniyor?
 
-Bu genellikle diğer tarafın sizi silip kaydı kaldırdığı anlamına gelir; ilişki artık bulunamaz. Yeni join request gönderin.
+Bu genellikle diğer tarafın sizi silip kaydı kaldırdığı, bu nedenle ilişkinizin artık bulunamadığı anlamına gelir. Yeni bir katılma isteği gönderin.
 
-![İlişki kaydı yoksa yeniden başvurma](../../image/other/联盟图/无关系记录重新申请.png)
+![İlişki kaydı yokken yeniden başvurma](../../image/other/联盟图/无关系记录重新申请.png)
 
-### Katıldıktan Sonra Neden Dosya Göremiyorum?
+### Katıldıktan Sonra Dosyaları Neden Göremiyorum?
 
 Kontrol edin:
 
-1. Diğer sahip isteğinizi onayladı.
-2. Diğer sahip `Update Outbound Index` tıkladı.
-3. Siz `Update Inbound Index` tıkladınız.
-4. Diğer sahibin sync folders listesi paylaşmak istediği dizinleri içeriyor.
+1. Diğer sahip isteğinizi onaylamış olmalı.
+2. Diğer sahip `Update Outbound Index` öğesine tıklamış olmalı.
+3. Siz `Update Inbound Index` öğesine tıklamış olmalısınız.
+4. Diğer sahibin eşitleme klasörleri, paylaşmak istediği dizinleri içermeli.
 
-### Domain Değişikliği Algılanırsa Ne Yapmalıyım?
+### Alan Adı Değişikliği Algılanırsa Ne Yapmalıyım?
 
-Yönetim panelini şu anda production domain üzerinden açıyorsanız onaylayıp devam edin.
+Yönetim panelini şu anda üretim alan adı üzerinden açıyorsanız onaylayıp devam edin.
 
-Geçici adres kullanıyorsanız iptal edin, yönetim panelini production domain ile yeniden açın ve tekrar deneyin.
+Geçici bir adres kullanıyorsanız iptal edin, yönetim panelini üretim alan adıyla yeniden açın ve tekrar deneyin.
 
-### Boş Sync Folder Listesi Ne Anlama Gelir?
+### Boş Eşitleme Klasörü Listesi Ne Anlama Gelir?
 
-Boş sync folder listesi tüm klasörlerin paylaşıldığı anlamına gelir.
+Boş eşitleme klasörü listesi tüm klasörlerin paylaşıldığı anlamına gelir.
 
 Yalnızca bazı dizinleri paylaşmak için bu klasörleri elle seçin.
 
-### Outbound ve Inbound Index Güncellemeleri Arasındaki Fark
+### Giden ve Gelen Dizin Güncellemeleri Arasındaki Fark
 
-| Düğme | Basit Anlamı |
+| Düğme | Basit Anlam |
 | --- | --- |
-| Update Outbound Index | Başkalarının benden senkronize edebileceği şeyi günceller |
-| Update Inbound Index | Başkalarından senkronize ettiğim şeyi günceller |
+| Giden dizini güncelle | Başkalarının benden eşitleyebileceği içeriği günceller |
+| Gelen dizini güncelle | Başkalarından eşitlediğim içeriği günceller |

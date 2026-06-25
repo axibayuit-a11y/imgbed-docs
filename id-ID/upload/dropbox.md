@@ -1,17 +1,17 @@
-# Menambahkan Dropbox Channel
+# Menambahkan Kanal Dropbox
 
-## Yang Perlu Disiapkan Dahulu
+## Yang Diperlukan Terlebih Dahulu
 
-| Requirement | Mengapa Dibutuhkan |
+| Kebutuhan | Alasan diperlukan |
 | --- | --- |
-| Dropbox account | Digunakan untuk sign in dan authorize app |
-| Dropbox app | Digunakan untuk generate `App Key` dan `App Secret` |
-| ImgBed domain Anda | Digunakan untuk OAuth redirect URI |
-| Available Dropbox storage | Digunakan sebagai lokasi file storage sebenarnya |
+| Akun Dropbox | Digunakan untuk masuk dan mengotorisasi aplikasi |
+| Aplikasi Dropbox | Digunakan untuk membuat `App Key` dan `App Secret` |
+| Domain ImgBed Anda | Digunakan sebagai OAuth redirect URI |
+| Ruang penyimpanan Dropbox yang tersedia | Digunakan sebagai lokasi penyimpanan berkas sebenarnya |
 
-## Langkah Setup
+## Langkah Konfigurasi
 
-### Step 1: Buat Dropbox App
+### Langkah 1: Membuat Aplikasi Dropbox
 
 1. Buka Dropbox App Console:
 
@@ -19,137 +19,137 @@
 https://www.dropbox.com/developers/apps
 ```
 
-2. Buat app baru.
-3. Untuk access type, pilih:
+2. Buat aplikasi baru.
+3. Untuk jenis akses, pilih:
 
 ```text
 App folder
 ```
 
-4. Beri nama app yang mudah dikenali, misalnya `imgbed-app`.
-5. Buka app details page setelah dibuat.
+4. Beri aplikasi nama yang mudah dikenali, misalnya `imgbed-app`.
+5. Setelah dibuat, buka halaman detail aplikasi.
 
-Recommended access type:
+Jenis akses yang disarankan:
 
-| Access Type | Recommendation |
+| Jenis akses | Rekomendasi |
 | --- | --- |
-| `App folder` | Recommended. Cocok dengan cara ImgBed menyimpan files. |
-| `Full Dropbox` | Tidak recommended. ImgBed tidak membutuhkan akses seluruh account. |
+| `App folder` | Disarankan. Sesuai dengan cara ImgBed menyimpan berkas. |
+| `Full Dropbox` | Tidak disarankan. ImgBed tidak membutuhkan akses penuh ke seluruh akun. |
 
-![Create Dropbox app](../../image/upload/dropbox/开发者创建应用.png)
+![Membuat aplikasi Dropbox](../../image/upload/dropbox/开发者创建应用.png)
 
-### Step 2: Tambahkan Redirect URI
+### Langkah 2: Menambahkan Redirect URI
 
-Di Dropbox app details page, cari OAuth atau Redirect URI settings dan tambahkan:
+Pada halaman detail aplikasi Dropbox, cari pengaturan OAuth atau Redirect URI, lalu tambahkan:
 
 ```text
 https://your-domain.com/api/oauth/dropbox/callback
 ```
 
-Jika memakai admin panel dari lebih dari satu domain, tambahkan setiap callback URL yang cocok.
+Jika panel admin digunakan dari lebih dari satu domain, tambahkan setiap URL callback yang sesuai.
 
-![Configure redirect URI](../../image/upload/dropbox/配置回调地址.png)
+![Mengonfigurasi Redirect URI](../../image/upload/dropbox/配置回调地址.png)
 
-### Step 3: Configure App Permissions
+### Langkah 3: Mengonfigurasi Izin Aplikasi
 
-Buka tab `Permissions` dan enable minimal scopes ini:
+Buka tab `Permissions` dan aktifkan setidaknya cakupan berikut:
 
-| Scope | Required | Purpose |
+| Cakupan | Wajib | Tujuan |
 | --- | --- | --- |
-| `account_info.read` | Required | Membaca account dan quota information |
-| `files.metadata.read` | Required | Membaca file dan folder metadata untuk path checks |
-| `files.metadata.write` | Required | Membuat folders dan menulis metadata |
-| `files.content.write` | Required | Upload files. Jika scope ini tidak ada, akan muncul `required scope 'files.content.write'`. |
-| `files.content.read` | Recommended | Mengizinkan download, preview, dan temporary file links |
+| `account_info.read` | Wajib | Membaca informasi akun dan kuota |
+| `files.metadata.read` | Wajib | Membaca metadata berkas dan folder untuk pemeriksaan jalur |
+| `files.metadata.write` | Wajib | Membuat folder dan menulis metadata |
+| `files.content.write` | Wajib | Mengunggah berkas. Jika cakupan ini tidak ada, akan muncul `required scope 'files.content.write'`. |
+| `files.content.read` | Disarankan | Mengizinkan unduhan, pratinjau, dan tautan berkas sementara |
 
-Setelah memilih scopes, klik `Submit` di bagian bawah page.
+Setelah memilih cakupan, klik `Submit` di bagian bawah halaman.
 
-![Add permissions](../../image/upload/dropbox/添加对应的权限.png)
+![Menambahkan izin](../../image/upload/dropbox/添加对应的权限.png)
 
-Important:
+Penting:
 
-| Situation | Yang Perlu Dilakukan |
+| Situasi | Yang harus dilakukan |
 | --- | --- |
-| Anda mengubah scopes | Jalankan token authorization flow lagi dan ambil `Refresh Token` baru. |
-| Anda tidak reauthorize | Token lama tidak akan mendapat permissions baru, jadi uploads masih bisa gagal. |
+| Anda mengubah cakupan | Jalankan ulang alur otorisasi token dan ambil `Refresh Token` baru. |
+| Anda tidak mengotorisasi ulang | Token lama tidak akan mendapat izin baru, sehingga unggahan masih dapat gagal. |
 
-### Step 4: Copy App Credentials
+### Langkah 4: Menyalin Kredensial Aplikasi
 
-Simpan dua nilai ini dari Dropbox app page:
+Simpan dua nilai ini dari halaman aplikasi Dropbox:
 
-| Dropbox Field | ImgBed Field |
+| Kolom Dropbox | Kolom ImgBed |
 | --- | --- |
 | `App key` | `App Key` |
 | `App secret` | `App Secret` |
 
-### Step 5: Isi Dropbox Channel
+### Langkah 5: Mengisi Kanal Dropbox
 
-Di Upload Settings, pilih `Dropbox` dan isi:
+Di pengaturan unggah, pilih `Dropbox` lalu isi:
 
-| ImgBed Field | Yang Diisi |
+| Kolom ImgBed | Nilai yang diisi |
 | --- | --- |
-| Channel name | Nama yang mudah dikenali, misalnya `Main Dropbox` |
-| App Key | Dropbox `App key` |
-| App Secret | Dropbox `App secret` |
-| Refresh Token | Biarkan kosong dulu |
-| Root directory | Optional. Default adalah `imgbed`. |
-| Note | Optional |
+| Nama kanal | Nama yang mudah dikenali, misalnya `Main Dropbox` |
+| App Key | `App key` Dropbox |
+| App Secret | `App secret` Dropbox |
+| Refresh Token | Biarkan kosong terlebih dahulu |
+| Direktori root | Opsional. Default adalah `imgbed`. |
+| Catatan | Opsional |
 
-![Get token](../../image/upload/dropbox/获取令牌.png)
+![Mendapatkan token](../../image/upload/dropbox/获取令牌.png)
 
-### Step 6: Dapatkan Refresh Token
+### Langkah 6: Mendapatkan Refresh Token
 
 1. Di ImgBed, klik `Get Token`.
-2. Sign in ke Dropbox account yang ingin dihubungkan.
-3. Approve authorization prompt.
-4. Callback page akan menampilkan `Refresh Token`.
-5. Copy token tersebut.
-6. Kembali ke ImgBed dan paste ke field `Refresh Token`.
+2. Masuk ke akun Dropbox yang ingin dihubungkan.
+3. Setujui permintaan otorisasi.
+4. Halaman callback akan menampilkan `Refresh Token`.
+5. Salin token tersebut.
+6. Kembali ke ImgBed dan tempelkan ke kolom `Refresh Token`.
 
-![Copy token](../../image/upload/dropbox/复制令牌.png)
+![Menyalin token](../../image/upload/dropbox/复制令牌.png)
 
-## Cara Memeriksa
+## Verifikasi
 
-| Check | Expected Result |
+| Pemeriksaan | Hasil yang diharapkan |
 | --- | --- |
-| Channel card | Dropbox channel muncul setelah save. |
-| Channel switch | Channel bisa diaktifkan. |
-| Token saved | Detail page menunjukkan `Refresh Token` sudah tersimpan. |
-| Upload test | Test image muncul di Dropbox app folder. |
+| Kartu kanal | Kanal Dropbox muncul setelah disimpan. |
+| Sakelar kanal | Kanal dapat diaktifkan. |
+| Token tersimpan | Halaman detail menunjukkan bahwa `Refresh Token` sudah tersimpan. |
+| Uji unggah | Gambar uji muncul di folder aplikasi Dropbox. |
 
-Jika quota limits aktif, klik quota query. Setelah query berhasil, channel card menampilkan used space, total space, dan last update time.
+Jika batas kuota aktif, klik kueri kuota. Setelah kueri berhasil, kartu kanal menampilkan ruang terpakai, ruang total, dan waktu pembaruan terakhir.
 
-![Quota query success](../../image/upload/dropbox/查询额度成功.png)
+![Kueri kuota berhasil](../../image/upload/dropbox/查询额度成功.png)
 
-## Troubleshooting
+## Pemecahan Masalah
 
-| Problem | Fix |
+| Masalah | Solusi |
 | --- | --- |
-| ImgBed mengatakan configuration incomplete | Periksa `App Key`, `App Secret`, dan `Refresh Token` semuanya sudah diisi. |
-| Authorization sukses tetapi tidak ada `Refresh Token` | Klik `Get Token` lagi dan pastikan offline authorization flow digunakan. |
-| Upload gagal dengan `required scope 'files.content.write'` | Enable `files.content.write`, klik `Submit`, lalu ambil `Refresh Token` baru. |
+| ImgBed menyatakan konfigurasi belum lengkap | Pastikan `App Key`, `App Secret`, dan `Refresh Token` semuanya terisi. |
+| Otorisasi selesai tetapi `Refresh Token` tidak muncul | Klik `Get Token` lagi dan pastikan alur otorisasi offline digunakan. |
+| Unggahan gagal dengan `required scope 'files.content.write'` | Aktifkan `files.content.write`, klik `Submit`, lalu ambil `Refresh Token` baru. |
 | Callback gagal | Pastikan redirect URI adalah `https://your-domain.com/api/oauth/dropbox/callback`. |
-| Files tidak ditemukan | Pastikan Dropbox app dibuat dalam mode `App folder`. |
+| Berkas tidak ditemukan | Pastikan aplikasi Dropbox dibuat dalam mode `App folder`. |
 
-## Quick Flow
+## Alur Cepat
 
 ```text
-Buka Dropbox App Console
--> Buat app
--> Pilih App folder access
--> Tambahkan https://your-domain.com/api/oauth/dropbox/callback
+Open Dropbox App Console
+-> Create an app
+-> Choose App folder access
+-> Add https://your-domain.com/api/oauth/dropbox/callback
 -> Enable account_info.read / files.metadata.read / files.metadata.write / files.content.write
--> Optional enable files.content.read
--> Klik Submit
--> Copy App Key dan App Secret
--> Isi ke ImgBed
--> Klik Get Token
--> Copy Refresh Token dari callback page
--> Paste kembali ke ImgBed dan save
+-> Optionally enable files.content.read
+-> Click Submit
+-> Copy App Key and App Secret
+-> Fill them into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
-## References
+## Referensi
 
 1. Dropbox App Console: https://www.dropbox.com/developers/apps
-2. Dropbox OAuth Guide: https://developers.dropbox.com/oauth-guide
-3. Dropbox Developer Guide: https://www.dropbox.com/developers/reference/developer-guide
+2. Panduan OAuth Dropbox: https://developers.dropbox.com/oauth-guide
+3. Panduan Developer Dropbox: https://www.dropbox.com/developers/reference/developer-guide

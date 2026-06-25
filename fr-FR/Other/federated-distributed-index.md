@@ -1,138 +1,193 @@
 # Index distribué fédéré
 
-L’index distribué fédéré permet à plusieurs sites ImgBed de partager leurs listes de fichiers.
+L’index distribué fédéré permet à plusieurs sites ImgBed de partager leurs listes de fichiers entre eux.
 
-En pratique :
+En termes simples :
 
-- Vous pouvez partager certains dossiers de votre site avec d’autres personnes.
-- Vous pouvez rejoindre le nœud d’une autre personne et synchroniser sa liste partagée dans votre panneau.
-- Les fichiers fédérés servent à parcourir, rechercher, prévisualiser et copier des liens. Ils ne sont pas réimportés dans votre propre stockage.
+- Vous pouvez partager des dossiers sélectionnés de votre site avec d’autres personnes.
+- Vous pouvez rejoindre un autre nœud et synchroniser sa liste de fichiers partagée dans votre panneau d’administration.
+- Les fichiers fédérés servent principalement à parcourir, rechercher et ouvrir des liens. Ils ne sont pas réimportés dans votre propre stockage.
 
-## Où configurer
+## Où le configurer
+
+Ouvrez :
 
 ```text
-Paramètres système -> Autres paramètres -> Index distribué fédéré
+System Settings -> Other Settings -> Federated Distributed Index
 ```
 
-![Nœud local](../../image/other/联盟图/联盟分布式索引本地节点.png)
+![Nœud fédéré local](../../image/other/联盟图/联盟分布式索引本地节点.png)
 
 La page comporte trois onglets :
 
-| Onglet | Usage |
+| Onglet | Objectif |
 | --- | --- |
-| Nœud local | Configurer votre nœud, le domaine public, les dossiers partagés et l’index sortant |
-| Nœuds rejoints | Gérer les nœuds d’autres sites que vous suivez |
-| Demandes vers mon nœud | Gérer les demandes d’autres personnes souhaitant rejoindre votre nœud |
+| Nœud local | Activer votre nœud, confirmer le domaine public, sélectionner les dossiers partagés et mettre à jour l’index sortant |
+| Nœuds que j’ai rejoints | Gérer les autres nœuds ImgBed que vous avez rejoints |
+| Nœuds qui me rejoignent | Gérer les demandes d’autres personnes qui veulent rejoindre votre nœud |
 
 ## Configuration initiale
 
-1. Ouvrez `Nœud local`.
-2. Activez `Activer`.
-3. Choisissez les dossiers à partager dans `Dossiers de synchronisation`.
-4. Cliquez sur `Mettre à jour l’index sortant`.
-5. Si ImgBed détecte un changement de domaine, confirmez que le domaine actuel est bien le domaine de production.
+1. Ouvrez `Local Node`.
+2. Activez `Enable`.
+3. Sélectionnez les dossiers à partager dans `Sync folders`.
+4. Cliquez sur `Update Outbound Index`.
+5. Si ImgBed détecte un changement de domaine, confirmez que le domaine actuel est correct avant de continuer.
 
-Vous pouvez choisir plusieurs dossiers. Si la liste est vide, tous les dossiers sont partagés.
+Vous pouvez sélectionner plusieurs dossiers de synchronisation.
+
+Si la liste des dossiers de synchronisation est vide, tous les dossiers sont partagés.
 
 ## Nœud local
 
 ### Domaine public
 
-Le domaine public est l’adresse utilisée par les autres nœuds pour accéder à votre site.
+Le domaine public est l’URL du site que les autres nœuds utilisent pour accéder à votre nœud.
 
-ImgBed la détecte automatiquement. En général, vous n’avez rien à saisir. Une confirmation est demandée lors de la première mise à jour de l’index ou après un changement de domaine.
+ImgBed le détecte automatiquement. Vous n’avez pas besoin de le saisir manuellement. Lors de la première mise à jour de l’index, ImgBed vous demande de confirmer si l’URL d’accès actuelle est le domaine de production.
+
+Si vous changez de domaine plus tard, la mise à jour de l’index demandera à nouveau une confirmation.
 
 ### Dossiers de synchronisation
 
-Ces dossiers déterminent quels fichiers sont partagés.
+Les dossiers de synchronisation déterminent les fichiers partagés avec les nœuds fédérés.
 
-Exemple :
+Par exemple, si vous sélectionnez seulement :
 
 ```text
 /1/
 /2/
 ```
 
-Dans ce cas, les autres nœuds ne voient que les fichiers de ces deux répertoires.
+les autres nœuds ne verront que les fichiers de ces deux répertoires.
 
 ### Mettre à jour l’index sortant
 
-Cette action met à jour la liste de fichiers que les autres nœuds peuvent synchroniser depuis votre site.
+Cette action met à jour la liste des fichiers que les autres nœuds peuvent synchroniser depuis vous.
 
-Utilisez-la quand :
+Utilisez-la lorsque :
 
 - vous activez la fédération pour la première fois ;
-- vous ajoutez de nouveaux fichiers à partager ;
-- vous changez les dossiers partagés ;
-- vous changez de domaine public.
+- vous avez envoyé des fichiers que vous voulez partager ;
+- vous modifiez les dossiers de synchronisation ;
+- vous changez le domaine public et devez le confirmer.
 
-## Rejoindre d’autres nœuds
+## Nœuds que j’ai rejoints
 
-`Nœuds rejoints` sert à suivre les nœuds d’autres sites ImgBed.
+`Nodes I Joined` est l’endroit où vous vous abonnez à d’autres nœuds.
 
-![Nœuds rejoints](../../image/other/联盟图/我加入的节点.png)
+![Nœuds que j’ai rejoints](../../image/other/联盟图/我加入的节点.png)
 
-1. Demandez un lien d’invitation au propriétaire de l’autre nœud.
-2. Collez-le dans le champ.
-3. Cliquez sur `Demander à rejoindre`.
-4. Attendez l’approbation dans le panneau de l’autre personne.
+### Demander à rejoindre un autre nœud
 
-Après approbation, utilisez `Mettre à jour l’index entrant` pour synchroniser les fichiers partagés.
+1. Demandez au propriétaire de l’autre nœud un lien d’invitation.
+2. Collez-le dans le champ de saisie.
+3. Cliquez sur `Request to Join`.
+4. Attendez que l’autre propriétaire l’approuve dans son panneau d’administration.
 
-Pour mettre à jour un seul nœud, utilisez `Mettre à jour l’index` sur sa carte.
+Après approbation, l’état du nœud devient approuvé.
 
-![Mise à jour d’index](../../image/other/联盟图/更新索引.png)
+### Mettre à jour l’index entrant
 
-## Gérer les demandes vers votre nœud
+`Update Inbound Index` synchronise les listes de fichiers depuis les nœuds que vous avez rejoints.
 
-`Demandes vers mon nœud` affiche les personnes qui souhaitent rejoindre votre nœud.
+Utilisez cette action lorsque :
 
-![Demandes vers mon nœud](../../image/other/联盟图/加入我的节点.png)
+- l’autre propriétaire vient d’approuver votre demande ;
+- l’autre propriétaire vous indique que le contenu partagé a été mis à jour ;
+- vous voulez actualiser toutes les listes de fichiers fédérées des nœuds que vous avez rejoints.
 
-Pour générer une invitation, activez le nœud local, exécutez au moins une fois `Mettre à jour l’index sortant` pour confirmer le domaine public, puis cliquez sur `Réinitialiser le lien d’invitation`.
+Pour mettre à jour un seul nœud, cliquez sur `Update Index` sur la carte de ce nœud.
 
-Lorsqu’une demande arrive, vous pouvez choisir :
+![Mettre à jour l’index](../../image/other/联盟图/更新索引.png)
 
-| Action | Résultat |
+### Se désabonner
+
+Si vous ne voulez plus synchroniser un nœud, cliquez sur `Unsubscribe`.
+
+Après le désabonnement, l’index fédéré de ce nœud est retiré de votre site local.
+
+## Nœuds qui me rejoignent
+
+`Nodes Joining Me` est l’endroit où vous traitez les demandes des autres.
+
+![Nœuds qui me rejoignent](../../image/other/联盟图/加入我的节点.png)
+
+### Générer un lien d’invitation
+
+1. Assurez-vous que le nœud local est activé.
+2. Cliquez au moins une fois sur `Update Outbound Index` afin qu’ImgBed confirme le domaine public.
+3. Ouvrez `Nodes Joining Me`.
+4. Cliquez sur `Reset Invitation Link`.
+5. Copiez le lien d’invitation et envoyez-le à l’autre propriétaire.
+
+Si le lien d’invitation est vide, le domaine public n’a généralement pas encore été confirmé. Revenez à `Local Node` et cliquez sur `Update Outbound Index`.
+
+### Traiter les demandes d’adhésion
+
+Lorsqu’une personne envoie une demande, elle apparaît dans la liste `Nodes Joining Me`.
+
+| Action | Signification |
 | --- | --- |
-| Approuver | Autorise l’autre partie à synchroniser votre liste partagée |
-| Refuser | Refuse l’entrée |
+| Approuver | Autorise l’autre nœud à synchroniser votre liste de fichiers partagée |
+| Refuser | Refuse la demande d’adhésion |
 | Supprimer | Supprime un enregistrement terminé |
-| Vérifier l’état | Vérifie si l’autre partie conserve la relation |
+| Vérifier l’état | Vérifie si l’autre partie conserve toujours cette relation |
 
-Après approbation, l’autre partie doit encore mettre à jour son index entrant pour voir vos fichiers.
+Après approbation, l’autre partie doit encore cliquer sur `Update Inbound Index` avant que vos fichiers partagés n’apparaissent chez elle.
 
-![Approuver un nœud](../../image/other/联盟图/邀请节点同意.png)
+![Approuver un nœud invité](../../image/other/联盟图/邀请节点同意.png)
 
 ## Messages
 
-Une fois la relation approuvée, vous pouvez utiliser `Message` sur la carte du nœud.
+Une fois la relation approuvée, cliquez sur `Message` sur la carte du nœud.
 
-Les messages servent uniquement à échanger autour de la relation fédérée. Ils ne modifient ni fichiers, ni tags, ni dossiers, ni permissions.
+Les messages servent uniquement à communiquer au sujet de la relation fédérée. Ils ne modifient pas les fichiers, les étiquettes, les répertoires ni les permissions.
 
 ![Messages](../../image/other/联盟图/留言功能.png)
 
-## Voir les fichiers fédérés
+## Afficher les fichiers fédérés
 
-Une fois la synchronisation terminée, revenez à la liste des fichiers du panneau. En haut de la page, vous pouvez basculer entre fichiers locaux et fichiers fédérés.
+Une fois la synchronisation terminée, revenez à la liste des fichiers dans le panneau d’administration.
 
-Les fichiers fédérés ne sont pas locaux : vous pouvez les consulter, les rechercher, les prévisualiser et copier leurs liens, mais pas les déplacer, les supprimer, modifier leurs tags ou les sauvegarder depuis votre site.
+En haut de la page, basculez entre les fichiers locaux et les fichiers fédérés. Dans les fichiers fédérés, vous pouvez parcourir le contenu synchronisé.
 
-![Affichage dans le panneau](../../image/other/联盟图/联盟管理显示效果图.png)
+Les fichiers fédérés servent principalement à afficher, rechercher, prévisualiser et copier des liens. Ce ne sont pas des fichiers locaux ; vous ne pouvez donc pas les déplacer, les supprimer, les réétiqueter ni les sauvegarder depuis votre propre site.
+
+![Fichiers fédérés dans l’administration](../../image/other/联盟图/联盟管理显示效果图.png)
 
 ## Questions fréquentes
 
-### Le système indique qu’il n’existe pas de relation
+### Pourquoi me demande-t-on de refaire une demande parce qu’il n’existe aucun enregistrement de relation ?
 
-Cela signifie généralement que l’autre partie a supprimé votre enregistrement. Envoyez une nouvelle demande.
+Cela signifie généralement que l’autre partie vous a supprimé et a retiré l’enregistrement, si bien que la relation ne peut plus être trouvée. Envoyez une nouvelle demande d’adhésion.
 
-![Nouvelle demande](../../image/other/联盟图/无关系记录重新申请.png)
+![Refaire une demande lorsqu’aucun enregistrement de relation n’existe](../../image/other/联盟图/无关系记录重新申请.png)
 
-### Je suis membre, mais je ne vois aucun fichier
+### Pourquoi ne vois-je pas les fichiers après avoir rejoint un nœud ?
 
-Vérifiez que :
+Vérifiez :
 
-1. l’autre partie a approuvé votre demande ;
-2. l’autre partie a mis à jour son index sortant ;
-3. vous avez mis à jour l’index entrant ;
-4. les dossiers synchronisés de l’autre partie contiennent bien les répertoires à partager.
+1. L’autre propriétaire a approuvé votre demande.
+2. L’autre propriétaire a cliqué sur `Update Outbound Index`.
+3. Vous avez cliqué sur `Update Inbound Index`.
+4. Les dossiers de synchronisation de l’autre propriétaire incluent les répertoires qu’il veut partager.
+
+### Que faire lorsqu’un changement de domaine est détecté ?
+
+Si vous ouvrez actuellement le panneau d’administration via le domaine de production, confirmez et continuez.
+
+Si vous utilisez une adresse temporaire, annulez, rouvrez le panneau d’administration avec le domaine de production, puis réessayez.
+
+### Que signifie une liste vide de dossiers de synchronisation ?
+
+Une liste vide de dossiers de synchronisation signifie que tous les dossiers sont partagés.
+
+Pour partager seulement certains répertoires, sélectionnez ces dossiers manuellement.
+
+### Différence entre les mises à jour d’index sortant et entrant
+
+| Bouton | Signification simple |
+| --- | --- |
+| Mettre à jour l’index sortant | Met à jour ce que les autres peuvent synchroniser depuis moi |
+| Mettre à jour l’index entrant | Met à jour ce que j’ai synchronisé depuis les autres |

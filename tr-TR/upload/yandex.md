@@ -94,19 +94,19 @@ Tüm alanlar dolduktan sonra kanalı kaydedin.
 ## Kısa Akış
 
 ```text
-Yandex OAuth Console'u aç
--> App oluştur
--> https://your-domain.com/api/oauth/yandex/callback ekle
--> Yandex Disk permissions değerlerini kontrol et
--> Client ID ve Client Secret kopyala
--> Client ID / Client Secret değerlerini ImgBed'e gir
--> Get Token tıkla
--> Callback sayfasından Refresh Token kopyala
--> ImgBed'e yapıştır ve kaydet
+Open Yandex OAuth Console
+-> Create an app
+-> Add https://your-domain.com/api/oauth/yandex/callback
+-> Confirm Yandex Disk permissions
+-> Copy Client ID and Client Secret
+-> Fill Client ID / Client Secret into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## Kaynaklar
 
 1. Register a Yandex app: https://yandex.com/dev/id/doc/en/register-client
-2. Get an authorization code through URL: https://yandex.com/dev/id/doc/en/codes/code-url
+2. URL üzerinden authorization code alma: https://yandex.com/dev/id/doc/en/codes/code-url
 3. Yandex OAuth token endpoint: https://yandex.com/dev/id/doc/en/tokens/token

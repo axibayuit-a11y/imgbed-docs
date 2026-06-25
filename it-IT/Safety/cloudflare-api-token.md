@@ -1,6 +1,6 @@
 # Token API Cloudflare
 
-Le credenziali API Cloudflare permettono a ImgBed di svuotare la cache CDN di Cloudflare dopo modifiche ai file.
+Le credenziali API Cloudflare permettono a ImgBed di svuotare la memoria temporanea CDN di Cloudflare dopo modifiche ai file.
 
 ![Impostazioni Token API Cloudflare](../../image/Safety/cloudflare%20api%20token截图.png)
 
@@ -15,34 +15,34 @@ System Settings -> Security Settings -> Cloudflare API Token
 Devi compilare:
 
 - Zone ID
-- Email account
+- Email dell'account
 - API Key
 
 ## A cosa serve
 
-Cloudflare può mettere in cache gli URL pubblici delle immagini.
+Cloudflare può mettere in memoria temporanea gli URL pubblici delle immagini.
 
-La cache rende la distribuzione più veloce, ma può lasciare visibili contenuti vecchi per un po' dopo eliminazione, blocco, sostituzione o spostamento di un file.
+La memoria temporanea rende la distribuzione più veloce, ma può lasciare visibili contenuti vecchi per un po' dopo eliminazione, blocco, sostituzione o spostamento di un file.
 
-Quando le credenziali API Cloudflare sono configurate, ImgBed prova a svuotare la cache Cloudflare collegata al termine di queste operazioni.
+Quando le credenziali API Cloudflare sono configurate, ImgBed prova a svuotare la memoria temporanea Cloudflare collegata al termine di queste operazioni.
 
 È utile quando:
 
 - elimini un'immagine e vuoi che il link pubblico smetta di funzionare il prima possibile.
-- blocchi un'immagine e vuoi impedire ai visitatori di vedere il file originale.
+- blocchi un'immagine e vuoi impedire ai visitatori di vedere il file di origine.
 - sostituisci un file con lo stesso nome e vuoi mostrare prima la nuova versione.
-- sposti o rinomini file e vuoi aggiornare rapidamente la cache dei vecchi percorsi.
-- cambi regole di accesso pubblico e vuoi aggiornare prima gallery pubblica o cache dell'immagine casuale.
+- sposti o rinomini file e vuoi aggiornare rapidamente la memoria temporanea dei vecchi percorsi.
+- cambi regole di accesso pubblico e vuoi aggiornare prima la galleria pubblica o la memoria temporanea dell'immagine casuale.
 
 ## Se lo lasci vuoto
 
 ImgBed funziona normalmente anche senza questa impostazione.
 
-La differenza è che ImgBed non svuoterà attivamente la cache CDN Cloudflare. I visitatori potrebbero vedere il contenuto vecchio finché la cache Cloudflare non scade da sola.
+La differenza è che ImgBed non svuoterà attivamente la memoria temporanea CDN Cloudflare. I visitatori potrebbero vedere il contenuto vecchio finché la memoria temporanea Cloudflare non scade da sola.
 
 ## Trovare lo Zone ID
 
-Lo Zone ID è lo Zone ID Cloudflare del sito usato dalla tua domain ImgBed.
+Lo Zone ID è lo Zone ID Cloudflare del sito usato dal tuo dominio ImgBed.
 
 1. Accedi alla dashboard Cloudflare.
 2. Apri il sito che contiene il dominio ImgBed.
@@ -51,7 +51,7 @@ Lo Zone ID è lo Zone ID Cloudflare del sito usato dalla tua domain ImgBed.
 
 È lo Zone ID del sito, non l'Account ID.
 
-## Email account
+## Email dell'account
 
 Inserisci l'indirizzo email con cui accedi a Cloudflare.
 
@@ -74,7 +74,7 @@ Inserisci la Cloudflare Global API Key.
 
 Dopo aver compilato i campi, salva le impostazioni.
 
-Le modifiche future ai file proveranno automaticamente a svuotare la cache Cloudflare. Le operazioni passate non vengono gestite retroattivamente. Se hai eliminato o sostituito un file prima della configurazione, attendi la scadenza della cache o svuotala manualmente da Cloudflare.
+Le modifiche future ai file proveranno automaticamente a svuotare la memoria temporanea Cloudflare. Le operazioni passate non vengono gestite retroattivamente. Se hai eliminato o sostituito un file prima della configurazione, attendi la scadenza della memoria temporanea o svuotala manualmente da Cloudflare.
 
 ## FAQ
 
@@ -82,22 +82,23 @@ Le modifiche future ai file proveranno automaticamente a svuotare la cache Cloud
 
 No.
 
-Se il tuo dominio non usa Cloudflare o non ti dà fastidio il ritardo della cache CDN, puoi lasciarlo vuoto.
+Se il tuo dominio non usa Cloudflare o non ti dà fastidio il ritardo della memoria temporanea CDN, puoi lasciarlo vuoto.
 
-### Credenziali sbagliate bloccano gli upload?
+### Credenziali sbagliate bloccano i caricamenti?
 
 Di solito no.
 
-Credenziali errate impediscono solo lo svuotamento della cache Cloudflare. Upload e accesso normale ai file dovrebbero continuare a funzionare.
+Credenziali errate impediscono solo lo svuotamento della memoria temporanea Cloudflare. I caricamenti e l'accesso normale ai file dovrebbero continuare a funzionare.
 
 ### Perché un'immagine eliminata si apre ancora?
 
-La causa più comune è che Cloudflare ha ancora il vecchio file in cache.
+La causa più comune è che Cloudflare ha ancora il vecchio file in memoria temporanea.
 
-Con credenziali API Cloudflare corrette, ImgBed svuota la cache dell'URL collegato quando un file viene eliminato.
+Con credenziali API Cloudflare corrette, ImgBed svuota la memoria temporanea dell'URL collegato quando un file viene eliminato.
 
 ### Perché vedo ancora la vecchia immagine dopo una sostituzione?
 
-Anche questo dipende spesso dalla cache CDN.
+Anche questo dipende spesso dalla memoria temporanea CDN.
 
-Dopo la configurazione, ImgBed prova a svuotare la cache del vecchio URL quando un file con lo stesso nome viene sovrascritto.
+Dopo la configurazione, ImgBed prova a svuotare la memoria temporanea del vecchio URL quando un file con lo stesso nome viene sovrascritto.
+

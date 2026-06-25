@@ -1,51 +1,103 @@
-# Configuração do Cloudflare API Token
+# Cloudflare API Token
 
-Algumas funções do ImgBed precisam de um Cloudflare API Token. Ele é usado, por exemplo, ao trabalhar com R2, Workers, D1, KV e outros recursos da Cloudflare.
+As credenciais da API da Cloudflare permitem que o ImgBed limpe o armazenamento temporário da CDN da Cloudflare depois que arquivos mudam.
 
-## O que preparar
+![Configurações do Cloudflare API Token](../../image/Safety/cloudflare%20api%20token截图.png)
 
-| Item | Uso |
-| --- | --- |
-| Conta Cloudflare | Criar o API Token |
-| Account ID | Identificar a conta onde ficam R2, Workers e outros recursos |
-| Permissões necessárias | Conceder apenas o acesso exigido pela função |
+## Onde configurar
 
-## Criar um API Token
+Abra o painel administrativo e acesse:
 
-1. Entre no Cloudflare Dashboard.
-2. Abra `My Profile` pelo perfil no canto superior direito.
-3. Acesse `API Tokens`.
-4. Clique em `Create Token`.
-5. Escolha as permissões necessárias.
-6. Limite o token à conta ou zona correta.
-7. Copie o token gerado.
+```text
+System Settings -> Security Settings -> Cloudflare API Token
+```
 
-![Cloudflare API Token](../../image/Safety/cloudflare api token截图.png)
+Você precisa preencher:
 
-O token pode aparecer apenas uma vez. Guarde em local seguro.
+- Zone ID
+- Account email
+- API Key
 
-## Diferença para Global API Key
+## O que esta configuração faz
 
-A Cloudflare também oferece Global API Key, mas no ImgBed normalmente é melhor usar API Token.
+A Cloudflare pode armazenar temporariamente URLs públicas de imagens.
 
-| Tipo | Característica |
-| --- | --- |
-| API Token | Permite limitar permissões e escopo |
-| Global API Key | Tem permissões amplas sobre a conta |
+O armazenamento temporário acelera a entrega das imagens, mas também pode deixar conteúdo antigo visível por algum tempo depois que você exclui, bloqueia, substitui ou move um arquivo.
 
-Um API Token com permissões mínimas reduz riscos na operação.
+Depois que as credenciais da API da Cloudflare são configuradas, o ImgBed tenta limpar o armazenamento temporário relacionado da Cloudflare quando essas operações terminam.
+
+Isso é útil quando:
+
+- Você exclui uma imagem e quer que o link público pare de funcionar o quanto antes.
+- Você bloqueia uma imagem e quer que visitantes deixem de ver o arquivo de origem.
+- Você substitui um arquivo com o mesmo nome e quer que visitantes vejam a nova versão mais cedo.
+- Você move ou renomeia arquivos e quer atualizar rapidamente o armazenamento temporário de caminhos antigos.
+- Você altera regras de acesso público e quer que a galeria pública ou o armazenamento temporário de imagens aleatórias seja atualizado mais cedo.
+
+## O que acontece se deixar em branco
+
+O ImgBed continua funcionando normalmente sem esta configuração.
+
+A única diferença é que o ImgBed não limpará ativamente o armazenamento temporário da CDN da Cloudflare. Visitantes podem continuar vendo conteúdo antigo até que o armazenamento temporário da Cloudflare expire naturalmente.
+
+## Como encontrar o Zone ID
+
+O Zone ID é o Cloudflare Zone ID do site usado pelo domínio do seu ImgBed.
+
+1. Entre no painel da Cloudflare.
+2. Abra o site que contém o domínio do seu ImgBed.
+3. Encontre `Zone ID` na página de visão geral do site.
+4. Copie-o para o campo `Zone ID` no ImgBed.
+
+Esse é o Zone ID do site, não o ID da conta.
+
+## Account Email
+
+Informe o endereço de e-mail usado para entrar na Cloudflare.
+
+Ele deve corresponder à API Key informada abaixo.
+
+## API Key
+
+Informe sua Cloudflare Global API Key.
+
+1. Entre no painel da Cloudflare.
+2. Abra seu perfil.
+3. Vá para a página API Tokens.
+4. Encontre `Global API Key`.
+5. Visualize e copie a chave.
+6. Cole-a no campo `API Key` do ImgBed.
 
 ![Ver Global API Key](../../image/Safety/查看全局令牌.png)
 
-## Informar no ImgBed
+## Quando passa a valer
 
-Cole o Cloudflare API Token na tela de configuração correspondente do ImgBed e salve.
+Depois de preencher os campos, salve as configurações.
 
-Depois, use a função relacionada para testar conexão ou capacidade e confirmar que o token está funcionando.
+Alterações futuras em arquivos tentarão limpar automaticamente o armazenamento temporário da Cloudflare. Operações passadas não são limpas retroativamente. Se você excluiu ou substituiu um arquivo antes de configurar isso, aguarde o armazenamento temporário da Cloudflare expirar ou limpe-o manualmente na Cloudflare.
 
-## Boas práticas
+## FAQ
 
-- Não coloque o token em repositórios públicos nem em código frontend.
-- Restrinja permissões e recursos ao necessário.
-- Exclua na Cloudflare tokens que não são mais usados.
-- Se houver suspeita de vazamento, revogue e gere um novo token.
+### Isso é obrigatório?
+
+Não.
+
+Se seu domínio não usa Cloudflare, ou se o atraso do armazenamento temporário da CDN não é um problema, você pode deixar em branco.
+
+### Credenciais erradas quebram uploads?
+
+Normalmente, não.
+
+Credenciais erradas apenas impedem o ImgBed de limpar o armazenamento temporário da Cloudflare. Upload e acesso normal aos arquivos devem continuar funcionando.
+
+### Por que uma imagem excluída ainda pode ser aberta?
+
+O motivo mais comum é que a Cloudflare ainda mantém o arquivo antigo armazenado temporariamente.
+
+Com credenciais corretas da API da Cloudflare, o ImgBed limpa o armazenamento temporário da URL relacionada quando um arquivo é excluído.
+
+### Por que ainda vejo a imagem antiga depois de substituir um arquivo?
+
+Isso também costuma ser causado pelo armazenamento temporário da CDN.
+
+Depois que esta configuração é feita, o ImgBed tenta limpar o armazenamento temporário da URL antiga quando um arquivo com o mesmo nome é sobrescrito.

@@ -11,29 +11,29 @@
 | --- | --- |
 | بريد حساب pCloud | لتسجيل الدخول إلى pCloud API |
 | كلمة مرور pCloud | لتسجيل الدخول إلى pCloud API |
-| API host | الافتراضي `api.pcloud.com`. حسابات أوروبا يمكنها استخدام `eapi.pcloud.com`. |
-| Storage directory | مكان حفظ الملفات. الافتراضي `imgbed`. |
+| مضيف API | الافتراضي `api.pcloud.com`. حسابات أوروبا يمكنها استخدام `eapi.pcloud.com`. |
+| مجلد التخزين | مكان حفظ الملفات. الافتراضي `imgbed`. |
 
 ## أين تضيفها؟
 
 1. افتح إعدادات النظام.
 2. افتح إعدادات الرفع.
-3. اضغط `Add Channel` في الزاوية العلوية اليمنى.
+3. اضغط إضافة قناة في الزاوية العلوية اليمنى.
 4. اختر `pCloud`.
 
 ## شرح الحقول
 
 | الحقل | الغرض | مطلوب |
 | --- | --- | --- |
-| Channel name | يميز قناة pCloud هذه، مثل `Personal pCloud` | نعم |
-| Account email | بريد تسجيل الدخول إلى pCloud | نعم |
+| اسم القناة | يميز قناة pCloud هذه، مثل `Personal pCloud` | نعم |
+| بريد الحساب | بريد تسجيل الدخول إلى pCloud | نعم |
 | Password | كلمة مرور pCloud | نعم |
-| API host | pCloud API host. الافتراضي `api.pcloud.com`. | لا |
-| Storage directory | المجلد المستخدم لتخزين الملفات. الافتراضي `imgbed`. | لا |
+| مضيف API | مضيف pCloud API. الافتراضي `api.pcloud.com`. | لا |
+| مجلد التخزين | المجلد المستخدم لتخزين الملفات. الافتراضي `imgbed`. | لا |
 
-اختر API host حسب منطقة الحساب:
+اختر مضيف API حسب منطقة الحساب:
 
-| منطقة الحساب | API Host |
+| منطقة الحساب | مضيف API |
 | --- | --- |
 | Default / US | `api.pcloud.com` |
 | Europe | `eapi.pcloud.com` |
@@ -41,13 +41,13 @@
 ## خطوات الإعداد
 
 1. افتح إعدادات الرفع.
-2. اضغط `Add Channel`.
+2. اضغط إضافة قناة.
 3. اختر `pCloud`.
 4. أدخل اسم قناة واضحًا.
 5. أدخل بريد حساب pCloud.
 6. أدخل كلمة مرور pCloud.
-7. اترك API host على `api.pcloud.com`، أو استخدم `eapi.pcloud.com` لحسابات أوروبا.
-8. اترك storage directory على `imgbed`، أو غيّره إلى المجلد الذي تفضله.
+7. اترك مضيف API على `api.pcloud.com`، أو استخدم `eapi.pcloud.com` لحسابات أوروبا.
+8. اترك مجلد التخزين على `imgbed`، أو غيّره إلى المجلد الذي تفضله.
 9. احفظ القناة.
 
 ![إعداد القناة](../../image/upload/pcloud/配置渠道.png)
@@ -68,11 +68,11 @@
 
 ### لماذا ليس OAuth2؟
 
-OAuth2 في pCloud ليس self-service افتراضيًا. تحتاج إلى مراسلة pCloud وطلب تفعيله.
+OAuth2 في pCloud ليس متاحًا ذاتيًا بشكل افتراضي. تحتاج إلى مراسلة pCloud وطلب تفعيله.
 
 مسار OAuth2 الحالي في pCloud لا يدعم أيضًا workflow روابط الرفع قصيرة المدة التي يحتاجها ImgBed، لذلك تستخدم هذه القناة تسجيل الدخول ببريد الحساب وكلمة المرور.
 
-### أي API Host أستخدم؟
+### أي مضيف API أستخدم؟
 
 الافتراضي:
 
@@ -89,14 +89,14 @@ eapi.pcloud.com
 ## المسار السريع
 
 ```text
-جهّز بريد pCloud وكلمة المرور
--> افتح إعدادات الرفع
--> أضف قناة
--> اختر pCloud
--> املأ اسم القناة / البريد / كلمة المرور
--> اترك API host على api.pcloud.com ما لم يكن الحساب في أوروبا
--> اترك storage directory على imgbed ما لم تحتاج إلى مجلد آخر
--> احفظ
--> استعلم عن الحصة
--> ارفع صورة تجريبية
+Prepare your pCloud email and password
+-> Open Upload Settings
+-> Add Channel
+-> Choose pCloud
+-> Fill channel name / email / password
+-> Keep API host as api.pcloud.com unless your account is in Europe
+-> Keep storage directory as imgbed unless you need another folder
+-> Save
+-> Query quota
+-> Upload a test image
 ```

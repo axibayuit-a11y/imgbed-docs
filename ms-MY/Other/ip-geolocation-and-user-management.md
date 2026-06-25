@@ -1,10 +1,10 @@
-# IP Geolocation dan User Management
+# Geolokasi IP dan Pengurusan Pengguna
 
-IP geolocation menukar IP addresses dalam uploader records, login devices dan logs seumpamanya kepada locations anggaran.
+Geolokasi IP menukar alamat IP dalam rekod pemuat naik, peranti log masuk dan log yang seumpamanya kepada lokasi anggaran.
 
-Selepas dikonfigurasi, admin panel boleh menunjukkan asal upload dan access dengan lebih jelas. User Management juga membolehkan anda block atau restore upload access untuk IP addresses yang mencurigakan.
+Selepas dikonfigurasikan, panel pentadbir boleh menunjukkan asal muat naik dan akses dengan lebih jelas. Pengurusan Pengguna juga membolehkan anda menyekat atau memulihkan akses muat naik untuk alamat IP yang mencurigakan.
 
-## Di Mana Untuk Configure
+## Tempat Mengkonfigurasikannya
 
 Buka:
 
@@ -12,39 +12,39 @@ Buka:
 System Settings -> Other Settings -> IP Geolocation
 ```
 
-![IP geolocation](../../image/other/ip定位/ip定位.png)
+![Geolokasi IP](../../image/other/ip定位/ip定位.png)
 
-## Available Settings
+## Tetapan Yang Tersedia
 
-Flow IP geolocation baharu menyokong beberapa sources, bukan bergantung kepada satu map service sahaja.
+Aliran geolokasi IP yang lebih baharu menyokong beberapa sumber dan tidak lagi bergantung pada satu perkhidmatan peta sahaja.
 
-| Setting | Purpose |
+| Tetapan | Tujuan |
 | --- | --- |
-| IP geolocation language | Memilih display language, seperti English, Simplified Chinese, Japanese, French dan lain-lain. |
-| MaxMind Account ID | MaxMind account ID untuk MaxMind GeoLite Web Service. |
-| MaxMind License Key | MaxMind License Key. |
-| Tencent Map Key | Tencent Location Service key. Berguna untuk Chinese addresses dan mainland China IPs. |
-| ipapi Key | APILayer ipapi key. Menyokong multilingual IP geolocation. |
+| Bahasa geolokasi IP | Memilih bahasa paparan, seperti bahasa Inggeris, Cina Ringkas, Jepun, Perancis dan lain-lain. |
+| MaxMind Account ID | ID akaun MaxMind untuk MaxMind GeoLite Web Service. |
+| MaxMind License Key | License Key MaxMind. |
+| Tencent Map Key | Kunci Tencent Location Service. Berguna untuk alamat Cina dan IP tanah besar China. |
+| ipapi Key | Kunci APILayer ipapi. Menyokong geolokasi IP berbilang bahasa. |
 
-Isi hanya services yang anda perlukan. Anda tidak perlu configure semua field.
+Isi hanya perkhidmatan yang anda perlukan. Anda tidak perlu mengkonfigurasikan semua medan.
 
-Jika tiada key diberi, ImgBed masih cuba built-in free sources, tetapi stability, language support dan precision mungkin lebih rendah daripada service yang anda configure sendiri.
+Jika tiada kunci diberikan, ImgBed masih cuba menggunakan sumber percuma terbina dalam, tetapi kestabilan, sokongan bahasa dan ketepatannya mungkin lebih rendah berbanding perkhidmatan yang anda konfigurasikan sendiri.
 
-## Recommended Choices
+## Pilihan Yang Disyorkan
 
-Jika anda terutama memerlukan Chinese addresses:
+Jika anda terutama memerlukan alamat Cina:
 
-1. Tetapkan IP geolocation language kepada Simplified Chinese.
-2. Configure Tencent Map Key.
-3. Optional: tambah MaxMind atau ipapi sebagai fallback sources.
+1. Tetapkan bahasa geolokasi IP kepada Cina Ringkas.
+2. Konfigurasikan Tencent Map Key.
+3. Jika perlu, tambah MaxMind atau ipapi sebagai sumber sandaran.
 
-Jika anda terutama memerlukan English atau multilingual addresses:
+Jika anda terutama memerlukan alamat bahasa Inggeris atau berbilang bahasa:
 
-1. Pilih language yang diperlukan.
-2. Configure MaxMind Account ID dan License Key.
-3. Tambah ipapi Key jika mahu multilingual results yang lebih baik.
+1. Pilih bahasa yang anda perlukan.
+2. Konfigurasikan MaxMind Account ID dan License Key.
+3. Tambah ipapi Key jika anda memerlukan hasil berbilang bahasa yang lebih baik.
 
-## MaxMind Setup
+## Persediaan MaxMind
 
 MaxMind memerlukan:
 
@@ -53,122 +53,122 @@ MaxMind Account ID
 MaxMind License Key
 ```
 
-Dapatkan account ID dalam MaxMind dashboard dan generate License Key dari License Keys page.
+Dapatkan ID akaun dalam papan pemuka MaxMind dan jana License Key daripada halaman License Keys.
 
-![MaxMind key config](../../image/other/ip定位/maxmind的key配置.png)
+![Konfigurasi kunci MaxMind](../../image/other/ip定位/maxmind的key配置.png)
 
-Selepas dijana, paste Account ID dan License Key ke ImgBed dan save.
+Selepas dijana, tampal Account ID dan License Key ke ImgBed dan simpan.
 
-Free plan MaxMind sesuai untuk everyday use, tetapi ada request limits. Jika quota exceeded, ImgBed terus mencuba sources lain yang available.
+Pelan percuma MaxMind sesuai untuk penggunaan harian, tetapi mempunyai had permintaan. Jika kuota terlampau, ImgBed akan terus mencuba sumber lain yang tersedia.
 
-## ipapi Setup
+## Persediaan ipapi
 
-ipapi menggunakan APILayer API Key.
+ipapi menggunakan API Key APILayer.
 
-Buka ipapi console dan copy API Key yang ditunjukkan.
+Buka konsol ipapi dan salin API Key yang dipaparkan di sana.
 
-![ipapi config](../../image/other/ip定位/ipapi配置.png)
+![Konfigurasi ipapi](../../image/other/ip定位/ipapi配置.png)
 
-Paste ke field `ipapi Key` dalam ImgBed dan save.
+Tampalkannya ke medan `ipapi Key` dalam ImgBed dan simpan.
 
-ipapi menyokong multilingual IP geolocation dan berguna apabila anda mahu addresses dipaparkan dalam selected language. Free plan juga ada request limits. Jika quota habis, ImgBed terus mencuba sources lain yang available.
+ipapi menyokong geolokasi IP berbilang bahasa dan berguna apabila anda mahu alamat dipaparkan dalam bahasa yang dipilih. Pelan percumanya juga mempunyai had permintaan. Jika kuota habis, ImgBed akan terus mencuba sumber lain yang tersedia.
 
-## Tencent Map Key Setup
+## Persediaan Tencent Map Key
 
-Tencent Map Key berguna untuk Chinese addresses, terutama mainland China IPs.
+Tencent Map Key berguna untuk alamat Cina, terutamanya IP tanah besar China.
 
-Semasa mencipta key dalam Tencent Location Service, enable:
+Semasa mencipta kunci dalam Tencent Location Service, aktifkan:
 
 ```text
 WebServiceAPI
 ```
 
-Selepas creation, paste key ke `Tencent Map Key` dan save.
+Selepas dicipta, tampalkan kunci ke `Tencent Map Key` dan simpan.
 
-Jika anda hanya perlukan basic Chinese IP geolocation, Tencent Map Key sudah cukup untuk bermula.
+Jika anda hanya memerlukan geolokasi IP Cina asas, Tencent Map Key sudah cukup untuk bermula.
 
-## Apa Yang Perlu Disemak Dalam User Management
+## Perkara Yang Perlu Disemak Dalam Pengurusan Pengguna
 
-User Management tersedia dari bahagian atas admin panel.
+Pengurusan Pengguna tersedia dari bahagian atas panel pentadbir.
 
-![User management](../../image/other/用户管理显示.png)
+![Pengurusan pengguna](../../image/other/用户管理显示.png)
 
-User Management memaparkan upload activity mengikut IP:
+Pengurusan Pengguna memaparkan aktiviti muat naik mengikut IP:
 
-| Field | Description |
+| Medan | Penerangan |
 | --- | --- |
-| IP source | Uploader source IP. |
-| Address | Location anggaran yang resolved daripada IP. |
-| Total upload size | Jumlah file size yang di-upload oleh IP ini. |
-| Upload count | Bilangan uploads daripada IP ini. |
-| Upload allowed | On bermaksud uploads dibenarkan. Off bermaksud uploads diblock. |
+| Sumber IP | IP sumber pemuat naik. |
+| Alamat | Lokasi anggaran yang ditentukan daripada IP. |
+| Jumlah saiz muat naik | Jumlah saiz fail yang dimuat naik oleh IP ini. |
+| Kiraan muat naik | Bilangan muat naik daripada IP ini. |
+| Muat naik dibenarkan | Hidup bermaksud muat naik dibenarkan. Mati bermaksud muat naik disekat. |
 
-Klik arrow di kiri untuk expand list files yang di-upload oleh IP tersebut.
+Klik anak panah di sebelah kiri untuk mengembangkan senarai fail yang dimuat naik oleh IP tersebut.
 
-File list menunjukkan file name, preview, file size, moderation result, file status dan upload time. Jika uploads kelihatan mencurigakan, expand IP dahulu, review files, kemudian tentukan sama ada perlu block uploads seterusnya.
+Senarai fail menunjukkan nama fail, pratonton, saiz fail, hasil moderasi, status fail dan masa muat naik. Jika muat naik kelihatan mencurigakan, kembangkan IP dahulu, semak fail, kemudian tentukan sama ada perlu menyekat muat naik seterusnya.
 
-Jika IP mencurigakan, matikan `Upload allowed`. Future uploads daripada IP tersebut akan diblock.
+Jika IP mencurigakan, matikan `Upload allowed`. Muat naik akan datang daripada IP tersebut akan disekat.
 
-## Search, Sort dan Advanced Filters
+## Carian, Isihan dan Penapis Lanjutan
 
-Di bahagian atas User Management, search menggunakan IP source atau address.
+Di bahagian atas Pengurusan Pengguna, cari mengikut sumber IP atau alamat.
 
-Sort mengikut time, upload count atau total upload size untuk mencari recent uploaders, high-frequency uploaders atau high-usage IPs.
+Isih mengikut masa, kiraan muat naik atau jumlah saiz muat naik untuk mencari pemuat naik terkini, pemuat naik berfrekuensi tinggi atau IP dengan penggunaan tinggi.
 
-Untuk siasatan lebih mendalam, buka advanced filters.
+Untuk siasatan lebih mendalam, buka penapis lanjutan.
 
-![Advanced filters](../../image/other/用户管理高级筛选.png)
+![Penapis lanjutan](../../image/other/用户管理高级筛选.png)
 
-Advanced filters menyokong:
+Penapis lanjutan menyokong:
 
-| Filter | Usage |
+| Penapis | Penggunaan |
 | --- | --- |
-| Time range | Menunjukkan IPs yang upload files dalam tempoh dipilih. |
-| Access status | Filter mengikut normal, blocked dan states seumpamanya. |
-| Allow/block list | Filter mengikut allowlist, blocklist atau unset. |
-| File type | Menunjukkan IPs yang upload images, videos, audio, documents, code atau other files. |
-| File size | Filter mengikut uploaded file size range. |
-| Age rating | Filter mengikut unset, General, R12+, R16+, R18 dan ratings seumpamanya. |
-| File status | Filter mengikut current file status untuk menyiasat abnormal files. |
+| Julat masa | Menunjukkan IP yang memuat naik fail dalam tempoh yang dipilih. |
+| Status akses | Menapis mengikut status normal, disekat dan status seumpamanya. |
+| Senarai benarkan/sekat | Menapis mengikut senarai benarkan, senarai sekat atau belum ditetapkan. |
+| Jenis fail | Menunjukkan IP yang memuat naik imej, video, audio, dokumen, kod atau fail lain. |
+| Saiz fail | Menapis mengikut julat saiz fail yang dimuat naik. |
+| Penarafan umur | Menapis mengikut belum ditetapkan, General, R12+, R16+, R18 dan penarafan seumpamanya. |
+| Status fail | Menapis mengikut status fail semasa untuk menyiasat fail yang tidak normal. |
 
-Klik `Apply Filters` untuk apply. Gunakan `Reset` untuk kembali kepada semua data.
+Klik `Apply Filters` untuk menerapkan penapis. Gunakan `Reset` untuk kembali kepada semua data.
 
-## Mobile View
+## Paparan Mudah Alih
 
-Pada mobile, User Management bertukar kepada card layout.
+Pada mudah alih, Pengurusan Pengguna bertukar kepada susun atur kad.
 
-![Mobile user management](../../image/other/手机端显示用户管理效果.png)
+![Pengurusan pengguna mudah alih](../../image/other/手机端显示用户管理效果.png)
 
-Setiap card menunjukkan IP, address, total upload size, upload count dan upload allowed switch. Anda boleh manage users tanpa horizontal table scrolling.
+Setiap kad menunjukkan IP, alamat, jumlah saiz muat naik, kiraan muat naik dan suis muat naik dibenarkan. Anda boleh mengurus pengguna tanpa menatal jadual secara mendatar.
 
-## Jika Location Kelihatan Salah
+## Jika Lokasi Kelihatan Salah
 
-IP geolocation adalah anggaran. Ia bukan street address yang tepat.
+Geolokasi IP adalah anggaran. Ia bukan alamat jalan yang tepat.
 
-Jika user berada di belakang proxy, data center, cloud server atau cross-border network, location yang dipaparkan mungkin berbeza daripada location sebenar.
+Jika pengguna berada di belakang proksi, pusat data, pelayan awan atau rangkaian rentas sempadan, lokasi yang dipaparkan mungkin berbeza daripada lokasi sebenar.
 
-Gunakan feature ini untuk memahami rough origin, mencari abnormal uploads dan membantu blocking decisions. Jangan anggap ia sebagai precise tracking.
+Gunakan fungsi ini untuk memahami asal secara kasar, mencari muat naik tidak normal dan membantu keputusan sekatan. Jangan anggapnya sebagai penjejakan yang tepat.
 
-## Common Cases
+## Kes Biasa
 
-| Case | Meaning |
+| Kes | Maksud |
 | --- | --- |
-| Address kosong | IP mungkin belum resolved, atau current source temporarily unavailable. |
-| Address language salah | Semak IP geolocation language dan sama ada source yang menyokong language itu telah dikonfigurasi. |
-| Address menunjukkan data center | Banyak proxies, cloud servers dan crawlers muncul sebagai data center atau ISP addresses. |
-| Upload count tinggi | Review IP ini dengan teliti dan block uploads jika perlu. |
-| Total upload size besar | Sort atau filter, expand IP dan inspect specific files. |
-| Perlu restore selepas blocking | Hidupkan semula `Upload allowed`. |
+| Alamat kosong | IP mungkin belum ditentukan, atau sumber semasa tidak tersedia buat sementara waktu. |
+| Bahasa alamat salah | Semak bahasa geolokasi IP dan sama ada sumber yang menyokong bahasa tersebut telah dikonfigurasikan. |
+| Alamat menunjukkan pusat data | Banyak proksi, pelayan awan dan perayap muncul sebagai alamat pusat data atau ISP. |
+| Kiraan muat naik tinggi | Semak IP ini dengan teliti dan sekat muat naik jika perlu. |
+| Jumlah saiz muat naik besar | Isih atau tapis, kembangkan IP dan periksa fail tertentu. |
+| Perlu pulihkan selepas disekat | Hidupkan semula `Upload allowed`. |
 
-## Quick Flow
+## Aliran Pantas
 
 ```text
-Buka IP Geolocation dalam Other Settings
--> Pilih IP geolocation language
--> Isi MaxMind, Tencent Map atau ipapi credentials jika perlu
+Open IP Geolocation in Other Settings
+-> Choose IP geolocation language
+-> Fill MaxMind, Tencent Map, or ipapi credentials as needed
 -> Save settings
--> Buka User Management
--> Review IP source, address, total upload size dan upload count
--> Gunakan search, sort atau advanced filters untuk mencari abnormal IPs
--> Allow atau block uploads mengikut keperluan
+-> Open User Management
+-> Review IP source, address, total upload size, and upload count
+-> Use search, sort, or advanced filters to find abnormal IPs
+-> Allow or block uploads as needed
 ```

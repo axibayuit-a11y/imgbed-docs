@@ -2,68 +2,68 @@
 
 ## शुरू करने से पहले क्या चाहिए
 
-सिर्फ तीन चीज़ें चाहिए:
+आपको केवल तीन चीज़ें चाहिए:
 
-| ज़रूरत | उपयोग |
+| आवश्यकता | उद्देश्य |
 | --- | --- |
-| GitHub account | access token generate करने और repository own करने के लिए। |
-| GitHub Access Token | ImgBed को GitHub API access, releases create और files upload करने के लिए। |
-| Repository name | केवल repository name डाल सकते हैं, जैसे `image`। |
+| GitHub खाता | एक्सेस टोकन बनाने और रिपॉज़िटरी का मालिक होने के लिए। |
+| GitHub एक्सेस टोकन | ImgBed को GitHub API तक पहुँचने, रिलीज़ बनाने और फ़ाइलें अपलोड करने के लिए। |
+| रिपॉज़िटरी नाम | आप केवल रिपॉज़िटरी नाम दर्ज कर सकते हैं, जैसे `image`। |
 
-## Setup Steps
+## कॉन्फ़िगरेशन चरण
 
-### Step 1: GitHub में sign in करें और Access Token बनाएँ
+### चरण 1: GitHub में साइन इन करें और एक्सेस टोकन बनाएँ
 
-1. GitHub में sign in करें।
-2. ऊपर दाएँ avatar पर क्लिक करके `Settings` खोलें।
-3. left sidebar से `Developer settings` खोलें।
+1. GitHub में साइन इन करें।
+2. ऊपर दाएँ अपने अवतार पर क्लिक करें और `Settings` खोलें।
+3. बाएँ साइडबार से `Developer settings` खोलें।
 4. `Personal access tokens` खोलें।
 5. `Tokens (classic)` खोलें।
 6. `Generate new token (classic)` पर क्लिक करें।
-7. token को पहचानने लायक नाम दें।
-8. अपनी maintenance preference के हिसाब से expiration date चुनें।
-9. `repo` और `workflow` scopes चुनें।
-10. token बनते ही उसे copy और save करें।
+7. टोकन को पहचानने योग्य नाम दें।
+8. अपनी रखरखाव पसंद के अनुसार समाप्ति तिथि चुनें।
+9. `repo` और `workflow` स्कोप चुनें।
+10. टोकन बनते ही उसे कॉपी और सहेजें।
 
-![GitHub permissions जोड़ें](../../image/upload/github-releases/添加github权限.png)
+![GitHub अनुमतियाँ जोड़ें](../../image/upload/github-releases/添加github权限.png)
 
-## Step 2: ImgBed में GitHub Releases channel भरें
+## चरण 2: ImgBed में GitHub Releases चैनल भरें
 
-Upload Settings में `GitHub Releases` चुनने के बाद fields ऐसे भरें:
+अपलोड सेटिंग्स में `GitHub Releases` चुनने के बाद फ़ील्ड इस तरह भरें:
 
-| UI Field | क्या डालें |
+| UI फ़ील्ड | क्या दर्ज करें |
 | --- | --- |
-| Channel name | आपका चुना हुआ नाम, जैसे `GitHubPrimary`। |
-| Access Token | अभी बनाया गया GitHub Personal Access Token। |
-| Repository name | short repo name जैसे `image`, या full path जैसे `username/image`। |
-| Private repository | अपनी ज़रूरत के हिसाब से on या off करें। |
-| Remark | optional, जैसे `Primary upload channel`। |
+| चैनल नाम | आपका चुना हुआ नाम, जैसे `GitHubPrimary`। |
+| एक्सेस टोकन | अभी बनाया गया GitHub व्यक्तिगत एक्सेस टोकन। |
+| रिपॉज़िटरी नाम | छोटा रिपॉज़िटरी नाम जैसे `image`, या पूरा पथ जैसे `username/image`। |
+| निजी रिपॉज़िटरी | आवश्यकता के अनुसार सक्षम या अक्षम करें। |
+| टिप्पणी | वैकल्पिक, जैसे `Primary upload channel`। |
 
-![GitHub channel configuration भरें](../../image/upload/github-releases/填写github渠道配置.png)
+![GitHub चैनल कॉन्फ़िगरेशन भरें](../../image/upload/github-releases/填写github渠道配置.png)
 
-## Step 3: Channel save करें
+## चरण 3: चैनल सहेजें
 
-fields भरने के बाद Save पर क्लिक करें।
+फ़ील्ड भरने के बाद सहेजें पर क्लिक करें।
 
-system ये details संभालेगा:
+सिस्टम ये विवरण संभालता है:
 
-| System Behavior | Description |
+| सिस्टम व्यवहार | विवरण |
 | --- | --- |
-| Short repository name | ImgBed current GitHub account पहचानता है और value को full repository path में बदलता है। |
-| Full repository path | ImgBed `username/repository` path को जैसा डाला गया है वैसा ही use करता है। |
-| Repository check | current personal account path use होने पर ImgBed repository न हो तो automatically create करता है। full path manually डालने पर वही path directly use करता है। |
-| Public/private state | repository visibility current switch के अनुसार sync होती है। |
+| छोटा रिपॉज़िटरी नाम | ImgBed वर्तमान GitHub खाते को पहचानता है और मान को पूरे रिपॉज़िटरी पथ में बदलता है। |
+| पूरा रिपॉज़िटरी पथ | ImgBed `username/repository` पथ को ठीक वैसे ही उपयोग करता है जैसे दर्ज किया गया है। |
+| रिपॉज़िटरी जाँच | यदि आप वर्तमान व्यक्तिगत खाते का पथ उपयोग करते हैं, तो रिपॉज़िटरी न होने पर ImgBed उसे अपने आप बनाता है। यदि पूरा पथ मैन्युअल रूप से दर्ज करें, तो ImgBed उसी पथ का सीधे उपयोग करता है। |
+| सार्वजनिक/निजी स्थिति | रिपॉज़िटरी दृश्यता वर्तमान स्विच के अनुसार सिंक्रनाइज़ होती है। |
 
-## Quick Checklist
+## त्वरित सूची
 
-GitHub Releases ऐसे काम करता है:
+GitHub Releases इस तरह काम करता है:
 
 ```text
-GitHub में sign in करें
--> Access Token बनाएँ
--> ImgBed में लौटकर token और repository name डालें
+Sign in to GitHub
+-> Create an Access Token
+-> Return to ImgBed and enter the token and repository name
 -> Save
--> केवल repo name डालने पर ImgBed current username automatically जोड़ता है
--> username/repo डालने पर ImgBed उसे जैसा है वैसा use करता है
--> test image upload करें
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

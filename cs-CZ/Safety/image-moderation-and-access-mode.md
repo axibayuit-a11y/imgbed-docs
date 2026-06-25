@@ -2,7 +2,7 @@
 
 Moderace obrázků přiřazuje nahraným obrázkům věkové hodnocení. Režim přístupu určuje, která hodnocení jsou veřejně viditelná.
 
-Ovlivňuje to veřejnou galerii, veřejné URL souborů a Random Image API. Neomezuje administraci. Administrátoři mohou stále vidět a spravovat všechny soubory.
+Ovlivňuje to veřejnou galerii, veřejné URL souborů a API pro náhodné obrázky. Neomezuje administraci. Administrátoři mohou stále vidět a spravovat všechny soubory.
 
 ## Kde nastavit
 
@@ -14,26 +14,26 @@ System Settings -> Security Settings -> Upload Management -> Image Moderation
 
 Hlavní nastavení jsou:
 
-- Access mode
-- Enable moderation
-- Moderation provider
+- Režim přístupu
+- Zapnout moderaci
+- Poskytovatel moderace
 
-## Co dělá Access Mode
+## Co dělá režim přístupu
 
-Access mode určuje, která věková hodnocení mohou být veřejně zobrazena.
+Režim přístupu určuje, která věková hodnocení mohou být veřejně zobrazena.
 
 Aktuální režimy:
 
-| Access Mode | Veřejně viditelná hodnocení |
+| Režim přístupu | Veřejně viditelná hodnocení |
 | --- | --- |
-| Adult mode | General, R12, R16, R18 |
-| Youth mode | General, R12, R16 |
-| Teen mode | General, R12 |
-| Child mode | Pouze General |
+| Režim pro dospělé | Obecné, R12, R16, R18 |
+| Režim pro mládež | Obecné, R12, R16 |
+| Režim pro dospívající | Obecné, R12 |
+| Režim pro děti | Pouze Obecné |
 
-Výchozí je Adult mode.
+Výchozí je režim pro dospělé.
 
-Pro soukromé weby nebo weby s dospělým obsahem může být Adult mode vhodný. Pro opatrnější veřejnou galerii zvolte Youth, Teen nebo Child mode.
+Pro soukromé weby nebo weby s obsahem pro dospělé může být vhodný režim pro dospělé. Pro opatrnější veřejnou galerii zvolte režim pro mládež, režim pro dospívající nebo režim pro děti.
 
 ## Co znamená zapnutí moderace
 
@@ -41,16 +41,16 @@ Když je moderace zapnutá, ImgBed při uploadu zavolá vybraného poskytovatele
 
 Hlavní hodnocení:
 
-| Rating | Význam |
+| Hodnocení | Význam |
 | --- | --- |
-| General | Bezpečný veřejný obsah |
+| Obecné | Bezpečný veřejný obsah |
 | R12 | Mírně citlivý obsah |
 | R16 | Středně citlivý obsah |
 | R18 | Obsah pro dospělé |
 
 Výsledek moderace se používá při rozhodování o veřejném přístupu.
 
-Pokud moderace není zapnutá nebo staré soubory nemají rating, považují se za neohodnocené. Neohodnocené soubory nejsou automaticky odstraněny z veřejné galerie ani Random Image API jen proto, že nemají výsledek moderace.
+Pokud moderace není zapnutá nebo staré soubory nemají hodnocení, považují se za neohodnocené. Neohodnocené soubory nejsou automaticky odstraněny z veřejné galerie ani API pro náhodné obrázky jen proto, že nemají výsledek moderace.
 
 ## Výběr poskytovatele moderace
 
@@ -63,10 +63,10 @@ Dostupní poskytovatelé zahrnují:
 Každý poskytovatel má jiné požadavky:
 
 - moderatecontent.com obvykle vyžaduje API Key.
-- nsfwjs obvykle vyžaduje URL API endpointu.
+- nsfwjs obvykle vyžaduje URL koncového bodu API.
 - Sightengine vyžaduje API user a API secret.
 
-Vyberte podle účtu, dostupnosti a kvality detekce. Pokud je moderace zapnutá a správně nastavená, ImgBed se pokusí při uploadu zapsat rating obrázku.
+Vyberte podle účtu, dostupnosti a kvality detekce. Pokud je moderace zapnutá a správně nastavená, ImgBed se pokusí při nahrávání zapsat hodnocení obrázku.
 
 ## Vliv na veřejnou galerii
 
@@ -74,10 +74,10 @@ Veřejná galerie filtruje soubory podle režimu přístupu.
 
 Příklady:
 
-- Adult mode: obrázky R18 se mohou zobrazit.
-- Youth mode: obrázky R18 jsou skryté.
-- Teen mode: obrázky R16 a R18 jsou skryté.
-- Child mode: zobrazují se pouze obrázky General.
+- Režim pro dospělé: obrázky R18 se mohou zobrazit.
+- Režim pro mládež: obrázky R18 jsou skryté.
+- Režim pro dospívající: obrázky R16 a R18 jsou skryté.
+- Režim pro děti: zobrazují se pouze obrázky s hodnocením Obecné.
 
 Týká se to jen běžného veřejného přístupu. Administrace stále zobrazuje všechny soubory.
 
@@ -85,14 +85,14 @@ Týká se to jen běžného veřejného přístupu. Administrace stále zobrazuj
 
 Veřejné URL souborů jsou přímé odkazy, které otevírají návštěvníci.
 
-Pokud je rating souboru povolen aktuálním režimem, ImgBed vrátí původní obrázek.
+Pokud je hodnocení souboru povoleno aktuálním režimem, ImgBed vrátí původní obrázek.
 
-Pokud je rating nad povolenou úrovní, běžný veřejný přístup nevrátí původní obrázek. ImgBed místo toho vrátí nastavený blokovaný výsledek nebo náhradní obrázek.
+Pokud je hodnocení nad povolenou úrovní, běžný veřejný přístup nevrátí původní obrázek. ImgBed místo toho vrátí nastavený blokovaný výsledek nebo náhradní obrázek.
 
 Příklad:
 
-- Aktuální režim je Child mode.
-- Obrázek má rating R18.
+- Aktuální režim je režim pro děti.
+- Obrázek má hodnocení R18.
 - Návštěvník otevře veřejný URL přímo.
 - ImgBed tomuto návštěvníkovi nevrátí původní R18 obrázek.
 
@@ -100,27 +100,27 @@ Příklad:
 
 Administrátorů při prohlížení souborů v administraci se toto omezení netýká.
 
-## Vliv na Random Image API
+## Vliv na API pro náhodné obrázky
 
-Random Image API také filtruje svůj výběr kandidátů podle režimu přístupu.
+API pro náhodné obrázky také filtruje svůj výběr kandidátů podle režimu přístupu.
 
-V Child mode se náhodné obrázky vybírají jen ze souborů s hodnocením General.
+V režimu pro děti se náhodné obrázky vybírají jen ze souborů s hodnocením Obecné.
 
-V Youth mode mohou náhodné obrázky pocházet z General, R12 a R16, ale ne z R18.
+V režimu pro mládež mohou náhodné obrázky pocházet ze souborů s hodnocením Obecné, R12 a R16, ale ne z R18.
 
-Tím se zabrání tomu, aby Random Image API obcházelo omezení veřejné galerie.
+Tím se zabrání tomu, aby API pro náhodné obrázky obcházelo omezení veřejné galerie.
 
 ## Vztah k pravidlům seznamů
 
-Access mode není jediné pravidlo veřejného přístupu. Funguje společně s allowlist a blocklist.
+Režim přístupu není jediné pravidlo veřejného přístupu. Funguje společně s pravidly seznamu povolených a blokovaných položek.
 
 Stručně:
 
-- Obsah na allowlist je veřejný jako první.
-- Obsah na blocklist nelze běžnými návštěvníky zobrazit přímo.
-- Obsah, který není na žádném seznamu, se následně kontroluje podle access mode.
+- Obsah na seznamu povolených položek je veřejný jako první.
+- Obsah na seznamu blokovaných položek nelze běžnými návštěvníky zobrazit přímo.
+- Obsah, který není na žádném seznamu, se následně kontroluje podle režimu přístupu.
 
-Pokud je obrázek omezený ratingem i pravidly seznamů, běžní návštěvníci stále nemohou přímo zobrazit původní soubor.
+Pokud je obrázek omezený hodnocením i pravidly seznamů, běžní návštěvníci stále nemohou přímo zobrazit původní soubor.
 
 ## Doporučená nastavení
 
@@ -128,38 +128,41 @@ Pro veřejné weby:
 
 - Zapněte moderaci.
 - Vyberte režim přístupu odpovídající publiku webu.
-- Pro návštěvníky všech věkových skupin použijte Child mode nebo Teen mode.
-- Vyhněte se Adult mode, pokud nechcete veřejně zobrazovat dospělý obsah.
-- Kontrolujte ratingy v administraci a podle potřeby je upravujte ručně.
+- Pro návštěvníky všech věkových skupin použijte režim pro děti nebo režim pro dospívající.
+- Vyhněte se režimu pro dospělé, pokud nechcete veřejně zobrazovat obsah pro dospělé.
+- Kontrolujte hodnocení v administraci a podle potřeby je upravujte ručně.
 
 Pro soukromé nebo osobní weby:
 
-- Adult mode je obvykle v pořádku.
+- Režim pro dospělé je obvykle v pořádku.
 - Zapněte moderaci, pokud je užitečná.
-- Ratingy kontrolujte a upravujte v administraci podle potřeby.
+- Hodnocení kontrolujte a upravujte v administraci podle potřeby.
 
 ## FAQ
 
-### Zmizí soubory z administrace po změně Access Mode?
+### Zmizí soubory z administrace po změně režimu přístupu?
 
 Ne.
 
-Access mode ovlivňuje jen běžný veřejný přístup. Administraci neovlivňuje.
+Režim přístupu ovlivňuje jen běžný veřejný přístup. Administraci neovlivňuje.
 
-### Proč veřejná galerie po přepnutí na Child mode ukazuje méně obrázků?
+### Proč veřejná galerie po přepnutí na režim pro děti ukazuje méně obrázků?
 
-Child mode dovoluje veřejně zobrazit pouze soubory General. R12, R16 a R18 se filtrují.
+Režim pro děti dovoluje veřejně zobrazit pouze soubory s hodnocením Obecné. R12, R16 a R18 se filtrují.
 
 ### Mohou veřejné URL stále otevřít obrázky pro dospělé?
 
-Pokud aktuální režim takový rating nepovoluje, běžné veřejné URL nevrátí původní obrázek.
+Pokud aktuální režim takové hodnocení nepovoluje, běžné veřejné URL nevrátí původní obrázek.
 
-### Může Random Image API vrátit omezené obrázky?
+### Může API pro náhodné obrázky vrátit omezené obrázky?
 
 Ne.
 
-Random Image API filtruje kandidáty podle aktuálního režimu přístupu.
+API pro náhodné obrázky filtruje kandidáty podle aktuálního režimu přístupu.
 
 ### Co se stane se starými neohodnocenými obrázky?
 
-Neohodnocené obrázky nejsou automaticky skryté jen proto, že nemají výsledek moderace. Rating jim můžete později upravit v administraci.
+Neohodnocené obrázky nejsou automaticky skryté jen proto, že nemají výsledek moderace. Hodnocení jim můžete později upravit v administraci.
+
+
+

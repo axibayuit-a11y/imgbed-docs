@@ -1,21 +1,21 @@
 # OCR
 
-OCR له images، scans او document screenshots څخه text استخراجوي.
+OCR له انځورونو، سکن فایلونو او د سندونو له سکرین شاټونو څخه متن راوباسي.
 
-له recognition وروسته result copy کولای شئ، یا یې د `Markdown`، `PDF` یا `Word` په توګه export کولای شئ، او څو formats یو ځای package او download کولای شئ.
+له پېژندنې وروسته، تاسو پایله کاپي کولای شئ، د `Markdown`، `PDF` یا `Word` په توګه یې صادرولای شئ، یا څو بڼې یو ځای د ډاونلوډ لپاره بسته کولای شئ.
 
-## OCR څه کولای شي
+## OCR څه کولی شي
 
-| Feature | تشریح |
+| ځانګړنه | تشریح |
 | --- | --- |
-| Image text recognition | له images، screenshots او scans څخه text استخراجوي. |
-| Document layout recognition | د tables، formulas، stamps او ګډ text-image layouts لپاره ښه دی. |
-| Multiple services | Baidu PaddleOCR، Microsoft Azure Vision او Google Vision ملاتړ کوي. |
-| Copy results | له processing وروسته recognized text copy کړئ. |
-| Export files | `Markdown`، `PDF` او `Word` export کړئ. |
-| Batch packaging | د څو files له recognize وروسته results د package په توګه download کړئ. |
+| د انځور متن پېژندنه | له انځورونو، سکرین شاټونو او سکن فایلونو څخه متن راوباسي. |
+| د سند د بڼې پېژندنه | د جدولونو، فورمولونو، مهرونو او د متن-انځور ګډو بڼو لپاره ښه ده. |
+| څو خدمتونه | د Baidu PaddleOCR، Microsoft Azure Vision او Google Vision ملاتړ کوي. |
+| پایلې کاپي کول | له پروسس وروسته پېژندل شوی متن کاپي کوي. |
+| فایلونه صادرول | `Markdown`، `PDF` او `Word` صادروي. |
+| ډله ییزه بسته بندي | د څو فایلونو له پېژندنې وروسته پایلې د یوې بسته په توګه ډاونلوډ کوي. |
 
-## لومړی OCR Services تنظیم کړئ
+## لومړی د OCR خدمتونه تنظیم کړئ
 
 دا پرانیزئ:
 
@@ -23,175 +23,175 @@ OCR له images، scans او document screenshots څخه text استخراجوي
 System Settings -> Other Settings -> OCR
 ```
 
-![IP geolocation and OCR](../../image/other/ip定位和ocr文字识别.png)
+![د IP جغرافيايي ځای موندنه او OCR](../../image/other/ip定位和ocr文字识别.png)
 
-د هغو services credentials ډک کړئ چې کارول یې غواړئ:
+د هغو خدمتونو اعتبارلیکونه ډک کړئ چې کارول یې غواړئ:
 
-| Service | څه ولیکئ | Best For |
+| خدمت | څه باید ولیکل شي | د څه لپاره غوره دی |
 | --- | --- | --- |
-| Baidu PaddleOCR | `PaddleOCR Token` | لومړی انتخاب یې سپارښتنه کېږي. د documents، images، tables او mixed layouts لپاره ښه دی. |
-| Microsoft Azure Vision | `Azure Vision Endpoint` او `Azure Vision API Key` | که Microsoft cloud services کاروئ، ګټور دی. |
-| Google Vision | `Google Vision API Key`. Service account `JSON` یوازې د quota query لپاره کارېږي. | که Google Cloud services کاروئ، ګټور دی. |
+| Baidu PaddleOCR | `PaddleOCR Token` | د لومړي انتخاب په توګه سپارښتنه کېږي. د سندونو، انځورونو، جدولونو او ګډو بڼو لپاره ښه دی. |
+| Microsoft Azure Vision | `Azure Vision Endpoint` او `Azure Vision API Key` | هغه وخت ګټور دی چې تاسو مخکې له مخکې د Microsoft کلاوډ خدمتونه کاروئ. |
+| Google Vision | `Google Vision API Key`. د خدمت حساب `JSON` یوازې د سهمیې پوښتنې لپاره کارېږي. | هغه وخت ګټور دی چې Google Cloud خدمتونه کاروئ. |
 
-له credentials ډکولو وروسته save وکړئ.
+له اعتبارلیکونو ډکولو وروسته یې خوندي کړئ.
 
-د لومړنۍ ازموینې لپاره یوازې یو service تنظیمولای شئ. درې واړه اړین نه دي.
+د لومړنۍ ازموینې لپاره یوازې یو خدمت تنظیمولای شئ. درې واړه اړین نه دي.
 
-## Google Vision Setup
+## د Google Vision تنظیم
 
-Google setup دوه برخې لري:
+د Google تنظیم دوه برخې لري:
 
-| Goal | Requirement |
+| موخه | اړتیا |
 | --- | --- |
-| OCR کارول | `Cloud Vision API` enable کړئ، بیا `API Key` جوړ کړئ. |
-| usage query | service account جوړ کړئ، `Monitoring Viewer` ورکړئ، بیا service account `JSON` download کړئ. |
+| OCR کارول | `Cloud Vision API` فعال کړئ، بیا یو `API Key` جوړ کړئ. |
+| د کارونې پوښتنه | د خدمت حساب جوړ کړئ، د `Monitoring Viewer` نقش ورکړئ، بیا د خدمت حساب `JSON` ډاونلوډ کړئ. |
 
-![Google API key and service account](../../image/other/谷歌api秘钥和服务账号截图.png)
+![د Google API کیلي او د خدمت حساب](../../image/other/谷歌api秘钥和服务账号截图.png)
 
-### Google د OCR لپاره وکاروئ
+### Google د OCR لپاره کارول
 
 1. Google Cloud Console پرانیزئ.
 2. `APIs & Services` ته لاړ شئ.
-3. `Library` پرانیزئ، `Cloud Vision API` ولټوئ او enable یې کړئ.
-4. بېرته `Credentials` ته راشئ.
-5. `API Key` جوړ کړئ.
-6. API Key پرانیزئ او copy یې کړئ.
-7. په ImgBed کې یې `Google Vision API Key` ته paste کړئ.
-8. save کړئ.
+3. `Library` پرانیزئ، `Cloud Vision API` ولټوئ او فعال یې کړئ.
+4. بېرته `Credentials` ته لاړ شئ.
+5. یو `API Key` جوړ کړئ.
+6. `API Key` پرانیزئ او کاپي یې کړئ.
+7. په ImgBed کې یې `Google Vision API Key` ته ولګوئ.
+8. خوندي کړئ.
 
-بیا د OCR dialog کې Google Vision ټاکلای شئ.
+وروسته کولای شئ په OCR کړکۍ کې Google Vision وټاکئ.
 
-### د Google Usage Query
+### د Google کارونې پوښتنه
 
-Quota query د recognition لپاره اړینه نه ده.
+د سهمیې پوښتنه د پېژندنې لپاره اړینه نه ده.
 
-دا یوازې ښيي چې په تېرو 30 ورځو کې شاوخوا څو Google Vision calls کارول شوي دي.
+دا یوازې نږدې ښيي چې په تېرو 30 ورځو کې څو Google Vision غوښتنې کارول شوې دي.
 
 1. په Google Cloud Console کې `IAM & Admin` پرانیزئ.
 2. `Service Accounts` پرانیزئ.
-3. service account جوړ کړئ، لکه `vision-monitor`.
-4. `Monitoring Viewer` role ورکړئ.
-5. د service account details پرانیزئ او key جوړ کړئ.
+3. د خدمت یو حساب جوړ کړئ، لکه `vision-monitor`.
+4. د `Monitoring Viewer` نقش ورته ورکړئ.
+5. د خدمت حساب جزئیات پرانیزئ او یوه کیلي جوړه کړئ.
 6. `JSON` وټاکئ.
-7. generated JSON file download کړئ.
-8. بېرته ImgBed ته راشئ او د service account `JSON` لاندې یې import کړئ (اختیاري).
-9. د import له بریا وروسته quota query کلیک کړئ.
+7. جوړ شوی `JSON` فایل ډاونلوډ کړئ.
+8. بېرته ImgBed ته لاړ شئ او د خدمت حساب `JSON` برخه کې یې وارد کړئ (اختیاري).
+9. له بریالي واردېدو وروسته د سهمیې پوښتنې تڼۍ کلیک کړئ.
 
-له import وروسته، ImgBed هغه project name ښيي چې service account پورې تړاو لري. د usage query پر وخت، ImgBed Google monitoring data لولي او د دې میاشت call count ښيي.
+له واردېدو وروسته، ImgBed د هغې پروژې نوم ښيي چې د خدمت حساب ورپورې تړلی دی. د کارونې پوښتنې پر مهال، ImgBed د Google د څارنې معلومات لولي او د دې میاشتې د غوښتنو شمېر ښيي.
 
 په لنډه توګه:
 
-| Item | موخه |
+| توکی | موخه |
 | --- | --- |
-| `Google Vision API Key` | OCR recognition اجرا کوي. |
-| Service account `JSON` | ګوري چې څو Google Vision calls کارول شوي دي. |
-| `Monitoring Viewer` role | service account ته د usage data د لوستلو اجازه ورکوي. |
+| `Google Vision API Key` | د OCR پېژندنه ترسره کوي. |
+| د خدمت حساب `JSON` | پوښتي چې څو Google Vision غوښتنې کارول شوې دي. |
+| `Monitoring Viewer` نقش | د خدمت حساب ته د کارونې معلوماتو د لوستلو اجازه ورکوي. |
 
-## Baidu PaddleOCR Token اخیستل
+## د Baidu PaddleOCR Token اخیستل
 
-Baidu PaddleOCR access token غواړي.
+Baidu PaddleOCR د لاسرسي نښې ته اړتیا لري.
 
-![Get PaddleOCR token](../../image/other/获取飞浆令牌.png)
+![د PaddleOCR Token اخیستل](../../image/other/获取飞浆令牌.png)
 
-د Baidu PaddleOCR page کې د `API` call window پرانیزئ، د token اخیستلو لپاره کلیک وکړئ، بیا یې copy کړئ.
+د Baidu PaddleOCR پاڼه کې د `API` غوښتنې کړکۍ پرانیزئ، د نښې اخیستلو لپاره کلیک وکړئ، بیا یې کاپي کړئ.
 
-بېرته ImgBed ته راشئ، په `PaddleOCR Token` کې یې paste او save کړئ.
+بېرته ImgBed ته لاړ شئ، دا په `PaddleOCR Token` کې ولګوئ او خوندي یې کړئ.
 
-## Recognition پیلول
+## پېژندنه پیلول
 
-په File Management کې image یا document screenshot وټاکئ او `OCR` کلیک کړئ.
+په فایل مدیریت کې یو انځور یا د سند سکرین شاټ وټاکئ او `OCR` کلیک کړئ.
 
-![OCR recognition](../../image/other/ocr识别截图.png)
+![د OCR پېژندنه](../../image/other/ocr识别截图.png)
 
-په dialog کې recognition service او model وټاکئ.
+په کړکۍ کې د پېژندنې خدمت او ماډل وټاکئ.
 
-عام PaddleOCR model choices:
+د PaddleOCR عام ماډل انتخابونه:
 
-| Model | Best For |
+| ماډل | د څه لپاره غوره دی |
 | --- | --- |
-| `PP-StructureV3` | سپارښتل شوی default. د documents، tables، formulas، stamps او mixed layouts لپاره ښه دی. |
-| `PP-OCRv5` | ساده images، عادي text او lightweight recognition. |
-| `PaddleOCR-VL` | multilingual، complex images او chart-like content. |
-| `PaddleOCR-VL-1.5` | ډېر complex document pages او layout recovery. |
+| `PP-StructureV3` | سپارښتل شوی اصلي انتخاب. د سندونو، جدولونو، فورمولونو، مهرونو او ګډو بڼو لپاره ښه دی. |
+| `PP-OCRv5` | ساده انځورونه، عادي متن او سپکه پېژندنه. |
+| `PaddleOCR-VL` | څو ژبې، پېچلي انځورونه او چارټ ته ورته منځپانګه. |
+| `PaddleOCR-VL-1.5` | ډېرې پېچلې سند پاڼې او د بڼې بیا جوړونه. |
 
 که ډاډه نه یاست، له `PP-StructureV3` څخه پیل وکړئ.
 
-## Advanced Options
+## پرمختللي اختیارونه
 
-| Option | تشریح |
+| اختیار | تشریح |
 | --- | --- |
-| Orientation correction | کله وکاروئ چې image rotated یا skewed وي. |
-| Document flattening | د curvature یا tilt لرونکو photographed documents لپاره. |
-| Layout detection | کله چې headings، paragraphs، tables او image structure ساتل غواړئ. |
-| Chart recognition | کله چې image charts یا complex structures ولري. |
-| Beautify `Markdown` | exported Markdown لوستل اسانه کوي. |
+| د جهت سمونه | هغه وخت وکاروئ چې انځور تاو شوی یا کږه شوی وي. |
+| د سند هوارول | د هغو عکس اخیستل شوو سندونو لپاره وکاروئ چې کږوالی یا تمایل لري. |
+| د بڼې موندنه | هغه وخت وکاروئ چې سرلیکونه، پاراګرافونه، جدولونه او د انځور جوړښت ساتل غواړئ. |
+| د چارټ پېژندنه | هغه وخت وکاروئ چې انځور چارټونه یا پېچلي جوړښتونه ولري. |
+| `Markdown` ښکلی کول | صادر شوی `Markdown` لوستل اسانه کوي. |
 
-د عادي screenshots لپاره options کم وساتئ. د document scans لپاره نور document-related options فعال کړئ.
+د عادي سکرین شاټونو لپاره اختیارونه لږ وساتئ. د سند سکنونو لپاره د سند اړوند ډېر اختیارونه فعال کړئ.
 
-## Results لیدل
+## پایلې کتل
 
-له recognition وروسته dialog result ښيي.
+کله چې پېژندنه بشپړه شي، کړکۍ پایله ښيي.
 
-مستقیم یې copy کولای شئ یا export formats ټاکلای شئ.
+تاسو یې مستقیم کاپي کولای شئ یا د صادرولو بڼې ټاکلای شئ.
 
-![PDF recognition](../../image/other/pdf识别截图.png)
+![د PDF پېژندنه](../../image/other/pdf识别截图.png)
 
-د document pages لپاره، exported `PDF` د page appearance ساتلی شي او text searchable پرېږدي. دا د scans archive کولو او وروسته content موندلو لپاره ګټور دی.
+د سند پاڼو لپاره، صادر شوی `PDF` د پاڼې بڼه ساتلی شي او متن هم د لټون وړ ساتي. دا د سکنونو ارشیف کولو او وروسته د منځپانګې موندلو لپاره ګټور دی.
 
-## Export Format ټاکل
+## د صادرولو بڼه ټاکل
 
-| Format | Best For |
+| بڼه | د څه لپاره غوره دی |
 | --- | --- |
-| `Markdown (.md)` | notes، documentation systems او وروسته editing. |
-| `PDF (.pdf)` | د page appearance او scanned document results ساتل. |
-| `Word (.docx)` | layout editing ته دوام، text modification او نورو ته handoff. |
-| Export all | څو formats او original image خوندي کوي، د مهمو archives لپاره مناسب دی. |
+| `Markdown (.md)` | یادښتونه، د اسنادو سیستمونه او وروسته سمونه. |
+| `PDF (.pdf)` | د پاڼې بڼه او د سکن شوو سندونو پایلې ساتل. |
+| `Word (.docx)` | د بڼې سمونې ته دوام، د متن بدلون او نورو ته سپارل. |
+| ټول صادرول | څو بڼې او اصلي انځور خوندي کوي، د مهمو ارشیفونو لپاره مناسب دی. |
 
-که یوازې text ته اړتیا لرئ، Markdown export کړئ.
+که یوازې متن ته اړتیا لرئ، Markdown صادر کړئ.
 
-که page appearance ته اړتیا لرئ، PDF یا Word وکاروئ.
+که د پاڼې بڼه هم غواړئ، PDF یا Word وکاروئ.
 
-## Word Output
+## د Word پایله
 
-Exported Word documents د office software له لارې پرانیستل او edit کېدای شي.
+صادر شوي Word سندونه د دفتري پروګرامونو له لارې پرانیستل او سمېدلای شي.
 
-![Word result](../../image/other/word识别结果.png)
+![د Word پایله](../../image/other/word识别结果.png)
 
-ځینې documents په Word output کې recognized images، headings او paragraphs لري.
+ځینې سندونه د Word په پایله کې پېژندل شوي انځورونه، سرلیکونه او پاراګرافونه لري.
 
-Recognition quality د original image clarity، model choice او document complexity پورې تړلې ده.
+د پېژندنې کیفیت د اصلي انځور روښانتیا، د ماډل انتخاب او د سند پېچلتیا پورې تړلی دی.
 
-## د OCR لپاره غوره File Types
+## د OCR لپاره غوره فایل ډولونه
 
-| File Type | سپارښتنه |
+| د فایل ډول | سپارښتنه |
 | --- | --- |
-| Clear screenshots | مستقیم recognize کړئ. |
-| Scans | `PP-StructureV3` ته ترجیح ورکړئ. |
-| Photographed documents | orientation correction او document flattening فعال کړئ. |
-| Tables, formulas, stamps | structured models ته ترجیح ورکړئ. |
-| Simple short text images | `PP-OCRv5` عموما بس وي. |
+| روښانه سکرین شاټونه | مستقیم یې وپېژنئ. |
+| سکن فایلونه | `PP-StructureV3` ته لومړیتوب ورکړئ. |
+| عکس اخیستل شوي سندونه | د جهت سمونه او د سند هوارول فعال کړئ. |
+| جدولونه، فورمولونه، مهرونه | جوړښتي ماډلونو ته لومړیتوب ورکړئ. |
+| ساده لنډ متن لرونکي انځورونه | `PP-OCRv5` عموما بس وي. |
 
-روښانه images چې text یې مستقیم وي، عموما غوره results ورکوي.
+روښانه انځورونه چې متن یې سم او نېغ وي، عموما غوره پایلې ورکوي.
 
-## Common Cases
+## عام حالتونه
 
-| Case | معنا |
+| حالت | معنا |
 | --- | --- |
-| Recognition fails | وګورئ service token یا key save شوی دی. |
-| Recognition is slow | complex documents او لوی images ډېر وخت نیسي. |
-| Table incomplete دی | structured model وازمویئ. |
-| Text mistakes لري | blur، glare او skew recognition errors زیاتوي. روښانه image وازمویئ. |
-| Word output ډېر images لري | structured models ښايي ځینې recognized images وساتي. دا عادي ده. |
+| پېژندنه ناکامېږي | وګورئ چې د خدمت نښه یا کیلي خوندي شوې ده. |
+| پېژندنه ورو ده | پېچلي سندونه او لوی انځورونه ډېر وخت نیسي. |
+| جدول نیمګړی دی | جوړښتي ماډل وازمویئ. |
+| متن تېروتنې لري | تتوالی، ځلا او کوږوالی د پېژندنې تېروتنې زیاتوي. روښانه انځور وازمویئ. |
+| د Word پایله ډېر انځورونه لري | جوړښتي ماډلونه ښايي ځینې پېژندل شوي انځورونه وساتي. دا عادي ده. |
 
-### Google Quota Query ناکامېږي
+### د Google د سهمیې پوښتنه ناکامېږي
 
-وګورئ:
+دا وګورئ:
 
-1. Service account `JSON` import شوی دی.
-2. service account د `Monitoring Viewer` role لري.
-3. `Cloud Vision API` د project لپاره enabled دی.
+1. د خدمت حساب `JSON` وارد شوی دی.
+2. د خدمت حساب د `Monitoring Viewer` نقش لري.
+3. `Cloud Vision API` د پروژې لپاره فعال دی.
 
-که یوازې OCR ته اړتیا لرئ او usage query نه غواړئ، service account JSON ignore کولای شئ او یوازې `Google Vision API Key` ډک کړئ.
+که یوازې OCR ته اړتیا لرئ او د کارونې پوښتنه نه غواړئ، د خدمت حساب `JSON` له پامه غورځولای شئ او یوازې `Google Vision API Key` ډکولای شئ.
 
 ## چټک بهیر
 

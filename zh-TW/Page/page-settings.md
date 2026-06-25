@@ -39,7 +39,7 @@
 | 管理端登入頁背景圖 | 管理端登入頁背景圖 |
 | 管理端背景圖 | 後台頁面背景圖；可填單張圖片 URL，也可填多個 URL |
 | 圖片載入模式 | 管理端圖片列表的預覽載入方式，可選原圖或智慧載入；智慧載入會優先讓公開圖片使用縮圖，受限圖片使用原圖 |
-| 縮圖圖源 | 選擇縮圖由哪個服務產生，可選 wsrv.nl、Cloudflare 圖片轉換或 WordPress Photon；選 Cloudflare 圖片轉換前，需要先在 Cloudflare 啟用圖片轉換 |
+| 縮圖圖源 | 選擇縮圖由哪個服務產生，可選 wsrv.nl、Cloudflare Image Resizing 或 WordPress Photon；選 Cloudflare Image Resizing 前，需要先在 Cloudflare 啟用 Image Resizing |
 | Live2D 看板娘 | 開啟後在管理端顯示 Live2D 看板娘 |
 | 煙火點擊特效 | 開啟後點擊頁面時顯示煙火效果 |
 | 星星拖尾特效 | 開啟後滑鼠移動時顯示星星拖尾效果 |

@@ -1,75 +1,97 @@
-# Uso de enlaces magnet
+# Transferencia de enlaces magnet
 
-La función de enlaces magnet descarga los archivos incluidos en un enlace magnet y después los sube automáticamente al canal de almacenamiento que elijas.
+La transferencia de enlaces magnet descarga archivos desde un enlace magnet y los sube automáticamente al canal de almacenamiento en la nube que elija.
 
-Es útil para transferir vídeos, episodios, archivos comprimidos y otros contenidos. Solo tienes que pegar el enlace magnet; ImgBed crea una tarea en segundo plano y, cuando termina, muestra el enlace final en la lista de subidas.
+Es útil para transferir episodios de anime, vídeos, archivos comprimidos y archivos similares. Pegue un enlace magnet e ImgBed creará una tarea de descarga en segundo plano. Cuando termine la descarga, el archivo se subirá a ImgBed y el enlace final aparecerá en la lista de subidas.
 
-![Enlace magnet](../../image/other/磁力链接/磁力链接.png)
+![Transferencia de enlaces magnet](../../image/other/磁力链接/磁力链接.png)
 
-## Dónde se usa
+## Dónde usarla
 
-La entrada está en el área de subida de la página principal.
+La entrada de transferencia de enlaces magnet está en el área de subida de la página principal.
 
-Pega el enlace magnet en el cuadro de entrada, selecciona el modo `Transferir` y sube el contenido.
+Pegue el enlace magnet en el cuadro de entrada, elija `Transfer` e inicie la subida.
 
-![Subir magnet](../../image/other/磁力链接/上传番剧.png)
+![Subir anime](../../image/other/磁力链接/上传番剧.png)
 
 ## Antes del primer uso
 
-Configura primero la transferencia magnet desde el panel de administración.
+Configure primero la transferencia de enlaces magnet en el panel de administración.
 
-Normalmente necesitas:
+Normalmente necesita:
 
-| Requisito | Para qué sirve |
+1. Una cuenta de GitHub para ejecutar la tarea de descarga.
+2. Un canal de subida en la nube, como Google Drive o OneDrive.
+3. El directorio de subida de destino.
+4. Un tiempo de espera de la tarea.
+
+Cuando los ajustes estén listos, vuelva a la página principal y pegue un enlace magnet para iniciar la transferencia.
+
+## Subir un enlace magnet
+
+1. Pegue el enlace magnet en el cuadro de subida de la página principal.
+2. Asegúrese de que el modo esté configurado como `Transfer`.
+3. Haga clic en subir.
+4. Espere a que ImgBed cree la tarea magnet.
+5. Cuando la tarea se inicie, use el panel flotante `Magnet Tasks` en la esquina inferior derecha para consultar el progreso.
+
+La descarga y la subida pueden tardar. La velocidad depende del recurso magnet, del entorno de ejecución de GitHub y del canal de almacenamiento en la nube seleccionado.
+
+![Descarga magnet](../../image/other/磁力链接/磁力链接下载中.png)
+
+## Al finalizar
+
+Cuando la tarea se complete, la lista de subidas mostrará el nombre del archivo y el enlace.
+
+Los vídeos muestran una vista previa de vídeo, las imágenes muestran una vista previa de imagen y los demás archivos muestran un icono de archivo normal.
+
+![Vídeo descargado](../../image/other/磁力链接/下载好后的视频.png)
+
+Puede copiar:
+
+| Tipo de enlace | Caso de uso |
 | --- | --- |
-| Cuenta de GitHub | Ejecutar la tarea de descarga |
-| Canal de subida | Google Drive, OneDrive u otro destino final |
-| Directorio de destino | Carpeta donde se guardará el archivo transferido |
-| Tiempo límite | Límite para tareas largas |
+| Enlace original | Acceso directo al archivo |
+| Markdown | Entradas o notas Markdown |
+| HTML | Código de página web |
+| BBCode | Foros compatibles con BBCode |
 
-## Cómo transferir un magnet
+## Panel de tareas magnet
 
-1. Pega el enlace magnet en el cuadro de subida de la página principal.
-2. Comprueba que el modo sea `Transferir`.
-3. Haz clic en subir.
-4. Espera a que ImgBed cree la tarea.
-5. Revisa el progreso en la ventana flotante `Tareas magnet`, en la esquina inferior derecha.
+El panel de tareas magnet de la esquina inferior derecha muestra el número de tareas, el nombre de la tarea, el progreso y el estado final.
 
-La descarga y la subida pueden tardar. La velocidad depende del recurso magnet, del entorno de ejecución de GitHub y del canal de almacenamiento elegido.
-
-![Descarga en curso](../../image/other/磁力链接/磁力链接下载中.png)
-
-## Después de terminar
-
-Cuando finalice la tarea, la lista de subidas mostrará el nombre del archivo y sus enlaces.
-
-Si es un vídeo, se mostrará una vista previa de vídeo; si es una imagen, una vista previa de imagen; los demás archivos aparecerán con icono genérico.
-
-![Vídeo transferido](../../image/other/磁力链接/下载好后的视频.png)
-
-Puedes copiar estos formatos:
-
-| Formato | Uso |
-| --- | --- |
-| Enlace original | Abrir el archivo directamente |
-| Markdown | Pegar en artículos o documentación Markdown |
-| HTML | Insertar en código de una página web |
-| BBCode | Usar en foros compatibles con BBCode |
-
-## Estados de la tarea
+Estados comunes:
 
 | Estado | Significado |
 | --- | --- |
-| En espera | La tarea está creada y espera ejecución |
-| Descargando | Se está descargando el recurso magnet |
-| Subiendo | El archivo ya se descargó y se está subiendo al canal |
-| Completado | La subida terminó y el enlace se puede copiar |
-| Error | La tarea no terminó correctamente; revisa el aviso y vuelve a intentar |
+| En espera | La tarea se creó y espera ejecutarse. |
+| Descargando | Se está descargando el recurso magnet. |
+| Subiendo | El archivo se descargó y se está subiendo al almacenamiento en la nube. |
+| Completado | La subida se realizó correctamente y el enlace se puede copiar. |
+| Error | La tarea no terminó correctamente. Revise el mensaje e inténtelo de nuevo. |
 
-## Recomendaciones
+## Consejos
 
-- Si el magnet contiene varios archivos, ImgBed prioriza el archivo principal terminado.
-- Los archivos grandes necesitan más tiempo; espera a que termine la tarea antes de recargar la página.
-- Si el recurso no tiene fuentes disponibles, la descarga puede ser muy lenta o fallar.
-- Si la cuenta de almacenamiento no tiene cuota, permisos o directorio correcto, la subida puede fallar.
-- La vista previa de vídeos puede tardar unos segundos en cargarse.
+- Si un enlace magnet contiene varios archivos, ImgBed prioriza el archivo principal completado para mostrarlo.
+- Los archivos grandes tardan más. Espere a que la tarea termine antes de actualizar la página.
+- Si el recurso magnet no tiene pares disponibles, puede ser muy lento o fallar.
+- Si la cuenta en la nube se queda sin cuota, la autorización ha caducado o el directorio de subida es incorrecto, la tarea puede fallar.
+- La vista previa de vídeo puede tardar unos segundos después de completar la subida.
+
+## Preguntas frecuentes
+
+### No se inicia nada después de pegar un enlace magnet
+
+Confirme que la transferencia de enlaces magnet esté activada en el panel de administración y que se hayan seleccionado una cuenta de GitHub y un canal en la nube utilizables.
+
+### La descarga siempre es lenta
+
+La velocidad de descarga por magnet depende del recurso en sí. Si no hay pares disponibles, la descarga puede ser muy lenta o imposible.
+
+### No aparece vista previa después de subir
+
+Primero confirme que el enlace del archivo se pueda abrir. Los archivos de vídeo pueden necesitar un breve tiempo para cargarse en el navegador, o puede abrir el enlace directamente.
+
+### ¿Qué debo comprobar si una tarea falla?
+
+Compruebe si el enlace magnet es válido, si el canal en la nube funciona y si el directorio de subida es correcto. Luego vuelva a enviar la tarea.

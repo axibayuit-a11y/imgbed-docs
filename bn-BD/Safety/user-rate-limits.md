@@ -1,76 +1,77 @@
-# User Rate Limits
+# ব্যবহারকারীর আপলোড হারসীমা
 
-User rate limits control করে regular users বা visitors homepage থেকে কত ঘন ঘন files upload করতে পারবে। Public upload pages abuse হওয়া ঠেকাতে এটি সাহায্য করে।
+ব্যবহারকারীর হারসীমা নিয়মিত ব্যবহারকারী বা দর্শকরা হোমপেজ থেকে কত ঘন ঘন ফাইল আপলোড করতে পারে তা নিয়ন্ত্রণ করে. এতে প্রকাশ্য আপলোড পাতা অপব্যবহার হওয়া থেকে সুরক্ষিত থাকে.
 
-এই feature শুধু homepage uploads-এ প্রভাব ফেলে। Admin uploads এবং API Tokens দিয়ে করা uploads user rate limits দ্বারা সীমাবদ্ধ নয়।
+এই সুবিধা শুধু হোমপেজের আপলোডে প্রভাব ফেলে. অ্যাডমিন আপলোড এবং API Tokens দিয়ে করা আপলোড ব্যবহারকারীর হারসীমার আওতায় পড়ে না.
 
-## কোথায় Configure করবেন
+## কোথায় কনফিগার করবেন
 
-Admin panel খুলে যান:
+অ্যাডমিন প্যানেল খুলে যান:
 
 ```text
 System Settings -> Security Settings -> Upload Management -> User Rate Limits
 ```
 
-![User rate limit settings](../../image/other/用户频控截图.png)
+![ব্যবহারকারীর হারসীমা সেটিংস](../../image/other/用户频控截图.png)
 
-## Rate Limits Enable করা
+## হারসীমা চালু করা
 
-`Enable Rate Limits` চালু করলে ImgBed uploader IP address অনুযায়ী recent uploads track করে।
+"হারসীমা চালু করুন" চালু করার পর ImgBed আপলোডকারীর IP ঠিকানা ধরে সাম্প্রতিক আপলোড অনুসরণ করে.
 
-Default values:
+ডিফল্ট মান:
 
-| Setting | Default | Description |
+| সেটিং | ডিফল্ট | বর্ণনা |
 | --- | --- | --- |
-| Detection window | 1.5 hours | কত সময় পেছনের upload records count হবে। |
-| Max file count | 20 | Detection window-এ allowed maximum file count। |
-| Single file size limit | 20 MB | একটি file-এর maximum size। |
-| Total upload size limit | 200 MB | Detection window-এ maximum total upload size। |
+| সনাক্তকরণ সময়সীমা | 1.5 ঘণ্টা | কত আগের আপলোড রেকর্ড গণনায় ধরা হবে. |
+| সর্বোচ্চ ফাইল সংখ্যা | 20 | সনাক্তকরণ সময়সীমার মধ্যে অনুমোদিত সর্বোচ্চ ফাইল সংখ্যা. |
+| একক ফাইলের আকারসীমা | 20 MB | একটি ফাইলের সর্বোচ্চ আকার. |
+| মোট আপলোড আকারসীমা | 200 MB | সনাক্তকরণ সময়সীমার মধ্যে মোট আপলোডের সর্বোচ্চ আকার. |
 
-যেমন, 1.5 hour window, 20 files, প্রতি file 20 MB এবং মোট 200 MB থাকলে same IP থেকে uploads কোনো configured limit ছাড়ালেই block হবে।
+উদাহরণস্বরূপ, 1.5 ঘণ্টার সময়সীমা, 20টি ফাইল, প্রতি ফাইলে 20 MB এবং মোট 200 MB হলে একই IP থেকে আপলোড কোনো নির্ধারিত সীমা ছাড়ালেই ব্লক হবে.
 
-## File Types Exclude করা
+## ফাইলের ধরন বাদ দেওয়া
 
-`Excluded upload file types` regular users বা visitors-কে selected file categories upload করা থেকে আটকায়।
+"বাদ দেওয়া আপলোড ফাইলের ধরন" নিয়মিত ব্যবহারকারী বা দর্শকদের নির্বাচিত ফাইল শ্রেণি আপলোড করা থেকে আটকায়.
 
-Available categories:
+উপলব্ধ শ্রেণি:
 
-| Type | Description |
+| ধরন | বর্ণনা |
 | --- | --- |
-| Images | jpg, png, webp, gif এবং similar image files |
-| Videos | mp4, webm, mov এবং similar video files |
-| Audio | mp3, flac, wav এবং similar audio files |
-| Documents | pdf, txt, md, docx এবং similar document files |
-| Other | ওপরের categories-এর বাইরে files, যেমন zip, rar, exe, apk |
+| ছবি | jpg, png, webp, gif এবং অনুরূপ ছবি ফাইল |
+| ভিডিও | mp4, webm, mov এবং অনুরূপ ভিডিও ফাইল |
+| অডিও | mp3, flac, wav এবং অনুরূপ অডিও ফাইল |
+| ডকুমেন্ট | pdf, txt, md, docx এবং অনুরূপ ডকুমেন্ট ফাইল |
+| অন্যান্য | ওপরের শ্রেণির বাইরে থাকা ফাইল, যেমন zip, rar, exe, apk |
 
-Default-এ কোনো type selected থাকে না, অর্থাৎ সেটি allowed।
+ডিফল্টভাবে কোনো ধরন নির্বাচিত থাকে না, অর্থাৎ সেটি অনুমোদিত.
 
-কোনো type-এ click করলে সেটি highlight হয়, যার মানে সেই type blocked।
+কোনো ধরনে ক্লিক করলে সেটি হাইলাইট হয়, অর্থাৎ সেই ধরনটি ব্লক করা হয়েছে.
 
-`Other` selected থাকলে zip বা rar upload করা visitors block হবে এবং জানানো হবে যে এই file type supported নয়।
+"অন্যান্য" নির্বাচিত হলে দর্শকরা zip বা rar ফাইল আপলোড করতে পারবে না এবং দেখবে যে এই ফাইল ধরন সমর্থিত নয়.
 
-## Block Messages
+## ব্লক বার্তা
 
-Limit trigger হলে users matching message দেখে:
+কোনো সীমা কার্যকর হলে ব্যবহারকারী মিল থাকা বার্তা দেখে:
 
-![Too frequent upload message](../../image/other/频繁报错提示.png)
+![অত্যধিক ঘন আপলোড বার্তা](../../image/other/频繁报错提示.png)
 
-| Scenario | Message Meaning |
+| পরিস্থিতি | বার্তার অর্থ |
 | --- | --- |
-| Single file too large | File খুব বড়; upload-এর আগে compress করা উচিত। |
-| File type blocked | এই file type supported নয়। সরিয়ে আবার চেষ্টা করুন। |
-| Uploads too frequent | Recent uploads খুব frequent; retry time দেখানো হবে। |
-| Total size too high | Recent total upload size খুব বেশি; retry time দেখানো হবে। |
+| একক ফাইল খুব বড় | ফাইলটি খুব বড়, আপলোডের আগে সংকুচিত করা উচিত. |
+| ফাইলের ধরন ব্লক | এই ফাইল ধরন সমর্থিত নয়. এটি সরিয়ে আবার চেষ্টা করুন. |
+| আপলোড খুব ঘন ঘন | সাম্প্রতিক আপলোড খুব ঘন ঘন হয়েছে, পুনরায় চেষ্টা করার সময় দেখানো হয়. |
+| মোট আকার খুব বেশি | সাম্প্রতিক মোট আপলোড আকার খুব বেশি, পুনরায় চেষ্টা করার সময় দেখানো হয়. |
 
-## কখন Enable করবেন
+## কখন চালু করবেন
 
-আপনার upload homepage publicly accessible হলে user rate limits enable করুন।
+আপনার আপলোড হোমপেজ প্রকাশ্যে প্রবেশযোগ্য হলে ব্যবহারকারীর হারসীমা চালু করুন.
 
-Common reasons:
+সাধারণ কারণ:
 
-- Scripted bulk uploads নিয়ে চিন্তা আছে।
-- Visitor uploads-এর large files limit করতে চান।
-- Regular users যেন শুধু images upload করে, archives বা installers নয়।
-- Public upload available রাখতে চান, কিন্তু resource usage control করতে চান।
+- স্ক্রিপ্ট দিয়ে ব্যাপক আপলোডের আশঙ্কা আছে.
+- দর্শকদের বড় ফাইল আপলোড সীমিত করতে চান.
+- নিয়মিত ব্যবহারকারীদের শুধু ছবি আপলোড করতে দিতে চান, আর্কাইভ বা ইনস্টলার নয়.
+- প্রকাশ্য আপলোড চালু রাখতে চান, কিন্তু সম্পদ ব্যবহার নিয়ন্ত্রণ করতে চান.
 
-Site শুধু নিজের জন্য হলে, বা শুধু administrators upload করলে এটি disabled রাখতে পারেন।
+সাইটটি শুধু নিজের জন্য হলে, অথবা শুধু অ্যাডমিনরা আপলোড করতে পারলে, এটি বন্ধ রাখা যায়.
+

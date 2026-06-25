@@ -8,7 +8,7 @@
 
 - جس storage account یا API credentials کو استعمال کرنا ہے، انہیں تیار رکھیں۔
 - یقینی بنائیں کہ آپ کا ImgBed domain کھل رہا ہے، کیونکہ OAuth channels کو callback URL چاہیے۔
-- channel add کرنے کے بعد پہلے ایک test image upload کریں، تاکہ file save اور open ہونا confirm ہو سکے۔
+- چینل شامل کرنے کے بعد پہلے ایک آزمائشی تصویر upload کریں، تاکہ file save اور open ہونے کی تصدیق ہو سکے۔
 
 ## Channel فہرست
 
@@ -29,5 +29,5 @@
 ## اس باب میں کیا ہے
 
 - ہر upload channel کے لیے setup سے پہلے کون سی معلومات چاہیے۔
-- third-party platforms پر app بنانا، keys copy کرنا یا Token authorize کرنا۔
+- third-party platforms پر app بنانا، keys کاپی کرنا یا Token authorize کرنا۔
 - ImgBed میں channel configuration بھرنا اور upload کے کام کرنے کی تصدیق کرنا۔

@@ -113,17 +113,17 @@ Po zakończeniu kliknij Zapisz.
 ## Szybka lista
 
 ```text
-Utwórz serwer Discord
--> Utwórz kanał tekstowy
--> Utwórz bota w Discord Developer Portal
--> Zapisz Bot Token ze strony Bot
--> W OAuth2 wybierz bot, View Channels, Send Messages, Attach Files i Read Message History
--> Skopiuj wygenerowany URL i autoryzuj bota na serwerze docelowym
--> Upewnij się, że docelowy kanał tekstowy ma te same uprawnienia
--> Włącz Developer Mode
--> Kliknij prawym przyciskiem kanał tekstowy i skopiuj Channel ID
--> Wpisz Bot Token i Channel ID w ImgBed
--> Zapisz i prześlij obraz testowy
+Create a Discord server
+-> Create a text channel
+-> Create a bot in the Discord Developer Portal
+-> Save the Bot Token from the Bot page
+-> In OAuth2, select bot, View Channels, Send Messages, Attach Files, and Read Message History
+-> Copy the generated URL and authorize the bot for the target server
+-> Make sure the target text channel grants the same permissions
+-> Enable Developer Mode
+-> Right-click the target text channel and copy the Channel ID
+-> Enter the Bot Token and Channel ID in ImgBed
+-> Save and upload a test image
 ```
 
 ## Referencje

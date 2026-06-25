@@ -1,12 +1,12 @@
-# Authentication และ Login Device Management
+# การยืนยันตัวตนและการจัดการอุปกรณ์เข้าสู่ระบบ
 
-`Authentication Management` และ `Login Device Management` ใช้ปกป้อง ImgBed admin panel, public upload entry และ WebDAV access
+`การจัดการการยืนยันตัวตน` และ `การจัดการอุปกรณ์เข้าสู่ระบบ` ช่วยปกป้องแผงผู้ดูแลระบบ ImgBed, ทางเข้าการอัปโหลดสาธารณะ และการเข้าถึง WebDAV
 
-หน้านี้ใช้ตั้งค่า access credentials, ตรวจดู devices ที่ sign in อยู่ และ revoke sessions เก่าหากจำเป็น
+ใช้หน้านี้เพื่อตั้งค่าข้อมูลรับรองการเข้าถึง ตรวจสอบอุปกรณ์ที่เข้าสู่ระบบ และเพิกถอนเซสชันเก่าเมื่อจำเป็น
 
 ## ตั้งค่าที่ไหน
 
-เปิด admin panel แล้วไปที่:
+เปิดแผงผู้ดูแลระบบ แล้วไปที่:
 
 ```text
 System Settings -> Security Settings
@@ -14,139 +14,139 @@ System Settings -> Security Settings
 
 หน้านี้มีสองส่วนหลัก:
 
-- Authentication Management
-- Login Device Management
+- การจัดการการยืนยันตัวตน
+- การจัดการอุปกรณ์เข้าสู่ระบบ
 
-![Authentication management](../../image/Safety/认证管理界面.png)
+![การจัดการการยืนยันตัวตน](../../image/Safety/认证管理界面.png)
 
-## Authentication Management ทำอะไร
+## การจัดการการยืนยันตัวตนทำอะไร
 
-Authentication Management เก็บ access credentials
+การจัดการการยืนยันตัวตนเก็บข้อมูลรับรองการเข้าถึง
 
 มีสองประเภท:
 
-- User-side authentication
-- Admin-side authentication
+- การยืนยันตัวตนฝั่งผู้ใช้
+- การยืนยันตัวตนฝั่งผู้ดูแลระบบ
 
-## User-Side Authentication
+## การยืนยันตัวตนฝั่งผู้ใช้
 
-User-side authentication คือ upload password
+การยืนยันตัวตนฝั่งผู้ใช้คือรหัสผ่านสำหรับอัปโหลด
 
-เมื่อกำหนด upload password แล้ว visitors ทั่วไปต้องใส่ password ก่อนใช้ upload page เหมาะเมื่อไม่ต้องการเปิด public upload page ให้ทุกคนใช้งานได้ทันที
+หลังจากตั้งรหัสผ่านสำหรับอัปโหลดแล้ว ผู้เยี่ยมชมทั่วไปต้องป้อนรหัสผ่านก่อนใช้หน้าอัปโหลด วิธีนี้มีประโยชน์เมื่อคุณไม่ต้องการให้หน้าอัปโหลดสาธารณะเปิดให้ทุกคนใช้
 
-![User login page](../../image/Safety/用户端登录界面.png)
+![หน้าล็อกอินผู้ใช้](../../image/Safety/用户端登录界面.png)
 
-### ตั้งค่า Upload Password
+### การตั้งรหัสผ่านสำหรับอัปโหลด
 
-เมื่อ configure upload password แล้ว:
+เมื่อกำหนดรหัสผ่านสำหรับอัปโหลดแล้ว:
 
-- Visitors ต้องใส่ password ก่อนใช้ upload page
-- จะ upload ได้หลังจาก password ถูกต้องเท่านั้น
-- ถ้าเปิด user-side device sessions ไว้ ImgBed จะบันทึก user-side device นั้น
+- ผู้เยี่ยมชมต้องป้อนรหัสผ่านก่อนใช้หน้าอัปโหลด
+- จะอัปโหลดได้หลังจากรหัสผ่านถูกยอมรับแล้วเท่านั้น
+- หากเปิดใช้เซสชันอุปกรณ์ฝั่งผู้ใช้ ImgBed จะบันทึกอุปกรณ์ฝั่งผู้ใช้นั้น
 
-การเปลี่ยน upload password จะทำให้ user-side sessions เก่า invalid Visitors ต้องใส่ password ใหม่อีกครั้ง
+การเปลี่ยนรหัสผ่านสำหรับอัปโหลดจะทำให้เซสชันฝั่งผู้ใช้เก่าใช้ไม่ได้ ผู้เยี่ยมชมต้องป้อนรหัสผ่านใหม่อีกครั้ง
 
-## Admin-Side Authentication
+## การยืนยันตัวตนฝั่งผู้ดูแลระบบ
 
-Admin-side authentication ใช้ admin username และ password
+การยืนยันตัวตนฝั่งผู้ดูแลระบบใช้ชื่อผู้ใช้ผู้ดูแลระบบและรหัสผ่าน
 
-ส่วนนี้ปกป้อง admin panel สำหรับ production use ควร configure ไว้เสมอ
+สิ่งนี้ปกป้องแผงผู้ดูแลระบบ สำหรับการใช้งานจริง คุณควรตั้งค่าไว้เสมอ
 
-![Admin login page](../../image/Safety/管理端登录界面.png)
+![หน้าล็อกอินผู้ดูแลระบบ](../../image/Safety/管理端登录界面.png)
 
-### ตั้งค่า Admin Credentials
+### การตั้งค่าข้อมูลรับรองผู้ดูแลระบบ
 
-เมื่อ configure admin username และ password แล้ว:
+เมื่อกำหนดชื่อผู้ใช้ผู้ดูแลระบบและรหัสผ่านแล้ว:
 
-- ต้อง login ก่อนเปิด admin panel
-- Login สำเร็จแล้วจะสร้าง admin device record
-- ใน Login Device Management สามารถ review, clean up หรือ force devices offline ได้
+- การเปิดแผงผู้ดูแลระบบต้องเข้าสู่ระบบ
+- การเข้าสู่ระบบสำเร็จจะสร้างบันทึกอุปกรณ์ผู้ดูแลระบบ
+- คุณสามารถตรวจสอบ ล้าง หรือบังคับให้อุปกรณ์ออฟไลน์ได้ในส่วนการจัดการอุปกรณ์เข้าสู่ระบบ
 
-การเปลี่ยน admin username หรือ password จะทำให้ admin sessions เก่า invalid ต้อง sign in ใหม่
+การเปลี่ยนชื่อผู้ใช้ผู้ดูแลระบบหรือรหัสผ่านจะทำให้เซสชันผู้ดูแลระบบเก่าใช้ไม่ได้ คุณต้องเข้าสู่ระบบใหม่
 
-## Login Device Management ทำอะไร
+## การจัดการอุปกรณ์เข้าสู่ระบบทำอะไร
 
-Login Device Management แสดง devices ที่เคย sign in
+การจัดการอุปกรณ์เข้าสู่ระบบแสดงอุปกรณ์ที่เคยเข้าสู่ระบบ
 
-ช่วยตรวจได้ว่า:
+ช่วยให้คุณตรวจสอบได้ว่า:
 
-- Devices ใด access admin panel
-- Devices ใด access user-side upload page
-- WebDAV clients ใด connected
-- Device session ยัง valid อยู่หรือไม่
-- ควร force offline devices เก่าหรือไม่
+- อุปกรณ์ใดเข้าถึงแผงผู้ดูแลระบบแล้ว
+- อุปกรณ์ใดเข้าถึงหน้าอัปโหลดฝั่งผู้ใช้แล้ว
+- ไคลเอนต์ WebDAV ใดเชื่อมต่อแล้ว
+- เซสชันของอุปกรณ์ยังใช้ได้หรือไม่
+- ควรบังคับให้อุปกรณ์เก่าออฟไลน์หรือไม่
 
-Page มีสาม tabs:
+หน้านี้มีสามแท็บ:
 
-- Admin
-- User
+- ผู้ดูแลระบบ
+- ผู้ใช้
 - WebDAV
 
-## Global Cookie Security
+## ความปลอดภัย cookie แบบรวม
 
-ด้านบนของ Login Device Management สามารถ configure global cookie behavior ได้
+ด้านบนของการจัดการอุปกรณ์เข้าสู่ระบบ คุณสามารถตั้งค่าพฤติกรรม cookie แบบรวมได้
 
-### User Cookie Lifetime
+### อายุ cookie ของผู้ใช้
 
-ควบคุมว่า user-side login จะ active ได้นานกี่วัน
+ควบคุมว่าการเข้าสู่ระบบฝั่งผู้ใช้จะคงอยู่ได้กี่วัน
 
-เช่น ตั้งเป็น 14 days โดยปกติ visitors ไม่ต้องใส่ upload password ซ้ำภายใน 14 วัน
+ตัวอย่างเช่น หากตั้งเป็น 14 วัน ผู้เยี่ยมชมมักไม่ต้องป้อนรหัสผ่านสำหรับอัปโหลดอีกภายใน 14 วัน
 
-### Admin Cookie Lifetime
+### อายุ cookie ของผู้ดูแลระบบ
 
-ควบคุมว่า admin login จะ active ได้นานกี่วัน
+ควบคุมว่าการเข้าสู่ระบบของผู้ดูแลระบบจะคงอยู่ได้กี่วัน
 
-เช่น ตั้งเป็น 14 days โดยปกติ administrators ไม่ต้อง sign in ซ้ำภายใน 14 วัน
+ตัวอย่างเช่น หากตั้งเป็น 14 วัน ผู้ดูแลระบบมักไม่ต้องเข้าสู่ระบบอีกภายใน 14 วัน
 
-### Secure Mode
+### โหมดปลอดภัย
 
-เมื่อเปิด Secure mode browsers จะส่ง login cookies ผ่าน HTTPS เท่านั้น
+เมื่อเปิดโหมดปลอดภัย เบราว์เซอร์จะส่ง cookie เข้าสู่ระบบผ่าน HTTPS เท่านั้น
 
-ควร enable สำหรับ production HTTPS sites ห้ามเปิดตอน local HTTP testing ไม่เช่นนั้นอาจเจออาการ "login สำเร็จ แต่ refresh แล้วหลุดออก"
+เปิดใช้สำหรับไซต์จริงที่ใช้ HTTPS อย่าเปิดใช้ในการทดสอบ HTTP ภายในเครื่อง มิฉะนั้นคุณอาจพบพฤติกรรมแบบ "เข้าสู่ระบบสำเร็จ แต่รีเฟรชแล้วถูกออกจากระบบ"
 
-## Admin Login Devices
+## อุปกรณ์เข้าสู่ระบบของผู้ดูแลระบบ
 
-Admin tab แสดง devices ที่ sign in เข้า admin panel
+แท็บผู้ดูแลระบบแสดงอุปกรณ์ที่เข้าสู่แผงผู้ดูแลระบบ
 
-Device records จะแสดงเมื่อ configure admin credentials แล้ว และเข้าถึง admin panel ผ่าน login
+บันทึกอุปกรณ์จะปรากฏหลังจากตั้งค่าข้อมูลรับรองผู้ดูแลระบบและเข้าแผงผู้ดูแลระบบผ่านการล็อกอินแล้วเท่านั้น
 
-แต่ละ device card อาจแสดง:
+การ์ดอุปกรณ์แต่ละใบอาจแสดง:
 
-- Device และ browser information
-- First login IP
-- Last active IP
-- Login time
-- Last active time
-- Expiration time
-- Current status
+- ข้อมูลอุปกรณ์และเบราว์เซอร์
+- IP ที่เข้าสู่ระบบครั้งแรก
+- IP ที่ใช้งานล่าสุด
+- เวลาเข้าสู่ระบบ
+- เวลาใช้งานล่าสุด
+- เวลาหมดอายุ
+- สถานะปัจจุบัน
 
-ถ้าเห็น device ที่ไม่รู้จัก ให้ใช้ `Force Offline` เพื่อทำให้ invalid
+หากเห็นอุปกรณ์ที่ไม่คุ้นเคย ให้ใช้ `บังคับให้ออฟไลน์` เพื่อทำให้เซสชันนั้นใช้ไม่ได้
 
-## Clean Up Old Devices
+## ล้างอุปกรณ์เก่า
 
-`Clean Up Old Devices` ลบ login records เก่าใน tab ปัจจุบันแบบ bulk
+`ล้างอุปกรณ์เก่า` จะลบบันทึกการเข้าสู่ระบบเก่าในแท็บปัจจุบันแบบเป็นชุด
 
-ใช้เมื่อสงสัยว่า sessions เก่าอาจยัง active อยู่บน devices อื่น
+ใช้เมื่อคุณสงสัยว่าเซสชันเก่าบนอุปกรณ์อื่นอาจยังคงใช้งานอยู่
 
-## Force Offline
+## บังคับให้ออฟไลน์
 
-`Force Offline` ทำให้ device session หนึ่ง invalid
+`บังคับให้ออฟไลน์` ทำให้เซสชันของอุปกรณ์หนึ่งเครื่องใช้ไม่ได้
 
-หลัง force offline แล้ว:
+หลังจากอุปกรณ์ถูกบังคับให้ออฟไลน์:
 
-- Admin devices ต้อง sign in ใหม่
-- User-side devices ต้องใส่ upload password ใหม่
-- WebDAV clients ต้อง authenticate ใหม่
+- อุปกรณ์ผู้ดูแลระบบต้องเข้าสู่ระบบใหม่
+- อุปกรณ์ฝั่งผู้ใช้ต้องป้อนรหัสผ่านสำหรับอัปโหลดอีกครั้ง
+- ไคลเอนต์ WebDAV ต้องยืนยันตัวตนอีกครั้ง
 
-Expired หรือ invalid devices สามารถลบได้เช่นกัน
+สามารถลบอุปกรณ์ที่หมดอายุหรือใช้ไม่ได้แล้วได้เช่นกัน
 
-## Sign Out Current Device
+## ออกจากระบบอุปกรณ์ปัจจุบัน
 
-Current device card จะถูก mark เป็น `Current Device`
+การ์ดของอุปกรณ์ปัจจุบันจะถูกทำเครื่องหมายว่า `อุปกรณ์ปัจจุบัน`
 
-หลัง sign out current device:
+หลังจากออกจากระบบอุปกรณ์ปัจจุบัน:
 
-- Current admin session จะ sign out
-- Current user-side session จะ sign out
+- เซสชันผู้ดูแลระบบปัจจุบันจะถูกออกจากระบบ
+- เซสชันฝั่งผู้ใช้ปัจจุบันจะถูกออกจากระบบ
 
-ต้อง sign in ใหม่ก่อนใช้งานส่วนนั้นต่อ
+คุณต้องเข้าสู่ระบบใหม่ก่อนใช้งานส่วนนั้นต่อ

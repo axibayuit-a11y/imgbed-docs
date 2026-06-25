@@ -1,122 +1,122 @@
-# Tambah Telegram Channel
+# Tambah Saluran Telegram
 
-## Perkara Yang Perlu Disediakan
+## Perkara Yang Diperlukan Sebelum Bermula
 
-| Requirement | Purpose |
+| Keperluan | Tujuan |
 | --- | --- |
-| Telegram account | Digunakan untuk mencipta bot dan storage channel. |
-| `@BotFather` | Digunakan untuk mencipta Telegram bot. |
-| Telegram channel | Destinasi akhir untuk menyimpan files. |
-| `@userinfobot` | Digunakan untuk mendapatkan `Chat ID` channel. |
+| Akaun Telegram | Digunakan untuk membuat bot dan saluran storan. |
+| `@BotFather` | Digunakan untuk membuat bot Telegram. |
+| Saluran Telegram | Destinasi storan akhir untuk fail. |
+| `@userinfobot` | Digunakan untuk mencari `Chat ID` saluran. |
 
-## Di Mana Untuk Menambahnya
+## Tempat Menambahkannya
 
-1. Buka System Settings.
-2. Pergi ke Upload Settings.
-3. Klik Add Channel di penjuru kanan atas.
+1. Buka Tetapan Sistem.
+2. Pergi ke Tetapan Muat Naik.
+3. Klik Tambah Saluran di penjuru kanan atas.
 4. Pilih `Telegram`.
 
-## Field Reference
+## Rujukan Medan
 
-| Field | Fungsi | Required |
+| Medan | Fungsi | Wajib |
 | --- | --- | --- |
-| Channel name | Nama mesra untuk channel ini, contohnya "Telegram Primary". | Required |
-| Active | Mengaktifkan atau menyahaktifkan channel ini. | Recommended |
-| Bot Token | Token untuk Telegram bot anda. | Required |
-| Session ID (Chat ID) | ID untuk Telegram channel. | Required |
-| Relay Proxy URL (optional) | Gunakan hanya jika akses Telegram tidak stabil. Masukkan proxy URL penuh termasuk `https://`. | Optional |
-| Remark | Nota untuk penyelenggaraan kemudian. | Optional |
+| Nama saluran | Nama mesra untuk saluran ini, seperti "Telegram Utama". | Wajib |
+| Aktif | Mendayakan atau menyahdayakan saluran ini. | Disyorkan |
+| Bot Token | Token bot Telegram anda. | Wajib |
+| Session ID (Chat ID) | ID saluran Telegram. | Wajib |
+| URL Proksi Relay (pilihan) | Gunakan hanya jika akses Telegram tidak stabil. Masukkan URL proksi penuh, termasuk `https://`. | Pilihan |
+| Catatan | Nota untuk penyelenggaraan akan datang. | Pilihan |
 
-## Langkah Setup
+## Langkah Persediaan
 
-### 1. Cipta Telegram Bot
+### 1. Buat Bot Telegram
 
 1. Buka Telegram dan cari `@BotFather`.
 2. Buka chat dan klik `Start`.
 3. Hantar `/newbot`.
-4. Ikut prompt untuk masukkan bot display name.
-5. Ikut prompt untuk masukkan bot username. Biasanya username perlu berakhir dengan `bot`.
-6. Selepas bot dicipta, `@BotFather` akan memberi bot token.
+4. Ikut arahan untuk memasukkan nama paparan bot.
+5. Ikut arahan untuk memasukkan nama pengguna bot. Biasanya nama pengguna perlu berakhir dengan `bot`.
+6. Selepas bot dibuat, `@BotFather` akan mengembalikan bot token.
 
-Token ini ialah `Bot Token` yang perlu dimasukkan dalam ImgBed.
+Token ini ialah `Bot Token` yang perlu anda masukkan dalam ImgBed.
 
-![Save the bot token](../../image/upload/telegram/保存机器人令牌.png)
+![Simpan token bot](../../image/upload/telegram/保存机器人令牌.png)
 
-### 2. Cipta Channel
+### 2. Buat Saluran
 
-1. Dalam Telegram, klik New Channel.
-2. Masukkan channel name.
-3. Selesaikan proses mencipta channel.
+1. Dalam Telegram, klik `New Channel`.
+2. Masukkan nama saluran.
+3. Selesaikan penciptaan saluran.
 
-Public dan private channel kedua-duanya boleh digunakan.
+Saluran awam dan peribadi boleh digunakan.
 
-![Create a channel](../../image/upload/telegram/新建频道.png)
+![Buat saluran](../../image/upload/telegram/新建频道.png)
 
-### 3. Tambah Bot Ke Channel
+### 3. Tambah Bot Ke Saluran
 
-1. Buka channel yang baru dicipta.
-2. Buka channel settings.
-3. Tambah member atau administrator.
-4. Cari bot username yang anda cipta.
-5. Tambah bot ke channel.
+1. Buka saluran yang baru dibuat.
+2. Buka tetapan saluran.
+3. Tambah ahli atau pentadbir.
+4. Cari nama pengguna bot yang anda buat.
+5. Tambah bot ke saluran.
 
-Untuk upload yang paling stabil, berikan bot permission administrator.
+Untuk muat naik yang paling boleh dipercayai, berikan kebenaran pentadbir kepada bot.
 
-![Invite the bot to the channel](../../image/upload/telegram/邀请机器人进频道里.png)
+![Jemput bot ke saluran](../../image/upload/telegram/邀请机器人进频道里.png)
 
 ### 4. Dapatkan Channel ID Dengan User Info - Get ID - IDbot
 
-1. Cari `@userinfobot` dalam Telegram. Display name biasanya `User Info - Get ID - IDbot`.
+1. Cari `@userinfobot` dalam Telegram. Nama paparannya biasanya `User Info - Get ID - IDbot`.
 2. Buka chat dan klik `Start`.
-3. Pilih `Channel` daripada pilihan yang diberi oleh bot.
-4. Dalam message picker, pilih target channel dan hantar kepada `@userinfobot`.
-5. Apabila `@userinfobot` memberi hasil, copy nombor yang ditunjukkan sebagai `Id: -100...`.
+3. Pilih `Channel` daripada pilihan yang diberikan oleh bot.
+4. Dalam pemilih mesej, pilih saluran sasaran dan hantar kepada `@userinfobot`.
+5. Apabila `@userinfobot` mengembalikan hasil, salin nombor yang ditunjukkan sebagai `Id: -100...`.
 
 Nombor yang bermula dengan `-100` ialah `Session ID (Chat ID)` yang diperlukan oleh ImgBed.
 
-![Get the channel ID](../../image/upload/telegram/获取频道id.png)
+![Dapatkan channel ID](../../image/upload/telegram/获取频道id.png)
 
-### 5. Isi Telegram Channel Dalam ImgBed
+### 5. Isi Saluran Telegram Dalam ImgBed
 
-Kembali ke channel configuration dialog dan isi seperti berikut:
+Kembali ke dialog konfigurasi saluran dan isi medan seperti berikut:
 
-| UI Field | Value |
+| Medan UI | Nilai |
 | --- | --- |
-| Channel Identifier | Nama channel tersuai, contohnya `TelegramPrimary`. |
-| Active | Recommended. |
+| Pengecam saluran | Nama saluran tersuai, contohnya `TelegramPrimary`. |
+| Aktif | Disyorkan. |
 | Bot Token | Bot token daripada `@BotFather`. |
-| Session ID (Chat ID) | Nombor `-100...` yang diberi oleh `@userinfobot`. |
-| Relay Proxy URL (optional) | Hanya jika perlu, contohnya `https://your-tg-proxy.example.com`. |
-| Remark | Nota pilihan. |
+| Session ID (Chat ID) | Nombor `-100...` yang dikembalikan oleh `@userinfobot`. |
+| URL Proksi Relay (pilihan) | Hanya jika diperlukan, contohnya `https://your-tg-proxy.example.com`. |
+| Catatan | Nota pilihan. |
 
-Klik Save apabila selesai.
+Klik Simpan apabila selesai.
 
-![Edit the configuration](../../image/upload/telegram/编辑配置.png)
+![Edit konfigurasi](../../image/upload/telegram/编辑配置.png)
 
-## Cara Menyemak
+## Cara Mengesahkan
 
-| Check | Cara Menyemak |
+| Semakan | Cara Mengesahkan |
 | --- | --- |
-| Channel card muncul | Selepas save, halaman Upload Settings patut memaparkan Telegram channel card. |
-| Channel boleh diaktifkan | Active switch patut kekal on. |
-| Configuration disimpan | Detail view patut menunjukkan Bot Token dan Chat ID telah disimpan. |
-| Upload berfungsi | Upload test image dan pastikan ia muncul dalam Telegram channel sasaran. |
+| Kad saluran muncul | Selepas menyimpan, halaman Tetapan Muat Naik sepatutnya memaparkan kad saluran Telegram. |
+| Saluran boleh didayakan | Suis aktif sepatutnya kekal hidup. |
+| Konfigurasi disimpan | Paparan butiran sepatutnya menunjukkan bahawa Bot Token dan Chat ID telah disimpan. |
+| Muat naik berfungsi | Muat naik imej ujian dan sahkan imej itu muncul dalam saluran Telegram sasaran. |
 
-## Quick Checklist
+## Senarai Semak Pantas
 
 ```text
-Cipta bot dengan @BotFather
--> Simpan Bot Token
--> Cipta Telegram channel
--> Tambah bot ke channel dan beri administrator permissions
--> Cari @userinfobot dan pilih Channel
--> Forward mana-mana message daripada channel kepada @userinfobot
--> Copy Id: -100... yang dipulangkan
--> Masukkan Bot Token dan Chat ID dalam ImgBed
--> Save dan upload test image
+Create a bot with @BotFather
+-> Save the Bot Token
+-> Create a Telegram channel
+-> Add the bot to the channel and grant administrator permissions
+-> Search for @userinfobot and choose Channel
+-> Forward any message from the channel to @userinfobot
+-> Copy the returned Id: -100...
+-> Enter the Bot Token and Chat ID in ImgBed
+-> Save and upload a test image
 ```
 
-## References
+## Rujukan
 
 1. Telegram bots: https://core.telegram.org/bots
 2. Telegram Bot API: https://core.telegram.org/bots/api

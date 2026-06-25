@@ -2,16 +2,16 @@
 
 ## पहले क्या चाहिए
 
-| ज़रूरत | क्यों चाहिए |
+| आवश्यकता | क्यों चाहिए |
 | --- | --- |
-| Dropbox account | sign in और app authorize करने के लिए |
-| Dropbox app | `App Key` और `App Secret` generate करने के लिए |
-| आपका ImgBed domain | OAuth redirect URI के लिए |
-| उपलब्ध Dropbox storage | असली file storage location |
+| Dropbox खाता | साइन इन करने और ऐप्लिकेशन को अधिकृत करने के लिए |
+| Dropbox ऐप्लिकेशन | `App Key` और `App Secret` बनाने के लिए |
+| आपका ImgBed डोमेन | OAuth redirect URI के रूप में उपयोग करने के लिए |
+| Dropbox में उपलब्ध स्टोरेज | फ़ाइलों के वास्तविक स्टोरेज स्थान के रूप में |
 
-## Setup Steps
+## कॉन्फ़िगरेशन चरण
 
-### Step 1: Dropbox App बनाएँ
+### चरण 1: Dropbox ऐप्लिकेशन बनाएँ
 
 1. Dropbox App Console खोलें:
 
@@ -19,137 +19,137 @@
 https://www.dropbox.com/developers/apps
 ```
 
-2. नया app बनाएँ।
-3. access type के लिए चुनें:
+2. नया ऐप्लिकेशन बनाएँ।
+3. एक्सेस प्रकार के लिए चुनें:
 
 ```text
 App folder
 ```
 
-4. app को पहचानने लायक नाम दें, जैसे `imgbed-app`।
-5. बनने के बाद app details page खोलें।
+4. ऐप्लिकेशन को पहचानने योग्य नाम दें, जैसे `imgbed-app`।
+5. बनने के बाद ऐप्लिकेशन का विवरण पेज खोलें।
 
-Recommended access type:
+सुझाया गया एक्सेस प्रकार:
 
-| Access Type | Recommendation |
+| एक्सेस प्रकार | सुझाव |
 | --- | --- |
-| `App folder` | सुझाया गया। यह ImgBed के file storage तरीके से match करता है। |
-| `Full Dropbox` | सुझाया नहीं गया। ImgBed को पूरे account access की ज़रूरत नहीं। |
+| `App folder` | सुझाया गया। यह ImgBed के फ़ाइल स्टोरेज तरीके से मेल खाता है। |
+| `Full Dropbox` | सुझाया नहीं गया। ImgBed को पूरे खाते की पूर्ण पहुँच की आवश्यकता नहीं है। |
 
-![Dropbox app बनाएँ](../../image/upload/dropbox/开发者创建应用.png)
+![Dropbox ऐप्लिकेशन बनाएँ](../../image/upload/dropbox/开发者创建应用.png)
 
-### Step 2: Redirect URI जोड़ें
+### चरण 2: Redirect URI जोड़ें
 
-Dropbox app details page में OAuth या Redirect URI settings ढूँढें और जोड़ें:
+Dropbox ऐप्लिकेशन के विवरण पेज में OAuth या Redirect URI सेटिंग्स खोजें और जोड़ें:
 
 ```text
 https://your-domain.com/api/oauth/dropbox/callback
 ```
 
-अगर admin panel कई domains से use होता है, तो हर matching callback URL जोड़ें।
+यदि प्रशासन पैनल कई डोमेन से उपयोग होता है, तो हर संबंधित कॉलबैक URL जोड़ें।
 
-![Redirect URI configure करें](../../image/upload/dropbox/配置回调地址.png)
+![Redirect URI कॉन्फ़िगर करें](../../image/upload/dropbox/配置回调地址.png)
 
-### Step 3: App Permissions configure करें
+### चरण 3: ऐप्लिकेशन अनुमतियाँ कॉन्फ़िगर करें
 
-`Permissions` tab खोलें और कम से कम ये scopes enable करें:
+`Permissions` टैब खोलें और कम से कम ये स्कोप सक्षम करें:
 
-| Scope | Required | Purpose |
+| स्कोप | आवश्यक | उद्देश्य |
 | --- | --- | --- |
-| `account_info.read` | हाँ | account और quota information पढ़ता है |
-| `files.metadata.read` | हाँ | path checks के लिए file और folder metadata पढ़ता है |
-| `files.metadata.write` | हाँ | folders create और metadata write करता है |
-| `files.content.write` | हाँ | files upload करता है। यह scope न हो तो `required scope 'files.content.write'` error आता है। |
-| `files.content.read` | सुझाया गया | download, preview और temporary file links allow करता है |
+| `account_info.read` | आवश्यक | खाता और कोटा जानकारी पढ़ता है |
+| `files.metadata.read` | आवश्यक | पथ जाँच के लिए फ़ाइल और फ़ोल्डर मेटाडेटा पढ़ता है |
+| `files.metadata.write` | आवश्यक | फ़ोल्डर बनाता है और मेटाडेटा लिखता है |
+| `files.content.write` | आवश्यक | फ़ाइलें अपलोड करता है। यह स्कोप न होने पर `required scope 'files.content.write'` दिखता है। |
+| `files.content.read` | सुझाया गया | डाउनलोड, पूर्वावलोकन और अस्थायी फ़ाइल लिंक की अनुमति देता है |
 
-scopes चुनने के बाद page के नीचे `Submit` पर क्लिक करें।
+स्कोप चुनने के बाद पेज के नीचे `Submit` पर क्लिक करें।
 
-![Permissions जोड़ें](../../image/upload/dropbox/添加对应的权限.png)
+![अनुमतियाँ जोड़ें](../../image/upload/dropbox/添加对应的权限.png)
 
 महत्वपूर्ण:
 
-| Situation | क्या करें |
+| स्थिति | क्या करें |
 | --- | --- |
-| आपने scopes बदले | token authorization flow फिर चलाएँ और नया `Refresh Token` लें। |
-| आपने reauthorize नहीं किया | पुराना token नई permissions नहीं पाएगा, इसलिए uploads फिर भी fail हो सकते हैं। |
+| आपने स्कोप बदले | टोकन अधिकरण प्रवाह फिर चलाएँ और नया `Refresh Token` प्राप्त करें। |
+| आपने फिर से अधिकृत नहीं किया | पुराना टोकन नई अनुमतियाँ नहीं पाएगा, इसलिए अपलोड फिर भी विफल हो सकते हैं। |
 
-### Step 4: App Credentials copy करें
+### चरण 4: ऐप्लिकेशन क्रेडेंशियल कॉपी करें
 
-Dropbox app page से ये दो values save करें:
+Dropbox ऐप्लिकेशन पेज से ये दो मान सहेजें:
 
-| Dropbox Field | ImgBed Field |
+| Dropbox फ़ील्ड | ImgBed फ़ील्ड |
 | --- | --- |
 | `App key` | `App Key` |
 | `App secret` | `App Secret` |
 
-### Step 5: Dropbox channel भरें
+### चरण 5: Dropbox चैनल भरें
 
-Upload Settings में `Dropbox` चुनें और भरें:
+अपलोड सेटिंग्स में `Dropbox` चुनें और भरें:
 
-| ImgBed Field | क्या डालें |
+| ImgBed फ़ील्ड | क्या दर्ज करें |
 | --- | --- |
-| Channel name | पहचानने लायक नाम, जैसे `Main Dropbox` |
+| चैनल नाम | पहचानने योग्य नाम, जैसे `Main Dropbox` |
 | App Key | Dropbox `App key` |
 | App Secret | Dropbox `App secret` |
 | Refresh Token | अभी खाली छोड़ें |
-| Root directory | optional। default `imgbed`। |
-| Note | optional |
+| रूट डायरेक्टरी | वैकल्पिक। डिफ़ॉल्ट `imgbed` है। |
+| नोट | वैकल्पिक |
 
-![Token लें](../../image/upload/dropbox/获取令牌.png)
+![टोकन प्राप्त करें](../../image/upload/dropbox/获取令牌.png)
 
-### Step 6: Refresh Token लें
+### चरण 6: Refresh Token प्राप्त करें
 
 1. ImgBed में `Get Token` पर क्लिक करें।
-2. जिस Dropbox account को connect करना है उससे sign in करें।
-3. authorization prompt approve करें।
-4. callback page `Refresh Token` दिखाएगा।
-5. इसे copy करें।
-6. ImgBed में लौटकर `Refresh Token` field में paste करें।
+2. जिस Dropbox खाते को जोड़ना है उससे साइन इन करें।
+3. अधिकरण अनुरोध स्वीकार करें।
+4. कॉलबैक पेज `Refresh Token` दिखाएगा।
+5. इसे कॉपी करें।
+6. ImgBed में लौटकर `Refresh Token` फ़ील्ड में पेस्ट करें।
 
-![Token copy करें](../../image/upload/dropbox/复制令牌.png)
+![टोकन कॉपी करें](../../image/upload/dropbox/复制令牌.png)
 
-## कैसे जाँचें
+## सत्यापन
 
-| जाँच | Expected Result |
+| जाँच | अपेक्षित परिणाम |
 | --- | --- |
-| Channel card | save के बाद Dropbox channel दिखाई देता है। |
-| Channel switch | channel enable किया जा सकता है। |
-| Token saved | detail page दिखाता है कि `Refresh Token` save हुआ है। |
-| Upload test | test image Dropbox app folder में दिखाई देती है। |
+| चैनल कार्ड | सहेजने के बाद Dropbox चैनल दिखाई देता है। |
+| चैनल स्विच | चैनल सक्षम किया जा सकता है। |
+| टोकन सहेजा गया | विवरण पेज दिखाता है कि `Refresh Token` सहेजा गया है। |
+| अपलोड परीक्षण | परीक्षण छवि Dropbox ऐप फ़ोल्डर में दिखाई देती है। |
 
-quota limits enabled हों तो quota query पर क्लिक करें। successful query के बाद channel card used space, total space और last update time दिखाता है।
+यदि कोटा सीमाएँ सक्षम हैं, तो कोटा क्वेरी पर क्लिक करें। सफल क्वेरी के बाद चैनल कार्ड उपयोग की गई जगह, कुल जगह और अंतिम अपडेट समय दिखाता है।
 
-![Quota query success](../../image/upload/dropbox/查询额度成功.png)
+![सफल कोटा क्वेरी](../../image/upload/dropbox/查询额度成功.png)
 
-## Troubleshooting
+## समस्या निवारण
 
-| Problem | Fix |
+| समस्या | समाधान |
 | --- | --- |
-| ImgBed configuration incomplete कहता है | जाँचें कि `App Key`, `App Secret` और `Refresh Token` सभी भरे हैं। |
-| Authorization successful है लेकिन `Refresh Token` नहीं दिखता | `Get Token` फिर क्लिक करें और offline authorization flow use होना confirm करें। |
-| Upload `required scope 'files.content.write'` से fail होता है | `files.content.write` enable करें, `Submit` क्लिक करें, फिर नया `Refresh Token` लें। |
-| Callback fail होता है | confirm करें कि redirect URI `https://your-domain.com/api/oauth/dropbox/callback` है। |
-| Files नहीं मिलतीं | confirm करें कि Dropbox app `App folder` mode में बना है। |
+| ImgBed बताता है कि कॉन्फ़िगरेशन अधूरा है | जाँचें कि `App Key`, `App Secret` और `Refresh Token` सभी भरे हुए हैं। |
+| अधिकरण पूरा होता है लेकिन `Refresh Token` नहीं दिखता | `Get Token` फिर क्लिक करें और सुनिश्चित करें कि ऑफ़लाइन अधिकरण प्रवाह उपयोग हो रहा है। |
+| अपलोड `required scope 'files.content.write'` के साथ विफल होता है | `files.content.write` सक्षम करें, `Submit` पर क्लिक करें, फिर नया `Refresh Token` लें। |
+| कॉलबैक विफल होता है | पुष्टि करें कि रीडायरेक्ट URI `https://your-domain.com/api/oauth/dropbox/callback` है। |
+| फ़ाइलें नहीं मिलतीं | पुष्टि करें कि Dropbox ऐप्लिकेशन `App folder` मोड में बनाया गया है। |
 
-## Quick Flow
+## त्वरित प्रवाह
 
 ```text
-Dropbox App Console खोलें
--> app बनाएँ
--> App folder access चुनें
--> https://your-domain.com/api/oauth/dropbox/callback जोड़ें
--> account_info.read / files.metadata.read / files.metadata.write / files.content.write enable करें
--> optional रूप से files.content.read enable करें
--> Submit क्लिक करें
--> App Key और App Secret copy करें
--> ImgBed में भरें
--> Get Token क्लिक करें
--> callback page से Refresh Token copy करें
--> ImgBed में paste करके save करें
+Open Dropbox App Console
+-> Create an app
+-> Choose App folder access
+-> Add https://your-domain.com/api/oauth/dropbox/callback
+-> Enable account_info.read / files.metadata.read / files.metadata.write / files.content.write
+-> Optionally enable files.content.read
+-> Click Submit
+-> Copy App Key and App Secret
+-> Fill them into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
-## References
+## संदर्भ
 
 1. Dropbox App Console: https://www.dropbox.com/developers/apps
-2. Dropbox OAuth Guide: https://developers.dropbox.com/oauth-guide
-3. Dropbox Developer Guide: https://www.dropbox.com/developers/reference/developer-guide
+2. Dropbox OAuth मार्गदर्शिका: https://developers.dropbox.com/oauth-guide
+3. Dropbox डेवलपर मार्गदर्शिका: https://www.dropbox.com/developers/reference/developer-guide

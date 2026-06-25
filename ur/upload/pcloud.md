@@ -11,36 +11,36 @@
 | --- | --- |
 | pCloud account email | pCloud API میں sign in کرنے کے لیے |
 | pCloud password | pCloud API میں sign in کرنے کے لیے |
-| API host | default `api.pcloud.com` ہے۔ EU accounts `eapi.pcloud.com` استعمال کر سکتے ہیں۔ |
-| Storage directory | files جہاں محفوظ ہوں گی۔ default `imgbed` ہے۔ |
+| API host | ڈیفالٹ `api.pcloud.com` ہے۔ EU accounts `eapi.pcloud.com` استعمال کر سکتے ہیں۔ |
+| Storage directory | files جہاں محفوظ ہوں گی۔ ڈیفالٹ `imgbed` ہے۔ |
 
 ## کہاں شامل کریں
 
-1. System Settings کھولیں۔
-2. Upload Settings کھولیں۔
+1. سسٹم سیٹنگز کھولیں۔
+2. اپ لوڈ سیٹنگز کھولیں۔
 3. اوپر دائیں طرف `Add Channel` پر کلک کریں۔
 4. `pCloud` منتخب کریں۔
 
-## Field Reference
+## فیلڈز کی تفصیل
 
-| Field | Purpose | Required |
+| فیلڈ | مقصد | ضروری |
 | --- | --- | --- |
-| Channel name | اس pCloud channel کی شناخت، مثلاً `Personal pCloud` | Yes |
-| Account email | آپ کا pCloud login email | Yes |
-| Password | آپ کا pCloud password | Yes |
-| API host | pCloud API host۔ default `api.pcloud.com` ہے۔ | No |
-| Storage directory | files محفوظ کرنے والی directory۔ default `imgbed` ہے۔ | No |
+| Channel name | اس pCloud channel کی شناخت، مثلاً `Personal pCloud` | ہاں |
+| Account email | آپ کا pCloud login email | ہاں |
+| Password | آپ کا pCloud password | ہاں |
+| API host | pCloud API host۔ ڈیفالٹ `api.pcloud.com` ہے۔ | نہیں |
+| Storage directory | files محفوظ کرنے والی directory۔ ڈیفالٹ `imgbed` ہے۔ | نہیں |
 
 account region کے مطابق API host منتخب کریں:
 
 | Account Region | API Host |
 | --- | --- |
-| Default / US | `api.pcloud.com` |
+| ڈیفالٹ / US | `api.pcloud.com` |
 | Europe | `eapi.pcloud.com` |
 
-## Setup Steps
+## سیٹ اپ کے مراحل
 
-1. Upload Settings کھولیں۔
+1. اپ لوڈ سیٹنگز کھولیں۔
 2. `Add Channel` پر کلک کریں۔
 3. `pCloud` منتخب کریں۔
 4. ایسا channel name درج کریں جسے آپ پہچان سکیں۔
@@ -54,27 +54,27 @@ account region کے مطابق API host منتخب کریں:
 
 ## Verify کیسے کریں
 
-| Check | Expected Result |
+| جانچ | متوقع نتیجہ |
 | --- | --- |
-| Channel card | Save کے بعد pCloud channel card نظر آئے۔ |
-| Channel switch | card کا switch enabled رہے۔ |
+| چینل card | Save کے بعد pCloud چینل card نظر آئے۔ |
+| Channel switch | card کا switch فعال رہے۔ |
 | Email display | card connected pCloud email دکھائے۔ |
 | Quota query | کامیاب query کے بعد used اور total capacity دکھے۔ |
-| Upload test | test image configured pCloud storage directory میں نظر آئے۔ |
+| upload ٹیسٹ | آزمائشی تصویر ترتیب دی گئی pCloud storage directory میں نظر آئے۔ |
 
-![Quota query success](../../image/upload/pcloud/查询额度成功.png)
+![Quota query کامیاب](../../image/upload/pcloud/查询额度成功.png)
 
-## Troubleshooting
+## مسائل کا حل
 
 ### OAuth2 کیوں نہیں؟
 
-pCloud OAuth2 default طور پر self-service نہیں ہے۔ اسے enable کروانے کے لیے pCloud کو email کرنا پڑتا ہے۔
+pCloud OAuth2 ڈیفالٹ طور پر self-service نہیں ہے۔ اسے فعال کروانے کے لیے pCloud کو email کرنا پڑتا ہے۔
 
 موجودہ pCloud OAuth2 flow ImgBed کو درکار short-lived upload link workflow بھی support نہیں کرتا، اس لیے یہ channel account email اور password login استعمال کرتا ہے۔
 
 ### کون سا API Host استعمال کروں؟
 
-Default:
+ڈیفالٹ:
 
 ```text
 api.pcloud.com
@@ -86,17 +86,17 @@ EU accounts کے لیے:
 eapi.pcloud.com
 ```
 
-## Quick Flow
+## فوری بہاؤ
 
 ```text
-اپنا pCloud email اور password تیار کریں
--> Upload Settings کھولیں
+Prepare your pCloud email and password
+-> Open Upload Settings
 -> Add Channel
--> pCloud منتخب کریں
--> channel name / email / password بھریں
--> account Europe میں نہ ہو تو API host api.pcloud.com رہنے دیں
--> ضرورت نہ ہو تو storage directory imgbed رہنے دیں
--> Save کریں
--> quota query کریں
--> test image upload کریں
+-> Choose pCloud
+-> Fill channel name / email / password
+-> Keep API host as api.pcloud.com unless your account is in Europe
+-> Keep storage directory as imgbed unless you need another folder
+-> Save
+-> Query quota
+-> Upload a test image
 ```

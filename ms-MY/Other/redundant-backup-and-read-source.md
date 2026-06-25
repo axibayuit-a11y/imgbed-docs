@@ -1,20 +1,20 @@
-# Redundant Backup dan Read Source Switching
+# Sandaran Redundan dan Penukaran Sumber Bacaan
 
-Redundant backup menyimpan extra copy untuk file yang sudah di-upload.
+Sandaran redundan menyimpan satu salinan tambahan bagi fail yang sudah dimuat naik.
 
-Kedua-dua primary file dan backup file boleh digunakan sebagai read sources. Visitors biasanya tidak melihat perbezaan. Perbezaannya hanya storage channel mana yang serve file.
+Fail utama dan fail sandaran kedua-duanya boleh digunakan sebagai sumber bacaan. Pelawat biasanya tidak melihat sebarang perbezaan. Perbezaannya hanya pada saluran storan yang menyediakan fail tersebut.
 
-## Fungsi Redundant Backup
+## Perkara Yang Boleh Dilakukan oleh Sandaran Redundan
 
-| Feature | Description |
+| Ciri | Penerangan |
 | --- | --- |
-| Store an extra copy | Back up files ke upload channel lain untuk mengurangkan risiko single channel failure. |
-| Switch read source | Selepas backup berjaya, switch file reads antara primary channel dan backup channel. |
-| Single-file backup | Back up satu file dari file details page. |
-| Batch backup | Pilih beberapa files dalam admin page dan back up bersama. |
-| Global redundant backup | Back up files mengikut folder dari Other Settings. |
+| Menyimpan salinan tambahan | Menyandarkan fail ke saluran muat naik lain untuk mengurangkan risiko kegagalan satu saluran. |
+| Menukar sumber bacaan | Selepas sandaran berjaya, sumber bacaan fail boleh ditukar antara saluran utama dan saluran sandaran. |
+| Sandaran satu fail | Menyandarkan satu fail daripada halaman butiran fail. |
+| Sandaran kelompok | Memilih beberapa fail dalam halaman pentadbir dan menyandarkannya bersama-sama. |
+| Sandaran redundan global | Menyandarkan fail mengikut folder daripada Tetapan Lain. |
 
-## Redundant Backup Entry
+## Entri Sandaran Redundan
 
 Buka:
 
@@ -22,72 +22,72 @@ Buka:
 System Settings -> Other Settings -> Redundant Backup
 ```
 
-![Redundant backup](../../image/other/冗余备份截图.png)
+![Sandaran redundan](../../image/other/冗余备份截图.png)
 
-Entry ini paling sesuai untuk menambah backups kepada folder atau semua files secara bulk.
+Entri ini paling sesuai untuk menambah sandaran pada folder atau semua fail secara kelompok.
 
-Backup channel boleh dipilih secara manual, atau anda boleh memilih automatic switching dan membiarkan ImgBed mencari backup channel yang sesuai.
+Saluran sandaran boleh dipilih secara manual, atau anda boleh memilih penukaran automatik dan membiarkan ImgBed mencari saluran sandaran yang sesuai.
 
-## Backup Dari File Details
+## Sandaran Daripada Butiran Fail
 
-Buka file details page dalam admin panel dan klik backup.
+Buka halaman butiran fail dalam panel pentadbir dan klik sandaran.
 
-![Backup in file details](../../image/other/文件详情里文件备份.png)
+![Sandaran dalam butiran fail](../../image/other/文件详情里文件备份.png)
 
-Ini paling sesuai untuk back up satu important file on demand.
+Ini paling sesuai untuk menyandarkan satu fail penting apabila diperlukan.
 
-Selepas backup berjaya, file details page menunjukkan available read sources.
+Selepas sandaran berjaya, halaman butiran fail menunjukkan sumber bacaan yang tersedia.
 
-## Batch Backup Mengikut Selection
+## Sandaran Kelompok Mengikut Pilihan
 
-Dalam admin panel, pilih beberapa files dan run batch backup.
+Dalam panel pentadbir, pilih beberapa fail dan jalankan sandaran kelompok.
 
-![Batch backup](../../image/other/批量备份截图.png)
+![Sandaran kelompok](../../image/other/批量备份截图.png)
 
-Ini sesuai untuk memproses sekumpulan files.
+Ini paling sesuai untuk memproses sekumpulan fail.
 
-Selection backup, file details backup dan redundant backup di bawah Other Settings semuanya menggunakan backup system yang sama. Ia cuma entry points yang berbeza.
+Sandaran mengikut pilihan, sandaran daripada butiran fail dan sandaran redundan di bawah Tetapan Lain semuanya menggunakan sistem sandaran yang sama. Ia hanya entri yang berbeza.
 
-## Switching Read Source Selepas Backup
+## Menukar Sumber Bacaan Selepas Sandaran
 
-Selepas backup complete, file details page membolehkan anda switch read source:
+Selepas sandaran selesai, halaman butiran fail membolehkan anda menukar sumber bacaan:
 
-| Read Source | Description |
+| Sumber Bacaan | Penerangan |
 | --- | --- |
-| Primary channel | Read dari original upload channel. |
-| Backup channel | Read dari backup channel. |
+| Saluran utama | Membaca daripada saluran muat naik asal. |
+| Saluran sandaran | Membaca daripada saluran sandaran. |
 
-![Switch read source after backup](../../image/other/备份成功切换读取源.png)
+![Tukar sumber bacaan selepas sandaran](../../image/other/备份成功切换读取源.png)
 
-Visitors tidak perlu tahu sama ada file served dari primary atau backup channel.
+Pelawat tidak perlu tahu sama ada fail disajikan daripada saluran utama atau saluran sandaran.
 
-Read source yang anda pilih menjadi preferred source untuk file access selepas itu.
+Sumber bacaan yang anda pilih menjadi sumber pilihan untuk akses fail selepas itu.
 
-## Bila Backup Diskip
+## Apabila Sandaran Dilangkau
 
-Kes berikut akan diskip semasa backup. Ia bukan errors.
+Kes berikut akan dilangkau semasa sandaran. Ini bukan ralat.
 
-| Case | Why It Is Skipped |
+| Kes | Sebab Dilangkau |
 | --- | --- |
-| Already backed up | File yang sudah ada backup tidak akan dibackup sekali lagi. |
-| Primary dan backup channels sama | Backup mesti disimpan dalam channel lain untuk bermakna. |
-| No usable backup channel | Tiada alternative channel yang sesuai. |
+| Sudah disandarkan | Fail yang sudah mempunyai sandaran tidak disandarkan sekali lagi. |
+| Saluran utama dan sandaran sama | Sandaran mesti disimpan dalam saluran lain untuk menjadi bermakna. |
+| Tiada saluran sandaran yang boleh digunakan | Tiada saluran alternatif yang sesuai tersedia. |
 
-Ringkasnya: backups mesti pergi ke channel lain, dan files yang sudah backed-up tidak menggunakan extra space lagi.
+Ringkasnya: sandaran mesti pergi ke saluran lain, dan fail yang sudah disandarkan tidak menggunakan ruang tambahan sekali lagi.
 
-## Primary Channel vs Backup Channel
+## Saluran Utama Berbanding Saluran Sandaran
 
-| Name | Meaning |
+| Nama | Maksud |
 | --- | --- |
-| Primary channel | Channel yang digunakan semasa file pertama kali di-upload. |
-| Backup channel | Channel yang menyimpan redundant copy. |
-| Primary read source | File sedang dibaca dari primary channel. |
-| Backup read source | File sedang dibaca dari backup channel. |
+| Saluran utama | Saluran yang digunakan semasa fail pertama kali dimuat naik. |
+| Saluran sandaran | Saluran yang menyimpan salinan redundan. |
+| Sumber bacaan utama | Fail sedang dibaca daripada saluran utama. |
+| Sumber bacaan sandaran | Fail sedang dibaca daripada saluran sandaran. |
 
-Primary dan backup read sources mempunyai user-facing behavior yang sama.
+Sumber bacaan utama dan sandaran memberikan pengalaman yang sama kepada pengguna.
 
-Selagi backup file tersedia, images, videos dan download links terus berfungsi selepas switch ke backup read source.
+Selagi fail sandaran tersedia, imej, video dan pautan muat turun terus berfungsi selepas bertukar kepada sumber bacaan sandaran.
 
-## Apa Berlaku Apabila File Dipadam
+## Perkara Yang Berlaku Apabila Fail Dipadam
 
-Apabila file dipadam, ImgBed delete primary file dan backup file.
+Apabila fail dipadam, ImgBed memadam kedua-dua fail utama dan fail sandaran.

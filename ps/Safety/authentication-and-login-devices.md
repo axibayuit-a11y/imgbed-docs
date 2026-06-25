@@ -1,12 +1,12 @@
-# Authentication او Login Device Management
+# تصدیق او د ننوتلو وسایلو مدیریت
 
-`Authentication Management` او `Login Device Management` ستاسو د ImgBed admin panel، public upload entry او WebDAV access ساتنه کوي.
+`د تصدیق مدیریت` او `د ننوتلو وسایلو مدیریت` ستاسو د ImgBed ادارې پینل، د عامه پورته کولو ننوتنه او WebDAV لاسرسی ساتي.
 
-دا پاڼه د access credentials ټاکلو، signed-in devices کتلو او د اړتیا پر وخت د زړو sessions revoke کولو لپاره وکاروئ.
+دا پاڼه د لاسرسي د معلوماتو د ټاکلو، د ننوتلو وسایلو د کتلو او د اړتیا پر مهال د زړو ناستو د لغوه کولو لپاره وکاروئ.
 
 ## چېرته یې تنظیم کړئ
 
-admin panel پرانیزئ، بیا دې ځای ته لاړ شئ:
+د ادارې پینل پرانیزئ، بیا دې ځای ته لاړ شئ:
 
 ```text
 System Settings -> Security Settings
@@ -14,139 +14,139 @@ System Settings -> Security Settings
 
 پاڼه دوه اصلي برخې لري:
 
-- Authentication Management
-- Login Device Management
+- د تصدیق مدیریت
+- د ننوتلو وسایلو مدیریت
 
-![Authentication management](../../image/Safety/认证管理界面.png)
+![د تصدیق مدیریت](../../image/Safety/认证管理界面.png)
 
-## Authentication Management څه کوي
+## د تصدیق مدیریت څه کوي
 
-Authentication Management د access credentials ساتي.
+د تصدیق مدیریت د لاسرسي معلومات ساتي.
 
 دوه ډولونه لري:
 
-- User-side authentication
-- Admin-side authentication
+- د کارن اړخ تصدیق
+- د مدیر اړخ تصدیق
 
-## User-Side Authentication
+## د کارن اړخ تصدیق
 
-User-side authentication د upload password دی.
+د کارن اړخ تصدیق د پورته کولو پاسورډ دی.
 
-کله چې upload password وټاکل شي، عادي visitors باید د upload page له کارولو مخکې دا password ولیکي. دا هغه وخت ګټور دی چې نه غواړئ public upload page هر چا ته پرانیستی وي.
+کله چې د پورته کولو پاسورډ وټاکل شي، عادي لیدونکي باید د پورته کولو پاڼې له کارولو مخکې دا پاسورډ ولیکي. دا هغه وخت ګټور دی چې نه غواړئ د عامه پورته کولو پاڼه هر چا ته پرانیستې وي.
 
-![User login page](../../image/Safety/用户端登录界面.png)
+![د کارن د ننوتلو پاڼه](../../image/Safety/用户端登录界面.png)
 
-### د Upload Password ټاکل
+### د پورته کولو پاسورډ ټاکل
 
-کله چې upload password تنظیم وي:
+کله چې د پورته کولو پاسورډ تنظیم وي:
 
-- visitors باید د upload page له کارولو مخکې password ولیکي.
-- upload یوازې هغه وخت فعالېږي چې password ومنل شي.
-- که user-side device sessions فعال وي، ImgBed هغه user-side device ثبتوي.
+- لیدونکي باید د پورته کولو پاڼې له کارولو مخکې پاسورډ ولیکي.
+- پورته کول یوازې له پاسورډ منلو وروسته شوني وي.
+- که د کارن اړخ د وسیلو ناستې فعالې وي، ImgBed هغه د کارن اړخ وسیله ثبتوي.
 
-د upload password بدلول زاړه user-side sessions باطلوي. visitors باید نوی password بیا ولیکي.
+د پورته کولو پاسورډ بدلول زړې د کارن اړخ ناستې باطلوي. لیدونکي باید نوی پاسورډ بیا ولیکي.
 
-## Admin-Side Authentication
+## د مدیر اړخ تصدیق
 
-Admin-side authentication د admin username او password کاروي.
+د مدیر اړخ تصدیق د مدیر کارن‌نوم او پاسورډ کاروي.
 
-دا admin panel ساتي. د production کارونې لپاره یې تل تنظیمول پکار دي.
+دا د ادارې پینل ساتي. د تولیدي کارونې لپاره باید تل تنظیم شي.
 
-![Admin login page](../../image/Safety/管理端登录界面.png)
+![د مدیر د ننوتلو پاڼه](../../image/Safety/管理端登录界面.png)
 
-### د Admin Credentials ټاکل
+### د مدیر د لاسرسي معلومات ټاکل
 
-کله چې admin username او password تنظیم وي:
+کله چې د مدیر کارن‌نوم او پاسورډ تنظیم وي:
 
-- admin panel پرانیستل login غواړي.
-- بریالی login د admin device record جوړوي.
-- په Login Device Management کې devices کتل، پاکول یا force offline کولای شئ.
+- د ادارې پینل پرانیستل ننوتلو ته اړتیا لري.
+- بریالی ننوتل د مدیر د وسیلې ریکارډ جوړوي.
+- په د ننوتلو وسایلو مدیریت کې وسایل کتل، پاکول یا جبري نالاین کولای شئ.
 
-د admin username یا password بدلول زاړه admin sessions باطلوي. بیا sign in ته اړتیا لرئ.
+د مدیر کارن‌نوم یا پاسورډ بدلول زړې د مدیر ناستې باطلوي. بیا باید ننوتل وکړئ.
 
-## Login Device Management څه کوي
+## د ننوتلو وسایلو مدیریت څه کوي
 
-Login Device Management هغه devices ښيي چې sign in شوي وي.
+د ننوتلو وسایلو مدیریت هغه وسایل ښيي چې ننوتلي وي.
 
-دا درسره مرسته کوي وګورئ:
+دا مرسته کوي چې وګورئ:
 
-- کوم devices admin panel ته داخل شوي دي.
-- کوم devices user-side upload page ته داخل شوي دي.
-- کوم WebDAV clients نښلول شوي دي.
-- device session لا valid دی که نه.
-- زاړه devices باید force offline شي که نه.
+- کوم وسایل د ادارې پینل ته داخل شوي دي.
+- کوم وسایل د کارن اړخ د پورته کولو پاڼې ته داخل شوي دي.
+- کوم WebDAV کلاینټونه نښتي دي.
+- د وسیلې ناسته لا هم معتبره ده که نه.
+- زاړه وسایل باید جبري نالاین شي که نه.
 
-پاڼه درې tabs لري:
+پاڼه درې ټبونه لري:
 
-- Admin
-- User
+- مدیر
+- کارن
 - WebDAV
 
-## Global Cookie Security
+## د کوکي عمومي امنیت
 
-د Login Device Management په سر کې global cookie behavior تنظیمولای شئ.
+د ننوتلو وسایلو مدیریت په سر کې د کوکي عمومي چلند تنظیمولای شئ.
 
-### User Cookie Lifetime
+### د کارن کوکي عمر
 
-کنټرولوي چې user-side login څو ورځې active پاتې شي.
+ټاکي چې د کارن اړخ ننوتل څو ورځې فعال پاتې شي.
 
-د بېلګې په توګه، که یې 14 days ته وټاکئ، visitors عموما په 14 ورځو کې upload password بیا نه لیکي.
+د بېلګې په توګه، که یې 14 ورځو ته وټاکئ، لیدونکي عموما په 14 ورځو کې د پورته کولو پاسورډ بیا نه لیکي.
 
-### Admin Cookie Lifetime
+### د مدیر کوکي عمر
 
-کنټرولوي چې admin login څو ورځې active پاتې شي.
+ټاکي چې د مدیر ننوتل څو ورځې فعال پاتې شي.
 
-د بېلګې په توګه، که یې 14 days ته وټاکئ، administrators عموما په 14 ورځو کې بیا sign in ته اړتیا نه لري.
+د بېلګې په توګه، که یې 14 ورځو ته وټاکئ، مدیران عموما په 14 ورځو کې بیا ننوتلو ته اړتیا نه لري.
 
-### Secure Mode
+### خوندي حالت
 
-کله چې Secure mode فعال وي، browsers login cookies یوازې د HTTPS له لارې لېږي.
+کله چې خوندي حالت فعال وي، براوزرونه د ننوتلو کوکي یوازې د HTTPS له لارې لېږي.
 
-د production HTTPS sites لپاره یې فعال کړئ. د local HTTP testing لپاره یې مه فعالوئ، که نه ممکن داسې حالت ووینئ چې "login بریالی شو، خو refresh وروسته مې وباسي".
+دا د HTTPS تولیدي سایټونو لپاره فعال کړئ. د ځایي HTTP ازموینې لپاره یې مه فعالوئ، که نه ښايي داسې چلند ووینئ: "ننوتل بریالي شول، خو له تازه کولو وروسته بیا وتلی یم".
 
-## Admin Login Devices
+## د مدیر د ننوتلو وسایل
 
-Admin tab هغه devices ښيي چې admin panel ته sign in شوي وي.
+د مدیر ټب هغه وسایل ښيي چې د ادارې پینل ته ننوتلي وي.
 
-Device records یوازې هغه وخت ښکاري چې admin credentials تنظیم وي او admin panel د login له لارې پرانیستل شوی وي.
+د وسیلو ریکارډونه یوازې هغه وخت ښکاري چې د مدیر د لاسرسي معلومات تنظیم وي او د ادارې پینل د ننوتلو له لارې پرانیستل شوی وي.
 
-هر device card دا معلومات ښودلای شي:
+د هر وسیلې کارت کې کېدای شي دا معلومات ښکاره شي:
 
-- Device او browser معلومات
-- First login IP
-- Last active IP
-- Login time
-- Last active time
-- Expiration time
-- Current status
+- د وسیلې او براوزر معلومات
+- د لومړي ننوتلو IP
+- د وروستي فعالیت IP
+- د ننوتلو وخت
+- د وروستي فعالیت وخت
+- د پای ته رسېدو وخت
+- اوسنی حالت
 
-که ناپېژندل شوی device ووینئ، `Force Offline` وکاروئ څو session یې invalid شي.
+که ناپېژندل شوی وسیله ووینئ، `جبري نالاین` وکاروئ څو ناسته یې باطله شي.
 
-## زاړه Devices پاکول
+## زاړه وسایل پاکول
 
-`Clean Up Old Devices` په اوسني tab کې زاړه login records په bulk ډول لرې کوي.
+`زاړه وسایل پاکول` په اوسني ټب کې زاړه د ننوتلو ریکارډونه په ډله‌ییز ډول لرې کوي.
 
-دا هغه وخت وکاروئ چې شک لرئ زاړه sessions ښايي لا هم پر نورو devices active وي.
+دا هغه وخت وکاروئ چې شک لرئ زړې ناستې لا هم پر نورو وسایلو فعالې دي.
 
-## Force Offline
+## جبري نالاین
 
-`Force Offline` د یوه device session invalid کوي.
+`جبري نالاین` د یوې وسیلې ناسته باطلوي.
 
-کله چې device force offline شي:
+کله چې وسیله جبري نالاین شي:
 
-- Admin devices باید بیا sign in وکړي.
-- User-side devices باید upload password بیا ولیکي.
-- WebDAV clients باید بیا authenticate شي.
+- د مدیر وسایل باید بیا ننوتل وکړي.
+- د کارن اړخ وسایل باید د پورته کولو پاسورډ بیا ولیکي.
+- WebDAV کلاینټونه باید بیا تصدیق شي.
 
-Expired یا invalid devices هم لرې کېدای شي.
+پای ته رسېدلي یا نامعتبر وسایل هم لرې کېدای شي.
 
-## له اوسني Device څخه Sign Out
+## له اوسني وسیله وتل
 
-اوسنی device card د `Current Device` په نوم نښه شوی وي.
+د اوسني وسیلې کارت د `اوسنی وسیله` په توګه نښه شوی وي.
 
-له اوسني device څخه تر sign out وروسته:
+له اوسني وسیله وتلو وروسته:
 
-- اوسنی admin session sign out کېږي.
-- اوسنی user-side session sign out کېږي.
+- د مدیر اوسنۍ ناسته پای ته رسېږي.
+- د کارن اړخ اوسنۍ ناسته پای ته رسېږي.
 
-د هغې برخې د دوامدارې کارونې لپاره باید بیا sign in وکړئ.
+مخکې له دې چې هغه برخه بیا وکاروئ، باید بیا ننوتل وکړئ.

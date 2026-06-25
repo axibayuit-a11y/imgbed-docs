@@ -9,7 +9,7 @@ Cloudflare API Token 用來讓系統在檔案異動後，主動清除 Cloudflare
 進入後台後打開：
 
 ```text
-系統設定 -> 安全設定 -> Cloudflare API Token
+System Settings -> Security Settings -> Cloudflare API Token
 ```
 
 頁面需要填三項：
@@ -107,3 +107,4 @@ Zone ID 是 Cloudflare 裡目前站點的 Zone ID。
 這也是 CDN 快取常見現象。
 
 設定後，系統會在覆蓋同名檔案時嘗試清掉舊 URL 快取，讓新圖更快生效。
+

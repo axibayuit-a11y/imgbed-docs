@@ -1,32 +1,32 @@
 # Hugging-Face-Kanal hinzufügen
 
-## Was du vorher brauchst
+## Was Sie vorher benötigen
 
-Du brauchst nur drei Dinge:
+Sie benötigen nur drei Dinge:
 
 | Voraussetzung | Zweck |
 | --- | --- |
 | Hugging-Face-Konto | Zum Erstellen eines Access Tokens und als Besitzer des Repositories. |
 | Hugging Face User Access Token | Damit ImgBed auf die Hugging-Face-API zugreifen, Repositories erstellen und Dateien hochladen kann. |
-| Repository-Name | Du kannst nur den Repository-Namen eintragen, z. B. `image`. |
+| Repository-Name | Sie können nur den Repository-Namen eintragen, z. B. `image`. |
 
 ## Einrichtung
 
 ### Schritt 1: Bei Hugging Face anmelden und Access Token erstellen
 
-1. Melde dich bei Hugging Face an.
-2. Klicke oben rechts auf deinen Avatar und öffne `Settings`.
-3. Öffne links `Access Tokens`.
-4. Erstelle ein neues Token.
-5. Gib dem Token einen gut erkennbaren Namen.
-6. Wähle die Berechtigung `write`.
-7. Kopiere und speichere das Token direkt nach dem Erstellen.
+1. Melden Sie sich bei Hugging Face an.
+2. Klicken Sie oben rechts auf Ihren Avatar und öffnen Sie `Settings`.
+3. Öffnen Sie links `Access Tokens`.
+4. Erstellen Sie ein neues Token.
+5. Geben Sie dem Token einen gut erkennbaren Namen.
+6. Wählen Sie die Berechtigung `write`.
+7. Kopieren Sie und speichern Sie das Token direkt nach dem Erstellen.
 
 ![Token erstellen](../../image/upload/huggingface/创建令牌.png)
 
 ## Schritt 2: Hugging-Face-Kanal in ImgBed ausfüllen
 
-Nachdem du in den Upload-Einstellungen `Hugging Face` gewählt hast, fülle diese Felder aus:
+Nachdem Sie in den Upload-Einstellungen `Hugging Face` gewählt haben, füllen Sie diese Felder aus:
 
 | UI-Feld | Eingabe |
 | --- | --- |
@@ -40,28 +40,28 @@ Nachdem du in den Upload-Einstellungen `Hugging Face` gewählt hast, fülle dies
 
 ## Schritt 3: Kanal speichern
 
-Klicke nach dem Ausfüllen auf Speichern.
+Klicken Sie nach dem Ausfüllen auf Speichern.
 
 Das System übernimmt dann diese Details:
 
 | Systemverhalten | Beschreibung |
 | --- | --- |
 | Kurzer Repository-Name | ImgBed erkennt das aktuelle Hugging-Face-Konto und erweitert den Wert zu einem vollständigen Repository-Pfad. |
-| Vollständiger Repository-Pfad | ImgBed verwendet `username/repository` genau so, wie du es eingetragen hast. |
-| Repository-Prüfung | Wenn du den Pfad deines aktuellen persönlichen Kontos nutzt, versucht ImgBed das Repository zu erstellen, falls es noch nicht existiert. Wenn du manuell einen vollständigen Pfad einträgst, wird dieser direkt verwendet. |
+| Vollständiger Repository-Pfad | ImgBed verwendet `username/repository` genau so, wie Sie es eingetragen haben. |
+| Repository-Prüfung | Wenn Sie den Pfad Ihres aktuellen persönlichen Kontos nutzen, versucht ImgBed das Repository zu erstellen, falls es noch nicht existiert. Wenn Sie manuell einen vollständigen Pfad einträgst, wird dieser direkt verwendet. |
 | Repository-Typ | Dieser Kanal verwendet ein `dataset`-Repository. |
 | Öffentlich/privat | Die Repository-Sichtbarkeit wird entsprechend dem aktuellen Schalter synchronisiert. |
 
 ## Kurzcheck
 
 ```text
-Bei Hugging Face anmelden
--> Access Token erstellen
--> Berechtigung write auswählen
--> Zu ImgBed zurückkehren und Token sowie Repository-Name eintragen
--> Speichern
--> Wenn nur ein Repo-Name eingetragen ist, ergänzt ImgBed automatisch den aktuellen Benutzernamen
--> Wenn username/repo eingetragen ist, nutzt ImgBed den Wert unverändert
--> ImgBed prüft oder erstellt das dataset-Repository
--> Testbild hochladen
+Sign in to Hugging Face
+-> Create an Access Token
+-> Select write permission
+-> Return to ImgBed and enter the token and repository name
+-> Save
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> ImgBed checks or creates the dataset repository
+-> Upload a test image
 ```

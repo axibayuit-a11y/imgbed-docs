@@ -95,19 +95,19 @@ Tüm alanlar dolduktan sonra kanalı kaydedin.
 ## Kısa Akış
 
 ```text
-Google Cloud'u aç
--> Proje oluştur veya seç
--> Google Drive API'yi etkinleştir
--> Google Auth Platform'u yapılandır
--> Audience External ise Google hesabını Test users'a ekle
--> Web application OAuth client oluştur
--> Redirect URI olarak https://your-domain.com/api/oauth/google/callback kullan
--> Client ID ve Client Secret değerlerini ImgBed'e gir
--> Get Token tıkla
--> Google ile giriş yap ve yetkilendir
--> Callback sayfasından Refresh Token kopyala
--> ImgBed'e yapıştır ve kaydet
--> Test görseli yükle
+Open Google Cloud
+-> Create or select a project
+-> Enable Google Drive API
+-> Configure Google Auth Platform
+-> If Audience is External, add your Google account to Test users
+-> Create a Web application OAuth client
+-> Use https://your-domain.com/api/oauth/google/callback as the redirect URI
+-> Fill Client ID and Client Secret into ImgBed
+-> Click Get Token
+-> Sign in with Google and authorize
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
+-> Upload a test image
 ```
 
 ## Kaynaklar

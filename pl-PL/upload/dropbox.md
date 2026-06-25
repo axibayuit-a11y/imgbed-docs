@@ -134,18 +134,18 @@ Jeśli limity pojemności są włączone, kliknij zapytanie o limit. Po udanym z
 ## Szybki przebieg
 
 ```text
-Otwórz Dropbox App Console
--> Utwórz aplikację
--> Wybierz App folder access
--> Dodaj https://your-domain.com/api/oauth/dropbox/callback
--> Włącz account_info.read / files.metadata.read / files.metadata.write / files.content.write
--> Opcjonalnie włącz files.content.read
--> Kliknij Submit
--> Skopiuj App Key i App Secret
--> Wpisz je w ImgBed
--> Kliknij Get Token
--> Skopiuj Refresh Token ze strony callback
--> Wklej go z powrotem w ImgBed i zapisz
+Open Dropbox App Console
+-> Create an app
+-> Choose App folder access
+-> Add https://your-domain.com/api/oauth/dropbox/callback
+-> Enable account_info.read / files.metadata.read / files.metadata.write / files.content.write
+-> Optionally enable files.content.read
+-> Click Submit
+-> Copy App Key and App Secret
+-> Fill them into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## Referencje

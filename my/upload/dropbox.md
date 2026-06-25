@@ -1,154 +1,154 @@
-# Dropbox Channel ထည့်သွင်းခြင်း
+# Dropbox ချန်နယ် ထည့်သွင်းခြင်း
 
-## စမလုပ်ခင် လိုအပ်တာတွေ
+## ဦးစွာ လိုအပ်သည့်အရာများ
 
-| လိုအပ်ချက် | ဘာကြောင့်လိုလဲ |
+| လိုအပ်ချက် | လိုအပ်ရသည့်အကြောင်းရင်း |
 | --- | --- |
-| Dropbox account | sign in ဝင်ရန်နှင့် app authorize လုပ်ရန် |
-| Dropbox app | `App Key` နဲ့ `App Secret` generate လုပ်ရန် |
-| သင့် ImgBed domain | OAuth redirect URI အတွက် |
-| Dropbox storage ရရှိနိုင်မှု | file storage location အဖြစ်သုံးရန် |
+| Dropbox အကောင့်တစ်ခု | Sign in ဝင်ရန်နှင့် app ကို authorize လုပ်ရန် အသုံးပြုသည် |
+| Dropbox app တစ်ခု | `App Key` နှင့် `App Secret` ထုတ်လုပ်ရန် အသုံးပြုသည် |
+| သင်၏ ImgBed ဒိုမိန်း | OAuth redirect URI အတွက် အသုံးပြုသည် |
+| အသုံးပြုနိုင်သော Dropbox storage | လက်တွေ့ဖိုင်သိုလှောင်ရာနေရာအဖြစ် အသုံးပြုသည် |
 
-## Setup Steps
+## ပြင်ဆင်မှု အဆင့်များ
 
-### Step 1: Dropbox App ဖန်တီးပါ
+### အဆင့် 1: Dropbox App ဖန်တီးပါ
 
-1. Dropbox App Console ကိုဖွင့်ပါ:
+1. Dropbox App Console ကိုဖွင့်ပါ။
 
 ```text
 https://www.dropbox.com/developers/apps
 ```
 
-2. app အသစ်ဖန်တီးပါ။
-3. access type အတွက်ရွေးပါ:
+2. App အသစ်တစ်ခု ဖန်တီးပါ။
+3. Access type အတွက် အောက်ပါကို ရွေးပါ။
 
 ```text
 App folder
 ```
 
-4. app ကိုမှတ်မိလွယ်တဲ့အမည်ပေးပါ၊ ဥပမာ `imgbed-app`။
-5. app ဖန်တီးပြီးနောက် app details page ကိုဖွင့်ပါ။
+4. App ကို မှတ်မိလွယ်သောအမည် ပေးပါ။ ဥပမာ `imgbed-app`။
+5. App ဖန်တီးပြီးပါက app details စာမျက်နှာကိုဖွင့်ပါ။
 
-Recommended access type:
+အကြံပြုထားသော access type-
 
-| Access Type | Recommendation |
+| Access Type | အကြံပြုချက် |
 | --- | --- |
-| `App folder` | Recommended။ ImgBed ရဲ့ file storage ပုံစံနဲ့ကိုက်ညီသည်။ |
-| `Full Dropbox` | မထောက်ခံပါ။ ImgBed က full-account access မလိုပါ။ |
+| `App folder` | အကြံပြုသည်။ ၎င်းသည် ImgBed ၏ ဖိုင်သိမ်းဆည်းပုံနှင့် ကိုက်ညီသည်။ |
+| `Full Dropbox` | မအကြံပြုပါ။ ImgBed သည် အကောင့်တစ်ခုလုံးသို့ access မလိုအပ်ပါ။ |
 
-![Create Dropbox app](../../image/upload/dropbox/开发者创建应用.png)
+![Dropbox app ဖန်တီးခြင်း](../../image/upload/dropbox/开发者创建应用.png)
 
-### Step 2: Redirect URI ထည့်ပါ
+### အဆင့် 2: Redirect URI ထည့်ပါ
 
-Dropbox app details page မှာ OAuth သို့မဟုတ် Redirect URI settings ကိုရှာပြီး ထည့်ပါ:
+Dropbox app details စာမျက်နှာတွင် OAuth သို့မဟုတ် Redirect URI settings ကိုရှာပြီး အောက်ပါကို ထည့်ပါ။
 
 ```text
 https://your-domain.com/api/oauth/dropbox/callback
 ```
 
-admin panel ကို domain တစ်ခုထက်ပိုပြီးသုံးလျှင် matching callback URL တစ်ခုချင်းစီထည့်ပါ။
+Admin panel ကို ဒိုမိန်းတစ်ခုထက်ပို၍ အသုံးပြုပါက သက်ဆိုင်သည့် callback URL တစ်ခုစီကို ထည့်ပါ။
 
-![Configure redirect URI](../../image/upload/dropbox/配置回调地址.png)
+![Redirect URI ပြင်ဆင်ခြင်း](../../image/upload/dropbox/配置回调地址.png)
 
-### Step 3: App Permissions Configure လုပ်ပါ
+### အဆင့် 3: App Permission များ ပြင်ဆင်ပါ
 
-`Permissions` tab ကိုဖွင့်ပြီး အနည်းဆုံး ဒီ scopes တွေ enable လုပ်ပါ:
+`Permissions` tab ကိုဖွင့်ပြီး အောက်ပါ scope များကို အနည်းဆုံး enable လုပ်ပါ။
 
-| Scope | Required | Purpose |
+| Scope | လိုအပ်မှု | ရည်ရွယ်ချက် |
 | --- | --- | --- |
-| `account_info.read` | Required | account နဲ့ quota information ဖတ်ရန် |
-| `files.metadata.read` | Required | path checks အတွက် file/folder metadata ဖတ်ရန် |
-| `files.metadata.write` | Required | folders ဖန်တီးရန်နှင့် metadata ရေးရန် |
-| `files.content.write` | Required | files upload လုပ်ရန်။ ဒီ scope မရှိလျှင် `required scope 'files.content.write'` error ဖြစ်မည်။ |
-| `files.content.read` | Recommended | download, preview, temporary file links အတွက်ခွင့်ပြုသည် |
+| `account_info.read` | လိုအပ်သည် | Account နှင့် quota information ကို ဖတ်သည် |
+| `files.metadata.read` | လိုအပ်သည် | Path check များအတွက် file နှင့် folder metadata ကိုဖတ်သည် |
+| `files.metadata.write` | လိုအပ်သည် | Folder များဖန်တီးပြီး metadata ရေးသည် |
+| `files.content.write` | လိုအပ်သည် | ဖိုင်များကို အပ်လုဒ်လုပ်သည်။ ဤ scope မရှိပါက `required scope 'files.content.write'` ဖြစ်ပေါ်မည်။ |
+| `files.content.read` | အကြံပြုသည် | Download၊ preview နှင့် temporary file link များကို ခွင့်ပြုသည် |
 
-scopes ရွေးပြီးနောက် page အောက်ခြေက `Submit` ကိုနှိပ်ပါ။
+Scope များရွေးပြီးပါက စာမျက်နှာအောက်ခြေရှိ `Submit` ကိုနှိပ်ပါ။
 
-![Add permissions](../../image/upload/dropbox/添加对应的权限.png)
+![Permission များ ထည့်ခြင်း](../../image/upload/dropbox/添加对应的权限.png)
 
-Important:
+အရေးကြီးသည်-
 
-| Situation | What To Do |
+| အခြေအနေ | လုပ်ဆောင်ရန် |
 | --- | --- |
-| scopes ပြောင်းထားသည် | token authorization flow ကိုပြန် run လုပ်ပြီး `Refresh Token` အသစ်ယူပါ။ |
-| reauthorize မလုပ်ထား | token ဟောင်းက permissions အသစ်မရပါ၊ upload က fail ဖြစ်နေနိုင်သည်။ |
+| Scope များကို ပြောင်းထားသည် | Token authorization flow ကို ထပ်မံလုပ်ဆောင်ပြီး `Refresh Token` အသစ် ရယူပါ။ |
+| Reauthorize မလုပ်ထားပါ | Token အဟောင်းသည် permission အသစ်များကို မရရှိသဖြင့် upload မအောင်မြင်နိုင်သေးသည်။ |
 
-### Step 4: App Credentials Copy လုပ်ပါ
+### အဆင့် 4: App Credential များကို ကူးယူပါ
 
-Dropbox app page မှ ဒီ values နှစ်ခုကိုသိမ်းပါ:
+Dropbox app စာမျက်နှာမှ အောက်ပါတန်ဖိုးနှစ်ခုကို သိမ်းထားပါ။
 
-| Dropbox Field | ImgBed Field |
+| Dropbox အကွက် | ImgBed အကွက် |
 | --- | --- |
 | `App key` | `App Key` |
 | `App secret` | `App Secret` |
 
-### Step 5: ImgBed မှာ Dropbox Channel ဖြည့်ပါ
+### အဆင့် 5: Dropbox Channel ကိုဖြည့်ပါ
 
-Upload Settings မှာ `Dropbox` ကိုရွေးပြီး:
+အပ်လုဒ် ဆက်တင်များ တွင် `Dropbox` ကိုရွေးပြီး အောက်ပါအတိုင်း ဖြည့်ပါ။
 
-| ImgBed Field | What To Enter |
+| ImgBed အကွက် | ထည့်ရန်အရာ |
 | --- | --- |
-| Channel name | မှတ်မိလွယ်တဲ့အမည်၊ ဥပမာ `Main Dropbox` |
+| ချန်နယ်အမည် | သင်မှတ်မိနိုင်သောအမည်၊ ဥပမာ `Main Dropbox` |
 | App Key | Dropbox `App key` |
 | App Secret | Dropbox `App secret` |
-| Refresh Token | အခုခဏဗလာထားပါ |
-| Root directory | Optional။ default က `imgbed`။ |
-| Note | Optional |
+| Refresh Token | ယခုအချိန်တွင် အလွတ်ထားပါ |
+| အမြစ် ဖိုင်တွဲ | ရွေးချယ်နိုင်သည်။ မူရင်း သည် `imgbed` ဖြစ်သည်။ |
+| Note | ရွေးချယ်နိုင်သည် |
 
-![Get token](../../image/upload/dropbox/获取令牌.png)
+![Token ရယူခြင်း](../../image/upload/dropbox/获取令牌.png)
 
-### Step 6: Refresh Token ရယူပါ
+### အဆင့် 6: Refresh Token ရယူပါ
 
-1. ImgBed မှာ `Get Token` ကိုနှိပ်ပါ။
-2. connect လုပ်ချင်တဲ့ Dropbox account ထဲ sign in ဝင်ပါ။
-3. authorization prompt ကို approve လုပ်ပါ။
-4. callback page မှာ `Refresh Token` ပြပါမယ်။
-5. အဲဒါကို copy လုပ်ပါ။
-6. ImgBed ကိုပြန်သွားပြီး `Refresh Token` field ထဲ paste လုပ်ပါ။
+1. ImgBed တွင် `Get Token` ကိုနှိပ်ပါ။
+2. ချိတ်ဆက်လိုသော Dropbox အကောင့်သို့ sign in ဝင်ပါ။
+3. Authorization prompt ကို approve လုပ်ပါ။
+4. Callback စာမျက်နှာတွင် `Refresh Token` ကိုပြမည်။
+5. ၎င်းကိုကူးယူပါ။
+6. ImgBed သို့ ပြန်သွားပြီး `Refresh Token` အကွက်ထဲသို့ paste လုပ်ပါ။
 
-![Copy token](../../image/upload/dropbox/复制令牌.png)
+![Token ကူးယူခြင်း](../../image/upload/dropbox/复制令牌.png)
 
-## စစ်ဆေးနည်း
+## အတည်ပြုနည်း
 
-| Check | Expected Result |
+| စစ်ဆေးချက် | မျှော်မှန်းရလဒ် |
 | --- | --- |
-| Channel card | Save ပြီးနောက် Dropbox channel ပေါ်လာရပါမယ်။ |
-| Channel switch | channel ကို enable လုပ်လို့ရရပါမယ်။ |
-| Token saved | detail page မှာ `Refresh Token` သိမ်းထားကြောင်းပြရပါမယ်။ |
-| Upload test | test image က Dropbox app folder ထဲပေါ်လာရပါမယ်။ |
+| ချန်နယ်ကတ် | သိမ်းပြီးနောက် Dropbox channel ပေါ်လာသည်။ |
+| ချန်နယ် switch | Channel ကို enable လုပ်နိုင်သည်။ |
+| Token သိမ်းထားသည် | Detail page တွင် `Refresh Token` သိမ်းထားကြောင်း ပြသည်။ |
+| အပ်လုဒ် စမ်းသပ်မှု | စမ်းသပ်ပုံသည် Dropbox app folder ထဲတွင် ပေါ်လာသည်။ |
 
-quota limits enabled ဖြစ်လျှင် quota query ကိုနှိပ်ပါ။ query အောင်မြင်ပြီးနောက် channel card က used space, total space, last update time ကိုပြပါမယ်။
+Quota limit ဖွင့်ထားပါက quota query ကိုနှိပ်ပါ။ Query အောင်မြင်ပြီးနောက် ချန်နယ်ကတ် တွင် used space၊ total space နှင့် last update time ကိုပြမည်။
 
-![Quota query success](../../image/upload/dropbox/查询额度成功.png)
+![Quota query အောင်မြင်ခြင်း](../../image/upload/dropbox/查询额度成功.png)
 
-## Troubleshooting
+## ပြဿနာဖြေရှင်းခြင်း
 
-| Problem | Fix |
+| ပြဿနာ | ဖြေရှင်းနည်း |
 | --- | --- |
-| ImgBed က configuration incomplete လို့ပြသည် | `App Key`, `App Secret`, `Refresh Token` အားလုံးဖြည့်ထားလားစစ်ပါ။ |
-| Authorization အောင်မြင်ပေမယ့် `Refresh Token` မပေါ် | `Get Token` ကိုပြန်နှိပ်ပြီး offline authorization flow သုံးနေလားစစ်ပါ။ |
-| Upload က `required scope 'files.content.write'` နဲ့ fail ဖြစ်သည် | `files.content.write` enable လုပ်ပါ၊ `Submit` နှိပ်ပါ၊ `Refresh Token` အသစ်ယူပါ။ |
-| Callback fail ဖြစ်သည် | redirect URI က `https://your-domain.com/api/oauth/dropbox/callback` ဖြစ်ကြောင်း confirm လုပ်ပါ။ |
-| Files မတွေ့ | Dropbox app ကို `App folder` mode နဲ့ဖန်တီးထားလား confirm လုပ်ပါ။ |
+| ImgBed က configuration မပြည့်စုံဟု ပြသည် | `App Key`၊ `App Secret` နှင့် `Refresh Token` အားလုံး ဖြည့်ထားကြောင်း စစ်ဆေးပါ။ |
+| Authorization အောင်မြင်သော်လည်း `Refresh Token` မပေါ်ပါ | `Get Token` ကို ထပ်နှိပ်ပြီး offline authorization flow ကို အသုံးပြုထားကြောင်း သေချာပါစေ။ |
+| Upload သည် `required scope 'files.content.write'` ဖြင့် မအောင်မြင်သည် | `files.content.write` ကို enable လုပ်ပါ၊ `Submit` ကိုနှိပ်ပါ၊ ထို့နောက် `Refresh Token` အသစ် ရယူပါ။ |
+| Callback မအောင်မြင်ပါ | Redirect URI သည် `https://your-domain.com/api/oauth/dropbox/callback` ဖြစ်ကြောင်း အတည်ပြုပါ။ |
+| ဖိုင်များကို ရှာမတွေ့ပါ | Dropbox app ကို `App folder` mode ဖြင့် ဖန်တီးထားကြောင်း အတည်ပြုပါ။ |
 
-## Quick Flow
+## အမြန် Flow
 
 ```text
-Dropbox App Console ဖွင့်ပါ
--> app ဖန်တီးပါ
--> App folder access ရွေးပါ
--> https://your-domain.com/api/oauth/dropbox/callback ထည့်ပါ
--> account_info.read / files.metadata.read / files.metadata.write / files.content.write enable လုပ်ပါ
--> လိုအပ်လျှင် files.content.read enable လုပ်ပါ
--> Submit ကိုနှိပ်ပါ
--> App Key နဲ့ App Secret copy လုပ်ပါ
--> ImgBed ထဲထည့်ပါ
--> Get Token ကိုနှိပ်ပါ
--> callback page မှ Refresh Token copy လုပ်ပါ
--> ImgBed မှာ paste လုပ်ပြီး save လုပ်ပါ
+Open Dropbox App Console
+-> Create an app
+-> Choose App folder access
+-> Add https://your-domain.com/api/oauth/dropbox/callback
+-> Enable account_info.read / files.metadata.read / files.metadata.write / files.content.write
+-> Optionally enable files.content.read
+-> Click Submit
+-> Copy App Key and App Secret
+-> Fill them into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
-## References
+## ကိုးကားချက်များ
 
 1. Dropbox App Console: https://www.dropbox.com/developers/apps
 2. Dropbox OAuth Guide: https://developers.dropbox.com/oauth-guide

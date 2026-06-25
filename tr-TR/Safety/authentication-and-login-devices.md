@@ -1,8 +1,8 @@
 # Kimlik Doğrulama ve Giriş Cihazı Yönetimi
 
-`Authentication Management` ve `Login Device Management`, ImgBed yönetim panelini, herkese açık yükleme girişini ve WebDAV erişimini korur.
+`Kimlik Doğrulama Yönetimi` ve `Giriş Cihazı Yönetimi`, ImgBed yönetim panelinizi, herkese açık yükleme girişini ve WebDAV erişimini korur.
 
-Bu sayfada erişim bilgilerini ayarlayabilir, oturum açmış cihazları inceleyebilir ve gerektiğinde eski oturumları iptal edebilirsiniz.
+Bu sayfayı erişim kimlik bilgilerini ayarlamak, oturum açmış cihazları incelemek ve gerektiğinde eski oturumları iptal etmek için kullanın.
 
 ## Nereden Yapılandırılır?
 
@@ -14,25 +14,25 @@ System Settings -> Security Settings
 
 Sayfada iki ana alan bulunur:
 
-- Authentication Management
-- Login Device Management
+- Kimlik Doğrulama Yönetimi
+- Giriş Cihazı Yönetimi
 
 ![Kimlik doğrulama yönetimi](../../image/Safety/认证管理界面.png)
 
-## Authentication Management Ne İşe Yarar?
+## Kimlik Doğrulama Yönetimi Ne İşe Yarar?
 
-Authentication Management erişim kimlik bilgilerini saklar.
+Kimlik Doğrulama Yönetimi erişim kimlik bilgilerini saklar.
 
 İki tür vardır:
 
-- Kullanıcı tarafı kimlik doğrulama
-- Yönetici tarafı kimlik doğrulama
+- Kullanıcı tarafı kimlik doğrulaması
+- Yönetici tarafı kimlik doğrulaması
 
-## Kullanıcı Tarafı Kimlik Doğrulama
+## Kullanıcı Tarafı Kimlik Doğrulaması
 
-Kullanıcı tarafı kimlik doğrulama, yükleme parolasıdır.
+Kullanıcı tarafı kimlik doğrulaması, yükleme parolasıdır.
 
-Yükleme parolası ayarlandıktan sonra normal ziyaretçilerin yükleme sayfasını kullanmadan önce bu parolayı girmesi gerekir. Herkese açık yükleme sayfasının herkese açık kalmasını istemediğiniz durumlarda kullanışlıdır.
+Yükleme parolası ayarlandıktan sonra normal ziyaretçiler yükleme sayfasını kullanmadan önce bu parolayı girmelidir. Herkese açık yükleme sayfasının herkese açık olmasını istemediğiniz durumlarda kullanışlıdır.
 
 ![Kullanıcı giriş sayfası](../../image/Safety/用户端登录界面.png)
 
@@ -42,111 +42,111 @@ Yükleme parolası yapılandırıldığında:
 
 - Ziyaretçiler yükleme sayfasını kullanmadan önce parolayı girmelidir.
 - Yükleme yalnızca parola kabul edildikten sonra kullanılabilir.
-- Kullanıcı tarafı cihaz oturumları etkinse ImgBed bu kullanıcı cihazını kaydeder.
+- Kullanıcı tarafı cihaz oturumları etkinse ImgBed bu kullanıcı tarafı cihazı kaydeder.
 
 Yükleme parolasını değiştirmek eski kullanıcı tarafı oturumlarını geçersiz kılar. Ziyaretçilerin yeni parolayı tekrar girmesi gerekir.
 
-## Yönetici Tarafı Kimlik Doğrulama
+## Yönetici Tarafı Kimlik Doğrulaması
 
-Yönetici tarafı kimlik doğrulama, yönetici kullanıcı adı ve parolası kullanır.
+Yönetici tarafı kimlik doğrulaması bir yönetici kullanıcı adı ve parolası kullanır.
 
-Bu, yönetim panelini korur. Production kullanımında her zaman yapılandırılması önerilir.
+Bu, yönetim panelini korur. Üretim kullanımı için her zaman yapılandırılmalıdır.
 
 ![Yönetici giriş sayfası](../../image/Safety/管理端登录界面.png)
 
-### Yönetici Bilgilerini Ayarlama
+### Yönetici Kimlik Bilgilerini Ayarlama
 
 Yönetici kullanıcı adı ve parolası yapılandırıldığında:
 
 - Yönetim panelini açmak için giriş gerekir.
 - Başarılı giriş bir yönetici cihaz kaydı oluşturur.
-- Login Device Management içinde cihazları inceleyebilir, temizleyebilir veya zorla çevrimdışı bırakabilirsiniz.
+- Giriş Cihazı Yönetimi içinde cihazları inceleyebilir, temizleyebilir veya zorla çevrimdışı bırakabilirsiniz.
 
-Yönetici kullanıcı adını veya parolasını değiştirmek eski yönetici oturumlarını geçersiz kılar. Yeniden giriş yapmanız gerekir.
+Yönetici kullanıcı adını veya parolasını değiştirmek eski yönetici oturumlarını geçersiz kılar. Yeniden oturum açmanız gerekir.
 
-## Login Device Management Ne İşe Yarar?
+## Giriş Cihazı Yönetimi Ne İşe Yarar?
 
-Login Device Management oturum açmış cihazları gösterir.
+Giriş Cihazı Yönetimi oturum açmış cihazları gösterir.
 
 Şunları kontrol etmenize yardımcı olur:
 
 - Hangi cihazların yönetim paneline eriştiği.
 - Hangi cihazların kullanıcı tarafı yükleme sayfasına eriştiği.
 - Hangi WebDAV istemcilerinin bağlandığı.
-- Cihaz oturumunun hâlâ geçerli olup olmadığı.
+- Bir cihaz oturumunun hâlâ geçerli olup olmadığı.
 - Eski cihazların zorla çevrimdışı bırakılıp bırakılmaması gerektiği.
 
-Sayfada üç sekme bulunur:
+Sayfada üç sekme vardır:
 
-- Admin
-- User
+- Yönetici
+- Kullanıcı
 - WebDAV
 
-## Genel Cookie Güvenliği
+## Genel cookie Güvenliği
 
-Login Device Management üst kısmında genel cookie davranışını ayarlayabilirsiniz.
+Giriş Cihazı Yönetimi'nin üst kısmında genel cookie davranışını ayarlayabilirsiniz.
 
-### User Cookie Lifetime
+### Kullanıcı Cookie Süresi
 
-Kullanıcı tarafı girişin kaç gün aktif kalabileceğini belirler.
+Kullanıcı tarafı girişin kaç gün etkin kalabileceğini kontrol eder.
 
-Örneğin 14 gün olarak ayarlarsanız ziyaretçilerin genellikle 14 gün boyunca yükleme parolasını yeniden girmesi gerekmez.
+Örneğin 14 gün ayarlarsanız ziyaretçilerin genellikle 14 gün içinde yükleme parolasını tekrar girmesi gerekmez.
 
-### Admin Cookie Lifetime
+### Yönetici Cookie Süresi
 
-Yönetici girişinin kaç gün aktif kalabileceğini belirler.
+Yönetici girişinin kaç gün etkin kalabileceğini kontrol eder.
 
-Örneğin 14 gün olarak ayarlarsanız yöneticilerin genellikle 14 gün boyunca yeniden giriş yapması gerekmez.
+Örneğin 14 gün ayarlarsanız yöneticilerin genellikle 14 gün içinde yeniden oturum açması gerekmez.
 
-### Secure Mode
+### Güvenli Mod
 
-Secure mode etkin olduğunda tarayıcılar giriş cookie değerlerini yalnızca HTTPS üzerinden gönderir.
+Güvenli mod etkin olduğunda tarayıcılar giriş cookie değerlerini yalnızca HTTPS üzerinden gönderir.
 
-Production HTTPS sitelerinde etkinleştirin. Yerel HTTP testlerinde etkinleştirmeyin; aksi halde "giriş başarılı ama sayfayı yenileyince çıkış yapıyor" gibi bir davranış görebilirsiniz.
+HTTPS kullanan üretim siteleri için etkinleştirin. Yerel HTTP testlerinde etkinleştirmeyin; aksi halde "giriş başarılı, ama sayfayı yenileyince çıkış yapıyor" gibi davranışlar görebilirsiniz.
 
 ## Yönetici Giriş Cihazları
 
-Admin sekmesi, yönetim paneline giriş yapan cihazları gösterir.
+Yönetici sekmesi, yönetim paneline giriş yapan cihazları gösterir.
 
-Cihaz kayıtları yalnızca yönetici bilgileri yapılandırıldıktan ve yönetim paneline giriş formu üzerinden erişildikten sonra görünür.
+Cihaz kayıtları yalnızca yönetici kimlik bilgileri yapılandırıldıktan ve yönetim paneline giriş yapıldıktan sonra görünür.
 
 Her cihaz kartı şunları gösterebilir:
 
 - Cihaz ve tarayıcı bilgisi
-- İlk giriş IP adresi
-- Son aktif IP adresi
+- İlk giriş IP'si
+- Son etkin IP
 - Giriş zamanı
-- Son aktif zaman
-- Sona erme zamanı
+- Son etkin zaman
+- Son kullanma zamanı
 - Geçerli durum
 
-Tanımadığınız bir cihaz görürseniz `Force Offline` ile oturumu geçersiz kılın.
+Tanımadığınız bir cihaz görürseniz oturumunu geçersiz kılmak için `Zorla Çevrimdışı Bırak` kullanın.
 
 ## Eski Cihazları Temizleme
 
-`Clean Up Old Devices`, geçerli sekmedeki eski giriş kayıtlarını toplu olarak siler.
+`Eski Cihazları Temizle`, geçerli sekmedeki eski giriş kayıtlarını toplu olarak siler.
 
-Başka cihazlarda eski oturumların hâlâ aktif olabileceğinden şüpheleniyorsanız kullanın.
+Diğer cihazlardaki eski oturumların hâlâ etkin olabileceğinden şüpheleniyorsanız bunu kullanın.
 
-## Force Offline
+## Zorla Çevrimdışı Bırakma
 
-`Force Offline` tek bir cihaz oturumunu geçersiz kılar.
+`Zorla Çevrimdışı Bırak` tek bir cihaz oturumunu geçersiz kılar.
 
 Bir cihaz zorla çevrimdışı bırakıldıktan sonra:
 
-- Yönetici cihazlarının yeniden giriş yapması gerekir.
-- Kullanıcı tarafı cihazlarının yükleme parolasını yeniden girmesi gerekir.
+- Yönetici cihazlarının yeniden oturum açması gerekir.
+- Kullanıcı tarafı cihazlarının yükleme parolasını tekrar girmesi gerekir.
 - WebDAV istemcilerinin yeniden kimlik doğrulaması yapması gerekir.
 
 Süresi dolmuş veya geçersiz cihazlar da kaldırılabilir.
 
-## Geçerli Cihazdan Çıkış
+## Geçerli Cihazdan Çıkış Yapma
 
-Geçerli cihaz kartı `Current Device` olarak işaretlenir.
+Geçerli cihaz kartı `Geçerli Cihaz` olarak işaretlenir.
 
 Geçerli cihazdan çıkış yaptıktan sonra:
 
 - Geçerli yönetici oturumu kapatılır.
 - Geçerli kullanıcı tarafı oturumu kapatılır.
 
-Bu alanı kullanmaya devam etmek için yeniden giriş yapmanız gerekir.
+İlgili alanı kullanmaya devam etmeden önce yeniden oturum açmanız gerekir.

@@ -1,106 +1,138 @@
 # API d’image aléatoire et galerie publique
 
-Ces deux fonctions se configurent ici :
+Ces deux fonctionnalités se configurent sous :
 
 ```text
-Paramètres système -> Autres paramètres
+System Settings -> Other Settings
 ```
 
 ## API d’image aléatoire
 
-L’API d’image aléatoire choisit au hasard un fichier dans les dossiers configurés. Elle peut servir à afficher un fond de site, faire tourner des avatars ou appeler des images aléatoires depuis une page externe.
+L’API d’image aléatoire renvoie un fichier aléatoire depuis les répertoires sélectionnés. Elle est utile pour les arrière-plans de site, la rotation d’avatars ou les appels d’images aléatoires depuis des pages externes.
 
 Une fois activée, utilisez :
 
 ```text
-https://votre-domaine/random
+https://your-domain.com/random
 ```
 
-## Paramètres de l’API
+## Réglages de l’API d’image aléatoire
 
-| Option | Description |
+| Option | Rôle |
 | --- | --- |
-| Activer | Active ou désactive `/random`; désactivée, la route refuse l’accès |
-| Dossiers | Limite les dossiers dans lesquels les fichiers peuvent être choisis |
-| Exemple d’appel | Génère un lien d’API prêt à copier |
+| Activer | Active ou désactive le point de terminaison `/random`. Lorsqu’il est désactivé, l’accès est interdit. |
+| Répertoires | Limite les répertoires que l’API d’image aléatoire peut utiliser. Les répertoires non inclus ici ne peuvent pas être utilisés par l’API. |
+| Démonstration d’appel | Génère des liens d’API d’image aléatoire que vous pouvez copier directement. |
 
-Vous pouvez sélectionner plusieurs dossiers. Si vous autorisez seulement `/landscape/` et `/portrait/`, l’API ne choisira que des fichiers dans ces dossiers ou leurs sous-dossiers.
+Vous pouvez sélectionner plusieurs répertoires. Par exemple, si seuls `/landscape/` et `/portrait/` sont autorisés, l’API d’image aléatoire ne peut sélectionner des fichiers que dans ces répertoires et leurs sous-répertoires.
 
-## Paramètres principaux
+## Paramètres de l’API d’image aléatoire
 
-| Paramètre | Exemple | Description |
+| Paramètre | Exemple | Rôle |
 | --- | --- | --- |
-| `dir` | `/landscape/` | Dossier cible |
-| `content` | `image` | Type de média : `image`, `video`, `audio`, ou une combinaison |
-| `orientation` | `auto` | `portrait`, `landscape` ou `auto` |
-| `type` | `url` | Vide redirige ; `url` renvoie du texte ; `json` renvoie du JSON |
-| `origin` | `1` | Avec `type=url`, renvoie un lien complet |
-| `age` | `all-ages,r12` | Filtre par classification d’âge |
-| `tag` | `wallpaper,sky` | Ne garde que les fichiers avec ces tags |
-| `ex` | `private` | Exclut les fichiers avec ces tags |
+| `dir` | `/landscape/` | Spécifie le répertoire aléatoire. |
+| `content` | `image` | Spécifie le type de média. Utilisez `image`, `video`, `audio` ou des combinaisons séparées par des virgules. |
+| `orientation` | `auto` | Filtre l’orientation de l’image. Utilisez `portrait`, `landscape` ou `auto`. |
+| `type` | `url` | Format de retour. Vide signifie redirection, `url` renvoie une URL en texte brut, `json` renvoie du JSON. |
+| `origin` | `1` | Utilisé avec `type=url` pour renvoyer une URL complète. |
+| `age` | `all-ages,r12` | Filtre par classification d’âge. |
+| `tag` | `wallpaper,sky` | Renvoie uniquement les fichiers contenant ces étiquettes. |
+| `ex` | `private` | Exclut les fichiers contenant ces étiquettes. |
 
-## Formats de réponse
+## Formats de retour
 
-Sans `type`, l’API redirige directement vers le fichier aléatoire.
+Sans `type`, l’API redirige directement vers l’URL du fichier aléatoire.
 
-`type=url` renvoie un lien en texte brut.
+Avec `type=url`, elle renvoie une URL sous forme de texte.
 
-`type=json` renvoie les informations du fichier : lien, ID, nom, type, tags, classification et autres données.
+Avec `type=json`, elle renvoie les informations du fichier, notamment l’URL du fichier, l’ID du fichier, le nom du fichier, le type de fichier, les étiquettes, la classification et les métadonnées associées.
 
-## Restrictions d’accès
+## Règles d’accès
 
-L’API respecte les règles publiques définies dans le panneau.
+L’API d’image aléatoire suit les règles d’accès public :
 
 | Règle | Effet |
 | --- | --- |
-| Limite de dossiers | Ne choisit que dans les dossiers autorisés |
-| Liste noire | Les fichiers bloqués ne sont pas candidats |
-| Mode liste blanche | Renvoie uniquement les fichiers explicitement autorisés |
-| Classification d’âge | Filtre R12, R16, R18 selon le mode d’accès |
+| Restriction de répertoire | Seuls les fichiers dans les répertoires autorisés peuvent être sélectionnés. |
+| Liste de blocage | Les fichiers présents dans la liste de blocage sont exclus de l’ensemble de sélection aléatoire. |
+| Mode liste d’autorisation | Lorsqu’il est activé, seuls les fichiers autorisés pour l’accès public sont renvoyés. |
+| Classification d’âge | Les contenus R12, R16, R18 et similaires sont filtrés selon le mode d’accès actuel. |
 
-Si aucun fichier ne correspond, l’API indique qu’il n’y a pas de résultat.
+Si aucun fichier ne correspond après filtrage, l’API ne renvoie aucun résultat correspondant.
+
+## Cache
+
+L’API d’image aléatoire met en cache les ensembles candidats par répertoire afin d’améliorer la vitesse.
+
+Après une modification des fichiers, ImgBed met à jour la version du cache du répertoire, et les requêtes suivantes reconstruisent l’ensemble de candidats. Les répertoires vides sont mis en cache brièvement pour éviter les requêtes répétées.
 
 ## Galerie publique
 
-La galerie publique fournit une page en lecture seule permettant aux visiteurs de parcourir les dossiers que vous rendez publics.
+La galerie publique fournit une page de navigation publique en lecture seule pour les répertoires que vous autorisez les visiteurs à consulter.
+
+Une fois activée, les visiteurs peuvent ouvrir :
 
 ```text
-https://votre-domaine/browse/nom-du-dossier
+https://your-domain.com/browse/directory-name
 ```
 
-## Paramètres de la galerie
+## Paramètres de la galerie publique
 
-| Option | Description |
+| Option | Rôle |
 | --- | --- |
-| Activer | Active ou désactive la galerie publique |
-| Mode de chargement | Utilise le fichier original ou une miniature |
-| Dossiers publics | Définit les dossiers accessibles aux visiteurs |
+| Activer | Active ou désactive la galerie publique. Lorsqu’elle est désactivée, les visiteurs ne peuvent pas la parcourir. |
+| Mode de chargement des images | Contrôle si les aperçus utilisent les images originales ou les miniatures. |
+| Répertoires ouverts | Définit les répertoires auxquels les visiteurs peuvent accéder. |
 
-Exemple :
+## Mode de chargement des images
+
+| Mode | Rôle |
+| --- | --- |
+| Original | La page des visiteurs charge directement les fichiers originaux. |
+| Miniature | La page des visiteurs privilégie les miniatures pour un chargement plus rapide. |
+
+## Répertoires ouverts
+
+Les répertoires ouverts déterminent ce que les visiteurs peuvent voir.
+
+Par exemple :
 
 ```text
 /1/,/2/,/landscape/,/portrait/
 ```
 
-Avec cette configuration, les visiteurs peuvent ouvrir :
+Les visiteurs peuvent alors accéder à :
 
 ```text
-https://votre-domaine/browse/1
-https://votre-domaine/browse/2
-https://votre-domaine/browse/landscape
-https://votre-domaine/browse/portrait
+https://your-domain.com/browse/1
+https://your-domain.com/browse/2
+https://your-domain.com/browse/landscape
+https://your-domain.com/browse/portrait
 ```
 
-Les dossiers non publiés sont refusés.
+Les sous-répertoires peuvent aussi être ouverts, par exemple `/2026/lucky/`. Les visiteurs sont bloqués lorsqu’ils tentent d’accéder à des répertoires qui ne sont pas ouverts.
 
-## Fonctions de la galerie
+## Fonctionnalités de la galerie publique
 
-| Fonction | Description |
+| Fonctionnalité | Description |
 | --- | --- |
-| Parcourir les dossiers | Voir les fichiers et sous-dossiers publiés |
-| Rechercher | Chercher par nom, ID de fichier ou tag |
-| Filtrer par type | Image, vidéo, audio ou autres fichiers |
-| Filtrer par tag | Inclure ou exclure des tags |
-| Filtrer par orientation | Paysage, portrait ou autres critères |
-| Copier un lien | Copier le lien public du fichier |
-| Prévisualiser | Voir images, vidéos et audio dans la page |
+| Parcourir les répertoires | Afficher les fichiers et sous-répertoires dans les répertoires ouverts. |
+| Recherche | Rechercher par nom de fichier, ID de fichier ou étiquettes. |
+| Filtre de type | Filtrer les images, vidéos, fichiers audio ou autres fichiers. |
+| Filtre d’étiquettes | Inclure ou exclure les étiquettes sélectionnées. |
+| Filtre d’orientation | Filtrer les images paysage ou portrait. |
+| Filtre temporel | Filtrer par plage temporelle de téléversement. |
+| Filtre d’extension | Filtrer par extension de fichier. |
+| Copier le lien | Copier les liens d’accès aux fichiers. |
+| Aperçu multimédia | Afficher ou lire les images, vidéos et fichiers audio sur la page des visiteurs. |
+
+## Règles d’accès de la galerie publique
+
+La galerie publique suit également les règles d’accès public :
+
+| Règle | Effet |
+| --- | --- |
+| Répertoires ouverts | Seuls les répertoires autorisés sont affichés. |
+| Mode d’accès | Le contenu est filtré selon le mode d’accès actuel lié à la classification d’âge. |
+| Mode liste d’autorisation | Lorsqu’il est activé, seuls les fichiers autorisés pour l’accès public sont affichés. |
+| Liste de blocage | Les fichiers présents dans la liste de blocage sont masqués. |

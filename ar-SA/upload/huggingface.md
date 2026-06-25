@@ -6,7 +6,7 @@
 
 | المتطلب | الغرض |
 | --- | --- |
-| حساب Hugging Face | لإنشاء access token وامتلاك المستودع. |
+| حساب Hugging Face | لإنشاء رمز وصول وامتلاك المستودع. |
 | Hugging Face User Access Token | يستخدمه ImgBed للوصول إلى Hugging Face API وإنشاء المستودعات ورفع الملفات. |
 | اسم المستودع | يمكن إدخال اسم المستودع فقط، مثل `image`. |
 
@@ -17,7 +17,7 @@
 1. سجّل الدخول إلى Hugging Face.
 2. اضغط صورتك في الزاوية العلوية اليمنى وافتح `Settings`.
 3. افتح `Access Tokens` من الشريط الجانبي.
-4. أنشئ token جديدًا.
+4. أنشئ رمزًا جديدًا.
 5. أعطِ الرمز اسمًا واضحًا.
 6. اختر صلاحية `write`.
 7. انسخ الرمز واحفظه مباشرة بعد إنشائه.
@@ -30,17 +30,17 @@
 
 | حقل الواجهة | ما الذي تدخله |
 | --- | --- |
-| Channel name | اسم تختاره، مثل `hf-primary`. |
-| Repository name | اسم repo قصير مثل `image`، أو مسار كامل مثل `username/image`. |
+| اسم القناة | اسم تختاره، مثل `hf-primary`. |
+| اسم المستودع | اسم مستودع قصير مثل `image`، أو مسار كامل مثل `username/image`. |
 | Access Token | Hugging Face User Access Token الذي أنشأته للتو. |
-| Private repository | فعّله أو عطّله حسب حاجتك. |
-| Remark | اختياري، مثل `Primary upload channel`. |
+| مستودع خاص | فعّله أو عطّله حسب حاجتك. |
+| ملاحظة | اختياري، مثل `Primary upload channel`. |
 
 ![إضافة القناة](../../image/upload/huggingface/添加渠道.png)
 
 ## الخطوة 3: احفظ القناة
 
-بعد ملء الحقول اضغط Save.
+بعد ملء الحقول اضغط حفظ.
 
 سيتولى النظام التفاصيل التالية:
 
@@ -55,13 +55,13 @@
 ## قائمة تحقق سريعة
 
 ```text
-سجّل الدخول إلى Hugging Face
--> أنشئ Access Token
--> اختر صلاحية write
--> ارجع إلى ImgBed وأدخل الرمز واسم المستودع
--> احفظ
--> إذا أدخلت اسم repo فقط، يضيف ImgBed اسم المستخدم الحالي تلقائيًا
--> إذا أدخلت username/repo، يستخدمه ImgBed كما هو
--> يفحص ImgBed مستودع dataset أو ينشئه
--> ارفع صورة تجريبية
+Sign in to Hugging Face
+-> Create an Access Token
+-> Select write permission
+-> Return to ImgBed and enter the token and repository name
+-> Save
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> ImgBed checks or creates the dataset repository
+-> Upload a test image
 ```

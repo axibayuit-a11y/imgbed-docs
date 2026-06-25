@@ -1,12 +1,12 @@
-# Authentication dan Login Device Management
+# Pengesahan dan Pengurusan Peranti Log Masuk
 
-`Authentication Management` dan `Login Device Management` melindungi ImgBed admin panel, public upload entry dan WebDAV access.
+`Pengurusan Pengesahan` dan `Pengurusan Peranti Log Masuk` melindungi panel pentadbir ImgBed, pintu masuk muat naik awam dan akses WebDAV.
 
-Gunakan halaman ini untuk menetapkan access credentials, menyemak devices yang sudah sign in dan revoke sessions lama apabila perlu.
+Gunakan halaman ini untuk menetapkan bukti kelayakan akses, menyemak peranti yang telah log masuk dan membatalkan sesi lama apabila perlu.
 
-## Di Mana Untuk Configure
+## Tempat Mengkonfigurasi
 
-Buka admin panel, kemudian pergi ke:
+Buka panel pentadbir, kemudian pergi ke:
 
 ```text
 System Settings -> Security Settings
@@ -14,139 +14,139 @@ System Settings -> Security Settings
 
 Halaman ini mempunyai dua bahagian utama:
 
-- Authentication Management
-- Login Device Management
+- Pengurusan Pengesahan
+- Pengurusan Peranti Log Masuk
 
-![Authentication management](../../image/Safety/认证管理界面.png)
+![Pengurusan pengesahan](../../image/Safety/认证管理界面.png)
 
-## Fungsi Authentication Management
+## Fungsi Pengurusan Pengesahan
 
-Authentication Management menyimpan access credentials.
+Pengurusan Pengesahan menyimpan bukti kelayakan akses.
 
 Terdapat dua jenis:
 
-- User-side authentication
-- Admin-side authentication
+- Pengesahan sisi pengguna
+- Pengesahan sisi pentadbir
 
-## User-Side Authentication
+## Pengesahan Sisi Pengguna
 
-User-side authentication ialah upload password.
+Pengesahan sisi pengguna ialah kata laluan muat naik.
 
-Selepas upload password ditetapkan, visitors biasa mesti memasukkannya sebelum menggunakan upload page. Ini berguna apabila anda tidak mahu public upload page terbuka kepada semua orang.
+Selepas kata laluan muat naik ditetapkan, pelawat biasa mesti memasukkannya sebelum menggunakan halaman muat naik. Ini berguna apabila anda tidak mahu halaman muat naik awam terbuka kepada semua orang.
 
-![User login page](../../image/Safety/用户端登录界面.png)
+![Halaman log masuk pengguna](../../image/Safety/用户端登录界面.png)
 
-### Menetapkan Upload Password
+### Menetapkan Kata Laluan Muat Naik
 
-Apabila upload password dikonfigurasi:
+Apabila kata laluan muat naik dikonfigurasi:
 
-- Visitors mesti memasukkan password sebelum menggunakan upload page.
-- Upload hanya tersedia selepas password diterima.
-- Jika user-side device sessions diaktifkan, ImgBed akan merekod user-side device tersebut.
+- Pelawat mesti memasukkan kata laluan sebelum menggunakan halaman muat naik.
+- Muat naik hanya tersedia selepas kata laluan diterima.
+- Jika sesi peranti sisi pengguna diaktifkan, ImgBed merekodkan peranti sisi pengguna tersebut.
 
-Menukar upload password akan menjadikan user-side sessions lama invalid. Visitors perlu memasukkan password baharu semula.
+Menukar kata laluan muat naik akan menjadikan sesi sisi pengguna lama tidak sah. Pelawat perlu memasukkan kata laluan baharu sekali lagi.
 
-## Admin-Side Authentication
+## Pengesahan Sisi Pentadbir
 
-Admin-side authentication menggunakan admin username dan password.
+Pengesahan sisi pentadbir menggunakan nama pengguna pentadbir dan kata laluan pentadbir.
 
-Ini melindungi admin panel. Untuk production use, anda patut sentiasa configure bahagian ini.
+Ini melindungi panel pentadbir. Untuk penggunaan produksi, anda sepatutnya sentiasa mengkonfigurasikannya.
 
-![Admin login page](../../image/Safety/管理端登录界面.png)
+![Halaman log masuk pentadbir](../../image/Safety/管理端登录界面.png)
 
-### Menetapkan Admin Credentials
+### Menetapkan Bukti Kelayakan Pentadbir
 
-Apabila admin username dan password dikonfigurasi:
+Apabila nama pengguna pentadbir dan kata laluan pentadbir dikonfigurasi:
 
-- Admin panel memerlukan login sebelum boleh dibuka.
-- Login yang berjaya mencipta admin device record.
-- Anda boleh review, clean up atau force devices offline dalam Login Device Management.
+- Membuka panel pentadbir memerlukan log masuk.
+- Log masuk yang berjaya mencipta rekod peranti pentadbir.
+- Anda boleh menyemak, membersihkan atau memaksa peranti keluar talian dalam Pengurusan Peranti Log Masuk.
 
-Menukar admin username atau password akan menjadikan admin sessions lama invalid. Anda perlu sign in semula.
+Menukar nama pengguna pentadbir atau kata laluan pentadbir akan menjadikan sesi pentadbir lama tidak sah. Anda perlu log masuk semula.
 
-## Fungsi Login Device Management
+## Fungsi Pengurusan Peranti Log Masuk
 
-Login Device Management memaparkan devices yang pernah sign in.
+Pengurusan Peranti Log Masuk memaparkan peranti yang telah log masuk.
 
-Ia membantu menyemak:
+Ia membantu anda menyemak:
 
-- Devices mana yang mengakses admin panel.
-- Devices mana yang mengakses user-side upload page.
-- WebDAV clients mana yang connected.
-- Sama ada device session masih valid.
-- Sama ada devices lama perlu force offline.
+- Peranti mana yang telah mengakses panel pentadbir.
+- Peranti mana yang telah mengakses halaman muat naik sisi pengguna.
+- Klien WebDAV mana yang telah bersambung.
+- Sama ada sesi peranti masih sah.
+- Sama ada peranti lama perlu dipaksa keluar talian.
 
-Halaman ini mempunyai tiga tabs:
+Halaman ini mempunyai tiga tab:
 
-- Admin
-- User
+- Pentadbir
+- Pengguna
 - WebDAV
 
-## Global Cookie Security
+## Keselamatan Cookie Global
 
-Di bahagian atas Login Device Management, anda boleh configure global cookie behavior.
+Di bahagian atas Pengurusan Peranti Log Masuk, anda boleh mengkonfigurasi tingkah laku cookie global.
 
-### User Cookie Lifetime
+### Tempoh Hayat Cookie Pengguna
 
-Mengawal berapa hari user-side login boleh kekal active.
+Mengawal berapa hari log masuk sisi pengguna boleh kekal aktif.
 
-Contohnya, jika ditetapkan kepada 14 days, visitors biasanya tidak perlu memasukkan upload password semula dalam tempoh 14 hari.
+Contohnya, jika ditetapkan kepada 14 hari, pelawat biasanya tidak perlu memasukkan kata laluan muat naik semula dalam tempoh 14 hari.
 
-### Admin Cookie Lifetime
+### Tempoh Hayat Cookie Pentadbir
 
-Mengawal berapa hari admin login boleh kekal active.
+Mengawal berapa hari log masuk pentadbir boleh kekal aktif.
 
-Contohnya, jika ditetapkan kepada 14 days, administrators biasanya tidak perlu sign in semula dalam tempoh 14 hari.
+Contohnya, jika ditetapkan kepada 14 hari, pentadbir biasanya tidak perlu log masuk semula dalam tempoh 14 hari.
 
-### Secure Mode
+### Mod Selamat
 
-Apabila Secure mode diaktifkan, browsers hanya menghantar login cookies melalui HTTPS.
+Apabila mod selamat diaktifkan, pelayar hanya menghantar cookie log masuk melalui HTTPS.
 
-Aktifkan untuk production HTTPS sites. Jangan aktifkan untuk local HTTP testing, jika tidak anda mungkin melihat keadaan "login berjaya, tetapi refresh membuatkan saya logout".
+Aktifkan untuk tapak HTTPS produksi. Jangan aktifkan untuk ujian HTTP tempatan, kerana anda mungkin melihat keadaan "log masuk berjaya, tetapi selepas segar semula saya dilog keluar".
 
-## Admin Login Devices
+## Peranti Log Masuk Pentadbir
 
-Admin tab memaparkan devices yang sign in ke admin panel.
+Tab Pentadbir memaparkan peranti yang log masuk ke panel pentadbir.
 
-Device records hanya muncul selepas admin credentials dikonfigurasi dan admin panel diakses melalui login.
+Rekod peranti hanya muncul selepas bukti kelayakan pentadbir dikonfigurasi dan panel pentadbir diakses melalui log masuk.
 
-Setiap device card boleh memaparkan:
+Setiap kad peranti boleh memaparkan:
 
-- Device dan browser information
-- First login IP
-- Last active IP
-- Login time
-- Last active time
-- Expiration time
-- Current status
+- Maklumat peranti dan pelayar
+- IP log masuk pertama
+- IP aktif terakhir
+- Masa log masuk
+- Masa aktif terakhir
+- Masa tamat tempoh
+- Status semasa
 
-Jika anda melihat device yang tidak dikenali, gunakan `Force Offline` untuk menjadikannya invalid.
+Jika anda melihat peranti yang tidak dikenali, gunakan `Paksa Keluar Talian` untuk menjadikannya tidak sah.
 
-## Clean Up Old Devices
+## Bersihkan Peranti Lama
 
-`Clean Up Old Devices` membuang login records lama dalam tab semasa secara bulk.
+`Bersihkan Peranti Lama` membuang rekod log masuk lama dalam tab semasa secara pukal.
 
-Gunakan apabila anda mengesyaki sessions lama mungkin masih active pada devices lain.
+Gunakan apabila anda mengesyaki sesi lama mungkin masih aktif pada peranti lain.
 
-## Force Offline
+## Paksa Keluar Talian
 
-`Force Offline` menjadikan satu device session invalid.
+`Paksa Keluar Talian` menjadikan satu sesi peranti tidak sah.
 
-Selepas device dipaksa offline:
+Selepas peranti dipaksa keluar talian:
 
-- Admin devices mesti sign in semula.
-- User-side devices mesti memasukkan upload password semula.
-- WebDAV clients mesti authenticate semula.
+- Peranti pentadbir mesti log masuk semula.
+- Peranti sisi pengguna mesti memasukkan kata laluan muat naik semula.
+- Klien WebDAV mesti membuat pengesahan semula.
 
-Expired atau invalid devices juga boleh dibuang.
+Peranti yang tamat tempoh atau tidak sah juga boleh dibuang.
 
-## Sign Out Current Device
+## Log Keluar Daripada Peranti Semasa
 
-Current device card ditanda sebagai `Current Device`.
+Kad peranti semasa ditanda sebagai `Peranti Semasa`.
 
-Selepas sign out current device:
+Selepas log keluar daripada peranti semasa:
 
-- Current admin session akan sign out.
-- Current user-side session akan sign out.
+- Sesi pentadbir semasa akan dilog keluar.
+- Sesi sisi pengguna semasa akan dilog keluar.
 
-Anda perlu sign in semula sebelum terus menggunakan bahagian tersebut.
+Anda perlu log masuk semula sebelum terus menggunakan bahagian tersebut.

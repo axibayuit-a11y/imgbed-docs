@@ -1,67 +1,67 @@
-# Page Settings
+# د پاڼې تنظیمات
 
-Page settings د site display، upload page defaults، background images او admin panel appearance کنټرولوي.
+د پاڼې تنظیمات د سایټ ښکاره کېدل، د پورته کولو پاڼې اصلي ارزښتونه، د شالید انځورونه او د مدیریت پینل بڼه کنټرولوي.
 
-## Global Settings
+## عمومي تنظیمات
 
-| Option | موخه |
+| غوراوی | موخه |
 | --- | --- |
-| Site title | هغه title چې browser tab کې ښکاري. |
-| Site icon | هغه کوچنی icon چې browser tab کې ښکاري. |
-| ImgBed name | په frontend pages کې ښکاره کېدونکی نوم. |
-| ImgBed logo | په frontend pages کې ښکاره کېدونکی logo image. |
-| Logo link | هغه URL چې د logo یا avatar په کلیک پرانیستل کېږي. |
-| Background switch interval | د څو backgrounds د rotation interval، په milliseconds کې. `60000` یعنې 60 seconds. |
-| Background opacity | د background image opacity له `0` تر `1` پورې. ټیټ values روښانه وي. |
-| Default URL prefix | د image links د جوړولو پر وخت کارېدونکی prefix. تش وي نو د اوسني site domain کارېږي. |
+| د سایټ سرلیک | هغه سرلیک چې د براوزر په ټب کې ښکاري. |
+| د سایټ نښه | هغه کوچنۍ نښه چې د براوزر په ټب کې ښکاري. |
+| د ImgBed نوم | هغه نوم چې د عامې مخکنۍ برخې په پاڼو کې ښکاري. |
+| د ImgBed لوګو | هغه لوګو انځور چې د عامې مخکنۍ برخې په پاڼو کې ښکاري. |
+| د لوګو لینک | هغه URL چې د لوګو یا اوتار په کلیک کولو سره پرانیستل کېږي. |
+| د شالید د بدلون واټن | د څو شالیدونو د ګرځېدو واټن، په ملي ثانیو کې. `60000` د 60 ثانیو معنا لري. |
+| د شالید ناروڼتیا | د شالید انځور ناروڼتیا له `0` څخه تر `1` پورې. ټیټ ارزښتونه انځور روښانه ښيي. |
+| اصلي URL مختاړی | هغه مختاړی چې د انځور لینکونو د جوړولو پر مهال کارول کېږي. که تش وي، د اوسني سایټ ډومېن کارول کېږي. |
 
-## Client Settings
+## د مراجع تنظیمات
 
-| Option | موخه |
+| غوراوی | موخه |
 | --- | --- |
-| Announcement | هغه announcement چې د upload page په سر کې ښکاري. HTML supported دی. |
-| Default upload channel | upload channel چې په upload page کې default selected وي. Smart Dispatch هم ټاکلای شئ. |
-| Default upload directory | default upload directory، لکه `/user/`. تش یا `/` یعنې root. |
-| Default naming method | له upload وروسته د default filename generation strategy. لاندې یې وګورئ. |
-| Convert to WebP by default | images له upload مخکې WebP ته بدلوي. |
-| Enable compression by default | images له upload مخکې په browser کې locally compress کوي. |
-| Default compression threshold | کله چې image له دې size واوړي، په اتومات ډول compress کېږي، په MB کې. |
-| Default target size | له compression وروسته target file size، په MB کې. |
-| Login page background | د user login page background image. |
-| Upload page background | د upload page background image. |
-| Footer portal link | هغه URL چې footer portal button یې پرانیزي. |
-| Hide footer | که enabled وي، frontend footer پټوي. |
+| اعلان | هغه اعلان چې د پورته کولو پاڼې په سر کې ښکاري. HTML ملاتړ کېږي. |
+| اصلي پورته کولو چینل | هغه پورته کولو چینل چې د پورته کولو په پاڼه کې په اصلي ډول ټاکل شوی وي. Smart Dispatch هم ټاکل کېدای شي. |
+| اصلي پورته کولو پوښۍ | د پورته کولو اصلي پوښۍ، لکه `/user/`. تش ارزښت یا `/` د ریښې معنا لري. |
+| د نوم اېښودلو اصلي طریقه | له پورته کولو وروسته د فایل نوم جوړولو اصلي تګلاره. لاندې یې وګورئ. |
+| په اصلي ډول WebP ته بدلول | انځورونه له پورته کولو مخکې WebP ته بدلوي. |
+| په اصلي ډول فشرده کول فعالول | انځورونه له پورته کولو مخکې په براوزر کې په ځايي ډول فشرده کوي. |
+| د فشرده کولو اصلي حد | کله چې انځور له دې اندازې لوی شي، په اتومات ډول فشرده کېږي؛ واحد یې MB دی. |
+| اصلي هدف اندازه | له فشرده کولو وروسته د فایل هدف اندازه، په MB کې. |
+| د ننوتلو پاڼې شالید | د کارن د ننوتلو پاڼې شالید انځور. |
+| د پورته کولو پاڼې شالید | د پورته کولو پاڼې شالید انځور. |
+| د پښو برخې د دروازې لینک | هغه URL چې د پښو برخې د دروازې تڼۍ یې پرانیزي. |
+| پښو برخه پټول | که فعال وي، د عامې مخکنۍ برخې پښو برخه پټوي. |
 
-## Admin Settings
+## د مدیریت تنظیمات
 
-| Option | موخه |
+| غوراوی | موخه |
 | --- | --- |
-| Admin login background | د admin login page background image. |
-| Admin background | د admin pages background image. یو image URL یا څو URLs وکاروئ. |
-| Image loading mode | د admin file list preview loading mode. Original اصلي images load کوي. Smart loading د public images لپاره thumbnails او د restricted images لپاره originals ته ترجیح ورکوي. |
-| Thumbnail source | د thumbnails جوړولو service: wsrv.nl، Cloudflare Image Resizing، یا WordPress Photon. Cloudflare Image Resizing باید په Cloudflare کې مخکې enabled وي. |
-| Live2D widget | په admin panel کې Live2D character ښيي. |
-| Firework click effect | د page کلیک پر وخت firework effect ښيي. |
-| Star cursor trail | د mouse movement پر وخت star trail ښيي. |
+| د مدیریت د ننوتلو شالید | د مدیریت د ننوتلو پاڼې شالید انځور. |
+| د مدیریت شالید | د مدیریت پاڼو شالید انځور. یو د انځور URL یا څو URLونه کارول کېدای شي. |
+| د انځور پورته کېدو حالت | د مدیریت د فایلونو په لېست کې د مخکتنې د پورته کېدو حالت. د اصلي انځور حالت اصلي انځورونه پورته کوي. هوښیار پورته کېدل د عامو انځورونو لپاره کوچني انځورونه او د محدودو انځورونو لپاره اصلي انځورونه غوره ګڼي. |
+| د کوچني انځور سرچینه | هغه خدمت چې کوچني انځورونه جوړوي: wsrv.nl، Cloudflare Image Resizing یا WordPress Photon. Cloudflare Image Resizing باید تر ټاکلو مخکې په Cloudflare کې فعال شوی وي. |
+| Live2D ویجټ | په مدیریت پینل کې Live2D کرکټر ښيي. |
+| د کلیک د اورلوبو اغېز | پر پاڼه د کلیک کولو پر مهال د اورلوبو اغېز ښيي. |
+| د کرسر ستوریزه لکۍ | د موږک د خوځېدو پر مهال ستوریزه لکۍ ښيي. |
 
-## د Background Image Formats
+## د شالید انځور بڼې
 
-Login page background، upload page background او admin login background دا formats ملاتړ کوي:
+د ننوتلو پاڼې شالید، د پورته کولو پاڼې شالید او د مدیریت د ننوتلو شالید دا بڼې ملاتړ کوي:
 
-| Value | اغېز |
+| ارزښت | اغېز |
 | --- | --- |
-| `bing` | Bing wallpaper rotation کاروي. |
-| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | څو images rotate کوي. |
-| `["https://example.com/1.jpg"]` | یو background image کاروي. |
-| `["https://your-domain.com/random?..."]` | د random image API link کاروي. خپل Random Image API په Other Settings کې تنظیمولای شئ، بیا generated random image link دلته د single-background entry په توګه paste کړئ. |
+| `bing` | د Bing والپیپر ګرځونه کاروي. |
+| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | څو انځورونه په وار وار ښيي. |
+| `["https://example.com/1.jpg"]` | یو شالید انځور کاروي. |
+| `["https://your-domain.com/random?..."]` | د تصادفي انځور API لینک کاروي. خپل تصادفي انځور API په نورو تنظیماتو کې برابرولای شئ، بیا جوړ شوی تصادفي انځور لینک دلته د یوه شالید د ننوتنې په توګه کېښودلای شئ. |
 
-admin background د image URLs ملاتړ کوي. څو URLs د page د prompt له مخې په English commas جلا کېدای شي. تش وي نو default background کارېږي.
+د مدیریت شالید د انځور URLونه ملاتړ کوي. څو URLونه د پاڼې د لارښوونې له مخې په انګلیسي کامو جلا کېدای شي. تش ارزښت د اصلي شالید کارول معنا لري.
 
-## Default Naming Method
+## د نوم اېښودلو اصلي طریقه
 
-| Method | Result |
+| طریقه | پایله |
 | --- | --- |
-| Default | Time-random prefix + original filename، لکه `1760000000000_cat.png`. |
-| Prefix only | یوازې time-random prefix او extension، لکه `1760000000000.png`. |
-| Original name only | original filename ساتي، لکه `cat.png`. که duplicate وي، ImgBed `(1)`، `(2)` او داسې نور اضافه کوي. |
-| Short link | 8-character short ID او extension کاروي، لکه `a1b2c3d4.png`. |
+| اصلي | د وخت پر بنسټ تصادفي مختاړی + د فایل اصلي نوم، لکه `1760000000000_cat.png`. |
+| یوازې مختاړی | یوازې د وخت پر بنسټ تصادفي مختاړی او غځونه، لکه `1760000000000.png`. |
+| یوازې اصلي نوم | د فایل اصلي نوم ساتي، لکه `cat.png`. که تکراري وي، ImgBed `(1)`، `(2)` او نور ورزیاتوي. |
+| لنډ لینک | له غځونې سره 8-توري لنډ ID کاروي، لکه `a1b2c3d4.png`. |

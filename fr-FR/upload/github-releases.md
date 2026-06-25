@@ -1,54 +1,69 @@
 # Ajouter un canal GitHub Releases
 
-Le canal GitHub Releases enregistre les fichiers comme Release Assets dans un dépôt GitHub.
+## Ce qu’il faut avant de commencer
 
-## Quand l’utiliser
+Vous n’avez besoin que de trois éléments :
 
-- Vous utilisez déjà GitHub régulièrement.
-- Vous voulez stocker de petits fichiers ou ressources de distribution dans des Releases.
-- Vous préférez une destination gérée par GitHub Token.
-
-## À préparer
-
-| Élément | Utilité |
+| Élément | Rôle |
 | --- | --- |
-| Compte GitHub | Gérer dépôt et token |
-| Dépôt | Héberger les Releases |
-| Personal Access Token | Envoyer des assets dans la Release |
-| Release Tag | Release à laquelle rattacher les fichiers |
+| Compte GitHub | Utilisé pour générer un jeton d’accès et posséder le dépôt. |
+| Jeton d’accès GitHub | ImgBed l’utilise pour accéder à l’API GitHub, créer des versions et téléverser des fichiers. |
+| Nom du dépôt | Vous pouvez saisir uniquement le nom du dépôt, par exemple `image`. |
 
-## Permissions du token
+## Étapes de configuration
 
-Le Personal Access Token doit pouvoir gérer les Releases du dépôt cible.
+### Étape 1 : se connecter à GitHub et créer un jeton d’accès
 
-![Permissions GitHub](../../image/upload/github-releases/添加github权限.png)
+1. Connectez-vous à GitHub.
+2. Cliquez sur votre avatar en haut à droite et ouvrez `Settings`.
+3. Ouvrez `Developer settings` dans la barre latérale gauche.
+4. Ouvrez `Personal access tokens`.
+5. Ouvrez `Tokens (classic)`.
+6. Cliquez sur `Generate new token (classic)`.
+7. Donnez au jeton un nom reconnaissable.
+8. Choisissez une date d’expiration selon vos préférences de maintenance.
+9. Sélectionnez les portées `repo` et `workflow`.
+10. Copiez et enregistrez le jeton immédiatement après sa création.
 
-Si le dépôt est privé, incluez l’accès aux dépôts privés.
+![Ajouter les permissions GitHub](../../image/upload/github-releases/添加github权限.png)
 
-## Renseigner dans ImgBed
+## Étape 2 : compléter le canal GitHub Releases dans ImgBed
 
-Dans Paramètres d’upload, choisissez `GitHub Releases`.
+Après avoir sélectionné `GitHub Releases` dans les paramètres de téléversement, remplissez les champs ainsi :
 
-| Champ | Valeur |
+| Champ d’interface | Valeur à saisir |
 | --- | --- |
-| Nom du canal | Par exemple `GitHub Release` |
-| Owner | Propriétaire du dépôt |
-| Repo | Nom du dépôt |
-| Token | Personal Access Token |
-| Release Tag | Tag de la Release |
-| Chemin | Optionnel |
+| Nom du canal | Nom de votre choix, par exemple `GitHubPrimary`. |
+| Jeton d’accès | Jeton d’accès personnel GitHub que vous venez de créer. |
+| Nom du dépôt | Nom court de dépôt comme `image`, ou chemin complet comme `username/image`. |
+| Dépôt privé | Activez ou désactivez selon vos besoins. |
+| Remarque | Facultatif, par exemple `Primary upload channel`. |
 
-![Configuration GitHub](../../image/upload/github-releases/填写github渠道配置.png)
+![Remplir la configuration du canal GitHub](../../image/upload/github-releases/填写github渠道配置.png)
 
-## Vérification
+## Étape 3 : enregistrer le canal
 
-1. Enregistrez le canal.
-2. Envoyez une image de test.
-3. Vérifiez qu’elle apparaît dans les Release Assets du dépôt.
-4. Ouvrez le lien renvoyé par ImgBed.
+Après avoir rempli les champs, cliquez sur Enregistrer.
 
-## Notes
+Le système gère ces détails :
 
-- GitHub Releases n’est pas un stockage spécialisé pour de gros volumes ou un trafic élevé.
-- Limitez le token au dépôt nécessaire.
-- Si vous supprimez manuellement assets ou releases, les liens ImgBed peuvent cesser de fonctionner.
+| Comportement du système | Description |
+| --- | --- |
+| Nom court du dépôt | ImgBed identifie le compte GitHub actuel et étend la valeur vers un chemin complet de dépôt. |
+| Chemin complet du dépôt | ImgBed utilise le chemin `username/repository` exactement tel qu’il a été saisi. |
+| Vérification du dépôt | Si vous utilisez le chemin du compte personnel actuel, ImgBed crée automatiquement le dépôt lorsqu’il n’existe pas. Si vous saisissez manuellement un chemin complet, ImgBed utilise directement ce chemin. |
+| État public/privé | La visibilité du dépôt est synchronisée selon l’interrupteur actuel. |
+
+## Liste rapide
+
+GitHub Releases fonctionne ainsi :
+
+```text
+Sign in to GitHub
+-> Create an Access Token
+-> Return to ImgBed and enter the token and repository name
+-> Save
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> Upload a test image
+```

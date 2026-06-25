@@ -1,67 +1,67 @@
-# Page Settings
+# பக்க அமைப்புகள்
 
-Page settings site display, upload page defaults, background images, admin panel appearance ஆகியவற்றை கட்டுப்படுத்தும்.
+பக்க அமைப்புகள் தளத்தின் காட்சி, பதிவேற்றப் பக்கத்தின் இயல்புநிலை மதிப்புகள், பின்னணி படங்கள் மற்றும் நிர்வாகப் பலகையின் தோற்றத்தை கட்டுப்படுத்துகின்றன.
 
-## Global Settings
+## பொது அமைப்புகள்
 
-| Option | Purpose |
+| விருப்பம் | நோக்கம் |
 | --- | --- |
-| Site title | browser tab-ல் காட்டப்படும் title. |
-| Site icon | browser tab-ல் காட்டப்படும் சிறிய icon. |
-| ImgBed name | frontend pages-ல் காட்டப்படும் பெயர். |
-| ImgBed logo | frontend pages-ல் காட்டப்படும் logo image. |
-| Logo link | logo அல்லது avatar click செய்தால் திறக்கும் URL. |
-| Background switch interval | multiple backgrounds rotation interval, milliseconds. `60000` = 60 seconds. |
-| Background opacity | background image opacity `0` முதல் `1` வரை. குறைந்த value image-ஐ lighter ஆக்கும். |
-| Default URL prefix | image links generate செய்யும் போது பயன்படுத்தும் prefix. empty என்றால் current site domain. |
+| தளத் தலைப்பு | உலாவி தாவலில் காட்டப்படும் தலைப்பு. |
+| தளச் சின்னம் | உலாவி தாவலில் காட்டப்படும் சிறிய சின்னம். |
+| ImgBed பெயர் | பொது இடைமுகப் பக்கங்களில் காட்டப்படும் பெயர். |
+| ImgBed லோகோ | பொது இடைமுகப் பக்கங்களில் காட்டப்படும் லோகோ படம். |
+| லோகோ இணைப்பு | லோகோ அல்லது அவதாரை கிளிக் செய்யும் போது திறக்கப்படும் URL. |
+| பின்னணி மாற்ற இடைவெளி | பல பின்னணிகள் மாறி மாறி காட்டப்படும் இடைவெளி, மில்லிவினாடிகளில். `60000` என்பது 60 விநாடிகள். |
+| பின்னணி தெளிவின்மை | பின்னணி படத்தின் தெளிவின்மை `0` முதல் `1` வரை. குறைந்த மதிப்புகள் படத்தை இலகுவாக காட்டும். |
+| இயல்புநிலை URL முன்னொட்டு | பட இணைப்புகளை உருவாக்கும் போது பயன்படுத்தப்படும் முன்னொட்டு. காலியாக இருந்தால் தற்போதைய தள டொமைன் பயன்படுத்தப்படும். |
 
-## Client Settings
+## கிளையன்ட் அமைப்புகள்
 
-| Option | Purpose |
+| விருப்பம் | நோக்கம் |
 | --- | --- |
-| Announcement | upload page மேல் காட்டப்படும் announcement. HTML supported. |
-| Default upload channel | upload page-ல் default selected upload channel. Smart Dispatch தேர்வு செய்யலாம். |
-| Default upload directory | default upload directory, உதா. `/user/`. empty அல்லது `/` என்றால் root. |
-| Default naming method | upload பிறகு default filename generation strategy. கீழே பார்க்கவும். |
-| Convert to WebP by default | upload முன் images-ஐ WebP-க்கு convert. |
-| Enable compression by default | upload முன் browser-ல் images locally compress. |
-| Default compression threshold | image இந்த size-ஐ மீறினால் automatically compress, MB. |
-| Default target size | compression பிறகு target file size, MB. |
-| Login page background | user login page background image. |
-| Upload page background | upload page background image. |
-| Footer portal link | footer portal button திறக்கும் URL. |
-| Hide footer | enabled என்றால் frontend footer hide. |
+| அறிவிப்பு | பதிவேற்றப் பக்கத்தின் மேல் காட்டப்படும் அறிவிப்பு. HTML ஆதரிக்கப்படுகிறது. |
+| இயல்புநிலை பதிவேற்ற சேனல் | பதிவேற்றப் பக்கத்தில் இயல்பாகத் தேர்ந்தெடுக்கப்படும் பதிவேற்ற சேனல். Smart Dispatch-ஐயும் தேர்ந்தெடுக்கலாம். |
+| இயல்புநிலை பதிவேற்ற அடைவு | இயல்புநிலை பதிவேற்ற அடைவு, உதாரணம் `/user/`. காலியாகவோ `/` ஆகவோ இருந்தால் root. |
+| இயல்புநிலை பெயரிடும் முறை | பதிவேற்றத்திற்குப் பிறகு கோப்புப் பெயரை உருவாக்கும் இயல்புநிலை தந்திரம். கீழே பார்க்கவும். |
+| இயல்பாக WebP ஆக மாற்று | பதிவேற்றத்திற்கு முன் படங்களை WebP ஆக மாற்றுகிறது. |
+| இயல்பாக சுருக்கத்தை இயக்கு | பதிவேற்றத்திற்கு முன் உலாவியில் உள்ளகமாக படங்களை சுருக்குகிறது. |
+| இயல்புநிலை சுருக்க வரம்பு | படம் இந்த அளவை மீறினால் தானாகச் சுருக்கப்படும்; அலகு MB. |
+| இயல்புநிலை இலக்கு அளவு | சுருக்கத்திற்குப் பிறகு இலக்கு கோப்பு அளவு, MB-ல். |
+| உள்நுழைவு பக்க பின்னணி | பயனர் உள்நுழைவு பக்கத்திற்கான பின்னணி படம். |
+| பதிவேற்றப் பக்க பின்னணி | பதிவேற்றப் பக்கத்திற்கான பின்னணி படம். |
+| அடிக்குறிப்பு போர்டல் இணைப்பு | அடிக்குறிப்பு போர்டல் பொத்தான் திறக்கும் URL. |
+| அடிக்குறிப்பை மறை | இயக்கப்பட்டால் பொது இடைமுகத்தின் அடிக்குறிப்பை மறைக்கும். |
 
-## Admin Settings
+## நிர்வாக அமைப்புகள்
 
-| Option | Purpose |
+| விருப்பம் | நோக்கம் |
 | --- | --- |
-| Admin login background | admin login page background image. |
-| Admin background | admin pages background image. ஒரு image URL அல்லது multiple URLs. |
-| Image loading mode | admin file list preview loading mode. Original original images load செய்யும். Smart loading public images-க்கு thumbnails, restricted images-க்கு originals prefer செய்யும். |
-| Thumbnail source | thumbnails generate செய்யும் service: wsrv.nl, Cloudflare Image Resizing, WordPress Photon. Cloudflare Image Resizing தேர்வு செய்ய முன் Cloudflare-ல் enable செய்ய வேண்டும். |
-| Live2D widget | admin panel-ல் Live2D character காட்டும். |
-| Firework click effect | page click செய்தால் firework effect. |
-| Star cursor trail | mouse move செய்தால் star trail. |
+| நிர்வாக உள்நுழைவு பின்னணி | நிர்வாக உள்நுழைவு பக்கத்திற்கான பின்னணி படம். |
+| நிர்வாக பின்னணி | நிர்வாகப் பக்கங்களுக்கான பின்னணி படம். ஒரு படம் URL அல்லது பல URL-களைப் பயன்படுத்தலாம். |
+| பட ஏற்றும் முறை | நிர்வாக கோப்பு பட்டியலில் முன்னோட்டங்களை ஏற்றும் முறை. அசல் படம் முறை அசல் படங்களை ஏற்றும். புத்திசாலி ஏற்றுதல் பொது படங்களுக்கு சிறுபடங்களையும் கட்டுப்படுத்தப்பட்ட படங்களுக்கு அசல் படங்களையும் முன்னுரிமை தரும். |
+| சிறுபட மூலம் | சிறுபடங்களை உருவாக்க பயன்படும் சேவை: wsrv.nl, Cloudflare Image Resizing அல்லது WordPress Photon. Cloudflare Image Resizing-ஐத் தேர்வு செய்வதற்கு முன் Cloudflare-ல் அதை இயக்கியிருக்க வேண்டும். |
+| Live2D விட்ஜெட் | நிர்வாகப் பலகையில் Live2D கதாபாத்திரத்தை காட்டும். |
+| கிளிக் பட்டாசு விளைவு | பக்கத்தை கிளிக் செய்யும் போது பட்டாசு விளைவை காட்டும். |
+| கர்சர் நட்சத்திர தடம் | மௌஸை நகர்த்தும் போது நட்சத்திர தடத்தை காட்டும். |
 
-## Background Image Formats
+## பின்னணி பட வடிவங்கள்
 
-Login page background, upload page background, admin login background இந்த formats support செய்கின்றன:
+உள்நுழைவு பக்க பின்னணி, பதிவேற்றப் பக்க பின்னணி மற்றும் நிர்வாக உள்நுழைவு பின்னணி இந்த வடிவங்களை ஆதரிக்கின்றன:
 
-| Value | Effect |
+| மதிப்பு | விளைவு |
 | --- | --- |
-| `bing` | Bing wallpaper rotation பயன்படுத்தும். |
-| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | multiple images rotate. |
-| `["https://example.com/1.jpg"]` | single background image. |
-| `["https://your-domain.com/random?..."]` | random image API link. Other Settings-ல் உங்கள் Random Image API configure செய்து generated random image link-ஐ single-background entry ஆக paste செய்யலாம். |
+| `bing` | Bing வால்பேப்பர் சுழற்சியைப் பயன்படுத்தும். |
+| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | பல படங்களை மாறி மாறி காட்டும். |
+| `["https://example.com/1.jpg"]` | ஒரு பின்னணி படத்தைப் பயன்படுத்தும். |
+| `["https://your-domain.com/random?..."]` | சீரற்ற படம் API இணைப்பைப் பயன்படுத்தும். பிற அமைப்புகளில் உங்கள் சொந்த சீரற்ற படம் API-ஐ அமைத்து, உருவாக்கப்பட்ட சீரற்ற படம் இணைப்பை இங்கே ஒற்றை பின்னணி உள்ளீடாக ஒட்டலாம். |
 
-admin background image URLs support செய்கிறது. page prompt படி multiple URLs English commas மூலம் separate செய்யலாம். empty என்றால் default background.
+நிர்வாக பின்னணி படம் URL-களை ஆதரிக்கிறது. பக்கத்தில் காட்டப்படும் வழிகாட்டலின்படி பல URL-களை ஆங்கில காற்புள்ளிகளால் பிரிக்கலாம். காலியாக இருந்தால் இயல்புநிலை பின்னணி பயன்படுத்தப்படும்.
 
-## Default Naming Method
+## இயல்புநிலை பெயரிடும் முறை
 
-| Method | Result |
+| முறை | முடிவு |
 | --- | --- |
-| Default | time-random prefix + original filename, உதா. `1760000000000_cat.png`. |
-| Prefix only | time-random prefix மற்றும் extension மட்டும், உதா. `1760000000000.png`. |
-| Original name only | original filename வைத்திருக்கும், உதா. `cat.png`. duplicate என்றால் ImgBed `(1)`, `(2)` போன்றவை சேர்க்கும். |
-| Short link | 8-character short ID மற்றும் extension, உதா. `a1b2c3d4.png`. |
+| இயல்புநிலை | நேர அடிப்படையிலான சீரற்ற முன்னொட்டு + அசல் கோப்புப் பெயர், உதாரணம் `1760000000000_cat.png`. |
+| முன்னொட்டு மட்டும் | நேர அடிப்படையிலான சீரற்ற முன்னொட்டு மற்றும் நீட்டிப்பு மட்டும், உதாரணம் `1760000000000.png`. |
+| அசல் பெயர் மட்டும் | அசல் கோப்புப் பெயரை வைத்திருக்கும், உதாரணம் `cat.png`. பெயர் மோதல் இருந்தால் ImgBed `(1)`, `(2)` போன்றவற்றைச் சேர்க்கும். |
+| குறுகிய இணைப்பு | நீட்டிப்புடன் 8 எழுத்துகளைக் கொண்ட குறுகிய ID-யைப் பயன்படுத்தும், உதாரணம் `a1b2c3d4.png`. |

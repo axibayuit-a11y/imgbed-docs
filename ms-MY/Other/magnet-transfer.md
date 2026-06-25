@@ -1,97 +1,97 @@
-# Magnet Transfer
+# Pemindahan Magnet
 
-Magnet transfer memuat turun files daripada magnet link dan meng-uploadnya secara automatik ke cloud storage channel yang anda pilih.
+Pemindahan magnet memuat turun fail daripada pautan magnet dan memuat naiknya secara automatik ke saluran storan awan yang anda pilih.
 
-Ia berguna untuk memindahkan anime episodes, videos, archives dan files seumpamanya. Paste magnet link, ImgBed mencipta background download task. Selepas download selesai, file di-upload ke ImgBed dan final link muncul dalam upload list.
+Fungsi ini berguna untuk memindahkan episod anime, video, arkib dan fail yang seumpamanya. Tampalkan pautan magnet, dan ImgBed akan mencipta tugasan muat turun di latar belakang. Selepas muat turun selesai, fail dimuat naik ke ImgBed dan pautan akhir muncul dalam senarai muat naik.
 
-![Magnet transfer](../../image/other/磁力链接/磁力链接.png)
+![Pemindahan magnet](../../image/other/磁力链接/磁力链接.png)
 
-## Di Mana Untuk Menggunakannya
+## Tempat Menggunakannya
 
-Magnet transfer entry berada dalam homepage upload area.
+Pintu masuk pemindahan magnet berada di kawasan muat naik halaman utama.
 
-Paste magnet link ke input box, pilih `Transfer`, kemudian upload.
+Tampalkan pautan magnet ke dalam kotak input, pilih `Transfer`, kemudian muat naik.
 
-![Upload anime](../../image/other/磁力链接/上传番剧.png)
+![Muat naik anime](../../image/other/磁力链接/上传番剧.png)
 
 ## Sebelum Penggunaan Pertama
 
-Configure magnet transfer dalam admin panel dahulu.
+Konfigurasikan pemindahan magnet dalam panel pentadbir terlebih dahulu.
 
-Biasanya anda perlukan:
+Biasanya anda memerlukan:
 
-1. GitHub account untuk menjalankan download task.
-2. Cloud upload channel, seperti Google Drive atau OneDrive.
-3. Target upload directory.
-4. Task timeout.
+1. Akaun GitHub untuk menjalankan tugasan muat turun.
+2. Saluran muat naik awan, seperti Google Drive atau OneDrive.
+3. Direktori muat naik sasaran.
+4. Had masa tugasan.
 
-Selepas settings sedia, kembali ke homepage dan paste magnet link untuk memulakan transfer.
+Selepas tetapan sedia, kembali ke halaman utama dan tampalkan pautan magnet untuk memulakan pemindahan.
 
-## Upload Magnet Link
+## Memuat Naik Pautan Magnet
 
-1. Paste magnet link ke homepage upload box.
-2. Pastikan mode ditetapkan kepada `Transfer`.
-3. Klik upload.
-4. Tunggu ImgBed mencipta magnet task.
-5. Selepas task bermula, gunakan floating panel `Magnet Tasks` di penjuru kanan bawah untuk menyemak progress.
+1. Tampalkan pautan magnet ke dalam kotak muat naik halaman utama.
+2. Pastikan mod ditetapkan kepada `Transfer`.
+3. Klik muat naik.
+4. Tunggu ImgBed mencipta tugasan magnet.
+5. Selepas tugasan bermula, gunakan panel terapung `Magnet Tasks` di penjuru kanan bawah untuk menyemak kemajuan.
 
-Download dan upload boleh mengambil masa. Speed bergantung pada magnet resource, GitHub runtime environment dan selected cloud storage channel.
+Muat turun dan muat naik boleh mengambil masa. Kelajuan bergantung pada sumber magnet, persekitaran masa jalan GitHub dan saluran storan awan yang dipilih.
 
-![Magnet downloading](../../image/other/磁力链接/磁力链接下载中.png)
+![Magnet sedang dimuat turun](../../image/other/磁力链接/磁力链接下载中.png)
 
-## Selepas Completion
+## Selepas Selesai
 
-Selepas task complete, upload list menunjukkan file name dan link.
+Selepas tugasan selesai, senarai muat naik menunjukkan nama fail dan pautan.
 
-Videos menunjukkan video preview, images menunjukkan image preview, dan other files menunjukkan regular file icon.
+Video menunjukkan pratonton video, imej menunjukkan pratonton imej, dan fail lain menunjukkan ikon fail biasa.
 
-![Downloaded video](../../image/other/磁力链接/下载好后的视频.png)
+![Video yang dimuat turun](../../image/other/磁力链接/下载好后的视频.png)
 
-Anda boleh copy:
+Anda boleh menyalin:
 
-| Link Type | Use Case |
+| Jenis Pautan | Kegunaan |
 | --- | --- |
-| Original link | Direct file access |
-| Markdown | Markdown posts atau notes |
-| HTML | Web page code |
-| BBCode | Forums yang menyokong BBCode |
+| Pautan asal | Akses fail secara terus |
+| Markdown | Siaran atau nota Markdown |
+| HTML | Kod halaman web |
+| BBCode | Forum yang menyokong BBCode |
 
-## Magnet Task Panel
+## Panel Tugasan Magnet
 
-Magnet task panel di penjuru kanan bawah menunjukkan task count, task name, progress dan final status.
+Panel tugasan magnet di penjuru kanan bawah menunjukkan bilangan tugasan, nama tugasan, kemajuan dan status akhir.
 
-Common states:
+Status biasa:
 
-| Status | Meaning |
+| Status | Maksud |
 | --- | --- |
-| Waiting | Task telah dicipta dan menunggu untuk run. |
-| Downloading | Magnet resource sedang dimuat turun. |
-| Uploading | File telah download dan sedang di-upload ke cloud storage. |
-| Completed | Upload berjaya dan link boleh disalin. |
-| Failed | Task tidak selesai dengan berjaya. Semak message dan cuba lagi. |
+| Menunggu | Tugasan telah dicipta dan sedang menunggu untuk dijalankan. |
+| Sedang memuat turun | Sumber magnet sedang dimuat turun. |
+| Sedang memuat naik | Fail telah dimuat turun dan sedang dimuat naik ke storan awan. |
+| Selesai | Muat naik berjaya dan pautan boleh disalin. |
+| Gagal | Tugasan tidak selesai dengan berjaya. Semak mesej dan cuba lagi. |
 
-## Tips
+## Petua
 
-- Jika magnet link mengandungi multiple files, ImgBed mengutamakan main completed file untuk display.
-- Large files mengambil masa lebih lama. Tunggu task selesai sebelum refresh page.
-- Jika magnet resource tiada available peers, ia mungkin sangat perlahan atau gagal.
-- Jika cloud account kehabisan quota, authorization expired, atau upload directory salah, task boleh gagal.
-- Video preview mungkin mengambil beberapa saat selepas upload complete.
+- Jika pautan magnet mengandungi berbilang fail, ImgBed mengutamakan fail utama yang telah selesai untuk dipaparkan.
+- Fail besar mengambil masa lebih lama. Tunggu tugasan selesai sebelum menyegarkan halaman.
+- Jika sumber magnet tiada peer yang tersedia, proses mungkin sangat perlahan atau gagal.
+- Jika akaun awan kehabisan kuota, kebenaran tamat tempoh atau direktori muat naik salah, tugasan mungkin gagal.
+- Pratonton video mungkin mengambil beberapa saat selepas muat naik selesai.
 
-## FAQ
+## Soalan Lazim
 
-### Tiada Apa Bermula Selepas Paste Magnet Link
+### Tiada Apa-apa Bermula Selepas Pautan Magnet Ditampal
 
-Pastikan magnet transfer enabled dalam admin panel dan GitHub account serta cloud channel yang boleh digunakan telah dipilih.
+Pastikan pemindahan magnet telah diaktifkan dalam panel pentadbir, dan akaun GitHub serta saluran awan yang boleh digunakan telah dipilih.
 
-### Download Sentiasa Perlahan
+### Muat Turun Sentiasa Perlahan
 
-Magnet speed bergantung pada resource itu sendiri. Jika tiada available peers, download mungkin sangat perlahan atau mustahil.
+Kelajuan magnet bergantung pada sumber itu sendiri. Jika tiada peer yang tersedia, muat turun mungkin sangat perlahan atau mustahil.
 
-### Tiada Preview Selepas Upload
+### Tiada Pratonton Selepas Muat Naik
 
-Mula-mula pastikan file link boleh dibuka. Video files mungkin memerlukan sedikit masa untuk load dalam browser, atau anda boleh buka link secara langsung.
+Mula-mula pastikan pautan fail boleh dibuka. Fail video mungkin memerlukan sedikit masa untuk dimuatkan dalam pelayar, atau anda boleh membuka pautan secara langsung.
 
-### Apa Perlu Disemak Jika Task Gagal?
+### Apa Yang Perlu Disemak Jika Tugasan Gagal?
 
-Semak sama ada magnet link valid, cloud channel berfungsi dan upload directory betul. Kemudian submit task semula.
+Semak sama ada pautan magnet sah, saluran awan berfungsi dan direktori muat naik betul. Kemudian hantar tugasan sekali lagi.

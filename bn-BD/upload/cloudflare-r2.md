@@ -1,109 +1,109 @@
-# Cloudflare R2 Channel যোগ করা
+# Cloudflare R2 চ্যানেল যোগ করা
 
-## কখন সবচেয়ে উপযোগী
+## কখন সবচেয়ে উপযোগী
 
 Cloudflare R2 ব্যবহার করুন যখন:
 
-- আপনার ImgBed site আগে থেকেই Cloudflare-এ deploy করা এবং একই Cloudflare account-এর R2 bucket-এ files রাখতে চান।
-- আলাদা S3 endpoint, access key এবং secret key configure করতে চান না।
-- Worker বা Pages R2 binding দিয়ে কম setup-এ read/write চালাতে চান।
+- আপনার ImgBed সাইট ইতিমধ্যে Cloudflare-এ প্রকাশিত এবং একই Cloudflare অ্যাকাউন্টের অধীনে থাকা R2 বাকেট-এ ফাইল সংরক্ষণ করতে চান।
+- আলাদা S3 endpoint, access key এবং secret key কনফিগার করতে চান না।
+- কম সেটআপে Worker বা Pages-এর R2 binding দিয়ে পড়া ও লেখা চালাতে চান।
 
 সংক্ষেপে:
 
-R2 channel ImgBed admin panel-এর ভেতরে manually তৈরি করা হয় না। আগে Cloudflare project-এ একটি R2 bucket bind করতে হবে, এবং binding variable name অবশ্যই `img_r2` হতে হবে।
+R2 চ্যানেল ImgBed অ্যাডমিন প্যানেলের ভেতরে হাতে তৈরি করা হয় না। আগে Cloudflare প্রকল্পে একটি R2 বাকেট bind করতে হবে, এবং binding variable নাম অবশ্যই `img_r2` হতে হবে।
 
 ## শুরু করার আগে যা লাগবে
 
-- একটি Cloudflare account।
-- আগে থেকে তৈরি একটি R2 bucket।
-- যে Cloudflare project-এ ImgBed deploy করা আছে সেটি manage করার permission।
+- একটি Cloudflare অ্যাকাউন্ট।
+- আগে থেকে তৈরি একটি R2 বাকেট।
+- যে Cloudflare প্রকল্পে ImgBed প্রকাশিত আছে, সেটি পরিচালনা করার অনুমতি।
 
-## Cloudflare-এ Configure করুন
+## Cloudflare-এ সেট করুন
 
-### 1. R2 Bucket তৈরি করুন
+### 1. একটি R2 Bucket তৈরি করুন
 
-1. Cloudflare Dashboard-এ log in করুন।
+1. Cloudflare ড্যাশবোর্ড-এ লগ ইন করুন।
 2. `R2 Object Storage` খুলুন।
-3. Create bucket ক্লিক করুন।
-4. Bucket name দিন, যেমন `imgbed`।
+3. তৈরি বাকেট-এ ক্লিক করুন।
+4. বাকেট-এর নাম দিন, যেমন `imgbed`।
 
-Uploaded files এই bucket-এ সংরক্ষিত হবে।
+আপলোড করা ফাইল এই বাকেট-এ সংরক্ষিত হবে।
 
-![Create an R2 bucket](../../image/upload/cloudflare-r2/创建一个存储桶img-r2.png)
+![R2 বাকেট তৈরি করা](../../image/upload/cloudflare-r2/创建一个存储桶img-r2.png)
 
-### 2. Bucket-কে ImgBed Project-এ Bind করুন
+### 2. Bucket-টি ImgBed প্রকল্পে Bind করুন
 
-আপনার deployment type অনুযায়ী binding location নির্বাচন করুন:
+আপনার প্রকাশনার ধরন অনুযায়ী binding location নির্বাচন করুন:
 
-| Deployment Type | Binding Location |
+| প্রকাশনার ধরন | Binding location |
 | --- | --- |
-| Pages | Current Pages project -> Settings -> Functions -> R2 bucket bindings |
-| Worker | Current Worker -> Settings -> Bindings -> R2 bucket bindings |
+| Pages | বর্তমান Pages প্রকল্প -> সেটিংস -> Functions -> R2 বাকেট bindings |
+| Worker | বর্তমান Worker -> সেটিংস -> Bindings -> R2 বাকেট bindings |
 
-Binding যোগ করার সময় গুরুত্বপূর্ণ fields:
+Binding যোগ করার সময় গুরুত্বপূর্ণ ক্ষেত্রগুলো হলো:
 
-| Field | Value |
+| ক্ষেত্র | মান |
 | --- | --- |
 | Variable name | `img_r2` |
-| R2 bucket | আপনার তৈরি করা bucket নির্বাচন করুন। |
+| R2 বাকেট | আপনার তৈরি করা বাকেট নির্বাচন করুন। |
 
-Variable name হুবহু `img_r2` হতে হবে। R2 files upload, read এবং delete—সবকিছু এই binding name-এর ওপর নির্ভর করে।
+Variable name হুবহু `img_r2` হতে হবে। R2 ফাইল আপলোড, পড়া এবং মুছে ফেলা সবই এই binding নাম-এর ওপর নির্ভর করে।
 
-### 3. Project Redeploy করুন
+### 3. প্রকল্পটি আবার প্রকাশ করুন
 
-Binding save করার পর ImgBed redeploy করুন, যাতে Worker বা Pages runtime `img_r2` access করতে পারে।
+Binding সংরক্ষণ করার পর ImgBed আবার প্রকাশ করুন, যাতে Worker বা Pages রানটাইম `img_r2`-এ প্রবেশ করতে পারে।
 
-## ImgBed-এ কী দেখবেন
+## ImgBed-এ যা দেখবেন
 
-R2 binding available হলে খুলুন:
+R2 binding উপলব্ধ হলে খুলুন:
 
-1. System Settings।
-2. Upload Settings।
-3. `Cloudflare R2` channel।
+1. সিস্টেম সেটিংস।
+2. আপলোড সেটিংস।
+3. `Cloudflare R2` চ্যানেল।
 
-System automatically একটি fixed channel তৈরি করে:
+সিস্টেম স্বয়ংক্রিয়ভাবে একটি নির্দিষ্ট চ্যানেল তৈরি করে:
 
-| Field | Fixed Value |
+| ক্ষেত্র | নির্দিষ্ট মান |
 | --- | --- |
-| Channel name | `Cloudflare R2` |
-| Channel type | `cfr2` |
-| Storage mode | `binding` |
-| Configuration source | Environment binding |
+| চ্যানেলের নাম | `Cloudflare R2` |
+| চ্যানেলের ধরন | `cfr2` |
+| সংরক্ষণ মোড | `binding` |
+| কনফিগারেশনের উৎস | Environment binding |
 
-এটি fixed binding channel। এটি তৈরি করতে Add Channel ক্লিক করতে হবে না, এবং সাধারণ channel-এর মতো delete করা যায় না।
+এটি একটি নির্দিষ্ট binding চ্যানেল। এটি তৈরি করতে চ্যানেল যোগ করুন ক্লিক করতে হয় না, এবং সাধারণ চ্যানেলের মতো এটি মুছে ফেলা যায় না।
 
-## Admin Panel-এ Editable Fields
+## অ্যাডমিন প্যানেলে সম্পাদনাযোগ্য ক্ষেত্র
 
-| Field | কাজ | Required |
+| ক্ষেত্র | কাজ | প্রয়োজনীয় |
 | --- | --- | --- |
-| Enable channel | R2 upload selection-এ অংশ নেবে কি না control করে। | Yes |
-| Account ID | Quota limits enabled হলে official R2 usage query করতে ব্যবহার হয়। | Quota limits enabled হলে recommended |
-| Bucket name | Quota limits enabled হলে official R2 usage query করতে ব্যবহার হয়। | Quota limits enabled হলে recommended |
-| Quota limit | Capacity অনুযায়ী এই R2 channel upload selection-এ অংশ নেবে কি না control করে। | No |
-| Threshold | Usage নির্দিষ্ট percentage-এ পৌঁছালে এই channel-এ writing বন্ধ করে। | Quota limits enabled হলে required |
+| চ্যানেল চালু করুন | R2 আপলোড নির্বাচনে অংশ নেবে কি না নিয়ন্ত্রণ করে। | হ্যাঁ |
+| Account ID | Quota limit চালু থাকলে official R2 usage জিজ্ঞাসা করতে ব্যবহৃত হয়। | Quota limit চালু থাকলে প্রস্তাবিত |
+| Bucket name | Quota limit চালু থাকলে official R2 usage জিজ্ঞাসা করতে ব্যবহৃত হয়। | Quota limit চালু থাকলে প্রস্তাবিত |
+| Quota limit | ধারণক্ষমতার ভিত্তিতে এই R2 চ্যানেল আপলোড নির্বাচনে অংশ নেবে কি না নিয়ন্ত্রণ করে। | না |
+| Threshold | ব্যবহার নির্দিষ্ট শতাংশে পৌঁছালে এই চ্যানেলে লেখা বন্ধ করে। | কোটা limit চালু থাকলে প্রয়োজনীয় |
 
-Cloudflare dashboard-এর account information panel থেকে Account ID copy করতে পারেন। শুধু তখনই দিন যখন ImgBed দিয়ে R2 quota usage query এবং enforce করতে চান।
+Cloudflare ড্যাশবোর্ডের অ্যাকাউন্ট তথ্য প্যানেল থেকে Account ID কপি করতে পারেন। শুধু তখনই এটি পূরণ করুন যখন ImgBed দিয়ে R2 quota usage জিজ্ঞাসা ও প্রয়োগ করতে চান।
 
-![Get the Account ID](../../image/upload/cloudflare-r2/获取账户id.png)
+![Account ID নেওয়া](../../image/upload/cloudflare-r2/获取账户id.png)
 
-## Setup Steps
+## সেটআপ ধাপ
 
-1. Cloudflare-এ R2 bucket তৈরি করুন।
-2. ImgBed project-এর Cloudflare settings খুলুন।
-3. R2 bucket binding যোগ করুন।
+1. Cloudflare-এ একটি R2 বাকেট তৈরি করুন।
+2. ImgBed প্রকল্পের Cloudflare সেটিংস খুলুন।
+3. R2 বাকেট binding যোগ করুন।
 4. `Variable name` হিসেবে `img_r2` দিন।
-5. তৈরি করা R2 bucket নির্বাচন করুন।
-6. Binding save করে ImgBed redeploy করুন।
-7. ImgBed -> System Settings -> Upload Settings-এ ফিরে আসুন।
-8. `Cloudflare R2` channel দেখা যাচ্ছে এবং enabled আছে কি না confirm করুন।
+5. তৈরি করা R2 বাকেট নির্বাচন করুন।
+6. Binding সংরক্ষণ করে ImgBed আবার প্রকাশ করুন।
+7. ImgBed -> সিস্টেম সেটিংস -> আপলোড সেটিংস-এ ফিরে যান।
+8. `Cloudflare R2` চ্যানেল দেখা যাচ্ছে এবং চালু আছে কি না নিশ্চিত করুন।
 
-Capacity অনুযায়ী R2 upload selection-এ অংশ নিক চাইলে quota limit enable করুন, তারপর Account ID, bucket name, quota limit এবং threshold দিয়ে save করুন।
+ধারণক্ষমতার ভিত্তিতে R2-কে আপলোড নির্বাচনে অংশ নিতে দিতে চাইলে quota limit চালু করুন। এরপর Account ID, বাকেট নাম, quota limit এবং threshold দিয়ে সংরক্ষণ করুন।
 
-![Configure quota limits](../../image/upload/cloudflare-r2/配置容量限制.png)
+![Quota limit কনফিগার করা](../../image/upload/cloudflare-r2/配置容量限制.png)
 
-## কীভাবে যাচাই করবেন
+## যাচাই করার পদ্ধতি
 
-- Upload Settings-এ fixed `Cloudflare R2` channel দেখা যায়।
-- Channel card-এ enabled দেখায়।
-- ছোট test file successfully upload হয় এবং returned link normalভাবে খোলে।
-- File খুললে `R2 database binding is not configured` দেখালে runtime `img_r2` binding পায়নি। Cloudflare-এ binding name check করে project redeploy করুন।
+- আপলোড সেটিংস-এ নির্দিষ্ট `Cloudflare R2` চ্যানেল দেখা যায়।
+- চ্যানেল কার্ডে এটি চালু দেখায়।
+- ছোট একটি পরীক্ষামূলক ফাইল সফলভাবে আপলোড হয় এবং ফেরত পাওয়া লিংক স্বাভাবিকভাবে খোলে।
+- কোনো ফাইল খুললে `R2 database binding is not configured` দেখা গেলে রানটাইম `img_r2` binding পায়নি। Cloudflare-এ binding নাম পরীক্ষা করে প্রকল্পটি আবার প্রকাশ করুন।

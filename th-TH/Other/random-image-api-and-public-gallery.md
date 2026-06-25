@@ -1,107 +1,107 @@
-# Random Image API และ Public Gallery
+# API รูปภาพสุ่มและแกลเลอรีสาธารณะ
 
-ทั้งสอง features ตั้งค่าได้ที่:
+ทั้งสองฟีเจอร์ตั้งค่าได้ที่:
 
 ```text
 System Settings -> Other Settings
 ```
 
-## Random Image API
+## API รูปภาพสุ่ม
 
-Random Image API return random file หนึ่งรายการจาก selected directories เหมาะกับ site backgrounds, avatar rotation หรือ random image calls จาก external pages
+API รูปภาพสุ่มจะคืนไฟล์แบบสุ่มหนึ่งไฟล์จากไดเรกทอรีที่เลือก เหมาะสำหรับพื้นหลังไซต์ การหมุนเวียนอวาตาร์ หรือการเรียกรูปภาพสุ่มจากหน้าภายนอก
 
-หลัง enable แล้วใช้:
+หลังเปิดใช้งาน ให้ใช้:
 
 ```text
 https://your-domain.com/random
 ```
 
-## Random Image API Settings
+## การตั้งค่า API รูปภาพสุ่ม
 
-| Option | Purpose |
+| ตัวเลือก | จุดประสงค์ |
 | --- | --- |
-| Enable | เปิดหรือปิด endpoint `/random` เมื่อ disabled จะ forbidden |
-| Directories | จำกัดว่า random API ใช้ directories ใดได้ Directories ที่ไม่อยู่ในนี้จะใช้กับ API ไม่ได้ |
-| Call demo | Generate random API links ที่ copy ได้โดยตรง |
+| เปิดใช้ | เปิดหรือปิดปลายทาง `/random` เมื่อปิดอยู่ ระบบจะปฏิเสธการเข้าถึง |
+| ไดเรกทอรี | จำกัดว่า API สุ่มสามารถใช้ไดเรกทอรีใดได้บ้าง ไดเรกทอรีที่ไม่ได้รวมไว้ที่นี่จะใช้กับ API ไม่ได้ |
+| ตัวอย่างการเรียก | สร้างลิงก์ API สุ่มที่คุณคัดลอกได้โดยตรง |
 
-เลือกได้หลาย directories เช่น ถ้า allow เฉพาะ `/landscape/` และ `/portrait/` random API จะเลือก files ได้เฉพาะจาก directories เหล่านั้นและ subdirectories
+คุณสามารถเลือกได้หลายไดเรกทอรี ตัวอย่างเช่น หากอนุญาตเฉพาะ `/landscape/` และ `/portrait/` API สุ่มจะเลือกไฟล์ได้เฉพาะจากไดเรกทอรีเหล่านั้นและไดเรกทอรีย่อยของมัน
 
-## Random Image API Parameters
+## พารามิเตอร์ API รูปภาพสุ่ม
 
-| Parameter | Example | Purpose |
+| พารามิเตอร์ | ตัวอย่าง | จุดประสงค์ |
 | --- | --- | --- |
-| `dir` | `/landscape/` | ระบุ random directory |
-| `content` | `image` | ระบุ media type ใช้ `image`, `video`, `audio` หรือ comma-separated combinations |
-| `orientation` | `auto` | Filter image orientation ใช้ `portrait`, `landscape` หรือ `auto` |
-| `type` | `url` | Return format ถ้าว่างคือ redirect, `url` return plain text URL, `json` return JSON |
-| `origin` | `1` | ใช้กับ `type=url` เพื่อ return full URL |
-| `age` | `all-ages,r12` | Filter ตาม age rating |
-| `tag` | `wallpaper,sky` | Return เฉพาะ files ที่มี tags เหล่านี้ |
-| `ex` | `private` | Exclude files ที่มี tags เหล่านี้ |
+| `dir` | `/landscape/` | ระบุไดเรกทอรีสุ่ม |
+| `content` | `image` | ระบุชนิดสื่อ ใช้ `image`, `video`, `audio` หรือรวมหลายค่าโดยคั่นด้วยจุลภาค |
+| `orientation` | `auto` | กรองแนวภาพ ใช้ `portrait`, `landscape` หรือ `auto` |
+| `type` | `url` | รูปแบบผลลัพธ์ ค่าว่างหมายถึงเปลี่ยนเส้นทาง, `url` คืน URL แบบข้อความล้วน, `json` คืน JSON |
+| `origin` | `1` | ใช้ร่วมกับ `type=url` เพื่อคืน URL แบบเต็ม |
+| `age` | `all-ages,r12` | กรองตามระดับอายุ |
+| `tag` | `wallpaper,sky` | คืนเฉพาะไฟล์ที่มีแท็กเหล่านี้ |
+| `ex` | `private` | ไม่รวมไฟล์ที่มีแท็กเหล่านี้ |
 
-## Return Formats
+## รูปแบบผลลัพธ์
 
-ถ้าไม่มี `type` API จะ redirect ไปยัง random file URL โดยตรง
+หากไม่มี `type` API จะเปลี่ยนเส้นทางไปยัง URL ของไฟล์สุ่มโดยตรง
 
-เมื่อ `type=url` จะ return text URL
+เมื่อใช้ `type=url` จะคืน URL แบบข้อความ
 
-เมื่อ `type=json` จะ return file information รวม file URL, file ID, file name, file type, tags, rating และ metadata ที่เกี่ยวข้อง
+เมื่อใช้ `type=json` จะคืนข้อมูลไฟล์ รวมถึง URL ไฟล์, ID ไฟล์, ชื่อไฟล์, ประเภทไฟล์, แท็ก, เรตติ้ง และเมทาดาทาที่เกี่ยวข้อง
 
-## Access Rules
+## กฎการเข้าถึง
 
-Random Image API ปฏิบัติตาม public access rules:
+API รูปภาพสุ่มทำตามกฎการเข้าถึงสาธารณะ:
 
-| Rule | Effect |
+| กฎ | ผล |
 | --- | --- |
-| Directory restriction | เลือกได้เฉพาะ files ใน allowed directories |
-| Blocklist | Blocklisted files ถูก exclude จาก random pool |
-| Allowlist mode | เมื่อ enabled จะ return เฉพาะ files ที่ allowed สำหรับ public access |
-| Age rating | R12, R16, R18 และ content คล้ายกันถูก filter ตาม current access mode |
+| จำกัดไดเรกทอรี | เลือกได้เฉพาะไฟล์ในไดเรกทอรีที่อนุญาต |
+| รายการบล็อก | ไฟล์ในรายการบล็อกจะถูกตัดออกจากชุดสุ่ม |
+| โหมดรายการอนุญาต | เมื่อเปิดใช้ จะคืนเฉพาะไฟล์ที่อนุญาตให้เข้าถึงแบบสาธารณะ |
+| ระดับอายุ | เนื้อหา R12, R16, R18 และเนื้อหาใกล้เคียงจะถูกกรองตามโหมดการเข้าถึงปัจจุบัน |
 
-ถ้าหลัง filtering ไม่มี file match API จะ return no matching result
+หากไม่มีไฟล์ที่ตรงหลังการกรอง API จะไม่คืนผลลัพธ์ที่ตรงกัน
 
-## Cache
+## แคช
 
-Random Image API cache directory candidate pools เพื่อเพิ่ม speed
+API รูปภาพสุ่มแคชชุดตัวเลือกของไดเรกทอรีเพื่อเพิ่มความเร็ว
 
-เมื่อ files เปลี่ยน ImgBed จะ update directory cache version และ requests ภายหลังจะ rebuild candidate pool Empty directories จะถูก cache สั้น ๆ เพื่อเลี่ยง repeated queries
+หลังไฟล์เปลี่ยน ImgBed จะอัปเดตเวอร์ชันแคชของไดเรกทอรี และคำขอถัดไปจะสร้างชุดตัวเลือกใหม่ ไดเรกทอรีว่างจะถูกแคชชั่วครู่เพื่อหลีกเลี่ยงการสืบค้นซ้ำ
 
-## Public Gallery
+## แกลเลอรีสาธารณะ
 
-Public gallery ให้หน้า public browsing แบบ read-only สำหรับ directories ที่คุณอนุญาตให้ visitors เห็น
+แกลเลอรีสาธารณะให้บริการหน้าเรียกดูแบบอ่านอย่างเดียวสำหรับไดเรกทอรีที่คุณอนุญาตให้ผู้เยี่ยมชมเห็น
 
-หลัง enable แล้ว visitors เปิดได้ที่:
+หลังเปิดใช้งาน ผู้เยี่ยมชมสามารถเปิด:
 
 ```text
 https://your-domain.com/browse/directory-name
 ```
 
-## Public Gallery Settings
+## การตั้งค่าแกลเลอรีสาธารณะ
 
-| Option | Purpose |
+| ตัวเลือก | จุดประสงค์ |
 | --- | --- |
-| Enable | เปิดหรือปิด public gallery เมื่อ disabled visitors จะ browse ไม่ได้ |
-| Image loading mode | ควบคุมว่า previews ใช้ original images หรือ thumbnails |
-| Open directories | กำหนดว่า visitors access directories ใดได้ |
+| เปิดใช้ | เปิดหรือปิดแกลเลอรีสาธารณะ เมื่อปิด ผู้เยี่ยมชมจะเรียกดูไม่ได้ |
+| โหมดโหลดรูปภาพ | ควบคุมว่าตัวอย่างใช้รูปภาพต้นฉบับหรือภาพขนาดย่อ |
+| ไดเรกทอรีที่เปิดให้เข้าถึง | กำหนดไดเรกทอรีที่ผู้เยี่ยมชมเข้าถึงได้ |
 
-## Image Loading Mode
+## โหมดโหลดรูปภาพ
 
-| Mode | Purpose |
+| โหมด | จุดประสงค์ |
 | --- | --- |
-| Original | Visitor page load original files โดยตรง |
-| Thumbnail | Visitor page prefer thumbnails เพื่อ loading ที่เร็วขึ้น |
+| ต้นฉบับ | หน้าผู้เยี่ยมชมโหลดไฟล์ต้นฉบับโดยตรง |
+| ภาพขนาดย่อ | หน้าผู้เยี่ยมชมเลือกใช้ภาพขนาดย่อเพื่อโหลดเร็วขึ้น |
 
-## Open Directories
+## ไดเรกทอรีที่เปิดให้เข้าถึง
 
-Open directories ตัดสินว่า visitors เห็นอะไรได้
+ไดเรกทอรีที่เปิดให้เข้าถึงกำหนดว่าผู้เยี่ยมชมจะเห็นอะไรได้บ้าง
 
-Example:
+ตัวอย่าง:
 
 ```text
 /1/,/2/,/landscape/,/portrait/
 ```
 
-Visitors จะ access ได้ที่:
+จากนั้นผู้เยี่ยมชมจะเข้าถึงได้:
 
 ```text
 https://your-domain.com/browse/1
@@ -110,29 +110,29 @@ https://your-domain.com/browse/landscape
 https://your-domain.com/browse/portrait
 ```
 
-Subdirectories ก็เปิดได้ เช่น `/2026/lucky/` Visitors จะถูก block จาก directories ที่ไม่ได้ open
+สามารถเปิดไดเรกทอรีย่อยได้เช่นกัน เช่น `/2026/lucky/` ผู้เยี่ยมชมจะถูกบล็อกจากไดเรกทอรีที่ไม่ได้เปิด
 
-## Public Gallery Features
+## ฟีเจอร์ของแกลเลอรีสาธารณะ
 
-| Feature | Description |
+| ฟีเจอร์ | คำอธิบาย |
 | --- | --- |
-| Browse directories | ดู files และ subdirectories ใน open directories |
-| Search | Search ด้วย file name, file ID หรือ tags |
-| Type filter | Filter images, videos, audio หรือ other files |
-| Tag filter | Include หรือ exclude selected tags |
-| Orientation filter | Filter landscape หรือ portrait images |
-| Time filter | Filter ตาม upload time range |
-| Extension filter | Filter ตาม file extension |
-| Copy link | Copy file access links |
-| Media preview | ดูหรือเล่น images, videos และ audio บน visitor page |
+| เรียกดูไดเรกทอรี | ดูไฟล์และไดเรกทอรีย่อยในไดเรกทอรีที่เปิดให้เข้าถึง |
+| ค้นหา | ค้นหาตามชื่อไฟล์, ID ไฟล์ หรือแท็ก |
+| ตัวกรองประเภท | กรองรูปภาพ วิดีโอ เสียง หรือไฟล์อื่น |
+| ตัวกรองแท็ก | รวมหรือยกเว้นแท็กที่เลือก |
+| ตัวกรองแนวภาพ | กรองรูปภาพแนวนอนหรือแนวตั้ง |
+| ตัวกรองเวลา | กรองตามช่วงเวลาอัปโหลด |
+| ตัวกรองนามสกุล | กรองตามนามสกุลไฟล์ |
+| คัดลอกลิงก์ | คัดลอกลิงก์เข้าถึงไฟล์ |
+| ตัวอย่างสื่อ | ดูหรือเล่นรูปภาพ วิดีโอ และเสียงบนหน้าผู้เยี่ยมชม |
 
-## Public Gallery Access Rules
+## กฎการเข้าถึงแกลเลอรีสาธารณะ
 
-Public gallery ก็ปฏิบัติตาม public access rules:
+แกลเลอรีสาธารณะก็ทำตามกฎการเข้าถึงสาธารณะเช่นกัน:
 
-| Rule | Effect |
+| กฎ | ผล |
 | --- | --- |
-| Open directories | แสดงเฉพาะ allowed directories |
-| Access mode | Content ถูก filter ตาม current age-rating access mode |
-| Allowlist mode | เมื่อ enabled จะแสดงเฉพาะ files ที่ allowed สำหรับ public access |
-| Blocklist | Blocklisted files ถูกซ่อน |
+| ไดเรกทอรีที่เปิดให้เข้าถึง | แสดงเฉพาะไดเรกทอรีที่อนุญาต |
+| โหมดการเข้าถึง | เนื้อหาถูกกรองตามโหมดการเข้าถึงระดับอายุปัจจุบัน |
+| โหมดรายการอนุญาต | เมื่อเปิดใช้ จะแสดงเฉพาะไฟล์ที่อนุญาตให้เข้าถึงแบบสาธารณะ |
+| รายการบล็อก | ไฟล์ในรายการบล็อกจะถูกซ่อน |

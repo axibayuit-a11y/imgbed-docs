@@ -24,7 +24,7 @@ R2 kanalı ImgBed yönetim panelinde elle oluşturulmaz. Önce Cloudflare projes
 
 1. Cloudflare Dashboard'a giriş yapın.
 2. `R2 Object Storage` bölümünü açın.
-3. Create bucket düğmesine tıklayın.
+3. Bucket oluştur düğmesine tıklayın.
 4. Bucket adı seçin, örneğin `imgbed`.
 
 Yüklenen dosyalar bu bucket içinde saklanır.
@@ -37,8 +37,8 @@ Binding konumu dağıtım türüne göre değişir:
 
 | Dağıtım Türü | Binding Konumu |
 | --- | --- |
-| Pages | Current Pages project -> Settings -> Functions -> R2 bucket bindings |
-| Worker | Current Worker -> Settings -> Bindings -> R2 bucket bindings |
+| Pages | `Current Pages project -> Settings -> Functions -> R2 bucket bindings` |
+| Worker | `Current Worker -> Settings -> Bindings -> R2 bucket bindings` |
 
 Binding eklerken önemli alanlar şunlardır:
 
@@ -70,7 +70,7 @@ Sistem otomatik olarak tek bir sabit kanal oluşturur:
 | Depolama modu | `binding` |
 | Yapılandırma kaynağı | Environment binding |
 
-Bu sabit bir binding kanalıdır. Oluşturmak için Add Channel düğmesine basmanız gerekmez ve normal kanallar gibi silinemez.
+Bu sabit bir binding kanalıdır. Oluşturmak için Kanal Ekle düğmesine basmanız gerekmez ve normal kanallar gibi silinemez.
 
 ## Yönetim Panelinde Düzenlenebilen Alanlar
 
@@ -94,7 +94,7 @@ Account ID değerini Cloudflare dashboard'daki hesap bilgisi panelinden kopyalay
 4. `Variable name` alanını `img_r2` olarak ayarlayın.
 5. Oluşturduğunuz R2 bucket'ı seçin.
 6. Binding'i kaydedin ve ImgBed'i yeniden dağıtın.
-7. ImgBed -> System Settings -> Upload Settings bölümüne dönün.
+7. `ImgBed -> System Settings -> Upload Settings` bölümüne dönün.
 8. `Cloudflare R2` kanalının göründüğünü ve etkin olduğunu doğrulayın.
 
 R2'nin kapasiteye göre yükleme seçiminde yer almasını istiyorsanız quota limit'i etkinleştirin, ardından kaydetmeden önce Account ID, bucket name, quota limit ve threshold değerlerini girin.

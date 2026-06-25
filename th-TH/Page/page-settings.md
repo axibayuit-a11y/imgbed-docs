@@ -1,67 +1,67 @@
-# Page Settings
+# การตั้งค่าหน้า
 
-Page settings ควบคุม site display, upload page defaults, background images และ admin panel appearance
+การตั้งค่าหน้าควบคุมการแสดงผลของไซต์ ค่าเริ่มต้นของหน้าอัปโหลด รูปภาพพื้นหลัง และรูปลักษณ์ของแผงผู้ดูแลระบบ
 
-## Global Settings
+## การตั้งค่าส่วนกลาง
 
-| Option | Purpose |
+| ตัวเลือก | วัตถุประสงค์ |
 | --- | --- |
-| Site title | Title ที่แสดงใน browser tab |
-| Site icon | Icon เล็กที่แสดงใน browser tab |
-| ImgBed name | Name ที่แสดงบน frontend pages |
-| ImgBed logo | Logo image ที่แสดงบน frontend pages |
-| Logo link | URL ที่เปิดเมื่อคลิก logo หรือ avatar |
-| Background switch interval | Rotation interval สำหรับหลาย backgrounds หน่วย milliseconds `60000` หมายถึง 60 seconds |
-| Background opacity | Opacity ของ background image จาก `0` ถึง `1` ค่าต่ำจะดูจางกว่า |
-| Default URL prefix | Prefix ที่ใช้ตอน generate image links ถ้าว่างจะใช้ current site domain |
+| ชื่อไซต์ | ชื่อที่แสดงในแท็บเบราว์เซอร์ |
+| ไอคอนไซต์ | ไอคอนขนาดเล็กที่แสดงในแท็บเบราว์เซอร์ |
+| ชื่อ ImgBed | ชื่อที่แสดงบนหน้าของอินเทอร์เฟซสาธารณะ |
+| โลโก้ ImgBed | รูปภาพโลโก้ที่แสดงบนหน้าของอินเทอร์เฟซสาธารณะ |
+| ลิงก์โลโก้ | URL ที่เปิดเมื่อคลิกโลโก้หรืออวาตาร์ |
+| ช่วงเวลาการสลับพื้นหลัง | ช่วงเวลาการหมุนเวียนของพื้นหลังหลายภาพ หน่วยเป็นมิลลิวินาที `60000` หมายถึง 60 วินาที |
+| ความทึบของพื้นหลัง | ความทึบของรูปภาพพื้นหลังตั้งแต่ `0` ถึง `1` ค่าที่ต่ำกว่าจะทำให้ภาพดูจางลง |
+| คำนำหน้า URL เริ่มต้น | คำนำหน้าที่ใช้เมื่อสร้างลิงก์รูปภาพ หากเว้นว่างไว้จะใช้โดเมนไซต์ปัจจุบัน |
 
-## Client Settings
+## การตั้งค่าไคลเอนต์
 
-| Option | Purpose |
+| ตัวเลือก | วัตถุประสงค์ |
 | --- | --- |
-| Announcement | Announcement ที่แสดงด้านบนของ upload page รองรับ HTML |
-| Default upload channel | Upload channel ที่เลือกเป็น default บน upload page เลือก Smart Dispatch ได้ด้วย |
-| Default upload directory | Default upload directory เช่น `/user/` ถ้าว่างหรือ `/` หมายถึง root |
-| Default naming method | Strategy สำหรับ generate filename หลัง upload ดูด้านล่าง |
-| Convert to WebP by default | Convert images เป็น WebP ก่อน upload |
-| Enable compression by default | Compress images ใน browser ก่อน upload |
-| Default compression threshold | Compress อัตโนมัติเมื่อ image เกิน size นี้ หน่วย MB |
-| Default target size | Target file size หลัง compression หน่วย MB |
-| Login page background | Background image สำหรับ user login page |
-| Upload page background | Background image สำหรับ upload page |
-| Footer portal link | URL ที่เปิดจาก footer portal button |
-| Hide footer | เมื่อ enabled จะซ่อน frontend footer |
+| ประกาศ | ประกาศที่แสดงด้านบนของหน้าอัปโหลด รองรับ HTML |
+| ช่องทางอัปโหลดเริ่มต้น | ช่องทางอัปโหลดที่เลือกไว้เป็นค่าเริ่มต้นในหน้าอัปโหลด สามารถเลือก Smart Dispatch ได้ด้วย |
+| ไดเรกทอรีอัปโหลดเริ่มต้น | ไดเรกทอรีอัปโหลดเริ่มต้น เช่น `/user/` หากเว้นว่างหรือเป็น `/` จะหมายถึงรูท |
+| วิธีตั้งชื่อเริ่มต้น | กลยุทธ์เริ่มต้นในการสร้างชื่อไฟล์หลังอัปโหลด ดูรายละเอียดด้านล่าง |
+| แปลงเป็น WebP โดยค่าเริ่มต้น | แปลงรูปภาพเป็น WebP ก่อนอัปโหลด |
+| เปิดใช้การบีบอัดโดยค่าเริ่มต้น | บีบอัดรูปภาพภายในเบราว์เซอร์ก่อนอัปโหลด |
+| เกณฑ์การบีบอัดเริ่มต้น | บีบอัดโดยอัตโนมัติเมื่อรูปภาพมีขนาดเกินค่านี้ หน่วยเป็น MB |
+| ขนาดเป้าหมายเริ่มต้น | ขนาดไฟล์เป้าหมายหลังการบีบอัด หน่วยเป็น MB |
+| พื้นหลังหน้าเข้าสู่ระบบ | รูปภาพพื้นหลังสำหรับหน้าเข้าสู่ระบบของผู้ใช้ |
+| พื้นหลังหน้าอัปโหลด | รูปภาพพื้นหลังสำหรับหน้าอัปโหลด |
+| ลิงก์พอร์ทัลส่วนท้าย | URL ที่เปิดโดยปุ่มพอร์ทัลในส่วนท้าย |
+| ซ่อนส่วนท้าย | ซ่อนส่วนท้ายของอินเทอร์เฟซสาธารณะเมื่อเปิดใช้ |
 
-## Admin Settings
+## การตั้งค่าผู้ดูแลระบบ
 
-| Option | Purpose |
+| ตัวเลือก | วัตถุประสงค์ |
 | --- | --- |
-| Admin login background | Background image สำหรับ admin login page |
-| Admin background | Background image สำหรับ admin pages ใช้ image URL เดียวหรือหลาย URLs |
-| Image loading mode | Preview loading mode สำหรับ admin file list Original load original images Smart loading prefer thumbnails สำหรับ public images และ originals สำหรับ restricted images |
-| Thumbnail source | Service ที่ใช้ generate thumbnails: wsrv.nl, Cloudflare Image Resizing หรือ WordPress Photon ต้อง enable Cloudflare Image Resizing ใน Cloudflare ก่อนเลือก |
-| Live2D widget | แสดง Live2D character ใน admin panel |
-| Firework click effect | แสดง firework effect เมื่อคลิก page |
-| Star cursor trail | แสดง star trail เมื่อขยับ mouse |
+| พื้นหลังหน้าเข้าสู่ระบบผู้ดูแล | รูปภาพพื้นหลังสำหรับหน้าเข้าสู่ระบบผู้ดูแล |
+| พื้นหลังผู้ดูแลระบบ | รูปภาพพื้นหลังสำหรับหน้าผู้ดูแลระบบ ใช้ URL รูปภาพหนึ่งรายการหรือหลาย URL ได้ |
+| โหมดการโหลดรูปภาพ | โหมดโหลดตัวอย่างในรายการไฟล์ของผู้ดูแล ระบบโหมดรูปภาพต้นฉบับจะโหลดรูปภาพต้นฉบับ การโหลดอัจฉริยะจะให้ความสำคัญกับภาพขนาดย่อสำหรับรูปภาพสาธารณะ และรูปภาพต้นฉบับสำหรับรูปภาพที่ถูกจำกัด |
+| แหล่งที่มาของภาพขนาดย่อ | บริการที่ใช้สร้างภาพขนาดย่อ: wsrv.nl, Cloudflare Image Resizing หรือ WordPress Photon ต้องเปิดใช้ Cloudflare Image Resizing ใน Cloudflare ก่อนเลือก |
+| วิดเจ็ต Live2D | แสดงตัวละคร Live2D ในแผงผู้ดูแลระบบ |
+| เอฟเฟกต์ดอกไม้ไฟเมื่อคลิก | แสดงเอฟเฟกต์ดอกไม้ไฟเมื่อคลิกหน้า |
+| รอยดาวตามเคอร์เซอร์ | แสดงรอยดาวเมื่อเลื่อนเมาส์ |
 
-## Background Image Formats
+## รูปแบบรูปภาพพื้นหลัง
 
-Login page background, upload page background และ admin login background รองรับ formats เหล่านี้:
+พื้นหลังหน้าเข้าสู่ระบบ พื้นหลังหน้าอัปโหลด และพื้นหลังหน้าเข้าสู่ระบบผู้ดูแลรองรับรูปแบบเหล่านี้:
 
-| Value | Effect |
+| ค่า | ผลลัพธ์ |
 | --- | --- |
-| `bing` | ใช้ Bing wallpaper rotation |
-| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | Rotate หลาย images |
-| `["https://example.com/1.jpg"]` | ใช้ background image เดียว |
-| `["https://your-domain.com/random?..."]` | ใช้ random image API link คุณสามารถ configure Random Image API ของตัวเองใน Other Settings แล้ว paste generated random image link ที่นี่เป็น single-background entry |
+| `bing` | ใช้การหมุนเวียนวอลเปเปอร์ Bing |
+| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | หมุนเวียนรูปภาพหลายภาพ |
+| `["https://example.com/1.jpg"]` | ใช้รูปภาพพื้นหลังภาพเดียว |
+| `["https://your-domain.com/random?..."]` | ใช้ลิงก์ API รูปภาพแบบสุ่ม คุณสามารถกำหนดค่า API รูปภาพแบบสุ่มของคุณเองในส่วนการตั้งค่าอื่น ๆ แล้ววางลิงก์รูปภาพแบบสุ่มที่สร้างขึ้นไว้ที่นี่เป็นรายการพื้นหลังเดียว |
 
-Admin background รองรับ image URLs หลาย URLs แยกด้วย English commas ตาม prompt บน page ถ้าว่างจะใช้ default background
+พื้นหลังผู้ดูแลระบบรองรับ URL รูปภาพ หลาย URL สามารถคั่นด้วยจุลภาคภาษาอังกฤษตามคำแนะนำบนหน้า หากเว้นว่างไว้จะใช้พื้นหลังเริ่มต้น
 
-## Default Naming Method
+## วิธีตั้งชื่อเริ่มต้น
 
-| Method | Result |
+| วิธี | ผลลัพธ์ |
 | --- | --- |
-| Default | Time-random prefix + original filename เช่น `1760000000000_cat.png` |
-| Prefix only | เฉพาะ time-random prefix และ extension เช่น `1760000000000.png` |
-| Original name only | เก็บ original filename เช่น `cat.png` ถ้าซ้ำ ImgBed จะเพิ่ม `(1)`, `(2)` เป็นต้น |
-| Short link | ใช้ 8-character short ID และ extension เช่น `a1b2c3d4.png` |
+| ค่าเริ่มต้น | คำนำหน้าแบบสุ่มตามเวลา + ชื่อไฟล์เดิม เช่น `1760000000000_cat.png` |
+| เฉพาะคำนำหน้า | ใช้เฉพาะคำนำหน้าแบบสุ่มตามเวลาและนามสกุล เช่น `1760000000000.png` |
+| เฉพาะชื่อเดิม | เก็บชื่อไฟล์เดิมไว้ เช่น `cat.png` หากซ้ำ ImgBed จะเพิ่ม `(1)`, `(2)` และต่อไป |
+| ลิงก์สั้น | ใช้ ID สั้น 8 อักขระพร้อมนามสกุล เช่น `a1b2c3d4.png` |

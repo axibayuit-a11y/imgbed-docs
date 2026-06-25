@@ -96,18 +96,18 @@ Sla het kanaal op zodra alle velden zijn ingevuld.
 
 ```text
 Open Google Cloud
--> Maak of selecteer een project
--> Schakel Google Drive API in
--> Configureer Google Auth Platform
--> Voeg bij Audience = External je Google-account toe aan Test users
--> Maak een OAuth-client van het type Web application
--> Gebruik https://your-domain.com/api/oauth/google/callback als redirect URI
--> Vul Client ID en Client Secret in ImgBed in
--> Klik Get Token
--> Log in met Google en autoriseer
--> Kopieer het Refresh Token van de callbackpagina
--> Plak het in ImgBed en sla op
--> Upload een testafbeelding
+-> Create or select a project
+-> Enable Google Drive API
+-> Configure Google Auth Platform
+-> If Audience is External, add your Google account to Test users
+-> Create a Web application OAuth client
+-> Use https://your-domain.com/api/oauth/google/callback as the redirect URI
+-> Fill Client ID and Client Secret into ImgBed
+-> Click Get Token
+-> Sign in with Google and authorize
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
+-> Upload a test image
 ```
 
 ## Referenties

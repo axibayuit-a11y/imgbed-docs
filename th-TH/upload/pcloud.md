@@ -1,41 +1,41 @@
-# เพิ่ม pCloud Channel
+# เพิ่มช่องทาง pCloud
 
 ## เหมาะกับ
 
-- คุณมี pCloud account และต้องการให้ ImgBed store images ใน pCloud
-- คุณสะดวกใช้ pCloud account email และ password เป็น channel credentials
+- คุณมี pCloud account และต้องการให้ ImgBed จัดเก็บรูปภาพใน pCloud
+- คุณสะดวกใช้ pCloud account email และ password เป็น credentials ของช่องทาง
 
 ## สิ่งที่ต้องเตรียมก่อน
 
-| Requirement | ทำไมต้องใช้ |
+| ข้อกำหนด | ทำไมต้องใช้ |
 | --- | --- |
-| pCloud account email | ใช้ sign in เข้า pCloud API |
-| pCloud password | ใช้ sign in เข้า pCloud API |
+| pCloud account email | ใช้เข้าสู่ระบบ pCloud API |
+| pCloud password | ใช้เข้าสู่ระบบ pCloud API |
 | API host | ค่าเริ่มต้น `api.pcloud.com` EU accounts ใช้ `eapi.pcloud.com` ได้ |
-| Storage directory | ที่เก็บ files ค่าเริ่มต้นคือ `imgbed` |
+| Storage directory | ที่เก็บไฟล์ ค่าเริ่มต้นคือ `imgbed` |
 
 ## เพิ่มได้จากที่ไหน
 
-1. เปิด System Settings
-2. เปิด Upload Settings
+1. เปิดการตั้งค่าระบบ
+2. เปิดการตั้งค่าการอัปโหลด
 3. คลิก `Add Channel` ที่มุมขวาบน
 4. เลือก `pCloud`
 
-## Field Reference
+## รายละเอียดฟิลด์
 
-| Field | Purpose | Required |
+| ฟิลด์ | วัตถุประสงค์ | จำเป็น |
 | --- | --- | --- |
-| Channel name | ใช้ระบุ pCloud channel นี้ เช่น `Personal pCloud` | Yes |
-| Account email | pCloud login email ของคุณ | Yes |
-| Password | pCloud password ของคุณ | Yes |
-| API host | pCloud API host ค่าเริ่มต้น `api.pcloud.com` | No |
-| Storage directory | Directory สำหรับเก็บ files ค่าเริ่มต้น `imgbed` | No |
+| Channel name | ใช้ระบุช่องทาง pCloud นี้ เช่น `Personal pCloud` | ใช่ |
+| Account email | อีเมลเข้าสู่ระบบ pCloud ของคุณ | ใช่ |
+| Password | รหัสผ่าน pCloud ของคุณ | ใช่ |
+| API host | pCloud API host ค่าเริ่มต้น `api.pcloud.com` | ไม่ |
+| Storage directory | Directory สำหรับเก็บไฟล์ ค่าเริ่มต้น `imgbed` | ไม่ |
 
-เลือก API host ตาม account region:
+เลือก API host ตาม region ของ account:
 
-| Account Region | API Host |
+| Region ของ account | API Host |
 | --- | --- |
-| Default / US | `api.pcloud.com` |
+| ค่าเริ่มต้น / US | `api.pcloud.com` |
 | Europe | `eapi.pcloud.com` |
 
 ## ขั้นตอนตั้งค่า
@@ -48,33 +48,33 @@
 6. ใส่ pCloud password
 7. ปล่อย API host เป็น `api.pcloud.com` หรือใช้ `eapi.pcloud.com` สำหรับ EU accounts
 8. ปล่อย storage directory เป็น `imgbed` หรือเปลี่ยนเป็น folder ที่ต้องการ
-9. Save channel
+9. บันทึกช่องทาง
 
-![Configure channel](../../image/upload/pcloud/配置渠道.png)
+![กำหนดค่าช่องทาง](../../image/upload/pcloud/配置渠道.png)
 
 ## วิธีตรวจสอบ
 
-| Check | Expected Result |
+| รายการตรวจสอบ | ผลลัพธ์ที่คาดหวัง |
 | --- | --- |
-| Channel card | pCloud channel card แสดงหลัง save |
-| Channel switch | Switch บน card enabled อยู่ |
-| Email display | Card แสดง connected pCloud email |
+| การ์ดช่องทาง | การ์ดช่องทาง pCloud แสดงหลังบันทึก |
+| สวิตช์ช่องทาง | สวิตช์บนการ์ดเปิดใช้งานอยู่ |
+| การแสดงอีเมล | การ์ดแสดงอีเมล pCloud ที่เชื่อมต่อแล้ว |
 | Quota query | Query สำเร็จแล้วแสดง used และ total capacity |
-| Upload test | Test image ปรากฏใน configured pCloud storage directory |
+| ทดสอบอัปโหลด | รูปทดสอบปรากฏใน pCloud storage directory ที่กำหนดค่าไว้ |
 
-![Quota query success](../../image/upload/pcloud/查询额度成功.png)
+![Quota query สำเร็จ](../../image/upload/pcloud/查询额度成功.png)
 
-## Troubleshooting
+## การแก้ไขปัญหา
 
 ### ทำไมไม่ใช้ OAuth2?
 
-pCloud OAuth2 ไม่ได้ self-service โดย default ต้อง email ไปขอให้ pCloud enable
+pCloud OAuth2 ไม่ได้เปิดให้บริการแบบ self-service โดยค่าเริ่มต้น ต้อง email ไปขอให้ pCloud enable
 
-Flow pCloud OAuth2 ปัจจุบันยังไม่รองรับ short-lived upload link workflow ที่ ImgBed ต้องใช้ channel นี้จึงใช้ account email และ password login แทน
+Flow pCloud OAuth2 ปัจจุบันยังไม่รองรับ workflow ของ short-lived upload link ที่ ImgBed ต้องใช้ ช่องทางนี้จึงใช้ account email และ password login แทน
 
 ### ควรใช้ API Host ไหน?
 
-Default:
+ค่าเริ่มต้น:
 
 ```text
 api.pcloud.com
@@ -86,17 +86,17 @@ api.pcloud.com
 eapi.pcloud.com
 ```
 
-## Quick Flow
+## ลำดับขั้นตอนด่วน
 
 ```text
-เตรียม pCloud email และ password
--> เปิด Upload Settings
+Prepare your pCloud email and password
+-> Open Upload Settings
 -> Add Channel
--> เลือก pCloud
--> ใส่ channel name / email / password
--> ปล่อย API host เป็น api.pcloud.com เว้นแต่ account อยู่ Europe
--> ปล่อย storage directory เป็น imgbed เว้นแต่ต้องใช้ folder อื่น
+-> Choose pCloud
+-> Fill channel name / email / password
+-> Keep API host as api.pcloud.com unless your account is in Europe
+-> Keep storage directory as imgbed unless you need another folder
 -> Save
 -> Query quota
--> Upload test image
+-> Upload a test image
 ```

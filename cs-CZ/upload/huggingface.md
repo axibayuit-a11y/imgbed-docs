@@ -6,7 +6,7 @@ Potřebujete jen tři věci:
 
 | Požadavek | Účel |
 | --- | --- |
-| Účet Hugging Face | Pro vytvoření access tokenu a vlastnictví repozitáře. |
+| Účet Hugging Face | Pro vytvoření přístupového tokenu a vlastnictví repozitáře. |
 | Hugging Face User Access Token | Umožní ImgBed používat Hugging Face API, vytvářet repozitáře a nahrávat soubory. |
 | Název repozitáře | Můžete zadat jen název repozitáře, například `image`. |
 
@@ -52,16 +52,16 @@ Systém zařídí tyto detaily:
 | Typ repozitáře | Tento kanál používá repozitář `dataset`. |
 | Veřejný/soukromý stav | Viditelnost repozitáře se synchronizuje podle aktuálního přepínače. |
 
-## Rychlý checklist
+## Rychlý kontrolní seznam
 
 ```text
-Přihlaste se do Hugging Face
--> Vytvořte Access Token
--> Vyberte oprávnění write
--> Vraťte se do ImgBed a zadejte token i název repozitáře
--> Uložte
--> Pokud je zadán jen název repo, ImgBed automaticky přidá aktuální uživatelské jméno
--> Pokud je zadáno username/repo, ImgBed ho použije beze změny
--> ImgBed ověří nebo vytvoří dataset repozitář
--> Nahrajte testovací obrázek
+Sign in to Hugging Face
+-> Create an Access Token
+-> Select write permission
+-> Return to ImgBed and enter the token and repository name
+-> Save
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> ImgBed checks or creates the dataset repository
+-> Upload a test image
 ```

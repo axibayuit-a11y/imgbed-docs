@@ -1,6 +1,6 @@
 # Google-Drive-Kanal hinzufügen
 
-## Was du vorher brauchst
+## Was Sie vorher benötigen
 
 Bereite vor dem Start diese Dinge vor:
 
@@ -9,42 +9,42 @@ Bereite vor dem Start diese Dinge vor:
 | Google-Konto | Für Google Cloud und die Autorisierung von Google Drive |
 | Google-Cloud-Projekt | Aktiviert die Drive API und erstellt OAuth-Zugangsdaten |
 | OAuth-2.0-Client | Damit ImgBed `Client ID`, `Client Secret` und `Refresh Token` erhalten kann |
-| Deine ImgBed-Domain | Für die OAuth-Redirect-URI. Sie muss zur tatsächlich genutzten Domain passen. |
+| Ihre ImgBed-Domain | Für die OAuth-Redirect-URI. Sie muss zur tatsächlich genutzten Domain passen. |
 
 ## Einrichtung
 
 ### Schritt 1: Google Drive API aktivieren
 
-1. Öffne die Google Cloud Console.
-2. Erstelle ein neues Projekt oder wähle ein bestehendes aus.
-3. Gehe zu `APIs & Services`.
-4. Klicke auf `Enable APIs and Services`.
-5. Suche nach `Google Drive API`.
-6. Öffne sie und aktiviere sie.
+1. Öffnen Sie die Google Cloud Console.
+2. Erstellen Sie ein neues Projekt oder wählen Sie ein bestehendes aus.
+3. Gehen Sie zu `APIs & Services`.
+4. Klicken Sie auf `Enable APIs and Services`.
+5. Suchen Sie nach `Google Drive API`.
+6. Öffnen Sie sie und aktivieren Sie sie.
 
 ### Schritt 2: OAuth-Zustimmungsbildschirm konfigurieren
 
-1. Öffne in Google Cloud die `Google Auth Platform`.
-2. Fülle die grundlegenden Angaben unter `Branding` aus, z. B. App-Name, Support-E-Mail und Entwicklerkontakt.
-3. Öffne `Audience`.
+1. Öffnen Sie in Google Cloud die `Google Auth Platform`.
+2. Füllen Sie die grundlegenden Angaben unter `Branding` aus, z. B. App-Name, Support-E-Mail und Entwicklerkontakt.
+3. Öffnen Sie `Audience`.
 4. Für die meisten selbst betriebenen privaten Installationen passt `External`.
-5. Wenn du `External` wählst, füge unter `Test users` das Google-Konto hinzu, das du autorisieren möchtest.
-6. Öffne `Data Access`.
-7. Füge die benötigten Google-Drive-Berechtigungen hinzu.
+5. Wenn Sie `External` wählen, fügen Sie unter `Test users` das Google-Konto hinzu, das Sie autorisieren möchten.
+6. Öffnen Sie `Data Access`.
+7. Fügen Sie die benötigten Google-Drive-Berechtigungen hinzu.
 
 ### Schritt 3: OAuth-2.0-Client erstellen
 
-1. Öffne in der `Google Auth Platform` den Bereich `Clients`.
-2. Erstelle einen neuen Client.
-3. Setze den Anwendungstyp auf `Web application`.
-4. Gib dem Client einen gut erkennbaren Namen.
-5. Trage bei den autorisierten JavaScript-Ursprüngen deine ImgBed-URL ein, zum Beispiel:
+1. Öffnen Sie in der `Google Auth Platform` den Bereich `Clients`.
+2. Erstellen Sie einen neuen Client.
+3. Setzen Sie den Anwendungstyp auf `Web application`.
+4. Geben Sie dem Client einen gut erkennbaren Namen.
+5. Tragen Sie bei den autorisierten JavaScript-Ursprüngen Ihre ImgBed-URL ein, zum Beispiel:
 
 ```text
 https://img.example.com
 ```
 
-6. Trage bei den autorisierten Redirect-URIs ein:
+6. Tragen Sie bei den autorisierten Redirect-URIs ein:
 
 ```text
 https://img.example.com/api/oauth/google/callback
@@ -54,7 +54,7 @@ https://img.example.com/api/oauth/google/callback
 
 ![Domain und Callback-URL eintragen](../../image/upload/google-drive/填写oa客户端url信息.png)
 
-Nach dem Erstellen kopierst du diese Werte:
+Nach dem Erstellen kopieren Sie diese Werte:
 
 | Erstellter Wert | ImgBed-Feld |
 | --- | --- |
@@ -63,51 +63,51 @@ Nach dem Erstellen kopierst du diese Werte:
 
 ## Schritt 4: Google-Drive-Kanal ausfüllen
 
-Wähle in den Upload-Einstellungen `Google Drive` und fülle aus:
+Wählen Sie in den Upload-Einstellungen `Google Drive` und füllen Sie die Felder aus:
 
 | ImgBed-Feld | Eingabe |
 | --- | --- |
 | Kanalname | Ein gut erkennbarer Name, z. B. `Main Google Drive` |
 | Client ID | Die Client ID aus Google Cloud |
 | Client Secret | Das Client Secret aus Google Cloud |
-| Refresh Token | Erst einmal leer lassen. Das Token holst du im nächsten Schritt. |
+| Refresh Token | Erst einmal leer lassen. Das Token holst Sie im nächsten Schritt. |
 | Stammverzeichnis | Optional. Standard ist `imgbed`. |
 
 ![Client-Daten in ImgBed eintragen](../../image/upload/google-drive/粘贴回添加新渠道配置.png)
 
 ## Schritt 5: Refresh Token abrufen
 
-1. Klicke auf `Get Token`.
-2. Wähle das Google-Konto aus, das du verbinden möchtest.
+1. Klicken Sie auf `Get Token`.
+2. Wählen Sie das Google-Konto aus, das Sie verbinden möchten.
 3. Schließe die Autorisierung ab.
 4. Die Callback-Seite zeigt ein `Refresh Token`.
-5. Kopiere es.
-6. Kehre zu ImgBed zurück und füge es in das Feld `Refresh Token` ein.
+5. Kopieren Sie es.
+6. Kehren Sie zu ImgBed zurück und fügen Sie es in das Feld `Refresh Token` ein.
 
 ![Refresh Token nach Autorisierung kopieren](../../image/upload/google-drive/授权完复制token.png)
 
-Wenn du später das Google-Konto wechselst, den OAuth-Client änderst oder die alte Autorisierung abläuft, musst du den Kanal nicht löschen. Öffne die Bearbeitungsseite und klicke auf `Reauthorize`.
+Wenn Sie später das Google-Konto wechselst, den OAuth-Client änderst oder die alte Autorisierung abläuft, müssen Sie den Kanal nicht löschen. Öffnen Sie die Bearbeitungsseite und klicken Sie auf `Reauthorize`.
 
 ## Schritt 6: Kanal speichern
 
-Speichere den Kanal, sobald alle Felder ausgefüllt sind.
+Speichern Sie den Kanal, sobald alle Felder ausgefüllt sind.
 
 ## Kurzablauf
 
 ```text
-Google Cloud öffnen
--> Projekt erstellen oder auswählen
--> Google Drive API aktivieren
--> Google Auth Platform konfigurieren
--> Bei Audience = External das eigene Google-Konto zu Test users hinzufügen
--> OAuth-Client vom Typ Web application erstellen
--> https://your-domain.com/api/oauth/google/callback als Redirect-URI eintragen
--> Client ID und Client Secret in ImgBed eintragen
--> Get Token klicken
--> Mit Google anmelden und autorisieren
--> Refresh Token von der Callback-Seite kopieren
--> In ImgBed einfügen und speichern
--> Testbild hochladen
+Open Google Cloud
+-> Create or select a project
+-> Enable Google Drive API
+-> Configure Google Auth Platform
+-> If Audience is External, add your Google account to Test users
+-> Create a Web application OAuth client
+-> Use https://your-domain.com/api/oauth/google/callback as the redirect URI
+-> Fill Client ID and Client Secret into ImgBed
+-> Click Get Token
+-> Sign in with Google and authorize
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
+-> Upload a test image
 ```
 
 ## Referenzen

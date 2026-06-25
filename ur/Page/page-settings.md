@@ -1,67 +1,67 @@
-# Page Settings
+# صفحہ کی ترتیبات
 
-Page settings site display، upload page defaults، background images، اور admin panel appearance کو control کرتی ہیں۔
+صفحہ کی ترتیبات سائٹ کی نمائش، اپ لوڈ صفحے کی ڈیفالٹ قدروں، پس منظر کی تصاویر اور انتظامی پینل کی ظاہری شکل کو کنٹرول کرتی ہیں۔
 
-## Global Settings
+## عمومی ترتیبات
 
-| Option | Purpose |
+| اختیار | مقصد |
 | --- | --- |
-| Site title | browser tab میں دکھنے والا title۔ |
-| Site icon | browser tab میں دکھنے والا چھوٹا icon۔ |
-| ImgBed name | frontend pages پر دکھنے والا نام۔ |
-| ImgBed logo | frontend pages پر دکھنے والی logo image۔ |
-| Logo link | logo یا avatar click کرنے پر کھلنے والا URL۔ |
-| Background switch interval | multiple backgrounds کے لیے rotation interval، milliseconds میں۔ `60000` کا مطلب 60 seconds ہے۔ |
-| Background opacity | background image opacity `0` سے `1` تک۔ کم value image کو lighter بناتی ہے۔ |
-| Default URL prefix | image links generate کرتے وقت استعمال ہونے والا prefix۔ empty ہو تو current site domain استعمال ہوتا ہے۔ |
+| سائٹ کا عنوان | براؤزر ٹیب میں دکھایا جانے والا عنوان۔ |
+| سائٹ کا آئیکن | براؤزر ٹیب میں دکھایا جانے والا چھوٹا آئیکن۔ |
+| ImgBed کا نام | عوامی انٹرفیس کے صفحات پر دکھایا جانے والا نام۔ |
+| ImgBed لوگو | عوامی انٹرفیس کے صفحات پر دکھائی جانے والی لوگو تصویر۔ |
+| لوگو لنک | لوگو یا اوتار پر کلک کرنے سے کھلنے والا URL۔ |
+| پس منظر بدلنے کا وقفہ | متعدد پس منظر تصاویر کی گردش کا وقفہ، ملی سیکنڈ میں۔ `60000` کا مطلب 60 سیکنڈ ہے۔ |
+| پس منظر کی غیر شفافیت | پس منظر تصویر کی غیر شفافیت `0` سے `1` تک۔ کم قدریں تصویر کو زیادہ ہلکا دکھاتی ہیں۔ |
+| ڈیفالٹ URL سابقہ | تصویری لنکس بناتے وقت استعمال ہونے والا سابقہ۔ خالی ہونے پر موجودہ سائٹ ڈومین استعمال ہوتا ہے۔ |
 
-## Client Settings
+## کلائنٹ ترتیبات
 
-| Option | Purpose |
+| اختیار | مقصد |
 | --- | --- |
-| Announcement | upload page کے اوپر دکھنے والا announcement۔ HTML supported ہے۔ |
-| Default upload channel | upload page پر default selected upload channel۔ Smart Dispatch بھی منتخب کیا جا سکتا ہے۔ |
-| Default upload directory | default upload directory، مثلاً `/user/`۔ empty یا `/` کا مطلب root ہے۔ |
-| Default naming method | upload کے بعد default filename generation strategy۔ نیچے دیکھیں۔ |
-| Convert to WebP by default | upload سے پہلے images کو WebP میں convert کرتا ہے۔ |
-| Enable compression by default | upload سے پہلے browser میں images locally compress کرتا ہے۔ |
-| Default compression threshold | image اس size سے بڑی ہو تو automatically compress ہوتی ہے، MB میں۔ |
-| Default target size | compression کے بعد target file size، MB میں۔ |
-| Login page background | user login page کے لیے background image۔ |
-| Upload page background | upload page کے لیے background image۔ |
-| Footer portal link | footer portal button سے کھلنے والا URL۔ |
-| Hide footer | enabled ہو تو frontend footer hide کرتا ہے۔ |
+| اعلان | اپ لوڈ صفحے کے اوپر دکھایا جانے والا اعلان۔ HTML کی معاونت موجود ہے۔ |
+| ڈیفالٹ اپ لوڈ چینل | اپ لوڈ صفحے پر ڈیفالٹ طور پر منتخب اپ لوڈ چینل۔ Smart Dispatch بھی منتخب کیا جا سکتا ہے۔ |
+| ڈیفالٹ اپ لوڈ ڈائریکٹری | ڈیفالٹ اپ لوڈ ڈائریکٹری، مثلاً `/user/`۔ خالی یا `/` کا مطلب روٹ ہے۔ |
+| ڈیفالٹ نام رکھنے کا طریقہ | اپ لوڈ کے بعد فائل نام بنانے کی ڈیفالٹ حکمت عملی۔ نیچے دیکھیں۔ |
+| ڈیفالٹ طور پر WebP میں تبدیل کریں | اپ لوڈ سے پہلے تصاویر کو WebP میں تبدیل کرتا ہے۔ |
+| ڈیفالٹ طور پر کمپریشن فعال کریں | اپ لوڈ سے پہلے براؤزر میں تصاویر کو مقامی طور پر کمپریس کرتا ہے۔ |
+| ڈیفالٹ کمپریشن حد | تصویر اس سائز سے بڑی ہو تو خودکار طور پر کمپریس ہوتی ہے، اکائی MB ہے۔ |
+| ڈیفالٹ ہدف سائز | کمپریشن کے بعد ہدف فائل سائز، MB میں۔ |
+| لاگ ان صفحے کا پس منظر | صارف لاگ ان صفحے کے لیے پس منظر تصویر۔ |
+| اپ لوڈ صفحے کا پس منظر | اپ لوڈ صفحے کے لیے پس منظر تصویر۔ |
+| فوٹر پورٹل لنک | فوٹر پورٹل بٹن سے کھلنے والا URL۔ |
+| فوٹر چھپائیں | فعال ہونے پر عوامی انٹرفیس کا فوٹر چھپاتا ہے۔ |
 
-## Admin Settings
+## انتظامی ترتیبات
 
-| Option | Purpose |
+| اختیار | مقصد |
 | --- | --- |
-| Admin login background | admin login page کے لیے background image۔ |
-| Admin background | admin pages کے لیے background image۔ ایک image URL یا multiple URLs استعمال کریں۔ |
-| Image loading mode | admin file list کے لیے preview loading mode۔ Original original images load کرتا ہے۔ Smart loading public images کے لیے thumbnails اور restricted images کے لیے originals prefer کرتا ہے۔ |
-| Thumbnail source | thumbnails generate کرنے والی service: wsrv.nl، Cloudflare Image Resizing، یا WordPress Photon۔ Cloudflare Image Resizing کو منتخب کرنے سے پہلے Cloudflare میں enable کرنا ہوگا۔ |
-| Live2D widget | admin panel میں Live2D character دکھاتا ہے۔ |
-| Firework click effect | page click کرنے پر firework effect دکھاتا ہے۔ |
-| Star cursor trail | mouse move کرنے پر star trail دکھاتا ہے۔ |
+| انتظامی لاگ ان پس منظر | انتظامی لاگ ان صفحے کے لیے پس منظر تصویر۔ |
+| انتظامی پس منظر | انتظامی صفحات کے لیے پس منظر تصویر۔ ایک تصویری URL یا متعدد URL استعمال کیے جا سکتے ہیں۔ |
+| تصویر لوڈنگ موڈ | انتظامی فائل فہرست میں پیش منظر لوڈ کرنے کا موڈ۔ اصل تصویر موڈ اصل تصاویر لوڈ کرتا ہے۔ اسمارٹ لوڈنگ عوامی تصاویر کے لیے تھمب نیلز اور محدود تصاویر کے لیے اصل تصاویر کو ترجیح دیتی ہے۔ |
+| تھمب نیل ماخذ | تھمب نیلز بنانے کے لیے استعمال ہونے والی سروس: wsrv.nl، Cloudflare Image Resizing یا WordPress Photon۔ Cloudflare Image Resizing منتخب کرنے سے پہلے اسے Cloudflare میں فعال ہونا چاہیے۔ |
+| Live2D ویجٹ | انتظامی پینل میں Live2D کردار دکھاتا ہے۔ |
+| کلک پر آتش بازی اثر | صفحے پر کلک کرنے پر آتش بازی کا اثر دکھاتا ہے۔ |
+| کرسر ستارہ ٹریل | ماؤس حرکت کرنے پر ستاروں کی ٹریل دکھاتا ہے۔ |
 
-## Background Image Formats
+## پس منظر تصویر کی شکلیں
 
-Login page background، upload page background، اور admin login background یہ formats support کرتے ہیں:
+لاگ ان صفحے کا پس منظر، اپ لوڈ صفحے کا پس منظر اور انتظامی لاگ ان پس منظر یہ شکلیں سپورٹ کرتے ہیں:
 
-| Value | Effect |
+| قدر | اثر |
 | --- | --- |
-| `bing` | Bing wallpaper rotation استعمال کرتا ہے۔ |
-| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | multiple images rotate کرتا ہے۔ |
-| `["https://example.com/1.jpg"]` | single background image استعمال کرتا ہے۔ |
-| `["https://your-domain.com/random?..."]` | random image API link استعمال کرتا ہے۔ آپ Other Settings میں اپنی Random Image API configure کر کے generated random image link یہاں single-background entry کے طور پر paste کر سکتے ہیں۔ |
+| `bing` | Bing وال پیپر گردش استعمال کرتا ہے۔ |
+| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | متعدد تصاویر کو گردش میں دکھاتا ہے۔ |
+| `["https://example.com/1.jpg"]` | ایک پس منظر تصویر استعمال کرتا ہے۔ |
+| `["https://your-domain.com/random?..."]` | بے ترتیب تصویر API لنک استعمال کرتا ہے۔ آپ دیگر ترتیبات میں اپنی بے ترتیب تصویر API ترتیب دے سکتے ہیں، پھر بننے والا بے ترتیب تصویر لنک یہاں ایک پس منظر اندراج کے طور پر چسپاں کر سکتے ہیں۔ |
 
-admin background image URLs support کرتا ہے۔ page کے prompt کے مطابق multiple URLs کو English commas سے separate کیا جا سکتا ہے۔ empty ہو تو default background استعمال ہوتا ہے۔
+انتظامی پس منظر تصویری URL کی معاونت کرتا ہے۔ متعدد URL صفحے کی ہدایت کے مطابق انگریزی کوماؤں سے الگ کیے جا سکتے ہیں۔ خالی ہونے پر ڈیفالٹ پس منظر استعمال ہوتا ہے۔
 
-## Default Naming Method
+## ڈیفالٹ نام رکھنے کا طریقہ
 
-| Method | Result |
+| طریقہ | نتیجہ |
 | --- | --- |
-| Default | time-random prefix + original filename، جیسے `1760000000000_cat.png`۔ |
-| Prefix only | صرف time-random prefix اور extension، جیسے `1760000000000.png`۔ |
-| Original name only | original filename رکھتا ہے، جیسے `cat.png`۔ duplicate ہو تو ImgBed `(1)`، `(2)`، وغیرہ add کرتا ہے۔ |
-| Short link | 8-character short ID اور extension استعمال کرتا ہے، جیسے `a1b2c3d4.png`۔ |
+| ڈیفالٹ | وقت پر مبنی بے ترتیب سابقہ + اصل فائل نام، جیسے `1760000000000_cat.png`۔ |
+| صرف سابقہ | صرف وقت پر مبنی بے ترتیب سابقہ اور ایکسٹینشن، جیسے `1760000000000.png`۔ |
+| صرف اصل نام | اصل فائل نام برقرار رکھتا ہے، جیسے `cat.png`۔ نام دہرانے پر ImgBed `(1)`، `(2)` وغیرہ شامل کرتا ہے۔ |
+| مختصر لنک | ایکسٹینشن کے ساتھ 8 حروف کا مختصر ID استعمال کرتا ہے، جیسے `a1b2c3d4.png`۔ |

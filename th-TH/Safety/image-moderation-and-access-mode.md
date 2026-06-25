@@ -1,165 +1,165 @@
-# Image Moderation และ Access Mode
+# การตรวจสอบรูปภาพและโหมดการเข้าถึง
 
-Image moderation กำหนด age rating ให้ uploaded images ส่วน Access mode ควบคุมว่า ratings ใดสามารถมองเห็นผ่าน public access
+การตรวจสอบรูปภาพจะกำหนดเรตอายุให้กับรูปภาพที่อัปโหลด โหมดการเข้าถึงควบคุมว่าเรตใดสามารถแสดงผ่านการเข้าถึงสาธารณะได้
 
-มีผลกับ public gallery, public file URLs และ random image API แต่ไม่จำกัด admin panel Administrators ยังดูและ manage files ได้ทั้งหมด
+สิ่งนี้มีผลกับแกลเลอรีสาธารณะ, URL ไฟล์สาธารณะ และ API รูปภาพสุ่ม แต่ไม่จำกัดแผงผู้ดูแลระบบ ผู้ดูแลระบบยังคงดูและจัดการไฟล์ทั้งหมดได้
 
 ## ตั้งค่าที่ไหน
 
-เปิด admin panel แล้วไปที่:
+เปิดแผงผู้ดูแลระบบ แล้วไปที่:
 
 ```text
 System Settings -> Security Settings -> Upload Management -> Image Moderation
 ```
 
-Settings หลัก:
+การตั้งค่าหลักมีดังนี้:
 
-- Access mode
-- Enable moderation
-- Moderation provider
+- โหมดการเข้าถึง
+- เปิดใช้การตรวจสอบ
+- ผู้ให้บริการตรวจสอบ
 
-## Access Mode ทำอะไร
+## โหมดการเข้าถึงทำอะไร
 
-Access mode ตัดสินว่า age ratings ใดแสดงแบบ public ได้
+โหมดการเข้าถึงกำหนดว่าเรตอายุใดสามารถแสดงต่อสาธารณะได้
 
-Current modes:
+โหมดปัจจุบัน:
 
-| Access Mode | Publicly Visible Ratings |
+| โหมดการเข้าถึง | เรตที่มองเห็นได้ต่อสาธารณะ |
 | --- | --- |
-| Adult mode | General, R12, R16, R18 |
-| Youth mode | General, R12, R16 |
-| Teen mode | General, R12 |
-| Child mode | เฉพาะ General |
+| โหมดผู้ใหญ่ | General, R12, R16, R18 |
+| โหมดเยาวชน | General, R12, R16 |
+| โหมดวัยรุ่น | General, R12 |
+| โหมดเด็ก | เฉพาะ General |
 
-Default คือ Adult mode
+ค่าเริ่มต้นคือโหมดผู้ใหญ่
 
-สำหรับ private sites หรือ sites ที่มี mature content Adult mode อาจเหมาะสม ถ้าต้องการ public gallery ที่ conservative กว่า ให้เลือก Youth, Teen หรือ Child mode
+สำหรับไซต์ส่วนตัวหรือไซต์ที่มีเนื้อหาสำหรับผู้ใหญ่ โหมดผู้ใหญ่อาจเหมาะสม หากต้องการแกลเลอรีสาธารณะที่ระมัดระวังมากขึ้น ให้เลือกโหมดเยาวชน วัยรุ่น หรือเด็ก
 
-## Enable Moderation แล้วเกิดอะไร
+## ผลของการเปิดใช้การตรวจสอบ
 
-เมื่อ moderation enabled ImgBed จะ call selected moderation provider ตอน upload และ save age rating ที่ตรวจพบ
+เมื่อเปิดใช้การตรวจสอบ ImgBed จะเรียกผู้ให้บริการตรวจสอบที่เลือกไว้ระหว่างอัปโหลด และบันทึกเรตอายุที่ตรวจพบ
 
-Ratings หลัก:
+เรตหลัก:
 
-| Rating | Meaning |
+| เรต | ความหมาย |
 | --- | --- |
-| General | Safe public content |
-| R12 | Content ที่ sensitive เล็กน้อย |
-| R16 | Content ที่ sensitive ปานกลาง |
-| R18 | Adult content |
+| General | เนื้อหาปลอดภัยสำหรับสาธารณะ |
+| R12 | เนื้อหาที่อ่อนไหวเล็กน้อย |
+| R16 | เนื้อหาที่อ่อนไหวมากขึ้น |
+| R18 | เนื้อหาสำหรับผู้ใหญ่ |
 
-Moderation result ใช้ตอนตัดสิน public access
+ผลการตรวจสอบจะถูกใช้เมื่อตัดสินใจเรื่องการเข้าถึงสาธารณะ
 
-ถ้าไม่ได้ enable moderation หรือ files เก่าไม่มี rating files เหล่านั้นจะถือเป็น unrated Unrated files จะไม่ถูกเอาออกจาก public gallery หรือ random image API อัตโนมัติเพียงเพราะไม่มี rating
+หากไม่ได้เปิดใช้การตรวจสอบ หรือไฟล์เก่าไม่มีเรต ไฟล์เหล่านั้นจะถือว่าไม่มีเรต ไฟล์ที่ไม่มีเรตจะไม่ถูกนำออกจากแกลเลอรีสาธารณะหรือ API รูปภาพสุ่มโดยอัตโนมัติเพียงเพราะไม่มีเรต
 
-## เลือก Moderation Provider
+## การเลือกผู้ให้บริการตรวจสอบ
 
-Available providers:
+ผู้ให้บริการที่ใช้ได้ ได้แก่:
 
 - moderatecontent.com
 - nsfwjs
 - Sightengine
 
-แต่ละ provider มี requirements ต่างกัน:
+ผู้ให้บริการแต่ละรายมีข้อกำหนดต่างกัน:
 
-- moderatecontent.com มักต้องใช้ API Key
-- nsfwjs มักต้องใช้ API endpoint URL
+- moderatecontent.com โดยทั่วไปต้องใช้ API Key
+- nsfwjs โดยทั่วไปต้องใช้ URL จุดปลาย API
 - Sightengine ต้องใช้ API user และ API secret
 
-เลือกตาม account, availability และ detection quality ของคุณ ตราบใดที่ moderation enabled และ configured ถูกต้อง ImgBed จะพยายามเขียน image rating ตอน upload
+เลือกตามบัญชี ความพร้อมใช้งาน และคุณภาพการตรวจจับของคุณ ตราบใดที่เปิดใช้การตรวจสอบและตั้งค่าอย่างถูกต้อง ImgBed จะพยายามเขียนเรตรูปภาพระหว่างอัปโหลด
 
-## ผลต่อ Public Gallery
+## ผลต่อแกลเลอรีสาธารณะ
 
-Public gallery filter files ตาม access mode
+แกลเลอรีสาธารณะจะกรองไฟล์ตามโหมดการเข้าถึง
 
-Examples:
+ตัวอย่าง:
 
-- Adult mode: R18 images แสดงได้
-- Youth mode: R18 images ถูกซ่อน
-- Teen mode: R16 และ R18 images ถูกซ่อน
-- Child mode: แสดงเฉพาะ General images
+- โหมดผู้ใหญ่: รูปภาพ R18 อาจปรากฏได้
+- โหมดเยาวชน: รูปภาพ R18 จะถูกซ่อน
+- โหมดวัยรุ่น: R16 และ R18 จะถูกซ่อน
+- โหมดเด็ก: แสดงเฉพาะรูปภาพเรต General
 
-มีผลเฉพาะ normal public access Admin panel ยังแสดง files ทั้งหมด
+สิ่งนี้มีผลเฉพาะกับการเข้าถึงสาธารณะตามปกติ แผงผู้ดูแลระบบยังคงแสดงไฟล์ทั้งหมด
 
-## ผลต่อ Public File URLs
+## ผลต่อ URL ไฟล์สาธารณะ
 
-Public file URLs คือ direct image links ที่ visitors เปิด
+URL ไฟล์สาธารณะคือลิงก์รูปภาพโดยตรงที่ผู้เยี่ยมชมเปิด
 
-ถ้า file rating allowed ตาม current access mode ImgBed จะ return original image
+หากเรตของไฟล์ได้รับอนุญาตจากโหมดการเข้าถึงปัจจุบัน ImgBed จะส่งคืนรูปภาพต้นฉบับ
 
-ถ้า rating สูงกว่า allowed level normal public access จะไม่ return original image แต่ ImgBed จะ return configured blocked result หรือ blocked fallback image แทน
+หากเรตสูงกว่าระดับที่อนุญาต การเข้าถึงสาธารณะตามปกติจะไม่ส่งคืนรูปภาพต้นฉบับ แต่ ImgBed จะส่งคืนผลลัพธ์การบล็อกที่ตั้งค่าไว้หรือรูปภาพตัวแทน
 
-Example:
+ตัวอย่าง:
 
-- Current mode คือ Child mode
-- Image หนึ่งมี rating R18
-- Visitor เปิด public URL โดยตรง
-- ImgBed ไม่ return R18 original image ให้ visitor นั้น
+- โหมดปัจจุบันคือโหมดเด็ก
+- รูปภาพมีเรต R18
+- ผู้เยี่ยมชมเปิด URL สาธารณะโดยตรง
+- ImgBed จะไม่ส่งคืนรูปภาพต้นฉบับ R18 ให้ผู้เยี่ยมชมคนนั้น
 
-![Restricted file image](../../image/Safety/文件受限图.png)
+![รูปไฟล์ที่ถูกจำกัด](../../image/Safety/文件受限图.png)
 
-Administrators ที่ดู files ใน admin panel จะไม่ได้รับผลจาก restriction นี้
+ผู้ดูแลระบบที่ดูไฟล์ในแผงผู้ดูแลระบบจะไม่ได้รับผลกระทบจากข้อจำกัดนี้
 
-## ผลต่อ Random Image API
+## ผลต่อ API รูปภาพสุ่ม
 
-Random image API ก็ filter candidate pool ตาม access mode เช่นกัน
+API รูปภาพสุ่มจะกรองกลุ่มไฟล์ตัวเลือกตามโหมดการเข้าถึงเช่นกัน
 
-ใน Child mode random images จะเลือกจาก General-rated files เท่านั้น
+ในโหมดเด็ก รูปภาพสุ่มจะถูกเลือกจากไฟล์เรต General เท่านั้น
 
-ใน Youth mode random images อาจมาจาก General, R12 และ R16 files แต่ไม่รวม R18 files
+ในโหมดเยาวชน รูปภาพสุ่มอาจมาจากไฟล์ General, R12 และ R16 แต่ไม่ใช่ R18
 
-ช่วยป้องกันไม่ให้ random image API bypass public gallery restrictions
+สิ่งนี้ป้องกันไม่ให้ API รูปภาพสุ่มข้ามข้อจำกัดของแกลเลอรีสาธารณะ
 
-## ความสัมพันธ์กับ List Rules
+## ความสัมพันธ์กับกฎรายการ
 
-Access mode ไม่ใช่ public access rule เดียว แต่ทำงานร่วมกับ allow/block list rules
+โหมดการเข้าถึงไม่ใช่กฎการเข้าถึงสาธารณะเพียงอย่างเดียว แต่ทำงานร่วมกับกฎรายการอนุญาต/รายการบล็อก
 
-สรุปง่าย ๆ:
+พูดอย่างง่าย:
 
-- Allowlisted content เป็น public ก่อน
-- Blocklisted content ไม่สามารถดูตรง ๆ โดย regular visitors
-- Content ที่ไม่อยู่ใน list ใด ๆ จะถูกตรวจตาม access mode
+- เนื้อหาในรายการอนุญาตจะถูกถือว่าเป็นสาธารณะก่อน
+- เนื้อหาในรายการบล็อกไม่สามารถดูได้โดยตรงจากผู้เยี่ยมชมทั่วไป
+- เนื้อหาที่ไม่อยู่ในทั้งสองรายการจะถูกตรวจสอบกับโหมดการเข้าถึงต่อไป
 
-ถ้า image ถูกจำกัดทั้งด้วย age rating และ list rules regular visitors ก็ยังดู original file โดยตรงไม่ได้
+หากรูปภาพถูกจำกัดทั้งด้วยเรตอายุและกฎรายการ ผู้เยี่ยมชมทั่วไปก็ยังดูไฟล์ต้นฉบับโดยตรงไม่ได้
 
-## Recommended Settings
+## การตั้งค่าที่แนะนำ
 
-สำหรับ public sites:
+สำหรับไซต์สาธารณะ:
 
-- Enable moderation
-- เลือก access mode ให้ตรงกับ audience ของ site
-- ใช้ Child mode หรือ Teen mode สำหรับ visitors ทุกวัย
-- หลีกเลี่ยง Adult mode หากไม่ต้องการแสดง mature content แบบ public
-- Review file ratings ใน admin panel และ adjust manually เมื่อจำเป็น
+- เปิดใช้การตรวจสอบ
+- เลือกโหมดการเข้าถึงให้ตรงกับกลุ่มผู้ชมของไซต์
+- สำหรับผู้เยี่ยมชมทุกวัย ให้ใช้โหมดเด็กหรือโหมดวัยรุ่น
+- หลีกเลี่ยงโหมดผู้ใหญ่หากคุณไม่ต้องการให้เนื้อหาสำหรับผู้ใหญ่แสดงต่อสาธารณะ
+- ตรวจสอบเรตไฟล์ในแผงผู้ดูแลระบบและปรับเองเมื่อจำเป็น
 
-สำหรับ private หรือ personal sites:
+สำหรับไซต์ส่วนตัวหรือไซต์ใช้เอง:
 
-- Adult mode มักใช้ได้
-- Enable moderation ถ้ามีประโยชน์
-- Review และ adjust ratings ใน admin panel ตามต้องการ
+- โหมดผู้ใหญ่มักใช้ได้
+- เปิดใช้การตรวจสอบหากมีประโยชน์
+- ตรวจสอบและปรับเรตในแผงผู้ดูแลระบบตามต้องการ
 
 ## FAQ
 
-### เปลี่ยน Access Mode แล้ว Files จะหายจาก Admin Panel ไหม?
+### ไฟล์จะหายจากแผงผู้ดูแลระบบหลังจากเปลี่ยนโหมดการเข้าถึงหรือไม่
 
 ไม่
 
-Access mode มีผลเฉพาะ normal public access ไม่มีผลกับ admin panel
+โหมดการเข้าถึงมีผลเฉพาะกับการเข้าถึงสาธารณะตามปกติ ไม่ส่งผลต่อแผงผู้ดูแลระบบ
 
-### ทำไม Public Gallery แสดง Images น้อยลงหลังเปลี่ยนเป็น Child Mode?
+### ทำไมแกลเลอรีสาธารณะแสดงรูปน้อยลงหลังจากเปลี่ยนเป็นโหมดเด็ก
 
-Child mode อนุญาตให้แสดงเฉพาะ General-rated files แบบ public R12, R16 และ R18 files จะถูก filter ออก
+โหมดเด็กอนุญาตให้แสดงต่อสาธารณะเฉพาะไฟล์เรต General เท่านั้น R12, R16 และ R18 จะถูกกรองออก
 
-### Public URLs ยังเปิด Adult Images ได้ไหม?
+### URL สาธารณะยังเปิดรูปภาพสำหรับผู้ใหญ่ได้หรือไม่
 
-ถ้า current access mode ไม่อนุญาต rating นั้น normal public URLs จะไม่ return original image
+หากโหมดการเข้าถึงปัจจุบันไม่อนุญาตเรตนั้น URL สาธารณะตามปกติจะไม่ส่งคืนรูปภาพต้นฉบับ
 
-### Random Image API Return Restricted Images ได้ไหม?
+### API รูปภาพสุ่มส่งคืนรูปภาพที่ถูกจำกัดได้หรือไม่
 
 ไม่ได้
 
-Random image API filter candidates ตาม current access mode
+API รูปภาพสุ่มจะกรองไฟล์ตัวเลือกตามโหมดการเข้าถึงปัจจุบัน
 
-### Old Unrated Images จะเป็นอย่างไร?
+### ไฟล์เก่าที่ไม่มีเรตจะเป็นอย่างไร
 
-Unrated images จะไม่ถูกซ่อนอัตโนมัติเพียงเพราะไม่มี moderation results คุณสามารถ adjust ratings ใน admin panel ภายหลังได้
+รูปภาพที่ไม่มีเรตจะไม่ถูกซ่อนโดยอัตโนมัติเพียงเพราะไม่มีผลการตรวจสอบ คุณสามารถปรับเรตของรูปเหล่านั้นภายหลังได้ในแผงผู้ดูแลระบบ

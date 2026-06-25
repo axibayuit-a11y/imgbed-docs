@@ -27,7 +27,7 @@ Prepara questi elementi:
 1. In Google Cloud apri `Google Auth Platform`.
 2. Completa le informazioni di base in `Branding`, come nome app, email di supporto e contatto sviluppatore.
 3. Apri `Audience`.
-4. Per la maggior parte delle installazioni personali self-hosted, scegli `External`.
+4. Per la maggior parte delle installazioni personali autogestite, scegli `External`.
 5. Se scegli `External`, aggiungi in `Test users` l'account Google da autorizzare.
 6. Apri `Data Access`.
 7. Aggiungi i permessi Google Drive richiesti.
@@ -71,7 +71,7 @@ In Impostazioni di caricamento scegli `Google Drive` e compila:
 | Client ID | Client ID da Google Cloud |
 | Client Secret | Client Secret da Google Cloud |
 | Refresh Token | Lascialo vuoto per ora. Lo ottieni nel passaggio successivo. |
-| Directory radice | Opzionale. Default `imgbed`. |
+| Directory radice | Opzionale. Valore predefinito `imgbed`. |
 
 ![Inserisci dati client in ImgBed](../../image/upload/google-drive/粘贴回添加新渠道配置.png)
 
@@ -95,19 +95,19 @@ Quando tutti i campi sono compilati, salva il canale.
 ## Flusso rapido
 
 ```text
-Apri Google Cloud
--> Crea o seleziona un progetto
--> Abilita Google Drive API
--> Configura Google Auth Platform
--> Se Audience è External, aggiungi il tuo account Google a Test users
--> Crea un client OAuth Web application
--> Usa https://your-domain.com/api/oauth/google/callback come redirect URI
--> Inserisci Client ID e Client Secret in ImgBed
--> Clicca Get Token
--> Accedi con Google e autorizza
--> Copia il Refresh Token dalla pagina di callback
--> Incollalo in ImgBed e salva
--> Carica un'immagine di prova
+Open Google Cloud
+-> Create or select a project
+-> Enable Google Drive API
+-> Configure Google Auth Platform
+-> If Audience is External, add your Google account to Test users
+-> Create a Web application OAuth client
+-> Use https://your-domain.com/api/oauth/google/callback as the redirect URI
+-> Fill Client ID and Client Secret into ImgBed
+-> Click Get Token
+-> Sign in with Google and authorize
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
+-> Upload a test image
 ```
 
 ## Riferimenti

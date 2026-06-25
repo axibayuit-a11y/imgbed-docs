@@ -1,107 +1,107 @@
-# Random Image API এবং Public Gallery
+# র্যান্ডম ছবি API এবং পাবলিক গ্যালারি
 
-দুটি feature-ই এখানে configure করা হয়:
+দুটি বৈশিষ্ট্যই এখানে কনফিগার করা হয়:
 
 ```text
 System Settings -> Other Settings
 ```
 
-## Random Image API
+## র্যান্ডম ছবি API
 
-Random Image API selected directories থেকে একটি random file return করে। Site backgrounds, avatar rotation বা external pages থেকে random image calls-এর জন্য এটি useful।
+র্যান্ডম ছবি API নির্বাচিত ডিরেক্টরি থেকে একটি র্যান্ডম ফাইল ফেরত দেয়। সাইটের পটভূমি, অবতার ঘোরানো, অথবা বাইরের পেজ থেকে র্যান্ডম ছবি কল করার জন্য এটি উপযোগী।
 
-Enable করার পর ব্যবহার করুন:
+চালু করার পর ব্যবহার করুন:
 
 ```text
 https://your-domain.com/random
 ```
 
-## Random Image API Settings
+## র্যান্ডম ছবি API সেটিংস
 
-| Option | Purpose |
+| বিকল্প | উদ্দেশ্য |
 | --- | --- |
-| Enable | `/random` endpoint on বা off করে। Disabled থাকলে access forbidden। |
-| Directories | Random API কোন directories ব্যবহার করতে পারবে তা limit করে। এখানে না থাকা directories API ব্যবহার করতে পারবে না। |
-| Call demo | Copy করার জন্য random API links generate করে। |
+| চালু করুন | `/random` এন্ডপয়েন্ট চালু বা বন্ধ করে। বন্ধ থাকলে প্রবেশ নিষিদ্ধ। |
+| ডিরেক্টরি | র্যান্ডম API কোন ডিরেক্টরি ব্যবহার করতে পারবে তা সীমিত করে। API এখানে অন্তর্ভুক্ত নয় এমন ডিরেক্টরি ব্যবহার করতে পারবে না। |
+| কল ডেমো | সরাসরি কপি করার মতো র্যান্ডম API লিংক তৈরি করে। |
 
-Multiple directories select করা যায়। যেমন, শুধু `/landscape/` এবং `/portrait/` allowed হলে random API শুধু ওই directories এবং subdirectories থেকে files নিতে পারবে।
+আপনি একাধিক ডিরেক্টরি নির্বাচন করতে পারেন। উদাহরণস্বরূপ, যদি শুধু `/landscape/` এবং `/portrait/` অনুমোদিত থাকে, তাহলে র্যান্ডম API কেবল সেই ডিরেক্টরি এবং তাদের সাবডিরেক্টরি থেকে ফাইল বেছে নিতে পারবে।
 
-## Random Image API Parameters
+## র্যান্ডম ছবি API প্যারামিটার
 
-| Parameter | Example | Purpose |
+| প্যারামিটার | উদাহরণ | উদ্দেশ্য |
 | --- | --- | --- |
-| `dir` | `/landscape/` | Random directory specify করে। |
-| `content` | `image` | Media type specify করে। `image`, `video`, `audio` বা comma-separated combinations ব্যবহার করুন। |
-| `orientation` | `auto` | Image orientation filter করে। `portrait`, `landscape` বা `auto` ব্যবহার করুন। |
-| `type` | `url` | Return format। Empty মানে redirect, `url` plain text URL return করে, `json` JSON return করে। |
-| `origin` | `1` | `type=url`-এর সঙ্গে full URL return করতে ব্যবহৃত হয়। |
-| `age` | `all-ages,r12` | Age rating দিয়ে filter করে। |
-| `tag` | `wallpaper,sky` | এই tags থাকা files-ই return করে। |
-| `ex` | `private` | এই tags থাকা files exclude করে। |
+| `dir` | `/landscape/` | র্যান্ডম ডিরেক্টরি নির্দিষ্ট করে। |
+| `content` | `image` | মিডিয়ার ধরন নির্দিষ্ট করে। `image`, `video`, `audio` অথবা কমা দিয়ে আলাদা করা সমন্বয় ব্যবহার করুন। |
+| `orientation` | `auto` | ছবির দিকনির্দেশ ফিল্টার করে। `portrait`, `landscape` অথবা `auto` ব্যবহার করুন। |
+| `type` | `url` | ফেরত দেওয়ার ফরম্যাট। খালি থাকলে রিডাইরেক্ট বোঝায়, `url` সাধারণ টেক্সট URL ফেরত দেয়, `json` JSON ফেরত দেয়। |
+| `origin` | `1` | `type=url`-এর সঙ্গে পূর্ণ URL ফেরত দিতে ব্যবহৃত হয়। |
+| `age` | `all-ages,r12` | বয়সভিত্তিক রেটিং অনুযায়ী ফিল্টার করে। |
+| `tag` | `wallpaper,sky` | শুধু এসব ট্যাগ থাকা ফাইল ফেরত দেয়। |
+| `ex` | `private` | এসব ট্যাগ থাকা ফাইল বাদ দেয়। |
 
-## Return Formats
+## ফেরত দেওয়ার ফরম্যাট
 
-`type` না থাকলে API সরাসরি random file URL-এ redirect করে।
+`type` না থাকলে API সরাসরি র্যান্ডম ফাইল URL-এ রিডাইরেক্ট করে।
 
-`type=url` থাকলে text URL return করে।
+`type=url` থাকলে এটি টেক্সট URL ফেরত দেয়।
 
-`type=json` থাকলে file information return করে, যার মধ্যে file URL, file ID, file name, file type, tags, rating এবং related metadata থাকে।
+`type=json` থাকলে এটি ফাইলের তথ্য ফেরত দেয়, যার মধ্যে ফাইল URL, ফাইল ID, ফাইলের নাম, ফাইলের ধরন, ট্যাগ, রেটিং এবং সংশ্লিষ্ট মেটাডেটা থাকে।
 
-## Access Rules
+## অ্যাক্সেস নিয়ম
 
-Random Image API public access rules follow করে:
+র্যান্ডম ছবি API পাবলিক অ্যাক্সেস নিয়ম অনুসরণ করে:
 
-| Rule | Effect |
+| নিয়ম | প্রভাব |
 | --- | --- |
-| Directory restriction | শুধু allowed directories-এর files select হতে পারে। |
-| Blocklist | Blocklisted files random pool থেকে excluded হয়। |
-| Allowlist mode | Enabled হলে শুধু public access-এর জন্য allowed files return হয়। |
-| Age rating | R12, R16, R18 এবং similar content current access mode দিয়ে filter হয়। |
+| ডিরেক্টরি সীমাবদ্ধতা | শুধু অনুমোদিত ডিরেক্টরির ফাইল নির্বাচন করা যায়। |
+| ব্লক তালিকা | ব্লক তালিকাভুক্ত ফাইল র্যান্ডম পুল থেকে বাদ দেওয়া হয়। |
+| অনুমোদন তালিকা মোড | চালু থাকলে শুধু পাবলিক অ্যাক্সেসের জন্য অনুমোদিত ফাইল ফেরত দেওয়া হয়। |
+| বয়সভিত্তিক রেটিং | R12, R16, R18 এবং অনুরূপ কনটেন্ট বর্তমান অ্যাক্সেস মোড অনুযায়ী ফিল্টার করা হয়। |
 
-Filtering-এর পর কোনো file match না করলে API no matching result return করে।
+ফিল্টার করার পর কোনো ফাইল না মিললে API কোনো মিল থাকা ফলাফল ফেরত দেয় না।
 
-## Cache
+## ক্যাশ
 
-Speed বাড়াতে Random Image API directory candidate pools cache করে।
+গতি বাড়াতে র্যান্ডম ছবি API ডিরেক্টরির প্রার্থী পুল ক্যাশ করে।
 
-Files বদলালে ImgBed directory cache version update করে, এবং পরের requests candidate pool rebuild করে। Repeated queries এড়াতে empty directories সামান্য সময় cache করা হয়।
+ফাইল পরিবর্তন হলে ImgBed ডিরেক্টরি ক্যাশ সংস্করণ আপডেট করে, এবং পরবর্তী অনুরোধ প্রার্থী পুল পুনর্গঠন করে। পুনরাবৃত্তি অনুসন্ধান এড়াতে খালি ডিরেক্টরি অল্প সময়ের জন্য ক্যাশ করা হয়।
 
-## Public Gallery
+## পাবলিক গ্যালারি
 
-Public gallery visitors-কে দেখাতে চান এমন directories-এর জন্য read-only public browsing page দেয়।
+পাবলিক গ্যালারি দর্শনার্থীদের দেখাতে অনুমোদিত ডিরেক্টরির জন্য কেবল-পাঠযোগ্য পাবলিক ব্রাউজিং পেজ দেয়।
 
-Enable করার পর visitors খুলতে পারবে:
+চালু করার পর দর্শনার্থীরা খুলতে পারবেন:
 
 ```text
 https://your-domain.com/browse/directory-name
 ```
 
-## Public Gallery Settings
+## পাবলিক গ্যালারি সেটিংস
 
-| Option | Purpose |
+| বিকল্প | উদ্দেশ্য |
 | --- | --- |
-| Enable | Public gallery on বা off করে। Disabled হলে visitors browse করতে পারে না। |
-| Image loading mode | Previews original images ব্যবহার করবে নাকি thumbnails, তা control করে। |
-| Open directories | Visitors কোন directories access করতে পারবে তা set করে। |
+| চালু করুন | পাবলিক গ্যালারি চালু বা বন্ধ করে। বন্ধ থাকলে দর্শনার্থীরা ব্রাউজ করতে পারবেন না। |
+| ছবি লোড করার মোড | প্রিভিউ মূল ছবি ব্যবহার করবে নাকি থাম্বনেইল ব্যবহার করবে তা নিয়ন্ত্রণ করে। |
+| খোলা ডিরেক্টরি | দর্শনার্থীরা কোন ডিরেক্টরিতে প্রবেশ করতে পারবেন তা নির্ধারণ করে। |
 
-## Image Loading Mode
+## ছবি লোড করার মোড
 
-| Mode | Purpose |
+| মোড | উদ্দেশ্য |
 | --- | --- |
-| Original | Visitor page original files directly load করে। |
-| Thumbnail | Faster loading-এর জন্য visitor page thumbnails prefer করে। |
+| মূল | দর্শনার্থীর পেজ সরাসরি মূল ফাইল লোড করে। |
+| থাম্বনেইল | দ্রুত লোডের জন্য দর্শনার্থীর পেজ থাম্বনেইলকে অগ্রাধিকার দেয়। |
 
-## Open Directories
+## খোলা ডিরেক্টরি
 
-Open directories ঠিক করে visitors কী দেখতে পারবে।
+খোলা ডিরেক্টরি নির্ধারণ করে দর্শনার্থীরা কী দেখতে পারবেন।
 
-Example:
+উদাহরণ:
 
 ```text
 /1/,/2/,/landscape/,/portrait/
 ```
 
-Visitors তখন access করতে পারবে:
+এরপর দর্শনার্থীরা প্রবেশ করতে পারবেন:
 
 ```text
 https://your-domain.com/browse/1
@@ -110,29 +110,29 @@ https://your-domain.com/browse/landscape
 https://your-domain.com/browse/portrait
 ```
 
-Subdirectories-ও open করা যায়, যেমন `/2026/lucky/`। Open নয় এমন directories visitors-এর জন্য blocked থাকে।
+সাবডিরেক্টরিও খোলা যেতে পারে, যেমন `/2026/lucky/`। খোলা নয় এমন ডিরেক্টরিতে দর্শনার্থীদের প্রবেশ বন্ধ থাকে।
 
-## Public Gallery Features
+## পাবলিক গ্যালারি বৈশিষ্ট্য
 
-| Feature | Description |
+| বৈশিষ্ট্য | বিবরণ |
 | --- | --- |
-| Browse directories | Open directories-এর files এবং subdirectories দেখুন। |
-| Search | File name, file ID বা tags দিয়ে search করুন। |
-| Type filter | Images, videos, audio বা other files filter করুন। |
-| Tag filter | Selected tags include বা exclude করুন। |
-| Orientation filter | Landscape বা portrait images filter করুন। |
-| Time filter | Upload time range দিয়ে filter করুন। |
-| Extension filter | File extension দিয়ে filter করুন। |
-| Copy link | File access links copy করুন। |
-| Media preview | Visitor page-এ images, videos এবং audio দেখুন বা play করুন। |
+| ডিরেক্টরি ব্রাউজ | খোলা ডিরেক্টরির ফাইল এবং সাবডিরেক্টরি দেখুন। |
+| অনুসন্ধান | ফাইলের নাম, ফাইল ID অথবা ট্যাগ দিয়ে অনুসন্ধান করুন। |
+| ধরন ফিল্টার | ছবি, ভিডিও, অডিও অথবা অন্যান্য ফাইল ফিল্টার করুন। |
+| ট্যাগ ফিল্টার | নির্বাচিত ট্যাগ অন্তর্ভুক্ত বা বাদ দিন। |
+| দিকনির্দেশ ফিল্টার | অনুভূমিক বা উল্লম্ব ছবি ফিল্টার করুন। |
+| সময় ফিল্টার | আপলোড সময়সীমা অনুযায়ী ফিল্টার করুন। |
+| এক্সটেনশন ফিল্টার | ফাইল এক্সটেনশন অনুযায়ী ফিল্টার করুন। |
+| লিংক কপি | ফাইল অ্যাক্সেস লিংক কপি করুন। |
+| মিডিয়া প্রিভিউ | দর্শনার্থী পেজে ছবি, ভিডিও এবং অডিও দেখুন বা চালান। |
 
-## Public Gallery Access Rules
+## পাবলিক গ্যালারি অ্যাক্সেস নিয়ম
 
-Public gallery-ও public access rules follow করে:
+পাবলিক গ্যালারিও পাবলিক অ্যাক্সেস নিয়ম অনুসরণ করে:
 
-| Rule | Effect |
+| নিয়ম | প্রভাব |
 | --- | --- |
-| Open directories | শুধু allowed directories দেখায়। |
-| Access mode | Content current age-rating access mode দিয়ে filter হয়। |
-| Allowlist mode | Enabled হলে শুধু public access-এর জন্য allowed files দেখায়। |
-| Blocklist | Blocklisted files hidden থাকে। |
+| খোলা ডিরেক্টরি | শুধু অনুমোদিত ডিরেক্টরি দেখানো হয়। |
+| অ্যাক্সেস মোড | বর্তমান বয়সভিত্তিক রেটিং অ্যাক্সেস মোড অনুযায়ী কনটেন্ট ফিল্টার করা হয়। |
+| অনুমোদন তালিকা মোড | চালু থাকলে শুধু পাবলিক অ্যাক্সেসের জন্য অনুমোদিত ফাইল দেখানো হয়। |
+| ব্লক তালিকা | ব্লক তালিকাভুক্ত ফাইল লুকানো হয়। |

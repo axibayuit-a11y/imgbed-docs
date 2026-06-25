@@ -13,7 +13,7 @@
 
 1. Відкрийте системні налаштування.
 2. Перейдіть до налаштувань завантаження.
-3. Натисніть Add Channel у правому верхньому куті.
+3. Натисніть Додати канал у правому верхньому куті.
 4. Виберіть `Telegram`.
 
 ## Поля налаштування
@@ -64,7 +64,7 @@
 
 ![Запросіть бота до каналу](../../image/upload/telegram/邀请机器人进频道里.png)
 
-### 4. Отримайте ID каналу через User Info - Get ID - IDbot
+### 4. Отримайте ID каналу через `User Info - Get ID - IDbot`
 
 1. У Telegram знайдіть `@userinfobot`. Зазвичай він відображається як `User Info - Get ID - IDbot`.
 2. Відкрийте чат і натисніть `Start`.
@@ -105,15 +105,15 @@
 ## Короткий чекліст
 
 ```text
-Створити бота через @BotFather
--> Зберегти Bot Token
--> Створити Telegram-канал
--> Додати бота до каналу та надати права адміністратора
--> Знайти @userinfobot і вибрати Channel
--> Переслати будь-яке повідомлення з каналу до @userinfobot
--> Скопіювати повернений Id: -100...
--> Ввести Bot Token і Chat ID в ImgBed
--> Зберегти та завантажити тестове зображення
+Create a bot with @BotFather
+-> Save the Bot Token
+-> Create a Telegram channel
+-> Add the bot to the channel and grant administrator permissions
+-> Search for @userinfobot and choose Channel
+-> Forward any message from the channel to @userinfobot
+-> Copy the returned Id: -100...
+-> Enter the Bot Token and Chat ID in ImgBed
+-> Save and upload a test image
 ```
 
 ## Посилання

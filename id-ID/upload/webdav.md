@@ -1,143 +1,143 @@
-# Menambahkan WebDAV Channel
+# Menambahkan Kanal WebDAV
 
-## Paling Cocok Untuk
+## Kapan Cocok Digunakan
 
-Gunakan WebDAV channel saat:
+Gunakan kanal WebDAV jika:
 
-- Anda memiliki NAS, cloud drive, atau object storage service yang menyediakan WebDAV endpoint.
-- Anda ingin uploaded images disimpan di WebDAV directory milik sendiri.
-- Anda ingin credentials disimpan di tabel D1 `upload_channels`, bukan terekspos lama di frontend.
+- Anda memiliki NAS, drive cloud, atau layanan penyimpanan objek yang menyediakan endpoint WebDAV;
+- Anda ingin gambar yang diunggah disimpan di direktori WebDAV milik sendiri;
+- Anda ingin kredensial disimpan di tabel D1 `upload_channels`, bukan terekspos lama di frontend.
 
-## Yang Perlu Disiapkan Sebelum Mulai
+## Yang Diperlukan Sebelum Memulai
 
-| Requirement | Purpose |
+| Kebutuhan | Tujuan |
 | --- | --- |
-| WebDAV Endpoint | Server-side WebDAV URL, misalnya `https://nas.example.com/dav`. |
-| Username | Digunakan untuk sign in ke WebDAV service. |
-| Password | Digunakan untuk sign in ke WebDAV service. |
-| Authentication mode | Default adalah `Basic`. Gunakan `Digest` atau auto negotiation hanya jika server memerlukannya. |
-| Storage directory | Directory untuk menyimpan files. Default adalah `imgbed`. |
+| Endpoint WebDAV | URL WebDAV server, misalnya `https://nas.example.com/dav`. |
+| Nama pengguna | Digunakan untuk masuk ke layanan WebDAV. |
+| Kata sandi | Digunakan untuk masuk ke layanan WebDAV. |
+| Mode autentikasi | Default adalah `Basic`. Gunakan `Digest` atau negosiasi otomatis hanya jika server memerlukannya. |
+| Direktori penyimpanan | Direktori untuk menyimpan berkas. Default adalah `imgbed`. |
 
 ## Di Mana Menambahkannya
 
-1. Buka System Settings.
-2. Masuk ke Upload Settings.
-3. Klik Add Channel di kanan atas.
+1. Buka pengaturan sistem.
+2. Masuk ke pengaturan unggah.
+3. Klik Tambah kanal di kanan atas.
 4. Pilih `WebDAV`.
 
-## Field Reference
+## Referensi Kolom
 
-| Field | Fungsi | Required |
+| Kolom | Fungsi | Wajib |
 | --- | --- | --- |
-| Channel name | Nama yang mudah dikenali untuk WebDAV channel, misalnya `koofr` atau `nas`. | Yes |
-| Endpoint | Full WebDAV endpoint, termasuk `https://`. | Yes |
-| Username | WebDAV login username. | Yes |
-| Password | WebDAV login password. | Yes |
-| Authentication mode | Biasanya `Basic`; gunakan `Digest` jika server membutuhkan digest authentication. | Yes |
-| Storage directory | Directory tempat files disimpan. Default adalah `imgbed`. | No |
+| Nama kanal | Nama yang mudah dikenali untuk kanal WebDAV, misalnya `koofr` atau `nas`. | Ya |
+| Endpoint | Endpoint WebDAV lengkap, termasuk `https://`. | Ya |
+| Nama pengguna | Nama pengguna login WebDAV. | Ya |
+| Kata sandi | Kata sandi login WebDAV. | Ya |
+| Mode autentikasi | Biasanya `Basic`; gunakan `Digest` jika server memerlukan autentikasi Digest. | Ya |
+| Direktori penyimpanan | Direktori tempat berkas disimpan. Default adalah `imgbed`. | Tidak |
 
-## Example: fie.nl.tab.digital
+## Contoh: fie.nl.tab.digital
 
-### 1. Buat App Password
+### 1. Membuat Kata Sandi Aplikasi
 
-Buka account security settings, cari application passwords, lalu buat app password baru.
+Buka pengaturan keamanan akun, cari kata sandi aplikasi, lalu buat kata sandi aplikasi baru.
 
-![Create an app password](../../image/upload/webdav/创建应用密码.png)
+![Membuat kata sandi aplikasi](../../image/upload/webdav/创建应用密码.png)
 
-Setelah dibuat, copy dan simpan app password baru. Biasanya password ini hanya ditampilkan sekali.
+Setelah dibuat, salin dan simpan kata sandi aplikasi baru. Biasanya hanya ditampilkan satu kali.
 
-![Save the new app password](../../image/upload/webdav/记住新应用程序密码.png)
+![Menyimpan kata sandi aplikasi baru](../../image/upload/webdav/记住新应用程序密码.png)
 
-### 2. Isi WebDAV Configuration di ImgBed
+### 2. Mengisi Konfigurasi WebDAV di ImgBed
 
-Kembali ke ImgBed dan tambahkan WebDAV channel:
+Kembali ke ImgBed dan tambahkan kanal WebDAV:
 
-| UI Field | Value |
+| Kolom UI | Nilai |
 | --- | --- |
-| Endpoint | WebDAV URL yang disediakan oleh `https://fie.nl.tab.digital/`. |
-| Username | WebDAV username Anda. |
-| Password | App password yang baru dibuat. |
-| Authentication mode | Mulai dengan `Basic` untuk sebagian besar kasus. |
-| Storage directory | Default adalah `imgbed`; Anda juga bisa memakai custom directory. |
+| Endpoint | URL WebDAV yang disediakan oleh `https://fie.nl.tab.digital/`. |
+| Nama pengguna | Nama pengguna WebDAV Anda. |
+| Kata sandi | Kata sandi aplikasi yang baru dibuat. |
+| Mode autentikasi | Mulai dengan `Basic` dalam sebagian besar kasus. |
+| Direktori penyimpanan | Default adalah `imgbed`; Anda juga dapat memakai direktori kustom. |
 
-![Fill in the configuration](../../image/upload/webdav/填写配置.png)
+![Mengisi konfigurasi](../../image/upload/webdav/填写配置.png)
 
-## Perilaku Upload File Besar
+## Perilaku Unggahan Berkas Besar
 
-WebDAV channel sekarang memakai real session-based chunked upload.
+Kanal WebDAV sekarang memakai unggahan terpecah berbasis sesi yang sebenarnya.
 
-Small files di-upload sebagai satu complete file. Files lebih besar dari 64 MiB otomatis dipecah menjadi chunks sekitar 10 MiB dan di-upload ke remote chunk directory.
+Berkas kecil diunggah sebagai satu berkas utuh. Berkas yang lebih besar dari 64 MiB otomatis dipecah menjadi bagian sekitar 10 MiB dan diunggah ke direktori bagian jarak jauh.
 
-WebDAV service tidak perlu mendukung `partial update` atau offset-based writes. ImgBed tidak merge chunks menjadi satu large file di remote server. Sebaliknya, ImgBed menyimpan chunk manifest dan membaca chunks secara berurutan saat file diminta.
+Layanan WebDAV tidak perlu mendukung `partial update` atau penulisan berbasis offset. ImgBed tidak menggabungkan bagian-bagian itu menjadi satu berkas besar di server jarak jauh. Sebagai gantinya, ImgBed menyimpan manifes bagian dan membaca bagian-bagian secara berurutan saat berkas diminta.
 
-Dalam praktik:
+Dalam praktiknya:
 
-| File Size | Upload Method | Remote Storage Layout |
+| Ukuran berkas | Metode unggah | Tata letak penyimpanan jarak jauh |
 | --- | --- | --- |
-| 64 MiB atau lebih kecil | Normal upload | Satu complete file |
-| Lebih besar dari 64 MiB | Real session chunked upload | Chunk directory berisi beberapa chunk files |
+| 64 MiB atau kurang | Unggahan normal | Satu berkas utuh |
+| Lebih dari 64 MiB | Unggahan terpecah berbasis sesi yang sebenarnya | Direktori bagian berisi beberapa berkas bagian |
 
-Chunk directory hanya memengaruhi remote storage layout. File URL di ImgBed tidak berubah. Users tetap mengakses file lewat link `/file/...` asli.
+Direktori bagian hanya memengaruhi tata letak penyimpanan jarak jauh. URL berkas di ImgBed tidak berubah. Pengguna tetap mengakses berkas melalui tautan asli `/file/...`.
 
-## Langkah Setup
+## Langkah Konfigurasi
 
-1. Buka Upload Settings.
-2. Klik Add Channel.
+1. Buka pengaturan unggah.
+2. Klik Tambah kanal.
 3. Pilih `WebDAV`.
-4. Masukkan channel name yang mudah dikenali, misalnya `koofr`.
-5. Masukkan WebDAV endpoint, misalnya `https://app.koofr.net/dav/Koofr`.
-6. Masukkan username dan password.
-7. Biarkan authentication mode sebagai `Basic` secara default.
-8. Biarkan storage directory sebagai `imgbed`, atau ubah ke directory Anda sendiri.
-9. Klik Save.
-10. Setelah save, cek channel card, query capacity jika tersedia, dan upload test file.
+4. Masukkan nama kanal yang mudah dikenali, misalnya `koofr`.
+5. Masukkan endpoint WebDAV, misalnya `https://app.koofr.net/dav/Koofr`.
+6. Masukkan nama pengguna dan kata sandi.
+7. Biarkan mode autentikasi sebagai `Basic` secara default.
+8. Biarkan direktori penyimpanan sebagai `imgbed`, atau ubah ke direktori Anda sendiri.
+9. Klik Simpan.
+10. Setelah disimpan, periksa kartu kanal, lakukan kueri kapasitas jika tersedia, lalu unggah berkas uji.
 
-## Cara Memeriksa
+## Verifikasi
 
-| Check | Cara Memeriksa |
+| Pemeriksaan | Cara memeriksa |
 | --- | --- |
-| Channel card muncul | Setelah save, halaman Upload Settings harus menampilkan WebDAV channel card. |
-| Channel enabled | Switch di kanan atas card seharusnya tetap on. |
-| Credentials tersimpan | Detail view harus menampilkan Endpoint, username, authentication mode, dan storage directory. |
-| Small file upload berjalan | Upload test image dan pastikan file muncul di WebDAV directory. |
-| Large file rule berjalan | Files lebih besar dari 64 MiB memakai chunked upload dan membuat remote chunk directory. |
-| Capacity query berjalan | Jika server mendukung capacity information, query akan menampilkan used dan total capacity. |
+| Kartu kanal muncul | Setelah disimpan, halaman pengaturan unggah harus menampilkan kartu kanal WebDAV. |
+| Kanal aktif | Sakelar di kanan atas kartu harus tetap aktif. |
+| Kredensial tersimpan | Tampilan detail harus menampilkan Endpoint, nama pengguna, mode autentikasi, dan direktori penyimpanan. |
+| Unggahan berkas kecil berjalan | Unggah gambar uji dan pastikan berkas muncul di direktori WebDAV. |
+| Aturan berkas besar berjalan | Berkas yang lebih besar dari 64 MiB memakai unggahan terpecah dan membuat direktori bagian jarak jauh. |
+| Kueri kapasitas berjalan | Jika server mendukung informasi kapasitas, kueri akan menampilkan kapasitas terpakai dan total. |
 
-![Quota query succeeded](../../image/upload/webdav/查询额度成功.png)
+![Kueri kuota berhasil](../../image/upload/webdav/查询额度成功.png)
 
 ## FAQ
 
-### Mengapa large WebDAV files membuat chunk directory?
+### Mengapa berkas WebDAV besar membuat direktori bagian?
 
-Ini adalah storage method saat ini untuk large files.
+Ini adalah metode penyimpanan saat ini untuk berkas besar.
 
-Files lebih besar dari 64 MiB tidak digabung menjadi satu large remote file. Files disimpan sebagai chunk directory. ImgBed merekam chunk manifest dan mengembalikan content lengkap dengan membaca chunks secara berurutan.
+Berkas yang lebih besar dari 64 MiB tidak digabung menjadi satu berkas besar jarak jauh. Berkas disimpan sebagai direktori bagian. ImgBed mencatat manifes bagian dan mengembalikan konten lengkap dengan membaca bagian-bagian secara berurutan.
 
-### Jika large file upload gagal, apa yang perlu dicek dulu?
+### Jika unggahan berkas besar gagal, apa yang perlu diperiksa dulu?
 
-Cek Endpoint, username, password, dan storage directory terlebih dahulu. Lalu pastikan WebDAV service mengizinkan directory creation, file writing, dan file reading.
+Periksa Endpoint, nama pengguna, kata sandi, dan direktori penyimpanan terlebih dahulu. Lalu pastikan layanan WebDAV mengizinkan pembuatan direktori, penulisan berkas, dan pembacaan berkas.
 
-Jika capacity query gagal tetapi small file upload berjalan, server mungkin tidak mendukung atau membatasi capacity reporting. Itu belum tentu berarti upload tidak tersedia.
+Jika kueri kapasitas gagal tetapi unggahan berkas kecil berjalan, server mungkin tidak mendukung informasi kapasitas atau membatasinya. Itu tidak selalu berarti unggahan tidak tersedia.
 
-### Authentication mode mana yang harus digunakan?
+### Mode autentikasi mana yang harus digunakan?
 
-Mulai dengan `Basic`.
+Mulailah dengan `Basic`.
 
-Jika server secara eksplisit membutuhkan digest authentication, gunakan `Digest`.
+Jika server secara eksplisit memerlukan autentikasi Digest, gunakan `Digest`.
 
-Jika tidak yakin, gunakan automatic negotiation.
+Jika tidak yakin, gunakan negosiasi otomatis.
 
-## Quick Checklist
+## Daftar Cepat
 
 ```text
-Siapkan WebDAV endpoint, username, dan password
--> Buka Upload Settings
+Prepare WebDAV endpoint, username, and password
+-> Open Upload Settings
 -> Add Channel
--> Pilih WebDAV
--> Masukkan Endpoint / username / password
--> Biarkan authentication mode sebagai Basic secara default
--> Biarkan storage directory sebagai imgbed secara default
+-> Select WebDAV
+-> Enter Endpoint / username / password
+-> Keep authentication mode as Basic by default
+-> Keep storage directory as imgbed by default
 -> Save
 -> Query capacity
--> Upload test file
+-> Upload a test file
 ```

@@ -2,66 +2,66 @@
 
 ## शुरू करने से पहले क्या चाहिए
 
-सिर्फ तीन चीज़ें चाहिए:
+आपको केवल तीन चीज़ें चाहिए:
 
-| ज़रूरत | उपयोग |
+| आवश्यकता | उद्देश्य |
 | --- | --- |
-| GitLab account | access token generate करने और project own करने के लिए। |
-| GitLab Personal Access Token | ImgBed को GitLab API access, projects create और Generic Packages में files upload करने के लिए। |
-| Project name | केवल project name डाल सकते हैं, जैसे `imgbed`। |
+| GitLab खाता | एक्सेस टोकन बनाने और प्रोजेक्ट का मालिक होने के लिए। |
+| GitLab व्यक्तिगत एक्सेस टोकन | ImgBed को GitLab API तक पहुँचने, प्रोजेक्ट बनाने और Generic Packages में फ़ाइलें अपलोड करने के लिए। |
+| प्रोजेक्ट नाम | आप केवल प्रोजेक्ट नाम दर्ज कर सकते हैं, जैसे `imgbed`। |
 
-## Setup Steps
+## कॉन्फ़िगरेशन चरण
 
-### Step 1: GitLab में sign in करें और Access Token बनाएँ
+### चरण 1: GitLab में साइन इन करें और एक्सेस टोकन बनाएँ
 
-1. GitLab में sign in करें।
-2. ऊपर दाएँ avatar पर क्लिक करके `Preferences` खोलें।
-3. left sidebar से `Access Tokens` खोलें।
-4. token को पहचानने लायक नाम दें।
-5. अपनी maintenance preference के हिसाब से expiration date चुनें।
-6. `api` scope चुनें।
-7. token बनते ही उसे copy और save करें।
+1. GitLab में साइन इन करें।
+2. ऊपर दाएँ अपने अवतार पर क्लिक करें और `Preferences` खोलें।
+3. बाएँ साइडबार से `Access Tokens` खोलें।
+4. टोकन को पहचानने योग्य नाम दें।
+5. अपनी रखरखाव पसंद के अनुसार समाप्ति तिथि चुनें।
+6. `api` स्कोप चुनें।
+7. टोकन बनते ही उसे कॉपी और सहेजें।
 
-![Legacy token बनाएँ](../../image/upload/gitlab-packages/点击生成旧版令牌.png)
+![legacy टोकन बनाएँ](../../image/upload/gitlab-packages/点击生成旧版令牌.png)
 
-![Token permissions चुनें](../../image/upload/gitlab-packages/勾选令牌权限.png)
+![टोकन अनुमतियाँ चुनें](../../image/upload/gitlab-packages/勾选令牌权限.png)
 
-## Step 2: ImgBed में GitLab Packages channel भरें
+## चरण 2: ImgBed में GitLab Packages चैनल भरें
 
-Upload Settings में `GitLab Packages` चुनने के बाद fields ऐसे भरें:
+अपलोड सेटिंग्स में `GitLab Packages` चुनने के बाद फ़ील्ड इस तरह भरें:
 
-| UI Field | क्या डालें |
+| UI फ़ील्ड | क्या दर्ज करें |
 | --- | --- |
-| Channel name | आपका चुना हुआ नाम, जैसे `GitLabPrimary`। |
-| Access Token | अभी बनाया गया GitLab Personal Access Token। |
-| Project name | short project name जैसे `imgbed`, या full path जैसे `username/imgbed`। |
-| Private repository | अपनी ज़रूरत के हिसाब से on या off करें। |
-| Remark | optional, जैसे `Primary upload channel`। |
+| चैनल नाम | आपका चुना हुआ नाम, जैसे `GitLabPrimary`। |
+| एक्सेस टोकन | अभी बनाया गया GitLab व्यक्तिगत एक्सेस टोकन। |
+| प्रोजेक्ट नाम | छोटा प्रोजेक्ट नाम जैसे `imgbed`, या पूरा पथ जैसे `username/imgbed`। |
+| निजी रिपॉज़िटरी | आवश्यकता के अनुसार सक्षम या अक्षम करें। |
+| टिप्पणी | वैकल्पिक, जैसे `Primary upload channel`। |
 
-![Channel configure करें](../../image/upload/gitlab-packages/配置渠道内容.png)
+![चैनल कॉन्फ़िगर करें](../../image/upload/gitlab-packages/配置渠道内容.png)
 
-## Step 3: Channel save करें
+## चरण 3: चैनल सहेजें
 
-fields भरने के बाद Save पर क्लिक करें।
+फ़ील्ड भरने के बाद सहेजें पर क्लिक करें।
 
-system ये details संभालेगा:
+सिस्टम ये विवरण संभालता है:
 
-| System Behavior | Description |
+| सिस्टम व्यवहार | विवरण |
 | --- | --- |
-| Short project name | ImgBed current GitLab account पहचानता है और value को full project path में बदलता है। |
-| Full project path | ImgBed `username/project` path को जैसा डाला गया है वैसा ही use करता है। |
-| Project check | current personal account path use होने पर ImgBed project न हो तो automatically create करता है। full path manually डालने पर वही path directly use करता है। |
-| Public/private state | project visibility current switch के अनुसार sync होती है। |
+| छोटा प्रोजेक्ट नाम | ImgBed वर्तमान GitLab खाते को पहचानता है और मान को पूरे प्रोजेक्ट पथ में बदलता है। |
+| पूरा प्रोजेक्ट पथ | ImgBed `username/project` पथ को ठीक वैसे ही उपयोग करता है जैसे दर्ज किया गया है। |
+| प्रोजेक्ट जाँच | यदि आप वर्तमान व्यक्तिगत खाते का पथ उपयोग करते हैं, तो प्रोजेक्ट न होने पर ImgBed उसे अपने आप बनाता है। यदि पूरा पथ मैन्युअल रूप से दर्ज करें, तो ImgBed उसी पथ का सीधे उपयोग करता है। |
+| सार्वजनिक/निजी स्थिति | प्रोजेक्ट दृश्यता वर्तमान स्विच के अनुसार सिंक्रनाइज़ होती है। |
 
-## Quick Checklist
+## त्वरित सूची
 
 ```text
-GitLab में sign in करें
--> Access Token बनाएँ
--> केवल api scope चुनें
--> ImgBed में लौटकर token और project name डालें
+Sign in to GitLab
+-> Create an Access Token
+-> Select only the api scope
+-> Return to ImgBed and enter the token and project name
 -> Save
--> केवल project name डालने पर ImgBed current username automatically जोड़ता है
--> username/project डालने पर ImgBed उसे जैसा है वैसा use करता है
--> test image upload करें
+-> If only a project name is entered, ImgBed adds the current username automatically
+-> If username/project is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

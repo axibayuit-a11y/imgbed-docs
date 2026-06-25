@@ -71,7 +71,7 @@ Důležité:
 | Situace | Co udělat |
 | --- | --- |
 | Změnili jste scope | Spusťte autorizaci tokenu znovu a získejte nový `Refresh Token`. |
-| Neprovedli jste novou autorizaci | Starý token nezíská nová oprávnění, takže upload může stále selhávat. |
+| Neprovedli jste novou autorizaci | Starý token nezíská nová oprávnění, takže nahrávání může stále selhávat. |
 
 ### Krok 4: Zkopírujte údaje aplikace
 
@@ -102,7 +102,7 @@ V Nastavení nahrávání zvolte `Dropbox` a vyplňte:
 1. V ImgBed klikněte na `Get Token`.
 2. Přihlaste se k účtu Dropbox, který chcete připojit.
 3. Potvrďte autorizaci.
-4. Callback stránka zobrazí `Refresh Token`.
+4. Stránka callbacku zobrazí `Refresh Token`.
 5. Zkopírujte ho.
 6. Vraťte se do ImgBed a vložte ho do pole `Refresh Token`.
 
@@ -115,7 +115,7 @@ V Nastavení nahrávání zvolte `Dropbox` a vyplňte:
 | Karta kanálu | Kanál Dropbox se po uložení zobrazí. |
 | Přepínač kanálu | Kanál lze zapnout. |
 | Token je uložen | Detail ukazuje, že `Refresh Token` byl uložen. |
-| Testovací upload | Testovací obrázek se objeví v aplikační složce Dropboxu. |
+| Testovací nahrání | Testovací obrázek se objeví v aplikační složce Dropboxu. |
 
 Pokud jsou zapnuté limity kapacity, spusťte dotaz na kvótu. Po úspěšném dotazu karta ukáže použité místo, celkové místo a čas poslední aktualizace.
 
@@ -127,28 +127,28 @@ Pokud jsou zapnuté limity kapacity, spusťte dotaz na kvótu. Po úspěšném d
 | --- | --- |
 | ImgBed hlásí neúplnou konfiguraci | Zkontrolujte, že jsou vyplněné `App Key`, `App Secret` i `Refresh Token`. |
 | Autorizace proběhne, ale nezobrazí se `Refresh Token` | Klikněte znovu na `Get Token` a ujistěte se, že se používá offline autorizační tok. |
-| Upload selže s `required scope 'files.content.write'` | Zapněte `files.content.write`, klikněte na `Submit` a získejte nový `Refresh Token`. |
+| Nahrání selže s `required scope 'files.content.write'` | Zapněte `files.content.write`, klikněte na `Submit` a získejte nový `Refresh Token`. |
 | Callback selže | Ověřte, že redirect URI je `https://your-domain.com/api/oauth/dropbox/callback`. |
 | Soubory nelze najít | Zkontrolujte, že aplikace Dropbox byla vytvořena v režimu `App folder`. |
 
 ## Rychlý postup
 
 ```text
-Otevřete Dropbox App Console
--> Vytvořte aplikaci
--> Vyberte App folder access
--> Přidejte https://your-domain.com/api/oauth/dropbox/callback
--> Zapněte account_info.read / files.metadata.read / files.metadata.write / files.content.write
--> Volitelně zapněte files.content.read
--> Klikněte Submit
--> Zkopírujte App Key a App Secret
--> Vyplňte je v ImgBed
--> Klikněte Get Token
--> Zkopírujte Refresh Token z callback stránky
--> Vložte ho zpět do ImgBed a uložte
+Open Dropbox App Console
+-> Create an app
+-> Choose App folder access
+-> Add https://your-domain.com/api/oauth/dropbox/callback
+-> Enable account_info.read / files.metadata.read / files.metadata.write / files.content.write
+-> Optionally enable files.content.read
+-> Click Submit
+-> Copy App Key and App Secret
+-> Fill them into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
-## Reference
+## Odkazy
 
 1. Dropbox App Console: https://www.dropbox.com/developers/apps
 2. Dropbox OAuth Guide: https://developers.dropbox.com/oauth-guide

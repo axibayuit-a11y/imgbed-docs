@@ -1,165 +1,166 @@
-# Image Moderation dan Access Mode
+# Moderasi Gambar dan Mode Akses
 
-Image moderation memberi age rating pada uploaded images. Access mode mengontrol rating mana yang terlihat melalui public access.
+Moderasi gambar memberi peringkat usia pada gambar yang diunggah. Mode akses mengontrol peringkat mana yang terlihat melalui akses publik.
 
-Ini memengaruhi public gallery, public file URLs, dan random image API. Ini tidak membatasi admin panel. Administrators tetap dapat melihat dan manage semua files.
+Ini memengaruhi galeri publik, URL berkas publik, dan API gambar acak. Ini tidak membatasi panel admin. Administrator tetap dapat melihat dan mengelola semua berkas.
 
 ## Di Mana Mengonfigurasinya
 
-Buka admin panel, lalu masuk ke:
+Buka panel admin, lalu masuk ke:
 
 ```text
 System Settings -> Security Settings -> Upload Management -> Image Moderation
 ```
 
-Settings utama:
+Pengaturan utama:
 
-- Access mode
-- Enable moderation
-- Moderation provider
+- Mode akses
+- Aktifkan moderasi
+- Penyedia moderasi
 
-## Fungsi Access Mode
+## Fungsi Mode Akses
 
-Access mode menentukan age ratings mana yang dapat ditampilkan secara public.
+Mode akses menentukan peringkat usia mana yang dapat ditampilkan secara publik.
 
-Current modes:
+Mode saat ini:
 
-| Access Mode | Publicly Visible Ratings |
+| Mode Akses | Peringkat yang Terlihat Publik |
 | --- | --- |
-| Adult mode | General, R12, R16, R18 |
-| Youth mode | General, R12, R16 |
-| Teen mode | General, R12 |
-| Child mode | Hanya General |
+| Mode dewasa | General, R12, R16, R18 |
+| Mode pemuda | General, R12, R16 |
+| Mode remaja | General, R12 |
+| Mode anak | Hanya General |
 
-Default adalah Adult mode.
+Nilai bawaan adalah mode dewasa.
 
-Untuk private sites atau sites dengan mature content, Adult mode mungkin sesuai. Untuk public gallery yang lebih konservatif, pilih Youth, Teen, atau Child mode.
+Untuk situs pribadi atau situs dengan konten dewasa, mode dewasa mungkin sesuai. Untuk galeri publik yang lebih konservatif, pilih mode pemuda, remaja, atau anak.
 
-## Apa yang Terjadi Saat Moderation Diaktifkan
+## Apa yang Terjadi Saat Moderasi Diaktifkan
 
-Saat moderation aktif, ImgBed memanggil selected moderation provider saat upload dan menyimpan age rating yang terdeteksi.
+Saat moderasi aktif, ImgBed memanggil penyedia moderasi yang dipilih ketika unggahan berlangsung, lalu menyimpan peringkat usia yang terdeteksi.
 
-Ratings utama:
+Peringkat utama:
 
-| Rating | Meaning |
+| Peringkat | Arti |
 | --- | --- |
-| General | Safe public content |
-| R12 | Content agak sensitif |
-| R16 | Content cukup sensitif |
-| R18 | Adult content |
+| General | Konten publik yang aman |
+| R12 | Konten agak sensitif |
+| R16 | Konten cukup sensitif |
+| R18 | Konten dewasa |
 
-Moderation result dipakai saat menentukan public access.
+Hasil moderasi dipakai saat menentukan akses publik.
 
-Jika moderation tidak aktif, atau old files tidak memiliki rating, files tersebut dianggap unrated. Unrated files tidak otomatis dihapus dari public gallery atau random image API hanya karena tidak memiliki rating.
+Jika moderasi tidak aktif, atau berkas lama belum memiliki peringkat, berkas tersebut dianggap belum diberi peringkat. Berkas tanpa peringkat tidak otomatis dihapus dari galeri publik atau API gambar acak hanya karena belum memiliki peringkat.
 
-## Memilih Moderation Provider
+## Memilih Penyedia Moderasi
 
-Available providers meliputi:
+Penyedia yang tersedia meliputi:
 
 - moderatecontent.com
 - nsfwjs
 - Sightengine
 
-Setiap provider memiliki requirements berbeda:
+Setiap penyedia memiliki kebutuhan yang berbeda:
 
 - moderatecontent.com biasanya memerlukan API Key.
-- nsfwjs biasanya memerlukan API endpoint URL.
+- nsfwjs biasanya memerlukan URL titik akhir API.
 - Sightengine memerlukan API user dan API secret.
 
-Pilih berdasarkan account, availability, dan detection quality. Selama moderation enabled dan dikonfigurasi benar, ImgBed mencoba menulis image rating saat upload.
+Pilih berdasarkan akun, ketersediaan, dan kualitas deteksi. Selama moderasi diaktifkan dan dikonfigurasi dengan benar, ImgBed akan mencoba menulis peringkat gambar saat unggahan berlangsung.
 
-## Dampak pada Public Gallery
+## Dampak pada Galeri Publik
 
-Public gallery filter files sesuai access mode.
+Galeri publik memfilter berkas sesuai mode akses.
 
-Examples:
+Contoh:
 
-- Adult mode: R18 images dapat muncul.
-- Youth mode: R18 images disembunyikan.
-- Teen mode: R16 dan R18 images disembunyikan.
-- Child mode: hanya General images yang ditampilkan.
+- Mode dewasa: gambar R18 dapat muncul.
+- Mode pemuda: gambar R18 disembunyikan.
+- Mode remaja: gambar R16 dan R18 disembunyikan.
+- Mode anak: hanya gambar General yang ditampilkan.
 
-Ini hanya memengaruhi normal public access. Admin panel tetap menampilkan semua files.
+Ini hanya memengaruhi akses publik normal. Panel admin tetap menampilkan semua berkas.
 
-## Dampak pada Public File URLs
+## Dampak pada URL Berkas Publik
 
-Public file URLs adalah direct image links yang dibuka visitors.
+URL berkas publik adalah tautan gambar langsung yang dibuka pengunjung.
 
-Jika file rating diizinkan oleh current access mode, ImgBed return original image.
+Jika peringkat berkas diizinkan oleh mode akses saat ini, ImgBed mengembalikan gambar asli.
 
-Jika rating lebih tinggi dari allowed level, normal public access tidak return original image. Sebagai gantinya, ImgBed return configured blocked result atau blocked fallback image.
+Jika peringkat lebih tinggi dari tingkat yang diizinkan, akses publik normal tidak mengembalikan gambar asli. Sebagai gantinya, ImgBed mengembalikan hasil pemblokiran yang dikonfigurasi atau gambar fallback pemblokiran.
 
-Example:
+Contoh:
 
-- Current mode adalah Child mode.
-- Sebuah image memiliki rating R18.
-- Visitor membuka public URL langsung.
-- ImgBed tidak return R18 original image ke visitor tersebut.
+- Mode saat ini adalah mode anak.
+- Sebuah gambar memiliki peringkat R18.
+- Pengunjung membuka URL publik secara langsung.
+- ImgBed tidak mengembalikan gambar asli R18 kepada pengunjung tersebut.
 
-![Restricted file image](../../image/Safety/文件受限图.png)
+![Gambar berkas yang dibatasi](../../image/Safety/文件受限图.png)
 
-Administrators yang melihat files di admin panel tidak terpengaruh restriction ini.
+Administrator yang melihat berkas di panel admin tidak terpengaruh oleh pembatasan ini.
 
-## Dampak pada Random Image API
+## Dampak pada API Gambar Acak
 
-Random image API juga filter candidate pool sesuai access mode.
+API gambar acak juga memfilter kumpulan kandidat sesuai mode akses.
 
-Di Child mode, random images hanya dipilih dari General-rated files.
+Dalam mode anak, gambar acak hanya dipilih dari berkas dengan peringkat General.
 
-Di Youth mode, random images dapat berasal dari General, R12, dan R16 files, tetapi bukan R18 files.
+Dalam mode pemuda, gambar acak dapat berasal dari berkas General, R12, dan R16, tetapi bukan berkas R18.
 
-Ini mencegah random image API bypass public gallery restrictions.
+Ini mencegah API gambar acak melewati pembatasan galeri publik.
 
-## Hubungan Dengan List Rules
+## Hubungan Dengan Aturan Daftar
 
-Access mode bukan satu-satunya public access rule. Ia bekerja bersama allow/block list rules.
+Mode akses bukan satu-satunya aturan akses publik. Ia bekerja bersama aturan daftar izin dan daftar blokir.
 
 Secara sederhana:
 
-- Allowlisted content diprioritaskan sebagai public.
-- Blocklisted content tidak bisa dilihat langsung oleh regular visitors.
-- Content yang tidak ada di list mana pun kemudian diperiksa menurut access mode.
+- Konten dalam daftar izin diprioritaskan sebagai publik.
+- Konten dalam daftar blokir tidak dapat dilihat langsung oleh pengunjung biasa.
+- Konten yang tidak ada di daftar mana pun kemudian diperiksa menurut mode akses.
 
-Jika image dibatasi oleh age rating dan list rules, regular visitors tetap tidak bisa melihat original file langsung.
+Jika gambar dibatasi oleh peringkat usia dan aturan daftar, pengunjung biasa tetap tidak dapat melihat berkas asli secara langsung.
 
-## Recommended Settings
+## Pengaturan yang Disarankan
 
-Untuk public sites:
+Untuk situs publik:
 
-- Enable moderation.
-- Pilih access mode yang sesuai dengan audience site.
-- Gunakan Child mode atau Teen mode untuk visitors semua umur.
-- Hindari Adult mode jika tidak ingin mature content tampil secara public.
-- Review file ratings di admin panel dan adjust manually jika perlu.
+- Aktifkan moderasi.
+- Pilih mode akses yang sesuai dengan audiens situs.
+- Gunakan mode anak atau mode remaja untuk pengunjung segala usia.
+- Hindari mode dewasa jika Anda tidak ingin konten dewasa tampil secara publik.
+- Tinjau peringkat berkas di panel admin dan sesuaikan secara manual bila perlu.
 
-Untuk private atau personal sites:
+Untuk situs pribadi atau personal:
 
-- Adult mode biasanya cukup.
-- Enable moderation jika berguna.
-- Review dan adjust ratings di admin panel sesuai kebutuhan.
+- Mode dewasa biasanya cukup.
+- Aktifkan moderasi jika berguna.
+- Tinjau dan sesuaikan peringkat di panel admin sesuai kebutuhan.
 
 ## FAQ
 
-### Apakah Files Hilang dari Admin Panel Setelah Mengubah Access Mode?
+### Apakah Berkas Hilang dari Panel Admin Setelah Mode Akses Diubah?
 
 Tidak.
 
-Access mode hanya memengaruhi normal public access. Tidak memengaruhi admin panel.
+Mode akses hanya memengaruhi akses publik normal. Mode ini tidak memengaruhi panel admin.
 
-### Mengapa Public Gallery Menampilkan Lebih Sedikit Images Setelah Pindah ke Child Mode?
+### Mengapa Galeri Publik Menampilkan Lebih Sedikit Gambar Setelah Beralih ke Mode Anak?
 
-Child mode hanya mengizinkan General-rated files tampil secara public. R12, R16, dan R18 files akan difilter keluar.
+Mode anak hanya mengizinkan berkas dengan peringkat General tampil secara publik. Berkas R12, R16, dan R18 akan difilter keluar.
 
-### Apakah Public URLs Masih Bisa Membuka Adult Images?
+### Apakah URL Publik Masih Bisa Membuka Gambar Dewasa?
 
-Jika current access mode tidak mengizinkan rating tersebut, normal public URLs tidak return original image.
+Jika mode akses saat ini tidak mengizinkan peringkat tersebut, URL publik normal tidak mengembalikan gambar asli.
 
-### Apakah Random Image API Bisa Return Restricted Images?
+### Apakah API Gambar Acak Bisa Mengembalikan Gambar yang Dibatasi?
 
 Tidak.
 
-Random image API filter candidates sesuai current access mode.
+API gambar acak memfilter kandidat sesuai mode akses saat ini.
 
-### Bagaimana Dengan Old Unrated Images?
+### Bagaimana Dengan Gambar Lama Tanpa Peringkat?
 
-Unrated images tidak otomatis disembunyikan hanya karena tidak memiliki moderation results. Anda dapat adjust ratings nanti di admin panel.
+Gambar tanpa peringkat tidak otomatis disembunyikan hanya karena belum memiliki hasil moderasi. Anda dapat menyesuaikan peringkatnya nanti di panel admin.
+

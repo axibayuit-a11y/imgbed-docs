@@ -1,67 +1,67 @@
-# Page Settings
+# Tetapan Halaman
 
-Page settings mengawal site display, upload page defaults, background images dan admin panel appearance.
+Tetapan halaman mengawal paparan laman, nilai lalai halaman muat naik, imej latar belakang dan rupa panel pentadbiran.
 
-## Global Settings
+## Tetapan Global
 
-| Option | Purpose |
+| Pilihan | Tujuan |
 | --- | --- |
-| Site title | Title yang dipaparkan dalam browser tab. |
-| Site icon | Icon kecil yang dipaparkan dalam browser tab. |
-| ImgBed name | Name yang dipaparkan pada frontend pages. |
-| ImgBed logo | Logo image yang dipaparkan pada frontend pages. |
-| Logo link | URL yang dibuka apabila klik logo atau avatar. |
-| Background switch interval | Rotation interval untuk multiple backgrounds, dalam milliseconds. `60000` bermaksud 60 seconds. |
-| Background opacity | Opacity background image dari `0` hingga `1`. Nilai lebih rendah kelihatan lebih ringan. |
-| Default URL prefix | Prefix yang digunakan semasa generate image links. Kosong bermaksud current site domain digunakan. |
+| Tajuk laman | Tajuk yang dipaparkan pada tab pelayar. |
+| Ikon laman | Ikon kecil yang dipaparkan pada tab pelayar. |
+| Nama ImgBed | Nama yang dipaparkan pada halaman antara muka awam. |
+| Logo ImgBed | Imej logo yang dipaparkan pada halaman antara muka awam. |
+| Pautan logo | URL yang dibuka apabila logo atau avatar diklik. |
+| Selang pertukaran latar belakang | Selang putaran untuk beberapa latar belakang, dalam milisaat. `60000` bermaksud 60 saat. |
+| Kelegapan latar belakang | Kelegapan imej latar belakang daripada `0` hingga `1`. Nilai yang lebih rendah kelihatan lebih cerah. |
+| Awalan URL lalai | Awalan yang digunakan semasa menjana pautan imej. Jika kosong, domain laman semasa digunakan. |
 
-## Client Settings
+## Tetapan Klien
 
-| Option | Purpose |
+| Pilihan | Tujuan |
 | --- | --- |
-| Announcement | Announcement yang dipaparkan di bahagian atas upload page. HTML disokong. |
-| Default upload channel | Upload channel yang dipilih secara default pada upload page. Anda juga boleh memilih Smart Dispatch. |
-| Default upload directory | Default upload directory, contohnya `/user/`. Kosong atau `/` bermaksud root. |
-| Default naming method | Default filename generation strategy selepas upload. Lihat di bawah. |
-| Convert to WebP by default | Convert images kepada WebP sebelum upload. |
-| Enable compression by default | Compress images secara local dalam browser sebelum upload. |
-| Default compression threshold | Compress secara automatik apabila image melebihi saiz ini, dalam MB. |
-| Default target size | Target file size selepas compression, dalam MB. |
-| Login page background | Background image untuk user login page. |
-| Upload page background | Background image untuk upload page. |
-| Footer portal link | URL yang dibuka oleh footer portal button. |
-| Hide footer | Menyembunyikan frontend footer apabila enabled. |
+| Pengumuman | Pengumuman yang dipaparkan di bahagian atas halaman muat naik. HTML disokong. |
+| Saluran muat naik lalai | Saluran muat naik yang dipilih secara lalai pada halaman muat naik. Anda juga boleh memilih Smart Dispatch. |
+| Direktori muat naik lalai | Direktori muat naik lalai, contohnya `/user/`. Kosong atau `/` bermaksud akar. |
+| Kaedah penamaan lalai | Strategi lalai untuk menjana nama fail selepas muat naik. Lihat di bawah. |
+| Tukar kepada WebP secara lalai | Menukar imej kepada WebP sebelum muat naik. |
+| Dayakan pemampatan secara lalai | Memampatkan imej secara setempat dalam pelayar sebelum muat naik. |
+| Ambang pemampatan lalai | Memampatkan secara automatik apabila imej melebihi saiz ini, dalam MB. |
+| Saiz sasaran lalai | Saiz fail sasaran selepas pemampatan, dalam MB. |
+| Latar belakang halaman log masuk | Imej latar belakang untuk halaman log masuk pengguna. |
+| Latar belakang halaman muat naik | Imej latar belakang untuk halaman muat naik. |
+| Pautan portal pengaki | URL yang dibuka oleh butang portal pengaki. |
+| Sembunyikan pengaki | Menyembunyikan pengaki antara muka awam apabila didayakan. |
 
-## Admin Settings
+## Tetapan Pentadbiran
 
-| Option | Purpose |
+| Pilihan | Tujuan |
 | --- | --- |
-| Admin login background | Background image untuk admin login page. |
-| Admin background | Background image untuk admin pages. Gunakan satu image URL atau beberapa URLs. |
-| Image loading mode | Preview loading mode untuk admin file list. Original load original images. Smart loading mengutamakan thumbnails untuk public images dan originals untuk restricted images. |
-| Thumbnail source | Service untuk generate thumbnails: wsrv.nl, Cloudflare Image Resizing atau WordPress Photon. Cloudflare Image Resizing mesti enabled dalam Cloudflare sebelum dipilih. |
-| Live2D widget | Memaparkan Live2D character dalam admin panel. |
-| Firework click effect | Memaparkan firework effect apabila klik halaman. |
-| Star cursor trail | Memaparkan star trail apabila mouse bergerak. |
+| Latar belakang log masuk pentadbiran | Imej latar belakang untuk halaman log masuk pentadbiran. |
+| Latar belakang pentadbiran | Imej latar belakang untuk halaman pentadbiran. Gunakan satu URL imej atau beberapa URL. |
+| Mod pemuatan imej | Mod pemuatan pratonton untuk senarai fail pentadbiran. Mod imej asal memuatkan imej asal. Pemuatan pintar mengutamakan imej kecil untuk imej awam dan imej asal untuk imej terhad. |
+| Sumber imej kecil | Perkhidmatan untuk menjana imej kecil: wsrv.nl, Cloudflare Image Resizing atau WordPress Photon. Cloudflare Image Resizing mesti didayakan dalam Cloudflare sebelum dipilih. |
+| Widget Live2D | Memaparkan watak Live2D dalam panel pentadbiran. |
+| Kesan klik bunga api | Memaparkan kesan bunga api apabila halaman diklik. |
+| Jejak bintang kursor | Memaparkan jejak bintang apabila tetikus digerakkan. |
 
-## Background Image Formats
+## Format Imej Latar Belakang
 
-Login page background, upload page background dan admin login background menyokong formats ini:
+Latar belakang halaman log masuk, latar belakang halaman muat naik dan latar belakang log masuk pentadbiran menyokong format berikut:
 
-| Value | Effect |
+| Nilai | Kesan |
 | --- | --- |
-| `bing` | Menggunakan Bing wallpaper rotation. |
-| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | Rotate beberapa images. |
-| `["https://example.com/1.jpg"]` | Menggunakan satu background image. |
-| `["https://your-domain.com/random?..."]` | Menggunakan random image API link. Anda boleh configure Random Image API sendiri dalam Other Settings, kemudian paste generated random image link di sini sebagai single-background entry. |
+| `bing` | Menggunakan putaran kertas dinding Bing. |
+| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | Memutarkan beberapa imej. |
+| `["https://example.com/1.jpg"]` | Menggunakan satu imej latar belakang. |
+| `["https://your-domain.com/random?..."]` | Menggunakan pautan API imej rawak. Anda boleh mengkonfigurasi API imej rawak sendiri dalam Tetapan Lain, kemudian tampal pautan imej rawak yang dijana di sini sebagai entri satu latar belakang. |
 
-Admin background menyokong image URLs. Beberapa URLs boleh dipisahkan dengan English commas seperti prompt pada halaman. Kosong bermaksud default background digunakan.
+Latar belakang pentadbiran menyokong URL imej. Beberapa URL boleh dipisahkan dengan koma Inggeris seperti yang ditunjukkan pada halaman. Jika kosong, latar belakang lalai digunakan.
 
-## Default Naming Method
+## Kaedah Penamaan Lalai
 
-| Method | Result |
+| Kaedah | Hasil |
 | --- | --- |
-| Default | Time-random prefix + original filename, contohnya `1760000000000_cat.png`. |
-| Prefix only | Time-random prefix dan extension sahaja, contohnya `1760000000000.png`. |
-| Original name only | Mengekalkan original filename, contohnya `cat.png`. Jika duplicate, ImgBed menambah `(1)`, `(2)` dan seterusnya. |
-| Short link | Menggunakan 8-character short ID dan extension, contohnya `a1b2c3d4.png`. |
+| Lalai | Awalan rawak berasaskan masa + nama fail asal, contohnya `1760000000000_cat.png`. |
+| Awalan sahaja | Awalan rawak berasaskan masa dan sambungan sahaja, contohnya `1760000000000.png`. |
+| Nama asal sahaja | Mengekalkan nama fail asal, contohnya `cat.png`. Jika terdapat pendua, ImgBed menambah `(1)`, `(2)` dan seterusnya. |
+| Pautan pendek | Menggunakan ID pendek 8 aksara dengan sambungan, contohnya `a1b2c3d4.png`. |

@@ -10,9 +10,9 @@
 | Hugging Face User Access Token | ImgBed کو Hugging Face API access، repositories بنانے، اور files upload کرنے کے لیے۔ |
 | Repository name | صرف repository name درج کر سکتے ہیں، مثلاً `image`۔ |
 
-## Setup Steps
+## سیٹ اپ کے مراحل
 
-### Step 1: Hugging Face میں Sign in کریں اور Access Token بنائیں
+### مرحلہ 1: Hugging Face میں sign in کریں اور Access Token بنائیں
 
 1. Hugging Face میں sign in کریں۔
 2. اوپر دائیں corner میں avatar پر کلک کریں اور `Settings` کھولیں۔
@@ -20,48 +20,48 @@
 4. نیا token بنائیں۔
 5. token کو قابل شناخت نام دیں۔
 6. `write` permission منتخب کریں۔
-7. token بنتے ہی فوراً copy کر کے محفوظ کریں۔
+7. token بنتے ہی فوراً کاپی کر کے محفوظ کریں۔
 
-![Create a token](../../image/upload/huggingface/创建令牌.png)
+![token بنائیں](../../image/upload/huggingface/创建令牌.png)
 
-## Step 2: ImgBed میں Hugging Face Channel بھریں
+## مرحلہ 2: ImgBed میں Hugging Face Channel بھریں
 
-Upload Settings میں `Hugging Face` منتخب کرنے کے بعد fields یوں بھریں:
+اپ لوڈ سیٹنگز میں `Hugging Face` منتخب کرنے کے بعد فیلڈز یوں بھریں:
 
-| UI Field | What to Enter |
+| UI فیلڈ | کیا درج کریں |
 | --- | --- |
 | Channel name | اپنی پسند کا نام، مثلاً `hf-primary`۔ |
-| Repository name | short repo name جیسے `image`، یا full path جیسے `username/image`۔ |
+| Repository name | مختصر repo name جیسے `image`، یا مکمل path جیسے `username/image`۔ |
 | Access Token | ابھی بنایا ہوا Hugging Face User Access Token۔ |
 | Private repository | اپنی ضرورت کے مطابق on یا off کریں۔ |
-| Remark | optional، مثلاً `Primary upload channel`۔ |
+| Remark | اختیاری، مثلاً `Primary upload channel`۔ |
 
-![Add the channel](../../image/upload/huggingface/添加渠道.png)
+![چینل شامل کریں](../../image/upload/huggingface/添加渠道.png)
 
-## Step 3: Channel Save کریں
+## مرحلہ 3: چینل محفوظ کریں
 
-fields بھرنے کے بعد Save پر کلک کریں۔
+فیلڈز بھرنے کے بعد Save پر کلک کریں۔
 
-system پھر یہ details خود handle کرے گا:
+نظام پھر یہ details خود سنبھال کرے گا:
 
-| System Behavior | Description |
+| نظام کا رویہ | وضاحت |
 | --- | --- |
-| Short repository name | ImgBed current Hugging Face account پہچان کر value کو full repository path میں expand کرتا ہے۔ |
+| Short repository name | ImgBed موجودہ Hugging Face account پہچان کر قدر کو مکمل repository path میں وسیع کرتا ہے۔ |
 | Full repository path | ImgBed `username/repository` path کو بالکل اسی طرح استعمال کرتا ہے جیسے درج کیا گیا ہو۔ |
-| Repository check | current personal account path ہو تو ImgBed repository نہ ہونے پر اسے create کرنے کی کوشش کرتا ہے۔ full path manual درج ہو تو ImgBed وہی path استعمال کرتا ہے۔ |
+| repository کی جانچ | موجودہ personal account path ہو تو ImgBed repository نہ ہونے پر اسے بنانے کی کوشش کرتا ہے۔ مکمل path دستی طور پر درج ہو تو ImgBed وہی path استعمال کرتا ہے۔ |
 | Repository type | یہ channel `dataset` repository استعمال کرتا ہے۔ |
-| Public/private state | repository visibility current switch کے مطابق synchronized ہوتی ہے۔ |
+| Public/private state | repository visibility موجودہ switch کے مطابق sync ہوتی ہے۔ |
 
-## Quick Checklist
+## فوری چیک لسٹ
 
 ```text
-Hugging Face میں sign in کریں
--> Access Token بنائیں
--> write permission منتخب کریں
--> ImgBed پر واپس آ کر token اور repository name درج کریں
--> Save کریں
--> صرف repo name درج ہو تو ImgBed current username خود شامل کرے گا
--> username/repo درج ہو تو ImgBed اسے as-is استعمال کرے گا
--> ImgBed dataset repository check یا create کرے گا
--> test image upload کریں
+Sign in to Hugging Face
+-> Create an Access Token
+-> Select write permission
+-> Return to ImgBed and enter the token and repository name
+-> Save
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> ImgBed checks or creates the dataset repository
+-> Upload a test image
 ```

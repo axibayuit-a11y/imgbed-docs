@@ -1,165 +1,166 @@
-# Image Moderation এবং Access Mode
+# ছবি পর্যালোচনা ও প্রবেশাধিকার মোড
 
-Image moderation uploaded images-কে age rating দেয়। Access mode ঠিক করে public access-এ কোন ratings দেখা যাবে।
+ছবি পর্যালোচনা আপলোড করা ছবিতে বয়সভিত্তিক রেটিং নির্ধারণ করে. প্রবেশাধিকার মোড নির্ধারণ করে কোন রেটিংগুলো প্রকাশ্য প্রবেশাধিকার দিয়ে দেখা যাবে.
 
-এটি public gallery, public file URLs এবং random image API-তে প্রভাব ফেলে। Admin panel restrict করে না। Administrators এখনও সব files দেখতে এবং manage করতে পারবেন।
+এটি প্রকাশ্য গ্যালারি, প্রকাশ্য ফাইল URL এবং র‍্যান্ডম ছবি API-তে প্রভাব ফেলে. এটি অ্যাডমিন প্যানেল সীমিত করে না. অ্যাডমিনরা এখনও সব ফাইল দেখতে ও পরিচালনা করতে পারেন.
 
-## কোথায় Configure করবেন
+## কোথায় কনফিগার করবেন
 
-Admin panel খুলে যান:
+অ্যাডমিন প্যানেল খুলে যান:
 
 ```text
 System Settings -> Security Settings -> Upload Management -> Image Moderation
 ```
 
-প্রধান settings:
+প্রধান সেটিংগুলো হলো:
 
-- Access mode
-- Enable moderation
-- Moderation provider
+- প্রবেশাধিকার মোড
+- পর্যালোচনা চালু করা
+- পর্যালোচনা সরবরাহকারী
 
-## Access Mode কী করে
+## প্রবেশাধিকার মোড কী করে
 
-Access mode publicভাবে কোন age ratings দেখা যাবে তা ঠিক করে।
+প্রবেশাধিকার মোড নির্ধারণ করে কোন বয়সভিত্তিক রেটিং প্রকাশ্যে দেখানো যাবে.
 
-Current modes:
+বর্তমান মোড:
 
-| Access Mode | Publicly Visible Ratings |
+| প্রবেশাধিকার মোড | প্রকাশ্যে দৃশ্যমান রেটিং |
 | --- | --- |
-| Adult mode | General, R12, R16, R18 |
-| Youth mode | General, R12, R16 |
-| Teen mode | General, R12 |
-| Child mode | শুধু General |
+| প্রাপ্তবয়স্ক মোড | সাধারণ, R12, R16, R18 |
+| তরুণ মোড | সাধারণ, R12, R16 |
+| কিশোর মোড | সাধারণ, R12 |
+| শিশু মোড | শুধু সাধারণ |
 
-Default হলো Adult mode।
+ডিফল্ট হলো প্রাপ্তবয়স্ক মোড.
 
-Private sites বা mature content থাকা sites-এর জন্য Adult mode ঠিক হতে পারে। Public gallery বেশি conservative রাখতে চাইলে Youth, Teen বা Child mode বেছে নিন।
+ব্যক্তিগত সাইট বা প্রাপ্তবয়স্ক কনটেন্ট থাকা সাইটের জন্য প্রাপ্তবয়স্ক মোড উপযুক্ত হতে পারে. বেশি সংযত প্রকাশ্য গ্যালারির জন্য তরুণ, কিশোর বা শিশু মোড বেছে নিন.
 
-## Moderation Enable করলে কী হয়
+## পর্যালোচনা চালু করলে কী হয়
 
-Moderation enabled থাকলে ImgBed upload-এর সময় selected moderation provider call করে এবং detected age rating save করে।
+পর্যালোচনা চালু থাকলে ImgBed আপলোডের সময় নির্বাচিত পর্যালোচনা সরবরাহকারীকে ডাকে এবং শনাক্ত করা বয়সভিত্তিক রেটিং সংরক্ষণ করে.
 
-প্রধান ratings:
+প্রধান রেটিং:
 
-| Rating | Meaning |
+| রেটিং | অর্থ |
 | --- | --- |
-| General | Safe public content |
-| R12 | হালকা sensitive content |
-| R16 | মাঝারি sensitive content |
-| R18 | Adult content |
+| সাধারণ | নিরাপদ প্রকাশ্য কনটেন্ট |
+| R12 | হালকা সংবেদনশীল কনটেন্ট |
+| R16 | মাঝারি সংবেদনশীল কনটেন্ট |
+| R18 | প্রাপ্তবয়স্ক কনটেন্ট |
 
-Public access সিদ্ধান্ত নিতে moderation result ব্যবহার হয়।
+প্রকাশ্য প্রবেশাধিকার নির্ধারণের সময় পর্যালোচনার ফল ব্যবহার করা হয়.
 
-Moderation enabled না থাকলে, বা পুরোনো files-এর rating না থাকলে, সেগুলো unrated হিসেবে ধরা হয়। শুধু rating নেই বলে unrated files public gallery বা random image API থেকে automatically সরানো হয় না।
+পর্যালোচনা চালু না থাকলে, অথবা পুরোনো ফাইলে রেটিং না থাকলে, সেগুলোকে অরেটেড ফাইল হিসেবে ধরা হয়. শুধু রেটিং নেই বলে অরেটেড ফাইল প্রকাশ্য গ্যালারি বা র‍্যান্ডম ছবি API থেকে স্বয়ংক্রিয়ভাবে সরানো হয় না.
 
-## Moderation Provider নির্বাচন
+## পর্যালোচনা সরবরাহকারী বেছে নেওয়া
 
-Available providers:
+উপলব্ধ সরবরাহকারীর মধ্যে আছে:
 
 - moderatecontent.com
 - nsfwjs
 - Sightengine
 
-প্রতিটি provider-এর requirements আলাদা:
+প্রতিটি সরবরাহকারীর প্রয়োজন আলাদা:
 
-- moderatecontent.com সাধারণত API Key চায়।
-- nsfwjs সাধারণত API endpoint URL চায়।
-- Sightengine API user এবং API secret চায়।
+- moderatecontent.com সাধারণত API Key চায়.
+- nsfwjs সাধারণত API এন্ডপয়েন্ট URL চায়.
+- Sightengine API user এবং API secret চায়.
 
-আপনার account, availability এবং detection quality অনুযায়ী provider বেছে নিন। Moderation enabled এবং ঠিকভাবে configured থাকলে ImgBed upload-এর সময় image rating লিখতে চেষ্টা করে।
+আপনার অ্যাকাউন্ট, প্রাপ্যতা এবং শনাক্তকরণের মান অনুযায়ী বেছে নিন. পর্যালোচনা চালু এবং সঠিকভাবে কনফিগার থাকলে ImgBed আপলোডের সময় ছবির রেটিং লিখতে চেষ্টা করে.
 
-## Public Gallery-তে প্রভাব
+## প্রকাশ্য গ্যালারিতে প্রভাব
 
-Public gallery access mode অনুযায়ী files filter করে।
+প্রকাশ্য গ্যালারি প্রবেশাধিকার মোড অনুযায়ী ফাইল ফিল্টার করে.
 
-Examples:
+উদাহরণ:
 
-- Adult mode: R18 images দেখা যেতে পারে।
-- Youth mode: R18 images hidden হয়।
-- Teen mode: R16 এবং R18 images hidden হয়।
-- Child mode: শুধু General images দেখায়।
+- প্রাপ্তবয়স্ক মোড: R18 ছবি দেখা যেতে পারে.
+- তরুণ মোড: R18 ছবি লুকানো হয়.
+- কিশোর মোড: R16 এবং R18 ছবি লুকানো হয়.
+- শিশু মোড: শুধু সাধারণ রেটিংয়ের ছবি দেখানো হয়.
 
-এটি শুধু normal public access-এ প্রভাব ফেলে। Admin panel সব files দেখাবে।
+এটি শুধু স্বাভাবিক প্রকাশ্য প্রবেশাধিকারকে প্রভাবিত করে. অ্যাডমিন প্যানেল এখনও সব ফাইল দেখায়.
 
-## Public File URLs-এ প্রভাব
+## প্রকাশ্য ফাইল URL-এ প্রভাব
 
-Public file URLs হলো visitors যে direct image links খোলে।
+প্রকাশ্য ফাইল URL হলো দর্শকদের খোলা সরাসরি ছবির লিংক.
 
-File rating current access mode-এ allowed হলে ImgBed original image return করে।
+ফাইলের রেটিং বর্তমান প্রবেশাধিকার মোডে অনুমোদিত হলে ImgBed মূল ছবি ফেরত দেয়.
 
-Rating allowed level-এর বেশি হলে normal public access original image return করে না। এর বদলে ImgBed configured blocked result বা blocked fallback image return করে।
+রেটিং অনুমোদিত মাত্রার বেশি হলে স্বাভাবিক প্রকাশ্য প্রবেশাধিকার মূল ছবি ফেরত দেয় না. এর বদলে ImgBed কনফিগার করা ব্লক ফলাফল বা placeholder ছবি ফেরত দেয়.
 
-Example:
+উদাহরণ:
 
-- Current mode হলো Child mode।
-- একটি image rating R18।
-- Visitor public URL সরাসরি খুলেছে।
-- ImgBed সেই visitor-কে R18 original image return করে না।
+- বর্তমান মোড শিশু মোড.
+- একটি ছবি R18 হিসেবে রেট করা.
+- একজন দর্শক প্রকাশ্য URL সরাসরি খুলেছে.
+- ImgBed সেই দর্শককে R18 মূল ছবি ফেরত দেয় না.
 
-![Restricted file image](../../image/Safety/文件受限图.png)
+![সীমাবদ্ধ ফাইলের ছবি](../../image/Safety/文件受限图.png)
 
-Admin panel-এ files দেখা administrators এই restriction-এ প্রভাবিত হন না।
+অ্যাডমিন প্যানেলে ফাইল দেখার সময় অ্যাডমিনরা এই সীমাবদ্ধতায় প্রভাবিত হন না.
 
-## Random Image API-তে প্রভাব
+## র‍্যান্ডম ছবি API-তে প্রভাব
 
-Random image API-ও access mode অনুযায়ী candidate pool filter করে।
+র‍্যান্ডম ছবি API-ও প্রবেশাধিকার মোড অনুযায়ী প্রার্থী ফাইলের তালিকা ফিল্টার করে.
 
-Child mode-এ random images শুধু General-rated files থেকে নেওয়া হয়।
+শিশু মোডে র‍্যান্ডম ছবি শুধু সাধারণ রেটিংয়ের ফাইল থেকে বেছে নেওয়া হয়.
 
-Youth mode-এ random images General, R12 এবং R16 files থেকে আসতে পারে, কিন্তু R18 files থেকে নয়।
+তরুণ মোডে র‍্যান্ডম ছবি সাধারণ, R12 এবং R16 ফাইল থেকে আসতে পারে, কিন্তু R18 ফাইল থেকে নয়.
 
-এতে random image API public gallery restrictions bypass করতে পারে না।
+এতে র‍্যান্ডম ছবি API প্রকাশ্য গ্যালারির সীমাবদ্ধতা পাশ কাটাতে পারে না.
 
-## List Rules-এর সঙ্গে সম্পর্ক
+## তালিকা নিয়মের সঙ্গে সম্পর্ক
 
-Access mode একমাত্র public access rule নয়। এটি allow/block list rules-এর সঙ্গে মিলিয়ে কাজ করে।
+প্রবেশাধিকার মোড একমাত্র প্রকাশ্য প্রবেশাধিকার নিয়ম নয়. এটি allow/block তালিকার নিয়মের সঙ্গে কাজ করে.
 
 সহজভাবে:
 
-- Allowlisted content আগে public ধরা হয়।
-- Blocklisted content regular visitors সরাসরি দেখতে পারে না।
-- যে content কোনো list-এ নেই, সেটি access mode অনুযায়ী check হয়।
+- Allowlist-এ থাকা কনটেন্ট আগে প্রকাশ্য.
+- Blocklist-এ থাকা কনটেন্ট সাধারণ দর্শকরা সরাসরি দেখতে পারে না.
+- কোনো তালিকায় না থাকা কনটেন্ট এরপর প্রবেশাধিকার মোড দিয়ে পরীক্ষা করা হয়.
 
-কোনো image age rating এবং list rules দুইভাবেই restricted হলে regular visitors original file সরাসরি দেখতে পারবে না।
+বয়সভিত্তিক রেটিং এবং তালিকা নিয়ম উভয় কারণে কোনো ছবি সীমাবদ্ধ হলে সাধারণ দর্শক এখনও মূল ফাইল সরাসরি দেখতে পারবে না.
 
-## Recommended Settings
+## সুপারিশকৃত সেটিংস
 
-Public sites-এর জন্য:
+প্রকাশ্য সাইটের জন্য:
 
-- Moderation enable করুন।
-- Site audience অনুযায়ী access mode নির্বাচন করুন।
-- All-age visitors-এর জন্য Child mode বা Teen mode ব্যবহার করুন।
-- Mature content publicly দেখাতে না চাইলে Adult mode এড়িয়ে চলুন।
-- Admin panel-এ file ratings review করে দরকার হলে manually adjust করুন।
+- পর্যালোচনা চালু করুন.
+- সাইটের দর্শক অনুযায়ী প্রবেশাধিকার মোড বেছে নিন.
+- সব বয়সের দর্শকের জন্য শিশু মোড বা কিশোর মোড ব্যবহার করুন.
+- প্রাপ্তবয়স্ক কনটেন্ট প্রকাশ্যে দেখাতে না চাইলে প্রাপ্তবয়স্ক মোড এড়িয়ে চলুন.
+- অ্যাডমিন প্যানেলে ফাইল রেটিং পর্যালোচনা করুন এবং দরকার হলে হাতে ঠিক করুন.
 
-Private বা personal sites-এর জন্য:
+ব্যক্তিগত বা নিজস্ব সাইটের জন্য:
 
-- Adult mode সাধারণত ঠিক থাকে।
-- দরকার হলে moderation enable করুন।
-- Admin panel-এ ratings review এবং adjust করুন।
+- প্রাপ্তবয়স্ক মোড সাধারণত ঠিক আছে.
+- কাজে লাগলে পর্যালোচনা চালু করুন.
+- প্রয়োজন অনুযায়ী অ্যাডমিন প্যানেলে রেটিং পর্যালোচনা ও ঠিক করুন.
 
-## FAQ
+## সাধারণ প্রশ্ন
 
-### Access Mode বদলালে Files কি Admin Panel থেকে হারিয়ে যাবে?
+### প্রবেশাধিকার মোড বদলালে কি অ্যাডমিন প্যানেল থেকে ফাইল হারিয়ে যাবে?
 
-না।
+না.
 
-Access mode শুধু normal public access-এ প্রভাব ফেলে। Admin panel-এ এর প্রভাব নেই।
+প্রবেশাধিকার মোড শুধু স্বাভাবিক প্রকাশ্য প্রবেশাধিকারকে প্রভাবিত করে. এটি অ্যাডমিন প্যানেলে প্রভাব ফেলে না.
 
-### Child Mode-এ যাওয়ার পর Public Gallery কম Images দেখাচ্ছে কেন?
+### শিশু মোডে যাওয়ার পর প্রকাশ্য গ্যালারিতে কম ছবি দেখা যাচ্ছে কেন?
 
-Child mode শুধু General-rated files publicly দেখায়। R12, R16 এবং R18 files filter হয়ে যায়।
+শিশু মোড শুধু সাধারণ রেটিংয়ের ফাইল প্রকাশ্যে দেখায়. R12, R16 এবং R18 ফাইল ফিল্টার হয়ে যায়.
 
-### Public URLs কি এখনও Adult Images খুলতে পারে?
+### প্রকাশ্য URL কি এখনও প্রাপ্তবয়স্ক ছবি খুলতে পারে?
 
-Current access mode যদি সেই rating allow না করে, normal public URLs original image return করে না।
+বর্তমান প্রবেশাধিকার মোড সেই রেটিং অনুমোদন না করলে স্বাভাবিক প্রকাশ্য URL মূল ছবি ফেরত দেয় না.
 
-### Random Image API কি Restricted Images return করতে পারে?
+### র‍্যান্ডম ছবি API কি সীমাবদ্ধ ছবি ফেরত দিতে পারে?
 
-না।
+না.
 
-Random image API current access mode অনুযায়ী candidates filter করে।
+র‍্যান্ডম ছবি API বর্তমান প্রবেশাধিকার মোড অনুযায়ী প্রার্থী ফাইল ফিল্টার করে.
 
-### পুরোনো Unrated Images-এর কী হবে?
+### পুরোনো অরেটেড ছবির কী হবে?
 
-Unrated images শুধু moderation result নেই বলে automatically hidden হয় না। পরে admin panel থেকে ratings adjust করতে পারেন।
+শুধু পর্যালোচনার ফল নেই বলে অরেটেড ছবি স্বয়ংক্রিয়ভাবে লুকানো হয় না. পরে অ্যাডমিন প্যানেলে তাদের রেটিং ঠিক করতে পারেন.
+

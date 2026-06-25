@@ -1,16 +1,16 @@
-# Tetapan muat naik
+# Tetapan Muat Naik
 
-Tetapan muat naik menghubungkan ImgBed kepada saluran storan anda sendiri. Selepas saluran dikonfigurasi, imej dan fail yang dimuat naik akan disimpan dalam perkhidmatan yang anda pilih. ImgBed mengurus pautan akses, rekod fail, pratonton, galeri awam, API imej rawak, akses WebDAV dan aliran berkaitan.
+Tetapan Muat Naik menghubungkan ImgBed dengan saluran storan milik anda sendiri. Selepas saluran dikonfigurasikan, imej dan fail yang dimuat naik akan disimpan dalam perkhidmatan yang anda pilih. ImgBed kemudian mengurus rekod fail, pautan akses, pratonton, ciri galeri awam, akses API imej rawak, akses WebDAV dan aliran kerja berkaitan.
 
-Setiap pengguna mungkin sesuai dengan saluran yang berbeza. Untuk permulaan yang mudah, Telegram, Discord atau GitHub Releases boleh digunakan. Jika anda lebih mementingkan kapasiti, kelajuan dan kestabilan jangka panjang, pertimbangkan Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud atau perkhidmatan WebDAV sendiri.
+Pengguna yang berbeza mungkin memilih saluran yang berbeza. Jika anda mahu persediaan yang ringkas, Telegram, Discord atau GitHub Releases boleh menjadi titik permulaan yang baik. Jika anda lebih mengutamakan kapasiti, kelajuan dan kestabilan jangka panjang, pertimbangkan Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud atau perkhidmatan WebDAV anda sendiri.
 
-## Sebelum bermula
+## Sebelum Bermula
 
-- Sediakan akaun storan atau API credentials yang ingin digunakan.
-- Pastikan domain ImgBed boleh diakses, kerana saluran OAuth memerlukan callback URL.
-- Selepas menambah saluran, muat naik imej ujian dahulu untuk memastikan fail boleh disimpan dan dibuka.
+- Sediakan akaun storan atau kelayakan API yang ingin digunakan.
+- Pastikan domain ImgBed anda boleh dicapai, kerana saluran berasaskan OAuth memerlukan URL callback.
+- Selepas menambah saluran, muat naik imej ujian terlebih dahulu untuk mengesahkan bahawa fail boleh disimpan dan dibuka dengan betul.
 
-## Senarai saluran
+## Direktori Saluran
 
 - [Telegram](./telegram.md)
 - [Cloudflare R2](./cloudflare-r2.md)
@@ -26,8 +26,8 @@ Setiap pengguna mungkin sesuai dengan saluran yang berbeza. Untuk permulaan yang
 - [Yandex](./yandex.md)
 - [pCloud](./pcloud.md)
 
-## Perkara yang diterangkan
+## Kandungan Bab Ini
 
-- Maklumat yang diperlukan sebelum menyediakan setiap saluran muat naik.
-- Cara mencipta aplikasi, menyalin key atau membenarkan Token di platform pihak ketiga.
-- Cara mengisi konfigurasi saluran dalam ImgBed dan mengesahkan muat naik berfungsi.
+- Perkara yang diperlukan oleh setiap saluran muat naik sebelum persediaan.
+- Cara membuat app, menyalin kunci atau mengesahkan token pada platform pihak ketiga.
+- Cara mengisi semula konfigurasi saluran dalam ImgBed dan mengesahkan muat naik berfungsi.

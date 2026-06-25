@@ -1,78 +1,78 @@
-# Menambahkan pCloud Channel
+# Menambahkan Kanal pCloud
 
-## Paling Cocok Untuk
+## Cocok Untuk
 
-- Anda memiliki pCloud account dan ingin ImgBed menyimpan images di pCloud.
-- Anda nyaman memakai pCloud account email dan password sebagai channel credentials.
+- Anda memiliki akun pCloud dan ingin ImgBed menyimpan gambar di pCloud.
+- Anda tidak keberatan menggunakan email dan kata sandi akun pCloud sebagai kredensial kanal.
 
-## Yang Perlu Disiapkan Dahulu
+## Yang Diperlukan Sebelum Memulai
 
-| Requirement | Mengapa Dibutuhkan |
+| Kebutuhan | Alasan Diperlukan |
 | --- | --- |
-| pCloud account email | Digunakan untuk sign in ke pCloud API |
-| pCloud password | Digunakan untuk sign in ke pCloud API |
-| API host | Default `api.pcloud.com`. EU accounts bisa memakai `eapi.pcloud.com`. |
-| Storage directory | Tempat files disimpan. Default adalah `imgbed`. |
+| Email akun pCloud | Digunakan untuk masuk ke API pCloud |
+| Kata sandi pCloud | Digunakan untuk masuk ke API pCloud |
+| Host API | Nilai bawaannya `api.pcloud.com`. Akun EU dapat menggunakan `eapi.pcloud.com`. |
+| Direktori penyimpanan | Tempat berkas disimpan. Nilai bawaannya `imgbed`. |
 
-## Di Mana Menambahkannya
+## Tempat Menambahkannya
 
-1. Buka System Settings.
-2. Buka Upload Settings.
-3. Klik `Add Channel` di kanan atas.
+1. Buka Pengaturan Sistem.
+2. Buka Pengaturan Unggah.
+3. Klik `Add Channel` di sudut kanan atas.
 4. Pilih `pCloud`.
 
-## Field Reference
+## Referensi Kolom
 
-| Field | Purpose | Required |
+| Kolom | Fungsi | Wajib |
 | --- | --- | --- |
-| Channel name | Mengidentifikasi pCloud channel ini, misalnya `Personal pCloud` | Yes |
-| Account email | Email login pCloud Anda | Yes |
-| Password | Password pCloud Anda | Yes |
-| API host | pCloud API host. Default `api.pcloud.com`. | No |
-| Storage directory | Directory untuk menyimpan files. Default `imgbed`. | No |
+| Nama kanal | Mengidentifikasi kanal pCloud ini, misalnya `Personal pCloud` | Ya |
+| Email akun | Email yang Anda gunakan untuk masuk ke pCloud | Ya |
+| Kata sandi | Kata sandi pCloud Anda | Ya |
+| Host API | Host API pCloud. Nilai bawaannya `api.pcloud.com`. | Tidak |
+| Direktori penyimpanan | Direktori yang digunakan untuk menyimpan berkas. Nilai bawaannya `imgbed`. | Tidak |
 
-Pilih API host berdasarkan account region:
+Pilih host API berdasarkan wilayah akun Anda:
 
-| Account Region | API Host |
+| Wilayah Akun | Host API |
 | --- | --- |
-| Default / US | `api.pcloud.com` |
-| Europe | `eapi.pcloud.com` |
+| Default / AS | `api.pcloud.com` |
+| Eropa | `eapi.pcloud.com` |
 
-## Langkah Setup
+## Langkah Konfigurasi
 
-1. Buka Upload Settings.
+1. Buka Pengaturan Unggah.
 2. Klik `Add Channel`.
 3. Pilih `pCloud`.
-4. Masukkan channel name yang mudah dikenali.
-5. Masukkan pCloud account email.
-6. Masukkan pCloud password.
-7. Biarkan API host sebagai `api.pcloud.com`, atau pakai `eapi.pcloud.com` untuk EU accounts.
-8. Biarkan storage directory sebagai `imgbed`, atau ubah ke folder pilihan Anda.
-9. Save channel.
+4. Masukkan nama kanal yang mudah Anda kenali.
+5. Masukkan email akun pCloud Anda.
+6. Masukkan kata sandi pCloud Anda.
+7. Biarkan host API sebagai `api.pcloud.com`, atau gunakan `eapi.pcloud.com` untuk akun EU.
+8. Biarkan direktori penyimpanan sebagai `imgbed`, atau ubah ke folder yang Anda inginkan.
+9. Simpan kanal.
 
-![Configure channel](../../image/upload/pcloud/配置渠道.png)
+![Mengonfigurasi kanal](../../image/upload/pcloud/配置渠道.png)
 
-## Cara Memeriksa
+## Cara Memverifikasinya
 
-| Check | Expected Result |
+| Pemeriksaan | Hasil yang Diharapkan |
 | --- | --- |
-| Channel card | pCloud channel card muncul setelah save. |
-| Channel switch | Switch di card tetap enabled. |
-| Email display | Card menampilkan connected pCloud email. |
-| Quota query | Setelah query berhasil, used dan total capacity ditampilkan. |
-| Upload test | Test image muncul di configured pCloud storage directory. |
+| Kartu kanal | Kartu kanal pCloud muncul setelah disimpan. |
+| Sakelar kanal | Sakelar pada kartu tetap aktif. |
+| Tampilan email | Kartu menampilkan email pCloud yang terhubung. |
+| Kueri kuota | Setelah kueri berhasil, kapasitas terpakai dan total kapasitas ditampilkan. |
+| Uji unggah | Gambar uji muncul di direktori penyimpanan pCloud yang dikonfigurasi. |
 
-![Quota query success](../../image/upload/pcloud/查询额度成功.png)
+![Kueri kuota berhasil](../../image/upload/pcloud/查询额度成功.png)
 
-## Troubleshooting
+## Pemecahan Masalah
 
-### Mengapa Bukan OAuth2?
+### Mengapa Tidak OAuth2?
 
-pCloud OAuth2 tidak self-service secara default. Anda perlu email pCloud dan meminta mereka mengaktifkannya.
+OAuth2 pCloud tidak tersedia sebagai layanan mandiri secara default. Anda perlu mengirim email ke pCloud dan meminta mereka mengaktifkannya.
 
-Flow pCloud OAuth2 saat ini juga tidak mendukung short-lived upload link workflow yang dibutuhkan ImgBed, jadi channel ini memakai login account email dan password.
+Alur OAuth2 pCloud saat ini juga tidak mendukung alur kerja tautan unggah berumur pendek yang dibutuhkan ImgBed. Karena itu, kanal ini menggunakan email dan kata sandi akun untuk masuk.
 
-### API Host Mana yang Harus Dipakai?
+### Host API Mana yang Harus Digunakan?
 
 Default:
 
@@ -80,23 +80,23 @@ Default:
 api.pcloud.com
 ```
 
-Untuk EU accounts:
+Untuk akun EU:
 
 ```text
 eapi.pcloud.com
 ```
 
-## Quick Flow
+## Alur Cepat
 
 ```text
-Siapkan pCloud email dan password
--> Buka Upload Settings
+Prepare your pCloud email and password
+-> Open Upload Settings
 -> Add Channel
--> Pilih pCloud
--> Isi channel name / email / password
--> Biarkan API host sebagai api.pcloud.com kecuali account Anda di Europe
--> Biarkan storage directory sebagai imgbed kecuali perlu folder lain
+-> Choose pCloud
+-> Fill channel name / email / password
+-> Keep API host as api.pcloud.com unless your account is in Europe
+-> Keep storage directory as imgbed unless you need another folder
 -> Save
 -> Query quota
--> Upload test image
+-> Upload a test image
 ```

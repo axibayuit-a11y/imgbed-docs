@@ -1,21 +1,21 @@
 # OCR
 
-OCR mengekstrak teks dari gambar, hasil scan, dan screenshot dokumen.
+OCR mengekstrak teks dari gambar, pindaian, dan tangkapan layar dokumen.
 
-Setelah pengenalan selesai, Anda bisa menyalin hasilnya, mengekspornya sebagai `Markdown`, `PDF`, atau `Word`, atau mengemas beberapa format sekaligus untuk diunduh.
+Setelah pengenalan selesai, Anda dapat menyalin hasilnya, mengekspornya sebagai `Markdown`, `PDF`, atau `Word`, atau mengemas beberapa format sekaligus untuk diunduh.
 
-## Yang Bisa Dilakukan OCR
+## Yang Dapat Dilakukan OCR
 
-| Fitur | Keterangan |
+| Fitur | Deskripsi |
 | --- | --- |
-| Pengenalan teks gambar | Mengekstrak teks dari gambar, screenshot, dan scan. |
-| Pengenalan layout dokumen | Lebih cocok untuk tabel, rumus, cap, dan layout campuran teks-gambar. |
+| Pengenalan teks gambar | Mengekstrak teks dari gambar, tangkapan layar, dan pindaian. |
+| Pengenalan tata letak dokumen | Lebih cocok untuk tabel, rumus, cap, dan tata letak campuran teks-gambar. |
 | Beberapa layanan | Mendukung Baidu PaddleOCR, Microsoft Azure Vision, dan Google Vision. |
-| Menyalin hasil | Menyalin teks hasil pengenalan setelah proses selesai. |
+| Menyalin hasil | Menyalin teks yang dikenali setelah pemrosesan. |
 | Ekspor file | Mengekspor `Markdown`, `PDF`, dan `Word`. |
-| Batch packaging | Setelah mengenali beberapa file, hasilnya bisa diunduh sebagai satu paket. |
+| Pengemasan batch | Setelah mengenali beberapa file, hasil dapat diunduh sebagai satu paket. |
 
-## Konfigurasikan Layanan OCR Lebih Dulu
+## Konfigurasikan Layanan OCR Terlebih Dahulu
 
 Buka:
 
@@ -23,32 +23,32 @@ Buka:
 System Settings -> Other Settings -> OCR
 ```
 
-![IP geolocation and OCR](../../image/other/ip定位和ocr文字识别.png)
+![Geolokasi IP dan OCR](../../image/other/ip定位和ocr文字识别.png)
 
-Isi credential untuk layanan yang ingin dipakai:
+Isi kredensial untuk layanan yang ingin Anda gunakan:
 
 | Layanan | Yang Perlu Diisi | Cocok Untuk |
 | --- | --- | --- |
-| Baidu PaddleOCR | `PaddleOCR Token` | Pilihan pertama yang disarankan. Bagus untuk dokumen, gambar, tabel, dan layout campuran. |
-| Microsoft Azure Vision | `Azure Vision Endpoint` dan `Azure Vision API Key` | Berguna jika Anda sudah memakai layanan cloud Microsoft. |
-| Google Vision | `Google Vision API Key`. Service account `JSON` hanya dipakai untuk query kuota. | Berguna jika Anda memakai layanan Google Cloud. |
+| Baidu PaddleOCR | `PaddleOCR Token` | Pilihan pertama yang disarankan. Baik untuk dokumen, gambar, tabel, dan tata letak campuran. |
+| Microsoft Azure Vision | `Azure Vision Endpoint` dan `Azure Vision API Key` | Berguna jika Anda sudah menggunakan layanan cloud Microsoft. |
+| Google Vision | `Google Vision API Key`. Akun layanan `JSON` hanya digunakan untuk kueri kuota. | Berguna jika Anda menggunakan layanan Google Cloud. |
 
-Simpan setelah credential diisi.
+Simpan setelah kredensial diisi.
 
-Untuk uji awal, satu layanan saja sudah cukup. Anda tidak wajib mengonfigurasi ketiganya.
+Untuk pengujian awal, Anda dapat mengonfigurasi satu layanan saja. Anda tidak perlu mengonfigurasi ketiganya.
 
-## Setup Google Vision
+## Penyiapan Google Vision
 
-Setup Google terdiri dari dua bagian:
+Penyiapan Google terdiri dari dua bagian:
 
-| Tujuan | Syarat |
+| Tujuan | Persyaratan |
 | --- | --- |
-| Memakai OCR | Aktifkan `Cloud Vision API`, lalu buat `API Key`. |
-| Query penggunaan | Buat service account, beri role `Monitoring Viewer`, lalu download service account `JSON`. |
+| Menggunakan OCR | Aktifkan `Cloud Vision API`, lalu buat `API Key`. |
+| Mengkueri penggunaan | Buat akun layanan, beri peran `Monitoring Viewer`, lalu unduh `JSON` akun layanan. |
 
-![Google API key and service account](../../image/other/谷歌api秘钥和服务账号截图.png)
+![Kunci API Google dan akun layanan](../../image/other/谷歌api秘钥和服务账号截图.png)
 
-### Memakai Google untuk OCR
+### Menggunakan Google untuk OCR
 
 1. Buka Google Cloud Console.
 2. Masuk ke `APIs & Services`.
@@ -59,93 +59,93 @@ Setup Google terdiri dari dua bagian:
 7. Tempelkan ke `Google Vision API Key` di ImgBed.
 8. Simpan.
 
-Setelah itu, Anda bisa memilih Google Vision di dialog OCR.
+Setelah itu, Anda dapat memilih Google Vision di dialog OCR.
 
-### Query Penggunaan Google
+### Mengkueri Penggunaan Google
 
-Query kuota tidak wajib untuk pengenalan teks.
+Kueri kuota tidak wajib untuk pengenalan.
 
-Fitur ini hanya menampilkan perkiraan berapa banyak panggilan Google Vision yang dipakai dalam 30 hari terakhir.
+Fitur ini hanya menampilkan perkiraan jumlah panggilan Google Vision yang digunakan dalam 30 hari terakhir.
 
 1. Di Google Cloud Console, buka `IAM & Admin`.
 2. Buka `Service Accounts`.
-3. Buat service account, misalnya `vision-monitor`.
-4. Berikan role `Monitoring Viewer`.
-5. Buka detail service account dan buat key.
+3. Buat akun layanan, misalnya `vision-monitor`.
+4. Berikan peran `Monitoring Viewer`.
+5. Buka detail akun layanan dan buat kunci.
 6. Pilih `JSON`.
-7. Download file JSON yang dibuat.
-8. Kembali ke ImgBed dan import ke service account `JSON` (opsional).
-9. Setelah import berhasil, klik quota query.
+7. Unduh file JSON yang dibuat.
+8. Kembali ke ImgBed dan impor di bagian `JSON` akun layanan (opsional).
+9. Setelah impor berhasil, klik kueri kuota.
 
-Setelah import, ImgBed menampilkan nama project pemilik service account tersebut. Saat query penggunaan, ImgBed membaca data monitoring Google dan menampilkan jumlah panggilan bulan ini.
+Setelah impor, ImgBed menampilkan nama project pemilik akun layanan tersebut. Saat mengkueri penggunaan, ImgBed membaca data monitoring Google dan menampilkan jumlah panggilan bulan ini.
 
 Ringkasnya:
 
-| Item | Fungsi |
+| Item | Tujuan |
 | --- | --- |
-| `Google Vision API Key` | Menjalankan OCR recognition. |
-| Service account `JSON` | Mengecek berapa banyak panggilan Google Vision yang sudah dipakai. |
-| Role `Monitoring Viewer` | Mengizinkan service account membaca data penggunaan. |
+| `Google Vision API Key` | Menjalankan pengenalan OCR. |
+| File `JSON` akun layanan | Mengkueri berapa banyak panggilan Google Vision yang sudah digunakan. |
+| Peran `Monitoring Viewer` | Mengizinkan akun layanan membaca data penggunaan. |
 
 ## Mendapatkan Baidu PaddleOCR Token
 
-Baidu PaddleOCR membutuhkan access token.
+Baidu PaddleOCR membutuhkan token akses.
 
-![Get PaddleOCR token](../../image/other/获取飞浆令牌.png)
+![Mendapatkan token PaddleOCR](../../image/other/获取飞浆令牌.png)
 
 Buka jendela pemanggilan `API` di halaman Baidu PaddleOCR, klik untuk mendapatkan token, lalu salin token tersebut.
 
 Kembali ke ImgBed, tempelkan ke `PaddleOCR Token`, lalu simpan.
 
-## Mulai Recognition
+## Memulai Pengenalan
 
-Di File Management, pilih gambar atau screenshot dokumen, lalu klik `OCR`.
+Di Manajemen File, pilih gambar atau tangkapan layar dokumen, lalu klik `OCR`.
 
-![OCR recognition](../../image/other/ocr识别截图.png)
+![Pengenalan OCR](../../image/other/ocr识别截图.png)
 
-Di dialog, pilih layanan recognition dan model.
+Di dialog, pilih layanan dan model pengenalan.
 
 Pilihan model PaddleOCR yang umum:
 
 | Model | Cocok Untuk |
 | --- | --- |
-| `PP-StructureV3` | Default yang disarankan. Bagus untuk dokumen, tabel, rumus, cap, dan layout campuran. |
-| `PP-OCRv5` | Gambar sederhana, teks biasa, dan recognition ringan. |
-| `PaddleOCR-VL` | Multibahasa, gambar kompleks, dan konten seperti chart. |
-| `PaddleOCR-VL-1.5` | Halaman dokumen yang lebih kompleks dan pemulihan layout. |
+| `PP-StructureV3` | Default yang disarankan. Baik untuk dokumen, tabel, rumus, cap, dan tata letak campuran. |
+| `PP-OCRv5` | Gambar sederhana, teks biasa, dan pengenalan ringan. |
+| `PaddleOCR-VL` | Konten multibahasa, gambar kompleks, dan konten mirip bagan. |
+| `PaddleOCR-VL-1.5` | Halaman dokumen yang lebih kompleks dan pemulihan tata letak. |
 
-Jika ragu, mulai dari `PP-StructureV3`.
+Jika ragu, mulai dengan `PP-StructureV3`.
 
-## Advanced Options
+## Opsi Lanjutan
 
-| Opsi | Keterangan |
+| Opsi | Deskripsi |
 | --- | --- |
-| Orientation correction | Gunakan jika gambar miring atau terputar. |
-| Document flattening | Gunakan untuk dokumen yang difoto dengan lengkungan atau kemiringan. |
-| Layout detection | Gunakan jika ingin mempertahankan struktur heading, paragraf, tabel, dan gambar. |
-| Chart recognition | Gunakan jika gambar berisi chart atau struktur kompleks. |
-| Beautify `Markdown` | Membuat Markdown hasil ekspor lebih mudah dibaca. |
+| Koreksi orientasi | Gunakan saat gambar terputar atau miring. |
+| Perataan dokumen | Gunakan untuk dokumen yang difoto dengan lengkungan atau kemiringan. |
+| Deteksi tata letak | Gunakan saat Anda ingin mempertahankan struktur judul, paragraf, tabel, dan gambar. |
+| Pengenalan bagan | Gunakan saat gambar berisi bagan atau struktur kompleks. |
+| Rapikan `Markdown` | Membuat Markdown hasil ekspor lebih mudah dibaca. |
 
-Untuk screenshot biasa, gunakan opsi seminimal mungkin. Untuk scan dokumen, aktifkan lebih banyak opsi terkait dokumen.
+Untuk tangkapan layar biasa, gunakan opsi seminimal mungkin. Untuk pindaian dokumen, aktifkan lebih banyak opsi terkait dokumen.
 
 ## Melihat Hasil
 
-Setelah recognition selesai, dialog akan menampilkan hasilnya.
+Setelah pengenalan selesai, dialog menampilkan hasilnya.
 
-Anda bisa langsung menyalinnya atau memilih format ekspor.
+Anda dapat langsung menyalinnya atau memilih format ekspor.
 
-![PDF recognition](../../image/other/pdf识别截图.png)
+![Pengenalan PDF](../../image/other/pdf识别截图.png)
 
-Untuk halaman dokumen, `PDF` hasil ekspor bisa mempertahankan tampilan halaman sambil membuat teks tetap searchable. Ini berguna untuk mengarsipkan scan dan mencari isi dokumen nanti.
+Untuk halaman dokumen, `PDF` hasil ekspor dapat mempertahankan tampilan halaman sambil membuat teks tetap dapat dicari. Ini berguna untuk mengarsipkan pindaian dan menemukan konten nanti.
 
 ## Memilih Format Ekspor
 
 | Format | Cocok Untuk |
 | --- | --- |
 | `Markdown (.md)` | Catatan, sistem dokumentasi, dan pengeditan lanjutan. |
-| `PDF (.pdf)` | Menjaga tampilan halaman dan hasil scan dokumen. |
-| `Word (.docx)` | Pengeditan layout, perubahan teks, dan handoff ke orang lain. |
-| Export all | Menyimpan beberapa format dan gambar asli, cocok untuk arsip penting. |
+| `PDF (.pdf)` | Mempertahankan tampilan halaman dan hasil dokumen pindaian. |
+| `Word (.docx)` | Melanjutkan pengeditan tata letak, mengubah teks, dan menyerahkan ke orang lain. |
+| Ekspor semua | Menyimpan beberapa format dan gambar asli, cocok untuk arsip penting. |
 
 Jika hanya membutuhkan teks, ekspor Markdown.
 
@@ -153,56 +153,56 @@ Jika perlu mempertahankan tampilan halaman, gunakan PDF atau Word.
 
 ## Output Word
 
-Dokumen Word hasil ekspor bisa dibuka dan diedit dengan software office.
+Dokumen Word hasil ekspor dapat dibuka dan diedit dengan perangkat lunak perkantoran.
 
-![Word result](../../image/other/word识别结果.png)
+![Hasil Word](../../image/other/word识别结果.png)
 
-Beberapa dokumen menyertakan gambar, heading, dan paragraf yang dikenali di output Word.
+Beberapa dokumen menyertakan gambar, judul, dan paragraf yang dikenali di output Word.
 
-Kualitas recognition bergantung pada kejernihan gambar asli, pilihan model, dan kompleksitas dokumen.
+Kualitas pengenalan bergantung pada kejernihan gambar asli, pilihan model, dan kompleksitas dokumen.
 
-## Jenis File yang Cocok untuk OCR
+## Jenis File Terbaik untuk OCR
 
 | Jenis File | Rekomendasi |
 | --- | --- |
-| Screenshot jelas | Kenali langsung. |
-| Scan | Utamakan `PP-StructureV3`. |
-| Dokumen yang difoto | Aktifkan orientation correction dan document flattening. |
-| Tabel, rumus, cap | Utamakan model structured. |
+| Tangkapan layar jelas | Kenali langsung. |
+| Pindaian | Utamakan `PP-StructureV3`. |
+| Dokumen yang difoto | Aktifkan koreksi orientasi dan perataan dokumen. |
+| Tabel, rumus, cap | Utamakan model terstruktur. |
 | Gambar teks pendek sederhana | `PP-OCRv5` biasanya cukup. |
 
-Gambar yang lebih jelas dengan teks yang lebih lurus biasanya menghasilkan recognition yang lebih baik.
+Gambar yang lebih jelas dengan teks yang lebih lurus biasanya menghasilkan hasil yang lebih baik.
 
 ## Kasus Umum
 
 | Kasus | Arti |
 | --- | --- |
-| Recognition gagal | Periksa apakah token atau key layanan sudah disimpan. |
-| Recognition lambat | Dokumen kompleks dan gambar besar membutuhkan waktu lebih lama. |
-| Tabel tidak lengkap | Coba model structured. |
-| Teks banyak salah | Blur, pantulan cahaya, dan kemiringan meningkatkan error. Coba gambar yang lebih jelas. |
-| Output Word berisi banyak gambar | Model structured mungkin mempertahankan sebagian gambar yang dikenali. Ini normal. |
+| Pengenalan gagal | Periksa apakah token atau kunci layanan sudah disimpan. |
+| Pengenalan lambat | Dokumen kompleks dan gambar besar membutuhkan waktu lebih lama. |
+| Tabel tidak lengkap | Coba model terstruktur. |
+| Teks memiliki kesalahan | Buram, pantulan cahaya, dan kemiringan meningkatkan kesalahan pengenalan. Coba gambar yang lebih jelas. |
+| Output Word berisi banyak gambar | Model terstruktur dapat mempertahankan sebagian gambar yang dikenali. Ini normal. |
 
-### Query Kuota Google Gagal
+### Kueri Kuota Google Gagal
 
 Periksa:
 
-1. Service account `JSON` sudah diimport.
-2. Service account memiliki role `Monitoring Viewer`.
+1. Akun layanan `JSON` sudah diimpor.
+2. Akun layanan memiliki peran `Monitoring Viewer`.
 3. `Cloud Vision API` sudah diaktifkan untuk project tersebut.
 
-Jika hanya membutuhkan OCR dan tidak perlu query penggunaan, Anda bisa mengabaikan service account JSON dan cukup mengisi `Google Vision API Key`.
+Jika Anda hanya membutuhkan OCR dan tidak membutuhkan kueri penggunaan, Anda dapat mengabaikan JSON akun layanan dan hanya mengisi `Google Vision API Key`.
 
 ## Alur Cepat
 
 ```text
-Buka System Settings
--> Buka Other Settings
--> Isi credential layanan OCR
--> Simpan
--> Kembali ke File Management
--> Pilih file dan klik OCR
--> Pilih model
--> Tunggu recognition selesai
--> Salin hasil atau ekspor Markdown / PDF / Word
+Open System Settings
+-> Open Other Settings
+-> Fill OCR service credentials
+-> Save
+-> Return to File Management
+-> Select a file and click OCR
+-> Choose a model
+-> Wait for recognition
+-> Copy results or export Markdown / PDF / Word
 ```

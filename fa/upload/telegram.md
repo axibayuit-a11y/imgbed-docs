@@ -1,122 +1,122 @@
-# افزودن Telegram Channel
+# افزودن کانال Telegram
 
 ## پیش از شروع چه چیزهایی لازم است
 
 | مورد | کاربرد |
 | --- | --- |
-| Telegram account | برای ساخت bot و storage channel |
-| `@BotFather` | برای ساخت Telegram bot |
-| Telegram channel | مقصد نهایی ذخیره files |
-| `@userinfobot` | برای پیدا کردن `Chat ID` channel |
+| حساب Telegram | برای ساخت ربات و کانال ذخیره‌سازی استفاده می‌شود. |
+| `@BotFather` | برای ساخت ربات در Telegram استفاده می‌شود. |
+| کانال Telegram | مقصد نهایی ذخیره فایل‌ها. |
+| `@userinfobot` | برای استعلام `Chat ID` کانال استفاده می‌شود. |
 
 ## کجا اضافه کنیم
 
-1. System Settings را باز کنید.
-2. وارد Upload Settings شوید.
-3. از گوشه بالا سمت راست Add Channel را بزنید.
+1. تنظیمات سیستم را باز کنید.
+2. به تنظیمات بارگذاری بروید.
+3. در گوشه بالا سمت راست روی افزودن کانال کلیک کنید.
 4. `Telegram` را انتخاب کنید.
 
-## Field Reference
+## مرجع فیلدها
 
-| Field | کاربرد | Required |
+| فیلد | کاربرد | الزامی |
 | --- | --- | --- |
-| Channel name | نام قابل‌تشخیص برای این channel، مثل `Telegram Primary`. | Required |
-| Active | این channel را enable یا disable می‌کند. | Recommended |
-| Bot Token | token مربوط به Telegram bot. | Required |
-| Session ID (Chat ID) | ID مربوط به Telegram channel. | Required |
-| Relay Proxy URL (optional) | فقط وقتی Telegram access ناپایدار است استفاده کنید. URL کامل را همراه `https://` وارد کنید. | Optional |
-| Remark | یادداشت برای نگهداری بعدی. | Optional |
+| نام کانال | نامی قابل تشخیص برای این کانال، مانند `Telegram Primary`. | الزامی |
+| فعال | این کانال را فعال یا غیرفعال می‌کند. | پیشنهادی |
+| Bot Token | توکن ربات شما در Telegram. | الزامی |
+| Session ID (Chat ID) | شناسه کانال Telegram. | الزامی |
+| URL پروکسی رله (اختیاری) | فقط زمانی استفاده کنید که دسترسی به Telegram ناپایدار است. URL کامل پروکسی را همراه با `https://` وارد کنید. | اختیاری |
+| توضیح | یادداشت برای نگهداری بعدی. | اختیاری |
 
 ## مراحل راه‌اندازی
 
-### 1. ساخت Telegram Bot
+### 1. ساخت ربات در Telegram
 
 1. Telegram را باز کنید و `@BotFather` را جست‌وجو کنید.
-2. chat را باز کنید و `Start` را بزنید.
+2. گفت‌وگو را باز کنید و روی `Start` کلیک کنید.
 3. `/newbot` را ارسال کنید.
-4. طبق پیام‌ها، bot display name را وارد کنید.
-5. bot username را وارد کنید. معمولاً username باید با `bot` تمام شود.
-6. پس از ساخت bot، `@BotFather` یک bot token برمی‌گرداند.
+4. طبق راهنما، نام نمایشی ربات را وارد کنید.
+5. طبق راهنما، نام کاربری ربات را وارد کنید. معمولاً باید به `bot` ختم شود.
+6. پس از ساخت ربات، `@BotFather` یک توکن ربات برمی‌گرداند.
 
-این همان مقداری است که باید در ImgBed داخل `Bot Token` وارد شود.
+این توکن همان `Bot Token` است که باید در ImgBed وارد کنید.
 
-![Save the bot token](../../image/upload/telegram/保存机器人令牌.png)
+![ذخیره توکن ربات](../../image/upload/telegram/保存机器人令牌.png)
 
-### 2. ساخت Channel
+### 2. ساخت کانال
 
-1. در Telegram روی New Channel بزنید.
-2. channel name را وارد کنید.
-3. ساخت channel را کامل کنید.
+1. در Telegram روی کانال جدید کلیک کنید.
+2. نام کانال را وارد کنید.
+3. ساخت کانال را کامل کنید.
 
-هم public channel و هم private channel قابل استفاده است.
+کانال‌های عمومی و خصوصی هر دو قابل استفاده هستند.
 
-![Create a channel](../../image/upload/telegram/新建频道.png)
+![ساخت کانال](../../image/upload/telegram/新建频道.png)
 
-### 3. افزودن Bot به Channel
+### 3. افزودن ربات به کانال
 
-1. channel ساخته‌شده را باز کنید.
-2. channel settings را باز کنید.
-3. بخش افزودن member یا administrator را باز کنید.
-4. bot username ساخته‌شده را جست‌وجو کنید.
-5. bot را به channel اضافه کنید.
+1. کانالی را که تازه ساخته‌اید باز کنید.
+2. تنظیمات کانال را باز کنید.
+3. افزودن عضو یا مدیر را انتخاب کنید.
+4. نام کاربری ربات ساخته‌شده را جست‌وجو کنید.
+5. ربات را به کانال اضافه کنید.
 
-برای upload قابل‌اعتمادتر، بهتر است به bot دسترسی administrator بدهید.
+برای بارگذاری قابل اعتمادتر، به ربات مجوز مدیر بدهید.
 
-![Invite the bot to the channel](../../image/upload/telegram/邀请机器人进频道里.png)
+![دعوت ربات به کانال](../../image/upload/telegram/邀请机器人进频道里.png)
 
-### 4. گرفتن Channel ID با User Info - Get ID - IDbot
+### 4. دریافت Channel ID با User Info - Get ID - IDbot
 
 1. در Telegram، `@userinfobot` را جست‌وجو کنید. نام نمایشی آن معمولاً `User Info - Get ID - IDbot` است.
-2. chat را باز کنید و `Start` را بزنید.
-3. از گزینه‌های bot، `Channel` را انتخاب کنید.
-4. در message picker، target channel را انتخاب و برای `@userinfobot` ارسال کنید.
-5. وقتی result برگشت، عددی را که به شکل `Id: -100...` نمایش داده می‌شود copy کنید.
+2. گفت‌وگو را باز کنید و روی `Start` کلیک کنید.
+3. از گزینه‌های ربات، `Channel` را انتخاب کنید.
+4. در انتخابگر پیام، کانال مقصد را انتخاب کنید و آن را به `@userinfobot` ارسال کنید.
+5. وقتی `@userinfobot` نتیجه را برگرداند، عددی را که به شکل `Id: -100...` نمایش داده می‌شود کپی کنید.
 
-عدد شروع‌شونده با `-100` همان `Session ID (Chat ID)` موردنیاز ImgBed است.
+عددی که با `-100` شروع می‌شود همان `Session ID (Chat ID)` موردنیاز ImgBed است.
 
-![Get the channel ID](../../image/upload/telegram/获取频道id.png)
+![دریافت Channel ID](../../image/upload/telegram/获取频道id.png)
 
-### 5. پر کردن Telegram Channel در ImgBed
+### 5. تکمیل کانال Telegram در ImgBed
 
-به channel configuration dialog برگردید و fields را این‌گونه پر کنید:
+به پنجره پیکربندی کانال برگردید و فیلدها را این‌گونه تکمیل کنید:
 
-| UI Field | Value |
+| فیلد رابط کاربری | مقدار |
 | --- | --- |
-| Channel Identifier | نام دلخواه، مثل `TelegramPrimary`. |
-| Active | Recommended. |
-| Bot Token | token دریافت‌شده از `@BotFather`. |
-| Session ID (Chat ID) | عدد `-100...` دریافت‌شده از `@userinfobot`. |
-| Relay Proxy URL (optional) | فقط در صورت نیاز، مثل `https://your-tg-proxy.example.com`. |
-| Remark | یادداشت اختیاری. |
+| شناسه کانال | نام سفارشی کانال، برای مثال `TelegramPrimary`. |
+| فعال | پیشنهادی. |
+| Bot Token | توکن ربات دریافت‌شده از `@BotFather`. |
+| Session ID (Chat ID) | عدد `-100...` برگشتی از `@userinfobot`. |
+| URL پروکسی رله (اختیاری) | فقط در صورت نیاز، برای مثال `https://your-tg-proxy.example.com`. |
+| توضیح | یادداشت اختیاری. |
 
-در پایان Save را بزنید.
+در پایان روی ذخیره کلیک کنید.
 
-![Edit the configuration](../../image/upload/telegram/编辑配置.png)
+![ویرایش پیکربندی](../../image/upload/telegram/编辑配置.png)
 
 ## روش بررسی
 
-| Check | روش بررسی |
+| بررسی | روش بررسی |
 | --- | --- |
-| Channel card appears | پس از Save، باید card مربوط به Telegram در Upload Settings دیده شود. |
-| Channel can be enabled | Active switch باید روشن بماند. |
-| Configuration is saved | در detail view باید Bot Token و Chat ID ذخیره‌شده دیده شوند. |
-| Upload works | یک test image upload کنید و بررسی کنید در target Telegram channel ظاهر شود. |
+| کارت کانال نمایش داده می‌شود | پس از ذخیره، صفحه تنظیمات بارگذاری باید کارت کانال Telegram را نشان دهد. |
+| کانال قابل فعال‌سازی است | کلید فعال‌سازی باید روشن بماند. |
+| پیکربندی ذخیره شده است | نمای جزئیات باید نشان دهد Bot Token و Chat ID ذخیره شده‌اند. |
+| بارگذاری کار می‌کند | یک تصویر آزمایشی بارگذاری کنید و مطمئن شوید در کانال مقصد Telegram ظاهر می‌شود. |
 
-## Quick Checklist
+## فهرست سریع
 
 ```text
-با @BotFather یک bot بسازید
--> Bot Token را ذخیره کنید
--> Telegram channel بسازید
--> bot را به channel اضافه کنید و administrator permissions بدهید
--> @userinfobot را پیدا کنید و Channel را انتخاب کنید
--> یک message از channel به @userinfobot بفرستید
--> Id: -100... برگشتی را copy کنید
--> Bot Token و Chat ID را در ImgBed وارد کنید
--> Save کنید و test image upload کنید
+Create a bot with @BotFather
+-> Save the Bot Token
+-> Create a Telegram channel
+-> Add the bot to the channel and grant administrator permissions
+-> Search for @userinfobot and choose Channel
+-> Forward any message from the channel to @userinfobot
+-> Copy the returned Id: -100...
+-> Enter the Bot Token and Chat ID in ImgBed
+-> Save and upload a test image
 ```
 
-## References
+## منابع
 
-1. Telegram bots: https://core.telegram.org/bots
+1. ربات‌های Telegram: https://core.telegram.org/bots
 2. Telegram Bot API: https://core.telegram.org/bots/api

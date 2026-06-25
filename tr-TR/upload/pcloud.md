@@ -35,7 +35,7 @@ Hesap bölgenize göre API host seçin:
 
 | Hesap Bölgesi | API Host |
 | --- | --- |
-| Default / US | `api.pcloud.com` |
+| Varsayılan / ABD | `api.pcloud.com` |
 | Europe | `eapi.pcloud.com` |
 
 ## Kurulum Adımları
@@ -89,14 +89,14 @@ eapi.pcloud.com
 ## Kısa Akış
 
 ```text
-pCloud e-postası ve parolasını hazırla
--> Yükleme Ayarları'nı aç
--> Kanal ekle
--> pCloud seç
--> Kanal adı / e-posta / parola doldur
--> Hesabınız Avrupa'da değilse API host değerini api.pcloud.com bırak
--> Başka klasör gerekmiyorsa storage directory değerini imgbed bırak
--> Kaydet
--> Kota sorgula
--> Test görseli yükle
+Prepare your pCloud email and password
+-> Open Upload Settings
+-> Add Channel
+-> Choose pCloud
+-> Fill channel name / email / password
+-> Keep API host as api.pcloud.com unless your account is in Europe
+-> Keep storage directory as imgbed unless you need another folder
+-> Save
+-> Query quota
+-> Upload a test image
 ```

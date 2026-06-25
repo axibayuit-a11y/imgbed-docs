@@ -1,12 +1,12 @@
 # Cloudflare API Token
 
-Cloudflare API credentials membolehkan ImgBed purge Cloudflare CDN cache selepas files berubah.
+Bukti kelayakan Cloudflare API membolehkan ImgBed membersihkan storan sementara CDN Cloudflare selepas fail berubah.
 
-![Cloudflare API Token settings](../../image/Safety/cloudflare%20api%20token截图.png)
+![Tetapan Cloudflare API Token](../../image/Safety/cloudflare%20api%20token截图.png)
 
-## Di Mana Untuk Configure
+## Tempat Mengkonfigurasi
 
-Buka admin panel, kemudian pergi ke:
+Buka panel pentadbir, kemudian pergi ke:
 
 ```text
 System Settings -> Security Settings -> Cloudflare API Token
@@ -15,66 +15,66 @@ System Settings -> Security Settings -> Cloudflare API Token
 Anda perlu mengisi:
 
 - Zone ID
-- Account email
+- E-mel akaun
 - API Key
 
-## Fungsi Setting Ini
+## Fungsi Tetapan Ini
 
-Cloudflare mungkin cache public image URLs.
+Cloudflare boleh menyimpan URL imej awam dalam storan sementara.
 
-Caching membuatkan image delivery lebih laju, tetapi ia juga boleh menyebabkan content lama masih kelihatan seketika selepas anda delete, block, replace atau move file.
+Storan sementara menjadikan penghantaran imej lebih pantas, tetapi juga boleh menyebabkan kandungan lama masih kelihatan seketika selepas anda memadam, menyekat, mengganti atau memindahkan fail.
 
-Selepas Cloudflare API credentials dikonfigurasi, ImgBed cuba purge Cloudflare cache yang berkaitan apabila operasi tersebut selesai.
+Selepas bukti kelayakan Cloudflare API dikonfigurasi, ImgBed akan cuba membersihkan storan sementara Cloudflare yang berkaitan apabila operasi tersebut selesai.
 
 Ini berguna apabila:
 
-- Anda delete image dan mahu public link berhenti berfungsi secepat mungkin.
-- Anda block image dan mahu visitors berhenti melihat original file.
-- Anda replace file dengan nama yang sama dan mahu visitors melihat version baharu lebih cepat.
-- Anda move atau rename files dan mahu old path cache refresh dengan cepat.
-- Anda menukar public access rules dan mahu public gallery atau random image cache update lebih cepat.
+- Anda memadam imej dan mahu pautan awam berhenti berfungsi secepat mungkin.
+- Anda menyekat imej dan mahu pelawat berhenti melihat fail asal.
+- Anda mengganti fail dengan nama yang sama dan mahu pelawat melihat versi baharu dengan lebih cepat.
+- Anda memindahkan atau menamakan semula fail dan mahu storan sementara laluan lama disegar semula dengan lebih cepat.
+- Anda mengubah peraturan akses awam dan mahu storan sementara galeri awam atau imej rawak dikemas kini dengan lebih cepat.
 
 ## Jika Dibiarkan Kosong
 
-ImgBed masih berfungsi secara normal tanpa setting ini.
+ImgBed tetap berjalan seperti biasa tanpa tetapan ini.
 
-Bezanya, ImgBed tidak akan actively purge Cloudflare CDN cache. Visitors mungkin terus melihat content lama sehingga Cloudflare cache expire secara semula jadi.
+Perbezaannya, ImgBed tidak akan membersihkan storan sementara CDN Cloudflare secara aktif. Pelawat mungkin masih melihat kandungan lama sehingga storan sementara Cloudflare tamat secara semula jadi.
 
 ## Cara Mencari Zone ID
 
-Zone ID ialah Cloudflare Zone ID untuk site yang digunakan oleh ImgBed domain anda.
+Zone ID ialah Cloudflare Zone ID bagi tapak yang digunakan oleh domain ImgBed anda.
 
-1. Sign in ke Cloudflare dashboard.
-2. Buka site yang mengandungi ImgBed domain anda.
-3. Cari `Zone ID` pada site overview page.
-4. Copy ke field `Zone ID` dalam ImgBed.
+1. Log masuk ke papan pemuka Cloudflare.
+2. Buka tapak yang mengandungi domain ImgBed anda.
+3. Cari `Zone ID` pada halaman ringkasan tapak.
+4. Salin ke medan `Zone ID` dalam ImgBed.
 
-Ini ialah site Zone ID, bukan account ID.
+Ini ialah Zone ID tapak, bukan account ID.
 
-## Account Email
+## E-mel Akaun
 
-Masukkan email address yang anda gunakan untuk sign in ke Cloudflare.
+Masukkan alamat e-mel yang anda gunakan untuk log masuk ke Cloudflare.
 
-Ia mesti sepadan dengan API Key yang diberi di bawah.
+E-mel ini mesti sepadan dengan API Key di bawah.
 
 ## API Key
 
 Masukkan Cloudflare Global API Key.
 
-1. Sign in ke Cloudflare dashboard.
-2. Buka profile anda.
-3. Pergi ke API Tokens page.
+1. Log masuk ke papan pemuka Cloudflare.
+2. Buka profil.
+3. Pergi ke halaman API Tokens.
 4. Cari `Global API Key`.
-5. View dan copy.
-6. Paste ke field `API Key` dalam ImgBed.
+5. Paparkan dan salin.
+6. Tampal ke medan `API Key` dalam ImgBed.
 
-![View global API key](../../image/Safety/查看全局令牌.png)
+![Lihat Global API Key](../../image/Safety/查看全局令牌.png)
 
 ## Bila Ia Berkuat Kuasa
 
-Selepas mengisi field, save settings.
+Selepas medan diisi, simpan tetapan.
 
-Perubahan file selepas itu akan cuba purge Cloudflare cache secara automatik. Operasi lama tidak dipurge secara retroaktif. Jika anda delete atau replace file sebelum setup ini, tunggu Cloudflare cache expire atau purge secara manual dalam Cloudflare.
+Perubahan fail selepas itu akan secara automatik cuba membersihkan storan sementara Cloudflare. Operasi yang telah berlaku sebelum ini tidak dibersihkan secara retroaktif. Jika anda memadam atau mengganti fail sebelum tetapan ini dibuat, tunggu storan sementara Cloudflare tamat atau bersihkan secara manual di Cloudflare.
 
 ## FAQ
 
@@ -82,22 +82,23 @@ Perubahan file selepas itu akan cuba purge Cloudflare cache secara automatik. Op
 
 Tidak.
 
-Jika domain anda tidak menggunakan Cloudflare, atau anda tidak kisah dengan CDN cache delay, anda boleh biarkan kosong.
+Jika domain anda tidak menggunakan Cloudflare, atau anda tidak kisah tentang kelewatan storan sementara CDN, biarkan kosong.
 
-### Adakah Wrong Credentials Akan Merosakkan Uploads?
+### Adakah Bukti Kelayakan Salah Akan Merosakkan Muat Naik?
 
 Biasanya tidak.
 
-Wrong credentials hanya menghalang ImgBed daripada purge Cloudflare cache. Upload dan normal file access sepatutnya terus berfungsi.
+Bukti kelayakan yang salah hanya menyebabkan ImgBed gagal membersihkan storan sementara Cloudflare. Muat naik dan akses fail biasa sepatutnya terus berfungsi.
 
-### Mengapa Deleted Image Masih Boleh Dibuka?
+### Mengapa Imej yang Dipadam Masih Boleh Dibuka?
 
-Sebab paling biasa ialah Cloudflare masih menyimpan file lama dalam cache.
+Punca paling biasa ialah Cloudflare masih menyimpan fail lama dalam storan sementara.
 
-Dengan Cloudflare API credentials yang betul, ImgBed purge related URL cache apabila file dipadam.
+Dengan bukti kelayakan Cloudflare API yang betul, ImgBed membersihkan storan sementara URL berkaitan apabila fail dipadam.
 
-### Mengapa Masih Nampak Image Lama Selepas Replace File?
+### Mengapa Saya Masih Melihat Imej Lama Selepas Mengganti Fail?
 
-Ini juga biasanya disebabkan CDN cache.
+Ini juga biasanya disebabkan oleh storan sementara CDN.
 
-Selepas setting ini dikonfigurasi, ImgBed cuba purge old URL cache apabila file dengan nama sama dioverwrite.
+Selepas tetapan ini dikonfigurasi, ImgBed cuba membersihkan storan sementara URL lama apabila fail dengan nama yang sama ditulis ganti.
+

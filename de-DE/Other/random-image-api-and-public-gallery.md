@@ -1,80 +1,99 @@
-# Zufallsbild-API und öffentliche Galerie
+# API für zufällige Bilder und öffentliche Galerie
 
-Beide Funktionen werden hier eingestellt:
-
-```text
-Systemeinstellungen -> Weitere Einstellungen
-```
-
-## Zufallsbild-API
-
-Die Zufallsbild-API wählt zufällig eine Datei aus den konfigurierten Ordnern. Sie eignet sich für Seitenhintergründe, Avatar-Rotation oder externe Aufrufe zufälliger Bilder.
-
-Nach dem Aktivieren nutzt du:
+Beide Funktionen werden hier konfiguriert:
 
 ```text
-https://deine-domain/random
+System Settings -> Other Settings
 ```
 
-## API-Einstellungen
+## API für zufällige Bilder
 
-| Option | Beschreibung |
+Die API für zufällige Bilder gibt eine zufällige Datei aus ausgewählten Verzeichnissen zurück. Sie eignet sich für Website-Hintergründe, Avatar-Rotation oder Aufrufe zufälliger Bilder von externen Seiten.
+
+Nach der Aktivierung verwenden Sie:
+
+```text
+https://your-domain.com/random
+```
+
+## Einstellungen der API für zufällige Bilder
+
+| Option | Zweck |
 | --- | --- |
-| Aktivieren | Schaltet `/random` ein oder aus; ausgeschaltet wird der Zugriff verweigert |
-| Ordner | Begrenzen, aus welchen Ordnern Dateien gewählt werden |
-| Aufrufbeispiel | Erzeugt einen kopierbaren API-Link |
+| Aktivieren | Schaltet den Endpunkt `/random` ein oder aus. Wenn er deaktiviert ist, wird der Zugriff verweigert. |
+| Verzeichnisse | Begrenzt, welche Verzeichnisse die API für zufällige Bilder verwenden darf. Verzeichnisse, die hier nicht enthalten sind, können von der API nicht verwendet werden. |
+| Aufrufdemo | Erzeugt Links für die API für zufällige Bilder, die Sie direkt kopieren können. |
 
-Du kannst mehrere Ordner auswählen. Wenn nur `/landscape/` und `/portrait/` erlaubt sind, wählt die API nur Dateien aus diesen Ordnern oder deren Unterordnern.
+Sie können mehrere Verzeichnisse auswählen. Wenn beispielsweise nur `/landscape/` und `/portrait/` erlaubt sind, kann die API für zufällige Bilder nur Dateien aus diesen Verzeichnissen und deren Unterverzeichnissen auswählen.
 
-## Wichtige Parameter
+## Parameter der API für zufällige Bilder
 
-| Parameter | Beispiel | Beschreibung |
+| Parameter | Beispiel | Zweck |
 | --- | --- | --- |
-| `dir` | `/landscape/` | Zielordner |
-| `content` | `image` | Medientyp: `image`, `video`, `audio` oder Kombination |
-| `orientation` | `auto` | `portrait`, `landscape` oder `auto` |
-| `type` | `url` | Leer leitet weiter; `url` gibt Text zurück; `json` gibt JSON zurück |
-| `origin` | `1` | Gibt mit `type=url` einen vollständigen Link zurück |
-| `age` | `all-ages,r12` | Filter nach Altersfreigabe |
-| `tag` | `wallpaper,sky` | Nur Dateien mit diesen Tags |
-| `ex` | `private` | Dateien mit diesen Tags ausschließen |
+| `dir` | `/landscape/` | Gibt das Zufallsverzeichnis an. |
+| `content` | `image` | Gibt den Medientyp an. Verwenden Sie `image`, `video`, `audio` oder durch Kommas getrennte Kombinationen. |
+| `orientation` | `auto` | Filtert die Bildausrichtung. Verwenden Sie `portrait`, `landscape` oder `auto`. |
+| `type` | `url` | Rückgabeformat. Leer bedeutet Weiterleitung, `url` gibt eine reine Text-URL zurück, `json` gibt JSON zurück. |
+| `origin` | `1` | Wird mit `type=url` verwendet, um eine vollständige URL zurückzugeben. |
+| `age` | `all-ages,r12` | Filtert nach Altersfreigabe. |
+| `tag` | `wallpaper,sky` | Gibt nur Dateien zurück, die diese Tags enthalten. |
+| `ex` | `private` | Schließt Dateien aus, die diese Tags enthalten. |
 
-## Antwortformate
+## Rückgabeformate
 
-Ohne `type` leitet die API direkt zur zufälligen Datei weiter.
+Ohne `type` leitet die API direkt zur URL der zufälligen Datei weiter.
 
-`type=url` gibt einen reinen Textlink zurück.
+Mit `type=url` gibt sie eine Text-URL zurück.
 
-`type=json` gibt Dateiinformationen zurück: Link, ID, Name, Typ, Tags, Einstufung und weitere Daten.
+Mit `type=json` gibt sie Dateiinformationen zurück, einschließlich Datei-URL, Datei-ID, Dateiname, Dateityp, Tags, Altersfreigabe und zugehörigen Metadaten.
 
-## Zugriffsbeschränkungen
+## Zugriffsregeln
 
-Die API folgt den öffentlichen Regeln im Adminbereich.
+Die API für zufällige Bilder folgt den Regeln für den öffentlichen Zugriff:
 
-| Regel | Auswirkung |
+| Regel | Wirkung |
 | --- | --- |
-| Ordnerbeschränkung | Wählt nur aus erlaubten Ordnern |
-| Blacklist | Gesperrte Dateien werden nicht berücksichtigt |
-| Whitelist-Modus | Nur ausdrücklich erlaubte Dateien werden zurückgegeben |
-| Altersfreigabe | Filtert R12, R16, R18 je nach Zugriffsmodus |
+| Verzeichnisbeschränkung | Nur Dateien in erlaubten Verzeichnissen können ausgewählt werden. |
+| Blocklist | Dateien auf der Blocklist werden aus dem Zufallspool ausgeschlossen. |
+| Allowlist-Modus | Wenn aktiviert, werden nur Dateien zurückgegeben, die für den öffentlichen Zugriff erlaubt sind. |
+| Altersfreigabe | R12, R16, R18 und ähnliche Inhalte werden nach dem aktuellen Zugriffsmodus gefiltert. |
 
-Wenn keine Datei passt, meldet die API kein Ergebnis.
+Wenn nach dem Filtern keine Datei passt, gibt die API kein passendes Ergebnis zurück.
+
+## Cache
+
+Die API für zufällige Bilder speichert Kandidatenpools pro Verzeichnis im Cache, um die Geschwindigkeit zu verbessern.
+
+Nach Dateiänderungen aktualisiert ImgBed die Cache-Version des Verzeichnisses, und spätere Anfragen bauen den Kandidatenpool neu auf. Leere Verzeichnisse werden kurz zwischengespeichert, um wiederholte Abfragen zu vermeiden.
 
 ## Öffentliche Galerie
 
-Die öffentliche Galerie stellt eine schreibgeschützte Seite bereit, auf der Besucher freigegebene Ordner durchsuchen können.
+Die öffentliche Galerie stellt eine öffentlich zugängliche, schreibgeschützte Seite zum Durchsuchen der Verzeichnisse bereit, die Besucher sehen dürfen.
+
+Nach der Aktivierung können Besucher folgende Adresse aufrufen:
 
 ```text
-https://deine-domain/browse/ordnername
+https://your-domain.com/browse/directory-name
 ```
 
-## Galerie-Einstellungen
+## Einstellungen der öffentlichen Galerie
 
-| Option | Beschreibung |
+| Option | Zweck |
 | --- | --- |
-| Aktivieren | Öffentliche Galerie ein- oder ausschalten |
-| Lademodus | Originaldatei oder Thumbnail verwenden |
-| Öffentliche Ordner | Festlegen, welche Ordner Besucher öffnen dürfen |
+| Aktivieren | Schaltet die öffentliche Galerie ein oder aus. Wenn sie deaktiviert ist, können Besucher nicht darin browsen. |
+| Bildlademodus | Steuert, ob Vorschauen Originalbilder oder Thumbnails verwenden. |
+| Freigegebene Verzeichnisse | Legt fest, auf welche Verzeichnisse Besucher zugreifen können. |
+
+## Bildlademodus
+
+| Modus | Zweck |
+| --- | --- |
+| Original | Die Besucherseite lädt Originaldateien direkt. |
+| Thumbnail | Die Besucherseite bevorzugt Thumbnails für schnelleres Laden. |
+
+## Freigegebene Verzeichnisse
+
+Freigegebene Verzeichnisse bestimmen, was Besucher sehen können.
 
 Beispiel:
 
@@ -82,25 +101,38 @@ Beispiel:
 /1/,/2/,/landscape/,/portrait/
 ```
 
-Damit können Besucher öffnen:
+Besucher können dann aufrufen:
 
 ```text
-https://deine-domain/browse/1
-https://deine-domain/browse/2
-https://deine-domain/browse/landscape
-https://deine-domain/browse/portrait
+https://your-domain.com/browse/1
+https://your-domain.com/browse/2
+https://your-domain.com/browse/landscape
+https://your-domain.com/browse/portrait
 ```
 
-Nicht freigegebene Ordner werden abgelehnt.
+Auch Unterverzeichnisse können freigegeben werden, zum Beispiel `/2026/lucky/`. Besucher werden für Verzeichnisse blockiert, die nicht freigegeben sind.
 
-## Funktionen der Galerie
+## Funktionen der öffentlichen Galerie
 
 | Funktion | Beschreibung |
 | --- | --- |
-| Ordner durchsuchen | Freigegebene Dateien und Unterordner anzeigen |
-| Suche | Nach Name, Datei-ID oder Tag suchen |
-| Typfilter | Bild, Video, Audio oder andere Dateien filtern |
-| Tagfilter | Tags einschließen oder ausschließen |
-| Ausrichtungsfilter | Querformat, Hochformat und weitere Kriterien |
-| Link kopieren | Öffentlichen Link der Datei kopieren |
-| Medienvorschau | Bilder, Videos und Audio direkt ansehen |
+| Verzeichnisse durchsuchen | Dateien und Unterverzeichnisse in freigegebenen Verzeichnissen anzeigen. |
+| Suche | Nach Dateiname, Datei-ID oder Tags suchen. |
+| Typfilter | Bilder, Videos, Audiodateien oder andere Dateien filtern. |
+| Tag-Filter | Ausgewählte Tags einschließen oder ausschließen. |
+| Ausrichtungsfilter | Bilder im Quer- oder Hochformat filtern. |
+| Zeitfilter | Nach Upload-Zeitraum filtern. |
+| Erweiterungsfilter | Nach Dateierweiterung filtern. |
+| Link kopieren | Dateizugriffslinks kopieren. |
+| Medienvorschau | Bilder, Videos und Audiodateien auf der Besucherseite anzeigen oder abspielen. |
+
+## Zugriffsregeln der öffentlichen Galerie
+
+Auch die öffentliche Galerie folgt den Regeln für den öffentlichen Zugriff:
+
+| Regel | Wirkung |
+| --- | --- |
+| Freigegebene Verzeichnisse | Nur erlaubte Verzeichnisse werden angezeigt. |
+| Zugriffsmodus | Inhalte werden nach dem aktuellen Zugriffsmodus für Altersfreigaben gefiltert. |
+| Allowlist-Modus | Wenn aktiviert, werden nur Dateien angezeigt, die für den öffentlichen Zugriff erlaubt sind. |
+| Blocklist | Dateien auf der Blocklist werden ausgeblendet. |

@@ -1,87 +1,87 @@
-# Blog
+# ဘလော့ဂ်
 
-Blog feature က သင့် ImgBed site ထဲ blog page သီးခြားတစ်ခုထည့်ပေးပါတယ်။
+ဘလော့ဂ်လုပ်ဆောင်ချက်သည် သင့် ImgBed ဆိုက်ထဲသို့ သီးခြား ဘလော့ဂ်စာမျက်နှာတစ်ခု ထည့်ပေးသည်။
 
-enable လုပ်ပြီးနောက် visitors တွေဖွင့်နိုင်ပါတယ်:
+ဖွင့်ပြီးနောက် ဧည့်သည်များသည် အောက်ပါလိပ်စာကို ဖွင့်နိုင်သည်။
 
 ```text
 https://your-domain.com/blog/
 ```
 
-![Blog homepage](../../image/other/博客/博客首页.png)
+![ဘလော့ဂ် ပင်မစာမျက်နှာ](../../image/other/博客/博客首页.png)
 
-ဒီ blog က open-source [LyraVoid/Mizuki](https://github.com/LyraVoid/Mizuki) project ကိုအခြေခံပြီး ပြင်ဆင်ထားတာပါ။ ImgBed က Vue နဲ့ integrate လုပ်ထားလို့ image hosting site ရဲ့အစိတ်အပိုင်းအဖြစ်အလုပ်လုပ်ပါတယ်။
+ဤဘလော့ဂ်ကို အဖွင့်ရင်းမြစ် [LyraVoid/Mizuki](https://github.com/LyraVoid/Mizuki) ပရောဂျက်မှ ပြုပြင်အသုံးပြုထားသည်။ ImgBed သည် ၎င်းကို Vue ဖြင့် ပြန်ရေးပြီး ပုံလက်ခံသိမ်းဆည်းရေး ဆိုက်၏ အစိတ်အပိုင်းအဖြစ် လည်ပတ်နိုင်စေရန် ပေါင်းစည်းထားသည်။
 
-## ဘယ်နေရာမှာ Configure လုပ်မလဲ
+## မည်သည့်နေရာတွင် သတ်မှတ်ရမည်နည်း
 
-Blog settings က ဒီနေရာမှာရှိပါတယ်:
+ဘလော့ဂ်ဆက်တင်များသည် အောက်ပါနေရာတွင် ရှိသည်။
 
 ```text
 System Settings -> Other Settings -> Blog
 ```
 
-![Blog settings](../../image/other/博客/QQ20260611-221702.png)
+![ဘလော့ဂ်ဆက်တင်များ](../../image/other/博客/QQ20260611-221702.png)
 
-## First-Time Setup
+## ပထမဆုံး သတ်မှတ်ခြင်း
 
-1. `Enable` ကို on လုပ်ပါ။
-2. blog configuration သိမ်းမယ့် GitHub account ကိုရွေးပါ။
-3. `Update Blog` ကိုနှိပ်ပါ။
-4. success message ကိုစောင့်ပါ။
-5. blog ကြည့်ရန် `https://your-domain.com/blog/` ကိုဖွင့်ပါ။
+1. `Enable` ကို ဖွင့်ပါ။
+2. ဘလော့ဂ်ဖွဲ့စည်းမှုကို သိမ်းမည့် GitHub အကောင့်ကို ရွေးပါ။
+3. `Update Blog` ကို နှိပ်ပါ။
+4. အောင်မြင်ကြောင်း မက်ဆေ့ခ်ျကို စောင့်ပါ။
+5. ဘလော့ဂ်ကို ကြည့်ရန် `https://your-domain.com/blog/` ကို ဖွင့်ပါ။
 
-ပထမဆုံးအသုံးပြုတဲ့အခါ ImgBed ကရွေးထားတဲ့ account အောက်မှာ private GitHub repository တစ်ခုပြင်ဆင်ပါမယ်:
-
-```text
-imgbed-blog-config
-```
-
-ဒီ repository က blog settings နဲ့ article content ကိုသိမ်းပါတယ်။
-
-## Posts ရေးခြင်း
-
-blog posts တွေကို သင့် private GitHub repository ထဲမှာ edit လုပ်ပါ:
+ပထမဆုံးအသုံးပြုချိန်တွင် ImgBed သည် ရွေးထားသောအကောင့်အောက်တွင် GitHub ၏ သီးသန့်သိုလှောင်ရုံတစ်ခုကို ပြင်ဆင်ပေးသည်။
 
 ```text
 imgbed-blog-config
 ```
 
-ပုံမှန် workflow:
+ဤသိုလှောင်ရုံသည် ဘလော့ဂ်ဆက်တင်များနှင့် ဆောင်းပါးအကြောင်းအရာများကို သိမ်းဆည်းသည်။
 
-1. GitHub ကိုဖွင့်ပါ။
-2. private `imgbed-blog-config` repository ထဲဝင်ပါ။
-3. post files edit သို့မဟုတ် add လုပ်ပါ။
-4. changes commit လုပ်ပါ။
-5. ImgBed admin panel ကိုပြန်သွားပြီး `Update Blog` ကိုနှိပ်ပါ၊ သို့မဟုတ် blog homepage ရဲ့ဘယ်ဘက်အပေါ် logo ကိုသုံးကြိမ်နှိပ်ပြီး blog update trigger လုပ်ပါ။
+## ပို့စ်များ ရေးသားခြင်း
 
-`Update Blog` က သင်ရေးထားတဲ့ content ကို overwrite မလုပ်ပါ။ လိုအပ်ရင် repository initialize လုပ်ပြီး blog cache refresh လုပ်ပါတယ်။
+ဘလော့ဂ်ပို့စ်များကို သင့် GitHub သီးသန့်သိုလှောင်ရုံထဲတွင် တည်းဖြတ်ပါ။
 
-## Supported Features
+```text
+imgbed-blog-config
+```
 
-Blog က post lists, categories, tags, archives, search, dark mode, language switching စတဲ့ blog features တွေကို support လုပ်ပါတယ်။
+ပုံမှန်လုပ်ငန်းစဉ်:
 
-comments နဲ့ visit statistics လည်း support လုပ်ပါတယ်။
+1. GitHub ကို ဖွင့်ပါ။
+2. သီးသန့် `imgbed-blog-config` သိုလှောင်ရုံထဲသို့ ဝင်ပါ။
+3. ပို့စ်ဖိုင်များကို တည်းဖြတ်ပါ သို့မဟုတ် ထည့်ပါ။
+4. ပြောင်းလဲမှုများကို commit လုပ်ပါ။
+5. ImgBed စီမံခန့်ခွဲရေးပန်နယ်သို့ ပြန်သွားပြီး `Update Blog` ကို နှိပ်ပါ။ သို့မဟုတ် ဘလော့ဂ်ပင်မစာမျက်နှာ ဘယ်ဘက်အပေါ်ထောင့်ရှိ လိုဂိုကို သုံးကြိမ်နှိပ်၍ ဘလော့ဂ်အပ်ဒိတ်ကို စတင်နိုင်သည်။
 
-![Blog comments](../../image/other/博客/支持留言.png)
+`Update Blog` သည် သင်ရေးထားသော အကြောင်းအရာများကို အစားထိုးရေးသားမည် မဟုတ်ပါ။ လိုအပ်သောအခါ သိုလှောင်ရုံကို စတင်ပြင်ဆင်ပြီး ဘလော့ဂ်ကက်ရှ်ကို ပြန်လည်အသစ်လုပ်သည်။
 
-comments တွေက posts အောက်မှာပေါ်ပါတယ်။ visitors တွေက avatar, nickname, email, comment content ပို့နိုင်ပါတယ်။
+## ထောက်ပံ့ထားသော လုပ်ဆောင်ချက်များ
 
-visit statistics က post views နဲ့ site visits ကိုပြပြီး blog traffic နားလည်ဖို့ကူညီပါတယ်။
+ဘလော့ဂ်သည် ပို့စ်စာရင်းများ၊ အမျိုးအစားများ၊ တဂ်များ၊ သိမ်းဆည်းထားသော ပို့စ်များ၊ ရှာဖွေမှု၊ အမှောင်မုဒ်နှင့် ဘာသာစကားပြောင်းခြင်းကဲ့သို့သော သာမန်ဘလော့ဂ်လုပ်ဆောင်ချက်များကို ထောက်ပံ့သည်။
+
+မှတ်ချက်များနှင့် လည်ပတ်မှုစာရင်းအင်းများကိုလည်း ထောက်ပံ့သည်။
+
+![ဘလော့ဂ်မှတ်ချက်များ](../../image/other/博客/支持留言.png)
+
+မှတ်ချက်များသည် ပို့စ်များအောက်တွင် ပေါ်လာသည်။ ဧည့်သည်များသည် ကိုယ်စားပြုပုံ၊ အမည်ပြောင်၊ အီးမေးလ်နှင့် မှတ်ချက်အကြောင်းအရာကို ပေးပို့နိုင်သည်။
+
+လည်ပတ်မှုစာရင်းအင်းများသည် ပို့စ်ကြည့်ရှုမှုများနှင့် ဆိုက်လည်ပတ်မှုများကို ပြသပြီး ဘလော့ဂ်လည်ပတ်မှုအခြေအနေကို နားလည်ရန် ကူညီသည်။
 
 ## URL
 
-Blog က အမြဲ `/blog/` အောက်မှာ serve လုပ်ပါတယ်။
+ဘလော့ဂ်ကို အမြဲ `/blog/` လမ်းကြောင်းအောက်တွင် ဖော်ပြသည်။
 
-ဥပမာ သင့် ImgBed domain က:
+ဥပမာ သင့် ImgBed ဒိုမိန်းသည် အောက်ပါအတိုင်းဖြစ်လျှင်:
 
 ```text
 https://image.example.com
 ```
 
-blog URL က:
+ဘလော့ဂ် URL သည်:
 
 ```text
 https://image.example.com/blog/
 ```
 
-blog disabled ဖြစ်ပြီးနောက် visitors တွေ blog page ကို access မလုပ်နိုင်တော့ပါ။
+ဘလော့ဂ်ကို ပိတ်ပြီးနောက် ဧည့်သည်များသည် ဘလော့ဂ်စာမျက်နှာကို မဝင်ရောက်နိုင်တော့ပါ။

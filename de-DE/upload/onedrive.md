@@ -1,11 +1,11 @@
 # OneDrive-Kanal hinzufügen
 
-## Was du vorher brauchst
+## Was Sie vorher benötigen
 
 | Voraussetzung | Wofür sie gebraucht wird |
 | --- | --- |
 | Microsoft-Konto | Für Microsoft-Verwaltungsseiten und die OneDrive-Autorisierung |
-| Deine ImgBed-Domain | Für die OAuth-Callback-URL |
+| Ihre ImgBed-Domain | Für die OAuth-Callback-URL |
 | App-Registrierung | Erstellt `Client ID` und `Client Secret` |
 | OneDrive-Konto | Dient als eigentlicher Speicherort |
 
@@ -13,44 +13,44 @@
 
 ### Schritt 1: Microsoft Entra ID öffnen
 
-1. Öffne `portal.azure.com`.
-2. Suche oben nach `Microsoft Entra ID`.
-3. Falls die Zielseite nicht direkt angezeigt wird, wähle:
+1. Öffnen Sie `portal.azure.com`.
+2. Suchen Sie oben nach `Microsoft Entra ID`.
+3. Falls die Zielseite nicht direkt angezeigt wird, wählen Sie:
 
 ```text
 Continue searching in Microsoft Entra ID
 ```
 
-4. Öffne `Microsoft Entra ID`.
-5. Öffne `App registrations`.
-6. Klicke auf `New registration`.
+4. Öffnen Sie `Microsoft Entra ID`.
+5. Öffnen Sie `App registrations`.
+6. Klicken Sie auf `New registration`.
 
 ### Schritt 2: App registrieren
 
-Fülle auf der Seite `New registration` diese Felder aus:
+Füllen Sie auf der Seite `New registration` diese Felder aus:
 
 | Feld | Eingabe |
 | --- | --- |
 | Name | Ein gut wiedererkennbarer Name, z. B. `imgbed-onedrive` |
-| Supported account types | Wähle passend zur Tabelle unten |
+| Supported account types | Wählen Sie passend zur Tabelle unten |
 | Redirect URI type | `Web` |
 | Redirect URI | `https://your-domain.com/api/oauth/onedrive/callback` |
 
 Orientierung für den Kontotyp:
 
-| Dein Szenario | Supported Account Types |
+| Ihr Szenario | Supported Account Types |
 | --- | --- |
-| Nur privates OneDrive | Wähle die Option für persönliche Microsoft-Konten. |
-| Private sowie Geschäfts-/Schulkonten | Wähle die Option, die persönliche und Organisationskonten unterstützt. |
-| Nur Firmen- oder Schul-OneDrive | Wähle die Option für Organisationskonten. |
+| Nur privates OneDrive | Wählen Sie die Option für persönliche Microsoft-Konten. |
+| Private sowie Geschäfts-/Schulkonten | Wählen Sie die Option, die persönliche und Organisationskonten unterstützt. |
+| Nur Firmen- oder Schul-OneDrive | Wählen Sie die Option für Organisationskonten. |
 
-Klicke nach dem Ausfüllen auf Registrieren.
+Klicken Sie nach dem Ausfüllen auf Registrieren.
 
 ![OneDrive-App erstellen](../../image/upload/onedrive/添加应用程序注册.png)
 
 ### Schritt 3: App-Informationen kopieren
 
-Nach dem Erstellen der App kopierst du auf der Übersichtsseite diese Werte:
+Nach dem Erstellen der App kopieren Sie auf der Übersichtsseite diese Werte:
 
 | Microsoft-Feld | ImgBed-Feld |
 | --- | --- |
@@ -61,21 +61,21 @@ Nach dem Erstellen der App kopierst du auf der Übersichtsseite diese Werte:
 
 ### Schritt 4: Client Secret erstellen
 
-1. Öffne `Certificates & secrets`.
-2. Klicke auf `New client secret`.
-3. Gib eine Beschreibung ein, die du später wiedererkennst.
-4. Wähle eine Laufzeit.
-5. Kopiere den `Value` sofort nach dem Erstellen.
+1. Öffnen Sie `Certificates & secrets`.
+2. Klicken Sie auf `New client secret`.
+3. Geben Sie eine Beschreibung ein, die Sie später wiedererkennen.
+4. Wählen Sie eine Laufzeit.
+5. Kopieren Sie den `Value` sofort nach dem Erstellen.
 
 ![Client-Secret-Wert speichern](../../image/upload/onedrive/保存客户端密码值.png)
 
 ### Schritt 5: API-Berechtigungen hinzufügen
 
-1. Öffne `API permissions`.
-2. Klicke auf `Add a permission`.
-3. Wähle `Microsoft Graph`.
-4. Wähle `Delegated permissions`.
-5. Füge diese Berechtigungen hinzu:
+1. Öffnen Sie `API permissions`.
+2. Klicken Sie auf `Add a permission`.
+3. Wählen Sie `Microsoft Graph`.
+4. Wählen Sie `Delegated permissions`.
+5. Fügen Sie diese Berechtigungen hinzu:
 
 | Berechtigung | Zweck |
 | --- | --- |
@@ -85,7 +85,7 @@ Nach dem Erstellen der App kopierst du auf der Übersichtsseite diese Werte:
 
 ### Schritt 6: OneDrive-Kanal ausfüllen
 
-Wähle in den Upload-Einstellungen `OneDrive` und fülle die Felder aus:
+Wählen Sie in den Upload-Einstellungen `OneDrive` und füllen Sie die Felder aus:
 
 | ImgBed-Feld | Eingabe |
 | --- | --- |
@@ -99,7 +99,7 @@ Wähle in den Upload-Einstellungen `OneDrive` und fülle die Felder aus:
 
 ![OneDrive-Kanal konfigurieren](../../image/upload/onedrive/添加新渠道配置.png)
 
-So füllst du `Tenant ID` aus:
+So füllen Sie `Tenant ID` aus:
 
 | Gewählter Kontotyp | ImgBed-`Tenant ID` |
 | --- | --- |
@@ -109,36 +109,36 @@ So füllst du `Tenant ID` aus:
 
 ### Schritt 7: Refresh Token abrufen
 
-1. Klicke in ImgBed auf `Get Token`.
-2. Melde dich mit dem Microsoft-Konto an, das du verbinden möchtest.
-3. Bestätige die Autorisierung.
+1. Klicken Sie in ImgBed auf `Get Token`.
+2. Melden Sie sich mit dem Microsoft-Konto an, das Sie verbinden möchten.
+3. Bestätigen Sie die Autorisierung.
 4. Auf der Callback-Seite erscheint ein `Refresh Token`.
-5. Kopiere es.
-6. Kehre zu ImgBed zurück und füge es in das Feld `Refresh Token` ein.
+5. Kopieren Sie es.
+6. Kehren Sie zu ImgBed zurück und fügen Sie es in das Feld `Refresh Token` ein.
 
 ![Refresh Token kopieren](../../image/upload/onedrive/复制刷新令牌.png)
 
 ### Schritt 8: Kanal speichern
 
-Speichere den Kanal, sobald alle Felder ausgefüllt sind.
+Speichern Sie den Kanal, sobald alle Felder ausgefüllt sind.
 
 ## Kurzablauf
 
 ```text
-portal.azure.com öffnen
--> Microsoft Entra ID suchen
--> App registrations öffnen
--> Neue App registrieren
--> Name / Kontotypen / Web-Redirect-URI ausfüllen
--> Registrieren
--> Application (client) ID kopieren
--> Callback-URL unter Authentication prüfen
--> Client Secret unter Certificates & secrets erstellen
--> Berechtigungen unter API permissions hinzufügen
--> Client ID / Client Secret / Tenant ID in ImgBed eintragen
--> Get Token klicken
--> Refresh Token von der Callback-Seite kopieren
--> In ImgBed einfügen und speichern
+Open portal.azure.com
+-> Search for Microsoft Entra ID
+-> Open App registrations
+-> Register a new app
+-> Fill Name / Supported account types / Web redirect URI
+-> Register
+-> Copy Application (client) ID
+-> Check the callback URL in Authentication
+-> Create a Client Secret in Certificates & secrets
+-> Add permissions in API permissions
+-> Fill Client ID / Client Secret / Tenant ID into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## Referenzen

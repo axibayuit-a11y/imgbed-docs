@@ -22,7 +22,7 @@
 
 1. Відкрийте системні налаштування.
 2. Перейдіть до налаштувань завантаження.
-3. Натисніть Add Channel у правому верхньому куті.
+3. Натисніть Додати канал у правому верхньому куті.
 4. Виберіть `WebDAV`.
 
 ## Поля налаштування
@@ -82,7 +82,7 @@ WebDAV-сервісу не потрібно підтримувати `partial up
 ## Налаштування
 
 1. Відкрийте налаштування завантаження.
-2. Натисніть Add Channel.
+2. Натисніть Додати канал.
 3. Виберіть `WebDAV`.
 4. Введіть зрозумілу назву каналу, наприклад `koofr`.
 5. Введіть WebDAV endpoint, наприклад `https://app.koofr.net/dav/Koofr`.
@@ -130,14 +130,14 @@ WebDAV-сервісу не потрібно підтримувати `partial up
 ## Короткий чекліст
 
 ```text
-Підготувати WebDAV endpoint, username і password
--> Відкрити налаштування завантаження
--> Додати канал
--> Вибрати WebDAV
--> Ввести Endpoint / username / password
--> Типово залишити authentication mode як Basic
--> Типово залишити storage directory як imgbed
--> Зберегти
--> Запитати місткість
--> Завантажити тестовий файл
+Prepare WebDAV endpoint, username, and password
+-> Open Upload Settings
+-> Add Channel
+-> Select WebDAV
+-> Enter Endpoint / username / password
+-> Keep authentication mode as Basic by default
+-> Keep storage directory as imgbed by default
+-> Save
+-> Query capacity
+-> Upload a test file
 ```

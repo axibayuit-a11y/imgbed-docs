@@ -1,208 +1,208 @@
 # OCR
 
-OCR က images, scans, document screenshots ထဲက text ကို extract လုပ်ပါတယ်။
+OCR သည် ရုပ်ပုံများ၊ စကန်ဖိုင်များနှင့် စာရွက်စာတမ်းစခရင်ရှော့များထဲမှ စာသားကို ထုတ်ယူပေးသည်။
 
-recognition ပြီးနောက် result ကို copy လုပ်နိုင်ပြီး `Markdown`, `PDF`, `Word` အဖြစ် export လုပ်နိုင်ပါတယ်။ formats အများကြီးကို package တစ်ခုအဖြစ် download လုပ်နိုင်ပါတယ်။
+အသိအမှတ်ပြုပြီးနောက် ရလဒ်ကို ကူးယူနိုင်သည်။ ထို့အပြင် `Markdown`၊ `PDF` သို့မဟုတ် `Word` အဖြစ် တင်ပို့နိုင်ပြီး ပုံစံအများအပြားကို တစ်စုတစ်စည်းတည်း စုထုပ်၍ ဒေါင်းလုဒ်လုပ်နိုင်သည်။
 
-## OCR က ဘာလုပ်နိုင်လဲ
+## OCR က ဘာလုပ်နိုင်သလဲ
 
-| Feature | Description |
+| လုပ်ဆောင်ချက် | ဖော်ပြချက် |
 | --- | --- |
-| Image text recognition | images, screenshots, scans ထဲက text ကို extract လုပ်သည်။ |
-| Document layout recognition | tables, formulas, stamps, mixed text-image layouts အတွက်ပိုသင့်တော်သည်။ |
-| Multiple services | Baidu PaddleOCR, Microsoft Azure Vision, Google Vision support လုပ်သည်။ |
-| Copy results | processing ပြီးနောက် recognized text copy လုပ်နိုင်သည်။ |
-| Export files | `Markdown`, `PDF`, `Word` export လုပ်နိုင်သည်။ |
-| Batch packaging | files အများကြီး recognize ပြီးနောက် results ကို package အဖြစ် download လုပ်နိုင်သည်။ |
+| ရုပ်ပုံစာသားအသိအမှတ်ပြုခြင်း | ရုပ်ပုံများ၊ စခရင်ရှော့များနှင့် စကန်ဖိုင်များထဲမှ စာသားကို ထုတ်ယူသည်။ |
+| စာရွက်စာတမ်းအပြင်အဆင် အသိအမှတ်ပြုခြင်း | ဇယားများ၊ ဖော်မြူလာများ၊ တံဆိပ်တုံးများနှင့် စာသား-ရုပ်ပုံ ရောနှောအပြင်အဆင်များအတွက် ပိုသင့်တော်သည်။ |
+| ဝန်ဆောင်မှုအများအပြား | Baidu PaddleOCR၊ Microsoft Azure Vision နှင့် Google Vision ကို ထောက်ပံ့သည်။ |
+| ရလဒ်ကူးယူခြင်း | လုပ်ငန်းစဉ်ပြီးဆုံးပြီးနောက် အသိအမှတ်ပြုထားသော စာသားကို ကူးယူနိုင်သည်။ |
+| ဖိုင်တင်ပို့ခြင်း | `Markdown`၊ `PDF` နှင့် `Word` အဖြစ် တင်ပို့နိုင်သည်။ |
+| အစုလိုက် စုထုပ်ခြင်း | ဖိုင်အများအပြားကို အသိအမှတ်ပြုပြီးနောက် ရလဒ်များကို တစ်ထုပ်တည်းအဖြစ် ဒေါင်းလုဒ်လုပ်နိုင်သည်။ |
 
-## OCR Services ကိုအရင် Configure လုပ်ပါ
+## OCR ဝန်ဆောင်မှုများကို ဦးစွာပြင်ဆင်ပါ
 
-ဖွင့်ပါ:
+အောက်ပါနေရာကို ဖွင့်ပါ။
 
 ```text
 System Settings -> Other Settings -> OCR
 ```
 
-![IP geolocation and OCR](../../image/other/ip定位和ocr文字识别.png)
+![IP တည်နေရာခန့်မှန်းခြင်းနှင့် OCR](../../image/other/ip定位和ocr文字识别.png)
 
-သုံးချင်တဲ့ services အတွက် credentials ဖြည့်ပါ:
+အသုံးပြုလိုသော ဝန်ဆောင်မှုများအတွက် အထောက်အထားအချက်အလက်များကို ဖြည့်ပါ။
 
-| Service | What To Enter | Best For |
+| ဝန်ဆောင်မှု | ဖြည့်ရမည့်အရာ | သင့်တော်သောအခြေအနေ |
 | --- | --- | --- |
-| Baidu PaddleOCR | `PaddleOCR Token` | ပထမဦးဆုံးအကြံပြုသောရွေးချယ်မှု။ documents, images, tables, mixed layouts အတွက်ကောင်းသည်။ |
-| Microsoft Azure Vision | `Azure Vision Endpoint` နဲ့ `Azure Vision API Key` | Microsoft cloud services သုံးပြီးသားဖြစ်လျှင်အသုံးဝင်သည်။ |
-| Google Vision | `Google Vision API Key`။ Service account `JSON` ကို quota query အတွက်သာသုံးသည်။ | Google Cloud services သုံးလျှင်အသုံးဝင်သည်။ |
+| Baidu PaddleOCR | `PaddleOCR Token` | ပထမဆုံးရွေးချယ်ရန် အကြံပြုသည်။ စာရွက်စာတမ်းများ၊ ရုပ်ပုံများ၊ ဇယားများနှင့် ရောနှောအပြင်အဆင်များအတွက် ကောင်းမွန်သည်။ |
+| Microsoft Azure Vision | `Azure Vision Endpoint` နှင့် `Azure Vision API Key` | Microsoft cloud ဝန်ဆောင်မှုများကို အသုံးပြုနေပြီးသားဖြစ်ပါက အသုံးဝင်သည်။ |
+| Google Vision | `Google Vision API Key`။ ဝန်ဆောင်မှုအကောင့် `JSON` ကို ခွဲတမ်းစစ်ဆေးရန်အတွက်သာ အသုံးပြုသည်။ | Google Cloud ဝန်ဆောင်မှုများကို အသုံးပြုပါက အသုံးဝင်သည်။ |
 
-credentials ဖြည့်ပြီးနောက် save လုပ်ပါ။
+အထောက်အထားအချက်အလက်များ ဖြည့်ပြီးနောက် သိမ်းပါ။
 
-initial testing အတွက် service တစ်ခုပဲ configure လုပ်ရင်လုံလောက်ပါတယ်။ သုံးခုလုံးမလိုပါ။
+ပထမဆုံးစမ်းသပ်ရန် ဝန်ဆောင်မှုတစ်ခုတည်းကိုသာ သတ်မှတ်နိုင်သည်။ သုံးခုလုံး မလိုအပ်ပါ။
 
-## Google Vision Setup
+## Google Vision သတ်မှတ်ခြင်း
 
-Google setup မှာ အပိုင်းနှစ်ပိုင်းရှိပါတယ်:
+Google သတ်မှတ်ခြင်းတွင် အပိုင်းနှစ်ခုရှိသည်။
 
-| Goal | Requirement |
+| ရည်ရွယ်ချက် | လိုအပ်ချက် |
 | --- | --- |
-| OCR သုံးရန် | `Cloud Vision API` enable လုပ်ပြီး `API Key` ဖန်တီးပါ။ |
-| usage query လုပ်ရန် | service account ဖန်တီးပါ၊ `Monitoring Viewer` grant လုပ်ပါ၊ service account `JSON` download လုပ်ပါ။ |
+| OCR အသုံးပြုရန် | `Cloud Vision API` ကို ဖွင့်ပြီး `API Key` တစ်ခု ဖန်တီးပါ။ |
+| အသုံးပြုမှုပမာဏ စစ်ဆေးရန် | ဝန်ဆောင်မှုအကောင့်တစ်ခု ဖန်တီးပြီး `Monitoring Viewer` အခန်းကဏ္ဍ ပေးပါ။ ထို့နောက် ဝန်ဆောင်မှုအကောင့် `JSON` ကို ဒေါင်းလုဒ်လုပ်ပါ။ |
 
-![Google API key and service account](../../image/other/谷歌api秘钥和服务账号截图.png)
+![Google API ကီးနှင့် ဝန်ဆောင်မှုအကောင့်](../../image/other/谷歌api秘钥和服务账号截图.png)
 
-### Google ကို OCR အတွက်သုံးခြင်း
+### Google ကို OCR အတွက် အသုံးပြုခြင်း
 
-1. Google Cloud Console ကိုဖွင့်ပါ။
-2. `APIs & Services` ကိုသွားပါ။
-3. `Library` ကိုဖွင့်ပြီး `Cloud Vision API` ရှာကာ enable လုပ်ပါ။
-4. `Credentials` ကိုပြန်သွားပါ။
-5. `API Key` ဖန်တီးပါ။
-6. API Key ကိုဖွင့်ပြီး copy လုပ်ပါ။
-7. ImgBed ထဲက `Google Vision API Key` မှာ paste လုပ်ပါ။
-8. Save လုပ်ပါ။
+1. Google Cloud Console ကို ဖွင့်ပါ။
+2. `APIs & Services` သို့ သွားပါ။
+3. `Library` ကို ဖွင့်ပြီး `Cloud Vision API` ကို ရှာဖွေ၍ ဖွင့်ပါ။
+4. `Credentials` သို့ ပြန်သွားပါ။
+5. `API Key` တစ်ခု ဖန်တီးပါ။
+6. API Key ကို ဖွင့်ပြီး ကူးယူပါ။
+7. ImgBed ရှိ `Google Vision API Key` ထဲသို့ ကူးထည့်ပါ။
+8. သိမ်းပါ။
 
-ပြီးရင် OCR dialog မှာ Google Vision ကိုရွေးနိုင်ပါပြီ။
+ထို့နောက် OCR ဒိုင်ယာလော့ဂ်တွင် Google Vision ကို ရွေးချယ်နိုင်သည်။
 
-### Google Usage Query
+### Google အသုံးပြုမှုပမာဏ စစ်ဆေးခြင်း
 
-Quota query က recognition အတွက် required မဟုတ်ပါ။
+ခွဲတမ်းစစ်ဆေးမှုသည် အသိအမှတ်ပြုလုပ်ငန်းအတွက် မလိုအပ်ပါ။
 
-ပြီးခဲ့တဲ့ 30 days အတွင်း Google Vision calls ဘယ်လောက်သုံးထားလဲဆိုတာ rough count ပြတာပါ။
+၎င်းသည် ပြီးခဲ့သော 30 ရက်အတွင်း Google Vision ခေါ်ဆိုမှု မည်မျှ အသုံးပြုထားသည်ကို အကြမ်းဖျင်းပြသရန်သာ ဖြစ်သည်။
 
-1. Google Cloud Console မှာ `IAM & Admin` ကိုဖွင့်ပါ။
-2. `Service Accounts` ကိုဖွင့်ပါ။
-3. service account ဖန်တီးပါ၊ ဥပမာ `vision-monitor`။
-4. `Monitoring Viewer` role ပေးပါ။
-5. service account details ကိုဖွင့်ပြီး key ဖန်တီးပါ။
-6. `JSON` ရွေးပါ။
-7. generated JSON file ကို download လုပ်ပါ။
-8. ImgBed ကိုပြန်သွားပြီး service account `JSON` အောက်မှာ import လုပ်ပါ (optional)။
-9. import အောင်မြင်ပြီးနောက် quota query ကိုနှိပ်ပါ။
+1. Google Cloud Console တွင် `IAM & Admin` ကို ဖွင့်ပါ။
+2. `Service Accounts` ကို ဖွင့်ပါ။
+3. `vision-monitor` ကဲ့သို့သော ဝန်ဆောင်မှုအကောင့်တစ်ခု ဖန်တီးပါ။
+4. ၎င်းကို `Monitoring Viewer` အခန်းကဏ္ဍ ပေးပါ။
+5. ဝန်ဆောင်မှုအကောင့်အသေးစိတ် စာမျက်နှာကို ဖွင့်ပြီး ကီးတစ်ခု ဖန်တီးပါ။
+6. `JSON` ကို ရွေးပါ။
+7. ထုတ်ပေးထားသော JSON ဖိုင်ကို ဒေါင်းလုဒ်လုပ်ပါ။
+8. ImgBed သို့ ပြန်သွားပြီး ဝန်ဆောင်မှုအကောင့် `JSON` အောက်တွင် ထည့်သွင်းပါ (ရွေးချယ်နိုင်သည်)။
+9. ထည့်သွင်းမှု အောင်မြင်ပြီးနောက် ခွဲတမ်းစစ်ဆေးမှုကို နှိပ်ပါ။
 
-import ပြီးနောက် ImgBed က service account ပိုင်တဲ့ project name ကိုပြပါမယ်။ usage query လုပ်တဲ့အခါ ImgBed က Google monitoring data ကိုဖတ်ပြီး ဒီလရဲ့ call count ကိုပြပါမယ်။
+ထည့်သွင်းပြီးနောက် ImgBed သည် ဝန်ဆောင်မှုအကောင့် ပိုင်ဆိုင်သော ပရောဂျက်အမည်ကို ပြသမည်။ အသုံးပြုမှုပမာဏကို စစ်ဆေးသည့်အခါ ImgBed သည် Google စောင့်ကြည့်ဒေတာကို ဖတ်ပြီး ယခုလ၏ ခေါ်ဆိုမှုအရေအတွက်ကို ပြသမည်။
 
-အတိုချုပ်:
+အကျဉ်းချုပ်မှာ အောက်ပါအတိုင်းဖြစ်သည်။
 
-| Item | Purpose |
+| အကြောင်းအရာ | ရည်ရွယ်ချက် |
 | --- | --- |
-| `Google Vision API Key` | OCR recognition လုပ်သည်။ |
-| Service account `JSON` | Google Vision calls သုံးစွဲမှု query လုပ်သည်။ |
-| `Monitoring Viewer` role | service account ကို usage data ဖတ်ခွင့်ပေးသည်။ |
+| `Google Vision API Key` | OCR အသိအမှတ်ပြုလုပ်ငန်းကို ဆောင်ရွက်သည်။ |
+| ဝန်ဆောင်မှုအကောင့် `JSON` | Google Vision ခေါ်ဆိုမှု မည်မျှ အသုံးပြုထားသည်ကို စစ်ဆေးသည်။ |
+| `Monitoring Viewer` အခန်းကဏ္ဍ | ဝန်ဆောင်မှုအကောင့်ကို အသုံးပြုမှုဒေတာ ဖတ်ခွင့်ပေးသည်။ |
 
-## Baidu PaddleOCR Token ရယူပါ
+## Baidu PaddleOCR Token ရယူခြင်း
 
-Baidu PaddleOCR က access token လိုပါတယ်။
+Baidu PaddleOCR သည် ဝင်ရောက်ခွင့်တိုကင် လိုအပ်သည်။
 
-![Get PaddleOCR token](../../image/other/获取飞浆令牌.png)
+![PaddleOCR တိုကင် ရယူခြင်း](../../image/other/获取飞浆令牌.png)
 
-Baidu PaddleOCR page မှာ `API` call window ဖွင့်ပါ၊ token ရယူရန် click လုပ်ပြီး copy လုပ်ပါ။
+Baidu PaddleOCR စာမျက်နှာရှိ `API` ခေါ်ဆိုမှုဝင်းဒိုးကို ဖွင့်ပါ။ တိုကင်ရယူရန် နှိပ်ပြီး ၎င်းကို ကူးယူပါ။
 
-ImgBed ကိုပြန်သွားပြီး `PaddleOCR Token` ထဲ paste လုပ်ကာ save လုပ်ပါ။
+ImgBed သို့ ပြန်သွားပြီး `PaddleOCR Token` ထဲသို့ ကူးထည့်ကာ သိမ်းပါ။
 
-## Recognition စတင်ခြင်း
+## အသိအမှတ်ပြုလုပ်ငန်း စတင်ခြင်း
 
-File Management မှာ image သို့မဟုတ် document screenshot တစ်ခုရွေးပြီး `OCR` ကိုနှိပ်ပါ။
+ဖိုင်စီမံခန့်ခွဲမှုတွင် ရုပ်ပုံတစ်ခု သို့မဟုတ် စာရွက်စာတမ်းစခရင်ရှော့တစ်ခုကို ရွေးပြီး `OCR` ကို နှိပ်ပါ။
 
-![OCR recognition](../../image/other/ocr识别截图.png)
+![OCR အသိအမှတ်ပြုခြင်း](../../image/other/ocr识别截图.png)
 
-dialog မှာ recognition service နဲ့ model ရွေးပါ။
+ဒိုင်ယာလော့ဂ်ထဲတွင် အသိအမှတ်ပြုဝန်ဆောင်မှုနှင့် မော်ဒယ်ကို ရွေးပါ။
 
-Common PaddleOCR model choices:
+အသုံးများသော PaddleOCR မော်ဒယ်ရွေးချယ်မှုများမှာ အောက်ပါအတိုင်းဖြစ်သည်။
 
-| Model | Best For |
+| မော်ဒယ် | သင့်တော်သောအခြေအနေ |
 | --- | --- |
-| `PP-StructureV3` | recommended default။ documents, tables, formulas, stamps, mixed layouts အတွက်ကောင်းသည်။ |
-| `PP-OCRv5` | simple images, ordinary text, lightweight recognition။ |
-| `PaddleOCR-VL` | multilingual, complex images, chart-like content။ |
-| `PaddleOCR-VL-1.5` | ပိုရှုပ်တဲ့ document pages နဲ့ layout recovery။ |
+| `PP-StructureV3` | အကြံပြုထားသော မူလရွေးချယ်မှုဖြစ်သည်။ စာရွက်စာတမ်းများ၊ ဇယားများ၊ ဖော်မြူလာများ၊ တံဆိပ်တုံးများနှင့် ရောနှောအပြင်အဆင်များအတွက် ကောင်းမွန်သည်။ |
+| `PP-OCRv5` | ရိုးရှင်းသော ရုပ်ပုံများ၊ သာမန်စာသားနှင့် ပေါ့ပါးသော အသိအမှတ်ပြုလုပ်ငန်းများအတွက် သင့်တော်သည်။ |
+| `PaddleOCR-VL` | ဘာသာစကားအများအပြား၊ ရှုပ်ထွေးသော ရုပ်ပုံများနှင့် ဇယားပုံစံပါဝင်သော အကြောင်းအရာများအတွက် သင့်တော်သည်။ |
+| `PaddleOCR-VL-1.5` | ပိုမိုရှုပ်ထွေးသော စာရွက်စာတမ်းစာမျက်နှာများနှင့် အပြင်အဆင်ပြန်လည်ဖော်ထုတ်ခြင်းအတွက် သင့်တော်သည်။ |
 
-မသေချာလျှင် `PP-StructureV3` နဲ့စပါ။
+မသေချာပါက `PP-StructureV3` ဖြင့် စတင်ပါ။
 
-## Advanced Options
+## အဆင့်မြင့်ရွေးချယ်စရာများ
 
-| Option | Description |
+| ရွေးချယ်စရာ | ဖော်ပြချက် |
 | --- | --- |
-| Orientation correction | image လှည့်နေသို့မဟုတ် skewed ဖြစ်နေတဲ့အခါသုံးပါ။ |
-| Document flattening | photographed documents မှာ curvature သို့မဟုတ် tilt ရှိတဲ့အခါသုံးပါ။ |
-| Layout detection | headings, paragraphs, tables, image structure ကို preserve လုပ်ချင်တဲ့အခါသုံးပါ။ |
-| Chart recognition | image ထဲ charts သို့မဟုတ် complex structures ပါတဲ့အခါသုံးပါ။ |
-| Beautify `Markdown` | exported Markdown ကိုပိုဖတ်လွယ်စေသည်။ |
+| ဦးတည်ချက်ပြင်ဆင်ခြင်း | ရုပ်ပုံသည် လှည့်နေခြင်း သို့မဟုတ် စောင်းနေခြင်းရှိပါက အသုံးပြုပါ။ |
+| စာရွက်စာတမ်းပြားစေခြင်း | ဓာတ်ပုံရိုက်ထားသော စာရွက်စာတမ်းတွင် ကွေးခြင်း သို့မဟုတ် စောင်းခြင်းရှိပါက အသုံးပြုပါ။ |
+| အပြင်အဆင်ရှာဖွေခြင်း | ခေါင်းစဉ်များ၊ စာပိုဒ်များ၊ ဇယားများနှင့် ရုပ်ပုံဖွဲ့စည်းပုံကို ထိန်းသိမ်းလိုပါက အသုံးပြုပါ။ |
+| ဇယား/ဂရပ် အသိအမှတ်ပြုခြင်း | ရုပ်ပုံထဲတွင် ဇယား၊ ဂရပ် သို့မဟုတ် ရှုပ်ထွေးသော ဖွဲ့စည်းပုံများ ပါဝင်ပါက အသုံးပြုပါ။ |
+| `Markdown` လှပအောင်ပြုလုပ်ခြင်း | တင်ပို့ထားသော Markdown ကို ပိုမိုဖတ်ရလွယ်စေသည်။ |
 
-regular screenshots အတွက် options နည်းနည်းပဲထားပါ။ document scans အတွက် document-related options ပို enable လုပ်ပါ။
+သာမန်စခရင်ရှော့များအတွက် ရွေးချယ်စရာများကို အနည်းဆုံးထားပါ။ စာရွက်စာတမ်းစကန်များအတွက် စာရွက်စာတမ်းနှင့်သက်ဆိုင်သော ရွေးချယ်စရာများကို ပိုမိုဖွင့်ပါ။
 
-## Results ကြည့်ခြင်း
+## ရလဒ်များကြည့်ခြင်း
 
-recognition ပြီးနောက် dialog မှာ result ပြပါမယ်။
+အသိအမှတ်ပြုလုပ်ငန်းပြီးဆုံးသည့်အခါ ဒိုင်ယာလော့ဂ်ထဲတွင် ရလဒ်ကို ပြသမည်။
 
-တိုက်ရိုက် copy လုပ်နိုင်သလို export formats ရွေးနိုင်ပါတယ်။
+ရလဒ်ကို တိုက်ရိုက်ကူးယူနိုင်သည် သို့မဟုတ် တင်ပို့မည့်ပုံစံများကို ရွေးနိုင်သည်။
 
-![PDF recognition](../../image/other/pdf识别截图.png)
+![PDF အသိအမှတ်ပြုခြင်း](../../image/other/pdf识别截图.png)
 
-document pages အတွက် exported `PDF` က page appearance ကိုထိန်းထားပြီး text ကို searchable ဖြစ်စေနိုင်ပါတယ်။ scans archive လုပ်ရန်နဲ့ နောက်ပိုင်း content ရှာရန်အသုံးဝင်ပါတယ်။
+စာရွက်စာတမ်းစာမျက်နှာများအတွက် တင်ပို့ထားသော `PDF` သည် စာမျက်နှာအပြင်အဆင်ကို ထိန်းသိမ်းနိုင်ပြီး စာသားကိုလည်း ရှာဖွေနိုင်စေသည်။ ဤနည်းလမ်းသည် စကန်ဖိုင်များကို သိမ်းဆည်းရန်နှင့် နောက်ပိုင်းတွင် အကြောင်းအရာရှာရန် အသုံးဝင်သည်။
 
-## Export Format ရွေးခြင်း
+## တင်ပို့မည့်ပုံစံ ရွေးချယ်ခြင်း
 
-| Format | Best For |
+| ပုံစံ | သင့်တော်သောအခြေအနေ |
 | --- | --- |
-| `Markdown (.md)` | notes, documentation systems, later editing။ |
-| `PDF (.pdf)` | page appearance နဲ့ scanned document results ထိန်းရန်။ |
-| `Word (.docx)` | layout editing ဆက်လုပ်ရန်၊ text modification, handoff။ |
-| Export all | multiple formats နဲ့ original image သိမ်းရန်၊ important archives အတွက်သင့်တော်သည်။ |
+| `Markdown (.md)` | မှတ်စုများ၊ စာရွက်စာတမ်းစနစ်များနှင့် နောက်ပိုင်းတည်းဖြတ်မှုအတွက် သင့်တော်သည်။ |
+| `PDF (.pdf)` | စာမျက်နှာအပြင်အဆင်နှင့် စကန်စာရွက်စာတမ်းရလဒ်များကို ထိန်းသိမ်းရန် သင့်တော်သည်။ |
+| `Word (.docx)` | အပြင်အဆင်ဆက်လက်တည်းဖြတ်ခြင်း၊ စာသားပြင်ဆင်ခြင်းနှင့် အခြားသူများထံ လွှဲပြောင်းပေးခြင်းအတွက် သင့်တော်သည်။ |
+| အားလုံးတင်ပို့ခြင်း | ပုံစံအများအပြားနှင့် မူရင်းရုပ်ပုံကို သိမ်းဆည်းပေးသည်။ အရေးကြီးသော မှတ်တမ်းသိမ်းဆည်းမှုများအတွက် သင့်တော်သည်။ |
 
-text ပဲလိုလျှင် Markdown export လုပ်ပါ။
+စာသားသာ လိုအပ်ပါက Markdown ကို တင်ပို့ပါ။
 
-page appearance လိုလျှင် PDF သို့မဟုတ် Word သုံးပါ။
+စာမျက်နှာအပြင်အဆင် လိုအပ်ပါက PDF သို့မဟုတ် Word ကို အသုံးပြုပါ။
 
-## Word Output
+## Word ရလဒ်
 
-exported Word documents တွေကို office software နဲ့ဖွင့်ပြီး edit လုပ်နိုင်ပါတယ်။
+တင်ပို့ထားသော Word စာရွက်စာတမ်းများကို ရုံးသုံးဆော့ဖ်ဝဲဖြင့် ဖွင့်ပြီး တည်းဖြတ်နိုင်သည်။
 
-![Word result](../../image/other/word识别结果.png)
+![Word ရလဒ်](../../image/other/word识别结果.png)
 
-documents အချို့မှာ Word output ထဲ recognized images, headings, paragraphs ပါနိုင်ပါတယ်။
+အချို့သော စာရွက်စာတမ်းများတွင် အသိအမှတ်ပြုထားသော ရုပ်ပုံများ၊ ခေါင်းစဉ်များနှင့် စာပိုဒ်များကို Word ရလဒ်ထဲတွင် ထည့်သွင်းနိုင်သည်။
 
-recognition quality က original image clarity, model choice, document complexity အပေါ်မူတည်ပါတယ်။
+အသိအမှတ်ပြုအရည်အသွေးသည် မူရင်းရုပ်ပုံ၏ ကြည်လင်ပြတ်သားမှု၊ မော်ဒယ်ရွေးချယ်မှုနှင့် စာရွက်စာတမ်းရှုပ်ထွေးမှုတို့အပေါ် မူတည်သည်။
 
-## OCR အတွက်သင့်တော်တဲ့ File Types
+## OCR အတွက် သင့်တော်သော ဖိုင်အမျိုးအစားများ
 
-| File Type | Recommendation |
+| ဖိုင်အမျိုးအစား | အကြံပြုချက် |
 | --- | --- |
-| Clear screenshots | တိုက်ရိုက် recognize လုပ်ပါ။ |
-| Scans | `PP-StructureV3` ကိုဦးစားပေးပါ။ |
-| Photographed documents | orientation correction နဲ့ document flattening enable လုပ်ပါ။ |
-| Tables, formulas, stamps | structured models ကိုဦးစားပေးပါ။ |
-| Simple short text images | `PP-OCRv5` ကများသောအားဖြင့်လုံလောက်သည်။ |
+| ကြည်လင်သော စခရင်ရှော့များ | တိုက်ရိုက် အသိအမှတ်ပြုပါ။ |
+| စကန်ဖိုင်များ | `PP-StructureV3` ကို ဦးစားပေးအသုံးပြုပါ။ |
+| ဓာတ်ပုံရိုက်ထားသော စာရွက်စာတမ်းများ | ဦးတည်ချက်ပြင်ဆင်ခြင်းနှင့် စာရွက်စာတမ်းပြားစေခြင်းကို ဖွင့်ပါ။ |
+| ဇယားများ၊ ဖော်မြူလာများ၊ တံဆိပ်တုံးများ | ဖွဲ့စည်းပုံအခြေပြု မော်ဒယ်များကို ဦးစားပေးအသုံးပြုပါ။ |
+| ရိုးရှင်းပြီး တိုသောစာသားပါ ရုပ်ပုံများ | `PP-OCRv5` သည် များသောအားဖြင့် လုံလောက်သည်။ |
 
-ပိုရှင်းတဲ့ images နဲ့ text ပိုတန်းတာက results ပိုကောင်းစေပါတယ်။
+ရုပ်ပုံ ပိုကြည်လင်ပြီး စာသား ပိုတန်းတည့်ပါက ရလဒ်များသည် ပုံမှန်အားဖြင့် ပိုကောင်းသည်။
 
-## Common Cases
+## တွေ့ရလေ့ရှိသော အခြေအနေများ
 
-| Case | Meaning |
+| အခြေအနေ | ဖော်ပြချက် |
 | --- | --- |
-| Recognition fails | service token သို့မဟုတ် key save လုပ်ထားလားစစ်ပါ။ |
-| Recognition slow | complex documents နဲ့ large images တွေကအချိန်ပိုယူပါတယ်။ |
-| Table incomplete | structured model တစ်ခုစမ်းပါ။ |
-| Text mistakes | blur, glare, skew တို့က errors တိုးစေပါတယ်။ clearer image စမ်းပါ။ |
-| Word output မှာ images များ | structured models က recognized images အချို့ကို preserve လုပ်နိုင်ပါတယ်။ ဒါက normal ဖြစ်ပါတယ်။ |
+| အသိအမှတ်ပြုခြင်း မအောင်မြင်ပါ | သက်ဆိုင်ရာ ဝန်ဆောင်မှုတိုကင် သို့မဟုတ် ကီးကို သိမ်းထားကြောင်း စစ်ဆေးပါ။ |
+| အသိအမှတ်ပြုခြင်း နှေးနေသည် | ရှုပ်ထွေးသော စာရွက်စာတမ်းများနှင့် ရုပ်ပုံကြီးများသည် အချိန်ပိုယူသည်။ |
+| ဇယား မပြည့်စုံပါ | ဖွဲ့စည်းပုံအခြေပြု မော်ဒယ်တစ်ခုဖြင့် စမ်းကြည့်ပါ။ |
+| စာသားတွင် အမှားများရှိသည် | ဝါးနေခြင်း၊ အလင်းပြန်ခြင်းနှင့် စောင်းနေခြင်းတို့က အသိအမှတ်ပြုအမှားများကို တိုးစေသည်။ ပိုကြည်လင်သော ရုပ်ပုံဖြင့် စမ်းပါ။ |
+| Word ရလဒ်တွင် ရုပ်ပုံများများ ပါနေသည် | ဖွဲ့စည်းပုံအခြေပြု မော်ဒယ်များသည် အသိအမှတ်ပြုထားသော ရုပ်ပုံအချို့ကို ထိန်းသိမ်းနိုင်သည်။ ၎င်းသည် ပုံမှန်ဖြစ်သည်။ |
 
-### Google Quota Query Fail ဖြစ်သည်
+### Google ခွဲတမ်းစစ်ဆေးမှု မအောင်မြင်ပါ
 
-စစ်ပါ:
+အောက်ပါတို့ကို စစ်ဆေးပါ။
 
-1. Service account `JSON` import လုပ်ထားလား။
-2. service account မှာ `Monitoring Viewer` role ရှိလား။
-3. project အတွက် `Cloud Vision API` enabled ဖြစ်လား။
+1. ဝန်ဆောင်မှုအကောင့် `JSON` ကို ထည့်သွင်းထားပါသလား။
+2. ဝန်ဆောင်မှုအကောင့်တွင် `Monitoring Viewer` အခန်းကဏ္ဍ ရှိပါသလား။
+3. ပရောဂျက်အတွက် `Cloud Vision API` ကို ဖွင့်ထားပါသလား။
 
-OCR ပဲလိုပြီး usage query မလိုလျှင် service account JSON ကိုထားခဲ့ပြီး `Google Vision API Key` ပဲဖြည့်နိုင်ပါတယ်။
+OCR သာ လိုအပ်ပြီး အသုံးပြုမှုပမာဏ စစ်ဆေးရန် မလိုအပ်ပါက ဝန်ဆောင်မှုအကောင့် JSON ကို လျစ်လျူရှုနိုင်ပြီး `Google Vision API Key` ကိုသာ ဖြည့်နိုင်သည်။
 
-## Quick Flow
+## အမြန်လုပ်ငန်းစဉ်
 
 ```text
-System Settings ဖွင့်ပါ
--> Other Settings ဖွင့်ပါ
--> OCR service credentials ဖြည့်ပါ
+Open System Settings
+-> Open Other Settings
+-> Fill OCR service credentials
 -> Save
--> File Management ကိုပြန်သွားပါ
--> file ရွေးပြီး OCR နှိပ်ပါ
--> model ရွေးပါ
--> recognition ပြီးအောင်စောင့်ပါ
--> results copy လုပ်ပါ သို့မဟုတ် Markdown / PDF / Word export လုပ်ပါ
+-> Return to File Management
+-> Select a file and click OCR
+-> Choose a model
+-> Wait for recognition
+-> Copy results or export Markdown / PDF / Word
 ```

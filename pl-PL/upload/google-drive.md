@@ -95,19 +95,19 @@ Po wypełnieniu wszystkich pól zapisz kanał.
 ## Szybki przebieg
 
 ```text
-Otwórz Google Cloud
--> Utwórz lub wybierz projekt
--> Włącz Google Drive API
--> Skonfiguruj Google Auth Platform
--> Jeśli Audience to External, dodaj swoje konto Google do Test users
--> Utwórz klienta OAuth typu Web application
--> Użyj https://your-domain.com/api/oauth/google/callback jako redirect URI
--> Wpisz Client ID i Client Secret w ImgBed
--> Kliknij Get Token
--> Zaloguj się przez Google i autoryzuj
--> Skopiuj Refresh Token ze strony callback
--> Wklej go w ImgBed i zapisz
--> Prześlij obraz testowy
+Open Google Cloud
+-> Create or select a project
+-> Enable Google Drive API
+-> Configure Google Auth Platform
+-> If Audience is External, add your Google account to Test users
+-> Create a Web application OAuth client
+-> Use https://your-domain.com/api/oauth/google/callback as the redirect URI
+-> Fill Client ID and Client Secret into ImgBed
+-> Click Get Token
+-> Sign in with Google and authorize
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
+-> Upload a test image
 ```
 
 ## Referencje

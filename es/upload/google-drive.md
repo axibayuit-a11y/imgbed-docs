@@ -1,65 +1,117 @@
-# Añadir un canal Google Drive
+# Añadir un canal de Google Drive
 
-El canal Google Drive usa una cuenta de Google Drive como destino de almacenamiento.
+## Qué necesita primero
 
-## Qué preparar
+Antes de empezar, prepare estos elementos:
 
-| Requisito | Uso |
+| Requisito | Por qué lo necesita |
 | --- | --- |
-| Cuenta de Google | Gestionar Drive y OAuth |
-| Proyecto de Google Cloud | Crear OAuth Client |
-| Client ID / Client Secret | Autorizar a ImgBed |
-| Refresh Token | Mantener acceso a largo plazo |
-| Dominio ImgBed | Configurar callback OAuth |
+| Una cuenta de Google | Se usa para acceder a Google Cloud y autorizar Google Drive |
+| Un proyecto de Google Cloud | Se usa para activar Drive API y crear credenciales OAuth |
+| Un cliente OAuth 2.0 | ImgBed lo usa para obtener `Client ID`, `Client Secret` y `Refresh Token` |
+| Su dominio de ImgBed | Se usa como URI de redirección OAuth. Debe coincidir con el dominio que realmente utiliza. |
 
-## Crear OAuth Client
+## Pasos de configuración
 
-En Google Cloud Console, crea un OAuth Client de tipo Web application.
+### Paso 1: Activar Google Drive API
 
-![Crear OAuth Client](../../image/upload/google-drive/oa客户端id创建.png)
+1. Abra Google Cloud Console.
+2. Cree un proyecto nuevo o seleccione uno existente.
+3. Vaya a `APIs & Services`.
+4. Haga clic en `Enable APIs and Services`.
+5. Busque `Google Drive API`.
+6. Ábrala y haga clic en Habilitar.
 
-Añade esta URI como redirección autorizada:
+### Paso 2: Configurar la pantalla de consentimiento OAuth
+
+1. En Google Cloud, abra `Google Auth Platform`.
+2. Complete la información básica de `Branding`, como el nombre de la aplicación, el correo de soporte y el correo de contacto del desarrollador.
+3. Abra `Audience`.
+4. Para la mayoría de despliegues personales autoalojados, elija `External`.
+5. Si elige `External`, añada en `Test users` la cuenta de Google que quiera autorizar.
+6. Abra `Data Access`.
+7. Añada los permisos necesarios de Google Drive.
+
+### Paso 3: Crear un cliente OAuth 2.0
+
+1. En `Google Auth Platform`, abra `Clients`.
+2. Cree un cliente nuevo.
+3. Defina el tipo de aplicación como `Web application`.
+4. Asigne al cliente un nombre reconocible.
+5. En los orígenes JavaScript autorizados, introduzca su URL de ImgBed, por ejemplo:
 
 ```text
-https://tu-dominio/api/oauth/google/callback
+https://img.example.com
 ```
 
-![Configurar URL OAuth](../../image/upload/google-drive/填写oa客户端url信息.png)
+6. En los URI de redirección autorizados, introduzca:
 
-## Rellenar en ImgBed
+```text
+https://img.example.com/api/oauth/google/callback
+```
 
-En Configuración de subida, elige `Google Drive` e introduce Client ID y Client Secret.
+![Crear cliente OAuth](../../image/upload/google-drive/oa客户端id创建.png)
 
-![Configuración Google Drive](../../image/upload/google-drive/粘贴回添加新渠道配置.png)
+![Introducir dominio y URL de callback](../../image/upload/google-drive/填写oa客户端url信息.png)
 
-| Campo | Valor |
+Después de crear el cliente, copie estos valores:
+
+| Valor generado | Campo de ImgBed |
 | --- | --- |
-| Nombre del canal | Por ejemplo `Google Drive Main` |
-| Client ID | OAuth Client ID |
-| Client Secret | OAuth Client Secret |
-| Refresh Token | Se obtiene después |
-| Directorio raíz | Opcional, normalmente `imgbed` |
+| Client ID | `Client ID` |
+| Client Secret | `Client Secret` |
 
-## Obtener Refresh Token
+## Paso 4: Completar el canal de Google Drive
 
-1. En ImgBed, haz clic en `Obtener Token`.
-2. Inicia sesión con la cuenta de Google que será el destino.
-3. Acepta los permisos.
-4. Copia el Refresh Token mostrado en la página de callback.
-5. Pégalo en el campo `Refresh Token`.
+En Ajustes de carga, elija `Google Drive` y complete:
 
-![Copiar Refresh Token](../../image/upload/google-drive/授权完复制token.png)
+| Campo de ImgBed | Qué introducir |
+| --- | --- |
+| Nombre del canal | Un nombre que pueda reconocer, como `Google Drive principal` |
+| Client ID | El `Client ID` de Google Cloud |
+| Client Secret | El `Client Secret` de Google Cloud |
+| Refresh Token | Déjelo vacío por ahora. Lo obtendrá en el siguiente paso. |
+| Directorio raíz | Opcional. El valor predeterminado es `imgbed`. |
 
-## Verificación
+![Completar datos del cliente en ImgBed](../../image/upload/google-drive/粘贴回添加新渠道配置.png)
 
-1. Guarda el canal.
-2. Sube una imagen de prueba.
-3. Comprueba que aparece en Google Drive.
-4. Abre el enlace devuelto por ImgBed.
+## Paso 5: Obtener el Refresh Token
 
-## Notas
+1. Haga clic en `Get Token`.
+2. Elija la cuenta de Google que quiera conectar.
+3. Complete las solicitudes de autorización.
+4. La página de callback mostrará un `Refresh Token`.
+5. Cópielo.
+6. Vuelva a ImgBed y péguelo en el campo `Refresh Token`.
 
-- Si la pantalla de consentimiento OAuth no está lista, la autorización puede fallar.
-- La cuenta que genera el Refresh Token será la cuenta de almacenamiento.
-- Si Drive no tiene espacio, la subida fallará.
-- No publiques el Client Secret.
+![Copiar Refresh Token después de la autorización](../../image/upload/google-drive/授权完复制token.png)
+
+Si más adelante cambia de cuenta de Google, cambia el cliente OAuth o caduca la autorización anterior, no necesita eliminar el canal. Abra la página de edición y haga clic en `Reauthorize`.
+
+## Paso 6: Guardar el canal
+
+Después de completar todos los campos, guarde el canal.
+
+## Flujo rápido
+
+```text
+Open Google Cloud
+-> Create or select a project
+-> Enable Google Drive API
+-> Configure Google Auth Platform
+-> If Audience is External, add your Google account to Test users
+-> Create a Web application OAuth client
+-> Use https://your-domain.com/api/oauth/google/callback as the redirect URI
+-> Fill Client ID and Client Secret into ImgBed
+-> Click Get Token
+-> Sign in with Google and authorize
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
+-> Upload a test image
+```
+
+## Referencias
+
+1. Aplicaciones web de servidor para Google OAuth: https://developers.google.com/identity/protocols/oauth2/web-server
+2. Configuración de la pantalla de consentimiento OAuth de Google Workspace: https://developers.google.com/workspace/guides/configure-oauth-consent
+3. Ámbitos de autenticación de la API de Google Drive: https://developers.google.com/workspace/drive/api/guides/api-specific-auth

@@ -1,97 +1,97 @@
-# Magnet Transfer
+# Magnet Aktarımı
 
-Magnet transfer, magnet link üzerinden dosyaları indirir ve seçtiğiniz bulut depolama kanalına otomatik olarak yükler.
+Magnet aktarımı, bir magnet bağlantısından dosyaları indirir ve seçtiğiniz bulut depolama kanalına otomatik olarak yükler.
 
-Anime bölümleri, videolar, arşivler ve benzeri dosyaları taşımak için kullanışlıdır. Magnet link yapıştırdığınızda ImgBed arka planda bir indirme görevi oluşturur. İndirme tamamlandıktan sonra dosya ImgBed'e yüklenir ve son bağlantı yükleme listesinde görünür.
+Anime bölümlerini, videoları, arşivleri ve benzeri dosyaları aktarmak için kullanışlıdır. Bir magnet bağlantısı yapıştırın; ImgBed arka planda bir indirme görevi oluşturur. İndirme bittikten sonra dosya ImgBed'e yüklenir ve son bağlantı yükleme listesinde görünür.
 
-![Magnet transfer](../../image/other/磁力链接/磁力链接.png)
+![Magnet aktarımı](../../image/other/磁力链接/磁力链接.png)
 
 ## Nerede Kullanılır?
 
-Magnet transfer girişi ana sayfadaki yükleme alanındadır.
+Magnet aktarımı girişi ana sayfadaki yükleme alanındadır.
 
-Magnet link'i giriş kutusuna yapıştırın, `Transfer` seçin, ardından yükleyin.
+Magnet bağlantısını giriş kutusuna yapıştırın, `Transfer` seçin ve ardından yükleyin.
 
 ![Anime yükleme](../../image/other/磁力链接/上传番剧.png)
 
 ## İlk Kullanımdan Önce
 
-Önce yönetim panelinde magnet transfer yapılandırın.
+Önce yönetim panelinde magnet aktarımını yapılandırın.
 
-Genellikle şunlar gerekir:
+Genellikle şunlara ihtiyacınız olur:
 
-1. İndirme görevini çalıştırmak için GitHub hesabı.
-2. Google Drive veya OneDrive gibi bir cloud upload channel.
+1. İndirme görevini çalıştırmak için bir GitHub hesabı.
+2. Google Drive veya OneDrive gibi bir bulut yükleme kanalı.
 3. Hedef yükleme dizini.
 4. Görev zaman aşımı.
 
-Ayarlar hazır olduğunda ana sayfaya dönün ve transfer başlatmak için magnet link yapıştırın.
+Ayarlar hazır olduğunda ana sayfaya dönün ve aktarımı başlatmak için bir magnet bağlantısı yapıştırın.
 
-## Magnet Link Yükleme
+## Magnet Bağlantısı Yükleme
 
-1. Magnet link'i ana sayfadaki yükleme kutusuna yapıştırın.
-2. Modun `Transfer` olduğundan emin olun.
-3. Upload düğmesine tıklayın.
-4. ImgBed'in magnet task oluşturmasını bekleyin.
-5. Görev başladıktan sonra ilerlemeyi kontrol etmek için sağ alt köşedeki `Magnet Tasks` yüzen panelini kullanın.
+1. Magnet bağlantısını ana sayfadaki yükleme kutusuna yapıştırın.
+2. Modun `Transfer` olarak ayarlandığından emin olun.
+3. Yükle düğmesine tıklayın.
+4. ImgBed'in magnet görevini oluşturmasını bekleyin.
+5. Görev başladıktan sonra ilerlemeyi kontrol etmek için sağ alt köşedeki `Magnet Tasks` kayan panelini kullanın.
 
-Download ve upload zaman alabilir. Hız magnet kaynağına, GitHub runtime ortamına ve seçili cloud storage channel'a bağlıdır.
+İndirme ve yükleme zaman alabilir. Hız; magnet kaynağına, GitHub çalışma ortamına ve seçilen bulut depolama kanalına bağlıdır.
 
 ![Magnet indiriliyor](../../image/other/磁力链接/磁力链接下载中.png)
 
 ## Tamamlandıktan Sonra
 
-Görev tamamlandığında yükleme listesinde dosya adı ve bağlantı görünür.
+Görev tamamlandıktan sonra yükleme listesi dosya adını ve bağlantıyı gösterir.
 
-Videolarda video preview, görsellerde image preview, diğer dosyalarda normal dosya simgesi gösterilir.
+Videolar video önizlemesi, görseller görsel önizlemesi, diğer dosyalar ise normal dosya simgesi gösterir.
 
 ![İndirilen video](../../image/other/磁力链接/下载好后的视频.png)
 
 Şunları kopyalayabilirsiniz:
 
-| Bağlantı Türü | Kullanım |
+| Bağlantı Türü | Kullanım Durumu |
 | --- | --- |
-| Original link | Doğrudan dosya erişimi |
-| Markdown | Markdown yazıları veya notlar |
+| Orijinal bağlantı | Dosyaya doğrudan erişim |
+| Markdown | Markdown yazıları veya notları |
 | HTML | Web sayfası kodu |
 | BBCode | BBCode destekleyen forumlar |
 
-## Magnet Task Paneli
+## Magnet Görev Paneli
 
-Sağ alttaki magnet task paneli görev sayısını, görev adını, ilerlemeyi ve son durumu gösterir.
+Sağ alt köşedeki magnet görev paneli görev sayısını, görev adını, ilerlemeyi ve son durumu gösterir.
 
 Yaygın durumlar:
 
-| Durum | Anlamı |
+| Durum | Anlam |
 | --- | --- |
-| Waiting | Görev oluşturuldu ve çalışmayı bekliyor. |
-| Downloading | Magnet kaynağı indiriliyor. |
-| Uploading | Dosya indirildi ve bulut depolamaya yükleniyor. |
-| Completed | Upload başarılı, bağlantı kopyalanabilir. |
-| Failed | Görev başarıyla tamamlanmadı. Mesajı kontrol edip yeniden deneyin. |
+| Bekliyor | Görev oluşturuldu ve çalışmayı bekliyor. |
+| İndiriliyor | Magnet kaynağı indiriliyor. |
+| Yükleniyor | Dosya indirildi ve bulut depolamaya yükleniyor. |
+| Tamamlandı | Yükleme başarılı oldu ve bağlantı kopyalanabilir. |
+| Başarısız | Görev başarıyla tamamlanmadı. Mesajı kontrol edip tekrar deneyin. |
 
 ## İpuçları
 
-- Magnet link birden fazla dosya içeriyorsa ImgBed gösterim için ana tamamlanan dosyaya öncelik verir.
+- Bir magnet bağlantısı birden fazla dosya içeriyorsa ImgBed gösterim için ana tamamlanmış dosyaya öncelik verir.
 - Büyük dosyalar daha uzun sürer. Sayfayı yenilemeden önce görevin bitmesini bekleyin.
-- Magnet kaynağında kullanılabilir peers yoksa indirme çok yavaş olabilir veya başarısız olabilir.
-- Bulut hesabında kota kalmadıysa, yetkilendirme süresi dolduysa veya yükleme dizini yanlışsa görev başarısız olabilir.
-- Video preview yükleme tamamlandıktan birkaç saniye sonra görünebilir.
+- Magnet kaynağında kullanılabilir eşler yoksa çok yavaş olabilir veya başarısız olabilir.
+- Bulut hesabının kotası dolmuşsa, yetkilendirme süresi bitmişse veya yükleme dizini yanlışsa görev başarısız olabilir.
+- Video önizlemesinin görünmesi, yükleme tamamlandıktan sonra birkaç saniye sürebilir.
 
-## FAQ
+## Sık Sorulan Sorular
 
-### Magnet Link Yapıştırdıktan Sonra Hiçbir Şey Başlamıyor
+### Magnet Bağlantısı Yapıştırdıktan Sonra Hiçbir Şey Başlamıyor
 
-Yönetim panelinde magnet transfer etkin olduğundan ve kullanılabilir bir GitHub hesabı ile bulut kanalının seçildiğinden emin olun.
+Yönetim panelinde magnet aktarımının etkin olduğunu ve kullanılabilir bir GitHub hesabı ile bulut kanalının seçildiğini doğrulayın.
 
-### İndirme Hep Yavaş
+### İndirme Her Zaman Yavaş
 
-Magnet hızı kaynağın kendisine bağlıdır. Kullanılabilir peers yoksa indirme çok yavaş veya imkansız olabilir.
+Magnet hızı kaynağın kendisine bağlıdır. Kullanılabilir eş yoksa indirme çok yavaş olabilir veya imkansız hale gelebilir.
 
-### Upload Sonrası Preview Görünmüyor
+### Yüklemeden Sonra Önizleme Görünmüyor
 
-Önce dosya bağlantısının açıldığını doğrulayın. Video dosyalarının tarayıcıda yüklenmesi kısa sürebilir veya bağlantıyı doğrudan açabilirsiniz.
+Önce dosya bağlantısının açıldığını doğrulayın. Video dosyalarının tarayıcıda yüklenmesi kısa süre alabilir veya bağlantıyı doğrudan açabilirsiniz.
 
-### Görev Başarısız Olursa Neyi Kontrol Etmeliyim?
+### Bir Görev Başarısız Olursa Neyi Kontrol Etmeliyim?
 
-Magnet link'in geçerli olup olmadığını, bulut kanalının çalışıp çalışmadığını ve yükleme dizininin doğru olup olmadığını kontrol edin. Sonra görevi tekrar gönderin.
+Magnet bağlantısının geçerli olup olmadığını, bulut kanalının çalışıp çalışmadığını ve yükleme dizininin doğru olup olmadığını kontrol edin. Ardından görevi yeniden gönderin.

@@ -1,103 +1,103 @@
 # Cloudflare API Token
 
-Cloudflare API credentials, files மாறிய பிறகு Cloudflare CDN cache purge செய்ய ImgBed-க்கு உதவும்.
+கோப்புகள் மாறிய பிறகு Cloudflare CDN கேச்சை நீக்க ImgBed-க்கு Cloudflare API சான்றுகள் உதவும்.
 
-![Cloudflare API Token settings](../../image/Safety/cloudflare%20api%20token截图.png)
+![Cloudflare API Token அமைப்புகள்](../../image/Safety/cloudflare%20api%20token截图.png)
 
-## எங்கு Configure செய்வது
+## எங்கே அமைப்பது
 
-admin panel திறந்து செல்லவும்:
+நிர்வாகப் பலகையைத் திறந்து இங்கே செல்லவும்:
 
 ```text
 System Settings -> Security Settings -> Cloudflare API Token
 ```
 
-நிரப்ப வேண்டியது:
+பின்வருவன நிரப்பப்பட வேண்டும்:
 
 - Zone ID
-- Account email
+- கணக்கு மின்னஞ்சல்
 - API Key
 
-## இந்த Setting என்ன செய்கிறது
+## இந்த அமைப்பு என்ன செய்கிறது
 
-Cloudflare public image URLs-ஐ cache செய்யலாம்.
+Cloudflare பொதுப் பட URL-களை கேச்சில் வைத்திருக்கலாம்.
 
-Caching image delivery வேகமாக்கும். ஆனால் file delete, block, replace, அல்லது move செய்த பிறகும் பழைய content சில நேரம் தெரிந்துகொள்ளலாம்.
+கேச்சிங் படங்களை வேகமாக வழங்க உதவும். ஆனால் ஒரு கோப்பை நீக்கிய, தடுத்த, மாற்றிய அல்லது நகர்த்திய பிறகும் பழைய உள்ளடக்கம் சில நேரம் தெரியக்கூடும்.
 
-Cloudflare API credentials configure செய்த பிறகு, அந்த operations முடிந்ததும் ImgBed தொடர்புடைய Cloudflare cache-ஐ purge செய்ய முயலும்.
+Cloudflare API சான்றுகள் அமைக்கப்பட்ட பிறகு, அவ்வாறான செயல்கள் முடிந்தபோது தொடர்புடைய Cloudflare கேச்சை நீக்க ImgBed முயலும்.
 
-இது பயன்படும் சூழல்கள்:
+இது பின்வரும் சூழல்களில் பயனுள்ளது:
 
-- image delete செய்த பிறகு public link விரைவில் வேலை செய்யாமல் போக வேண்டும்.
-- image block செய்த பிறகு visitors original file பார்க்கக் கூடாது.
-- அதே பெயரில் file replace செய்தால் புதிய version விரைவில் தெரியும்.
-- files move/rename செய்தால் old path cache விரைவில் refresh ஆகும்.
-- public access rules மாற்றிய பிறகு public gallery அல்லது random image cache விரைவில் update ஆகும்.
+- நீங்கள் ஒரு படத்தை நீக்கிய பிறகு, அதன் பொதுச் சுட்டி விரைவாகவே செயலிழக்க வேண்டும்.
+- நீங்கள் ஒரு படத்தைத் தடுத்த பிறகு, பார்வையாளர்கள் அசல் கோப்பைக் காணாமல் இருக்க வேண்டும்.
+- அதே பெயரில் உள்ள கோப்பை மாற்றிய பிறகு, புதிய பதிப்பு பார்வையாளர்களுக்கு விரைவாகத் தெரிய வேண்டும்.
+- கோப்புகளை நகர்த்திய அல்லது மறுபெயரிட்ட பிறகு, பழைய பாதைகளின் கேச் விரைவாக புதுப்பிக்கப்பட வேண்டும்.
+- பொதுப் பயன்பாட்டு விதிகளை மாற்றிய பிறகு, பொதுக் காட்சியகத்தின் அல்லது சீரற்ற படம் API-யின் கேச் விரைவாக புதுப்பிக்கப்பட வேண்டும்.
 
-## காலியாக விட்டால் என்ன ஆகும்
+## இதை காலியாக விட்டால் என்ன ஆகும்
 
-இந்த setting இல்லாமலும் ImgBed சாதாரணமாக இயங்கும்.
+இந்த அமைப்பு இல்லாமலேயே ImgBed வழக்கம்போல் செயல்படும்.
 
-வித்தியாசம்: ImgBed actively Cloudflare CDN cache purge செய்யாது. visitors Cloudflare cache naturally expire ஆகும் வரை பழைய content பார்க்கலாம்.
+ஒரே வேறுபாடு: ImgBed Cloudflare CDN கேச்சை செயலில் இருந்து நீக்க முயலாது. Cloudflare கேச் இயல்பாக காலாவதியாகும் வரை பார்வையாளர்கள் பழைய உள்ளடக்கத்தைக் காணலாம்.
 
-## Zone ID எங்கு கிடைக்கும்
+## Zone ID-ஐ எப்படிக் கண்டுபிடிப்பது
 
-Zone ID என்பது உங்கள் ImgBed domain பயன்படுத்தும் site-இன் Cloudflare Zone ID.
+Zone ID என்பது உங்கள் ImgBed டொமைன் பயன்படுத்தும் தளத்தின் Cloudflare Zone ID ஆகும்.
 
-1. Cloudflare dashboard-ல் sign in செய்யவும்.
-2. உங்கள் ImgBed domain உள்ள site திறக்கவும்.
-3. site overview page-ல் `Zone ID` கண்டறியவும்.
-4. ImgBed `Zone ID` field-ல் copy செய்யவும்.
+1. Cloudflare டாஷ்போர்டில் உள்நுழைக.
+2. உங்கள் ImgBed டொமைன் உள்ள தளத்தைத் திறக்கவும்.
+3. தளத்தின் மேலோட்டப் பக்கத்தில் `Zone ID`-ஐ கண்டுபிடிக்கவும்.
+4. அதை ImgBed-இல் உள்ள `Zone ID` புலத்தில் நகலெடுக்கவும்.
 
-இது site Zone ID; account ID அல்ல.
+இது தளத்தின் Zone ID; கணக்கு ID அல்ல.
 
-## Account Email
+## கணக்கு மின்னஞ்சல்
 
-Cloudflare sign in செய்யும் email address உள்ளிடவும்.
+Cloudflare-இல் உள்நுழைய நீங்கள் பயன்படுத்தும் மின்னஞ்சல் முகவரியை உள்ளிடவும்.
 
-கீழே கொடுக்கும் API Key-க்கு இது பொருந்த வேண்டும்.
+அது கீழே வழங்கும் API Key-யுடன் பொருந்த வேண்டும்.
 
 ## API Key
 
-Cloudflare Global API Key உள்ளிடவும்.
+உங்கள் Cloudflare Global API Key-யை உள்ளிடவும்.
 
-1. Cloudflare dashboard-ல் sign in செய்யவும்.
-2. profile திறக்கவும்.
-3. API Tokens page-க்கு செல்லவும்.
-4. `Global API Key` கண்டறியவும்.
-5. view செய்து copy செய்யவும்.
-6. ImgBed `API Key` field-ல் paste செய்யவும்.
+1. Cloudflare டாஷ்போர்டில் உள்நுழைக.
+2. உங்கள் சுயவிவரத்தைத் திறக்கவும்.
+3. API Tokens பக்கத்துக்குச் செல்லவும்.
+4. `Global API Key`-ஐ கண்டுபிடிக்கவும்.
+5. அதைத் திறந்து நகலெடுக்கவும்.
+6. ImgBed-இல் உள்ள `API Key` புலத்தில் ஒட்டவும்.
 
-![View global API key](../../image/Safety/查看全局令牌.png)
+![Global API key-ஐ பார்க்குதல்](../../image/Safety/查看全局令牌.png)
 
-## எப்போது Effect ஆகும்
+## இது எப்போது செயல்படும்
 
-fields நிரப்பிய பிறகு settings save செய்யவும்.
+புலங்களை நிரப்பிய பிறகு அமைப்புகளைச் சேமிக்கவும்.
 
-இனிமேல் வரும் file changes Cloudflare cache purge செய்ய முயலும். பழைய operations retroactively purge ஆகாது. இதற்கு முன் file delete/replace செய்திருந்தால் Cloudflare cache expire ஆக காத்திருக்கவும் அல்லது Cloudflare-ல் manual purge செய்யவும்.
+அதன்பிறகு நிகழும் கோப்பு மாற்றங்களுக்காக Cloudflare கேச்சை தானாக நீக்க ImgBed முயலும். ஏற்கெனவே நடந்த செயல்கள் பின்தொடர்ந்து சுத்தம் செய்யப்படாது. இந்த அமைப்பைச் செய்வதற்கு முன் கோப்பை நீக்கியிருந்தால் அல்லது மாற்றியிருந்தால், Cloudflare கேச் காலாவதியாகும் வரை காத்திருக்கவும் அல்லது Cloudflare-இல் கைமுறையாக கேச்சை நீக்கவும்.
 
 ## FAQ
 
-### இது Required ஆ?
+### இது கட்டாயமா?
 
 இல்லை.
 
-உங்கள் domain Cloudflare பயன்படுத்தவில்லை என்றால், அல்லது CDN cache delay பிரச்சினை இல்லை என்றால் காலியாக விடலாம்.
+உங்கள் டொமைன் Cloudflare-ஐ பயன்படுத்தவில்லை என்றால், அல்லது CDN கேச் தாமதம் உங்களுக்கு பிரச்சினையல்ல என்றால், இதை காலியாக விடலாம்.
 
-### Wrong Credentials Uploads-ஐ பாதிக்குமா?
+### தவறான சான்றுகள் பதிவேற்றத்தைப் பாதிக்குமா?
 
 பொதுவாக இல்லை.
 
-wrong credentials ImgBed Cloudflare cache purge செய்யாமல் தடுக்கும். upload மற்றும் normal file access வேலை செய்ய வேண்டும்.
+தவறான சான்றுகள் ImgBed Cloudflare கேச்சை நீக்குவதை மட்டும் தடுக்கின்றன. பதிவேற்றமும் வழக்கமான கோப்பு அணுகலும் தொடர்ந்து செயல்பட வேண்டும்.
 
-### Deleted Image இன்னும் ஏன் திறக்கிறது?
+### நீக்கப்பட்ட படத்தை இன்னும் ஏன் திறக்க முடிகிறது?
 
-அதிகமான காரணம் Cloudflare பழைய file-ஐ cache செய்திருப்பது.
+மிக பொதுவான காரணம்: Cloudflare இன்னும் பழைய கோப்பை கேச்சில் வைத்திருக்கிறது.
 
-சரியான Cloudflare API credentials இருந்தால் file delete செய்யும்போது ImgBed தொடர்புடைய URL cache purge செய்யும்.
+சரியான Cloudflare API சான்றுகள் இருந்தால், கோப்பு நீக்கப்படும் போது தொடர்புடைய URL கேச்சை ImgBed நீக்கும்.
 
-### File Replace செய்த பிறகும் பழைய Image ஏன் தெரிகிறது?
+### கோப்பை மாற்றிய பிறகும் பழைய படமே ஏன் தெரிகிறது?
 
-இதுவும் பொதுவாக CDN cache காரணமாகும்.
+இதுவும் பொதுவாக CDN கேச்சால் ஏற்படும்.
 
-இந்த setting configured ஆன பிறகு same name file overwrite செய்யும்போது ImgBed old URL cache purge செய்ய முயலும்.
+இந்த அமைப்பு செய்யப்பட்ட பிறகு, அதே பெயரில் உள்ள கோப்பு மேலெழுதப்படும் போது பழைய URL கேச்சை நீக்க ImgBed முயலும்.

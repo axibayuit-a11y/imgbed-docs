@@ -9,7 +9,7 @@
 進入後台後打開：
 
 ```text
-系統設定 -> 安全設定 -> 上傳管理 -> 圖片審查
+System Settings -> Security Settings -> Upload Management -> Image Moderation
 ```
 
 主要有三個設定：
@@ -155,3 +155,4 @@
 ### 沒有分級的舊圖片會怎樣？
 
 未分級圖片不會只因為沒有審查結果就自動隱藏。你可以之後在後台手動調整分級。
+

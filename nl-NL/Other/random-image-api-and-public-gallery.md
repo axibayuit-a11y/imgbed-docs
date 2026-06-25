@@ -1,4 +1,4 @@
-# Random Image API en openbare gallery
+# API voor willekeurige afbeeldingen en openbare galerie
 
 Beide functies configureer je onder:
 
@@ -6,9 +6,9 @@ Beide functies configureer je onder:
 System Settings -> Other Settings
 ```
 
-## Random Image API
+## API voor willekeurige afbeeldingen
 
-De Random Image API geeft één willekeurig bestand terug uit geselecteerde mappen. Dit is handig voor siteachtergronden, avatarrotatie of willekeurige afbeeldingsaanroepen vanaf externe pagina's.
+De API voor willekeurige afbeeldingen geeft één willekeurig bestand terug uit geselecteerde mappen. Dit is handig voor siteachtergronden, avatarrotatie of willekeurige afbeeldingsaanroepen vanaf externe pagina's.
 
 Na inschakelen gebruik je:
 
@@ -16,24 +16,24 @@ Na inschakelen gebruik je:
 https://your-domain.com/random
 ```
 
-## Instellingen voor Random Image API
+## Instellingen voor de API voor willekeurige afbeeldingen
 
 | Optie | Doel |
 | --- | --- |
-| Enable | Zet de `/random`-endpoint aan of uit. Als dit uit staat, is toegang verboden. |
-| Directories | Beperkt welke mappen de random API mag gebruiken. Mappen die hier niet staan, kunnen niet door de API worden gebruikt. |
-| Call demo | Genereert random API-links die je direct kunt kopiëren. |
+| Inschakelen | Zet het `/random`-eindpunt aan of uit. Als dit uit staat, is toegang verboden. |
+| Mappen | Beperkt welke mappen de API voor willekeurige afbeeldingen mag gebruiken. Mappen die hier niet staan, kunnen niet door de API worden gebruikt. |
+| Demo-aanroep | Genereert links voor de API voor willekeurige afbeeldingen die je direct kunt kopiëren. |
 
-Je kunt meerdere mappen selecteren. Als bijvoorbeeld alleen `/landscape/` en `/portrait/` zijn toegestaan, kan de random API alleen bestanden uit die mappen en hun submappen kiezen.
+Je kunt meerdere mappen selecteren. Als bijvoorbeeld alleen `/landscape/` en `/portrait/` zijn toegestaan, kan de API voor willekeurige afbeeldingen alleen bestanden uit die mappen en hun submappen kiezen.
 
-## Parameters van Random Image API
+## Parameters van de API voor willekeurige afbeeldingen
 
 | Parameter | Voorbeeld | Doel |
 | --- | --- | --- |
-| `dir` | `/landscape/` | Geeft de random map aan. |
+| `dir` | `/landscape/` | Geeft de map aan waaruit willekeurig wordt gekozen. |
 | `content` | `image` | Geeft mediatype aan. Gebruik `image`, `video`, `audio` of combinaties met komma's. |
 | `orientation` | `auto` | Filtert afbeeldingsoriëntatie. Gebruik `portrait`, `landscape` of `auto`. |
-| `type` | `url` | Teruggeefformaat. Leeg betekent redirect, `url` geeft een tekst-URL terug, `json` geeft JSON terug. |
+| `type` | `url` | Teruggeefformaat. Leeg betekent omleiding, `url` geeft een tekst-URL terug, `json` geeft JSON terug. |
 | `origin` | `1` | Gebruikt met `type=url` om een volledige URL terug te geven. |
 | `age` | `all-ages,r12` | Filtert op leeftijdsrating. |
 | `tag` | `wallpaper,sky` | Geeft alleen bestanden terug met deze tags. |
@@ -41,34 +41,34 @@ Je kunt meerdere mappen selecteren. Als bijvoorbeeld alleen `/landscape/` en `/p
 
 ## Teruggeefformaten
 
-Zonder `type` redirect de API direct naar de willekeurige bestands-URL.
+Zonder `type` leidt de API direct om naar de willekeurige bestands-URL.
 
 Met `type=url` geeft hij een tekst-URL terug.
 
-Met `type=json` geeft hij bestandsinformatie terug, zoals bestands-URL, bestands-ID, naam, type, tags, rating en metadata.
+Met `type=json` geeft hij bestandsinformatie terug, zoals bestands-URL, bestands-ID, naam, type, tags, rating en metagegevens.
 
 ## Toegangsregels
 
-De Random Image API volgt de openbare toegangsregels:
+De API voor willekeurige afbeeldingen volgt de openbare toegangsregels:
 
 | Regel | Effect |
 | --- | --- |
 | Mapbeperking | Alleen bestanden in toegestane mappen kunnen worden geselecteerd. |
-| Blocklist | Bestanden op de blocklist worden uitgesloten van de random pool. |
-| Allowlist-modus | Wanneer ingeschakeld, worden alleen bestanden teruggegeven die openbaar zijn toegestaan. |
+| Blokkeerlijst | Bestanden op de blokkeerlijst worden uitgesloten van de willekeurige pool. |
+| Toestaanlijstmodus | Wanneer ingeschakeld, worden alleen bestanden teruggegeven die openbaar zijn toegestaan. |
 | Leeftijdsrating | R12, R16, R18 en vergelijkbare inhoud wordt gefilterd volgens de huidige toegangsmodus. |
 
 Als na filtering geen bestand overblijft, geeft de API geen passend resultaat terug.
 
 ## Cache
 
-De Random Image API cachet kandidaatpools per map om sneller te werken.
+De API voor willekeurige afbeeldingen slaat kandidaatpools per map in de cache op om sneller te werken.
 
-Wanneer bestanden veranderen, werkt ImgBed de cacheversie van de map bij. Latere verzoeken bouwen de kandidaatpool opnieuw op. Lege mappen worden kort gecachet om herhaalde queries te voorkomen.
+Wanneer bestanden veranderen, werkt ImgBed de cacheversie van de map bij. Latere verzoeken bouwen de kandidaatpool opnieuw op. Lege mappen worden kort in de cache bewaard om herhaalde aanvragen te voorkomen.
 
-## Openbare gallery
+## Openbare galerie
 
-De openbare gallery biedt een alleen-lezen pagina voor mappen die bezoekers mogen bekijken.
+De openbare galerie biedt een alleen-lezen pagina voor mappen die bezoekers mogen bekijken.
 
 Na inschakelen kunnen bezoekers openen:
 
@@ -76,24 +76,24 @@ Na inschakelen kunnen bezoekers openen:
 https://your-domain.com/browse/directory-name
 ```
 
-## Instellingen voor openbare gallery
+## Instellingen voor openbare galerie
 
 | Optie | Doel |
 | --- | --- |
-| Enable | Zet de openbare gallery aan of uit. Als dit uit staat, kunnen bezoekers niet bladeren. |
-| Image loading mode | Bepaalt of previews originele afbeeldingen of thumbnails gebruiken. |
-| Open directories | Bepaalt welke mappen bezoekers mogen openen. |
+| Inschakelen | Zet de openbare galerie aan of uit. Als dit uit staat, kunnen bezoekers niet bladeren. |
+| Afbeeldingslaadmodus | Bepaalt of voorvertoningen originele afbeeldingen of miniaturen gebruiken. |
+| Opengestelde mappen | Bepaalt welke mappen bezoekers mogen openen. |
 
 ## Afbeeldingslaadmodus
 
 | Modus | Doel |
 | --- | --- |
-| Original | De bezoekerspagina laadt originele bestanden direct. |
-| Thumbnail | De bezoekerspagina gebruikt bij voorkeur thumbnails voor sneller laden. |
+| Origineel | De bezoekerspagina laadt originele bestanden direct. |
+| Miniatuur | De bezoekerspagina gebruikt bij voorkeur miniaturen voor sneller laden. |
 
-## Open mappen
+## Opengestelde mappen
 
-Open mappen bepalen wat bezoekers kunnen zien.
+Opengestelde mappen bepalen wat bezoekers kunnen zien.
 
 Bijvoorbeeld:
 
@@ -110,29 +110,29 @@ https://your-domain.com/browse/landscape
 https://your-domain.com/browse/portrait
 ```
 
-Submappen kunnen ook worden geopend, zoals `/2026/lucky/`. Bezoekers worden geblokkeerd voor mappen die niet open zijn.
+Submappen kunnen ook worden opengesteld, zoals `/2026/lucky/`. Bezoekers worden geblokkeerd voor mappen die niet zijn opengesteld.
 
-## Functies van de openbare gallery
+## Functies van de openbare galerie
 
 | Functie | Beschrijving |
 | --- | --- |
-| Door mappen bladeren | Bekijk bestanden en submappen in open mappen. |
+| Door mappen bladeren | Bekijk bestanden en submappen in opengestelde mappen. |
 | Zoeken | Zoek op bestandsnaam, bestands-ID of tags. |
 | Typefilter | Filter afbeeldingen, video's, audio of andere bestanden. |
 | Tagfilter | Neem geselecteerde tags op of sluit ze uit. |
 | Oriëntatiefilter | Filter liggende of staande afbeeldingen. |
 | Tijdfilter | Filter op uploadperiode. |
 | Extensiefilter | Filter op bestandsextensie. |
-| Link kopiëren | Kopieer toeganglinks van bestanden. |
-| Mediapreview | Bekijk of speel afbeeldingen, video en audio af op de bezoekerspagina. |
+| Link kopiëren | Kopieer toegangslinks van bestanden. |
+| Mediavoorvertoning | Bekijk afbeeldingen of speel video's en audio af op de bezoekerspagina. |
 
-## Toegangsregels voor de openbare gallery
+## Toegangsregels voor de openbare galerie
 
-Ook de openbare gallery volgt openbare toegangsregels:
+Ook de openbare galerie volgt openbare toegangsregels:
 
 | Regel | Effect |
 | --- | --- |
-| Open mappen | Alleen toegestane mappen worden getoond. |
-| Access mode | Inhoud wordt gefilterd volgens de huidige leeftijdsclassificatiemodus. |
-| Allowlist-modus | Wanneer ingeschakeld, worden alleen bestanden getoond die openbaar zijn toegestaan. |
-| Blocklist | Bestanden op de blocklist worden verborgen. |
+| Opengestelde mappen | Alleen toegestane mappen worden getoond. |
+| Toegangsmodus | Inhoud wordt gefilterd volgens de huidige toegangsmodus voor leeftijdsrating. |
+| Toestaanlijstmodus | Wanneer ingeschakeld, worden alleen bestanden getoond die openbaar zijn toegestaan. |
+| Blokkeerlijst | Bestanden op de blokkeerlijst worden verborgen. |

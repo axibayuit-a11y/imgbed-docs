@@ -1,67 +1,67 @@
-# Page Settings
+# Pengaturan Halaman
 
-Page settings mengatur tampilan situs, default halaman upload, gambar background, dan tampilan panel admin.
+Pengaturan halaman mengatur tampilan situs, nilai bawaan halaman unggah, gambar latar belakang, dan tampilan panel administrasi.
 
-## Global Settings
-
-| Opsi | Fungsi |
-| --- | --- |
-| Site title | Judul yang tampil di tab browser. |
-| Site icon | Ikon kecil yang tampil di tab browser. |
-| ImgBed name | Nama yang tampil di halaman frontend. |
-| ImgBed logo | Gambar logo yang tampil di halaman frontend. |
-| Logo link | URL yang dibuka saat logo atau avatar diklik. |
-| Background switch interval | Interval rotasi untuk beberapa background, dalam milidetik. `60000` berarti 60 detik. |
-| Background opacity | Opacity gambar background dari `0` sampai `1`. Nilai lebih rendah membuatnya lebih terang. |
-| Default URL prefix | Prefix yang dipakai saat membuat link gambar. Kosong berarti memakai domain situs saat ini. |
-
-## Client Settings
+## Pengaturan Global
 
 | Opsi | Fungsi |
 | --- | --- |
-| Announcement | Pengumuman yang tampil di bagian atas halaman upload. HTML didukung. |
-| Default upload channel | Upload channel yang dipilih secara default di halaman upload. Anda juga bisa memilih Smart Dispatch. |
-| Default upload directory | Direktori upload default, misalnya `/user/`. Kosong atau `/` berarti root. |
-| Default naming method | Strategi pembuatan nama file default setelah upload. Lihat penjelasan di bawah. |
-| Convert to WebP by default | Mengubah gambar ke WebP sebelum upload. |
-| Enable compression by default | Mengompres gambar secara lokal di browser sebelum upload. |
-| Default compression threshold | Otomatis kompres saat ukuran gambar melewati batas ini, dalam MB. |
-| Default target size | Target ukuran file setelah kompresi, dalam MB. |
-| Login page background | Gambar background untuk halaman login pengguna. |
-| Upload page background | Gambar background untuk halaman upload. |
-| Footer portal link | URL yang dibuka oleh tombol footer portal. |
-| Hide footer | Menyembunyikan footer frontend jika diaktifkan. |
+| Judul situs | Judul yang ditampilkan di tab browser. |
+| Ikon situs | Ikon kecil yang ditampilkan di tab browser. |
+| Nama ImgBed | Nama yang ditampilkan di halaman antarmuka publik. |
+| Logo ImgBed | Gambar logo yang ditampilkan di halaman antarmuka publik. |
+| Tautan logo | URL yang dibuka saat logo atau avatar diklik. |
+| Interval pergantian latar belakang | Interval rotasi untuk beberapa latar belakang, dalam milidetik. `60000` berarti 60 detik. |
+| Opasitas latar belakang | Opasitas gambar latar belakang dari `0` hingga `1`. Nilai yang lebih rendah tampak lebih terang. |
+| Prefiks URL bawaan | Prefiks yang digunakan saat membuat tautan gambar. Jika kosong, domain situs saat ini digunakan. |
 
-## Admin Settings
+## Pengaturan Klien
 
 | Opsi | Fungsi |
 | --- | --- |
-| Admin login background | Gambar background untuk halaman login admin. |
-| Admin background | Gambar background untuk halaman admin. Gunakan satu URL gambar atau beberapa URL. |
-| Image loading mode | Mode loading preview untuk daftar file admin. Original memuat gambar asli. Smart loading mengutamakan thumbnail untuk gambar publik dan gambar asli untuk gambar terbatas. |
-| Thumbnail source | Layanan untuk membuat thumbnail: wsrv.nl, Cloudflare Image Resizing, atau WordPress Photon. Cloudflare Image Resizing harus diaktifkan di Cloudflare sebelum dipilih. |
-| Live2D widget | Menampilkan karakter Live2D di panel admin. |
-| Firework click effect | Menampilkan efek kembang api saat halaman diklik. |
-| Star cursor trail | Menampilkan jejak bintang saat mouse digerakkan. |
+| Pengumuman | Pengumuman yang ditampilkan di bagian atas halaman unggah. HTML didukung. |
+| Saluran unggah bawaan | Saluran unggah yang dipilih secara bawaan di halaman unggah. Anda juga dapat memilih Smart Dispatch. |
+| Direktori unggah bawaan | Direktori unggah bawaan, misalnya `/user/`. Kosong atau `/` berarti root. |
+| Metode penamaan bawaan | Strategi bawaan untuk membuat nama file setelah unggah. Lihat penjelasan di bawah. |
+| Konversi ke WebP secara bawaan | Mengonversi gambar ke WebP sebelum diunggah. |
+| Aktifkan kompresi secara bawaan | Mengompresi gambar secara lokal di browser sebelum diunggah. |
+| Ambang kompresi bawaan | Mengompresi otomatis saat ukuran gambar melebihi nilai ini, dalam MB. |
+| Ukuran target bawaan | Ukuran file target setelah kompresi, dalam MB. |
+| Latar belakang halaman masuk | Gambar latar belakang untuk halaman masuk pengguna. |
+| Latar belakang halaman unggah | Gambar latar belakang untuk halaman unggah. |
+| Tautan portal kaki halaman | URL yang dibuka oleh tombol portal kaki halaman. |
+| Sembunyikan kaki halaman | Menyembunyikan kaki halaman antarmuka publik jika diaktifkan. |
 
-## Format Background Image
+## Pengaturan Administrasi
 
-Login page background, upload page background, dan admin login background mendukung format berikut:
+| Opsi | Fungsi |
+| --- | --- |
+| Latar belakang masuk administrasi | Gambar latar belakang untuk halaman masuk administrasi. |
+| Latar belakang administrasi | Gambar latar belakang untuk halaman administrasi. Gunakan satu URL gambar atau beberapa URL. |
+| Mode pemuatan gambar | Mode pemuatan pratinjau untuk daftar file administrasi. Mode gambar asli memuat gambar asli. Pemuatan cerdas mengutamakan gambar mini untuk gambar publik dan gambar asli untuk gambar terbatas. |
+| Sumber gambar mini | Layanan untuk membuat gambar mini: wsrv.nl, Cloudflare Image Resizing, atau WordPress Photon. Cloudflare Image Resizing harus diaktifkan di Cloudflare sebelum dipilih. |
+| Widget Live2D | Menampilkan karakter Live2D di panel administrasi. |
+| Efek klik kembang api | Menampilkan efek kembang api saat halaman diklik. |
+| Jejak bintang kursor | Menampilkan jejak bintang saat mouse digerakkan. |
+
+## Format Gambar Latar Belakang
+
+Latar belakang halaman masuk, latar belakang halaman unggah, dan latar belakang masuk administrasi mendukung format berikut:
 
 | Nilai | Efek |
 | --- | --- |
-| `bing` | Memakai rotasi wallpaper Bing. |
+| `bing` | Menggunakan rotasi wallpaper Bing. |
 | `["https://example.com/1.jpg","https://example.com/2.jpg"]` | Merotasi beberapa gambar. |
-| `["https://example.com/1.jpg"]` | Memakai satu gambar background. |
-| `["https://your-domain.com/random?..."]` | Memakai link Random Image API. Anda bisa mengonfigurasi Random Image API sendiri di Other Settings, lalu tempelkan link random image yang dihasilkan di sini sebagai satu entry background. |
+| `["https://example.com/1.jpg"]` | Menggunakan satu gambar latar belakang. |
+| `["https://your-domain.com/random?..."]` | Menggunakan tautan API gambar acak. Anda dapat mengonfigurasi API gambar acak sendiri di Pengaturan Lainnya, lalu menempelkan tautan gambar acak yang dihasilkan di sini sebagai entri satu latar belakang. |
 
-Admin background mendukung URL gambar. Beberapa URL bisa dipisahkan dengan koma Inggris sesuai petunjuk di halaman. Kosong berarti memakai background default.
+Latar belakang administrasi mendukung URL gambar. Beberapa URL dapat dipisahkan dengan koma Inggris sesuai petunjuk di halaman. Jika kosong, latar belakang bawaan digunakan.
 
-## Default Naming Method
+## Metode Penamaan Bawaan
 
 | Metode | Hasil |
 | --- | --- |
-| Default | Prefix waktu-random + nama file asli, misalnya `1760000000000_cat.png`. |
-| Prefix only | Hanya prefix waktu-random dan ekstensi, misalnya `1760000000000.png`. |
-| Original name only | Mempertahankan nama file asli, misalnya `cat.png`. Jika duplikat, ImgBed menambahkan `(1)`, `(2)`, dan seterusnya. |
-| Short link | Memakai short ID 8 karakter dan ekstensi, misalnya `a1b2c3d4.png`. |
+| Bawaan | Prefiks acak berbasis waktu + nama file asli, misalnya `1760000000000_cat.png`. |
+| Hanya prefiks | Hanya prefiks acak berbasis waktu dan ekstensi, misalnya `1760000000000.png`. |
+| Hanya nama asli | Mempertahankan nama file asli, misalnya `cat.png`. Jika ada duplikat, ImgBed menambahkan `(1)`, `(2)`, dan seterusnya. |
+| Tautan pendek | Menggunakan ID pendek 8 karakter dengan ekstensi, misalnya `a1b2c3d4.png`. |

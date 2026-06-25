@@ -1,4 +1,4 @@
-# د GitLab Packages Channel اضافه کول
+# د GitLab Packages چینل اضافه کول
 
 ## د پیل مخکې اړتیاوې
 
@@ -6,62 +6,62 @@
 
 | اړتیا | موخه |
 | --- | --- |
-| GitLab account | د access token جوړولو او project مالکیت لپاره. |
-| GitLab Personal Access Token | د ImgBed لپاره GitLab API access، projects جوړول او Generic Packages ته files upload کول. |
-| Project name | یوازې project name لیکلی شئ، لکه `imgbed`. |
+| GitLab حساب | د لاسرسی ټوکن جوړولو او پروژه مالکیت لپاره. |
+| GitLab Personal لاسرسی ټوکن | د ImgBed لپاره GitLab API لاسرسی، پروژهs جوړول او Generic Packages ته فایلونه اپلوډ کول. |
+| د پروژې نوم | یوازې پروژه name لیکلی شئ، لکه `imgbed`. |
 
-## Setup Steps
+## د تنظیم ګامونه
 
-### Step 1: GitLab ته Sign in او Access Token جوړول
+### ګام 1: GitLab ته ننوځئ او لاسرسی ټوکن جوړول
 
-1. GitLab ته sign in شئ.
+1. GitLab ته ننوځئ شئ.
 2. په پورته ښي لوري کې avatar کلیک او `Preferences` پرانیزئ.
-3. له left sidebar څخه `Access Tokens` پرانیزئ.
-4. token ته پېژندل کېدونکی نوم ورکړئ.
-5. د خپل maintenance preference له مخې expiration date وټاکئ.
-6. `api` scope وټاکئ.
-7. token چې جوړ شي، سملاسي یې copy او خوندي کړئ.
+3. له کیڼ اړخ پټه څخه `Access Tokens` پرانیزئ.
+4. ټوکن ته پېژندل کېدونکی نوم ورکړئ.
+5. د خپل د ساتنې غوره توب له مخې د پای نېټه وټاکئ.
+6. `api` سکوپ وټاکئ.
+7. ټوکن چې جوړ شي، سملاسي یې کاپي او خوندي کړئ.
 
-![Create a legacy token](../../image/upload/gitlab-packages/点击生成旧版令牌.png)
+![Create a legacy ټوکن](../../image/upload/gitlab-packages/点击生成旧版令牌.png)
 
-![Select token permissions](../../image/upload/gitlab-packages/勾选令牌权限.png)
+![Select ټوکن permissions](../../image/upload/gitlab-packages/勾选令牌权限.png)
 
-## Step 2: په ImgBed کې GitLab Packages Channel ډک کړئ
+## ګام 2: په ImgBed کې GitLab Packages چینل ډک کړئ
 
-په Upload Settings کې د `GitLab Packages` له ټاکلو وروسته:
+په د اپلوډ تنظیمات کې د `GitLab Packages` له ټاکلو وروسته:
 
-| UI Field | What to Enter |
+| د UI فیلډ | څه داخل کړئ |
 | --- | --- |
-| Channel name | ستاسې ټاکلی نوم، لکه `GitLabPrimary`. |
-| Access Token | همدا GitLab Personal Access Token چې جوړ مو کړی. |
-| Project name | short project name لکه `imgbed`، یا full path لکه `username/imgbed`. |
-| Private repository | د اړتیا له مخې on یا off کړئ. |
-| Remark | اختیاري، لکه `Primary upload channel`. |
+| د چینل نوم | ستاسې ټاکلی نوم، لکه `GitLabPrimary`. |
+| لاسرسی ټوکن | همدا GitLab Personal لاسرسی ټوکن چې جوړ مو کړی. |
+| د پروژې نوم | لنډ پروژه نوم لکه `imgbed`، یا بشپړه لاره لکه `username/imgbed`. |
+| شخصي ریپازېټري | د اړتیا له مخې on یا off کړئ. |
+| یادښت | اختیاري، لکه `Primary upload channel`. |
 
-![Configure the channel](../../image/upload/gitlab-packages/配置渠道内容.png)
+![تنظیم the چینل](../../image/upload/gitlab-packages/配置渠道内容.png)
 
-## Step 3: Channel Save کړئ
+## ګام 3: چینل خوندي کړئ
 
-له fields ډکولو وروسته Save کلیک کړئ.
+له fields ډکولو وروسته خوندي کلیک کړئ.
 
 system دا کارونه خپله ترسره کوي:
 
-| System Behavior | Description |
+| د سیستم چلند | توضیح |
 | --- | --- |
-| Short project name | ImgBed current GitLab account پېژني او value full project path ته expand کوي. |
-| Full project path | ImgBed د `username/project` path هماغسې کاروي لکه داخل شوی. |
-| Project check | که current personal account path وي، ImgBed project اتومات جوړوي که موجود نه وي. که full path manual ورکړئ، هماغه path کاروي. |
-| Public/private state | project visibility د current switch له مخې synchronized کېږي. |
+| لنډ پروژه نوم | ImgBed اوسنی GitLab حساب پېژني او ارزښت بشپړ پروژه لارې ته غځوي. |
+| Full پروژه path | ImgBed د `username/project` path هماغسې کاروي لکه داخل شوی. |
+| د پروژې کتنه | که د اوسني شخصي حساب لاره وکاروئ، ImgBed پروژه اتومات جوړوي که موجوده نه وي. که بشپړه لاره په لاسي ډول ورکړئ، ImgBed هماغه لاره کاروي. |
+| عام/شخصي حالت | د پروژې لید د اوسني switch له مخې همغږي کېږي. |
 
-## Quick Checklist
+## چټک چک‌لېست
 
 ```text
-GitLab ته sign in شئ
--> Access Token جوړ کړئ
--> یوازې api scope وټاکئ
--> ImgBed ته بېرته ولاړ شئ او token او project name ولیکئ
+Sign in to GitLab
+-> Create an Access Token
+-> Select only the api scope
+-> Return to ImgBed and enter the token and project name
 -> Save
--> که یوازې project name ورکړئ، ImgBed current username اتومات اضافه کوي
--> که username/project ورکړئ، هماغه کاروي
--> test image upload کړئ
+-> If only a project name is entered, ImgBed adds the current username automatically
+-> If username/project is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

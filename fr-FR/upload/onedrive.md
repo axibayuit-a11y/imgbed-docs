@@ -1,104 +1,148 @@
 # Ajouter un canal OneDrive
 
-Le canal OneDrive utilise Microsoft OneDrive comme destination de stockage.
+## Ce qu’il faut avant de commencer
 
-## À préparer
-
-| Élément | Utilité |
+| Élément | Pourquoi c’est nécessaire |
 | --- | --- |
-| Compte Microsoft | Gérer OneDrive et l’enregistrement de l’application |
-| Domaine ImgBed | Configurer le callback OAuth |
-| App registration | Obtenir Client ID et Client Secret |
-| Refresh Token | Maintenir l’accès dans le temps |
+| Compte Microsoft | Utilisé pour accéder aux pages d’administration Microsoft et autoriser OneDrive |
+| Domaine ImgBed | Utilisé comme URL de retour OAuth |
+| Enregistrement d’application | Utilisé pour générer `Client ID` et `Client Secret` |
+| Compte OneDrive | Utilisé comme emplacement réel de stockage des fichiers |
 
-## Ouvrir Microsoft Entra ID
+## Étapes de configuration
+
+### Étape 1 : ouvrir Microsoft Entra ID
 
 1. Ouvrez `portal.azure.com`.
-2. Recherchez `Microsoft Entra ID`.
-3. Entrez dans `App registrations`.
-4. Cliquez sur `New registration`.
+2. Recherchez `Microsoft Entra ID` en haut de la page.
+3. Si la page cible n’apparaît pas dans la liste déroulante, choisissez :
 
-## Enregistrer l’application
+```text
+Continue searching in Microsoft Entra ID
+```
 
-| Champ | Valeur |
+4. Ouvrez `Microsoft Entra ID`.
+5. Ouvrez `App registrations`.
+6. Cliquez sur `New registration`.
+
+### Étape 2 : enregistrer une application
+
+Sur la page `New registration`, remplissez :
+
+| Champ | Valeur à saisir |
 | --- | --- |
-| Name | Par exemple `imgbed-onedrive` |
-| Supported account types | Selon le type de OneDrive utilisé |
+| Name | Nom reconnaissable, par exemple `imgbed-onedrive` |
+| Supported account types | Choisissez selon le tableau ci-dessous |
 | Redirect URI type | `Web` |
-| Redirect URI | `https://votre-domaine/api/oauth/onedrive/callback` |
+| Redirect URI | `https://your-domain.com/api/oauth/onedrive/callback` |
 
-Pour un OneDrive personnel, choisissez les comptes Microsoft personnels. Pour accepter comptes personnels et professionnels, choisissez l’option compatible avec les deux.
+Guide du type de compte :
 
-![Enregistrement OneDrive](../../image/upload/onedrive/添加应用程序注册.png)
+| Votre scénario | Supported Account Types |
+| --- | --- |
+| OneDrive personnel uniquement | Choisissez l’option de compte Microsoft personnel. |
+| Comptes personnels et comptes professionnels/scolaires | Choisissez l’option qui prend en charge les comptes personnels et organisationnels. |
+| OneDrive professionnel ou scolaire uniquement | Choisissez l’option de compte organisationnel. |
 
-Après l’enregistrement, copiez `Application (client) ID`. Pour un compte professionnel, conservez aussi `Directory (tenant) ID`.
+Cliquez sur Enregistrer après avoir rempli le formulaire.
 
-![Application ID et Tenant ID](../../image/upload/onedrive/应用程序ID和目录租户ID位.png)
+![Créer l’application OneDrive](../../image/upload/onedrive/添加应用程序注册.png)
 
-## Créer le Client Secret
+### Étape 3 : copier les informations de l’application
+
+Après la création de l’application, copiez ces valeurs depuis la page de résumé :
+
+| Champ Microsoft | Champ ImgBed |
+| --- | --- |
+| `Application (client) ID` | `Client ID` |
+| `Directory (tenant) ID` | `Tenant ID` pour les comptes organisationnels |
+
+![Application et tenant IDs](../../image/upload/onedrive/应用程序ID和目录租户ID位.png)
+
+### Étape 4 : créer un Client Secret
 
 1. Ouvrez `Certificates & secrets`.
 2. Cliquez sur `New client secret`.
-3. Définissez le nom et l’expiration.
-4. Copiez immédiatement la valeur `Value`.
+3. Saisissez la description de votre choix.
+4. Choisissez une période d’expiration.
+5. Copiez immédiatement la valeur `Value` après sa création.
 
-![Client Secret](../../image/upload/onedrive/保存客户端密码值.png)
+![Enregistrer la valeur du client secret](../../image/upload/onedrive/保存客户端密码值.png)
 
-Cette valeur peut ne plus être affichée ensuite. Enregistrez-la dès sa création.
+### Étape 5 : ajouter les permissions API
 
-## Permissions Microsoft Graph
+1. Ouvrez `API permissions`.
+2. Cliquez sur `Add a permission`.
+3. Choisissez `Microsoft Graph`.
+4. Choisissez `Delegated permissions`.
+5. Ajoutez ces permissions :
 
-Dans `API permissions`, ajoutez des delegated permissions Microsoft Graph.
-
-| Permission | Utilité |
+| Permission | Rôle |
 | --- | --- |
-| `Files.ReadWrite.All` | Envoyer, créer des dossiers et supprimer des fichiers |
-| `offline_access` | Obtenir un Refresh Token |
-| `User.Read` | Lire les informations du compte et la capacité |
+| `Files.ReadWrite.All` | Téléverse des fichiers, crée des dossiers et supprime des fichiers |
+| `offline_access` | Permet à ImgBed d’obtenir un `Refresh Token` |
+| `User.Read` | Lit les informations du compte et du quota |
 
-## Renseigner dans ImgBed
+### Étape 6 : compléter le canal OneDrive
 
-Dans Paramètres d’upload, choisissez `OneDrive`.
+Dans les paramètres de téléversement, choisissez `OneDrive` et remplissez :
 
-| Champ | Valeur |
+| Champ ImgBed | Valeur à saisir |
 | --- | --- |
-| Nom du canal | Par exemple `OneDrive Main` |
-| Client ID | `Application (client) ID` |
-| Client Secret | Valeur du Client Secret |
-| Tenant ID | Voir le tableau ci-dessous |
-| Refresh Token | Laissez vide au début |
-| Dossier racine | Optionnel, souvent `imgbed` |
+| Nom du canal | Nom reconnaissable, par exemple `Main OneDrive` |
+| Client ID | `Application (client) ID` de Microsoft |
+| Client Secret | La valeur `Client Secret Value` que vous avez copiée |
+| Tenant ID | Utilisez le tableau ci-dessous |
+| Refresh Token | Laissez vide pour l’instant |
+| Répertoire racine | Facultatif. La valeur par défaut est `imgbed`. |
+| Note | Facultatif |
 
-![Configuration OneDrive](../../image/upload/onedrive/添加新渠道配置.png)
+![Remplir la configuration du canal OneDrive](../../image/upload/onedrive/添加新渠道配置.png)
 
-| Type de compte | Tenant ID |
+Comment remplir `Tenant ID` :
+
+| Type de compte choisi | `Tenant ID` ImgBed |
 | --- | --- |
-| Compte personnel | `consumers` |
-| Personnel + professionnel | `common` |
+| Comptes personnels | `consumers` |
+| Comptes personnels + organisationnels | `common` |
 | Organisation actuelle uniquement | `Directory (tenant) ID` |
 
-## Obtenir le Refresh Token
+### Étape 7 : obtenir le Refresh Token
 
-1. Dans ImgBed, cliquez sur `Obtenir le token`.
-2. Connectez-vous avec le compte Microsoft de destination.
-3. Acceptez les permissions.
-4. Copiez le `Refresh Token` affiché sur la page de callback.
-5. Revenez dans ImgBed et collez-le dans le champ correspondant.
+1. Dans ImgBed, cliquez sur `Get Token`.
+2. Connectez-vous au compte Microsoft à associer.
+3. Approuvez la demande d’autorisation.
+4. La page de retour affiche un `Refresh Token`.
+5. Copiez-le.
+6. Revenez à ImgBed et collez-le dans le champ `Refresh Token`.
 
-![Refresh Token](../../image/upload/onedrive/复制刷新令牌.png)
+![Copier le refresh token](../../image/upload/onedrive/复制刷新令牌.png)
+
+### Étape 8 : enregistrer le canal
+
+Après avoir rempli tous les champs, enregistrez le canal.
 
 ## Flux rapide
 
 ```text
-Ouvrir portal.azure.com
--> Microsoft Entra ID
--> App registrations
--> New registration
--> Configurer le callback Web
--> Copier Application ID
--> Créer Client Secret
--> Ajouter les permissions Microsoft Graph
--> Renseigner Client ID / Secret / Tenant ID dans ImgBed
--> Obtenir le token
--> Coller le Refresh Token et enregistrer
+Open portal.azure.com
+-> Search for Microsoft Entra ID
+-> Open App registrations
+-> Register a new app
+-> Fill Name / Supported account types / Web redirect URI
+-> Register
+-> Copy Application (client) ID
+-> Check the callback URL in Authentication
+-> Create a Client Secret in Certificates & secrets
+-> Add permissions in API permissions
+-> Fill Client ID / Client Secret / Tenant ID into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
+
+## Références
+
+1. Enregistrement d’application Microsoft Entra : https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
+2. Flux de code d’autorisation de Microsoft identity platform : https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow
+3. Authentification utilisateur Microsoft Graph : https://learn.microsoft.com/en-us/graph/auth-v2-user

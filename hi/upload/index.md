@@ -1,14 +1,14 @@
 # अपलोड सेटिंग्स
 
-अपलोड सेटिंग्स ImgBed को आपके अपने storage channels से जोड़ती हैं। चैनल सेट होने के बाद अपलोड की गई images और files आपकी चुनी हुई service में सेव होती हैं। ImgBed access links, file records, previews, public gallery, random image API, WebDAV access और संबंधित workflows को संभालता है।
+अपलोड सेटिंग्स ImgBed को आपके अपने भंडारण चैनलों से जोड़ती हैं। किसी चैनल को कॉन्फ़िगर करने के बाद अपलोड की गई छवियाँ और फ़ाइलें आपके चुने हुए सेवा में सहेजी जाती हैं। ImgBed फ़ाइल रिकॉर्ड, एक्सेस लिंक, पूर्वावलोकन, सार्वजनिक गैलरी सुविधाएँ, रैंडम इमेज API एक्सेस, WebDAV एक्सेस और संबंधित प्रवाहों को संभालता है।
 
-हर उपयोगकर्ता के लिए सही channel अलग हो सकता है। आसान शुरुआत के लिए Telegram, Discord या GitHub Releases अच्छे विकल्प हो सकते हैं। अगर capacity, speed और long-term stability ज्यादा महत्वपूर्ण हैं, तो Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud या अपना WebDAV service चुनें।
+हर उपयोगकर्ता अलग-अलग चैनल पसंद कर सकता है। यदि आप सरल सेटअप चाहते हैं, तो Telegram, Discord या GitHub Releases अच्छे शुरुआती विकल्प हो सकते हैं। यदि क्षमता, गति और दीर्घकालिक स्थिरता अधिक महत्वपूर्ण है, तो Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud या अपनी WebDAV सेवा पर विचार करें।
 
 ## शुरू करने से पहले
 
-- जिस storage account या API credentials का उपयोग करना है, उन्हें तैयार रखें।
-- सुनिश्चित करें कि आपका ImgBed domain खुल रहा है, क्योंकि OAuth channels को callback URL चाहिए।
-- channel जोड़ने के बाद पहले एक test image upload करें, ताकि file save और open होना confirm हो सके।
+- जिस भंडारण खाते या API क्रेडेंशियल की आवश्यकता है, उसे तैयार रखें।
+- सुनिश्चित करें कि आपका ImgBed डोमेन पहुँच योग्य है, क्योंकि OAuth आधारित चैनलों को कॉलबैक URL चाहिए।
+- चैनल जोड़ने के बाद पहले एक परीक्षण छवि अपलोड करें, ताकि पुष्टि हो सके कि फ़ाइलें सही तरह से सहेजी और खोली जा रही हैं।
 
 ## चैनल सूची
 
@@ -26,8 +26,8 @@
 - [Yandex](./yandex.md)
 - [pCloud](./pcloud.md)
 
-## इस अध्याय में क्या है
+## यह अध्याय क्या समझाता है
 
-- हर upload channel को setup से पहले किन जानकारी की जरूरत होती है।
-- external platforms पर app बनाना, keys copy करना या Token authorize करना।
-- ImgBed में channel configuration भरना और upload काम कर रहा है या नहीं जांचना।
+- प्रत्येक अपलोड चैनल को कॉन्फ़िगर करने से पहले किन चीज़ों की आवश्यकता होती है।
+- बाहरी प्लेटफ़ॉर्म पर ऐप्लिकेशन बनाना, कुंजियाँ कॉपी करना या टोकन अधिकृत करना।
+- ImgBed में चैनल कॉन्फ़िगरेशन भरना और यह पुष्टि करना कि अपलोड सही तरह से काम कर रहे हैं।

@@ -1,156 +1,156 @@
-# WebDAV Site Access (Beta)
+# WebDAV தள அணுகல் (Beta)
 
-Security Settings-ல் உள்ள WebDAV setting உங்கள் ImgBed site-ஐ WebDAV endpoint ஆக வெளிப்படுத்தும்.
+பாதுகாப்பு அமைப்புகளில் உள்ள WebDAV அமைப்பு, உங்கள் ImgBed தளத்தை WebDAV முனையமாக வெளியிடும்.
 
-enable செய்த பிறகு Windows, macOS, mobile file managers, அல்லது WebDAV-compatible client மூலம் ImgBed files-ஐ remote folder போல browse, upload, delete, manage செய்யலாம்.
+இது இயக்கப்பட்ட பிறகு, Windows, macOS, மொபைல் கோப்பு மேலாளர்கள் அல்லது WebDAV-க்கு இணங்கும் எந்த கிளையன்டையும் பயன்படுத்தி ImgBed கோப்புகளை தொலை கோப்புறையைப் போல உலாவலாம், பதிவேற்றலாம், நீக்கலாம் மற்றும் நிர்வகிக்கலாம்.
 
-இது site-இன் WebDAV access entry. Upload Settings-ல் உள்ள WebDAV storage channel-இல் இருந்து வேறு. upload channel files-ஐ third-party WebDAV service-ல் store செய்கிறது. இந்த setting ImgBed site-ஐ clients-க்கு WebDAV access வழங்க செய்கிறது.
+இது தளத்திற்கான WebDAV அணுகல் நுழைவு. பதிவேற்ற அமைப்புகளில் உள்ள WebDAV சேமிப்பு சேனலிலிருந்து இது வேறுபடும். பதிவேற்ற சேனல் மூன்றாம் தரப்பு WebDAV சேவையில் கோப்புகளைச் சேமிக்கும். இந்த அமைப்பு உங்கள் ImgBed தளம் கிளையன்ட்களுக்கு WebDAV அணுகலை வழங்க அனுமதிக்கும்.
 
-## எங்கு Configure செய்வது
+## எங்கே அமைப்பது
 
-admin panel திறந்து செல்லவும்:
+நிர்வாகப் பலகையைத் திறந்து இங்கே செல்லவும்:
 
 ```text
 System Settings -> Security Settings -> WebDAV
 ```
 
-Available settings:
+கிடைக்கும் அமைப்புகள்:
 
-- Enable
-- Username
-- Password
-- Image loading mode
-- Default channel
+- இயக்கு
+- பயனர்பெயர்
+- கடவுச்சொல்
+- படம் ஏற்றும் முறை
+- இயல்புநிலை சேனல்
 
-## இந்த Feature என்ன செய்கிறது
+## இந்த அம்சம் என்ன செய்கிறது
 
-WebDAV enabled ஆன பிறகு ImgBed fixed access URL தரும்:
+WebDAV இயக்கப்பட்ட பிறகு, ImgBed ஒரு நிலையான அணுகல் URL வழங்கும்:
 
 ```text
 https://your-domain.com/dav
 ```
 
-ImgBed file directory-க்கு connect செய்ய இந்த URL பயன்படுத்தவும்.
+உங்கள் ImgBed கோப்பு அடைவுடன் இணைக்க இந்த URL-ஐ பயன்படுத்தவும்.
 
-சரியான use cases:
+பயனுள்ள பயன்பாடுகள்:
 
-- computer file manager-ல் இருந்து ImgBed files நேரடியாக browse செய்ய.
-- images-ஐ WebDAV folder-க்கு drag செய்து upload செய்ய.
-- local file manager மூலம் ImgBed folders organize செய்ய.
-- WebDAV-compatible software மூலம் images sync/manage செய்ய.
-- admin panel திறக்காமல் ImgBed content access செய்ய.
+- உங்கள் கணினியின் கோப்பு மேலாளரிலிருந்து ImgBed கோப்புகளை நேரடியாக உலாவலாம்.
+- படங்களை WebDAV கோப்புறைக்குள் இழுத்து விடுவதன் மூலம் பதிவேற்றலாம்.
+- உள்ளூர் கோப்பு மேலாளரிலிருந்து ImgBed கோப்புறைகளை ஒழுங்குபடுத்தலாம்.
+- படங்களை ஒத்திசைக்க அல்லது நிர்வகிக்க WebDAV-க்கு இணங்கும் மென்பொருளைப் பயன்படுத்தலாம்.
+- நிர்வாகப் பலகையைத் திறக்காமல் ImgBed உள்ளடக்கத்தை அணுகலாம்.
 
-## Settings
+## அமைப்புகள்
 
-### Enable
+### இயக்கு
 
-WebDAV endpoint-ஐ on செய்கிறது.
+WebDAV முனையத்தை இயக்கும்.
 
-disabled என்றால் clients WebDAV மூலம் connect செய்ய முடியாது.
+இது அணைக்கப்பட்டால், கிளையன்ட்கள் WebDAV வழியாக இணைக்க முடியாது.
 
-### Username மற்றும் Password
+### பயனர்பெயரும் கடவுச்சொல்லும்
 
-WebDAV clients connect செய்யும்போது இந்த credentials பயன்படுத்தப்படும்.
+இணைக்கும் போது WebDAV கிளையன்ட்கள் இந்த சான்றுகளைப் பயன்படுத்தும்.
 
-Dedicated WebDAV username/password பயன்படுத்தவும். admin password அல்லது upload password மீண்டும் பயன்படுத்த வேண்டாம்.
+WebDAV-க்காக தனியான பயனர்பெயர் மற்றும் கடவுச்சொல்லைப் பயன்படுத்தவும். நிர்வாகி கடவுச்சொல்லையோ பதிவேற்ற கடவுச்சொல்லையோ மீண்டும் பயன்படுத்த வேண்டாம்.
 
-username அல்லது password காலியாக இருந்தால் WebDAV clients சரியாக connect செய்ய முடியாது.
+பயனர்பெயர் அல்லது கடவுச்சொல் காலியாக இருந்தால், WebDAV கிளையன்ட்கள் சரியாக இணைக்க முடியாது.
 
-### Image Loading Mode
+### படம் ஏற்றும் முறை
 
-WebDAV clients images படிக்கும் போது எந்த image URL-ஐ prefer செய்ய வேண்டும் என்பதை image loading mode தீர்மானிக்கும்.
+படங்களைப் படிக்கும் போது WebDAV கிளையன்ட்கள் எந்த பட URL-ஐ முன்னுரிமை அளிக்க வேண்டும் என்பதை படம் ஏற்றும் முறை தீர்மானிக்கும்.
 
-Common choices:
+பொதுவான தேர்வுகள்:
 
-| Mode | Description |
+| முறை | விளக்கம் |
 | --- | --- |
-| Smart loading | ImgBed context அடிப்படையில் தேர்வு செய்யும். normal use-க்கு recommended. |
-| Original | original images-ஐ prefer செய்யும். |
-| Thumbnail | thumbnails-ஐ prefer செய்யும். fast preview-க்கு useful. |
+| நுண்ணறிவு ஏற்றம் | ImgBed சூழலை அடிப்படையாகக் கொண்டு தேர்வு செய்யும். வழக்கமான பயன்பாட்டுக்கு பரிந்துரைக்கப்படுகிறது. |
+| அசல் | அசல் படங்களுக்கு முன்னுரிமை கொடு. |
+| சிறுபடம் | சிறுபடங்களுக்கு முன்னுரிமை கொடு. விரைவான முன்னோட்டத்திற்கு பயனுள்ளது. |
 
-நிச்சயமில்லையெனில் `Smart loading` வைத்திருக்கவும்.
+சந்தேகம் இருந்தால், `நுண்ணறிவு ஏற்றம்` வைத்திருக்கவும்.
 
-### Default Channel
+### இயல்புநிலை சேனல்
 
-default channel WebDAV uploads-க்கு பயன்படுத்தப்படும்.
+இயல்புநிலை சேனல் WebDAV பதிவேற்றங்களுக்கு பயன்படுத்தப்படும்.
 
-Windows அல்லது வேறு client மூலம் WebDAV directory-க்கு files copy செய்தால், ImgBed selected default upload channel வழியாக upload செய்யும்.
+Windows அல்லது வேறு கிளையன்டிலிருந்து WebDAV அடைவுக்குள் கோப்புகளை நகலெடுத்தால், ImgBed அவற்றைத் தேர்ந்தெடுக்கப்பட்ட இயல்புநிலை பதிவேற்ற சேனல் வழியாக பதிவேற்றும்.
 
-default channel selected இல்லையெனில் browsing வேலை செய்யலாம், ஆனால் uploads fail ஆகலாம்.
+இயல்புநிலை சேனல் தேர்ந்தெடுக்கப்படவில்லை என்றால், உலாவல் வேலை செய்யலாம்; ஆனால் பதிவேற்றம் தோல்வியடையலாம்.
 
-## Windows 11-ல் WebDAV Access
+## Windows 11-இல் WebDAV அணுகுதல்
 
-Windows 11 WebDAV-ஐ network location ஆக add செய்யலாம்.
+Windows 11 WebDAV-ஐ பிணைய இருப்பிடமாகச் சேர்க்க முடியும்.
 
-1. `This PC` திறக்கவும்.
-2. `Add a network location` தேர்வு செய்யவும்.
+1. `இந்த கணினி` திறக்கவும்.
+2. `பிணைய இருப்பிடத்தைச் சேர்க்கவும்` தேர்வு செய்யவும்.
 3. `https://your-domain.com/dav` உள்ளிடவும்.
-4. prompt வந்தால் WebDAV username/password உள்ளிடவும்.
-5. wizard முடிக்கவும். WebDAV directory File Explorer-ல் திறக்கப்படும்.
+4. கேட்கப்பட்டால் WebDAV பயனர்பெயர் மற்றும் கடவுச்சொல்லை உள்ளிடவும்.
+5. வழிகாட்டியை முடிக்கவும். அதன் பிறகு WebDAV அடைவை கோப்பு எக்ஸ்ப்ளோரரில் திறக்கலாம்.
 
-![Add WebDAV in Windows 11](../../image/Safety/webdav在win11配置.png)
+![Windows 11-இல் WebDAV சேர்த்தல்](../../image/Safety/webdav在win11配置.png)
 
-add செய்த பிறகு WebDAV directory Windows File Explorer-ல் தெரியும். normal folder போல files open, copy, manage செய்யலாம்.
+சேர்த்த பிறகு, WebDAV அடைவு Windows கோப்பு எக்ஸ்ப்ளோரரில் தோன்றும். வழக்கமான கோப்புறையைப் போல அதைத் திறக்கவும், நகலெடுக்கவும், கோப்புகளை நிர்வகிக்கவும் முடியும்.
 
-![WebDAV in Windows](../../image/Safety/webdav在win显示效果.png)
+![Windows-இல் WebDAV](../../image/Safety/webdav在win显示效果.png)
 
-## Supported Operations
+## ஆதரிக்கப்படும் செயல்கள்
 
-successful WebDAV connection பிறகு பொதுவாக:
+WebDAV இணைப்பு வெற்றியாகிய பிறகு, பொதுவாக பின்வருவன செய்யலாம்:
 
-- files மற்றும் folders பார்க்கலாம்.
-- files upload செய்யலாம்.
-- folders உருவாக்கலாம்.
-- files/folders rename செய்யலாம்.
-- files move செய்யலாம்.
-- files delete செய்யலாம்.
+- கோப்புகள் மற்றும் கோப்புறைகளைப் பார்க்கலாம்.
+- கோப்புகளை பதிவேற்றலாம்.
+- கோப்புறைகளை உருவாக்கலாம்.
+- கோப்புகள் அல்லது கோப்புறைகளின் பெயரை மாற்றலாம்.
+- கோப்புகளை நகர்த்தலாம்.
+- கோப்புகளை நீக்கலாம்.
 
-WebDAV everyday access மற்றும் சிறிய அளவிலான file management-க்கு நல்லது. பெரிய moves, bulk deletes, complex organization-க்கு admin panel பயன்படுத்தவும்.
+WebDAV அன்றாட அணுகலுக்கும் சிறிய அளவிலான கோப்பு மேலாண்மைக்கும் சிறந்தது. பெரிய நகர்த்தல்கள், மொத்த நீக்கங்கள் அல்லது சிக்கலான ஒழுங்குபடுத்தல்களுக்கு நிர்வாகப் பலகையைப் பயன்படுத்தவும்.
 
-## Login Device Management
+## உள்நுழைவு சாதன மேலாண்மை
 
-successful WebDAV connections Login Device Management-இன் WebDAV tab-ல் தோன்றும்.
+வெற்றிகரமான WebDAV இணைப்புகளும் உள்நுழைவு சாதன மேலாண்மையில் உள்ள WebDAV தாவலில் தோன்றும்.
 
-அங்கே WebDAV clients review செய்து தேவையானபோது old devices force offline செய்யலாம்.
+அங்கு WebDAV கிளையன்ட்களைப் பார்வையிடலாம்; தேவையானபோது பழைய சாதனங்களை கட்டாயமாக ஆஃப்லைனாக்கலாம்.
 
-WebDAV username அல்லது password மாற்றினால் old clients மீண்டும் sign in செய்ய வேண்டும்.
+WebDAV பயனர்பெயர் அல்லது கடவுச்சொல்லை மாற்றினால், பழைய கிளையன்ட்கள் மீண்டும் உள்நுழைய வேண்டும்.
 
 ## FAQ
 
-### Windows மீண்டும் மீண்டும் Username/Password கேட்கிறது
+### Windows மீண்டும் மீண்டும் பயனர்பெயரும் கடவுச்சொல்லும் கேட்கிறது
 
 சரிபார்க்கவும்:
 
-- URL `https://your-domain.com/dav`.
-- username/password WebDAV settings-க்கு match ஆகிறது.
-- WebDAV enabled.
-- site HTTPS மூலம் access ஆகிறது.
+- URL `https://your-domain.com/dav` ஆக இருக்க வேண்டும்.
+- பயனர்பெயரும் கடவுச்சொல்லும் WebDAV அமைப்புகளுடன் பொருந்த வேண்டும்.
+- WebDAV இயக்கப்பட்டிருக்க வேண்டும்.
+- தளத்தை HTTPS வழியாக அணுக முடிகிறதா பார்க்கவும்.
 
-### Browsing வேலை செய்கிறது, ஆனால் Uploading fail ஆகிறது
+### உலாவல் வேலை செய்கிறது, ஆனால் பதிவேற்றம் தோல்வியடைகிறது
 
-`Default channel` பார்க்கவும்.
+`இயல்புநிலை சேனல்`-ஐ சரிபார்க்கவும்.
 
-WebDAV uploads-க்கு default upload channel தேவை. அது missing, disabled, அல்லது misconfigured என்றால் uploads fail ஆகலாம்.
+WebDAV பதிவேற்றங்களுக்கு இயல்புநிலை பதிவேற்ற சேனல் தேவை. அது இல்லையெனில், அணைக்கப்பட்டிருந்தால் அல்லது தவறாக அமைக்கப்பட்டிருந்தால், பதிவேற்றங்கள் தோல்வியடையலாம்.
 
-### Access Speed நிலையாக இல்லை
+### அணுகல் வேகம் நிலையாக இல்லை
 
-WebDAV performance client, network, file count, default upload channel ஆகியவற்றை சார்ந்தது.
+WebDAV செயல்திறன் கிளையன்ட், பிணையம், கோப்பு எண்ணிக்கை மற்றும் இயல்புநிலை பதிவேற்ற சேனலைப் பொறுத்தது.
 
-ஒரு directory-ல் நிறைய files இருந்தால், அவற்றை folders-ல் organize செய்யவும்.
+ஒரு அடைவில் பல கோப்புகள் இருந்தால், மிக அதிக கோப்புகளை ஒரே அடைவில் வைத்திருப்பதற்குப் பதிலாக அவற்றை கோப்புறைகளில் ஒழுங்குபடுத்தவும்.
 
-## Security Recommendations
+## பாதுகாப்பு பரிந்துரைகள்
 
-- WebDAV access-க்கு HTTPS பயன்படுத்தவும்.
-- strong password அமைக்கவும்.
-- WebDAV password-ஐ நம்ப முடியாதவர்களுடன் பகிர வேண்டாம்.
-- பயன்படுத்தவில்லை என்றால் WebDAV off செய்யவும்.
-- Login Device Management-ல் unused WebDAV devices அவ்வப்போது clean up செய்யவும்.
+- WebDAV அணுகலுக்கு HTTPS பயன்படுத்தவும்.
+- வலுவான கடவுச்சொல் அமைக்கவும்.
+- WebDAV கடவுச்சொல்லை நம்பகமற்றவர்களுடன் பகிர வேண்டாம்.
+- பயன்படுத்தாதபோது WebDAV-ஐ அணைக்கவும்.
+- உள்நுழைவு சாதன மேலாண்மையில் பயன்படுத்தப்படாத WebDAV சாதனங்களை அவ்வப்போது சுத்தம் செய்யவும்.
 
-## WebDAV Upload File Size
+## WebDAV பதிவேற்ற கோப்பு அளவு
 
-WebDAV clients browser upload page-இன் large-file chunking flow பயன்படுத்தாது. கீழே உள்ள suggested limits-ஐ விட பெரிய files-க்கு web upload page பயன்படுத்தவும்.
+WebDAV கிளையன்ட்கள் உலாவி பதிவேற்றப் பக்கத்தின் பெரிய கோப்பு துண்டாக்கும் ஓட்டத்தைப் பயன்படுத்தாது. கீழே பரிந்துரைக்கப்பட்ட வரம்புகளை விட பெரிய கோப்புகளுக்கு, அதற்கு பதிலாக வலைப் பதிவேற்றப் பக்கத்தைப் பயன்படுத்தவும்.
 
-| Default Upload Channel | Suggested Single-File Limit for WebDAV |
+| இயல்புநிலை பதிவேற்ற சேனல் | WebDAV-க்கான பரிந்துரைக்கப்பட்ட ஒற்றை கோப்பு வரம்பு |
 | --- | ---: |
 | Telegram | 20 MB |
 | Discord | 10 MB |

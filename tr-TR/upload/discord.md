@@ -13,7 +13,7 @@
 
 1. Sistem Ayarları'nı açın.
 2. Yükleme Ayarları'na gidin.
-3. Sağ üst köşedeki Add Channel düğmesine tıklayın.
+3. Sağ üst köşedeki Kanal Ekle düğmesine tıklayın.
 4. `Discord` seçeneğini seçin.
 
 ## Alan Açıklamaları
@@ -78,7 +78,7 @@ ImgBed'deki `Bot Token` alanına girmeniz gereken değer budur.
 3. Developer Mode'u etkinleştirin.
 4. Hedef metin kanalına dönün.
 5. Kanal adına sağ tıklayın.
-6. Copy Channel ID seçeneğine tıklayın.
+6. Kanal ID'sini Kopyala seçeneğine tıklayın.
 
 Kopyalanan sayı, ImgBed'in istediği `Channel ID` değeridir.
 
@@ -113,17 +113,17 @@ Kanal yapılandırma penceresine geri dönün ve alanları şöyle doldurun:
 ## Kısa Kontrol Listesi
 
 ```text
-Discord sunucusu oluştur
--> Metin kanalı oluştur
--> Discord Developer Portal'da bot oluştur
--> Bot sayfasından Bot Token değerini kaydet
--> OAuth2'de bot, View Channels, Send Messages, Attach Files ve Read Message History seç
--> Oluşturulan URL'yi kopyala ve botu hedef sunucu için yetkilendir
--> Hedef metin kanalının aynı izinleri verdiğinden emin ol
--> Developer Mode'u etkinleştir
--> Hedef metin kanalına sağ tıkla ve Channel ID değerini kopyala
--> ImgBed'e Bot Token ve Channel ID gir
--> Kaydet ve test görseli yükle
+Create a Discord server
+-> Create a text channel
+-> Create a bot in the Discord Developer Portal
+-> Save the Bot Token from the Bot page
+-> In OAuth2, select bot, View Channels, Send Messages, Attach Files, and Read Message History
+-> Copy the generated URL and authorize the bot for the target server
+-> Make sure the target text channel grants the same permissions
+-> Enable Developer Mode
+-> Right-click the target text channel and copy the Channel ID
+-> Enter the Bot Token and Channel ID in ImgBed
+-> Save and upload a test image
 ```
 
 ## Kaynaklar

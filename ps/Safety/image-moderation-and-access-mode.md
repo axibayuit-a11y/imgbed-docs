@@ -1,165 +1,165 @@
-# Image Moderation او Access Mode
+# د انځور اعتدال او د لاسرسي حالت
 
-Image moderation upload شوو images ته age ratings ورکوي. Access mode کنټرولوي چې کوم ratings د public access له لارې ښکاره شي.
+د انځور اعتدال پورته شوو انځورونو ته د عمر درجه ورکوي. د لاسرسي حالت ټاکي چې کومې درجې د عامه لاسرسي له لارې ښکاره کېدای شي.
 
-دا public gallery، public file URLs او random image API اغېزمنوي. admin panel نه محدودوي. administrators لا هم ټول files کتلی او manage کولی شي.
+دا پر عامه ګالري، عامه فایل URLونو او د تصادفي انځور API اغېز کوي. د ادارې پینل نه محدودوي. مدیران لا هم ټول فایلونه کتلی او مدیریت کولای شي.
 
 ## چېرته یې تنظیم کړئ
 
-admin panel پرانیزئ، بیا دې ځای ته لاړ شئ:
+د ادارې پینل پرانیزئ، بیا دې ځای ته لاړ شئ:
 
 ```text
 System Settings -> Security Settings -> Upload Management -> Image Moderation
 ```
 
-اصلي settings دا دي:
+اصلي تنظیمات دا دي:
 
-- Access mode
-- Enable moderation
-- Moderation provider
+- د لاسرسي حالت
+- اعتدال فعالول
+- د اعتدال برابرونکی
 
-## Access Mode څه کوي
+## د لاسرسي حالت څه کوي
 
-Access mode ټاکي چې کوم age ratings په public ډول ښکاره کېدای شي.
+د لاسرسي حالت پرېکړه کوي چې کومې د عمر درجې په عامه ډول ښکاره کېدای شي.
 
-اوسني modes:
+اوسني حالتونه:
 
-| Access Mode | په public ډول visible ratings |
+| د لاسرسي حالت | په عامه ډول ښکاره درجې |
 | --- | --- |
-| Adult mode | General, R12, R16, R18 |
-| Youth mode | General, R12, R16 |
-| Teen mode | General, R12 |
-| Child mode | یوازې General |
+| د لویانو حالت | General, R12, R16, R18 |
+| د ځوانانو حالت | General, R12, R16 |
+| د تنکیو ځوانانو حالت | General, R12 |
+| د ماشومانو حالت | یوازې General |
 
-Default یې Adult mode دی.
+اصلي حالت د لویانو حالت دی.
 
-د private sites یا mature content لرونکو sites لپاره Adult mode مناسب کېدای شي. د لا محتاط public gallery لپاره Youth، Teen یا Child mode وټاکئ.
+د شخصي سایټونو یا د لویانو منځپانګې لرونکو سایټونو لپاره د لویانو حالت مناسب کېدای شي. د لا محتاطې عامه ګالري لپاره د ځوانانو، تنکیو ځوانانو یا ماشومانو حالت وټاکئ.
 
-## Enable Moderation څه کوي
+## د اعتدال فعالول څه کوي
 
-کله چې moderation فعال وي، ImgBed د upload پر وخت ټاکل شوی moderation provider غږوي او موندل شوی age rating خوندي کوي.
+کله چې اعتدال فعال وي، ImgBed د پورته کولو پر مهال ټاکل شوی د اعتدال برابرونکی غږوي او موندل شوې د عمر درجه خوندي کوي.
 
-اصلي ratings:
+اصلي درجې:
 
-| Rating | معنا |
+| درجه | معنا |
 | --- | --- |
-| General | خوندي public content |
-| R12 | لږ حساس content |
-| R16 | منځنی حساس content |
-| R18 | adult content |
+| General | خوندي عامه منځپانګه |
+| R12 | لږ حساسه منځپانګه |
+| R16 | منځنۍ حساسه منځپانګه |
+| R18 | د لویانو منځپانګه |
 
-moderation result د public access د پرېکړې پر وخت کارېږي.
+د اعتدال پایله د عامه لاسرسي د پرېکړې پر مهال کارېږي.
 
-که moderation فعال نه وي، یا زاړه files rating ونه لري، هغه files unrated ګڼل کېږي. unrated files یوازې د rating د نشتوالي له امله په اتومات ډول له public gallery یا random image API نه لرې کېږي.
+که اعتدال فعال نه وي، یا زاړه فایلونه درجه ونه لري، هغه فایلونه بې‌درجې ګڼل کېږي. بې‌درجې فایلونه یوازې د درجې د نشتوالي له امله په اتومات ډول له عامه ګالري یا د تصادفي انځور API څخه نه لرې کېږي.
 
-## د Moderation Provider ټاکل
+## د اعتدال برابرونکی ټاکل
 
-شته providers:
+شته برابرونکي پکې شامل دي:
 
 - moderatecontent.com
 - nsfwjs
 - Sightengine
 
-هر provider بېلابېلې اړتیاوې لري:
+هر برابرونکی بېلابېلې اړتیاوې لري:
 
 - moderatecontent.com عموما API Key غواړي.
-- nsfwjs عموما API endpoint URL غواړي.
-- Sightengine API user او API secret غواړي.
+- nsfwjs عموما د API پای ټکي URL غواړي.
+- Sightengine د API user او API secret غواړي.
 
-د خپل account، availability او detection quality له مخې یې وټاکئ. که moderation فعال وي او سم تنظیم شوی وي، ImgBed د upload پر وخت د image rating لیکلو هڅه کوي.
+د خپل حساب، شتون او د موندنې د کیفیت له مخې یې وټاکئ. که اعتدال فعال وي او سم تنظیم شوی وي، ImgBed د پورته کولو پر مهال د انځور درجه لیکلو هڅه کوي.
 
-## پر Public Gallery اغېز
+## پر عامه ګالري اغېز
 
-public gallery د access mode له مخې files filter کوي.
+عامه ګالري فایلونه د لاسرسي حالت له مخې فلټر کوي.
 
 بېلګې:
 
-- Adult mode: R18 images ښکاره کېدای شي.
-- Youth mode: R18 images پټېږي.
-- Teen mode: R16 او R18 images پټېږي.
-- Child mode: یوازې General images ښکاره کېږي.
+- د لویانو حالت: R18 انځورونه ښکاره کېدای شي.
+- د ځوانانو حالت: R18 انځورونه پټېږي.
+- د تنکیو ځوانانو حالت: R16 او R18 انځورونه پټېږي.
+- د ماشومانو حالت: یوازې General انځورونه ښکاره کېږي.
 
-دا یوازې عادي public access اغېزمنوي. admin panel لا هم ټول files ښيي.
+دا یوازې عادي عامه لاسرسی اغېزمنوي. د ادارې پینل لا هم ټول فایلونه ښيي.
 
-## پر Public File URLs اغېز
+## پر عامه فایل URLونو اغېز
 
-Public file URLs هغه مستقیم image links دي چې visitors یې پرانیزي.
+عامه فایل URLونه هغه مستقیم انځور لینکونه دي چې لیدونکي یې پرانیزي.
 
-که د فایل rating د اوسني access mode له خوا allowed وي، ImgBed اصلي image ورکوي.
+که د فایل درجه د اوسني لاسرسي حالت له خوا اجازه ولري، ImgBed اصلي انځور راستنوي.
 
-که rating له allowed level لوړ وي، عادي public access اصلي image نه ورکوي. پر ځای یې ImgBed configured blocked result یا د restricted access لپاره ټاکل شوی بدیل image ښکاره کوي.
+که درجه له اجازه شوې کچې لوړه وي، عادي عامه لاسرسی اصلي انځور نه راستنوي. پر ځای یې ImgBed تنظیم شوې د بندېدو پایله یا بدیل انځور راستنوي.
 
 بېلګه:
 
-- اوسنی mode Child mode دی.
-- یو image R18 rated دی.
-- visitor public URL مستقیم پرانیزي.
-- ImgBed هغه visitor ته اصلي R18 image نه ورکوي.
+- اوسنی حالت د ماشومانو حالت دی.
+- یو انځور R18 درجه لري.
+- لیدونکی عامه URL مستقیم پرانیزي.
+- ImgBed هغه لیدونکي ته د R18 اصلي انځور نه راستنوي.
 
-![Restricted file image](../../image/Safety/文件受限图.png)
+![محدود شوی فایل انځور](../../image/Safety/文件受限图.png)
 
-administrators چې files په admin panel کې ګوري، له دې restriction نه اغېزمنېږي.
+مدیران چې فایلونه په ادارې پینل کې ګوري، له دې محدودیت څخه نه اغېزمنېږي.
 
-## پر Random Image API اغېز
+## پر د تصادفي انځور API اغېز
 
-random image API هم د access mode له مخې خپل candidate pool filter کوي.
+د تصادفي انځور API هم خپله د نوماندانو ټولګه د لاسرسي حالت له مخې فلټر کوي.
 
-په Child mode کې، random images یوازې له General-rated files څخه ټاکل کېږي.
+د ماشومانو په حالت کې، تصادفي انځورونه یوازې له General درجې لرونکو فایلونو څخه ټاکل کېږي.
 
-په Youth mode کې، random images له General، R12 او R16 files څخه راتلای شي، خو له R18 files څخه نه.
+د ځوانانو په حالت کې، تصادفي انځورونه له General، R12 او R16 فایلونو څخه راتلای شي، خو له R18 څخه نه.
 
-دا random image API له دې منع کوي چې د public gallery restrictions bypass کړي.
+دا د تصادفي انځور API له دې منع کوي چې د عامه ګالري محدودیتونه واوړي.
 
-## له List Rules سره اړیکه
+## له لېست قواعدو سره اړیکه
 
-Access mode یوازینی public access rule نه دی. دا د allow/block list rules سره یو ځای کار کوي.
+د لاسرسي حالت یوازینۍ عامه لاسرسي قاعده نه ده. دا د اجازه‌لېست او بند‌لېست قواعدو سره یو ځای کار کوي.
 
 په ساده ډول:
 
-- Allowlisted content لومړی public ګڼل کېږي.
-- Blocklisted content عادي visitors مستقیم نه شي کتلی.
-- هغه content چې په هېڅ list کې نه وي، بیا د access mode له مخې check کېږي.
+- په اجازه‌لېست کې منځپانګه لومړی عامه ګڼل کېږي.
+- په بند‌لېست کې منځپانګه د عادي لیدونکو له خوا مستقیم نه شي کتل کېدای.
+- هغه منځپانګه چې په دواړو لېستونو کې نه وي، وروسته د لاسرسي حالت له مخې ارزول کېږي.
 
-که image هم د age rating او هم د list rules له مخې restricted وي، عادي visitors لا هم اصلي فایل مستقیم نه شي کتلی.
+که یو انځور هم د عمر درجې او هم د لېست قواعدو له مخې محدود وي، عادي لیدونکي لا هم اصلي فایل مستقیم نه شي لیدلی.
 
-## سپارښتل شوي Settings
+## سپارښتل شوي تنظیمات
 
-د public sites لپاره:
+د عامه سایټونو لپاره:
 
-- moderation فعال کړئ.
-- داسې access mode وټاکئ چې د site له audience سره برابر وي.
-- د all-age visitors لپاره Child mode یا Teen mode وکاروئ.
-- که نه غواړئ mature content په public ډول ښکاره شي، Adult mode مه کاروئ.
-- په admin panel کې file ratings وګورئ او د اړتیا پر وخت یې manually بدل کړئ.
+- اعتدال فعال کړئ.
+- داسې د لاسرسي حالت وټاکئ چې د سایټ له لیدونکو سره برابر وي.
+- د هر عمر لیدونکو لپاره د ماشومانو یا تنکیو ځوانانو حالت وکاروئ.
+- که نه غواړئ د لویانو منځپانګه په عامه ډول ښکاره شي، د لویانو حالت مه کاروئ.
+- د فایل درجې په ادارې پینل کې وګورئ او د اړتیا پر مهال یې په لاسي ډول سمې کړئ.
 
-د private یا personal sites لپاره:
+د شخصي یا انفرادي سایټونو لپاره:
 
-- Adult mode عموما مناسب دی.
-- که ګټور وي، moderation فعال کړئ.
-- په admin panel کې ratings وګورئ او د اړتیا پر وخت یې adjust کړئ.
+- د لویانو حالت عموما مناسب دی.
+- که ګټور وي، اعتدال فعال کړئ.
+- درجې په ادارې پینل کې وګورئ او د اړتیا سره سم یې سمې کړئ.
 
 ## FAQ
 
-### د Access Mode له بدلولو وروسته Files له Admin Panel څخه ورکېږي؟
+### ایا د لاسرسي حالت له بدلولو وروسته فایلونه له ادارې پینل څخه ورکېږي؟
 
 نه.
 
-Access mode یوازې عادي public access اغېزمنوي. admin panel نه اغېزمنوي.
+د لاسرسي حالت یوازې عادي عامه لاسرسی اغېزمنوي. پر ادارې پینل اغېز نه لري.
 
-### ولې Public Gallery له Child Mode وروسته لږ Images وښودل؟
+### ولې عامه ګالري د ماشومانو حالت ته له بدلېدو وروسته لږ انځورونه ښيي؟
 
-Child mode یوازې General-rated files ته public display اجازه ورکوي. R12، R16 او R18 files filter کېږي.
+د ماشومانو حالت یوازې General درجې لرونکي فایلونه په عامه ډول ښيي. R12، R16 او R18 فایلونه فلټر کېږي.
 
-### Public URLs لا هم Adult Images پرانیستلی شي؟
+### ایا عامه URLونه لا هم د لویانو انځورونه پرانیستلای شي؟
 
-که اوسنی access mode هغه rating ته اجازه ورنه کړي، عادي public URLs اصلي image نه ورکوي.
+که اوسنی د لاسرسي حالت هغه درجه نه مني، عادي عامه URLونه اصلي انځور نه راستنوي.
 
-### Random Image API restricted images ورکولی شي؟
+### ایا د تصادفي انځور API محدود انځورونه راستنولای شي؟
 
 نه.
 
-random image API candidates د اوسني access mode له مخې filter کوي.
+د تصادفي انځور API نوماندان د اوسني لاسرسي حالت له مخې فلټر کوي.
 
-### د زړو Unrated Images سره څه کېږي؟
+### له زړو بې‌درجې انځورونو سره څه کېږي؟
 
-unrated images یوازې د moderation results د نشتوالي له امله په اتومات ډول نه پټېږي. وروسته یې ratings په admin panel کې بدلولای شئ.
+بې‌درجې انځورونه یوازې د اعتدال د پایلو د نشتوالي له امله په اتومات ډول نه پټېږي. وروسته یې درجه په ادارې پینل کې سمولای شئ.

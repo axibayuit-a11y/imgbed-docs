@@ -1,76 +1,76 @@
-# User Rate Limits
+# محدودیت نرخ آپلود کاربران
 
-User rate limits کنترل می‌کند regular users یا visitors هر چند وقت یک‌بار می‌توانند از homepage files upload کنند. این کار از abuse شدن public upload pages جلوگیری می‌کند.
+محدودیت نرخ کاربران کنترل می‌کند کاربران عادی یا بازدیدکنندگان هر چند وقت یک‌بار می‌توانند از صفحه اصلی فایل آپلود کنند. این کار از سوءاستفاده از صفحه‌های عمومی آپلود جلوگیری می‌کند.
 
-این feature فقط homepage uploads را تحت تأثیر قرار می‌دهد. Admin uploads و uploads انجام‌شده با API Tokens محدود به user rate limits نیستند.
+این قابلیت فقط روی آپلودهای صفحه اصلی اثر دارد. آپلودهای مدیر و آپلودهایی که با API Tokens انجام می‌شوند تحت محدودیت نرخ کاربران نیستند.
 
-## کجا Configure کنیم
+## محل پیکربندی
 
-admin panel را باز کنید و بروید به:
+پنل مدیریت را باز کنید و به مسیر زیر بروید:
 
 ```text
 System Settings -> Security Settings -> Upload Management -> User Rate Limits
 ```
 
-![User rate limit settings](../../image/other/用户频控截图.png)
+![تنظیمات محدودیت نرخ کاربران](../../image/other/用户频控截图.png)
 
-## Enable کردن Rate Limits
+## فعال کردن محدودیت نرخ
 
-بعد از روشن شدن `Enable Rate Limits`، ImgBed recent uploads را بر اساس uploader IP address track می‌کند.
+پس از روشن کردن «فعال کردن محدودیت نرخ»، ImgBed آپلودهای اخیر را بر اساس IP آپلودکننده دنبال می‌کند.
 
-Default values:
+مقادیر پیش‌فرض:
 
-| Setting | Default | Description |
+| تنظیم | پیش‌فرض | توضیح |
 | --- | --- | --- |
-| Detection window | 1.5 hours | upload records تا چه فاصله زمانی عقب‌تر شمرده شوند. |
-| Max file count | 20 | بیشترین تعداد files مجاز در detection window. |
-| Single file size limit | 20 MB | بیشترین اندازه یک file. |
-| Total upload size limit | 200 MB | بیشترین total upload size در detection window. |
+| بازه تشخیص | 1.5 ساعت | رکوردهای آپلود تا چه مدت قبل شمرده شوند. |
+| حداکثر تعداد فایل | 20 | بیشترین تعداد فایل مجاز در بازه تشخیص. |
+| محدودیت اندازه یک فایل | 20 MB | حداکثر اندازه یک فایل. |
+| محدودیت اندازه کل آپلود | 200 MB | حداکثر اندازه کل آپلود در بازه تشخیص. |
 
-مثلاً با window برابر 1.5 hours، 20 files، 20 MB برای هر file و 200 MB total، upload از همان IP وقتی هر کدام از limits رد شود blocked خواهد شد.
+برای مثال، با بازه 1.5 ساعت، 20 فایل، 20 MB برای هر فایل و 200 MB در کل، آپلودهای همان IP به‌محض عبور از هر محدودیت تنظیم‌شده مسدود می‌شوند.
 
-## Excluding File Types
+## مستثنی کردن نوع فایل‌ها
 
-`Excluded upload file types` جلوی upload شدن دسته‌های انتخابی file توسط regular users یا visitors را می‌گیرد.
+«نوع فایل‌های آپلود مستثنی‌شده» کاربران عادی یا بازدیدکنندگان را از آپلود دسته‌های انتخاب‌شده فایل منع می‌کند.
 
 دسته‌های موجود:
 
-| Type | Description |
+| نوع | توضیح |
 | --- | --- |
-| Images | jpg, png, webp, gif و image files مشابه |
-| Videos | mp4, webm, mov و video files مشابه |
-| Audio | mp3, flac, wav و audio files مشابه |
-| Documents | pdf, txt, md, docx و document files مشابه |
-| Other | files خارج از دسته‌های بالا، مثل zip, rar, exe, apk |
+| تصاویر | فایل‌های تصویری مانند jpg، png، webp، gif و موارد مشابه |
+| ویدئوها | فایل‌های ویدئویی مانند mp4، webm، mov و موارد مشابه |
+| صدا | فایل‌های صوتی مانند mp3، flac، wav و موارد مشابه |
+| اسناد | فایل‌های سند مانند pdf، txt، md، docx و موارد مشابه |
+| سایر | فایل‌های خارج از دسته‌های بالا، مانند zip، rar، exe، apk |
 
-به‌صورت پیش‌فرض هیچ type انتخاب نشده، یعنی allowed است.
+به‌صورت پیش‌فرض هیچ نوعی انتخاب نشده است، یعنی مجاز است.
 
-با click روی یک type، highlight می‌شود؛ یعنی آن type blocked است.
+با کلیک روی یک نوع، آن نوع برجسته می‌شود و یعنی مسدود است.
 
-اگر `Other` انتخاب شود، visitors که zip یا rar upload می‌کنند blocked می‌شوند و پیام unsupported file type می‌بینند.
+اگر «سایر» انتخاب شود، بازدیدکنندگانی که فایل zip یا rar آپلود می‌کنند مسدود می‌شوند و به آن‌ها گفته می‌شود این نوع فایل پشتیبانی نمی‌شود.
 
-## Block Messages
+## پیام‌های مسدودسازی
 
-وقتی limit فعال شود، users پیام متناظر می‌بینند:
+وقتی یک محدودیت فعال شود، کاربران پیام متناسب را می‌بینند:
 
-![Too frequent upload message](../../image/other/频繁报错提示.png)
+![پیام آپلود بیش از حد مکرر](../../image/other/频繁报错提示.png)
 
-| Scenario | Message Meaning |
+| وضعیت | معنی پیام |
 | --- | --- |
-| Single file too large | file خیلی بزرگ است و باید قبل از upload فشرده شود. |
-| File type blocked | این file type پشتیبانی نمی‌شود. آن را حذف کنید و دوباره تلاش کنید. |
-| Uploads too frequent | recent uploads بیش از حد frequent است و retry time نمایش داده می‌شود. |
-| Total size too high | recent total upload size زیاد است و retry time نمایش داده می‌شود. |
+| یک فایل بیش از حد بزرگ است | فایل بیش از حد بزرگ است و باید پیش از آپلود فشرده شود. |
+| نوع فایل مسدود است | این نوع فایل پشتیبانی نمی‌شود. آن را حذف کنید و دوباره تلاش کنید. |
+| آپلودها بیش از حد مکرر هستند | آپلودهای اخیر بیش از حد مکرر هستند و زمان تلاش دوباره نمایش داده می‌شود. |
+| اندازه کل بیش از حد زیاد است | اندازه کل آپلودهای اخیر بیش از حد زیاد است و زمان تلاش دوباره نمایش داده می‌شود. |
 
-## چه زمانی Enable کنیم
+## چه زمانی آن را فعال کنید
 
-اگر upload homepage شما public accessible است، user rate limits را enable کنید.
+اگر صفحه اصلی آپلود شما عمومی است، محدودیت نرخ کاربران را فعال کنید.
 
 دلایل رایج:
 
-- نگران scripted bulk uploads هستید.
-- می‌خواهید visitor uploads بزرگ را محدود کنید.
-- می‌خواهید regular users فقط images upload کنند، نه archives یا installers.
-- می‌خواهید public upload باز بماند اما resource usage کنترل شود.
+- نگران آپلودهای انبوه اسکریپتی هستید.
+- می‌خواهید آپلودهای بزرگ بازدیدکنندگان را محدود کنید.
+- می‌خواهید کاربران عادی فقط تصویر آپلود کنند، نه آرشیو یا فایل نصب.
+- می‌خواهید آپلود عمومی در دسترس بماند، اما مصرف منابع کنترل شود.
 
-اگر site فقط برای خودتان است، یا فقط administrators upload می‌کنند، می‌توانید این گزینه را disabled بگذارید.
+اگر سایت فقط برای خودتان است، یا فقط مدیران می‌توانند آپلود کنند، می‌توانید این گزینه را غیرفعال بگذارید.

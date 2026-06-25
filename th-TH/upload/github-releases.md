@@ -1,69 +1,69 @@
-# เพิ่ม GitHub Releases Channel
+# เพิ่มช่องทาง GitHub Releases
 
 ## สิ่งที่ต้องเตรียมก่อนเริ่ม
 
 ต้องใช้เพียงสามอย่าง:
 
-| Requirement | Purpose |
+| ข้อกำหนด | วัตถุประสงค์ |
 | --- | --- |
-| GitHub account | ใช้ generate access token และเป็น owner ของ repository |
-| GitHub Access Token | ImgBed ใช้ access GitHub API, create releases และ upload files |
+| GitHub account | ใช้สร้าง access token และเป็น owner ของ repository |
+| GitHub Access Token | ImgBed ใช้เข้าถึง GitHub API, สร้าง releases และอัปโหลดไฟล์ |
 | Repository name | ใส่เฉพาะ repository name ก็ได้ เช่น `image` |
 
 ## ขั้นตอนตั้งค่า
 
-### Step 1: Sign in เข้า GitHub และสร้าง Access Token
+### ขั้นตอนที่ 1: เข้าสู่ระบบ GitHub และสร้าง Access Token
 
-1. Sign in เข้า GitHub
+1. เข้าสู่ระบบ GitHub
 2. คลิก avatar มุมขวาบนแล้วเปิด `Settings`
-3. เปิด `Developer settings` จาก left sidebar
+3. เปิด `Developer settings` จากแถบด้านซ้าย
 4. เปิด `Personal access tokens`
 5. เปิด `Tokens (classic)`
 6. คลิก `Generate new token (classic)`
 7. ตั้งชื่อ token ให้จำง่าย
-8. เลือก expiration date ตามแนวทาง maintenance ของคุณ
+8. เลือก expiration date ตามแนวทางการดูแลของคุณ
 9. เลือก scopes `repo` และ `workflow`
-10. Copy และ save token ทันทีหลังสร้างเสร็จ
+10. คัดลอกและบันทึก token ทันทีหลังสร้างเสร็จ
 
-![Add GitHub permissions](../../image/upload/github-releases/添加github权限.png)
+![เพิ่ม GitHub permissions](../../image/upload/github-releases/添加github权限.png)
 
-## Step 2: ใส่ GitHub Releases Channel ใน ImgBed
+## ขั้นตอนที่ 2: ใส่ช่องทาง GitHub Releases ใน ImgBed
 
-หลังเลือก `GitHub Releases` ใน Upload Settings ให้กรอก fields ดังนี้:
+หลังเลือก `GitHub Releases` ใน Upload Settings ให้กรอกฟิลด์ดังนี้:
 
-| UI Field | ใส่อะไร |
+| ฟิลด์ UI | ใส่อะไร |
 | --- | --- |
 | Channel name | ชื่อที่คุณตั้งเอง เช่น `GitHubPrimary` |
 | Access Token | GitHub Personal Access Token ที่เพิ่งสร้าง |
-| Repository name | Repo name สั้น ๆ เช่น `image` หรือ full path เช่น `username/image` |
+| Repository name | repo name แบบสั้น เช่น `image` หรือพาธแบบเต็ม เช่น `username/image` |
 | Private repository | เปิดหรือปิดตามความต้องการ |
-| Remark | Optional เช่น `Primary upload channel` |
+| Remark | ไม่บังคับ เช่น `Primary upload channel` |
 
-![Fill in the GitHub channel configuration](../../image/upload/github-releases/填写github渠道配置.png)
+![กรอกการกำหนดค่าช่องทาง GitHub](../../image/upload/github-releases/填写github渠道配置.png)
 
-## Step 3: Save Channel
+## ขั้นตอนที่ 3: บันทึกช่องทาง
 
 กรอกครบแล้วคลิก Save
 
-System จะจัดการรายละเอียดเหล่านี้:
+ระบบจะจัดการรายละเอียดเหล่านี้:
 
-| System Behavior | Description |
+| พฤติกรรมของระบบ | คำอธิบาย |
 | --- | --- |
-| Short repository name | ImgBed ระบุ current GitHub account แล้วขยายค่าเป็น full repository path |
+| Short repository name | ImgBed ระบุ GitHub account ปัจจุบัน แล้วขยายค่าเป็นพาธ repository แบบเต็ม |
 | Full repository path | ImgBed ใช้ path `username/repository` ตามที่ใส่มาแบบตรงตัว |
-| Repository check | ถ้าใช้ current personal account path ImgBed จะสร้าง repository อัตโนมัติเมื่อยังไม่มี ถ้าใส่ full path เอง ImgBed จะใช้ path นั้นโดยตรง |
+| การตรวจสอบ repository | ถ้าใช้พาธของ personal account ปัจจุบัน ImgBed จะสร้าง repository อัตโนมัติเมื่อยังไม่มี ถ้าใส่พาธแบบเต็มเอง ImgBed จะใช้พาธนั้นโดยตรง |
 | Public/private state | Repository visibility จะ sync ตาม switch ปัจจุบัน |
 
-## Quick Checklist
+## รายการตรวจสอบด่วน
 
 GitHub Releases ทำงานตาม flow นี้:
 
 ```text
-Sign in เข้า GitHub
--> สร้าง Access Token
--> กลับไป ImgBed แล้วใส่ token และ repository name
+Sign in to GitHub
+-> Create an Access Token
+-> Return to ImgBed and enter the token and repository name
 -> Save
--> ถ้าใส่แค่ repo name ImgBed จะเติม current username ให้อัตโนมัติ
--> ถ้าใส่ username/repo ImgBed จะใช้ตามนั้น
--> Upload test image
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

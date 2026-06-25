@@ -1,14 +1,14 @@
 # Indice distribuito federato
 
-L'indice distribuito federato permette a più siti ImgBed di condividere tra loro liste di file.
+L'indice distribuito federato permette a più siti ImgBed di condividere tra loro elenchi di file.
 
 In parole semplici:
 
 - Puoi condividere cartelle selezionate del tuo sito con altri.
-- Puoi unirti a un altro nodo e sincronizzare nel tuo pannello admin la lista file condivisa da quel nodo.
-- I file federati servono soprattutto per navigare, cercare e aprire link. Non vengono ricaricati nel tuo storage.
+- Puoi unirti a un altro nodo e sincronizzare nel tuo pannello di amministrazione l'elenco dei file condiviso da quel nodo.
+- I file federati servono soprattutto per la consultazione, la ricerca e l'apertura dei link. Non vengono ricaricati nel tuo storage.
 
-## Dove configurare
+## Dove configurarlo
 
 Apri:
 
@@ -22,7 +22,7 @@ La pagina ha tre schede:
 
 | Scheda | Scopo |
 | --- | --- |
-| Local Node | Abilita il tuo nodo, conferma il dominio pubblico, seleziona cartelle condivise e aggiorna l'indice in uscita |
+| Local Node | Abilita il tuo nodo, conferma il dominio pubblico, seleziona le cartelle condivise e aggiorna l'indice in uscita |
 | Nodes I Joined | Gestisce altri nodi ImgBed a cui ti sei unito |
 | Nodes Joining Me | Gestisce richieste di altri che vogliono unirsi al tuo nodo |
 
@@ -32,11 +32,11 @@ La pagina ha tre schede:
 2. Attiva `Enable`.
 3. Seleziona le cartelle da condividere in `Sync folders`.
 4. Clicca `Update Outbound Index`.
-5. Se ImgBed rileva un cambio dominio, conferma che il dominio corrente sia quello corretto prima di continuare.
+5. Se ImgBed rileva una modifica del dominio, conferma che il dominio corrente sia corretto prima di continuare.
 
 Puoi selezionare più cartelle di sincronizzazione.
 
-Se la lista è vuota, vengono condivise tutte le cartelle.
+Se l'elenco delle cartelle di sincronizzazione è vuoto, vengono condivise tutte le cartelle.
 
 ## Local Node
 
@@ -50,7 +50,7 @@ Se cambi dominio in seguito, l'aggiornamento dell'indice chiederà di nuovo conf
 
 ### Sync Folders
 
-Le cartelle di sincronizzazione decidono quali file condividere con i nodi federati.
+Le cartelle di sincronizzazione determinano quali file vengono condivisi con i nodi della federazione.
 
 Per esempio, se selezioni solo:
 
@@ -59,18 +59,18 @@ Per esempio, se selezioni solo:
 /2/
 ```
 
-gli altri nodi vedranno solo i file in quelle due directory.
+gli altri nodi potranno vedere solo i file presenti in quelle due directory.
 
 ### Update Outbound Index
 
-Aggiorna la lista file che gli altri nodi possono sincronizzare da te.
+Aggiorna l'elenco dei file che gli altri nodi possono sincronizzare da te.
 
 Usalo quando:
 
-- abiliti la federazione per la prima volta.
-- carichi file che vuoi condividere.
-- cambi cartelle di sincronizzazione.
-- cambi dominio pubblico e devi confermarlo.
+- abiliti la federazione per la prima volta;
+- carichi file che vuoi condividere;
+- modifichi le cartelle di sincronizzazione;
+- modifichi il dominio pubblico e devi confermarlo.
 
 ## Nodes I Joined
 
@@ -85,17 +85,17 @@ Usalo quando:
 3. Clicca `Request to Join`.
 4. Attendi che l'altro proprietario approvi dal suo pannello admin.
 
-Dopo l'approvazione, lo stato del nodo diventa approved.
+Dopo l'approvazione, lo stato del nodo diventa approvato.
 
 ### Update Inbound Index
 
-`Update Inbound Index` sincronizza le liste file dai nodi a cui ti sei unito.
+`Update Inbound Index` sincronizza gli elenchi dei file dai nodi a cui ti sei unito.
 
 Usalo quando:
 
-- l'altro proprietario ha appena approvato la tua richiesta.
-- l'altro proprietario ti comunica che i contenuti condivisi sono cambiati.
-- vuoi aggiornare tutte le liste federate unite.
+- l'altro proprietario ha appena approvato la tua richiesta;
+- l'altro proprietario ti comunica che i contenuti condivisi sono stati aggiornati;
+- vuoi aggiornare tutti gli elenchi dei file federati dei nodi a cui ti sei unito.
 
 Per aggiornare un solo nodo, clicca `Update Index` sulla sua scheda.
 
@@ -116,20 +116,20 @@ Dopo l'annullamento, l'indice federato di quel nodo viene rimosso dal tuo sito l
 ### Generare un link di invito
 
 1. Assicurati che il nodo locale sia abilitato.
-2. Clicca almeno una volta `Update Outbound Index`, così ImgBed conferma il dominio pubblico.
+2. Clicca almeno una volta `Update Outbound Index`, in modo che ImgBed confermi il dominio pubblico.
 3. Apri `Nodes Joining Me`.
 4. Clicca `Reset Invitation Link`.
 5. Copia il link di invito e invialo all'altro proprietario.
 
 Se il link di invito è vuoto, di solito il dominio pubblico non è ancora stato confermato. Torna a `Local Node` e clicca `Update Outbound Index`.
 
-### Gestire richieste di accesso
+### Gestire le richieste di accesso
 
 Quando qualcuno invia una richiesta, compare nella lista `Nodes Joining Me`.
 
 | Azione | Significato |
 | --- | --- |
-| Approve | Permette all'altro nodo di sincronizzare la tua lista file condivisa |
+| Approve | Permette all'altro nodo di sincronizzare il tuo elenco dei file condiviso |
 | Reject | Rifiuta la richiesta |
 | Delete | Rimuove un record concluso |
 | Check Status | Controlla se l'altra parte mantiene ancora la relazione |
@@ -140,35 +140,35 @@ Dopo l'approvazione, l'altra parte deve comunque cliccare `Update Inbound Index`
 
 ## Messaggi
 
-Dopo l'approvazione di una relazione, clicca `Message` sulla scheda nodo.
+Dopo l'approvazione di una relazione, clicca `Message` nella scheda del nodo.
 
-I messaggi servono solo per comunicare sulla relazione federata. Non cambiano file, tag, directory o permessi.
+I messaggi servono solo per comunicare in merito alla relazione di federazione. Non modificano file, tag, directory o autorizzazioni.
 
 ![Messaggi](../../image/other/联盟图/留言功能.png)
 
-## Visualizzare file federati
+## Visualizzare i file federati
 
-Dopo la sincronizzazione, torna alla lista file admin.
+Dopo il completamento della sincronizzazione, torna all'elenco dei file nel pannello di amministrazione.
 
-In alto nella pagina puoi passare tra file locali e file federati. Nei file federati puoi sfogliare i contenuti sincronizzati.
+Nella parte superiore della pagina puoi passare dai file locali ai file federati. Nella vista dei file federati puoi sfogliare i contenuti sincronizzati.
 
-I file federati servono per visualizzare, cercare, vedere anteprime e copiare link. Non sono file locali: non puoi spostarli, eliminarli, ritaggarli o farne backup dal tuo sito.
+I file federati servono soprattutto per visualizzare, cercare, vedere anteprime e copiare link. Non sono file locali, quindi non puoi spostarli, eliminarli, modificare i loro tag o eseguirne il backup dal tuo sito.
 
 ![File federati in admin](../../image/other/联盟图/联盟管理显示效果图.png)
 
-## FAQ
+## Domande frequenti
 
-### Perché mi chiede di fare di nuovo richiesta perché manca il record relazione?
+### Perché mi viene chiesto di inviare di nuovo la richiesta perché non esiste un record della relazione?
 
-Di solito significa che l'altra parte ti ha eliminato e ha rimosso il record. La relazione non è più trovabile. Invia una nuova richiesta.
+Di solito significa che l'altra parte ti ha eliminato e ha rimosso il record, quindi la relazione non può più essere trovata. Invia una nuova richiesta di adesione.
 
 ![Nuova richiesta senza record relazione](../../image/other/联盟图/无关系记录重新申请.png)
 
-### Perché non vedo file dopo l'unione?
+### Perché non vedo file dopo essermi unito?
 
 Controlla:
 
-1. L'altro proprietario ha approvato la richiesta.
+1. L'altro proprietario ha approvato la tua richiesta.
 2. L'altro proprietario ha cliccato `Update Outbound Index`.
 3. Tu hai cliccato `Update Inbound Index`.
 4. Le cartelle di sincronizzazione dell'altro proprietario includono le directory che vuole condividere.
@@ -179,9 +179,9 @@ Se stai aprendo il pannello admin dal dominio di produzione, conferma e continua
 
 Se stai usando un indirizzo temporaneo, annulla, riapri il pannello dal dominio di produzione e riprova.
 
-### Cosa significa lista Sync Folders vuota?
+### Cosa significa un elenco vuoto delle cartelle di sincronizzazione?
 
-Una lista vuota significa che tutte le cartelle sono condivise.
+Un elenco vuoto delle cartelle di sincronizzazione significa che tutte le cartelle sono condivise.
 
 Per condividere solo alcune directory, selezionale manualmente.
 

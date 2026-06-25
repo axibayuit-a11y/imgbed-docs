@@ -1,165 +1,165 @@
-# Image Moderation اور Access Mode
+# تصویری مواد کی جانچ اور رسائی موڈ
 
-Image moderation uploaded images کو age ratings دیتی ہے۔ Access mode یہ کنٹرول کرتا ہے کہ public access کے ذریعے کون سی ratings دکھائی جا سکتی ہیں۔
+تصویری مواد کی جانچ اپ لوڈ کی گئی تصاویر کو عمر کی درجہ بندیاں دیتی ہے۔ رسائی موڈ یہ کنٹرول کرتا ہے کہ عوامی رسائی کے ذریعے کون سی درجہ بندیاں دکھائی جا سکتی ہیں۔
 
-یہ public gallery، public file URLs، اور random image API کو متاثر کرتا ہے۔ admin panel محدود نہیں ہوتا۔ administrators پھر بھی تمام files دیکھ اور manage کر سکتے ہیں۔
+یہ عوامی گیلری، عوامی فائل URLs، اور بے ترتیب تصویر API پر اثر انداز ہوتا ہے۔ یہ ایڈمن پینل کو محدود نہیں کرتا۔ منتظمین اب بھی تمام فائلیں دیکھ اور منظم کر سکتے ہیں۔
 
-## کہاں Configure کریں
+## کہاں ترتیب دیں
 
-admin panel کھولیں، پھر جائیں:
+ایڈمن پینل کھولیں، پھر یہاں جائیں:
 
 ```text
 System Settings -> Security Settings -> Upload Management -> Image Moderation
 ```
 
-main settings یہ ہیں:
+مرکزی ترتیبات یہ ہیں:
 
-- Access mode
-- Enable moderation
-- Moderation provider
+- رسائی موڈ
+- مواد کی جانچ فعال کریں
+- مواد کی جانچ فراہم کنندہ
 
-## Access Mode کیا کرتا ہے
+## رسائی موڈ کیا کرتا ہے
 
-Access mode طے کرتا ہے کہ کون سی age ratings public طور پر دکھائی جا سکتی ہیں۔
+رسائی موڈ طے کرتا ہے کہ کون سی عمر درجہ بندیاں عوامی طور پر دکھائی جا سکتی ہیں۔
 
-موجودہ modes:
+موجودہ موڈز:
 
-| Access Mode | Publicly Visible Ratings |
+| رسائی موڈ | عوامی طور پر دکھائی جانے والی درجہ بندیاں |
 | --- | --- |
-| Adult mode | General, R12, R16, R18 |
-| Youth mode | General, R12, R16 |
-| Teen mode | General, R12 |
-| Child mode | صرف General |
+| بالغ موڈ | عمومی، R12، R16، R18 |
+| نوجوان موڈ | عمومی، R12، R16 |
+| کم عمر نوجوان موڈ | عمومی، R12 |
+| بچہ موڈ | صرف عمومی |
 
-default Adult mode ہے۔
+طے شدہ موڈ بالغ موڈ ہے۔
 
-private sites یا mature content والی sites کے لیے Adult mode مناسب ہو سکتا ہے۔ زیادہ conservative public gallery کے لیے Youth، Teen، یا Child mode منتخب کریں۔
+نجی سائٹس یا بالغ مواد والی سائٹس کے لیے بالغ موڈ مناسب ہو سکتا ہے۔ زیادہ محتاط عوامی گیلری کے لیے نوجوان، کم عمر نوجوان، یا بچہ موڈ منتخب کریں۔
 
-## Moderation Enable کرنے سے کیا ہوتا ہے
+## مواد کی جانچ فعال کرنے کا اثر
 
-moderation enabled ہو تو ImgBed upload کے دوران selected moderation provider کو call کرتا ہے اور detected age rating محفوظ کرتا ہے۔
+جب مواد کی جانچ فعال ہوتی ہے تو ImgBed اپ لوڈ کے دوران منتخب مواد کی جانچ فراہم کنندہ کو کال کرتا ہے اور شناخت شدہ عمر درجہ بندی محفوظ کرتا ہے۔
 
-main ratings:
+مرکزی درجہ بندیاں:
 
-| Rating | Meaning |
+| درجہ بندی | مطلب |
 | --- | --- |
-| General | safe public content |
-| R12 | ہلکا sensitive content |
-| R16 | درمیانے درجے کا sensitive content |
-| R18 | adult content |
+| عمومی | محفوظ عوامی مواد |
+| R12 | قدرے حساس مواد |
+| R16 | درمیانے درجے کا حساس مواد |
+| R18 | بالغ مواد |
 
-public access کا فیصلہ کرتے وقت moderation result استعمال ہوتا ہے۔
+عوامی رسائی کا فیصلہ کرتے وقت مواد کی جانچ کا نتیجہ استعمال کیا جاتا ہے۔
 
-اگر moderation enabled نہیں، یا old files کے پاس rating نہیں، تو وہ files unrated سمجھی جاتی ہیں۔ صرف rating نہ ہونے کی وجہ سے unrated files خودکار طور پر public gallery یا random image API سے remove نہیں ہوتیں۔
+اگر مواد کی جانچ فعال نہیں ہے، یا پرانی فائلوں کی کوئی درجہ بندی موجود نہیں، تو ان فائلوں کو غیر درجہ بند سمجھا جاتا ہے۔ صرف درجہ بندی نہ ہونے کی وجہ سے غیر درجہ بند فائلیں خود بخود عوامی گیلری یا بے ترتیب تصویر API سے نہیں ہٹائی جاتیں۔
 
-## Moderation Provider منتخب کرنا
+## مواد کی جانچ فراہم کنندہ منتخب کرنا
 
-available providers میں شامل ہیں:
+دستیاب فراہم کنندگان میں شامل ہیں:
 
 - moderatecontent.com
 - nsfwjs
 - Sightengine
 
-ہر provider کی requirements مختلف ہیں:
+ہر فراہم کنندہ کی ضروریات مختلف ہیں:
 
-- moderatecontent.com عموماً API Key require کرتا ہے۔
-- nsfwjs عموماً API endpoint URL require کرتا ہے۔
-- Sightengine API user اور API secret require کرتا ہے۔
+- moderatecontent.com عموماً API Key مانگتا ہے۔
+- nsfwjs عموماً API رسائی نقطہ URL مانگتا ہے۔
+- Sightengine کو API صارف اور API خفیہ کلید درکار ہوتے ہیں۔
 
-اپنے account، availability، اور detection quality کے مطابق provider منتخب کریں۔ جب moderation enabled اور صحیح configured ہو، ImgBed upload کے دوران image rating لکھنے کی کوشش کرتا ہے۔
+اپنے اکاؤنٹ، دستیابی، اور شناخت کے معیار کے مطابق انتخاب کریں۔ جب تک مواد کی جانچ فعال اور درست طور پر ترتیب دی گئی ہو، ImgBed اپ لوڈ کے دوران تصویر کی درجہ بندی لکھنے کی کوشش کرتا ہے۔
 
-## Public Gallery پر اثر
+## عوامی گیلری پر اثر
 
-public gallery access mode کے مطابق files filter کرتی ہے۔
+عوامی گیلری رسائی موڈ کے مطابق فائلیں فلٹر کرتی ہے۔
 
 مثالیں:
 
-- Adult mode: R18 images دکھ سکتی ہیں۔
-- Youth mode: R18 images hidden ہوتی ہیں۔
-- Teen mode: R16 اور R18 images hidden ہوتی ہیں۔
-- Child mode: صرف General images دکھائی جاتی ہیں۔
+- بالغ موڈ: R18 تصاویر ظاہر ہو سکتی ہیں۔
+- نوجوان موڈ: R18 تصاویر چھپا دی جاتی ہیں۔
+- کم عمر نوجوان موڈ: R16 اور R18 تصاویر چھپا دی جاتی ہیں۔
+- بچہ موڈ: صرف عمومی تصاویر دکھائی جاتی ہیں۔
 
-یہ صرف normal public access کو متاثر کرتا ہے۔ admin panel پھر بھی تمام files دکھاتا ہے۔
+یہ صرف معمول کی عوامی رسائی کو متاثر کرتا ہے۔ ایڈمن پینل اب بھی تمام فائلیں دکھاتا ہے۔
 
-## Public File URLs پر اثر
+## عوامی فائل URLs پر اثر
 
-Public file URLs وہ direct image links ہیں جو visitors کھولتے ہیں۔
+عوامی فائل URLs وہ براہ راست تصویری لنکس ہیں جو وزٹرز کھولتے ہیں۔
 
-اگر file rating current access mode میں allowed ہے تو ImgBed original image واپس کرتا ہے۔
+اگر فائل کی درجہ بندی موجودہ رسائی موڈ میں اجازت یافتہ ہو تو ImgBed اصل تصویر واپس کرتا ہے۔
 
-اگر rating allowed level سے اوپر ہے، تو normal public access original image واپس نہیں کرتا۔ اس کے بجائے ImgBed configured blocked result یا alternative blocked image واپس کرتا ہے۔
+اگر درجہ بندی اجازت یافتہ سطح سے اوپر ہو تو معمول کی عوامی رسائی اصل تصویر واپس نہیں کرتی۔ اس کے بجائے ImgBed ترتیب شدہ بلاک شدہ نتیجہ یا متبادل تصویر واپس کرتا ہے۔
 
 مثال:
 
-- current mode Child mode ہے۔
-- ایک image R18 rated ہے۔
-- visitor public URL directly کھولتا ہے۔
-- ImgBed اس visitor کو R18 original image واپس نہیں کرتا۔
+- موجودہ موڈ بچہ موڈ ہے۔
+- ایک تصویر کو R18 درجہ دیا گیا ہے۔
+- ایک وزٹر عوامی URL براہ راست کھولتا ہے۔
+- ImgBed اس وزٹر کو R18 اصل تصویر واپس نہیں کرتا۔
 
-![Restricted file image](../../image/Safety/文件受限图.png)
+![محدود فائل تصویر](../../image/Safety/文件受限图.png)
 
-admin panel میں files دیکھنے والے administrators اس restriction سے متاثر نہیں ہوتے۔
+ایڈمن پینل میں فائلیں دیکھنے والے منتظمین اس پابندی سے متاثر نہیں ہوتے۔
 
-## Random Image API پر اثر
+## بے ترتیب تصویر API پر اثر
 
-random image API بھی candidate pool کو access mode کے مطابق filter کرتی ہے۔
+بے ترتیب تصویر API بھی اپنے امیدوار فائل مجموعے کو رسائی موڈ کے مطابق فلٹر کرتا ہے۔
 
-Child mode میں random images صرف General-rated files سے منتخب ہوتی ہیں۔
+بچہ موڈ میں بے ترتیب تصاویر صرف عمومی درجہ بند فائلوں سے منتخب ہوتی ہیں۔
 
-Youth mode میں random images General، R12، اور R16 files سے آ سکتی ہیں، لیکن R18 files سے نہیں۔
+نوجوان موڈ میں بے ترتیب تصاویر عمومی، R12، اور R16 فائلوں سے آ سکتی ہیں، لیکن R18 فائلوں سے نہیں۔
 
-اس سے random image API public gallery restrictions کو bypass نہیں کر سکتی۔
+یہ بے ترتیب تصویر API کو عوامی گیلری کی پابندیوں کو نظر انداز کرنے سے روکتا ہے۔
 
-## List Rules سے تعلق
+## فہرست قواعد کے ساتھ تعلق
 
-Access mode واحد public access rule نہیں۔ یہ allow/block list rules کے ساتھ مل کر کام کرتا ہے۔
+رسائی موڈ واحد عوامی رسائی قاعدہ نہیں ہے۔ یہ اجازت/بلاک فہرست قواعد کے ساتھ مل کر کام کرتا ہے۔
 
 سادہ الفاظ میں:
 
-- Allowlisted content پہلے public ہوتا ہے۔
-- Blocklisted content regular visitors directly نہیں دیکھ سکتے۔
-- جو content کسی list میں نہیں، اسے پھر access mode کے against چیک کیا جاتا ہے۔
+- اجازت فہرست میں موجود مواد کو پہلے عوامی سمجھا جاتا ہے۔
+- بلاک فہرست میں موجود مواد کو عام وزٹرز براہ راست نہیں دیکھ سکتے۔
+- جو مواد کسی بھی فہرست میں نہیں ہے، اسے پھر رسائی موڈ کے مطابق جانچا جاتا ہے۔
 
-اگر image age rating اور list rules دونوں سے restricted ہو، regular visitors پھر بھی original file directly نہیں دیکھ سکتے۔
+اگر کوئی تصویر عمر درجہ بندی اور فہرست قواعد دونوں سے محدود ہو تو عام وزٹرز پھر بھی اصل فائل براہ راست نہیں دیکھ سکتے۔
 
-## Recommended Settings
+## تجویز کردہ ترتیبات
 
-Public sites کے لیے:
+عوامی سائٹس کے لیے:
 
-- moderation enable کریں۔
-- site کے audience کے مطابق access mode منتخب کریں۔
-- all-age visitors کے لیے Child mode یا Teen mode استعمال کریں۔
-- اگر mature content public نہیں دکھانا تو Adult mode سے بچیں۔
-- admin panel میں file ratings review کریں اور ضرورت ہو تو manually adjust کریں۔
+- مواد کی جانچ فعال کریں۔
+- ایسا رسائی موڈ منتخب کریں جو سائٹ کے سامعین سے مطابقت رکھتا ہو۔
+- ہر عمر کے وزٹرز کے لیے بچہ موڈ یا کم عمر نوجوان موڈ استعمال کریں۔
+- اگر آپ بالغ مواد عوامی طور پر نہیں دکھانا چاہتے تو بالغ موڈ سے گریز کریں۔
+- ایڈمن پینل میں فائل درجہ بندیاں دیکھیں اور ضرورت پڑنے پر دستی طور پر درست کریں۔
 
-Private یا personal sites کے لیے:
+نجی یا ذاتی سائٹس کے لیے:
 
-- Adult mode عموماً ٹھیک ہے۔
-- فائدہ ہو تو moderation enable کریں۔
-- ضرورت کے مطابق admin panel میں ratings review اور adjust کریں۔
+- بالغ موڈ عموماً مناسب ہے۔
+- مفید ہو تو مواد کی جانچ فعال کریں۔
+- ایڈمن پینل میں درجہ بندیاں دیکھیں اور ضرورت کے مطابق درست کریں۔
 
-## FAQ
+## عمومی سوالات
 
-### Access Mode بدلنے کے بعد Files Admin Panel سے غائب ہوں گی؟
-
-نہیں۔
-
-Access mode صرف normal public access کو متاثر کرتا ہے۔ admin panel پر اثر نہیں پڑتا۔
-
-### Child Mode پر switch کرنے کے بعد Public Gallery میں Images کم کیوں ہو گئیں؟
-
-Child mode صرف General-rated files کو public دکھاتا ہے۔ R12، R16، اور R18 files filter ہو جاتی ہیں۔
-
-### کیا Public URLs Adult Images کھول سکتی ہیں؟
-
-اگر current access mode اس rating کو allow نہیں کرتا، تو normal public URLs original image واپس نہیں کرتیں۔
-
-### کیا Random Image API Restricted Images واپس کر سکتی ہے؟
+### کیا رسائی موڈ بدلنے کے بعد فائلیں ایڈمن پینل سے غائب ہو جائیں گی؟
 
 نہیں۔
 
-random image API candidates کو current access mode کے مطابق filter کرتی ہے۔
+رسائی موڈ صرف معمول کی عوامی رسائی کو متاثر کرتا ہے۔ یہ ایڈمن پینل کو متاثر نہیں کرتا۔
 
-### پرانی Unrated Images کا کیا ہوگا؟
+### بچہ موڈ پر منتقل ہونے کے بعد عوامی گیلری میں کم تصاویر کیوں دکھائی دیں؟
 
-Unrated images صرف اس لیے خودکار طور پر hidden نہیں ہوتیں کہ ان کے پاس moderation results نہیں ہیں۔ آپ بعد میں admin panel میں ان کی ratings adjust کر سکتے ہیں۔
+بچہ موڈ صرف عمومی درجہ بند فائلوں کو عوامی طور پر دکھانے کی اجازت دیتا ہے۔ R12، R16، اور R18 فائلیں فلٹر ہو جاتی ہیں۔
+
+### کیا عوامی URLs اب بھی بالغ تصاویر کھول سکتے ہیں؟
+
+اگر موجودہ رسائی موڈ اس درجہ بندی کی اجازت نہیں دیتا تو معمول کے عوامی URLs اصل تصویر واپس نہیں کرتے۔
+
+### کیا بے ترتیب تصویر API محدود تصاویر واپس کر سکتا ہے؟
+
+نہیں۔
+
+بے ترتیب تصویر API موجودہ رسائی موڈ کے مطابق امیدوار فائلیں فلٹر کرتا ہے۔
+
+### پرانی غیر درجہ بند تصاویر کا کیا ہوتا ہے؟
+
+غیر درجہ بند تصاویر صرف مواد کی جانچ کے نتائج نہ ہونے کی وجہ سے خود بخود نہیں چھپائی جاتیں۔ آپ بعد میں ایڈمن پینل میں ان کی درجہ بندی درست کر سکتے ہیں۔

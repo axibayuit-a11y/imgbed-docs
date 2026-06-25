@@ -112,7 +112,7 @@ Jak vyplnit `Tenant ID`:
 1. V ImgBed klikněte na `Get Token`.
 2. Přihlaste se k účtu Microsoft, který chcete připojit.
 3. Potvrďte autorizaci.
-4. Callback stránka zobrazí `Refresh Token`.
+4. Stránka callbacku zobrazí `Refresh Token`.
 5. Zkopírujte ho.
 6. Vraťte se do ImgBed a vložte ho do pole `Refresh Token`.
 
@@ -125,24 +125,24 @@ Po vyplnění všech polí kanál uložte.
 ## Rychlý postup
 
 ```text
-Otevřete portal.azure.com
--> Vyhledejte Microsoft Entra ID
--> Otevřete App registrations
--> Zaregistrujte novou aplikaci
--> Vyplňte Name / Supported account types / Web redirect URI
--> Zaregistrujte
--> Zkopírujte Application (client) ID
--> Zkontrolujte callback URL v Authentication
--> Vytvořte Client Secret v Certificates & secrets
--> Přidejte oprávnění v API permissions
--> Zadejte Client ID / Client Secret / Tenant ID do ImgBed
--> Klikněte Get Token
--> Zkopírujte Refresh Token z callback stránky
--> Vložte ho do ImgBed a uložte
+Open portal.azure.com
+-> Search for Microsoft Entra ID
+-> Open App registrations
+-> Register a new app
+-> Fill Name / Supported account types / Web redirect URI
+-> Register
+-> Copy Application (client) ID
+-> Check the callback URL in Authentication
+-> Create a Client Secret in Certificates & secrets
+-> Add permissions in API permissions
+-> Fill Client ID / Client Secret / Tenant ID into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
-## Reference
+## Odkazy
 
 1. Registrace aplikace Microsoft Entra: https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
-2. Microsoft identity platform authorization code flow: https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow
-3. Microsoft Graph user authentication: https://learn.microsoft.com/en-us/graph/auth-v2-user
+2. Tok autorizačního kódu Microsoft identity platform: https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow
+3. Ověřování uživatele Microsoft Graph: https://learn.microsoft.com/en-us/graph/auth-v2-user

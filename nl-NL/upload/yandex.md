@@ -95,14 +95,14 @@ Sla het kanaal op zodra alle velden zijn ingevuld.
 
 ```text
 Open Yandex OAuth Console
--> Maak een app
--> Voeg https://your-domain.com/api/oauth/yandex/callback toe
--> Controleer Yandex Disk-rechten
--> Kopieer Client ID en Client Secret
--> Vul Client ID / Client Secret in ImgBed in
--> Klik Get Token
--> Kopieer het Refresh Token van de callbackpagina
--> Plak het terug in ImgBed en sla op
+-> Create an app
+-> Add https://your-domain.com/api/oauth/yandex/callback
+-> Confirm Yandex Disk permissions
+-> Copy Client ID and Client Secret
+-> Fill Client ID / Client Secret into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## Referenties

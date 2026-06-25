@@ -1,16 +1,16 @@
-# د Upload Settings
+# د د اپلوډ تنظیمات
 
-Upload Settings د ImgBed له خپلو storage channels سره نښلوي. کله چې channel configure شي، uploaded images او files هغه service ته خوندي کېږي چې تاسې ټاکلی وي. ImgBed بیا access links، file records، previews، public gallery، random image API، WebDAV access او اړوند workflows manage کوي.
+د اپلوډ تنظیمات د ImgBed له خپلو زېرمه چینلs سره نښلوي. کله چې چینل تنظیم شي، اپلوډ شوي انځورونه او فایلونه هغه خدمت ته خوندي کېږي چې تاسې ټاکلی وي. ImgBed بیا لاسرسی links، فایل records، previews، public gallery، random image API، WebDAV لاسرسی او اړوند workflows manage کوي.
 
-د هر user لپاره مناسب channel توپیر لري. که اسانه پیل غواړئ، Telegram، Discord یا GitHub Releases ښه انتخابونه دي. که capacity، speed او long-term stability درته مهم وي، Cloudflare R2، S3، OneDrive، Google Drive، Dropbox، Yandex، pCloud یا خپل WebDAV service وکاروئ.
+د هر user لپاره مناسب چینل توپیر لري. که اسانه پیل غواړئ، Telegram، Discord یا GitHub Releases ښه انتخابونه دي. که capacity، speed او long-term stability درته مهم وي، Cloudflare R2، S3، OneDrive، Google Drive، Dropbox، Yandex، pCloud یا خپل WebDAV خدمت وکاروئ.
 
 ## له پیل مخکې
 
-- هغه storage account یا API credentials برابر کړئ چې کاروئ یې.
-- ډاډه شئ چې ستاسو ImgBed domain پرانیستل کېږي، ځکه OAuth channels callback URL غواړي.
-- د channel له اضافه کولو وروسته لومړی test image upload کړئ، څو وګورئ file سم save او open کېږي.
+- هغه زېرمه حساب یا API اعتبارلیکونه برابر کړئ چې کاروئ یې.
+- ډاډه شئ چې ستاسو ImgBed ډومېن پرانیستل کېږي، ځکه OAuth چینلs کالبک URL غواړي.
+- د چینل له اضافه کولو وروسته لومړی test image اپلوډ کړئ، څو وګورئ فایل سم خوندي او open کېږي.
 
-## د Channel فهرست
+## د چینل فهرست
 
 - [Telegram](./telegram.md)
 - [Cloudflare R2](./cloudflare-r2.md)
@@ -28,6 +28,6 @@ Upload Settings د ImgBed له خپلو storage channels سره نښلوي. کل
 
 ## په دې فصل کې څه راځي
 
-- هر upload channel له setup مخکې کومو معلوماتو ته اړتیا لري.
-- په third-party platforms کې app جوړول، keys copy کول یا Token authorize کول.
-- په ImgBed کې channel configuration ډکول او د upload کار کول تاییدول.
+- هر اپلوډ چینل له setup مخکې کومو معلوماتو ته اړتیا لري.
+- په third-party platforms کې اپ جوړول، keys کاپي کول یا ټوکن authorize کول.
+- په ImgBed کې چینل تنظیمات ډکول او د اپلوډ کار کول تاییدول.

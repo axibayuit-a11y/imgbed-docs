@@ -1,156 +1,156 @@
-# WebDAV Site Access (Beta)
+# WebDAV سائٹ رسائی (بیٹا)
 
-Security Settings میں WebDAV setting آپ کی ImgBed site کو WebDAV endpoint کے طور پر expose کرتی ہے۔
+سیکیورٹی ترتیبات میں WebDAV ترتیب آپ کی ImgBed سائٹ کو WebDAV رسائی نقطے کے طور پر ظاہر کرتی ہے۔
 
-enable ہونے کے بعد آپ Windows، macOS، mobile file managers، یا کوئی بھی WebDAV-compatible client استعمال کر کے ImgBed files کو remote folder کی طرح browse، upload، delete، اور manage کر سکتے ہیں۔
+فعال ہونے کے بعد آپ Windows، macOS، موبائل فائل مینیجرز، یا WebDAV سے مطابقت رکھنے والے کسی بھی کلائنٹ کے ذریعے ImgBed فائلوں کو ریموٹ فولڈر کی طرح دیکھ، اپ لوڈ، حذف، اور منظم کر سکتے ہیں۔
 
-یہ site کا WebDAV access entry ہے۔ یہ Upload Settings کے WebDAV storage channel سے مختلف ہے۔ upload channel files کو third-party WebDAV service میں store کرتا ہے۔ یہ setting آپ کی ImgBed site کو clients کے لیے WebDAV access provide کرنے دیتی ہے۔
+یہ سائٹ کی WebDAV رسائی کا داخلہ ہے۔ یہ اپ لوڈ ترتیبات میں موجود WebDAV ذخیرہ چینل سے مختلف ہے۔ اپ لوڈ چینل فائلیں کسی فریق ثالث WebDAV سروس میں محفوظ کرتا ہے۔ یہ ترتیب آپ کی ImgBed سائٹ کو کلائنٹس کے لیے WebDAV رسائی فراہم کرنے دیتی ہے۔
 
-## کہاں Configure کریں
+## کہاں ترتیب دیں
 
-admin panel کھولیں، پھر جائیں:
+ایڈمن پینل کھولیں، پھر یہاں جائیں:
 
 ```text
 System Settings -> Security Settings -> WebDAV
 ```
 
-Available settings:
+دستیاب ترتیبات:
 
-- Enable
-- Username
-- Password
-- Image loading mode
-- Default channel
+- فعال کریں
+- صارف نام
+- پاس ورڈ
+- تصویر لوڈنگ موڈ
+- طے شدہ چینل
 
-## یہ Feature کیا کرتا ہے
+## یہ خصوصیت کیا کرتی ہے
 
-WebDAV enabled ہونے کے بعد ImgBed ایک fixed access URL فراہم کرتا ہے:
+WebDAV فعال ہونے کے بعد ImgBed ایک مقررہ رسائی URL فراہم کرتا ہے:
 
 ```text
 https://your-domain.com/dav
 ```
 
-اپنی ImgBed file directory سے connect کرنے کے لیے یہی URL استعمال کریں۔
+اپنی ImgBed فائل ڈائریکٹری سے جڑنے کے لیے یہ URL استعمال کریں۔
 
-اچھے use cases:
+مناسب استعمال کی صورتیں:
 
-- computer file manager سے ImgBed files directly browse کرنا۔
-- images کو WebDAV folder میں drag کر کے upload کرنا۔
-- local file manager سے ImgBed folders organize کرنا۔
-- WebDAV-compatible software سے images sync یا manage کرنا۔
-- admin panel کھولے بغیر ImgBed content access کرنا۔
+- اپنے کمپیوٹر کے فائل مینیجر سے ImgBed فائلیں براہ راست دیکھیں۔
+- تصاویر WebDAV فولڈر میں گھسیٹ کر اپ لوڈ کریں۔
+- مقامی فائل مینیجر سے ImgBed فولڈرز منظم کریں۔
+- WebDAV سے مطابقت رکھنے والے سافٹ ویئر سے تصاویر ہم وقت یا منظم کریں۔
+- ایڈمن پینل کھولے بغیر ImgBed مواد تک رسائی کریں۔
 
-## Settings
+## ترتیبات
 
-### Enable
+### فعال کریں
 
-WebDAV endpoint on کرتا ہے۔
+WebDAV رسائی نقطے کو آن کرتا ہے۔
 
-disabled ہو تو clients WebDAV کے ذریعے connect نہیں کر سکتے۔
+غیر فعال ہونے پر کلائنٹس WebDAV کے ذریعے جڑ نہیں سکتے۔
 
-### Username اور Password
+### صارف نام اور پاس ورڈ
 
-WebDAV clients connect کرتے وقت یہی credentials استعمال کرتے ہیں۔
+یہ اسناد WebDAV کلائنٹس کنکشن بناتے وقت استعمال کرتے ہیں۔
 
-dedicated WebDAV username اور password استعمال کریں۔ admin password یا upload password دوبارہ استعمال نہ کریں۔
+ایک مخصوص WebDAV صارف نام اور پاس ورڈ استعمال کریں۔ ایڈمن پاس ورڈ یا اپ لوڈ پاس ورڈ دوبارہ استعمال نہ کریں۔
 
-اگر username یا password میں سے کوئی بھی empty ہو، WebDAV clients صحیح connect نہیں کر پائیں گے۔
+اگر صارف نام یا پاس ورڈ میں سے کوئی بھی خالی ہو تو WebDAV کلائنٹس درست طور پر جڑ نہیں سکیں گے۔
 
-### Image Loading Mode
+### تصویر لوڈنگ موڈ
 
-Image loading mode طے کرتا ہے کہ WebDAV clients images پڑھتے وقت کس image URL کو ترجیح دیں۔
+تصویر لوڈنگ موڈ طے کرتا ہے کہ تصاویر پڑھتے وقت WebDAV کلائنٹس کس تصویری URL کو ترجیح دیں۔
 
-Common choices:
+عام اختیارات:
 
-| Mode | Description |
+| موڈ | وضاحت |
 | --- | --- |
-| Smart loading | ImgBed context کے مطابق انتخاب کرتا ہے۔ normal use کے لیے recommended۔ |
-| Original | original images کو ترجیح دیتا ہے۔ |
-| Thumbnail | thumbnails کو ترجیح دیتا ہے۔ fast preview کے لیے مفید۔ |
+| ذہین لوڈنگ | ImgBed سیاق و سباق کے مطابق انتخاب کرتا ہے۔ معمول کے استعمال کے لیے تجویز کردہ۔ |
+| اصل | اصل تصاویر کو ترجیح دیں۔ |
+| تھمب نیل | تھمب نیلز کو ترجیح دیں۔ تیز پیش منظر کے لیے مفید۔ |
 
-یقین نہ ہو تو `Smart loading` رکھیں۔
+اگر یقین نہ ہو تو `ذہین لوڈنگ` برقرار رکھیں۔
 
-### Default Channel
+### طے شدہ چینل
 
-default channel WebDAV uploads کے لیے استعمال ہوتا ہے۔
+طے شدہ چینل WebDAV اپ لوڈز کے لیے استعمال ہوتا ہے۔
 
-جب آپ Windows یا کسی client سے WebDAV directory میں files copy کرتے ہیں، ImgBed selected default upload channel کے ذریعے انہیں upload کرتا ہے۔
+جب آپ Windows یا کسی دوسرے کلائنٹ سے فائلیں WebDAV ڈائریکٹری میں کاپی کرتے ہیں تو ImgBed انہیں منتخب طے شدہ اپ لوڈ چینل کے ذریعے اپ لوڈ کرتا ہے۔
 
-اگر default channel selected نہیں، browsing کام کر سکتی ہے، مگر uploads fail ہو سکتے ہیں۔
+اگر کوئی طے شدہ چینل منتخب نہ ہو تو براؤزنگ کام کر سکتی ہے، لیکن اپ لوڈ ناکام ہو سکتے ہیں۔
 
-## Windows 11 میں WebDAV Access کرنا
+## Windows 11 میں WebDAV تک رسائی
 
-Windows 11 WebDAV کو network location کے طور پر add کر سکتا ہے۔
+Windows 11 WebDAV کو نیٹ ورک مقام کے طور پر شامل کر سکتا ہے۔
 
-1. `This PC` کھولیں۔
-2. `Add a network location` منتخب کریں۔
+1. `یہ کمپیوٹر` کھولیں۔
+2. `نیٹ ورک مقام شامل کریں` منتخب کریں۔
 3. `https://your-domain.com/dav` درج کریں۔
-4. prompt آنے پر اپنا WebDAV username اور password درج کریں۔
-5. wizard مکمل کریں۔ اس کے بعد WebDAV directory File Explorer میں کھل سکے گی۔
+4. پوچھے جانے پر اپنا WebDAV صارف نام اور پاس ورڈ درج کریں۔
+5. رہنما عمل مکمل کریں۔ پھر WebDAV ڈائریکٹری فائل ایکسپلورر میں کھولی جا سکتی ہے۔
 
-![Add WebDAV in Windows 11](../../image/Safety/webdav在win11配置.png)
+![Windows 11 میں WebDAV شامل کریں](../../image/Safety/webdav在win11配置.png)
 
-add ہونے کے بعد WebDAV directory Windows File Explorer میں ظاہر ہوتی ہے۔ آپ normal folder کی طرح files open، copy، اور manage کر سکتے ہیں۔
+شامل ہونے کے بعد WebDAV ڈائریکٹری Windows فائل ایکسپلورر میں ظاہر ہوتی ہے۔ آپ عام فولڈر کی طرح فائلیں کھول، کاپی، اور منظم کر سکتے ہیں۔
 
-![WebDAV in Windows](../../image/Safety/webdav在win显示效果.png)
+![Windows میں WebDAV](../../image/Safety/webdav在win显示效果.png)
 
-## Supported Operations
+## معاونت یافتہ کارروائیاں
 
-successful WebDAV connection کے بعد عموماً آپ یہ کر سکتے ہیں:
+کامیاب WebDAV کنکشن کے بعد عموماً آپ یہ کام کر سکتے ہیں:
 
-- files اور folders دیکھنا۔
-- files upload کرنا۔
-- folders بنانا۔
-- files یا folders rename کرنا۔
-- files move کرنا۔
-- files delete کرنا۔
+- فائلیں اور فولڈرز دیکھنا۔
+- فائلیں اپ لوڈ کرنا۔
+- فولڈرز بنانا۔
+- فائلوں یا فولڈرز کے نام تبدیل کرنا۔
+- فائلیں منتقل کرنا۔
+- فائلیں حذف کرنا۔
 
-WebDAV everyday access اور small-scale file management کے لیے بہتر ہے۔ بڑے moves، bulk deletes، یا complex organization کے لیے admin panel استعمال کریں۔
+WebDAV روزمرہ رسائی اور چھوٹے پیمانے کے فائل انتظام کے لیے بہتر ہے۔ بڑی منتقلیوں، مجموعی حذف کاری، یا پیچیدہ تنظیم کے لیے ایڈمن پینل استعمال کریں۔
 
-## Login Device Management
+## لاگ اِن ڈیوائسز کا انتظام
 
-successful WebDAV connections Login Device Management کے WebDAV tab میں بھی ظاہر ہوتے ہیں۔
+کامیاب WebDAV کنکشنز لاگ اِن ڈیوائسز کے انتظام میں WebDAV ٹیب کے تحت بھی ظاہر ہوتے ہیں۔
 
-وہاں آپ WebDAV clients review کر سکتے ہیں اور ضرورت پڑنے پر old devices force offline کر سکتے ہیں۔
+آپ وہاں WebDAV کلائنٹس کا جائزہ لے سکتے ہیں اور ضرورت پڑنے پر پرانی ڈیوائسز زبردستی آف لائن کر سکتے ہیں۔
 
-اگر WebDAV username یا password تبدیل کریں، تو old clients کو دوبارہ sign in کرنا ہوگا۔
+اگر آپ WebDAV صارف نام یا پاس ورڈ تبدیل کریں تو پرانے کلائنٹس کو دوبارہ سائن اِن کرنا ہوگا۔
 
-## FAQ
+## عمومی سوالات
 
-### Windows بار بار Username اور Password مانگتا ہے
+### Windows بار بار صارف نام اور پاس ورڈ کیوں پوچھتا ہے؟
 
-چیک کریں:
+جانچیں:
 
 - URL `https://your-domain.com/dav` ہے۔
-- username اور password WebDAV settings سے match کرتے ہیں۔
-- WebDAV enabled ہے۔
-- site HTTPS پر access ہو سکتی ہے۔
+- صارف نام اور پاس ورڈ WebDAV ترتیبات سے مطابقت رکھتے ہیں۔
+- WebDAV فعال ہے۔
+- سائٹ HTTPS پر قابل رسائی ہے۔
 
-### Browsing کام کرتی ہے، مگر Uploading fail ہوتی ہے
+### براؤزنگ کام کرتی ہے، لیکن اپ لوڈ ناکام ہوتا ہے
 
-`Default channel` چیک کریں۔
+`طے شدہ چینل` جانچیں۔
 
-WebDAV uploads کو default upload channel چاہیے۔ اگر یہ missing، disabled، یا misconfigured ہو تو uploads fail ہو سکتے ہیں۔
+WebDAV اپ لوڈز کے لیے طے شدہ اپ لوڈ چینل ضروری ہے۔ اگر وہ موجود نہ ہو، غیر فعال ہو، یا غلط ترتیب دیا گیا ہو تو اپ لوڈ ناکام ہو سکتے ہیں۔
 
-### Access Speed غیر مستحکم ہے
+### رسائی کی رفتار غیر مستحکم ہے
 
-WebDAV performance client، network، file count، اور default upload channel پر depend کرتی ہے۔
+WebDAV کارکردگی کلائنٹ، نیٹ ورک، فائل تعداد، اور طے شدہ اپ لوڈ چینل پر منحصر ہے۔
 
-اگر کسی directory میں بہت زیادہ files ہیں، تو انہیں folders میں organize کریں، ایک ہی directory میں بہت زیادہ files نہ رکھیں۔
+اگر کسی ڈائریکٹری میں بہت زیادہ فائلیں ہوں تو ایک ہی ڈائریکٹری میں بہت سی فائلیں رکھنے کے بجائے انہیں فولڈرز میں منظم کریں۔
 
-## Security Recommendations
+## سیکیورٹی سفارشات
 
-- WebDAV access کے لیے HTTPS استعمال کریں۔
-- strong password set کریں۔
-- WebDAV password untrusted لوگوں کے ساتھ share نہ کریں۔
-- استعمال نہ کر رہے ہوں تو WebDAV off کر دیں۔
-- Login Device Management میں unused WebDAV devices وقتاً فوقتاً clean up کریں۔
+- WebDAV رسائی کے لیے HTTPS استعمال کریں۔
+- مضبوط پاس ورڈ مقرر کریں۔
+- WebDAV پاس ورڈ غیر معتبر لوگوں کے ساتھ شیئر نہ کریں۔
+- استعمال نہ ہونے پر WebDAV بند کر دیں۔
+- لاگ اِن ڈیوائسز کے انتظام میں غیر استعمال شدہ WebDAV ڈیوائسز وقتاً فوقتاً صاف کریں۔
 
-## WebDAV Upload File Size
+## WebDAV اپ لوڈ فائل حجم
 
-WebDAV clients browser upload page کا large-file chunking flow استعمال نہیں کرتے۔ نیچے دی گئی suggested limits سے بڑی files کے لیے web upload page استعمال کریں۔
+WebDAV کلائنٹس براؤزر اپ لوڈ صفحے کا بڑی فائلوں والا chunked بہاؤ استعمال نہیں کرتے۔ نیچے دی گئی تجویز کردہ حدود سے بڑی فائلوں کے لیے ویب اپ لوڈ صفحہ استعمال کریں۔
 
-| Default Upload Channel | Suggested Single-File Limit for WebDAV |
+| طے شدہ اپ لوڈ چینل | WebDAV کے لیے تجویز کردہ ایک فائل حد |
 | --- | ---: |
 | Telegram | 20 MB |
 | Discord | 10 MB |

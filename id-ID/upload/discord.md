@@ -1,132 +1,132 @@
-# Menambahkan Discord Channel
+# Menambahkan Kanal Discord
 
-## Yang Perlu Disiapkan Sebelum Mulai
+## Yang Diperlukan Sebelum Memulai
 
-| Requirement | Purpose |
+| Kebutuhan | Tujuan |
 | --- | --- |
-| Discord account | Digunakan untuk membuat server, channel, dan developer application. |
-| Discord server | Bot harus join server sebelum bisa mengakses channel. |
-| Text channel | Images dan files akan dikirim ke channel ini. |
-| Discord Developer Portal | Digunakan untuk membuat application, membuat bot, dan mendapatkan `Bot Token`. |
+| Akun Discord | Digunakan untuk membuat server, kanal, dan aplikasi pengembang. |
+| Server Discord | Bot harus bergabung ke server sebelum dapat mengakses kanal. |
+| Kanal teks | Gambar dan berkas akan dikirim ke kanal ini. |
+| Discord Developer Portal | Digunakan untuk membuat aplikasi, membuat bot, dan memperoleh `Bot Token`. |
 
 ## Di Mana Menambahkannya
 
-1. Buka System Settings.
-2. Masuk ke Upload Settings.
-3. Klik Add Channel di kanan atas.
+1. Buka pengaturan sistem.
+2. Masuk ke pengaturan unggah.
+3. Klik Tambah kanal di kanan atas.
 4. Pilih `Discord`.
 
-## Field Reference
+## Referensi Kolom
 
-| Field | Fungsi | Required |
+| Kolom | Fungsi | Wajib |
 | --- | --- | --- |
-| Channel name | Nama yang mudah dikenali untuk channel ini, misalnya "Discord Primary". | Required |
-| Bot Token | Discord bot token. | Required |
-| Channel ID | ID target text channel. | Required |
-| Proxy URL (optional) | Gunakan hanya jika akses Discord CDN tidak stabil. Masukkan full URL, termasuk `https://`. | Optional |
+| Nama kanal | Nama yang mudah dikenali untuk kanal ini, misalnya `Discord Primary`. | Wajib |
+| Bot Token | Token bot Discord. | Wajib |
+| Channel ID | ID kanal teks target. | Wajib |
+| URL proksi (opsional) | Gunakan hanya jika akses ke Discord CDN tidak stabil. Masukkan URL lengkap, termasuk `https://`. | Opsional |
 
-## Langkah Setup
+## Langkah Konfigurasi
 
-### 1. Buat Discord Server dan Text Channel
+### 1. Membuat Server Discord dan Kanal Teks
 
 1. Buka Discord.
-2. Buat server baru, atau gunakan existing server milik Anda.
-3. Buat text channel di server tersebut.
+2. Buat server baru atau gunakan server yang sudah ada dan Anda miliki.
+3. Buat kanal teks di server tersebut.
 
-![Create a server](../../image/upload/discord/创建服务器.png)
+![Membuat server](../../image/upload/discord/创建服务器.png)
 
-### 2. Buat Bot di Discord Developer Portal
+### 2. Membuat Bot di Discord Developer Portal
 
 1. Buka Discord Developer Portal: `https://discord.com/developers/applications`
 2. Klik `New Application`.
-3. Masukkan application name dan buat.
-4. Buka halaman `Bot` dari left sidebar.
-5. Generate atau reset token di halaman `Bot`.
+3. Masukkan nama aplikasi dan buat aplikasinya.
+4. Buka halaman `Bot` dari bilah sisi kiri.
+5. Buat atau reset token di halaman `Bot`.
 6. Simpan token.
 
 Token ini adalah `Bot Token` yang perlu dimasukkan ke ImgBed.
 
-![View the bot token](../../image/upload/discord/查看机器人令牌.png)
+![Melihat token bot](../../image/upload/discord/查看机器人令牌.png)
 
-### 3. Buat OAuth2 Invite Link dan Install Bot
+### 3. Membuat Tautan Undangan OAuth2 dan Menginstal Bot
 
-1. Buka halaman `OAuth2` dari left sidebar.
-2. Di bagian scopes, pilih `bot`.
-3. Di area permission, enable permissions ini:
+1. Buka halaman `OAuth2` dari bilah sisi kiri.
+2. Pada bagian cakupan, pilih `bot`.
+3. Di area izin, aktifkan izin berikut:
 
-| Permission | Required |
+| Izin | Wajib |
 | --- | --- |
-| View Channels | Yes |
-| Send Messages | Yes |
-| Attach Files | Yes |
-| Read Message History | Yes |
+| View Channels | Ya |
+| Send Messages | Ya |
+| Attach Files | Ya |
+| Read Message History | Ya |
 
-4. Di bagian bawah page, pastikan integration type adalah `Guild Install`.
-5. Copy generated URL.
-6. Buka URL tersebut di browser.
-7. Pilih target server.
-8. Selesaikan authorization flow.
+4. Di bagian bawah halaman, pastikan jenis integrasi adalah `Guild Install`.
+5. Salin URL yang dibuat.
+6. Buka URL tersebut di peramban.
+7. Pilih server target.
+8. Selesaikan alur otorisasi.
 
-![Select bot permissions in OAuth2](../../image/upload/discord/在oa2勾选机器人权限.png)
+![Memilih izin bot di OAuth2](../../image/upload/discord/在oa2勾选机器人权限.png)
 
-![Invite the bot to the channel](../../image/upload/discord/邀请机器人到频道.png)
+![Mengundang bot ke kanal](../../image/upload/discord/邀请机器人到频道.png)
 
-### 4. Enable Developer Mode dan Copy Channel ID
+### 4. Mengaktifkan Developer Mode dan Menyalin Channel ID
 
-1. Klik gear icon di sebelah avatar Anda di kiri bawah Discord.
-2. Buka Advanced dari left sidebar.
-3. Enable Developer Mode.
-4. Kembali ke target text channel.
-5. Right-click nama channel.
-6. Klik Copy Channel ID.
+1. Di Discord, klik ikon roda gigi di sebelah avatar Anda di kiri bawah.
+2. Buka `Advanced` dari bilah sisi kiri.
+3. Aktifkan `Developer Mode`.
+4. Kembali ke kanal teks target.
+5. Klik kanan nama kanal.
+6. Klik `Copy Channel ID`.
 
 Angka yang disalin adalah `Channel ID` yang diperlukan ImgBed.
 
-![Enable developer mode](../../image/upload/discord/开启开发者权限.png)
+![Mengaktifkan Developer Mode](../../image/upload/discord/开启开发者权限.png)
 
-![Copy the channel ID](../../image/upload/discord/复制群频道id.png)
+![Menyalin Channel ID](../../image/upload/discord/复制群频道id.png)
 
-### 5. Isi Discord Channel di ImgBed
+### 5. Mengisi Kanal Discord di ImgBed
 
-Kembali ke channel configuration dialog dan isi field sebagai berikut:
+Kembali ke dialog konfigurasi kanal dan isi kolom sebagai berikut:
 
-| UI Field | Value |
+| Kolom UI | Nilai |
 | --- | --- |
-| Channel name | Nama channel kustom, misalnya `DiscordPrimary`. |
+| Nama kanal | Nama kanal kustom, misalnya `DiscordPrimary`. |
 | Bot Token | Token yang disimpan dari halaman `Bot` di Discord Developer Portal. |
-| Channel ID | Channel ID yang Anda copy dari Discord. |
-| Proxy URL (optional) | Hanya jika perlu, misalnya `https://your-proxy.example.com`. |
+| Channel ID | Channel ID yang Anda salin dari Discord. |
+| URL proksi (opsional) | Hanya jika diperlukan, misalnya `https://your-proxy.example.com`. |
 
-Klik Save setelah selesai.
+Setelah selesai, klik Simpan.
 
-![Add the Discord channel configuration](../../image/upload/discord/添加dc新渠道配置.png)
+![Menambahkan konfigurasi kanal Discord](../../image/upload/discord/添加dc新渠道配置.png)
 
-## Cara Memeriksa
+## Verifikasi
 
-| Check | Cara Memeriksa |
+| Pemeriksaan | Cara memeriksa |
 | --- | --- |
-| Channel card muncul | Setelah save, halaman Upload Settings harus menampilkan Discord channel card. |
-| Channel bisa diaktifkan | Active switch seharusnya tetap on. |
-| Configuration tersimpan | Detail view harus menunjukkan Bot Token dan Channel ID sudah tersimpan. |
-| Upload berjalan | Upload test image dan pastikan muncul di target Discord text channel. |
+| Kartu kanal muncul | Setelah disimpan, halaman pengaturan unggah harus menampilkan kartu kanal Discord. |
+| Kanal dapat diaktifkan | Sakelar Active harus tetap aktif. |
+| Konfigurasi tersimpan | Tampilan detail harus menunjukkan bahwa Bot Token dan Channel ID sudah tersimpan. |
+| Unggahan berjalan | Unggah gambar uji dan pastikan muncul di kanal teks Discord target. |
 
-## Quick Checklist
+## Daftar Cepat
 
 ```text
-Buat Discord server
--> Buat text channel
--> Buat bot di Discord Developer Portal
--> Simpan Bot Token dari halaman Bot
--> Di OAuth2, pilih bot, View Channels, Send Messages, Attach Files, dan Read Message History
--> Copy generated URL dan authorize bot untuk target server
--> Pastikan target text channel memberikan permissions yang sama
+Create a Discord server
+-> Create a text channel
+-> Create a bot in the Discord Developer Portal
+-> Save the Bot Token from the Bot page
+-> In OAuth2, select bot, View Channels, Send Messages, Attach Files, and Read Message History
+-> Copy the generated URL and authorize the bot for the target server
+-> Make sure the target text channel grants the same permissions
 -> Enable Developer Mode
--> Right-click target text channel dan copy Channel ID
--> Masukkan Bot Token dan Channel ID di ImgBed
--> Save dan upload test image
+-> Right-click the target text channel and copy the Channel ID
+-> Enter the Bot Token and Channel ID in ImgBed
+-> Save and upload a test image
 ```
 
-## References
+## Referensi
 
-1. Discord Developers Getting Started: https://docs.discord.com/developers/quick-start/getting-started
-2. Discord Help - Where can I find my User/Server/Message ID: https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID
+1. Panduan mulai Discord Developers: https://docs.discord.com/developers/quick-start/getting-started
+2. Bantuan Discord: tempat menemukan User/Server/Message ID: https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID

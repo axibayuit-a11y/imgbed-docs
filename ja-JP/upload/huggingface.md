@@ -1,47 +1,67 @@
-# Hugging Face チャンネルの追加
+# Hugging Face チャネルを追加する
 
-Hugging Face チャンネルは、Hugging Face の Repository をファイル保存先として利用します。
+## 始める前に必要なもの
 
-## 事前に用意するもの
+必要なものは 3 つだけです。
 
-| 必要なもの | 用途 |
+| 必要なもの | 目的 |
 | --- | --- |
-| Hugging Face アカウント | Repository と Token を管理します |
-| Repository | ファイルの保存先 |
-| Access Token | ImgBed から Repository へ書き込むため |
-| 保存ディレクトリ | 任意。ファイルを置くパス |
+| Hugging Face アカウント | アクセストークンを生成し、リポジトリを所有するために使用します。 |
+| Hugging Face User Access Token | ImgBed が Hugging Face API にアクセスし、リポジトリを作成し、ファイルをアップロードするために使用します。 |
+| Repository name | リポジトリ名だけを入力できます。例: `image`。 |
 
-## Token を作成する
+## 設定手順
 
-Hugging Face の設定画面で Access Token を作成します。Repository へ書き込める権限を付与してください。
+### 手順 1: Hugging Face にサインインして Access Token を作成する
 
-![Token 作成](../../image/upload/huggingface/创建令牌.png)
+1. Hugging Face にサインインします。
+2. 右上のアバターをクリックし、`Settings` を開きます。
+3. 左サイドバーから `Access Tokens` を開きます。
+4. 新しい token を作成します。
+5. token に識別しやすい名前を付けます。
+6. `write` 権限を選択します。
+7. 作成後すぐに token をコピーして保存します。
 
-Token は作成後にコピーし、安全に保存します。
+![token を作成する](../../image/upload/huggingface/创建令牌.png)
 
-## ImgBed へ入力する
+## 手順 2: ImgBed に Hugging Face チャネルを入力する
 
-アップロード設定で `Hugging Face` を選びます。
+アップロード設定で `Hugging Face` を選択したら、次のように入力します。
 
-| 項目 | 入力内容 |
+| UI 項目 | 入力内容 |
 | --- | --- |
-| チャンネル名 | 例：`HF Storage` |
-| Repository | `ユーザー名/リポジトリ名` |
-| Token | Hugging Face Access Token |
-| 保存ディレクトリ | 任意。通常は `imgbed` |
-| 備考 | 任意 |
+| チャネル名 | 任意の名前。例: `hf-primary`。 |
+| Repository name | `image` のような短い repo 名、または `username/image` のような完全なパス。 |
+| Access Token | 先ほど作成した Hugging Face User Access Token。 |
+| Private repository | 必要に応じてオンまたはオフにします。 |
+| Remark | 任意。例: `メインアップロードチャネル`。 |
 
-![チャンネル追加](../../image/upload/huggingface/添加渠道.png)
+![チャネルを追加する](../../image/upload/huggingface/添加渠道.png)
 
-## 確認方法
+## 手順 3: チャネルを保存する
 
-1. 保存後にチャンネルカードが表示される。
-2. テスト画像をアップロードする。
-3. Hugging Face Repository にファイルが追加される。
-4. ImgBed のリンクからアクセスできる。
+項目を入力したら、保存をクリックします。
 
-## 運用の注意
+その後、システムは次の詳細を処理します。
 
-- Repository の公開範囲に注意してください。公開 Repository に置いたファイルは外部から見える可能性があります。
-- Token には必要な権限だけを付けます。
-- 大量ファイルの保存や高頻度配信では、Hugging Face 側の制限に注意してください。
+| システム動作 | 説明 |
+| --- | --- |
+| 短い repository name | ImgBed は現在の Hugging Face アカウントを識別し、値を完全なリポジトリパスに展開します。 |
+| 完全な repository path | ImgBed は `username/repository` path を入力どおりに使用します。 |
+| repository 確認 | 現在の個人アカウントパスを使用する場合、存在しなければ ImgBed はリポジトリの作成を試みます。完全なパスを手動入力した場合、ImgBed はそのパスを直接使用します。 |
+| Repository type | このチャネルは `dataset` repository を使用します。 |
+| 公開/非公開状態 | リポジトリの可視性は現在のスイッチに従って同期されます。 |
+
+## クイックチェックリスト
+
+```text
+Sign in to Hugging Face
+-> Create an Access Token
+-> Select write permission
+-> Return to ImgBed and enter the token and repository name
+-> Save
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> ImgBed checks or creates the dataset repository
+-> Upload a test image
+```

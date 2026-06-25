@@ -1,122 +1,122 @@
-# Telegram Channel যোগ করা
+# Telegram চ্যানেল যোগ করা
 
 ## শুরু করার আগে যা লাগবে
 
-| Requirement | Purpose |
+| প্রয়োজনীয় তথ্য | উদ্দেশ্য |
 | --- | --- |
-| Telegram account | Bot এবং storage channel তৈরি করতে লাগে। |
-| `@BotFather` | Telegram bot তৈরি করতে ব্যবহার হয়। |
-| একটি Telegram channel | Files সংরক্ষণের final destination। |
-| `@userinfobot` | Channel `Chat ID` বের করতে ব্যবহার হয়। |
+| Telegram অ্যাকাউন্ট | bot এবং স্টোরেজ চ্যানেল তৈরি করতে লাগে। |
+| `@BotFather` | Telegram bot তৈরি করতে ব্যবহৃত হয়। |
+| একটি Telegram চ্যানেল | ফাইল সংরক্ষণের চূড়ান্ত গন্তব্য। |
+| `@userinfobot` | চ্যানেল-এর `Chat ID` খুঁজে পেতে ব্যবহৃত হয়। |
 
-## কোথায় যোগ করবেন
+## কোথায় যোগ করবেন
 
-1. System Settings খুলুন।
-2. Upload Settings-এ যান।
-3. উপরের ডান পাশে Add Channel ক্লিক করুন।
+1. সিস্টেম সেটিংস খুলুন।
+2. আপলোড সেটিংসে যান।
+3. উপরের ডান পাশে চ্যানেল যোগ করুন ক্লিক করুন।
 4. `Telegram` নির্বাচন করুন।
 
-## Field Reference
+## ক্ষেত্রের বিবরণ
 
-| Field | কাজ | Required |
+| ক্ষেত্র | কাজ | প্রয়োজনীয় |
 | --- | --- | --- |
-| Channel name | এই channel-এর সহজে চেনা যায় এমন নাম, যেমন "Telegram Primary"। | Required |
-| Active | Channel enable বা disable করে। | Recommended |
-| Bot Token | আপনার Telegram bot-এর token। | Required |
-| Session ID (Chat ID) | Telegram channel-এর ID। | Required |
-| Relay Proxy URL (optional) | Telegram access unstable হলে শুধু তখন ব্যবহার করুন। `https://`-সহ full proxy URL দিন। | Optional |
-| Remark | ভবিষ্যৎ maintenance-এর জন্য notes। | Optional |
+| চ্যানেলের নাম | এই চ্যানেলের সহজে চেনা যায় এমন নাম, যেমন "Telegram Primary"। | প্রয়োজনীয় |
+| Active | চ্যানেল চালু বা বন্ধ করে। | প্রস্তাবিত |
+| Bot Token | আপনার Telegram bot-এর টোকেন। | প্রয়োজনীয় |
+| Session ID (Chat ID) | Telegram চ্যানেল-এর ID। | প্রয়োজনীয় |
+| Relay Proxy URL (ঐচ্ছিক) | Telegram access অস্থির হলে শুধু তখন ব্যবহার করুন। `https://`. পূর্ণ proxy URL দিন। | ঐচ্ছিক |
+| Remark | ভবিষ্যৎ রক্ষণাবেক্ষণের নোট। | ঐচ্ছিক |
 
-## Setup Steps
+## সেটআপ ধাপ
 
 ### 1. Telegram Bot তৈরি করুন
 
-1. Telegram খুলে `@BotFather` search করুন।
-2. Chat খুলে `Start` ক্লিক করুন।
+1. Telegram খুলে `@BotFather` খুঁজুন।
+2. chat খুলে `Start` ক্লিক করুন।
 3. `/newbot` পাঠান।
-4. Prompt অনুযায়ী bot display name দিন।
-5. Prompt অনুযায়ী bot username দিন। Username সাধারণত `bot` দিয়ে শেষ করতে হয়।
-6. Bot তৈরি হলে `@BotFather` একটি bot token দেবে।
+4. নির্দেশনা অনুযায়ী bot display নাম দিন।
+5. নির্দেশনা অনুযায়ী bot username দিন। username সাধারণত `bot` দিয়ে শেষ হতে হয়।
+6. bot তৈরি হলে `@BotFather` একটি bot টোকেন দেবে।
 
-এই token-টাই ImgBed-এ `Bot Token` হিসেবে দিতে হবে।
+এই টোকেন-ই ImgBed-এ `Bot Token` হিসেবে দিতে হবে।
 
-![Save the bot token](../../image/upload/telegram/保存机器人令牌.png)
+![bot টোকেন সংরক্ষণ করা](../../image/upload/telegram/保存机器人令牌.png)
 
-### 2. Channel তৈরি করুন
+### 2. চ্যানেল তৈরি করুন
 
-1. Telegram-এ New Channel ক্লিক করুন।
-2. Channel name দিন।
-3. Channel তৈরি শেষ করুন।
+1. Telegram-এ New চ্যানেল ক্লিক করুন।
+2. চ্যানেল নাম দিন।
+3. চ্যানেল তৈরি শেষ করুন।
 
-Public এবং private, দুই ধরনের channel-ই ব্যবহার করা যায়।
+পাবলিক এবং প্রাইভেট, দুই ধরনের চ্যানেল-ই ব্যবহার করা যায়।
 
-![Create a channel](../../image/upload/telegram/新建频道.png)
+![চ্যানেল তৈরি করা](../../image/upload/telegram/新建频道.png)
 
-### 3. Bot-কে Channel-এ যোগ করুন
+### 3. Bot-কে চ্যানেল-এ যোগ করুন
 
-1. সদ্য তৈরি করা channel খুলুন।
-2. Channel settings খুলুন।
-3. Member বা administrator যোগ করুন।
-4. আপনার তৈরি করা bot username search করুন।
-5. Bot-কে channel-এ যোগ করুন।
+1. সদ্য তৈরি করা চ্যানেল খুলুন।
+2. চ্যানেল সেটিংস খুলুন।
+3. member বা administrator যোগ করুন।
+4. আপনার তৈরি করা bot username খুঁজুন।
+5. bot-কে চ্যানেল-এ যোগ করুন।
 
-Upload সবচেয়ে নির্ভরযোগ্য করতে bot-কে administrator permission দিন।
+আপলোড সবচেয়ে নির্ভরযোগ্য করতে bot-কে administrator অনুমতি দিন।
 
-![Invite the bot to the channel](../../image/upload/telegram/邀请机器人进频道里.png)
+![bot-কে চ্যানেল-এ আমন্ত্রণ জানানো](../../image/upload/telegram/邀请机器人进频道里.png)
 
-### 4. User Info - Get ID - IDbot দিয়ে Channel ID নিন
+### 4. User Info - Get ID - IDbot দিয়ে Channel ID নিন
 
-1. Telegram-এ `@userinfobot` search করুন। Display name সাধারণত `User Info - Get ID - IDbot`।
-2. Chat খুলে `Start` ক্লিক করুন।
-3. Bot-এর দেওয়া options থেকে `Channel` নির্বাচন করুন।
-4. Message picker-এ target channel নির্বাচন করে `@userinfobot`-এ পাঠান।
-5. `@userinfobot` result দিলে `Id: -100...` হিসেবে যে number দেখায় সেটি copy করুন।
+1. Telegram-এ `@userinfobot` খুঁজুন। display নাম সাধারণত `User Info - Get ID - IDbot`।
+2. chat খুলে `Start` ক্লিক করুন।
+3. bot-এর দেওয়া options থেকে `Channel` নির্বাচন করুন।
+4. message picker-এ লক্ষ্য চ্যানেল নির্বাচন করে `@userinfobot`-এ পাঠান।
+5. `@userinfobot` result দিলে `Id: -100...` হিসেবে যে number দেখায় সেটি কপি করুন।
 
-`-100` দিয়ে শুরু হওয়া number-টাই ImgBed-এর জন্য প্রয়োজনীয় `Session ID (Chat ID)`।
+`-100` দিয়ে শুরু হওয়া number-ই ImgBed-এর জন্য প্রয়োজনীয় `Session ID (Chat ID)`।
 
-![Get the channel ID](../../image/upload/telegram/获取频道id.png)
+![Channel ID নেওয়া](../../image/upload/telegram/获取频道id.png)
 
-### 5. ImgBed-এ Telegram Channel পূরণ করুন
+### 5. ImgBed-এ Telegram চ্যানেল পূরণ করুন
 
-Channel configuration dialog-এ ফিরে এসে fields এভাবে পূরণ করুন:
+চ্যানেল কনফিগারেশন ডায়ালগ-এ ফিরে ক্ষেত্রগুলো এভাবে পূরণ করুন:
 
-| UI Field | Value |
+| UI ক্ষেত্র | মান |
 | --- | --- |
-| Channel Identifier | Custom channel name, যেমন `TelegramPrimary`। |
-| Active | Recommended। |
-| Bot Token | `@BotFather` থেকে পাওয়া bot token। |
-| Session ID (Chat ID) | `@userinfobot` থেকে পাওয়া `-100...` number। |
-| Relay Proxy URL (optional) | দরকার হলে, যেমন `https://your-tg-proxy.example.com`। |
-| Remark | Optional notes। |
+| চ্যানেল Identifier | কাস্টম চ্যানেল নাম, যেমন `TelegramPrimary`। |
+| Active | প্রস্তাবিত। |
+| Bot Token | `@BotFather` থেকে পাওয়া bot টোকেন। |
+| Session ID (Chat ID) | `@userinfobot` থেকে পাওয়া `-100...` number। |
+| Relay Proxy URL (ঐচ্ছিক) | দরকার হলে, যেমন `https://your-tg-proxy.example.com`. |
+| Remark | ঐচ্ছিক নোট। |
 
-শেষ হলে Save ক্লিক করুন।
+শেষ হলে সংরক্ষণ ক্লিক করুন।
 
-![Edit the configuration](../../image/upload/telegram/编辑配置.png)
+![কনফিগারেশন সম্পাদনা করা](../../image/upload/telegram/编辑配置.png)
 
-## কীভাবে যাচাই করবেন
+## যাচাই করার পদ্ধতি
 
-| Check | কীভাবে যাচাই করবেন |
+| পরীক্ষা | কীভাবে যাচাই করবেন |
 | --- | --- |
-| Channel card দেখা যায় | Save করার পর Upload Settings পেজে Telegram channel card দেখা উচিত। |
-| Channel enable থাকে | Active switch on থাকা উচিত। |
-| Configuration save হয়েছে | Detail view-তে Bot Token এবং Chat ID save হয়েছে দেখা উচিত। |
-| Upload কাজ করে | একটি test image upload করে target Telegram channel-এ এসেছে কি না দেখুন। |
+| চ্যানেল কার্ড দেখা যায় | সংরক্ষণের পর আপলোড সেটিংস পৃষ্ঠায় Telegram চ্যানেল কার্ড দেখা উচিত। |
+| চ্যানেল চালু রাখা যায় | Active সুইচ চালু থাকা উচিত। |
+| কনফিগারেশন সংরক্ষিত হয়েছে | বিস্তারিত দৃশ্য-তে Bot Token এবং Chat ID সংরক্ষিত দেখা উচিত। |
+| আপলোড কাজ করছে | একটি পরীক্ষামূলক ছবি আপলোড করে লক্ষ্য Telegram চ্যানেল-এ এসেছে কি না নিশ্চিত করুন। |
 
-## Quick Checklist
+## দ্রুত তালিকা
 
 ```text
-@BotFather দিয়ে bot তৈরি করুন
--> Bot Token save করুন
--> Telegram channel তৈরি করুন
--> Bot-কে channel-এ যোগ করে administrator permission দিন
--> @userinfobot search করে Channel নির্বাচন করুন
--> Channel থেকে যেকোনো message @userinfobot-এ forward করুন
--> ফেরত পাওয়া Id: -100... copy করুন
--> ImgBed-এ Bot Token এবং Chat ID দিন
--> Save করে test image upload করুন
+Create a bot with @BotFather
+-> Save the Bot Token
+-> Create a Telegram channel
+-> Add the bot to the channel and grant administrator permissions
+-> Search for @userinfobot and choose Channel
+-> Forward any message from the channel to @userinfobot
+-> Copy the returned Id: -100...
+-> Enter the Bot Token and Chat ID in ImgBed
+-> Save and upload a test image
 ```
 
-## References
+## তথ্যসূত্র
 
 1. Telegram bots: https://core.telegram.org/bots
 2. Telegram Bot API: https://core.telegram.org/bots/api

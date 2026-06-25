@@ -130,14 +130,14 @@ Jeśli nie masz pewności, użyj automatycznej negocjacji.
 ## Szybka lista
 
 ```text
-Przygotuj endpoint WebDAV, nazwę użytkownika i hasło
--> Otwórz Ustawienia przesyłania
--> Dodaj kanał
--> Wybierz WebDAV
--> Wpisz Endpoint / nazwę użytkownika / hasło
--> Domyślnie zostaw tryb Basic
--> Domyślnie zostaw katalog imgbed
--> Zapisz
--> Odpytaj pojemność
--> Prześlij plik testowy
+Prepare WebDAV endpoint, username, and password
+-> Open Upload Settings
+-> Add Channel
+-> Select WebDAV
+-> Enter Endpoint / username / password
+-> Keep authentication mode as Basic by default
+-> Keep storage directory as imgbed by default
+-> Save
+-> Query capacity
+-> Upload a test file
 ```

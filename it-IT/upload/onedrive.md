@@ -94,7 +94,7 @@ In Impostazioni di caricamento scegli `OneDrive` e compila:
 | Client Secret | Il `Client Secret Value` copiato |
 | Tenant ID | Usa la tabella sotto |
 | Refresh Token | Lascialo vuoto per ora |
-| Directory radice | Opzionale. Default `imgbed`. |
+| Directory radice | Opzionale. Valore predefinito `imgbed`. |
 | Nota | Opzionale |
 
 ![Configura canale OneDrive](../../image/upload/onedrive/添加新渠道配置.png)
@@ -125,24 +125,24 @@ Quando tutti i campi sono compilati, salva il canale.
 ## Flusso rapido
 
 ```text
-Apri portal.azure.com
--> Cerca Microsoft Entra ID
--> Apri App registrations
--> Registra una nuova app
--> Compila Name / Supported account types / Web redirect URI
--> Registra
--> Copia Application (client) ID
--> Controlla l'URL di callback in Authentication
--> Crea un Client Secret in Certificates & secrets
--> Aggiungi i permessi in API permissions
--> Inserisci Client ID / Client Secret / Tenant ID in ImgBed
--> Clicca Get Token
--> Copia il Refresh Token dalla pagina di callback
--> Incollalo in ImgBed e salva
+Open portal.azure.com
+-> Search for Microsoft Entra ID
+-> Open App registrations
+-> Register a new app
+-> Fill Name / Supported account types / Web redirect URI
+-> Register
+-> Copy Application (client) ID
+-> Check the callback URL in Authentication
+-> Create a Client Secret in Certificates & secrets
+-> Add permissions in API permissions
+-> Fill Client ID / Client Secret / Tenant ID into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## Riferimenti
 
 1. Registrazione app Microsoft Entra: https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
-2. Authorization code flow Microsoft identity platform: https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow
+2. Flusso con codice di autorizzazione della Microsoft identity platform: https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow
 3. Autenticazione utente Microsoft Graph: https://learn.microsoft.com/en-us/graph/auth-v2-user

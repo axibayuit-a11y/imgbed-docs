@@ -1,87 +1,87 @@
 # Blog
 
-Blog feature menambah halaman blog standalone kepada ImgBed site anda.
+Fungsi blog menambah halaman blog tersendiri pada laman ImgBed anda.
 
-Selepas diaktifkan, visitors boleh membuka:
+Selepas diaktifkan, pelawat boleh membuka:
 
 ```text
 https://your-domain.com/blog/
 ```
 
-![Blog homepage](../../image/other/博客/博客首页.png)
+![Halaman utama blog](../../image/other/博客/博客首页.png)
 
-Blog ini diadaptasi daripada open-source project [LyraVoid/Mizuki](https://github.com/LyraVoid/Mizuki). ImgBed rewrite dan mengintegrasikannya dengan Vue supaya ia boleh berjalan sebagai sebahagian daripada image hosting site.
+Blog ini diadaptasi daripada projek sumber terbuka [LyraVoid/Mizuki](https://github.com/LyraVoid/Mizuki). ImgBed menulis semula dan mengintegrasikannya dengan Vue supaya ia boleh berjalan sebagai sebahagian daripada laman pengehosan imej.
 
-## Di Mana Untuk Configure
+## Tempat Mengkonfigurasikannya
 
-Blog settings berada di:
+Tetapan blog berada di bawah:
 
 ```text
 System Settings -> Other Settings -> Blog
 ```
 
-![Blog settings](../../image/other/博客/QQ20260611-221702.png)
+![Tetapan blog](../../image/other/博客/QQ20260611-221702.png)
 
-## First-Time Setup
+## Persediaan Kali Pertama
 
 1. Hidupkan `Enable`.
-2. Pilih GitHub account yang digunakan untuk menyimpan blog configuration.
+2. Pilih akaun GitHub yang digunakan untuk menyimpan konfigurasi blog.
 3. Klik `Update Blog`.
-4. Tunggu success message.
+4. Tunggu mesej kejayaan.
 5. Buka `https://your-domain.com/blog/` untuk melihat blog.
 
-Pada penggunaan pertama, ImgBed menyediakan private GitHub repository di bawah account yang dipilih:
+Pada penggunaan pertama, ImgBed menyediakan repositori GitHub peribadi di bawah akaun yang dipilih:
 
 ```text
 imgbed-blog-config
 ```
 
-Repository ini menyimpan blog settings dan article content.
+Repositori ini menyimpan tetapan blog dan kandungan artikel.
 
-## Menulis Posts
+## Menulis Siaran
 
-Edit blog posts dalam private GitHub repository:
+Edit siaran blog dalam repositori GitHub peribadi anda:
 
 ```text
 imgbed-blog-config
 ```
 
-Typical workflow:
+Aliran kerja biasa:
 
 1. Buka GitHub.
-2. Masuk ke private repository `imgbed-blog-config`.
-3. Edit atau add post files.
-4. Commit changes.
-5. Kembali ke ImgBed admin panel dan klik `Update Blog`, atau klik logo di penjuru kiri atas blog homepage tiga kali untuk trigger blog update.
+2. Masuk ke repositori peribadi `imgbed-blog-config`.
+3. Edit atau tambah fail siaran.
+4. Komit perubahan.
+5. Kembali ke panel pentadbir ImgBed dan klik `Update Blog`, atau klik logo di penjuru kiri atas halaman utama blog sebanyak tiga kali untuk mencetuskan kemas kini blog.
 
-`Update Blog` tidak overwrite content yang anda tulis. Ia initialize repository apabila perlu dan refresh blog cache.
+`Update Blog` tidak menimpa kandungan yang telah anda tulis. Ia menyediakan repositori apabila diperlukan dan menyegarkan cache blog.
 
-## Supported Features
+## Ciri Yang Disokong
 
-Blog menyokong common blog features seperti post lists, categories, tags, archives, search, dark mode dan language switching.
+Blog menyokong ciri blog umum seperti senarai siaran, kategori, tag, arkib, carian, mod gelap dan penukaran bahasa.
 
-Ia juga menyokong comments dan visit statistics.
+Ia juga menyokong komen dan statistik lawatan.
 
-![Blog comments](../../image/other/博客/支持留言.png)
+![Komen blog](../../image/other/博客/支持留言.png)
 
-Comments muncul di bawah posts. Visitors boleh submit avatar, nickname, email dan comment content.
+Komen muncul di bawah siaran. Pelawat boleh menghantar avatar, nama panggilan, e-mel dan kandungan komen.
 
-Visit statistics menunjukkan post views dan site visits, membantu anda memahami blog traffic.
+Statistik lawatan menunjukkan paparan siaran dan lawatan laman, yang membantu anda memahami trafik blog.
 
 ## URL
 
-Blog sentiasa served di bawah `/blog/`.
+Blog sentiasa disediakan di bawah `/blog/`.
 
-Contohnya, jika ImgBed domain anda ialah:
+Contohnya, jika domain ImgBed anda ialah:
 
 ```text
 https://image.example.com
 ```
 
-Blog URL ialah:
+URL blog ialah:
 
 ```text
 https://image.example.com/blog/
 ```
 
-Selepas blog disabled, visitors tidak lagi boleh mengakses blog page.
+Selepas blog dinyahaktifkan, pelawat tidak lagi boleh mengakses halaman blog.

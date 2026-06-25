@@ -1,76 +1,76 @@
-# User Rate Limits
+# صارف اپ لوڈ شرح کی حدود
 
-User rate limits یہ کنٹرول کرتے ہیں کہ regular users یا visitors homepage سے کتنی بار files upload کر سکتے ہیں۔ اس سے public upload pages کے abuse کو کم کرنے میں مدد ملتی ہے۔
+صارف اپ لوڈ شرح کی حدود یہ کنٹرول کرتی ہیں کہ عام صارفین یا وزٹرز ہوم پیج سے کتنی بار فائلیں اپ لوڈ کر سکتے ہیں۔ اس سے عوامی اپ لوڈ صفحات کے غلط استعمال کو روکنے میں مدد ملتی ہے۔
 
-یہ feature صرف homepage uploads کو متاثر کرتا ہے۔ Admin uploads اور API Tokens کے ذریعے کیے گئے uploads پر user rate limits لاگو نہیں ہوتیں۔
+یہ فیچر صرف ہوم پیج اپ لوڈز پر اثر انداز ہوتا ہے۔ ایڈمن اپ لوڈز اور API Token کے ذریعے کیے گئے اپ لوڈز ان صارف شرح حدود کے تابع نہیں ہوتے۔
 
-## کہاں Configure کریں
+## کہاں ترتیب دیں
 
-admin panel کھولیں، پھر جائیں:
+ایڈمن پینل کھولیں، پھر یہاں جائیں:
 
 ```text
 System Settings -> Security Settings -> Upload Management -> User Rate Limits
 ```
 
-![User rate limit settings](../../image/other/用户频控截图.png)
+![صارف شرح حد کی ترتیبات](../../image/other/用户频控截图.png)
 
-## Rate Limits Enable کرنا
+## شرح حدود فعال کرنا
 
-`Enable Rate Limits` on ہونے کے بعد ImgBed uploader IP address کے حساب سے recent uploads track کرتا ہے۔
+`شرح حدود فعال کریں` آن کرنے کے بعد ImgBed اپ لوڈر کے IP پتے کے مطابق حالیہ اپ لوڈز کا ریکارڈ رکھتا ہے۔
 
-Default values:
+طے شدہ قدریں:
 
-| Setting | Default | Description |
+| ترتیب | طے شدہ قدر | وضاحت |
 | --- | --- | --- |
-| Detection window | 1.5 hours | کتنے پیچھے تک upload records count ہوں گے۔ |
-| Max file count | 20 | detection window میں allowed maximum files۔ |
-| Single file size limit | 20 MB | ایک file کا maximum size۔ |
-| Total upload size limit | 200 MB | detection window میں maximum total upload size۔ |
+| جانچ کی مدت | 1.5 گھنٹے | اپ لوڈ ریکارڈز شمار کرتے وقت ماضی میں کتنی مدت دیکھی جائے۔ |
+| زیادہ سے زیادہ فائل تعداد | 20 | جانچ کی مدت میں اجازت یافتہ فائلوں کی زیادہ سے زیادہ تعداد۔ |
+| ایک فائل کے حجم کی حد | 20 MB | ایک فائل کا زیادہ سے زیادہ حجم۔ |
+| کل اپ لوڈ حجم کی حد | 200 MB | جانچ کی مدت میں کل اپ لوڈ حجم کی زیادہ سے زیادہ حد۔ |
 
-مثلاً 1.5 hour window، 20 files، ہر file 20 MB، اور total 200 MB کے ساتھ، same IP سے uploads تب block ہوں گے جب کوئی بھی configured limit exceed ہو جائے۔
+مثال کے طور پر، 1.5 گھنٹے کی مدت، 20 فائلوں، ہر فائل کے لیے 20 MB، اور کل 200 MB کی ترتیب میں، اسی IP سے آنے والے اپ لوڈز کسی بھی مقررہ حد سے تجاوز کرتے ہی بلاک ہو جاتے ہیں۔
 
-## File Types Exclude کرنا
+## فائل اقسام خارج کرنا
 
-`Excluded upload file types` regular users یا visitors کو selected file categories upload کرنے سے روکتا ہے۔
+`خارج کی گئی اپ لوڈ فائل اقسام` عام صارفین یا وزٹرز کو منتخب فائل زمروں کی اپ لوڈنگ سے روکتا ہے۔
 
-Available categories:
+دستیاب زمرے:
 
-| Type | Description |
+| قسم | وضاحت |
 | --- | --- |
-| Images | jpg, png, webp, gif، اور اسی طرح کی image files |
-| Videos | mp4, webm, mov، اور اسی طرح کی video files |
-| Audio | mp3, flac, wav، اور اسی طرح کی audio files |
-| Documents | pdf, txt, md, docx، اور اسی طرح کی document files |
-| Other | اوپر والی categories سے باہر files، جیسے zip, rar, exe, apk |
+| تصاویر | jpg، png، webp، gif، اور اسی نوعیت کی تصویری فائلیں |
+| ویڈیوز | mp4، webm، mov، اور اسی نوعیت کی ویڈیو فائلیں |
+| آڈیو | mp3، flac، wav، اور اسی نوعیت کی آڈیو فائلیں |
+| دستاویزات | pdf، txt، md، docx، اور اسی نوعیت کی دستاویزی فائلیں |
+| دیگر | اوپر دیے گئے زمروں سے باہر فائلیں، جیسے zip، rar، exe، apk |
 
-default طور پر کوئی type selected نہیں ہوتا، یعنی وہ allowed ہے۔
+طے شدہ طور پر کوئی قسم منتخب نہیں ہوتی، یعنی وہ قسم اجازت یافتہ ہوتی ہے۔
 
-کسی type پر کلک کرنے سے وہ highlight ہوتا ہے، یعنی وہ type blocked ہے۔
+کسی قسم پر کلک کرنے سے وہ نمایاں ہو جاتی ہے، جس کا مطلب ہے کہ وہ قسم بلاک ہے۔
 
-اگر `Other` selected ہو، تو zip یا rar files upload کرنے والے visitors block ہوں گے اور انہیں بتایا جائے گا کہ یہ file type supported نہیں۔
+اگر `دیگر` منتخب ہو تو zip یا rar فائلیں اپ لوڈ کرنے والے وزٹرز کو بلاک کیا جائے گا اور بتایا جائے گا کہ یہ فائل قسم معاونت یافتہ نہیں ہے۔
 
-## Block Messages
+## بلاک پیغامات
 
-limit trigger ہونے پر users کو matching message دکھتا ہے:
+جب کوئی حد فعال ہوتی ہے تو صارفین کو متعلقہ پیغام دکھایا جاتا ہے:
 
-![Too frequent upload message](../../image/other/频繁报错提示.png)
+![بہت زیادہ بار اپ لوڈ کا پیغام](../../image/other/频繁报错提示.png)
 
-| Scenario | Message Meaning |
+| صورتحال | پیغام کا مطلب |
 | --- | --- |
-| Single file too large | file بہت بڑی ہے اور upload سے پہلے compress کرنی چاہیے۔ |
-| File type blocked | یہ file type supported نہیں۔ اسے remove کر کے دوبارہ کوشش کریں۔ |
-| Uploads too frequent | recent uploads بہت frequent ہیں، retry time کے ساتھ message دکھتا ہے۔ |
-| Total size too high | recent total upload size بہت زیادہ ہے، retry time کے ساتھ message دکھتا ہے۔ |
+| ایک فائل بہت بڑی ہے | فائل بہت بڑی ہے اور اپ لوڈ سے پہلے اسے کمپریس کرنا چاہیے۔ |
+| فائل قسم بلاک ہے | یہ فائل قسم معاونت یافتہ نہیں ہے۔ اسے ہٹا کر دوبارہ کوشش کریں۔ |
+| اپ لوڈز بہت زیادہ بار ہو رہے ہیں | حالیہ اپ لوڈز بہت زیادہ بار ہوئے ہیں، ساتھ میں دوبارہ کوشش کا وقت دکھایا جاتا ہے۔ |
+| کل حجم بہت زیادہ ہے | حالیہ کل اپ لوڈ حجم بہت زیادہ ہے، ساتھ میں دوبارہ کوشش کا وقت دکھایا جاتا ہے۔ |
 
-## کب Enable کریں
+## کب فعال کریں
 
-اگر آپ کا upload homepage public accessible ہے تو user rate limits enable کریں۔
+اگر آپ کا اپ لوڈ ہوم پیج عوامی طور پر قابل رسائی ہے تو صارف شرح حدود فعال کریں۔
 
 عام وجوہات:
 
-- آپ scripted bulk uploads کے بارے میں فکر مند ہیں۔
-- آپ visitor uploads کا size limit کرنا چاہتے ہیں۔
-- آپ چاہتے ہیں regular users صرف images upload کریں، archives یا installers نہیں۔
-- آپ public upload available رکھنا چاہتے ہیں مگر resource usage control کرنا چاہتے ہیں۔
+- آپ اسکرپٹ کے ذریعے بڑی تعداد میں اپ لوڈز سے فکر مند ہیں۔
+- آپ وزٹرز کے بڑے اپ لوڈز محدود کرنا چاہتے ہیں۔
+- آپ چاہتے ہیں کہ عام صارفین صرف تصاویر اپ لوڈ کریں، آرکائیوز یا انسٹالرز نہیں۔
+- آپ وسائل کے استعمال کو قابو میں رکھتے ہوئے عوامی اپ لوڈ دستیاب رکھنا چاہتے ہیں۔
 
-اگر site صرف آپ کے لیے ہے، یا صرف administrators upload کرتے ہیں، تو اسے disabled چھوڑ سکتے ہیں۔
+اگر سائٹ صرف آپ کے لیے ہے، یا صرف ایڈمنز اپ لوڈ کر سکتے ہیں، تو آپ اسے غیر فعال چھوڑ سکتے ہیں۔

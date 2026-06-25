@@ -2,137 +2,192 @@
 
 Der föderierte verteilte Index ermöglicht es mehreren ImgBed-Seiten, Dateilisten miteinander zu teilen.
 
-Kurz gesagt:
+Einfach gesagt:
 
-- Du kannst bestimmte Ordner deiner Seite mit anderen teilen.
-- Du kannst einem fremden Knoten beitreten und dessen freigegebene Dateiliste in deinen Adminbereich synchronisieren.
-- Föderierte Dateien dienen zum Durchsuchen, Anzeigen, Vorschauen und Kopieren von Links. Sie werden nicht in deinen eigenen Speicher erneut hochgeladen.
+- Sie können ausgewählte Ordner Ihrer Seite mit anderen teilen.
+- Sie können einem anderen Knoten beitreten und dessen freigegebene Dateiliste in Ihren Adminbereich synchronisieren.
+- Föderierte Dateien dienen hauptsächlich zum Durchsuchen, Suchen und Öffnen von Links. Sie werden nicht erneut in Ihren eigenen Speicher hochgeladen.
 
-## Wo einstellen
+## Wo er konfiguriert wird
+
+Öffnen Sie:
 
 ```text
-Systemeinstellungen -> Weitere Einstellungen -> Föderierter verteilter Index
+System Settings -> Other Settings -> Federated Distributed Index
 ```
 
-![Lokaler Knoten](../../image/other/联盟图/联盟分布式索引本地节点.png)
+![Lokaler Föderationsknoten](../../image/other/联盟图/联盟分布式索引本地节点.png)
 
-Die Seite besteht aus drei Tabs:
+Die Seite hat drei Registerkarten:
 
-| Tab | Zweck |
+| Registerkarte | Zweck |
 | --- | --- |
-| Lokaler Knoten | Eigenen Knoten, öffentliche Domain, freigegebene Ordner und ausgehenden Index verwalten |
-| Beigetretene Knoten | Knoten anderer ImgBed-Seiten verwalten |
-| Anfragen an meinen Knoten | Beitrittsanfragen anderer Personen verwalten |
+| Lokaler Knoten | Eigenen Knoten aktivieren, öffentliche Domain bestätigen, freigegebene Ordner auswählen und ausgehenden Index aktualisieren |
+| Beigetretene Knoten | Andere ImgBed-Knoten verwalten, denen Sie beigetreten sind |
+| Knoten, die mir beitreten | Anfragen von anderen verwalten, die Ihrem Knoten beitreten möchten |
 
 ## Ersteinrichtung
 
-1. Öffne `Lokaler Knoten`.
-2. Aktiviere `Aktivieren`.
-3. Wähle unter `Synchronisierte Ordner` die Ordner aus, die du freigeben möchtest.
-4. Klicke auf `Ausgehenden Index aktualisieren`.
-5. Wenn ImgBed eine Domainänderung erkennt, bestätige, dass die aktuelle Domain die richtige Produktionsdomain ist.
+1. Öffnen Sie `Local Node`.
+2. Aktivieren Sie `Enable`.
+3. Wählen Sie unter `Sync folders` die Ordner aus, die Sie freigeben möchten.
+4. Klicken Sie auf `Update Outbound Index`.
+5. Wenn ImgBed eine Domainänderung erkennt, bestätigen Sie vor dem Fortfahren, dass die aktuelle Domain korrekt ist.
 
-Du kannst mehrere Ordner auswählen. Bleibt die Liste leer, werden alle Ordner freigegeben.
+Sie können mehrere Synchronisierungsordner auswählen.
+
+Wenn die Liste der Synchronisierungsordner leer ist, werden alle Ordner freigegeben.
 
 ## Lokaler Knoten
 
 ### Öffentliche Domain
 
-Die öffentliche Domain ist die Adresse, über die andere Knoten deine Seite erreichen.
+Die öffentliche Domain ist die Website-URL, über die andere Knoten auf Ihren Knoten zugreifen.
 
-ImgBed erkennt sie automatisch. Normalerweise musst du nichts manuell eintragen. Beim ersten Aktualisieren oder nach Domainwechsel wird eine Bestätigung angezeigt.
+ImgBed erkennt diese automatisch. Sie müssen sie nicht manuell eingeben. Beim ersten Aktualisieren des Index fragt ImgBed, ob die aktuelle Zugriffs-URL die Produktionsdomain ist.
+
+Wenn Sie die Domain später ändern, fragt die Indexaktualisierung erneut nach einer Bestätigung.
 
 ### Synchronisierte Ordner
 
-Diese Ordner bestimmen, welche Dateien freigegeben werden.
+Synchronisierte Ordner bestimmen, welche Dateien mit Föderationsknoten geteilt werden.
 
-Beispiel:
+Wenn Sie beispielsweise nur Folgendes auswählen:
 
 ```text
 /1/
 /2/
 ```
 
-Andere Knoten sehen dann nur Dateien in diesen beiden Verzeichnissen.
+können andere Knoten nur die Dateien in diesen beiden Verzeichnissen sehen.
 
 ### Ausgehenden Index aktualisieren
 
-Aktualisiert die Dateiliste, die andere Knoten von deiner Seite synchronisieren können.
+Damit wird die Dateiliste aktualisiert, die andere Knoten von Ihnen synchronisieren können.
 
-Nutze diese Aktion, wenn:
+Verwenden Sie dies, wenn:
 
-- du die Föderation erstmals aktivierst;
-- du neue Dateien freigeben möchtest;
-- du freigegebene Ordner änderst;
-- du die öffentliche Domain wechselst.
+- Sie die Föderation zum ersten Mal aktivieren.
+- Sie Dateien hochladen, die Sie teilen möchten.
+- Sie synchronisierte Ordner ändern.
+- Sie die öffentliche Domain ändern und bestätigen müssen.
 
-## Anderen Knoten beitreten
+## Beigetretene Knoten
 
-`Beigetretene Knoten` ist der Bereich für Knoten anderer ImgBed-Seiten.
+`Nodes I Joined` ist der Bereich, in dem Sie andere Knoten abonnieren.
 
 ![Beigetretene Knoten](../../image/other/联盟图/我加入的节点.png)
 
-1. Bitte den Betreiber des anderen Knotens um einen Einladungslink.
-2. Füge ihn in das Eingabefeld ein.
-3. Klicke auf `Beitritt beantragen`.
-4. Warte, bis die andere Seite im Adminbereich zustimmt.
+### Beitritt zu einem anderen Knoten beantragen
 
-Nach Zustimmung nutzt du `Eingehenden Index aktualisieren`, um die freigegebenen Dateien zu synchronisieren.
+1. Bitten Sie den anderen Eigentümer um einen Einladungslink.
+2. Fügen Sie ihn in das Eingabefeld ein.
+3. Klicken Sie auf `Request to Join`.
+4. Warten Sie, bis der andere Eigentümer die Anfrage in seinem Adminbereich genehmigt.
 
-Für nur einen Knoten kannst du auf dessen Karte `Index aktualisieren` verwenden.
+Nach der Genehmigung ist der Knotenstatus genehmigt.
+
+### Eingehenden Index aktualisieren
+
+`Update Inbound Index` synchronisiert Dateilisten von Knoten, denen Sie beigetreten sind.
+
+Verwenden Sie dies, wenn:
+
+- der andere Eigentümer Ihre Anfrage gerade genehmigt hat.
+- der andere Eigentümer mitteilt, dass freigegebene Inhalte aktualisiert wurden.
+- Sie alle beigetretenen föderierten Dateilisten aktualisieren möchten.
+
+Um nur einen Knoten zu aktualisieren, klicken Sie auf dessen Karte auf `Update Index`.
 
 ![Index aktualisieren](../../image/other/联盟图/更新索引.png)
 
-## Anfragen an deinen Knoten verwalten
+### Abonnement beenden
 
-`Anfragen an meinen Knoten` zeigt Personen, die deinem Knoten beitreten möchten.
+Wenn Sie einen Knoten nicht mehr synchronisieren möchten, klicken Sie auf `Unsubscribe`.
 
-![Anfragen an meinen Knoten](../../image/other/联盟图/加入我的节点.png)
+Nach dem Beenden des Abonnements wird der föderierte Index dieses Knotens von Ihrer lokalen Seite entfernt.
 
-Für einen Einladungslink aktiviere den lokalen Knoten, führe mindestens einmal `Ausgehenden Index aktualisieren` aus, bestätige die öffentliche Domain und klicke dann auf `Einladungslink zurücksetzen`.
+## Knoten, die mir beitreten
 
-Bei einer Anfrage kannst du wählen:
+`Nodes Joining Me` ist der Bereich, in dem Sie Anfragen anderer bearbeiten.
 
-| Aktion | Ergebnis |
+![Knoten, die mir beitreten](../../image/other/联盟图/加入我的节点.png)
+
+### Einladungslink erzeugen
+
+1. Stellen Sie sicher, dass der lokale Knoten aktiviert ist.
+2. Klicken Sie mindestens einmal auf `Update Outbound Index`, damit ImgBed die öffentliche Domain bestätigt.
+3. Öffnen Sie `Nodes Joining Me`.
+4. Klicken Sie auf `Reset Invitation Link`.
+5. Kopieren Sie den Einladungslink und senden Sie ihn an den anderen Eigentümer.
+
+Wenn der Einladungslink leer ist, wurde die öffentliche Domain in der Regel noch nicht bestätigt. Kehren Sie zu `Local Node` zurück und klicken Sie auf `Update Outbound Index`.
+
+### Beitrittsanfragen bearbeiten
+
+Wenn jemand eine Anfrage sendet, erscheint sie in der Liste `Nodes Joining Me`.
+
+| Aktion | Bedeutung |
 | --- | --- |
-| Genehmigen | Die andere Seite darf deine freigegebene Liste synchronisieren |
-| Ablehnen | Beitritt wird verweigert |
-| Löschen | Abgeschlossenen Eintrag entfernen |
-| Status prüfen | Prüfen, ob die andere Seite die Beziehung noch hält |
+| Genehmigen | Erlaubt dem anderen Knoten, Ihre freigegebene Dateiliste zu synchronisieren |
+| Ablehnen | Lehnt die Beitrittsanfrage ab |
+| Löschen | Entfernt einen abgeschlossenen Eintrag |
+| Status prüfen | Prüft, ob die andere Seite diese Beziehung noch beibehält |
 
-Nach Genehmigung muss die andere Seite den eingehenden Index aktualisieren, um deine Dateien zu sehen.
+Nach der Genehmigung muss die andere Seite noch auf `Update Inbound Index` klicken, bevor Ihre freigegebenen Dateien dort erscheinen.
 
-![Knoten genehmigen](../../image/other/联盟图/邀请节点同意.png)
+![Eingeladenen Knoten genehmigen](../../image/other/联盟图/邀请节点同意.png)
 
 ## Nachrichten
 
-Nach Genehmigung kannst du auf der Knotenkarte `Nachricht` verwenden.
+Nach der Genehmigung einer Beziehung klicken Sie auf der Knotenkarte auf `Message`.
 
-Nachrichten dienen nur der Abstimmung zur Föderation. Sie ändern keine Dateien, Tags, Ordner oder Rechte.
+Nachrichten dienen nur der Kommunikation über die Föderationsbeziehung. Sie ändern keine Dateien, Tags, Verzeichnisse oder Berechtigungen.
 
 ![Nachrichten](../../image/other/联盟图/留言功能.png)
 
 ## Föderierte Dateien anzeigen
 
-Nach der Synchronisierung gehst du zurück zur Dateiliste im Adminbereich. Oben kannst du zwischen lokalen und föderierten Dateien wechseln.
+Nach Abschluss der Synchronisierung kehren Sie zur Dateiliste im Adminbereich zurück.
 
-Föderierte Dateien sind nicht lokal. Du kannst sie ansehen, durchsuchen, voranzeigen und Links kopieren, aber nicht verschieben, löschen, umtaggen oder sichern.
+Oben auf der Seite können Sie zwischen lokalen Dateien und föderierten Dateien wechseln. In den föderierten Dateien können Sie synchronisierte Inhalte durchsuchen.
 
-![Anzeige im Adminbereich](../../image/other/联盟图/联盟管理显示效果图.png)
+Föderierte Dateien dienen hauptsächlich zum Anzeigen, Suchen, Vorschauen und Kopieren von Links. Es sind keine lokalen Dateien, daher können Sie sie von Ihrer eigenen Seite aus nicht verschieben, löschen, neu taggen oder sichern.
 
-## Häufige Fragen
+![Föderierte Dateien im Adminbereich](../../image/other/联盟图/联盟管理显示效果图.png)
 
-### Es wird angezeigt, dass keine Beziehung existiert
+## FAQ
 
-Meist hat die andere Seite deinen Eintrag gelöscht. Stelle in diesem Fall eine neue Beitrittsanfrage.
+### Warum werde ich wegen eines fehlenden Beziehungsdatensatzes zu einer erneuten Anfrage aufgefordert?
 
-![Erneut beantragen](../../image/other/联盟图/无关系记录重新申请.png)
+Das bedeutet normalerweise, dass die andere Seite Sie gelöscht und den Datensatz entfernt hat, sodass die Beziehung nicht mehr gefunden werden kann. Senden Sie eine neue Beitrittsanfrage.
 
-### Ich bin beigetreten, sehe aber keine Dateien
+![Erneut beantragen, wenn kein Beziehungsdatensatz vorhanden ist](../../image/other/联盟图/无关系记录重新申请.png)
 
-Prüfe:
+### Warum sehe ich nach dem Beitritt keine Dateien?
 
-1. Die andere Seite hat deine Anfrage genehmigt.
-2. Die andere Seite hat ihren ausgehenden Index aktualisiert.
-3. Du hast deinen eingehenden Index aktualisiert.
-4. Die synchronisierten Ordner der anderen Seite enthalten die freigegebenen Verzeichnisse.
+Prüfen Sie:
+
+1. Der andere Eigentümer hat Ihre Anfrage genehmigt.
+2. Der andere Eigentümer hat auf `Update Outbound Index` geklickt.
+3. Sie haben auf `Update Inbound Index` geklickt.
+4. Die synchronisierten Ordner des anderen Eigentümers enthalten die Verzeichnisse, die er freigeben möchte.
+
+### Was soll ich tun, wenn eine Domainänderung erkannt wird?
+
+Wenn Sie den Adminbereich gerade über die Produktionsdomain öffnen, bestätigen Sie und fahren Sie fort.
+
+Wenn Sie eine temporäre Adresse verwenden, brechen Sie ab, öffnen Sie den Adminbereich über die Produktionsdomain erneut und versuchen Sie es noch einmal.
+
+### Was bedeutet eine leere Liste synchronisierter Ordner?
+
+Eine leere Liste synchronisierter Ordner bedeutet, dass alle Ordner freigegeben werden.
+
+Um nur einige Verzeichnisse freizugeben, wählen Sie diese Ordner manuell aus.
+
+### Unterschied zwischen ausgehender und eingehender Indexaktualisierung
+
+| Schaltfläche | Einfache Bedeutung |
+| --- | --- |
+| Ausgehenden Index aktualisieren | Aktualisiert, was andere von mir synchronisieren können |
+| Eingehenden Index aktualisieren | Aktualisiert, was ich von anderen synchronisiert habe |

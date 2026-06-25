@@ -1,102 +1,102 @@
-# Tambah pCloud Channel
+# Tambah Saluran pCloud
 
 ## Paling Sesuai Untuk
 
-- Anda mempunyai pCloud account dan mahu ImgBed menyimpan images dalam pCloud.
-- Anda selesa menggunakan pCloud account email dan password sebagai channel credentials.
+- Anda mempunyai akaun pCloud dan mahu ImgBed menyimpan imej dalam pCloud.
+- Anda selesa menggunakan e-mel dan kata laluan akaun pCloud sebagai kelayakan saluran.
 
-## Perkara Yang Perlu Disediakan Dahulu
+## Perkara Yang Diperlukan Dahulu
 
-| Requirement | Mengapa Diperlukan |
+| Keperluan | Sebab Diperlukan |
 | --- | --- |
-| pCloud account email | Digunakan untuk sign in ke pCloud API |
-| pCloud password | Digunakan untuk sign in ke pCloud API |
-| API host | Default ialah `api.pcloud.com`. EU accounts boleh menggunakan `eapi.pcloud.com`. |
-| Storage directory | Tempat files disimpan. Default ialah `imgbed`. |
+| E-mel akaun pCloud | Digunakan untuk log masuk ke API pCloud |
+| Kata laluan pCloud | Digunakan untuk log masuk ke API pCloud |
+| API host | Lalai ialah `api.pcloud.com`. Akaun EU boleh menggunakan `eapi.pcloud.com`. |
+| Direktori storan | Tempat fail disimpan. Lalai ialah `imgbed`. |
 
-## Di Mana Untuk Menambahnya
+## Tempat Menambahkannya
 
-1. Buka System Settings.
-2. Buka Upload Settings.
+1. Buka Tetapan Sistem.
+2. Buka Tetapan Muat Naik.
 3. Klik `Add Channel` di penjuru kanan atas.
 4. Pilih `pCloud`.
 
-## Field Reference
+## Rujukan Medan
 
-| Field | Purpose | Required |
+| Medan | Tujuan | Wajib |
 | --- | --- | --- |
-| Channel name | Mengenal pasti pCloud channel ini, contohnya `Personal pCloud` | Yes |
-| Account email | pCloud login email anda | Yes |
-| Password | pCloud password anda | Yes |
-| API host | pCloud API host. Default `api.pcloud.com`. | No |
-| Storage directory | Directory untuk menyimpan files. Default `imgbed`. | No |
+| Nama saluran | Mengenal pasti saluran pCloud ini, contohnya `Personal pCloud` | Ya |
+| E-mel akaun | E-mel log masuk pCloud anda | Ya |
+| Kata laluan | Kata laluan pCloud anda | Ya |
+| API host | Host API pCloud. Lalai ialah `api.pcloud.com`. | Tidak |
+| Direktori storan | Direktori yang digunakan untuk menyimpan fail. Lalai ialah `imgbed`. | Tidak |
 
-Pilih API host berdasarkan account region:
+Pilih API host berdasarkan rantau akaun anda:
 
-| Account Region | API Host |
+| Rantau Akaun | API Host |
 | --- | --- |
-| Default / US | `api.pcloud.com` |
-| Europe | `eapi.pcloud.com` |
+| Lalai / US | `api.pcloud.com` |
+| Eropah | `eapi.pcloud.com` |
 
-## Langkah Setup
+## Langkah Persediaan
 
-1. Buka Upload Settings.
+1. Buka Tetapan Muat Naik.
 2. Klik `Add Channel`.
 3. Pilih `pCloud`.
-4. Masukkan channel name yang mudah dikenali.
-5. Masukkan pCloud account email.
-6. Masukkan pCloud password.
-7. Kekalkan API host sebagai `api.pcloud.com`, atau gunakan `eapi.pcloud.com` untuk EU accounts.
-8. Kekalkan storage directory sebagai `imgbed`, atau tukar kepada folder pilihan anda.
-9. Save channel.
+4. Masukkan nama saluran yang mudah anda kenali.
+5. Masukkan e-mel akaun pCloud anda.
+6. Masukkan kata laluan pCloud anda.
+7. Kekalkan API host sebagai `api.pcloud.com`, atau gunakan `eapi.pcloud.com` untuk akaun EU.
+8. Kekalkan direktori storan sebagai `imgbed`, atau tukar kepada folder pilihan anda.
+9. Simpan saluran.
 
-![Configure channel](../../image/upload/pcloud/配置渠道.png)
+![Konfigurasikan saluran](../../image/upload/pcloud/配置渠道.png)
 
-## Cara Menyemak
+## Cara Mengesahkan
 
-| Check | Expected Result |
+| Semakan | Hasil Dijangka |
 | --- | --- |
-| Channel card | pCloud channel card muncul selepas save. |
-| Channel switch | Switch pada card kekal enabled. |
-| Email display | Card menunjukkan connected pCloud email. |
-| Quota query | Selepas query berjaya, used dan total capacity dipaparkan. |
-| Upload test | Test image muncul dalam configured pCloud storage directory. |
+| Kad saluran | Kad saluran pCloud muncul selepas disimpan. |
+| Suis saluran | Suis pada kad kekal didayakan. |
+| Paparan e-mel | Kad menunjukkan e-mel pCloud yang disambungkan. |
+| Pertanyaan kuota | Selepas pertanyaan berjaya, kapasiti digunakan dan jumlah kapasiti dipaparkan. |
+| Ujian muat naik | Imej ujian muncul dalam direktori storan pCloud yang dikonfigurasikan. |
 
-![Quota query success](../../image/upload/pcloud/查询额度成功.png)
+![Pertanyaan kuota berjaya](../../image/upload/pcloud/查询额度成功.png)
 
-## Troubleshooting
+## Penyelesaian Masalah
 
 ### Mengapa Bukan OAuth2?
 
-pCloud OAuth2 bukan self-service secara default. Anda perlu email pCloud dan minta mereka enable.
+pCloud OAuth2 bukan perkhidmatan kendiri secara lalai. Anda perlu menghantar e-mel kepada pCloud dan meminta mereka mendayakannya.
 
-Flow pCloud OAuth2 semasa juga tidak menyokong short-lived upload link workflow yang diperlukan oleh ImgBed, jadi channel ini menggunakan login account email dan password.
+Aliran OAuth2 pCloud semasa juga tidak menyokong aliran kerja pautan muat naik jangka pendek yang diperlukan oleh ImgBed. Oleh itu, saluran ini menggunakan log masuk e-mel dan kata laluan akaun.
 
-### API Host Mana Patut Digunakan?
+### API Host Mana Yang Patut Digunakan?
 
-Default:
+Lalai:
 
 ```text
 api.pcloud.com
 ```
 
-Untuk EU accounts:
+Untuk akaun EU:
 
 ```text
 eapi.pcloud.com
 ```
 
-## Quick Flow
+## Aliran Pantas
 
 ```text
-Sediakan pCloud email dan password
--> Buka Upload Settings
+Prepare your pCloud email and password
+-> Open Upload Settings
 -> Add Channel
--> Pilih pCloud
--> Isi channel name / email / password
--> Kekalkan API host sebagai api.pcloud.com kecuali account anda di Europe
--> Kekalkan storage directory sebagai imgbed kecuali perlu folder lain
+-> Choose pCloud
+-> Fill channel name / email / password
+-> Keep API host as api.pcloud.com unless your account is in Europe
+-> Keep storage directory as imgbed unless you need another folder
 -> Save
 -> Query quota
--> Upload test image
+-> Upload a test image
 ```

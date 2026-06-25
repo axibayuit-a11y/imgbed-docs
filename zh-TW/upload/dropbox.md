@@ -1,17 +1,17 @@
-# 新增 Dropbox 渠道
+# Dropbox 渠道新增說明
 
 ## 新增前要準備什麼
 
 | 需要準備 | 用途 |
 | --- | --- |
-| Dropbox 帳號 | 登入 Dropbox 並授權應用程式 |
-| Dropbox App | 取得 `App Key` 和 `App Secret` |
-| 目前 ImgBed 網域 | 設定 OAuth 回呼網址 |
-| 可用的 Dropbox 空間 | 實際存放圖片 |
+| 一個 Dropbox 帳號 | 用來登入 Dropbox 并授權應用 |
+| 一個 Dropbox 應用 | 用來生成 `App Key` 和 `App Secret` |
+| 當前圖床訪問域名 | 用來設定授權回調地址 |
+| 一個可用的 Dropbox 空間 | 後面真正存圖用 |
 
 ## 新增步驟
 
-### 第一步：建立 Dropbox App
+### 第一步：建立 Dropbox 應用
 
 1. 打開 Dropbox App Console：
 
@@ -19,119 +19,137 @@
 https://www.dropbox.com/developers/apps
 ```
 
-2. 建立新的 App。
-3. 存取類型建議選：
+2. 點擊建立新應用。
+3. 訪問類型建議選：
 
 ```text
 App folder
 ```
 
-4. 替 App 取一個好辨識的名稱，例如 `imgbed-app`。
-5. 建立完成後進入 App 詳情頁。
+4. 給應用起一個你自己能認出來的名字，例如 `imgbed-app`。
+5. 建立完成後進入應用詳情頁。
 
-| 存取類型 | 建議 |
+這一步要特別注意：
+
+| 訪問類型 | 建議 |
 | --- | --- |
-| `App folder` | 推薦，權限範圍剛好符合 ImgBed 使用情境 |
-| `Full Dropbox` | 不建議，權限太大，目前沒有必要 |
+| `App folder` | 推薦，和當前專案最匹配 |
+| `Full Dropbox` | 不建議，權限更大，當前專案沒必要 |
 
-![建立 Dropbox App](../../image/upload/dropbox/开发者创建应用.png)
+![開發者建立應用](../../image/upload/dropbox/开发者创建应用.png)
 
-### 第二步：設定回呼網址
+### 第二步：設定回調地址
 
-在 Dropbox App 詳情頁找到 OAuth 或 Redirect URI 設定，加入：
+在 Dropbox 應用詳情頁里找到 OAuth 或 Redirect URI 設定，填下面這個地址：
 
 ```text
-https://你的網域/api/oauth/dropbox/callback
+https://your-domain.com/api/oauth/dropbox/callback
 ```
 
-如果你平常會從多個網域開後台，請把對應的回呼網址都加上。
+如果你平時會從多個域名打開後台，就把多個域名對應的回調都加上。
 
-![設定回呼網址](../../image/upload/dropbox/配置回调地址.png)
+![設定回調地址](../../image/upload/dropbox/配置回调地址.png)
 
-### 第三步：設定權限 Scopes
+### 第三步：設定應用權限（Scopes）
 
-進入 `Permissions` 分頁，至少勾選：
+進入應用詳情頁的 `Permissions` 標簽頁，至少勾選下面這些權限：
 
-| 權限 | 是否必要 | 用途 |
+| 權限 | 是否必須 | 用途 |
 | --- | --- | --- |
-| `account_info.read` | 必要 | 查詢帳號基本資訊和容量 |
-| `files.metadata.read` | 必要 | 讀取檔案 / 目錄 metadata |
-| `files.metadata.write` | 必要 | 建立目錄等 metadata 寫入 |
-| `files.content.write` | 必要 | 上傳檔案，缺少會出現 `required scope 'files.content.write'` |
-| `files.content.read` | 建議 | 下載、預覽、暫時連結等讀取能力 |
+| `account_info.read` | 必須 | 查詢帳號基礎資訊、容量資訊 |
+| `files.metadata.read` | 必須 | 讀取檔案/目錄元數據（用于路徑檢查） |
+| `files.metadata.write` | 必須 | 建立目錄等元數據寫操作 |
+| `files.content.write` | 必須 | 上傳檔案（缺少會報 `required scope 'files.content.write'`） |
+| `files.content.read` | 建議 | 下載、預覽、臨時直鏈等讀檔案能力 |
 
-勾選後，請記得按頁面底部的 `Submit`。
+勾選後點擊頁面底部 `Submit` 提交權限變更。
 
-![新增權限](../../image/upload/dropbox/添加对应的权限.png)
+![新增對應的權限](../../image/upload/dropbox/添加对应的权限.png)
 
-如果你後來修改了 Scopes，必須重新跑一次「取得 Token」流程。舊的 Refresh Token 不會自動取得新權限。
+重要說明：
 
-### 第四步：記下 App 資訊
-
-| Dropbox 後台欄位 | ImgBed 欄位 |
+| 場景 | 處理方式 |
 | --- | --- |
-| `App key` | `App Key` |
-| `App secret` | `App Secret` |
+| 你修改了 Scopes | 必須重新走一次“獲取令牌”流程，拿新的 `Refresh Token` |
+| 沒有重新授權 | 舊 token 不會自動獲得新權限，上傳仍會失敗 |
 
-### 第五步：回 ImgBed 填寫 Dropbox 渠道
+### 第四步：記錄應用資訊
 
-| 頁面欄位 | 填寫內容 |
+應用建立完成後，記下這兩個值：
+
+| Dropbox 後台欄位 | 後面填到哪里 |
 | --- | --- |
-| 渠道名稱 | 自己取，例如 `Dropbox主帳號` |
-| App Key | Dropbox App 的 `App key` |
-| App Secret | Dropbox App 的 `App secret` |
-| Refresh Token | 先留空，下一步取得 |
-| 根目錄 | 選填，預設 `imgbed` |
-| 備註 | 選填 |
+| `App key` | 系統里的 `App Key` |
+| `App secret` | 系統里的 `App Secret` |
 
-![取得 Token](../../image/upload/dropbox/获取令牌.png)
+### 第五步：回系統里填寫 Dropbox 渠道
 
-### 第六步：取得 Refresh Token
+在上傳設定里選擇 `Dropbox` 後，按下面這套填：
 
-1. 在 ImgBed 點「取得 Token」。
-2. 登入要綁定的 Dropbox 帳號。
-3. 依提示授權。
-4. 成功後，回呼頁會顯示 `Refresh Token`。
+| 頁面欄位 | 你該填什麼 |
+| --- | --- |
+| 渠道名稱 | 你自己起，例如 `Dropbox主账号` |
+| App Key | 剛才 Dropbox 應用的 `App key` |
+| App Secret | 剛才 Dropbox 應用的 `App secret` |
+| Refresh Token | 先留空 |
+| 根目錄 | 可選，預設 `imgbed` |
+| 備注 | 可選 |
+
+![獲取令牌](../../image/upload/dropbox/获取令牌.png)
+
+### 第六步：獲取 Refresh Token
+
+1. 在系統里點 `获取令牌`。
+2. 登入你要綁定的 Dropbox 帳號。
+3. 按提示授權。
+4. 授權成功後，回調頁會顯示一串 `Refresh Token`。
 5. 複製它。
-6. 回到 ImgBed，貼到 `Refresh Token` 欄位。
+6. 回到系統，貼上到 `Refresh Token` 輸入框里。
 
-![複製 Token](../../image/upload/dropbox/复制令牌.png)
+![複製令牌](../../image/upload/dropbox/复制令牌.png)
 
-## 新增完成後怎麼檢查
+## 新增完成後怎么檢查
 
-| 檢查項目 | 檢查方式 |
+| 檢查項 | 檢查方式 |
 | --- | --- |
-| 渠道卡片是否出現 | 儲存後頁面看得到 Dropbox 渠道 |
-| 渠道是否能啟用 | 開關可以正常打開 |
-| Token 是否已儲存 | 詳情頁看得到 Refresh Token 已保存 |
-| 上傳是否正常 | 上傳測試圖後，Dropbox App 目錄出現檔案 |
+| 渠道卡片是否出現 | 保存後頁面里能看到 Dropbox 渠道 |
+| 渠道是否能啟用 | 開關能正常打開 |
+| 令牌是否已寫入 | 詳情頁能看到 `Refresh Token` 已保存 |
+| 上傳是否正常 | 上傳測試圖後，Dropbox 應用目錄里出現對應檔案 |
 
-如果開啟容量限制，可以點查詢額度。成功後卡片會顯示已用容量、總容量和更新時間。
+如果開啟了容量限制，可以點擊查詢額度。查詢成功後，卡片會顯示已用容量、總容量和更新時間。
 
 ![查詢額度成功](../../image/upload/dropbox/查询额度成功.png)
 
 ## 常見問題
 
-| 問題 | 處理方式 |
+| 問題 | 處理辦法 |
 | --- | --- |
 | 系統提示設定不完整 | 檢查 `App Key`、`App Secret`、`Refresh Token` 是否都填了 |
-| 授權成功但沒有 Refresh Token | 重新點「取得 Token」，確認走的是離線授權 |
-| 上傳出現 `required scope 'files.content.write'` | 回 Dropbox 勾選 `files.content.write`，按 `Submit` 後重新取得 Refresh Token |
-| 回呼失敗 | 確認回呼網址是 `https://你的網域/api/oauth/dropbox/callback` |
-| 找不到檔案 | 確認 App 是用 `App folder` 模式建立 |
+| 授權成功但沒拿到 `Refresh Token` | 重新點一次 `获取令牌`，確認走的是離線授權 |
+| 上傳時報 `required scope 'files.content.write'` | 回 Dropbox `Permissions` 勾選 `files.content.write`，點 `Submit` 後重新獲取 `Refresh Token` |
+| 回調失敗 | 檢查回調地址是否是 `https://your-domain.com/api/oauth/dropbox/callback`. |
+| 檔案找不到 | 確認 Dropbox 應用是不是按 `App folder` 模式建立的 |
 
-## 快速流程
+## 渠道流程速查
 
 ```text
-打開 Dropbox App Console
--> 建立 App
--> 存取類型選 App folder
--> 設定回呼 https://你的網域/api/oauth/dropbox/callback
--> Permissions 勾選必要 scopes
--> 按 Submit
--> 複製 App Key 和 App Secret
--> 回 ImgBed 填寫
--> 點取得 Token
--> 複製回呼頁的 Refresh Token
--> 貼回 ImgBed 儲存
+Open Dropbox App Console
+-> Create an app
+-> Choose App folder access
+-> Add https://your-domain.com/api/oauth/dropbox/callback
+-> Enable account_info.read / files.metadata.read / files.metadata.write / files.content.write
+-> Optionally enable files.content.read
+-> Click Submit
+-> Copy App Key and App Secret
+-> Fill them into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
+
+## 參考資料
+
+1. Dropbox App Console：https://www.dropbox.com/developers/apps
+2. Dropbox OAuth Guide：https://developers.dropbox.com/oauth-guide
+3. Dropbox Developer Guide：https://www.dropbox.com/developers/reference/developer-guide

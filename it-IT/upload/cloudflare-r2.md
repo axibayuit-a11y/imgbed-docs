@@ -24,7 +24,7 @@ Il canale R2 non si crea manualmente nel pannello di amministrazione di ImgBed. 
 
 1. Accedi alla dashboard Cloudflare.
 2. Apri `R2 Object Storage`.
-3. Clicca su Create bucket.
+3. Clicca su `Create bucket`.
 4. Scegli un nome, per esempio `imgbed`.
 
 Questo bucket conterrà i file caricati.
@@ -44,10 +44,10 @@ Quando aggiungi il binding, questi campi sono essenziali:
 
 | Campo | Valore |
 | --- | --- |
-| Variable name | `img_r2` |
-| R2 bucket | Seleziona il bucket creato prima |
+| Nome variabile | `img_r2` |
+| Bucket R2 | Seleziona il bucket creato prima |
 
-Il nome della variabile deve essere esattamente `img_r2`. Upload, lettura ed eliminazione dei file R2 dipendono da quel nome.
+Il nome della variabile deve essere esattamente `img_r2`. Caricamento, lettura ed eliminazione dei file R2 dipendono da quel nome.
 
 ### 3. Ridistribuisci il progetto
 
@@ -76,7 +76,7 @@ Il sistema crea automaticamente un canale fisso:
 
 | Campo | Funzione | Obbligatorio |
 | --- | --- | --- |
-| Abilita canale | Decide se R2 partecipa alla scelta del canale di upload. | Sì |
+| Abilita canale | Decide se R2 partecipa alla scelta del canale di caricamento. | Sì |
 | Account ID | Serve solo con i limiti di quota attivi, per interrogare l'uso ufficiale di R2. | Consigliato con limiti di quota |
 | Nome bucket | Serve solo con i limiti di quota attivi, per interrogare l'uso ufficiale di R2. | Consigliato con limiti di quota |
 | Limite quota | Decide se questo canale R2 viene scelto in base alla capacità disponibile. | No |
@@ -91,7 +91,7 @@ Puoi copiare l'Account ID dal pannello informazioni account della dashboard Clou
 1. Crea un bucket R2 in Cloudflare.
 2. Apri le impostazioni Cloudflare del progetto ImgBed.
 3. Aggiungi un binding per bucket R2.
-4. Imposta `Variable name` su `img_r2`.
+4. Imposta il nome variabile su `img_r2`.
 5. Seleziona il bucket R2 creato.
 6. Salva il binding e ridistribuisci ImgBed.
 7. Torna in ImgBed -> Impostazioni di sistema -> Impostazioni di caricamento.

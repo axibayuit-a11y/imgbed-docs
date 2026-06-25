@@ -7,7 +7,7 @@ Každému může vyhovovat jiný kanál. Pokud chcete jednoduchý začátek, zku
 ## Než začnete
 
 - Připravte si úložný účet nebo API údaje, které chcete použít.
-- Ověřte, že je vaše doména ImgBed dostupná, protože OAuth kanály potřebují callback URL.
+- Ověřte, že je vaše doména ImgBed dostupná, protože OAuth kanály potřebují URL zpětného volání.
 - Po přidání kanálu nejdříve nahrajte testovací obrázek a ověřte, že se soubor uloží a otevře.
 
 ## Seznam kanálů

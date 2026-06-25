@@ -125,20 +125,20 @@ Continue searching in Microsoft Entra ID
 ## Короткий сценарій
 
 ```text
-Відкрити portal.azure.com
--> Знайти Microsoft Entra ID
--> Відкрити App registrations
--> Зареєструвати новий app
--> Заповнити Name / Supported account types / Web redirect URI
--> Зареєструвати
--> Скопіювати Application (client) ID
--> Перевірити callback URL в Authentication
--> Створити Client Secret у Certificates & secrets
--> Додати permissions в API permissions
--> Ввести Client ID / Client Secret / Tenant ID в ImgBed
--> Натиснути Get Token
--> Скопіювати Refresh Token з callback-сторінки
--> Вставити його назад в ImgBed і зберегти
+Open portal.azure.com
+-> Search for Microsoft Entra ID
+-> Open App registrations
+-> Register a new app
+-> Fill Name / Supported account types / Web redirect URI
+-> Register
+-> Copy Application (client) ID
+-> Check the callback URL in Authentication
+-> Create a Client Secret in Certificates & secrets
+-> Add permissions in API permissions
+-> Fill Client ID / Client Secret / Tenant ID into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## Посилання

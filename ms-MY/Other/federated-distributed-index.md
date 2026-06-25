@@ -1,14 +1,14 @@
-# Federated Distributed Index
+# Indeks Teragih Bersekutu
 
-Federated distributed index membolehkan beberapa ImgBed sites berkongsi file lists antara satu sama lain.
+Indeks teragih bersekutu membolehkan beberapa laman ImgBed berkongsi senarai fail antara satu sama lain.
 
 Secara ringkas:
 
-- Anda boleh share selected folders daripada site anda dengan orang lain.
-- Anda boleh join node lain dan sync shared file list node itu ke admin panel anda.
-- Federated files terutama untuk browsing, searching dan membuka links. Ia tidak di-upload semula ke storage anda sendiri.
+- Anda boleh berkongsi folder terpilih daripada laman anda dengan orang lain.
+- Anda boleh menyertai nod lain dan menyegerakkan senarai fail yang dikongsi oleh nod tersebut ke panel pentadbir anda.
+- Fail bersekutu digunakan terutamanya untuk melayari, mencari dan membuka pautan. Fail tersebut tidak dimuat naik semula ke storan anda sendiri.
 
-## Di Mana Untuk Configure
+## Tempat Mengkonfigurasikannya
 
 Buka:
 
@@ -16,41 +16,41 @@ Buka:
 System Settings -> Other Settings -> Federated Distributed Index
 ```
 
-![Local federation node](../../image/other/联盟图/联盟分布式索引本地节点.png)
+![Nod bersekutu setempat](../../image/other/联盟图/联盟分布式索引本地节点.png)
 
-Halaman ini mempunyai tiga tabs:
+Halaman ini mempunyai tiga tab:
 
-| Tab | Purpose |
+| Tab | Tujuan |
 | --- | --- |
-| Local Node | Enable node anda, confirm public domain, pilih shared folders dan update outbound index |
-| Nodes I Joined | Manage ImgBed nodes lain yang anda joined |
-| Nodes Joining Me | Manage requests daripada orang lain yang mahu join node anda |
+| Nod Setempat | Mengaktifkan nod anda, mengesahkan domain awam, memilih folder kongsi dan mengemas kini indeks keluar |
+| Nod Yang Saya Sertai | Mengurus nod ImgBed lain yang telah anda sertai |
+| Nod Yang Menyertai Saya | Mengurus permintaan daripada orang lain yang mahu menyertai nod anda |
 
-## First-Time Setup
+## Persediaan Kali Pertama
 
 1. Buka `Local Node`.
 2. Hidupkan `Enable`.
-3. Pilih folders untuk share di bawah `Sync folders`.
+3. Pilih folder untuk dikongsi di bawah `Sync folders`.
 4. Klik `Update Outbound Index`.
-5. Jika ImgBed detect domain change, confirm current domain betul sebelum meneruskan.
+5. Jika ImgBed mengesan perubahan domain, sahkan bahawa domain semasa betul sebelum meneruskan.
 
-Anda boleh memilih beberapa sync folders.
+Anda boleh memilih berbilang folder segerak.
 
-Jika sync folder list kosong, semua folders akan dishare.
+Jika senarai folder segerak kosong, semua folder akan dikongsi.
 
-## Local Node
+## Nod Setempat
 
-### Public Domain
+### Domain Awam
 
-Public domain ialah site URL yang digunakan oleh nodes lain untuk mengakses node anda.
+Domain awam ialah URL laman yang digunakan oleh nod lain untuk mengakses nod anda.
 
-ImgBed detect ini secara automatik. Anda tidak perlu menaip secara manual. Kali pertama update index, ImgBed bertanya sama ada current access URL ialah production domain.
+ImgBed mengesannya secara automatik. Anda tidak perlu menaipnya secara manual. Kali pertama anda mengemas kini indeks, ImgBed meminta anda mengesahkan sama ada URL akses semasa ialah domain produksi.
 
-Jika domain berubah kemudian, update index akan meminta confirmation sekali lagi.
+Jika anda menukar domain kemudian, kemas kini indeks akan meminta pengesahan sekali lagi.
 
-### Sync Folders
+### Folder Segerak
 
-Sync folders menentukan files mana yang dishare dengan federation nodes.
+Folder segerak menentukan fail mana yang dikongsi dengan nod bersekutu.
 
 Contohnya, jika anda hanya memilih:
 
@@ -59,135 +59,135 @@ Contohnya, jika anda hanya memilih:
 /2/
 ```
 
-Nodes lain hanya dapat melihat files dalam dua directories tersebut.
+Nod lain hanya boleh melihat fail dalam dua direktori tersebut.
 
-### Update Outbound Index
+### Kemas Kini Indeks Keluar
 
-Ini update file list yang nodes lain boleh sync daripada anda.
+Ini mengemas kini senarai fail yang boleh disegerakkan oleh nod lain daripada anda.
 
 Gunakan apabila:
 
-- Anda enable federation buat kali pertama.
-- Anda upload files yang mahu dishare.
-- Anda menukar sync folders.
-- Anda menukar public domain dan perlu confirm.
+- Anda mengaktifkan fungsi bersekutu buat kali pertama.
+- Anda memuat naik fail yang mahu dikongsi.
+- Anda menukar folder segerak.
+- Anda menukar domain awam dan perlu mengesahkannya.
 
-## Nodes I Joined
+## Nod Yang Saya Sertai
 
-`Nodes I Joined` ialah tempat anda subscribe nodes lain.
+`Nodes I Joined` ialah tempat anda melanggan nod lain.
 
-![Nodes I joined](../../image/other/联盟图/我加入的节点.png)
+![Nod yang saya sertai](../../image/other/联盟图/我加入的节点.png)
 
-### Request Untuk Join Node Lain
+### Memohon Untuk Menyertai Nod Lain
 
-1. Minta invitation link daripada owner sebelah sana.
-2. Paste ke input box.
+1. Minta pautan jemputan daripada pemilik nod tersebut.
+2. Tampalkannya ke dalam kotak input.
 3. Klik `Request to Join`.
-4. Tunggu owner sebelah sana approve dalam admin panel mereka.
+4. Tunggu pemilik nod tersebut meluluskannya dalam panel pentadbir mereka.
 
-Selepas approval, node status menjadi approved.
+Selepas diluluskan, status nod menjadi diluluskan.
 
-### Update Inbound Index
+### Kemas Kini Indeks Masuk
 
-`Update Inbound Index` sync file lists daripada nodes yang anda joined.
+`Update Inbound Index` menyegerakkan senarai fail daripada nod yang telah anda sertai.
 
 Gunakan apabila:
 
-- Owner sebelah sana baru approve request anda.
-- Owner sebelah sana memberitahu shared content telah update.
-- Anda mahu refresh semua joined federation file lists.
+- Pemilik nod tersebut baru sahaja meluluskan permintaan anda.
+- Pemilik nod tersebut memberitahu bahawa kandungan kongsi telah dikemas kini.
+- Anda mahu menyegarkan semua senarai fail bersekutu yang disertai.
 
-Untuk update satu node sahaja, klik `Update Index` pada node card tersebut.
+Untuk mengemas kini satu nod sahaja, klik `Update Index` pada kad nod tersebut.
 
-![Update index](../../image/other/联盟图/更新索引.png)
+![Kemas kini indeks](../../image/other/联盟图/更新索引.png)
 
-### Unsubscribe
+### Berhenti Melanggan
 
-Jika tidak mahu sync node lagi, klik `Unsubscribe`.
+Jika anda tidak lagi mahu menyegerakkan suatu nod, klik `Unsubscribe`.
 
-Selepas unsubscribe, federated index node itu dibuang daripada local site anda.
+Selepas berhenti melanggan, indeks bersekutu nod tersebut dikeluarkan daripada laman setempat anda.
 
-## Nodes Joining Me
+## Nod Yang Menyertai Saya
 
-`Nodes Joining Me` ialah tempat mengurus requests daripada orang lain.
+`Nodes Joining Me` ialah tempat anda mengendalikan permintaan daripada orang lain.
 
-![Nodes joining me](../../image/other/联盟图/加入我的节点.png)
+![Nod yang menyertai saya](../../image/other/联盟图/加入我的节点.png)
 
-### Generate Invitation Link
+### Menjana Pautan Jemputan
 
-1. Pastikan local node enabled.
-2. Klik `Update Outbound Index` sekurang-kurangnya sekali supaya ImgBed confirm public domain.
+1. Pastikan nod setempat telah diaktifkan.
+2. Klik `Update Outbound Index` sekurang-kurangnya sekali supaya ImgBed mengesahkan domain awam.
 3. Buka `Nodes Joining Me`.
 4. Klik `Reset Invitation Link`.
-5. Copy invitation link dan hantar kepada owner sebelah sana.
+5. Salin pautan jemputan dan hantar kepada pemilik nod tersebut.
 
-Jika invitation link kosong, biasanya public domain belum disahkan. Kembali ke `Local Node` dan klik `Update Outbound Index`.
+Jika pautan jemputan kosong, biasanya domain awam belum disahkan. Kembali ke `Local Node` dan klik `Update Outbound Index`.
 
-### Handle Join Requests
+### Mengendalikan Permintaan Sertai
 
-Apabila seseorang submit request, ia muncul dalam list `Nodes Joining Me`.
+Apabila seseorang menghantar permintaan, ia muncul dalam senarai `Nodes Joining Me`.
 
-| Action | Meaning |
+| Tindakan | Maksud |
 | --- | --- |
-| Approve | Membenarkan node sebelah sana sync shared file list anda |
-| Reject | Menolak join request |
-| Delete | Membuang finished record |
-| Check Status | Menyemak sama ada sebelah sana masih mengekalkan relationship ini |
+| Luluskan | Membenarkan nod pihak lain menyegerakkan senarai fail kongsi anda |
+| Tolak | Menolak permintaan sertai |
+| Padam | Membuang rekod yang telah selesai |
+| Semak Status | Menyemak sama ada pihak satu lagi masih mengekalkan hubungan ini |
 
-Selepas approval, sebelah sana masih perlu klik `Update Inbound Index` sebelum shared files anda muncul di sana.
+Selepas diluluskan, pihak lain masih perlu mengklik `Update Inbound Index` sebelum fail kongsi anda muncul di sana.
 
-![Approve invited node](../../image/other/联盟图/邀请节点同意.png)
+![Luluskan nod yang dijemput](../../image/other/联盟图/邀请节点同意.png)
 
-## Messages
+## Mesej
 
-Selepas relationship approved, klik `Message` pada node card.
+Selepas hubungan diluluskan, klik `Message` pada kad nod.
 
-Messages hanya untuk komunikasi tentang federation relationship. Ia tidak mengubah files, tags, directories atau permissions.
+Mesej hanya digunakan untuk komunikasi tentang hubungan bersekutu. Ia tidak mengubah fail, tag, direktori atau kebenaran.
 
-![Messages](../../image/other/联盟图/留言功能.png)
+![Mesej](../../image/other/联盟图/留言功能.png)
 
-## Melihat Federated Files
+## Melihat Fail Bersekutu
 
-Selepas sync selesai, kembali ke admin file list.
+Selepas penyegerakan selesai, kembali ke senarai fail pentadbir.
 
-Di bahagian atas halaman, switch antara local files dan federated files. Dalam federated files, anda boleh browse synced content.
+Di bahagian atas halaman, tukar antara fail setempat dan fail bersekutu. Dalam fail bersekutu, anda boleh melayari kandungan yang telah disegerakkan.
 
-Federated files terutama untuk viewing, searching, previewing dan copying links. Ia bukan local files, jadi anda tidak boleh move, delete, retag atau back up daripada site anda sendiri.
+Fail bersekutu digunakan terutamanya untuk melihat, mencari, pratonton dan menyalin pautan. Ia bukan fail setempat, jadi anda tidak boleh memindahkan, memadam, menandai semula atau menyandarkannya daripada laman anda sendiri.
 
-![Federated files in admin](../../image/other/联盟图/联盟管理显示效果图.png)
+![Fail bersekutu dalam pentadbir](../../image/other/联盟图/联盟管理显示效果图.png)
 
-## FAQ
+## Soalan Lazim
 
-### Mengapa Ia Meminta Reapply Kerana Tiada Relationship Record?
+### Mengapa Ia Meminta Saya Memohon Semula Kerana Tiada Rekod Hubungan?
 
-Ini biasanya bermaksud sebelah sana delete anda dan membuang record, jadi relationship tidak lagi ditemui. Submit join request baharu.
+Ini biasanya bermaksud pihak satu lagi telah memadam anda dan membuang rekod tersebut, jadi hubungan anda tidak lagi dapat ditemui. Hantar permintaan sertai baharu.
 
-![Reapply when no relationship record exists](../../image/other/联盟图/无关系记录重新申请.png)
+![Mohon semula apabila tiada rekod hubungan](../../image/other/联盟图/无关系记录重新申请.png)
 
-### Mengapa Saya Tidak Nampak Files Selepas Join?
+### Mengapa Saya Tidak Nampak Fail Selepas Menyertai?
 
 Semak:
 
-1. Owner sebelah sana telah approve request anda.
-2. Owner sebelah sana telah klik `Update Outbound Index`.
-3. Anda telah klik `Update Inbound Index`.
-4. Sync folders owner sebelah sana termasuk directories yang mahu mereka share.
+1. Pemilik nod tersebut telah meluluskan permintaan anda.
+2. Pemilik nod tersebut telah mengklik `Update Outbound Index`.
+3. Anda telah mengklik `Update Inbound Index`.
+4. Folder segerak pemilik nod tersebut memang mengandungi direktori yang mahu mereka kongsi.
 
-### Apa Perlu Dibuat Apabila Domain Change Dikesan?
+### Apa Yang Perlu Dibuat Apabila Perubahan Domain Dikesan?
 
-Jika anda sedang membuka admin panel melalui production domain, confirm dan teruskan.
+Jika anda sedang membuka panel pentadbir melalui domain produksi, sahkan dan teruskan.
 
-Jika menggunakan temporary address, cancel, buka semula admin panel menggunakan production domain, kemudian cuba lagi.
+Jika anda menggunakan alamat sementara, batalkan, buka semula panel pentadbir menggunakan domain produksi, kemudian cuba lagi.
 
-### Apa Maksud Empty Sync Folder List?
+### Apa Maksud Senarai Folder Segerak Kosong?
 
-Empty sync folder list bermaksud semua folders dishare.
+Senarai folder segerak kosong bermaksud semua folder dikongsi.
 
-Untuk share directories tertentu sahaja, pilih folders tersebut secara manual.
+Untuk berkongsi hanya direktori tertentu, pilih folder tersebut secara manual.
 
-### Perbezaan Outbound dan Inbound Index Updates
+### Perbezaan Antara Kemas Kini Indeks Keluar dan Masuk
 
-| Button | Simple Meaning |
+| Butang | Maksud Ringkas |
 | --- | --- |
-| Update Outbound Index | Update apa yang orang lain boleh sync daripada saya |
-| Update Inbound Index | Update apa yang saya sync daripada orang lain |
+| Update Outbound Index | Mengemas kini perkara yang boleh disegerakkan oleh orang lain daripada saya |
+| Update Inbound Index | Mengemas kini perkara yang telah saya segerakkan daripada orang lain |

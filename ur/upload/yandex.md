@@ -9,17 +9,17 @@
 | آپ کا ImgBed domain | OAuth redirect URI کے لیے |
 | دستیاب Yandex Disk storage | اصل file storage location کے طور پر |
 
-## Setup Steps
+## سیٹ اپ کے مراحل
 
-### Step 1: Yandex OAuth App بنائیں
+### مرحلہ 1: Yandex OAuth App بنائیں
 
-1. Yandex OAuth app creation page کھولیں:
+1. Yandex OAuth app creation صفحہ کھولیں:
 
 ```text
 https://oauth.yandex.com/client/new
 ```
 
-2. اگر sign in page پر redirect ہو جائیں، پہلے اپنے Yandex account سے sign in کریں۔
+2. اگر sign in صفحہ پر redirect ہو جائیں، پہلے اپنے Yandex account سے sign in کریں۔
 3. نیا app بنائیں۔
 4. app کو قابل شناخت نام دیں، مثلاً `imgbed-yandex`۔
 5. callback یا redirect URL settings تلاش کریں۔
@@ -29,84 +29,84 @@ https://oauth.yandex.com/client/new
 https://your-domain.com/api/oauth/yandex/callback
 ```
 
-### Step 2: Permissions Confirm کریں
+### مرحلہ 2: اجازتوں کی تصدیق کریں
 
 موجودہ ImgBed Yandex integration کے لیے `Yandex.Disk REST API` کے تحت یہ چار permissions رکھیں:
 
-| Permission | Purpose |
+| اجازت | مقصد |
 | --- | --- |
 | `cloud_api:disk.app_folder` | ImgBed کو app folder میں files store کرنے دیتا ہے |
 | `cloud_api:disk.read` | files اور download links پڑھتا ہے |
 | `cloud_api:disk.write` | files upload کرتا ہے، folders بناتا ہے، اور files delete کرتا ہے |
 | `Access to information about Yandex.Disk` | disk quota اور used space پڑھتا ہے |
 
-اگر `Yandex ID API` کے تحت یہ permissions بھی نظر آئیں تو optional ہیں:
+اگر `Yandex ID API` کے تحت یہ permissions بھی نظر آئیں تو اختیاری ہیں:
 
-| Permission Text | Recommendation |
+| اجازت کا متن | تجویز |
 | --- | --- |
-| `Access to username, first name and surname, gender` | Optional |
-| `Access to email address` | Optional |
+| `Access to username, first name and surname, gender` | اختیاری |
+| `Access to email address` | اختیاری |
 
 Core upload، download، deletion، اور quota features کا انحصار اوپر والی چار `Yandex.Disk REST API` permissions پر ہے۔
 
 ![Configure Yandex Disk permissions](../../image/upload/yandex/dataaccess配置软盘权限.png)
 
-### Step 3: App Credentials Copy کریں
+### مرحلہ 3: App Credentials کاپی کریں
 
-app بننے کے بعد copy کریں:
+app بننے کے بعد کاپی کریں:
 
-| Yandex Field | ImgBed Field |
+| Yandex فیلڈ | ImgBed فیلڈ |
 | --- | --- |
 | `Client ID` | `Client ID` |
 | `Client Secret` | `Client Secret` |
 
-![Record Client ID and Secret](../../image/upload/yandex/记录客户端id和secret.png)
+![Client ID اور Secret محفوظ کریں](../../image/upload/yandex/记录客户端id和secret.png)
 
-### Step 4: ImgBed میں Yandex Channel بھریں
+### مرحلہ 4: ImgBed میں Yandex Channel بھریں
 
-Upload Settings میں `Yandex` منتخب کریں اور یہ fields بھریں:
+اپ لوڈ سیٹنگز میں `Yandex` منتخب کریں اور یہ فیلڈز بھریں:
 
-| ImgBed Field | What To Enter |
+| ImgBed فیلڈ | کیا درج کریں |
 | --- | --- |
 | Channel name | قابل شناخت نام، مثلاً `Main Yandex` |
 | Client ID | Yandex app کا `Client ID` |
 | Client Secret | Yandex app کا `Client Secret` |
 | Refresh Token | ابھی خالی چھوڑ دیں |
-| Root directory | Optional۔ default `imgbed` ہے۔ |
+| Root directory | اختیاری۔ ڈیفالٹ `imgbed` ہے۔ |
 
-![Edit channel config](../../image/upload/yandex/编辑配置渠道.png)
+![channel config میں ترمیم کریں](../../image/upload/yandex/编辑配置渠道.png)
 
-### Step 5: Refresh Token حاصل کریں
+### مرحلہ 5: Refresh Token حاصل کریں
 
 1. ImgBed میں `Get Token` پر کلک کریں۔
-2. جس Yandex account کو connect کرنا ہے اس میں sign in کریں۔
-3. authorization prompt approve کریں۔
-4. callback page ایک `Refresh Token` دکھائے گا۔
-5. اسے copy کریں۔
-6. ImgBed پر واپس آ کر `Refresh Token` field میں paste کریں۔
+2. جس Yandex account کو منسلک کرنا ہے اس میں سائن ان کریں۔
+3. authorization prompt منظور کریں۔
+4. callback صفحہ ایک `Refresh Token` دکھائے گا۔
+5. اسے کاپی کریں۔
+6. ImgBed پر واپس آ کر `Refresh Token` فیلڈ میں چسپاں کریں۔
 
-![Copy refresh token after authorization](../../image/upload/yandex/授权后复制刷新令牌.png)
+![authorization کے بعد refresh token کاپی کریں](../../image/upload/yandex/授权后复制刷新令牌.png)
 
-### Step 6: Channel Save کریں
+### مرحلہ 6: چینل محفوظ کریں
 
-تمام fields بھرنے کے بعد channel save کریں۔
+تمام فیلڈز بھرنے کے بعد channel save کریں۔
 
-## Quick Flow
+## فوری بہاؤ
 
 ```text
-Yandex OAuth Console کھولیں
--> app بنائیں
--> https://your-domain.com/api/oauth/yandex/callback add کریں
--> Yandex Disk permissions confirm کریں
--> Client ID اور Client Secret copy کریں
--> ImgBed میں Client ID / Client Secret بھریں
--> Get Token پر کلک کریں
--> callback page سے Refresh Token copy کریں
--> ImgBed میں paste کر کے save کریں
+Open Yandex OAuth Console
+-> Create an app
+-> Add https://your-domain.com/api/oauth/yandex/callback
+-> Confirm Yandex Disk permissions
+-> Copy Client ID and Client Secret
+-> Fill Client ID / Client Secret into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
-## References
+## حوالہ جات
 
 1. Register a Yandex app: https://yandex.com/dev/id/doc/en/register-client
-2. Get an authorization code through URL: https://yandex.com/dev/id/doc/en/codes/code-url
+2. URL کے ذریعے authorization code حاصل کریں: https://yandex.com/dev/id/doc/en/codes/code-url
 3. Yandex OAuth token endpoint: https://yandex.com/dev/id/doc/en/tokens/token

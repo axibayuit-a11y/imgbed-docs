@@ -126,19 +126,19 @@ Sla het kanaal op zodra alle velden zijn ingevuld.
 
 ```text
 Open portal.azure.com
--> Zoek Microsoft Entra ID
+-> Search for Microsoft Entra ID
 -> Open App registrations
--> Registreer een nieuwe app
--> Vul Name / Supported account types / Web redirect URI in
--> Registreer
--> Kopieer Application (client) ID
--> Controleer de callback-URL bij Authentication
--> Maak een Client Secret in Certificates & secrets
--> Voeg rechten toe bij API permissions
--> Vul Client ID / Client Secret / Tenant ID in ImgBed in
--> Klik Get Token
--> Kopieer het Refresh Token van de callbackpagina
--> Plak het in ImgBed en sla op
+-> Register a new app
+-> Fill Name / Supported account types / Web redirect URI
+-> Register
+-> Copy Application (client) ID
+-> Check the callback URL in Authentication
+-> Create a Client Secret in Certificates & secrets
+-> Add permissions in API permissions
+-> Fill Client ID / Client Secret / Tenant ID into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## Referenties

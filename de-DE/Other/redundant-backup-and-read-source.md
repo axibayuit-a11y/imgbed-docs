@@ -1,64 +1,93 @@
-# Redundantes Backup und Lesequelle wechseln
+# Redundante Sicherung und Wechsel der Lesequelle
 
-Das redundante Backup speichert eine zusätzliche Kopie bereits hochgeladener Dateien.
+Eine redundante Sicherung speichert eine zusätzliche Kopie einer bereits hochgeladenen Datei.
 
-Für Besucher sehen Hauptdatei und Backup gleich aus. Der Unterschied liegt nur darin, aus welchem Speicherkanal die Datei gelesen wird.
+Sowohl die primäre Datei als auch die Sicherungsdatei können als Lesequellen verwendet werden. Besucher sehen normalerweise keinen Unterschied. Der einzige Unterschied ist, welcher Speicherkanal die Datei bereitstellt.
 
-## Möglichkeiten
+## Was die redundante Sicherung kann
 
 | Funktion | Beschreibung |
 | --- | --- |
-| Zusätzliche Kopie speichern | Datei in einen anderen Kanal kopieren und Abhängigkeit von einem Speicher reduzieren |
-| Lesequelle wechseln | Zwischen Hauptkanal und Backup-Kanal wechseln |
-| Einzeldatei sichern | Backup aus der Dateidetailansicht erstellen |
-| Stapel-Backup | Mehrere Dateien im Adminbereich auswählen und zusammen sichern |
-| Globale Ergänzung | Fehlende Backups ordnerweise unter Weitere Einstellungen ergänzen |
+| Zusätzliche Kopie speichern | Sichert Dateien in einem anderen Hochladekanal, um das Risiko eines Ausfalls eines einzelnen Kanals zu verringern. |
+| Lesequelle wechseln | Nach erfolgreicher Sicherung zwischen primärem Kanal und Sicherungskanal für Dateizugriffe wechseln. |
+| Sicherung einzelner Dateien | Eine Datei von ihrer Detailseite aus sichern. |
+| Stapelsicherung | Mehrere Dateien im Adminbereich auswählen und gemeinsam sichern. |
+| Globale redundante Sicherung | Dateien unter Weitere Einstellungen ordnerweise sichern. |
 
-## Wo einstellen
+## Einstieg für redundante Sicherung
+
+Öffnen Sie:
 
 ```text
-Systemeinstellungen -> Weitere Einstellungen -> Redundantes Backup
+System Settings -> Other Settings -> Redundant Backup
 ```
 
-![Redundantes Backup](../../image/other/冗余备份截图.png)
+![Redundante Sicherung](../../image/other/冗余备份截图.png)
 
-Hier kannst du Backups für einen bestimmten Ordner oder für alle Dateien ergänzen. Der Backup-Kanal kann manuell gewählt oder automatisch von ImgBed ausgewählt werden.
+Dieser Einstieg eignet sich am besten, um Sicherungen für einen Ordner oder für alle Dateien gesammelt hinzuzufügen.
 
-## Backup aus der Dateiansicht
+Der Sicherungskanal kann manuell ausgewählt werden. Alternativ können Sie die automatische Umschaltung wählen und ImgBed einen passenden Sicherungskanal finden lassen.
 
-Öffne im Adminbereich die Details einer Datei und starte dort das Backup.
+## Sicherung aus den Dateidetails
 
-![Backup in Dateidetails](../../image/other/文件详情里文件备份.png)
+Öffnen Sie eine Dateidetailseite im Adminbereich und klicken Sie auf Sicherung.
 
-Das ist praktisch für einzelne wichtige Dateien. Nach erfolgreichem Backup zeigt die Detailansicht die verfügbaren Lesequellen.
+![Sicherung in den Dateidetails](../../image/other/文件详情里文件备份.png)
 
-## Backup per Auswahl
+Dies eignet sich am besten, um eine wichtige Datei bei Bedarf zu sichern.
 
-Im Adminbereich kannst du mehrere Dateien auswählen und ein Stapel-Backup starten.
+Nach erfolgreicher Sicherung zeigt die Dateidetailseite die verfügbaren Lesequellen an.
 
-![Stapel-Backup](../../image/other/批量备份截图.png)
+## Stapelsicherung nach Auswahl
 
-Backup aus Details, Backup per Auswahl und redundantes Backup unter Weitere Einstellungen nutzen dieselbe Logik; nur der Einstieg ist anders.
+Wählen Sie im Adminbereich mehrere Dateien aus und führen Sie eine Stapelsicherung aus.
 
-## Lesequelle wechseln
+![Stapelsicherung](../../image/other/批量备份截图.png)
 
-| Quelle | Beschreibung |
+Dies eignet sich am besten, um eine Gruppe von Dateien zu verarbeiten.
+
+Sicherung per Auswahl, Sicherung aus Dateidetails und redundante Sicherung unter Weitere Einstellungen verwenden dasselbe Sicherungssystem. Es sind nur unterschiedliche Einstiegspunkte.
+
+## Lesequelle nach der Sicherung wechseln
+
+Nach Abschluss der Sicherung können Sie auf der Dateidetailseite die Lesequelle wechseln:
+
+| Lesequelle | Beschreibung |
 | --- | --- |
-| Hauptkanal | Liest aus dem ursprünglichen Upload-Kanal |
-| Backup-Kanal | Liest aus dem Kanal, in dem die Kopie gespeichert wurde |
+| Primärer Kanal | Liest aus dem ursprünglichen Hochladekanal. |
+| Sicherungskanal | Liest aus dem Sicherungskanal. |
 
-![Lesequelle wechseln](../../image/other/备份成功切换读取源.png)
+![Lesequelle nach Sicherung wechseln](../../image/other/备份成功切换读取源.png)
 
-Nach dem Wechsel funktionieren Bilder, Videos und Download-Links wie gewohnt mit der gewählten Quelle.
+Besucher müssen nicht wissen, ob die Datei vom primären oder vom Sicherungskanal bereitgestellt wird.
 
-## Übersprungene Fälle
+Die gewählte Lesequelle wird zur bevorzugten Quelle für spätere Dateizugriffe.
 
-| Fall | Grund |
+## Wann Sicherung übersprungen wird
+
+Die folgenden Fälle werden bei der Sicherung übersprungen. Es handelt sich nicht um Fehler.
+
+| Fall | Warum übersprungen wird |
 | --- | --- |
-| Backup existiert bereits | Verhindert unnötige doppelte Speicherung |
-| Haupt- und Backup-Kanal sind gleich | Kopie im selben Kanal bringt keine Redundanz |
-| Kein Kanal verfügbar | Es wurde kein geeigneter anderer Kanal gefunden |
+| Bereits gesichert | Eine Datei, die bereits eine Sicherung hat, wird nicht erneut gesichert. |
+| Primär- und Sicherungskanal sind identisch | Eine Sicherung muss in einem anderen Kanal gespeichert werden, damit sie sinnvoll ist. |
+| Kein verwendbarer Sicherungskanal | Es ist kein geeigneter alternativer Kanal verfügbar. |
 
-## Beim Löschen
+Kurz gesagt: Sicherungen müssen in einem anderen Kanal gespeichert werden, und bereits gesicherte Dateien verbrauchen nicht noch einmal zusätzlichen Speicherplatz.
 
-Beim Löschen einer Datei entfernt ImgBed sowohl die Hauptdatei als auch die Backup-Kopie.
+## Primärer Kanal vs. Sicherungskanal
+
+| Name | Bedeutung |
+| --- | --- |
+| Primärer Kanal | Der Kanal, der beim ersten Hochladen der Datei verwendet wurde. |
+| Sicherungskanal | Der Kanal, der die redundante Kopie speichert. |
+| Primäre Lesequelle | Die Datei wird aktuell aus dem primären Kanal gelesen. |
+| Sicherungs-Lesequelle | Die Datei wird aktuell aus dem Sicherungskanal gelesen. |
+
+Primäre und Sicherungs-Lesequellen verhalten sich für Nutzer gleich.
+
+Solange die Sicherungsdatei verfügbar ist, funktionieren Bilder, Videos und Download-Links nach dem Wechsel zur Sicherungs-Lesequelle weiterhin.
+
+## Was beim Löschen einer Datei passiert
+
+Wenn eine Datei gelöscht wird, löscht ImgBed sowohl die primäre Datei als auch die Sicherungsdatei.

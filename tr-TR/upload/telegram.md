@@ -13,7 +13,7 @@
 
 1. Sistem Ayarları'nı açın.
 2. Yükleme Ayarları'na gidin.
-3. Sağ üst köşedeki Add Channel düğmesine tıklayın.
+3. Sağ üst köşedeki Kanal Ekle düğmesine tıklayın.
 4. `Telegram` seçeneğini seçin.
 
 ## Alan Açıklamaları
@@ -64,7 +64,7 @@ Yüklemelerin daha sorunsuz çalışması için bota yönetici yetkisi vermeniz 
 
 ![Botu kanala davet edin](../../image/upload/telegram/邀请机器人进频道里.png)
 
-### 4. User Info - Get ID - IDbot ile Kanal ID'sini Alın
+### 4. `User Info - Get ID - IDbot` ile Kanal ID'sini Alın
 
 1. Telegram'da `@userinfobot` araması yapın. Görünen adı genellikle `User Info - Get ID - IDbot` olur.
 2. Sohbeti açıp `Start` düğmesine tıklayın.
@@ -105,15 +105,15 @@ Kanal yapılandırma penceresine geri dönün ve alanları şöyle doldurun:
 ## Kısa Kontrol Listesi
 
 ```text
-@BotFather ile bot oluştur
--> Bot Token değerini kaydet
--> Telegram kanalı oluştur
--> Botu kanala ekle ve yönetici yetkisi ver
--> @userinfobot araması yap ve Channel seç
--> Kanaldan herhangi bir mesajı @userinfobot'a ilet
--> Dönen Id: -100... değerini kopyala
--> ImgBed'e Bot Token ve Chat ID değerlerini gir
--> Kaydet ve test görseli yükle
+Create a bot with @BotFather
+-> Save the Bot Token
+-> Create a Telegram channel
+-> Add the bot to the channel and grant administrator permissions
+-> Search for @userinfobot and choose Channel
+-> Forward any message from the channel to @userinfobot
+-> Copy the returned Id: -100...
+-> Enter the Bot Token and Chat ID in ImgBed
+-> Save and upload a test image
 ```
 
 ## Kaynaklar

@@ -52,17 +52,17 @@ Se usi il pannello admin da più domini, aggiungi ogni URL di callback corrispon
 
 ### Passaggio 3: configura i permessi dell'app
 
-Apri la scheda `Permissions` e abilita almeno questi scope:
+Apri la scheda `Permissions` e abilita almeno questi ambiti:
 
-| Scope | Obbligatorio | Scopo |
+| Ambito | Obbligatorio | Scopo |
 | --- | --- | --- |
 | `account_info.read` | Sì | Legge informazioni account e quota |
 | `files.metadata.read` | Sì | Legge metadati di file e cartelle per i controlli di percorso |
 | `files.metadata.write` | Sì | Crea cartelle e scrive metadati |
-| `files.content.write` | Sì | Carica file. Senza questo scope compare `required scope 'files.content.write'`. |
+| `files.content.write` | Sì | Carica file. Senza questo ambito compare `required scope 'files.content.write'`. |
 | `files.content.read` | Consigliato | Permette download, anteprima e link temporanei |
 
-Dopo aver selezionato gli scope, clicca su `Submit` in fondo alla pagina.
+Dopo aver selezionato gli ambiti, clicca su `Submit` in fondo alla pagina.
 
 ![Aggiungi permessi](../../image/upload/dropbox/添加对应的权限.png)
 
@@ -70,8 +70,8 @@ Importante:
 
 | Situazione | Cosa fare |
 | --- | --- |
-| Hai modificato gli scope | Esegui di nuovo l'autorizzazione e ottieni un nuovo `Refresh Token`. |
-| Non hai riautorizzato | Il vecchio token non acquisisce i nuovi permessi; gli upload possono continuare a fallire. |
+| Hai modificato gli ambiti | Esegui di nuovo l'autorizzazione e ottieni un nuovo `Refresh Token`. |
+| Non hai riautorizzato | Il vecchio token non acquisisce i nuovi permessi; i caricamenti possono continuare a fallire. |
 
 ### Passaggio 4: copia le credenziali dell'app
 
@@ -92,7 +92,7 @@ In Impostazioni di caricamento scegli `Dropbox` e compila:
 | App Key | `App key` di Dropbox |
 | App Secret | `App secret` di Dropbox |
 | Refresh Token | Lascialo vuoto per ora |
-| Directory radice | Opzionale. Default `imgbed`. |
+| Directory radice | Opzionale. Valore predefinito `imgbed`. |
 | Nota | Opzionale |
 
 ![Ottieni token](../../image/upload/dropbox/获取令牌.png)
@@ -115,7 +115,7 @@ In Impostazioni di caricamento scegli `Dropbox` e compila:
 | Scheda canale | Il canale Dropbox compare dopo il salvataggio. |
 | Interruttore canale | Il canale può essere abilitato. |
 | Token salvato | La pagina dettaglio mostra che il `Refresh Token` è stato salvato. |
-| Upload di prova | Un'immagine di prova compare nella cartella dell'app Dropbox. |
+| Caricamento di prova | Un'immagine di prova compare nella cartella dell'app Dropbox. |
 
 Se i limiti quota sono attivi, esegui la query quota. Dopo una query riuscita, la scheda mostra spazio usato, spazio totale e ultimo aggiornamento.
 
@@ -127,25 +127,25 @@ Se i limiti quota sono attivi, esegui la query quota. Dopo una query riuscita, l
 | --- | --- |
 | ImgBed segnala configurazione incompleta | Verifica che `App Key`, `App Secret` e `Refresh Token` siano compilati. |
 | L'autorizzazione riesce ma non compare il `Refresh Token` | Clicca di nuovo `Get Token` e assicurati che venga usato il flusso offline. |
-| Upload fallisce con `required scope 'files.content.write'` | Abilita `files.content.write`, clicca `Submit`, poi ottieni un nuovo `Refresh Token`. |
+| Il caricamento fallisce con `required scope 'files.content.write'` | Abilita `files.content.write`, clicca `Submit`, poi ottieni un nuovo `Refresh Token`. |
 | Callback fallisce | Conferma che la redirect URI sia `https://your-domain.com/api/oauth/dropbox/callback`. |
 | File non trovati | Verifica che l'app Dropbox sia stata creata in modalità `App folder`. |
 
 ## Flusso rapido
 
 ```text
-Apri Dropbox App Console
--> Crea un'app
--> Scegli accesso App folder
--> Aggiungi https://your-domain.com/api/oauth/dropbox/callback
--> Abilita account_info.read / files.metadata.read / files.metadata.write / files.content.write
--> Opzionalmente abilita files.content.read
--> Clicca Submit
--> Copia App Key e App Secret
--> Inseriscili in ImgBed
--> Clicca Get Token
--> Copia il Refresh Token dalla pagina di callback
--> Incollalo in ImgBed e salva
+Open Dropbox App Console
+-> Create an app
+-> Choose App folder access
+-> Add https://your-domain.com/api/oauth/dropbox/callback
+-> Enable account_info.read / files.metadata.read / files.metadata.write / files.content.write
+-> Optionally enable files.content.read
+-> Click Submit
+-> Copy App Key and App Secret
+-> Fill them into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## Riferimenti

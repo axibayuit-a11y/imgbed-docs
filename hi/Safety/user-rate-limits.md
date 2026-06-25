@@ -1,76 +1,76 @@
-# User Rate Limits
+# उपयोगकर्ता अपलोड दर सीमाएँ
 
-User rate limits यह control करते हैं कि regular users या visitors homepage से कितनी बार files upload कर सकते हैं। इससे public upload pages के misuse को रोकने में मदद मिलती है।
+उपयोगकर्ता दर सीमाएँ नियंत्रित करती हैं कि सामान्य उपयोगकर्ता या आगंतुक होमपेज से कितनी बार फ़ाइलें अपलोड कर सकते हैं। इससे सार्वजनिक अपलोड पेजों के दुरुपयोग को रोकने में मदद मिलती है।
 
-यह feature केवल homepage uploads पर लागू होता है। Admin uploads और API Tokens से किए गए uploads पर user rate limits लागू नहीं होते।
+यह सुविधा केवल होमपेज अपलोड को प्रभावित करती है। व्यवस्थापक अपलोड और API Tokens से किए गए अपलोड उपयोगकर्ता दर सीमाओं से सीमित नहीं होते।
 
 ## कहाँ सेट करें
 
-Admin panel खोलें, फिर यहाँ जाएँ:
+प्रशासन पैनल खोलें, फिर यहाँ जाएँ:
 
 ```text
 System Settings -> Security Settings -> Upload Management -> User Rate Limits
 ```
 
-![User rate limit settings](../../image/other/用户频控截图.png)
+![उपयोगकर्ता दर सीमा सेटिंग](../../image/other/用户频控截图.png)
 
-## Rate Limits Enable करना
+## दर सीमाएँ सक्षम करना
 
-`Enable Rate Limits` चालू करने के बाद ImgBed uploader IP address के आधार पर recent uploads track करता है।
+“दर सीमाएँ सक्षम करें” चालू होने के बाद ImgBed अपलोड करने वाले के IP पते के आधार पर हाल के अपलोड ट्रैक करता है।
 
-Default values:
+डिफ़ॉल्ट मान:
 
-| Setting | Default | Description |
+| सेटिंग | डिफ़ॉल्ट | विवरण |
 | --- | --- | --- |
-| Detection window | 1.5 hours | कितने समय पीछे तक upload records count होंगे। |
-| Max file count | 20 | Detection window में allowed maximum file count। |
-| Single file size limit | 20 MB | एक file का maximum size। |
-| Total upload size limit | 200 MB | Detection window में maximum total upload size। |
+| पहचान विंडो | 1.5 घंटे | अपलोड रिकॉर्ड कितने पीछे तक गिने जाएँ। |
+| अधिकतम फ़ाइल संख्या | 20 | पहचान विंडो में अनुमत अधिकतम फ़ाइल संख्या। |
+| एक फ़ाइल आकार सीमा | 20 MB | एक फ़ाइल का अधिकतम आकार। |
+| कुल अपलोड आकार सीमा | 200 MB | पहचान विंडो में कुल अपलोड का अधिकतम आकार। |
 
-उदाहरण के लिए, 1.5 hour window, 20 files, 20 MB per file और 200 MB total के साथ, same IP से uploads तब block हो जाएँगे जब कोई भी configured limit cross हो जाए।
+उदाहरण के लिए, 1.5 घंटे की विंडो, 20 फ़ाइलें, प्रति फ़ाइल 20 MB और कुल 200 MB होने पर, उसी IP से अपलोड किसी भी सेट सीमा से ऊपर जाते ही रोक दिए जाते हैं।
 
-## File Types Exclude करना
+## फ़ाइल प्रकार बाहर करना
 
-`Excluded upload file types` regular users या visitors को selected file categories upload करने से रोकता है।
+“बाहर किए गए अपलोड फ़ाइल प्रकार” सामान्य उपयोगकर्ताओं या आगंतुकों को चुनी गई फ़ाइल श्रेणियाँ अपलोड करने से रोकता है।
 
-Available categories:
+उपलब्ध श्रेणियाँ:
 
-| Type | Description |
+| प्रकार | विवरण |
 | --- | --- |
-| Images | jpg, png, webp, gif जैसी image files |
-| Videos | mp4, webm, mov जैसी video files |
-| Audio | mp3, flac, wav जैसी audio files |
-| Documents | pdf, txt, md, docx जैसी document files |
-| Other | ऊपर की categories से बाहर की files, जैसे zip, rar, exe, apk |
+| छवियाँ | jpg, png, webp, gif और समान छवि फ़ाइलें |
+| वीडियो | mp4, webm, mov और समान वीडियो फ़ाइलें |
+| ऑडियो | mp3, flac, wav और समान ऑडियो फ़ाइलें |
+| दस्तावेज़ | pdf, txt, md, docx और समान दस्तावेज़ फ़ाइलें |
+| अन्य | ऊपर की श्रेणियों से बाहर की फ़ाइलें, जैसे zip, rar, exe, apk |
 
-Default में कोई type selected नहीं होता, यानी वह allowed है।
+डिफ़ॉल्ट रूप से कोई प्रकार चयनित नहीं होता, यानी वह अनुमति प्राप्त है।
 
-किसी type पर click करने से वह highlight होता है, जिसका मतलब है कि वह type blocked है।
+किसी प्रकार पर क्लिक करने से वह हाइलाइट होता है, यानी वह प्रकार अवरुद्ध है।
 
-अगर `Other` selected है, तो zip या rar files upload करने वाले visitors block होंगे और उन्हें बताया जाएगा कि यह file type supported नहीं है।
+यदि “अन्य” चुना गया है, तो zip या rar फ़ाइल अपलोड करने वाले आगंतुक अवरुद्ध होंगे और उन्हें बताया जाएगा कि यह फ़ाइल प्रकार समर्थित नहीं है।
 
-## Block Messages
+## अवरोध संदेश
 
-Limit trigger होने पर users को matching message दिखता है:
+जब कोई सीमा सक्रिय होती है, उपयोगकर्ताओं को संबंधित संदेश दिखता है:
 
-![Too frequent upload message](../../image/other/频繁报错提示.png)
+![बहुत बार अपलोड का संदेश](../../image/other/频繁报错提示.png)
 
-| Scenario | Message Meaning |
+| स्थिति | संदेश का अर्थ |
 | --- | --- |
-| Single file too large | File बहुत बड़ी है, upload से पहले compress करें। |
-| File type blocked | यह file type supported नहीं है। इसे हटाएँ और फिर कोशिश करें। |
-| Uploads too frequent | Recent uploads बहुत frequent हैं, retry time दिखेगा। |
-| Total size too high | Recent total upload size बहुत अधिक है, retry time दिखेगा। |
+| एक फ़ाइल बहुत बड़ी है | फ़ाइल बहुत बड़ी है और अपलोड से पहले संपीड़ित की जानी चाहिए। |
+| फ़ाइल प्रकार अवरुद्ध है | यह फ़ाइल प्रकार समर्थित नहीं है। इसे हटाएँ और फिर प्रयास करें। |
+| अपलोड बहुत बार हो रहे हैं | हाल के अपलोड बहुत बार हुए हैं, और फिर प्रयास करने का समय दिखता है। |
+| कुल आकार बहुत अधिक है | हाल का कुल अपलोड आकार बहुत अधिक है, और फिर प्रयास करने का समय दिखता है। |
 
-## कब Enable करें
+## कब सक्षम करें
 
-अगर आपका upload homepage publicly accessible है, तो user rate limits enable करें।
+यदि आपका अपलोड होमपेज सार्वजनिक रूप से उपलब्ध है, तो उपयोगकर्ता दर सीमाएँ सक्षम करें।
 
-Common reasons:
+सामान्य कारण:
 
-- आपको scripted bulk uploads की चिंता है।
-- आप बड़े visitor uploads limit करना चाहते हैं।
-- आप चाहते हैं कि regular users केवल images upload करें, archives या installers नहीं।
-- आप public upload को available रखना चाहते हैं, लेकिन resource usage control में रखना चाहते हैं।
+- आपको स्क्रिप्ट से बड़े पैमाने पर अपलोड की चिंता है।
+- आप आगंतुकों के बड़े अपलोड सीमित करना चाहते हैं।
+- आप चाहते हैं कि सामान्य उपयोगकर्ता केवल छवियाँ अपलोड करें, संग्रह या इंस्टॉलर नहीं।
+- आप संसाधन उपयोग नियंत्रित करते हुए सार्वजनिक अपलोड उपलब्ध रखना चाहते हैं।
 
-अगर site केवल आपके लिए है, या केवल administrators upload कर सकते हैं, तो इसे disabled छोड़ा जा सकता है।
+यदि साइट केवल आपके लिए है, या केवल व्यवस्थापक अपलोड कर सकते हैं, तो इसे बंद छोड़ा जा सकता है।

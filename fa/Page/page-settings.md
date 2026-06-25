@@ -1,67 +1,67 @@
-# Page Settings
+# تنظیمات صفحه
 
-Page settings نمایش site، defaults مربوط به upload page، background images و ظاهر admin panel را کنترل می‌کند.
+تنظیمات صفحه، نمایش سایت، مقادیر پیش‌فرض صفحه بارگذاری، تصاویر پس‌زمینه و ظاهر پنل مدیریت را کنترل می‌کند.
 
-## Global Settings
+## تنظیمات عمومی
 
-| Option | Purpose |
+| گزینه | هدف |
 | --- | --- |
-| Site title | title نمایش‌داده‌شده در browser tab. |
-| Site icon | icon کوچک نمایش‌داده‌شده در browser tab. |
-| ImgBed name | نام نمایش‌داده‌شده در frontend pages. |
-| ImgBed logo | logo image نمایش‌داده‌شده در frontend pages. |
-| Logo link | URLی که با click روی logo یا avatar باز می‌شود. |
-| Background switch interval | interval چرخش برای چند background، بر حسب milliseconds. `60000` یعنی 60 seconds. |
-| Background opacity | opacity مربوط به background image از `0` تا `1`. مقدار کمتر تصویر را روشن‌تر می‌کند. |
-| Default URL prefix | prefix استفاده‌شده هنگام ساخت image links. خالی باشد، current site domain استفاده می‌شود. |
+| عنوان سایت | عنوانی که در زبانه مرورگر نمایش داده می‌شود. |
+| نماد سایت | نماد کوچکی که در زبانه مرورگر نمایش داده می‌شود. |
+| نام ImgBed | نامی که در صفحه‌های رابط کاربری نمایش داده می‌شود. |
+| نشان‌واره ImgBed | تصویر نشان‌واره که در صفحه‌های رابط کاربری نمایش داده می‌شود. |
+| لینک نشان‌واره | نشانی URL که با کلیک روی نشان‌واره یا تصویر نمایه باز می‌شود. |
+| فاصله تغییر پس‌زمینه | فاصله چرخش چند پس‌زمینه، بر حسب میلی‌ثانیه. `60000` یعنی 60 ثانیه. |
+| شفافیت پس‌زمینه | شفافیت تصویر پس‌زمینه از `0` تا `1`. مقدار کمتر، تصویر را روشن‌تر نشان می‌دهد. |
+| پیشوند URL پیش‌فرض | پیشوندی که هنگام ساخت لینک‌های تصویر استفاده می‌شود. مقدار خالی یعنی دامنه فعلی سایت استفاده می‌شود. |
 
-## Client Settings
+## تنظیمات کلاینت
 
-| Option | Purpose |
+| گزینه | هدف |
 | --- | --- |
-| Announcement | announcement نمایش‌داده‌شده بالای upload page. HTML پشتیبانی می‌شود. |
-| Default upload channel | upload channel پیش‌فرض در upload page. می‌توانید Smart Dispatch هم انتخاب کنید. |
-| Default upload directory | default upload directory، مثل `/user/`. خالی یا `/` یعنی root. |
-| Default naming method | استراتژی پیش‌فرض ساخت filename بعد از upload. پایین‌تر توضیح داده شده. |
-| Convert to WebP by default | images را پیش از upload به WebP تبدیل می‌کند. |
-| Enable compression by default | images را پیش از upload در browser به‌صورت local compress می‌کند. |
-| Default compression threshold | وقتی image از این size بزرگ‌تر باشد، خودکار compress می‌شود، بر حسب MB. |
-| Default target size | target file size پس از compression، بر حسب MB. |
-| Login page background | background image برای user login page. |
-| Upload page background | background image برای upload page. |
-| Footer portal link | URLی که footer portal button باز می‌کند. |
-| Hide footer | اگر enabled باشد، frontend footer را پنهان می‌کند. |
+| اعلان | اعلانی که بالای صفحه بارگذاری نمایش داده می‌شود. HTML پشتیبانی می‌شود. |
+| کانال بارگذاری پیش‌فرض | کانال بارگذاری که به‌صورت پیش‌فرض در صفحه بارگذاری انتخاب می‌شود. Smart Dispatch نیز قابل انتخاب است. |
+| پوشه بارگذاری پیش‌فرض | پوشه بارگذاری پیش‌فرض، مانند `/user/`. مقدار خالی یا `/` یعنی ریشه. |
+| روش نام‌گذاری پیش‌فرض | راهبرد پیش‌فرض ساخت نام فایل پس از بارگذاری. توضیح آن در ادامه آمده است. |
+| تبدیل پیش‌فرض به WebP | تصاویر را پیش از بارگذاری به WebP تبدیل می‌کند. |
+| فعال‌سازی پیش‌فرض فشرده‌سازی | تصاویر را پیش از بارگذاری به‌صورت محلی در مرورگر فشرده می‌کند. |
+| آستانه فشرده‌سازی پیش‌فرض | وقتی اندازه تصویر از این مقدار بیشتر شود، به‌صورت خودکار فشرده می‌شود؛ واحد MB است. |
+| اندازه هدف پیش‌فرض | اندازه هدف فایل پس از فشرده‌سازی، بر حسب MB. |
+| پس‌زمینه صفحه ورود | تصویر پس‌زمینه برای صفحه ورود کاربر. |
+| پس‌زمینه صفحه بارگذاری | تصویر پس‌زمینه برای صفحه بارگذاری. |
+| لینک درگاه پانوشت | نشانی URL که دکمه درگاه پانوشت باز می‌کند. |
+| پنهان کردن پانوشت | در صورت فعال بودن، پانوشت رابط کاربری را پنهان می‌کند. |
 
-## Admin Settings
+## تنظیمات مدیریت
 
-| Option | Purpose |
+| گزینه | هدف |
 | --- | --- |
-| Admin login background | background image برای admin login page. |
-| Admin background | background image برای admin pages. یک image URL یا چند URL. |
-| Image loading mode | preview loading mode برای admin file list. Original، original images را load می‌کند. Smart loading برای public images، thumbnails را و برای restricted images، originals را ترجیح می‌دهد. |
-| Thumbnail source | service ساخت thumbnails: wsrv.nl، Cloudflare Image Resizing یا WordPress Photon. Cloudflare Image Resizing باید پیش از انتخاب، در Cloudflare enabled باشد. |
-| Live2D widget | یک Live2D character در admin panel نشان می‌دهد. |
-| Firework click effect | هنگام click روی page، firework effect نشان می‌دهد. |
-| Star cursor trail | هنگام حرکت mouse، star trail نشان می‌دهد. |
+| پس‌زمینه ورود مدیریت | تصویر پس‌زمینه برای صفحه ورود مدیریت. |
+| پس‌زمینه مدیریت | تصویر پس‌زمینه برای صفحه‌های مدیریت. می‌توان از یک URL تصویر یا چند URL استفاده کرد. |
+| حالت بارگذاری تصویر | حالت بارگذاری پیش‌نمایش‌ها در فهرست فایل‌های مدیریت. حالت تصویر اصلی، تصاویر اصلی را بارگذاری می‌کند. بارگذاری هوشمند برای تصاویر عمومی، تصاویر بندانگشتی و برای تصاویر محدود، تصاویر اصلی را ترجیح می‌دهد. |
+| منبع تصویر بندانگشتی | سرویس مورد استفاده برای ساخت تصاویر بندانگشتی: wsrv.nl، Cloudflare Image Resizing یا WordPress Photon. پیش از انتخاب Cloudflare Image Resizing باید آن را در Cloudflare فعال کرده باشید. |
+| ابزارک Live2D | یک شخصیت Live2D را در پنل مدیریت نمایش می‌دهد. |
+| جلوه آتش‌بازی هنگام کلیک | هنگام کلیک روی صفحه، جلوه آتش‌بازی نمایش می‌دهد. |
+| رد ستاره‌ای نشانگر | هنگام حرکت ماوس، رد ستاره‌ای نمایش می‌دهد. |
 
-## Background Image Formats
+## قالب‌های تصویر پس‌زمینه
 
-Login page background، upload page background و admin login background این formats را پشتیبانی می‌کنند:
+پس‌زمینه صفحه ورود، پس‌زمینه صفحه بارگذاری و پس‌زمینه ورود مدیریت از این قالب‌ها پشتیبانی می‌کنند:
 
-| Value | Effect |
+| مقدار | اثر |
 | --- | --- |
-| `bing` | از Bing wallpaper rotation استفاده می‌کند. |
-| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | چند image را rotate می‌کند. |
-| `["https://example.com/1.jpg"]` | یک background image استفاده می‌کند. |
-| `["https://your-domain.com/random?..."]` | از random image API link استفاده می‌کند. می‌توانید Random Image API خودتان را در Other Settings configure کنید و generated random image link را اینجا به‌عنوان single-background entry paste کنید. |
+| `bing` | از چرخش تصویر زمینه Bing استفاده می‌کند. |
+| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | چند تصویر را به‌صورت چرخشی نمایش می‌دهد. |
+| `["https://example.com/1.jpg"]` | از یک تصویر پس‌زمینه استفاده می‌کند. |
+| `["https://your-domain.com/random?..."]` | از لینک API تصویر تصادفی استفاده می‌کند. می‌توانید API تصویر تصادفی خود را در تنظیمات دیگر پیکربندی کنید و لینک تصویر تصادفی تولیدشده را اینجا به‌عنوان ورودی یک پس‌زمینه واحد قرار دهید. |
 
-admin background از image URLs پشتیبانی می‌کند. چند URL را طبق prompt صفحه می‌توان با comma انگلیسی جدا کرد. خالی باشد، default background استفاده می‌شود.
+پس‌زمینه مدیریت از URL تصاویر پشتیبانی می‌کند. چند URL را می‌توان طبق راهنمای صفحه با ویرگول انگلیسی جدا کرد. مقدار خالی یعنی پس‌زمینه پیش‌فرض استفاده می‌شود.
 
-## Default Naming Method
+## روش نام‌گذاری پیش‌فرض
 
-| Method | Result |
+| روش | نتیجه |
 | --- | --- |
-| Default | time-random prefix + original filename، مثل `1760000000000_cat.png`. |
-| Prefix only | فقط time-random prefix و extension، مثل `1760000000000.png`. |
-| Original name only | original filename را نگه می‌دارد، مثل `cat.png`. اگر duplicate باشد، ImgBed `(1)`، `(2)` و مانند آن اضافه می‌کند. |
-| Short link | از 8-character short ID و extension استفاده می‌کند، مثل `a1b2c3d4.png`. |
+| پیش‌فرض | پیشوند تصادفی مبتنی بر زمان + نام فایل اصلی، مانند `1760000000000_cat.png`. |
+| فقط پیشوند | فقط پیشوند تصادفی مبتنی بر زمان و پسوند، مانند `1760000000000.png`. |
+| فقط نام اصلی | نام فایل اصلی را نگه می‌دارد، مانند `cat.png`. در صورت تکراری بودن، ImgBed مقدارهای `(1)`، `(2)` و مانند آن را اضافه می‌کند. |
+| لینک کوتاه | از یک شناسه کوتاه 8 کاراکتری همراه با پسوند استفاده می‌کند، مانند `a1b2c3d4.png`. |

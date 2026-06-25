@@ -1,97 +1,97 @@
-# Magnet Transfer
+# การโอนผ่านลิงก์แม่เหล็ก
 
-Magnet transfer ดาวน์โหลด files จาก magnet link แล้ว upload อัตโนมัติไปยัง cloud storage channel ที่คุณเลือก
+การโอนผ่านลิงก์แม่เหล็กจะดาวน์โหลดไฟล์จากลิงก์แม่เหล็ก แล้วอัปโหลดไปยังช่องทางพื้นที่จัดเก็บบนคลาวด์ที่คุณเลือกโดยอัตโนมัติ
 
-เหมาะกับการย้าย anime episodes, videos, archives และ files ลักษณะใกล้เคียง Paste magnet link แล้ว ImgBed จะสร้าง background download task เมื่อ download เสร็จ file จะถูก upload เข้า ImgBed และ final link จะแสดงใน upload list
+เหมาะสำหรับโอนตอนอนิเมะ วิดีโอ ไฟล์บีบอัด และไฟล์ลักษณะใกล้เคียง เพียงวางลิงก์แม่เหล็ก แล้ว ImgBed จะสร้างงานดาวน์โหลดเบื้องหลัง เมื่อดาวน์โหลดเสร็จ ไฟล์จะถูกอัปโหลดไปยัง ImgBed และลิงก์สุดท้ายจะปรากฏในรายการอัปโหลด
 
-![Magnet transfer](../../image/other/磁力链接/磁力链接.png)
+![การโอนผ่านลิงก์แม่เหล็ก](../../image/other/磁力链接/磁力链接.png)
 
-## ใช้จากที่ไหน
+## ใช้งานที่ไหน
 
-Magnet transfer entry อยู่ใน homepage upload area
+ทางเข้าการโอนผ่านลิงก์แม่เหล็กอยู่ในพื้นที่อัปโหลดของหน้าแรก
 
-Paste magnet link ลงใน input box เลือก `Transfer` แล้ว upload
+วางลิงก์แม่เหล็กลงในช่องป้อนข้อมูล เลือก `Transfer` แล้วอัปโหลด
 
-![Upload anime](../../image/other/磁力链接/上传番剧.png)
+![อัปโหลดอนิเมะ](../../image/other/磁力链接/上传番剧.png)
 
 ## ก่อนใช้งานครั้งแรก
 
-ต้อง configure magnet transfer ใน admin panel ก่อน
+ให้ตั้งค่าการโอนผ่านลิงก์แม่เหล็กในแผงผู้ดูแลก่อน
 
 โดยทั่วไปต้องมี:
 
-1. GitHub account สำหรับ run download task
-2. Cloud upload channel เช่น Google Drive หรือ OneDrive
-3. Target upload directory
-4. Task timeout
+1. บัญชี GitHub สำหรับเรียกใช้งานดาวน์โหลด
+2. ช่องทางอัปโหลดบนคลาวด์ เช่น Google Drive หรือ OneDrive
+3. ไดเรกทอรีปลายทางสำหรับอัปโหลด
+4. ระยะหมดเวลาของงาน
 
-เมื่อตั้งค่าพร้อมแล้ว กลับไปหน้า homepage และ paste magnet link เพื่อเริ่ม transfer
+เมื่อการตั้งค่าพร้อมแล้ว ให้กลับไปที่หน้าแรกและวางลิงก์แม่เหล็กเพื่อเริ่มโอน
 
-## Upload Magnet Link
+## การอัปโหลดลิงก์แม่เหล็ก
 
-1. Paste magnet link ใน homepage upload box
-2. ตรวจว่า mode ตั้งเป็น `Transfer`
-3. คลิก upload
-4. รอ ImgBed create magnet task
-5. หลัง task เริ่ม ให้ใช้ floating panel `Magnet Tasks` มุมขวาล่างเพื่อตรวจ progress
+1. วางลิงก์แม่เหล็กลงในช่องอัปโหลดของหน้าแรก
+2. ตรวจสอบว่าโหมดตั้งเป็น `Transfer`
+3. คลิกอัปโหลด
+4. รอให้ ImgBed สร้างงานลิงก์แม่เหล็ก
+5. หลังงานเริ่มแล้ว ให้ใช้แผงแบบลอย `Magnet Tasks` ที่มุมขวาล่างเพื่อตรวจสอบความคืบหน้า
 
-Download และ upload อาจใช้เวลา Speed ขึ้นกับ magnet resource, GitHub runtime environment และ selected cloud storage channel
+การดาวน์โหลดและอัปโหลดอาจใช้เวลา ความเร็วขึ้นอยู่กับทรัพยากรของลิงก์แม่เหล็ก สภาพแวดล้อมรันไทม์ของ GitHub และช่องทางพื้นที่จัดเก็บบนคลาวด์ที่เลือก
 
-![Magnet downloading](../../image/other/磁力链接/磁力链接下载中.png)
+![กำลังดาวน์โหลดลิงก์แม่เหล็ก](../../image/other/磁力链接/磁力链接下载中.png)
 
-## หลัง Completion
+## หลังเสร็จสิ้น
 
-เมื่อ task complete upload list จะแสดง file name และ link
+หลังงานเสร็จ รายการอัปโหลดจะแสดงชื่อไฟล์และลิงก์
 
-Videos แสดง video preview, images แสดง image preview และ other files แสดง regular file icon
+วิดีโอจะแสดงตัวอย่างวิดีโอ รูปภาพจะแสดงตัวอย่างรูปภาพ และไฟล์อื่นจะแสดงไอคอนไฟล์ปกติ
 
-![Downloaded video](../../image/other/磁力链接/下载好后的视频.png)
+![วิดีโอที่ดาวน์โหลดแล้ว](../../image/other/磁力链接/下载好后的视频.png)
 
-Copy ได้:
+คุณสามารถคัดลอก:
 
-| Link Type | Use Case |
+| ประเภทลิงก์ | กรณีใช้งาน |
 | --- | --- |
-| Original link | Direct file access |
-| Markdown | Markdown posts หรือ notes |
-| HTML | Web page code |
-| BBCode | Forums ที่รองรับ BBCode |
+| ลิงก์ต้นฉบับ | เข้าถึงไฟล์โดยตรง |
+| Markdown | โพสต์หรือบันทึก Markdown |
+| HTML | โค้ดหน้าเว็บ |
+| BBCode | ฟอรัมที่รองรับ BBCode |
 
-## Magnet Task Panel
+## แผงงานลิงก์แม่เหล็ก
 
-Magnet task panel มุมขวาล่างแสดง task count, task name, progress และ final status
+แผงงานลิงก์แม่เหล็กที่มุมขวาล่างจะแสดงจำนวนงาน ชื่องาน ความคืบหน้า และสถานะสุดท้าย
 
-Common states:
+สถานะทั่วไป:
 
-| Status | Meaning |
+| สถานะ | ความหมาย |
 | --- | --- |
-| Waiting | Task ถูกสร้างแล้วและรอ run |
-| Downloading | Magnet resource กำลัง download |
-| Uploading | File download เสร็จแล้วและกำลัง upload เข้า cloud storage |
-| Completed | Upload สำเร็จและ copy link ได้ |
-| Failed | Task ไม่เสร็จสมบูรณ์ ตรวจ message แล้วลองใหม่ |
+| รอ | งานถูกสร้างแล้วและรอเรียกใช้ |
+| กำลังดาวน์โหลด | กำลังดาวน์โหลดทรัพยากรของลิงก์แม่เหล็ก |
+| กำลังอัปโหลด | ดาวน์โหลดไฟล์เสร็จแล้วและกำลังอัปโหลดไปยังพื้นที่จัดเก็บบนคลาวด์ |
+| เสร็จสมบูรณ์ | อัปโหลดสำเร็จและสามารถคัดลอกลิงก์ได้ |
+| ล้มเหลว | งานไม่เสร็จสมบูรณ์ ตรวจสอบข้อความแล้วลองอีกครั้ง |
 
-## Tips
+## เคล็ดลับ
 
-- ถ้า magnet link มีหลาย files ImgBed จะ prioritize main completed file สำหรับ display
-- Large files ใช้เวลานาน รอ task finish ก่อน refresh page
-- ถ้า magnet resource ไม่มี available peers อาจช้ามากหรือ fail
-- ถ้า cloud account quota เต็ม, authorization หมดอายุ หรือ upload directory ผิด task อาจ fail
-- Video preview อาจใช้เวลาสักครู่หลัง upload complete
+- หากลิงก์แม่เหล็กมีหลายไฟล์ ImgBed จะให้ความสำคัญกับไฟล์หลักที่เสร็จแล้วสำหรับการแสดงผล
+- ไฟล์ขนาดใหญ่ใช้เวลานานกว่า รอให้งานเสร็จก่อนรีเฟรชหน้า
+- หากทรัพยากรของลิงก์แม่เหล็กไม่มีเพียร์ที่พร้อมใช้งาน อาจช้ามากหรือล้มเหลว
+- หากบัญชีคลาวด์โควตาหมด การอนุญาตหมดอายุ หรือไดเรกทอรีอัปโหลดไม่ถูกต้อง งานอาจล้มเหลว
+- ตัวอย่างวิดีโออาจใช้เวลาสองสามวินาทีหลังอัปโหลดเสร็จ
 
-## FAQ
+## คำถามที่พบบ่อย
 
-### Paste Magnet Link แล้วไม่มีอะไรเริ่ม
+### วางลิงก์แม่เหล็กแล้วไม่มีอะไรเริ่มทำงาน
 
-Confirm ว่า magnet transfer enabled ใน admin panel และเลือก GitHub account กับ cloud channel ที่ใช้งานได้แล้ว
+ยืนยันว่าเปิดใช้การโอนผ่านลิงก์แม่เหล็กในแผงผู้ดูแลแล้ว และเลือกบัญชี GitHub กับช่องทางคลาวด์ที่ใช้งานได้แล้ว
 
-### Download ช้าตลอด
+### ดาวน์โหลดช้าเสมอ
 
-Magnet speed ขึ้นกับ resource เอง ถ้าไม่มี available peers download อาจช้ามากหรือเป็นไปไม่ได้
+ความเร็วของลิงก์แม่เหล็กขึ้นอยู่กับทรัพยากรนั้นเอง หากไม่มีเพียร์ที่พร้อมใช้งาน การดาวน์โหลดอาจช้ามากหรือทำไม่ได้
 
-### Upload แล้วไม่เห็น Preview
+### อัปโหลดแล้วไม่มีตัวอย่าง
 
-ก่อนอื่น confirm ว่า file link เปิดได้ Video files อาจต้องใช้เวลาสั้น ๆ เพื่อ load ใน browser หรือเปิด link โดยตรงได้
+ก่อนอื่นให้ยืนยันว่าลิงก์ไฟล์เปิดได้ ไฟล์วิดีโออาจต้องใช้เวลาสั้นๆ ในการโหลดในเบราว์เซอร์ หรือคุณสามารถเปิดลิงก์โดยตรง
 
-### Task fail ควรตรวจอะไร?
+### ควรตรวจอะไรหากงานล้มเหลว?
 
-ตรวจว่า magnet link valid, cloud channel ทำงานได้ และ upload directory ถูกต้อง จากนั้น submit task ใหม่
+ตรวจสอบว่าลิงก์แม่เหล็กถูกต้องหรือไม่ ช่องทางคลาวด์ใช้งานได้หรือไม่ และไดเรกทอรีอัปโหลดถูกต้องหรือไม่ จากนั้นส่งงานอีกครั้ง

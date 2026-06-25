@@ -1,54 +1,67 @@
-# GitLab Packages チャンネルの追加
+# GitLab Packages チャネルを追加する
 
-GitLab Packages チャンネルは、GitLab の Generic Package Registry を保存先として使います。
+## 始める前に必要なもの
 
-## 事前に用意するもの
+必要なものは 3 つだけです。
 
-| 必要なもの | 用途 |
+| 必要なもの | 目的 |
 | --- | --- |
-| GitLab アカウント | プロジェクトと Token を管理します |
-| GitLab プロジェクト | Package を保存する場所 |
-| Access Token | Package Registry へアップロードするため |
-| Project ID | ImgBed から対象プロジェクトを指定します |
+| GitLab アカウント | アクセストークンを生成し、プロジェクトを所有するために使用します。 |
+| GitLab Personal Access Token | ImgBed が GitLab API にアクセスし、プロジェクトを作成し、Generic Packages にファイルをアップロードするために使用します。 |
+| Project name | プロジェクト名だけを入力できます。例: `imgbed`。 |
 
-## Token を作成する
+## 設定手順
 
-GitLab の設定から Access Token を作成します。必要な権限を選びます。
+### 手順 1: GitLab にサインインして Access Token を作成する
 
-![旧版 Token 生成](../../image/upload/gitlab-packages/点击生成旧版令牌.png)
+1. GitLab にサインインします。
+2. 右上のアバターをクリックし、`Preferences` を開きます。
+3. 左サイドバーから `Access Tokens` を開きます。
+4. token に識別しやすい名前を付けます。
+5. 自分の保守方針に合わせて有効期限を選択します。
+6. `api` スコープを選択します。
+7. 作成後すぐに token をコピーして保存します。
 
-アップロードと読み取りに必要な権限を付与します。
+![legacy token を作成する](../../image/upload/gitlab-packages/点击生成旧版令牌.png)
 
-![Token 権限](../../image/upload/gitlab-packages/勾选令牌权限.png)
+![token 権限を選択する](../../image/upload/gitlab-packages/勾选令牌权限.png)
 
-Token は作成直後にしか確認できない場合があります。必ずコピーして安全に保管してください。
+## 手順 2: ImgBed に GitLab Packages チャネルを入力する
 
-## ImgBed へ入力する
+アップロード設定で `GitLab Packages` を選択したら、次のように入力します。
 
-アップロード設定で `GitLab Packages` を選びます。
-
-| 項目 | 入力内容 |
+| UI 項目 | 入力内容 |
 | --- | --- |
-| チャンネル名 | 例：`GitLab Packages` |
-| GitLab Host | `https://gitlab.com` または自前 GitLab の URL |
-| Project ID | 対象プロジェクトの ID |
-| Token | 作成した Access Token |
-| Package Name | パッケージ名 |
-| Version | バージョン名 |
-| 保存パス | 任意 |
+| チャネル名 | 任意の名前。例: `GitLabPrimary`。 |
+| Access Token | 先ほど作成した GitLab Personal Access Token。 |
+| Project name | `imgbed` のような短い project 名、または `username/imgbed` のような完全なパス。 |
+| Private repository | 必要に応じてオンまたはオフにします。 |
+| Remark | 任意。例: `メインアップロードチャネル`。 |
 
-![GitLab 設定](../../image/upload/gitlab-packages/配置渠道内容.png)
+![チャネルを設定する](../../image/upload/gitlab-packages/配置渠道内容.png)
 
-## 確認方法
+## 手順 3: チャネルを保存する
 
-1. 保存後にチャンネルカードが表示される。
-2. テストファイルをアップロードする。
-3. GitLab の Package Registry にファイルが登録される。
-4. ImgBed のリンクからアクセスできる。
+項目を入力したら、保存をクリックします。
 
-## よくある原因
+システムは次の詳細を処理します。
 
-- Project ID が間違っている。
-- Token に Package Registry への書き込み権限がない。
-- 自前 GitLab の Host URL が正しくない。
-- プロジェクト側で Package Registry が無効になっている。
+| システム動作 | 説明 |
+| --- | --- |
+| 短い project name | ImgBed は現在の GitLab アカウントを識別し、値を完全なプロジェクトパスに展開します。 |
+| 完全な project path | ImgBed は `username/project` path を入力どおりに使用します。 |
+| project 確認 | 現在の個人アカウントパスを使用する場合、存在しなければ ImgBed がプロジェクトを自動作成します。完全なパスを手動入力した場合、ImgBed はそのパスを直接使用します。 |
+| 公開/非公開状態 | プロジェクトの可視性は現在のスイッチに従って同期されます。 |
+
+## クイックチェックリスト
+
+```text
+Sign in to GitLab
+-> Create an Access Token
+-> Select only the api scope
+-> Return to ImgBed and enter the token and project name
+-> Save
+-> If only a project name is entered, ImgBed adds the current username automatically
+-> If username/project is entered, ImgBed uses it as-is
+-> Upload a test image
+```

@@ -1,17 +1,17 @@
-# افزودن Dropbox Channel
+# افزودن کانال Dropbox
 
 ## ابتدا چه چیزهایی لازم است
 
 | مورد | چرا لازم است |
 | --- | --- |
-| Dropbox account | برای sign in و authorize کردن app |
-| Dropbox app | برای ساخت `App Key` و `App Secret` |
-| دامنه ImgBed شما | برای OAuth redirect URI |
-| فضای Dropbox در دسترس | به‌عنوان محل واقعی ذخیره files |
+| حساب Dropbox | برای ورود و مجوزدهی به برنامه استفاده می‌شود |
+| برنامه Dropbox | برای تولید `App Key` و `App Secret` استفاده می‌شود |
+| دامنه ImgBed شما | به‌عنوان URI بازگشت OAuth استفاده می‌شود |
+| فضای ذخیره‌سازی در دسترس در Dropbox | محل واقعی ذخیره فایل‌ها خواهد بود |
 
-## مراحل setup
+## مراحل پیکربندی
 
-### Step 1: ساخت Dropbox App
+### مرحله 1: ساخت برنامه Dropbox
 
 1. Dropbox App Console را باز کنید:
 
@@ -19,137 +19,137 @@
 https://www.dropbox.com/developers/apps
 ```
 
-2. یک app جدید بسازید.
-3. برای access type انتخاب کنید:
+2. یک برنامه جدید بسازید.
+3. برای نوع دسترسی، این گزینه را انتخاب کنید:
 
 ```text
 App folder
 ```
 
-4. یک نام قابل‌تشخیص برای app بگذارید، مثل `imgbed-app`.
-5. بعد از ساخت، app details page را باز کنید.
+4. نامی قابل تشخیص برای برنامه انتخاب کنید، مانند `imgbed-app`.
+5. پس از ساخت برنامه، صفحه جزئیات آن را باز کنید.
 
-access type پیشنهادی:
+نوع دسترسی پیشنهادی:
 
-| Access Type | Recommendation |
+| نوع دسترسی | پیشنهاد |
 | --- | --- |
-| `App folder` | Recommended. با نحوه ذخیره files در ImgBed هماهنگ است. |
-| `Full Dropbox` | توصیه نمی‌شود. ImgBed به access کامل account نیاز ندارد. |
+| `App folder` | پیشنهادی. با روش ذخیره فایل‌ها در ImgBed هماهنگ است. |
+| `Full Dropbox` | توصیه نمی‌شود. ImgBed به دسترسی کامل به کل حساب نیاز ندارد. |
 
-![Create Dropbox app](../../image/upload/dropbox/开发者创建应用.png)
+![ساخت برنامه Dropbox](../../image/upload/dropbox/开发者创建应用.png)
 
-### Step 2: افزودن Redirect URI
+### مرحله 2: افزودن URI بازگشت
 
-در app details page مربوط به Dropbox، تنظیمات OAuth یا Redirect URI را پیدا کنید و اضافه کنید:
+در صفحه جزئیات برنامه Dropbox، تنظیمات OAuth یا URI بازگشت را پیدا کنید و این مقدار را اضافه کنید:
 
 ```text
 https://your-domain.com/api/oauth/dropbox/callback
 ```
 
-اگر admin panel را از چند domain استفاده می‌کنید، برای هر کدام callback URL متناظر را اضافه کنید.
+اگر پنل مدیریت را از چند دامنه استفاده می‌کنید، URL بازگشت متناظر هر دامنه را اضافه کنید.
 
-![Configure redirect URI](../../image/upload/dropbox/配置回调地址.png)
+![پیکربندی Redirect URI](../../image/upload/dropbox/配置回调地址.png)
 
-### Step 3: Configure کردن App Permissions
+### مرحله 3: پیکربندی مجوزهای برنامه
 
-tab `Permissions` را باز کنید و حداقل این scopes را enable کنید:
+زبانه `Permissions` را باز کنید و دست‌کم این محدوده‌های دسترسی را فعال کنید:
 
-| Scope | Required | Purpose |
+| محدوده | الزامی | کاربرد |
 | --- | --- | --- |
-| `account_info.read` | Required | خواندن account و quota information |
-| `files.metadata.read` | Required | خواندن file و folder metadata برای path checks |
-| `files.metadata.write` | Required | ساخت folders و نوشتن metadata |
-| `files.content.write` | Required | upload files. نبودن این scope باعث `required scope 'files.content.write'` می‌شود. |
-| `files.content.read` | Recommended | اجازه download، preview و temporary file links |
+| `account_info.read` | الزامی | خواندن اطلاعات حساب و سهمیه |
+| `files.metadata.read` | الزامی | خواندن فراداده فایل‌ها و پوشه‌ها برای بررسی مسیر |
+| `files.metadata.write` | الزامی | ساخت پوشه‌ها و نوشتن فراداده |
+| `files.content.write` | الزامی | بارگذاری فایل‌ها. اگر این محدوده وجود نداشته باشد، خطای `required scope 'files.content.write'` نمایش داده می‌شود. |
+| `files.content.read` | پیشنهادی | امکان دانلود، پیش‌نمایش و لینک‌های موقت فایل را فراهم می‌کند |
 
-پس از انتخاب scopes، پایین page روی `Submit` بزنید.
+پس از انتخاب محدوده‌ها، پایین صفحه روی `Submit` کلیک کنید.
 
-![Add permissions](../../image/upload/dropbox/添加对应的权限.png)
+![افزودن مجوزها](../../image/upload/dropbox/添加对应的权限.png)
 
-Important:
+مهم:
 
-| Situation | What To Do |
+| وضعیت | کار لازم |
 | --- | --- |
-| scopes را تغییر دادید | token authorization flow را دوباره اجرا کنید و `Refresh Token` جدید بگیرید. |
-| reauthorize نکردید | token قدیمی permissions جدید را نمی‌گیرد، پس uploads ممکن است همچنان fail شوند. |
+| محدوده‌ها را تغییر دادید | جریان مجوزدهی توکن را دوباره اجرا کنید و یک `Refresh Token` جدید بگیرید. |
+| دوباره مجوزدهی نکردید | توکن قدیمی مجوزهای جدید را دریافت نمی‌کند، بنابراین بارگذاری‌ها ممکن است همچنان شکست بخورند. |
 
-### Step 4: Copy کردن App Credentials
+### مرحله 4: کپی کردن اعتبارنامه‌های برنامه
 
-این دو مقدار را از Dropbox app page ذخیره کنید:
+این دو مقدار را از صفحه برنامه Dropbox ذخیره کنید:
 
-| Dropbox Field | ImgBed Field |
+| فیلد Dropbox | فیلد ImgBed |
 | --- | --- |
 | `App key` | `App Key` |
 | `App secret` | `App Secret` |
 
-### Step 5: پر کردن Dropbox Channel
+### مرحله 5: تکمیل کانال Dropbox
 
-در Upload Settings، `Dropbox` را انتخاب کنید و پر کنید:
+در تنظیمات بارگذاری، `Dropbox` را انتخاب کنید و این فیلدها را تکمیل کنید:
 
-| ImgBed Field | What To Enter |
+| فیلد ImgBed | مقدار لازم |
 | --- | --- |
-| Channel name | نام قابل‌تشخیص، مثل `Main Dropbox` |
-| App Key | Dropbox `App key` |
-| App Secret | Dropbox `App secret` |
+| نام کانال | نامی قابل تشخیص، مانند `Main Dropbox` |
+| App Key | مقدار `App key` در Dropbox |
+| App Secret | مقدار `App secret` در Dropbox |
 | Refresh Token | فعلاً خالی بگذارید |
-| Root directory | اختیاری. پیش‌فرض `imgbed`. |
-| Note | اختیاری |
+| دایرکتوری ریشه | اختیاری. مقدار پیش‌فرض `imgbed` است. |
+| یادداشت | اختیاری |
 
-![Get token](../../image/upload/dropbox/获取令牌.png)
+![دریافت توکن](../../image/upload/dropbox/获取令牌.png)
 
-### Step 6: گرفتن Refresh Token
+### مرحله 6: دریافت Refresh Token
 
-1. در ImgBed، `Get Token` را بزنید.
-2. وارد Dropbox account موردنظر شوید.
-3. authorization prompt را approve کنید.
-4. callback page یک `Refresh Token` نشان می‌دهد.
-5. آن را copy کنید.
-6. به ImgBed برگردید و داخل `Refresh Token` paste کنید.
+1. در ImgBed روی `Get Token` کلیک کنید.
+2. وارد حساب Dropbox موردنظر برای اتصال شوید.
+3. درخواست مجوزدهی را تأیید کنید.
+4. صفحه بازگشت یک `Refresh Token` نمایش می‌دهد.
+5. آن را کپی کنید.
+6. به ImgBed برگردید و آن را در فیلد `Refresh Token` قرار دهید.
 
-![Copy token](../../image/upload/dropbox/复制令牌.png)
+![کپی کردن توکن](../../image/upload/dropbox/复制令牌.png)
 
 ## روش بررسی
 
-| Check | Expected Result |
+| بررسی | نتیجه مورد انتظار |
 | --- | --- |
-| Channel card | پس از Save، Dropbox channel دیده شود. |
-| Channel switch | channel قابل enable باشد. |
-| Token saved | detail page نشان دهد `Refresh Token` ذخیره شده است. |
-| Upload test | test image در Dropbox app folder دیده شود. |
+| کارت کانال | کانال Dropbox پس از ذخیره نمایش داده شود. |
+| کلید کانال | کانال قابل فعال‌سازی باشد. |
+| توکن ذخیره شده است | صفحه جزئیات نشان دهد `Refresh Token` ذخیره شده است. |
+| آزمایش بارگذاری | یک تصویر آزمایشی در پوشه برنامه Dropbox ظاهر شود. |
 
-اگر quota limits enabled است، quota query را بزنید. پس از query موفق، channel card مقدار used space، total space و last update time را نشان می‌دهد.
+اگر محدودیت‌های سهمیه فعال هستند، روی استعلام سهمیه کلیک کنید. پس از استعلام موفق، کارت کانال فضای مصرف‌شده، فضای کل و زمان آخرین به‌روزرسانی را نشان می‌دهد.
 
-![Quota query success](../../image/upload/dropbox/查询额度成功.png)
+![استعلام موفق سهمیه](../../image/upload/dropbox/查询额度成功.png)
 
-## Troubleshooting
+## عیب‌یابی
 
-| Problem | Fix |
+| مشکل | راه‌حل |
 | --- | --- |
-| ImgBed می‌گوید configuration incomplete است | بررسی کنید `App Key`، `App Secret` و `Refresh Token` همگی پر شده باشند. |
-| Authorization موفق است ولی `Refresh Token` دیده نمی‌شود | دوباره `Get Token` را بزنید و مطمئن شوید offline authorization flow استفاده می‌شود. |
-| Upload با `required scope 'files.content.write'` fail می‌شود | `files.content.write` را enable کنید، `Submit` را بزنید، سپس `Refresh Token` جدید بگیرید. |
-| Callback fail می‌شود | مطمئن شوید redirect URI برابر `https://your-domain.com/api/oauth/dropbox/callback` است. |
-| Files پیدا نمی‌شوند | مطمئن شوید Dropbox app با mode `App folder` ساخته شده است. |
+| ImgBed اعلام می‌کند پیکربندی ناقص است | بررسی کنید `App Key`، `App Secret` و `Refresh Token` همگی تکمیل شده باشند. |
+| مجوزدهی کامل می‌شود اما `Refresh Token` نمایش داده نمی‌شود | دوباره روی `Get Token` کلیک کنید و مطمئن شوید جریان مجوزدهی آفلاین استفاده می‌شود. |
+| بارگذاری با خطای `required scope 'files.content.write'` شکست می‌خورد | `files.content.write` را فعال کنید، روی `Submit` کلیک کنید و سپس یک `Refresh Token` جدید بگیرید. |
+| بازگشت شکست می‌خورد | مطمئن شوید URI بازگشت برابر `https://your-domain.com/api/oauth/dropbox/callback` است. |
+| فایل‌ها پیدا نمی‌شوند | مطمئن شوید برنامه Dropbox در حالت `App folder` ساخته شده است. |
 
-## Quick Flow
+## جریان سریع
 
 ```text
-Dropbox App Console را باز کنید
--> app بسازید
--> App folder access را انتخاب کنید
--> https://your-domain.com/api/oauth/dropbox/callback را اضافه کنید
--> account_info.read / files.metadata.read / files.metadata.write / files.content.write را enable کنید
--> در صورت نیاز files.content.read را هم enable کنید
--> Submit
--> App Key و App Secret را copy کنید
--> در ImgBed وارد کنید
--> Get Token را بزنید
--> Refresh Token را از callback page copy کنید
--> در ImgBed paste و save کنید
+Open Dropbox App Console
+-> Create an app
+-> Choose App folder access
+-> Add https://your-domain.com/api/oauth/dropbox/callback
+-> Enable account_info.read / files.metadata.read / files.metadata.write / files.content.write
+-> Optionally enable files.content.read
+-> Click Submit
+-> Copy App Key and App Secret
+-> Fill them into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
-## References
+## منابع
 
 1. Dropbox App Console: https://www.dropbox.com/developers/apps
-2. Dropbox OAuth Guide: https://developers.dropbox.com/oauth-guide
-3. Dropbox Developer Guide: https://www.dropbox.com/developers/reference/developer-guide
+2. راهنمای OAuth در Dropbox: https://developers.dropbox.com/oauth-guide
+3. راهنمای توسعه‌دهندگان Dropbox: https://www.dropbox.com/developers/reference/developer-guide

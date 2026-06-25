@@ -1,141 +1,143 @@
-# WebDAV Channel ထည့်သွင်းခြင်း
+# WebDAV ချန်နယ် ထည့်သွင်းခြင်း
 
-## ဘယ်အချိန်မှာ သုံးသင့်လဲ
+## အသင့်တော်ဆုံး အခြေအနေ
 
-WebDAV channel ကို ဒီလိုအခြေအနေတွေမှာသုံးပါ:
+အောက်ပါအခြေအနေများတွင် WebDAV ချန်နယ်ကို အသုံးပြုပါ။
 
-- WebDAV endpoint ပေးတဲ့ NAS, cloud drive, object storage service ရှိလျှင်။
-- uploaded images တွေကို ကိုယ်ပိုင် WebDAV directory ထဲသိမ်းချင်လျှင်။
-- credentials တွေကို frontend မှာကြာရှည်မဖော်ပြဘဲ D1 `upload_channels` table ထဲသိမ်းချင်လျှင်။
+- WebDAV endpoint ပေးနိုင်သော NAS၊ cloud drive သို့မဟုတ် object storage service ရှိပါက။
+- အပ်လုဒ်လုပ်ထားသော ပုံများကို သင်၏ ကိုယ်ပိုင် WebDAV directory တွင် သိမ်းလိုပါက။
+- Credential များကို frontend တွင် ရေရှည်ဖော်ပြမထားဘဲ D1 `upload_channels` table ထဲတွင် သိမ်းလိုပါက။
 
-## စမလုပ်ခင် လိုအပ်တာတွေ
+## မစတင်မီ လိုအပ်သည့်အရာများ
 
-| လိုအပ်ချက် | အသုံးပြုပုံ |
+| လိုအပ်ချက် | ရည်ရွယ်ချက် |
 | --- | --- |
-| WebDAV Endpoint | server-side WebDAV URL၊ ဥပမာ `https://nas.example.com/dav`။ |
-| Username | WebDAV service ကို sign in ဝင်ရန်။ |
-| Password | WebDAV service ကို sign in ဝင်ရန်။ |
-| Authentication mode | default က `Basic` ဖြစ်သည်။ server ကလိုအပ်မှသာ `Digest` သို့မဟုတ် auto negotiation သုံးပါ။ |
-| Storage directory | files သိမ်းမယ့် directory။ default က `imgbed`။ |
+| WebDAV Endpoint | Server-side WebDAV URL။ ဥပမာ `https://nas.example.com/dav`. |
+| အသုံးပြုသူအမည် | WebDAV service သို့ sign in ဝင်ရန် အသုံးပြုသည်။ |
+| စကားဝှက် | WebDAV service သို့ sign in ဝင်ရန် အသုံးပြုသည်။ |
+| အတည်ပြုမုဒ် | မူရင်း သည် `Basic` ဖြစ်သည်။ Server ကလိုအပ်သည့်အခါမှသာ `Digest` သို့မဟုတ် auto negotiation ကိုသုံးပါ။ |
+| သိုလှောင်မှု ဖိုင်တွဲ | ဖိုင်များ သိမ်းဆည်းရန် အသုံးပြုသော directory။ မူရင်း သည် `imgbed` ဖြစ်သည်။ |
 
-## ဘယ်နေရာမှာ ထည့်မလဲ
+## ထည့်သွင်းမည့်နေရာ
 
-1. System Settings ကိုဖွင့်ပါ။
-2. Upload Settings ကိုသွားပါ။
-3. ညာဘက်အပေါ်ထောင့်က Add Channel ကိုနှိပ်ပါ။
+1. စနစ် ဆက်တင်များ ကိုဖွင့်ပါ။
+2. အပ်လုဒ် ဆက်တင်များ သို့သွားပါ။
+3. ညာဘက်အပေါ်ထောင့်ရှိ ချန်နယ် ထည့်ရန် ကိုနှိပ်ပါ။
 4. `WebDAV` ကိုရွေးပါ။
 
-## Field Reference
+## အကွက် ရည်ညွှန်းချက်
 
-| Field | အသုံးပြုပုံ | Required |
+| အကွက် | လုပ်ဆောင်ချက် | လိုအပ်မှု |
 | --- | --- | --- |
-| Channel name | ဒီ WebDAV channel အတွက် မှတ်မိလွယ်တဲ့အမည်၊ ဥပမာ `koofr` သို့မဟုတ် `nas`။ | Yes |
-| Endpoint | `https://` ပါတဲ့ WebDAV endpoint အပြည့်အစုံ။ | Yes |
-| Username | WebDAV login username။ | Yes |
-| Password | WebDAV login password။ | Yes |
-| Authentication mode | များသောအားဖြင့် `Basic`။ server က digest authentication လိုလျှင် `Digest` သုံးပါ။ | Yes |
-| Storage directory | files သိမ်းမယ့် directory။ default က `imgbed`။ | No |
+| ချန်နယ်အမည် | ဤ WebDAV ချန်နယ်အတွက် မှတ်မိလွယ်သောအမည်၊ ဥပမာ `koofr` သို့မဟုတ် `nas`။ | ဟုတ်သည် |
+| Endpoint | `https://` ပါဝင်သော WebDAV endpoint အပြည့်အစုံ။ | ဟုတ်သည် |
+| အသုံးပြုသူအမည် | WebDAV login အသုံးပြုသူအမည်။ | ဟုတ်သည် |
+| စကားဝှက် | WebDAV login စကားဝှက်။ | ဟုတ်သည် |
+| အတည်ပြုမုဒ် | ပုံမှန်အားဖြင့် `Basic` ဖြစ်သည်။ Server က digest authentication လိုအပ်ပါက `Digest` ကိုသုံးပါ။ | ဟုတ်သည် |
+| သိုလှောင်မှု ဖိုင်တွဲ | ဖိုင်များ သိမ်းဆည်းမည့် directory။ မူရင်း သည် `imgbed` ဖြစ်သည်။ | မဟုတ်ပါ |
 
 ## ဥပမာ: fie.nl.tab.digital
 
-### 1. App Password ဖန်တီးပါ
+### 1. App စကားဝှက် ဖန်တီးပါ
 
-account security settings ကိုဖွင့်ပြီး application passwords ကိုရှာကာ app password အသစ်ဖန်တီးပါ။
+သင်၏ account security settings ကိုဖွင့်ပါ။ Application စကားဝှက်s ကိုရှာပြီး app စကားဝှက် အသစ်တစ်ခု ဖန်တီးပါ။
 
-![Create an app password](../../image/upload/webdav/创建应用密码.png)
+![App စကားဝှက် ဖန်တီးခြင်း](../../image/upload/webdav/创建应用密码.png)
 
-ဖန်တီးပြီးရင် app password အသစ်ကို copy လုပ်ပြီးသိမ်းပါ။ များသောအားဖြင့် တစ်ကြိမ်ပဲပြပါမယ်။
+ဖန်တီးပြီးပါက app စကားဝှက် အသစ်ကို ကူးယူပြီး သိမ်းထားပါ။ ပုံမှန်အားဖြင့် တစ်ကြိမ်သာ ပြသသည်။
 
-![Save the new app password](../../image/upload/webdav/记住新应用程序密码.png)
+![App စကားဝှက် အသစ် သိမ်းခြင်း](../../image/upload/webdav/记住新应用程序密码.png)
 
-### 2. ImgBed မှာ WebDAV Configuration ဖြည့်ပါ
+### 2. ImgBed တွင် WebDAV Configuration ကိုဖြည့်ပါ
 
-ImgBed ကိုပြန်သွားပြီး WebDAV channel ထည့်ပါ:
+ImgBed သို့ ပြန်သွားပြီး WebDAV ချန်နယ်တစ်ခု ထည့်ပါ။
 
-| UI Field | Value |
+| UI အကွက် | တန်ဖိုး |
 | --- | --- |
-| Endpoint | `https://fie.nl.tab.digital/` ကပေးတဲ့ WebDAV URL။ |
-| Username | သင့် WebDAV username။ |
-| Password | မကြာသေးခင်ဖန်တီးထားတဲ့ app password။ |
-| Authentication mode | အများစုမှာ `Basic` နဲ့စပါ။ |
-| Storage directory | default က `imgbed`; custom directory လည်းသုံးနိုင်သည်။ |
+| Endpoint | `https://fie.nl.tab.digital/` မှ ပေးသော WebDAV URL။ |
+| အသုံးပြုသူအမည် | သင်၏ WebDAV အသုံးပြုသူအမည်။ |
+| စကားဝှက် | သင်ယခု ဖန်တီးထားသော app စကားဝှက်။ |
+| အတည်ပြုမုဒ် | အများစုတွင် `Basic` ဖြင့် စတင်ပါ။ |
+| သိုလှောင်မှု ဖိုင်တွဲ | မူရင်း သည် `imgbed` ဖြစ်သည်။ Custom directory ကိုလည်း အသုံးပြုနိုင်သည်။ |
 
-![Fill in the configuration](../../image/upload/webdav/填写配置.png)
+![Configuration ဖြည့်ခြင်း](../../image/upload/webdav/填写配置.png)
 
-## File ကြီး Upload လုပ်ပုံ
+## ဖိုင်ကြီး အပ်လုဒ် လုပ်ဆောင်ပုံ
 
-WebDAV channel က အခု real session-based chunked upload ကိုသုံးပါတယ်။
+WebDAV ချန်နယ်သည် ယခု session-based chunked upload အစစ်ကို အသုံးပြုသည်။
 
-file သေးတွေကို complete file တစ်ခုအဖြစ် upload လုပ်ပါတယ်။ 64 MiB ထက်ကြီးတဲ့ files တွေကို 10 MiB ဝန်းကျင် chunks တွေအဖြစ် ခွဲပြီး remote chunk directory ထဲ upload လုပ်ပါမယ်။
+ဖိုင်အသေးများကို ဖိုင်တစ်ခုလုံးအဖြစ် အပ်လုဒ်လုပ်သည်။ 64 MiB ထက်ကြီးသော ဖိုင်များကို 10 MiB ခန့်ရှိသော chunk များအဖြစ် အလိုအလျောက် ခွဲပြီး remote chunk directory သို့ အပ်လုဒ်လုပ်သည်။
 
-WebDAV service က `partial update` သို့မဟုတ် offset-based writes ကို support လုပ်ဖို့မလိုပါ။ ImgBed က remote server ပေါ်မှာ chunks တွေကို file ကြီးတစ်ခုအဖြစ် merge မလုပ်ပါ။ chunk manifest သိမ်းပြီး file request လာတဲ့အခါ chunks တွေကိုအစဉ်လိုက်ဖတ်ပါမယ်။
+WebDAV service သည် `partial update` သို့မဟုတ် offset-based write ကို ပံ့ပိုးရန် မလိုအပ်ပါ။ ImgBed သည် remote server ပေါ်တွင် chunk များကို ဖိုင်ကြီးတစ်ခုအဖြစ် merge မလုပ်ပါ။ အစားထိုးအနေဖြင့် chunk manifest ကိုသိမ်းပြီး ဖိုင်တောင်းဆိုသည့်အခါ chunk များကို အစဉ်လိုက်ဖတ်သည်။
 
-| File Size | Upload Method | Remote Storage Layout |
+လက်တွေ့တွင်-
+
+| ဖိုင်အရွယ်အစား | အပ်လုဒ်နည်းလမ်း | Remote storage layout |
 | --- | --- | --- |
-| 64 MiB သို့မဟုတ် ပိုသေး | Normal upload | complete file တစ်ခု |
-| 64 MiB ထက်ကြီး | Real session chunked upload | chunk files အများကြီးပါသော chunk directory |
+| 64 MiB သို့မဟုတ် ထို့ထက်ငယ် | ပုံမှန် upload | ဖိုင်တစ်ခုလုံး |
+| 64 MiB ထက်ကြီး | Real session chunked upload | Chunk file များစွာပါဝင်သော chunk directory |
 
-chunk directory က remote storage layout ကိုပဲသက်ရောက်ပါတယ်။ ImgBed ထဲက file URL မပြောင်းပါ။ users တွေက မူလ `/file/...` link ကနေ file ကိုဆက်လက် access လုပ်နိုင်ပါတယ်။
+Chunk directory သည် remote storage layout ကိုသာ သက်ရောက်စေသည်။ ImgBed တွင်ရှိသော file URL ကို မပြောင်းလဲစေပါ။ အသုံးပြုသူများသည် မူရင်း `/file/...` link မှတစ်ဆင့် ဖိုင်ကို ဆက်လက်ဝင်ရောက်သည်။
 
-## Setup Steps
+## ပြင်ဆင်မှု အဆင့်များ
 
-1. Upload Settings ကိုဖွင့်ပါ။
-2. Add Channel ကိုနှိပ်ပါ။
+1. အပ်လုဒ် ဆက်တင်များ ကိုဖွင့်ပါ။
+2. ချန်နယ် ထည့်ရန် ကိုနှိပ်ပါ။
 3. `WebDAV` ကိုရွေးပါ။
-4. မှတ်မိလွယ်တဲ့ channel name ထည့်ပါ၊ ဥပမာ `koofr`။
-5. WebDAV endpoint ထည့်ပါ၊ ဥပမာ `https://app.koofr.net/dav/Koofr`။
-6. username နဲ့ password ထည့်ပါ။
-7. authentication mode ကို default `Basic` အတိုင်းထားပါ။
-8. storage directory ကို `imgbed` အတိုင်းထားနိုင်ပြီး ကိုယ်ပိုင် directory လည်းထည့်နိုင်ပါတယ်။
-9. Save ကိုနှိပ်ပါ။
-10. Save ပြီးနောက် channel card စစ်ပါ၊ capacity query ရနိုင်လျှင် query လုပ်ပါ၊ test file တစ်ခု upload လုပ်ပါ။
+4. ဥပမာ `koofr` ကဲ့သို့ သင်မှတ်မိနိုင်သော ချန်နယ်အမည် ကိုထည့်ပါ။
+5. ဥပမာ `https://app.koofr.net/dav/Koofr` ကဲ့သို့ WebDAV endpoint ကိုထည့်ပါ။
+6. အသုံးပြုသူအမည် နှင့် စကားဝှက် ကိုထည့်ပါ။
+7. အတည်ပြုမုဒ်ကို မူရင်းအားဖြင့် `Basic` အဖြစ်ထားပါ။
+8. သိုလှောင်မှု ဖိုင်တွဲ ကို `imgbed` အဖြစ်ထားပါ၊ သို့မဟုတ် သင်၏ ကိုယ်ပိုင် directory သို့ပြောင်းပါ။
+9. `Save` ကိုနှိပ်ပါ။
+10. သိမ်းပြီးနောက် ချန်နယ်ကတ် ကိုစစ်ဆေးပါ၊ ရနိုင်ပါက capacity ကို query လုပ်ပါ၊ ထို့နောက် test file တစ်ခုကို အပ်လုဒ်လုပ်ပါ။
 
-## စစ်ဆေးနည်း
+## အတည်ပြုနည်း
 
-| Check | စစ်ဆေးပုံ |
+| စစ်ဆေးချက် | အတည်ပြုနည်း |
 | --- | --- |
-| Channel card appears | Save ပြီးနောက် Upload Settings မှာ WebDAV channel card ပေါ်လာရပါမယ်။ |
-| Channel is enabled | card ရဲ့ ညာဘက်အပေါ် switch က on ဖြစ်ရပါမယ်။ |
-| Credentials are saved | detail view မှာ Endpoint, username, authentication mode, storage directory တွေမြင်ရပါမယ်။ |
-| Small file upload works | test image upload လုပ်ပြီး WebDAV directory ထဲ file ပေါ်လာလားစစ်ပါ။ |
-| Large file rule works | 64 MiB ထက်ကြီးတဲ့ files တွေက chunked upload သုံးပြီး remote chunk directory ဖန်တီးရပါမယ်။ |
-| Capacity query works | server က capacity information support လုပ်ရင် used နဲ့ total capacity ပြပါမယ်။ |
+| ချန်နယ်ကတ် ပေါ်လာသည် | သိမ်းပြီးနောက် အပ်လုဒ် ဆက်တင်များ စာမျက်နှာတွင် WebDAV ချန်နယ်ကတ် ပေါ်လာသင့်သည်။ |
+| Channel ကို enable လုပ်ထားသည် | Card ၏ ညာဘက်အပေါ်ထောင့်ရှိ switch သည် ဖွင့်ထားသည့်အခြေအနေတွင် ရှိသင့်သည်။ |
+| Credential များ သိမ်းထားသည် | Detail view တွင် Endpoint၊ အသုံးပြုသူအမည်၊ အတည်ပြုမုဒ် နှင့် storage directory ကို ပြသသင့်သည်။ |
+| ဖိုင်အသေး upload အလုပ်လုပ်သည် | စမ်းသပ်ပုံတစ်ပုံကို အပ်လုဒ်လုပ်ပြီး ဖိုင်သည် WebDAV directory တွင် ပေါ်လာကြောင်း အတည်ပြုပါ။ |
+| ဖိုင်ကြီး rule အလုပ်လုပ်သည် | 64 MiB ထက်ကြီးသော ဖိုင်များသည် chunked upload ကိုအသုံးပြုပြီး remote chunk directory ကိုဖန်တီးသည်။ |
+| Capacity query အလုပ်လုပ်သည် | Server က capacity information ကို ပံ့ပိုးပါက query တွင် used capacity နှင့် total capacity ကို ပြသမည်။ |
 
-![Quota query succeeded](../../image/upload/webdav/查询额度成功.png)
+![Quota query အောင်မြင်ခြင်း](../../image/upload/webdav/查询额度成功.png)
 
 ## FAQ
 
-### WebDAV file ကြီးတွေက chunk directory ဘာကြောင့်ဖန်တီးလဲ?
+### WebDAV ဖိုင်ကြီးများသည် chunk directory ကို ဘာကြောင့် ဖန်တီးသနည်း။
 
-ဒါက file ကြီးတွေအတွက် လက်ရှိ storage method ဖြစ်ပါတယ်။
+ဤသည်မှာ ဖိုင်ကြီးများအတွက် လက်ရှိ storage method ဖြစ်သည်။
 
-64 MiB ထက်ကြီးတဲ့ files တွေကို remote side မှာ file ကြီးတစ်ခုအဖြစ် merge မလုပ်ပါ။ chunk directory အဖြစ်သိမ်းပြီး ImgBed က chunk manifest ကို record လုပ်ကာ complete content ကို chunks အစဉ်လိုက်ဖတ်ပြီးပြန်ပေးပါတယ်။
+64 MiB ထက်ကြီးသော ဖိုင်များကို remote file ကြီးတစ်ခုအဖြစ် merge မလုပ်ပါ။ ၎င်းတို့ကို chunk directory အဖြစ် သိမ်းသည်။ ImgBed သည် chunk manifest ကိုမှတ်တမ်းတင်ပြီး chunk များကို အစဉ်လိုက်ဖတ်ခြင်းဖြင့် အကြောင်းအရာတစ်ခုလုံးကို ပြန်ပေးသည်။
 
-### large file upload fail ဖြစ်ရင် အရင်ဆုံးဘာစစ်ရမလဲ?
+### ဖိုင်ကြီး upload မအောင်မြင်ပါက ဘာကို အရင်စစ်သင့်သနည်း။
 
-Endpoint, username, password, storage directory ကိုအရင်စစ်ပါ။ ပြီးရင် WebDAV service က directory creation, file writing, file reading ကို allow လုပ်လား confirm လုပ်ပါ။
+Endpoint၊ အသုံးပြုသူအမည်၊ စကားဝှက် နှင့် storage directory ကို ဦးစွာစစ်ဆေးပါ။ ထို့နောက် WebDAV service သည် directory ဖန်တီးခြင်း၊ file writing နှင့် file reading ကို ခွင့်ပြုကြောင်း အတည်ပြုပါ။
 
-capacity query fail ဖြစ်ပေမယ့် small file upload အလုပ်လုပ်ရင် server က capacity reporting ကိုမထောက်ပံ့တာ သို့မဟုတ် ကန့်သတ်ထားတာဖြစ်နိုင်ပါတယ်။ upload မရဘူးလို့ တန်းမဆိုလိုပါ။
+Capacity query မအောင်မြင်သော်လည်း ဖိုင်အသေး upload အလုပ်လုပ်ပါက server သည် capacity reporting ကို မပံ့ပိုးခြင်း သို့မဟုတ် ကန့်သတ်ထားခြင်းသာ ဖြစ်နိုင်သည်။ ထိုအရာသည် upload မရနိုင်ကြောင်း မဆိုလိုပါ။
 
-### ဘယ် authentication mode သုံးရမလဲ?
+### ဘယ် အတည်ပြုမုဒ် ကို အသုံးပြုသင့်သနည်း။
 
-`Basic` နဲ့စပါ။
+`Basic` ဖြင့် စတင်ပါ။
 
-server က digest authentication လိုတယ်လို့တိတိကျကျပြထားရင် `Digest` သုံးပါ။
+Server က digest authentication ကို အတိအကျလိုအပ်ပါက `Digest` ကိုသုံးပါ။
 
-မသေချာရင် automatic negotiation ကိုသုံးပါ။
+မသေချာပါက automatic negotiation ကိုသုံးပါ။
 
-## Quick Checklist
+## အမြန် စစ်ဆေးစာရင်း
 
 ```text
-WebDAV endpoint, username, password ပြင်ဆင်ပါ
--> Upload Settings ဖွင့်ပါ
+Prepare WebDAV endpoint, username, and password
+-> Open Upload Settings
 -> Add Channel
--> WebDAV ရွေးပါ
--> Endpoint / username / password ထည့်ပါ
--> authentication mode ကို default Basic ထားပါ
--> storage directory ကို default imgbed ထားပါ
+-> Select WebDAV
+-> Enter Endpoint / username / password
+-> Keep authentication mode as Basic by default
+-> Keep storage directory as imgbed by default
 -> Save
--> capacity query
--> test file upload
+-> Query capacity
+-> Upload a test file
 ```

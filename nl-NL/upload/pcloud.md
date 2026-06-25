@@ -89,14 +89,14 @@ eapi.pcloud.com
 ## Snelle flow
 
 ```text
-Bereid je pCloud-mail en wachtwoord voor
--> Open Uploadinstellingen
--> Kanaal toevoegen
--> Kies pCloud
--> Vul kanaalnaam / e-mail / wachtwoord in
--> Laat API-host op api.pcloud.com tenzij je account in Europa staat
--> Laat opslagmap op imgbed tenzij je een andere map nodig hebt
--> Sla op
--> Vraag quota op
--> Upload een testafbeelding
+Prepare your pCloud email and password
+-> Open Upload Settings
+-> Add Channel
+-> Choose pCloud
+-> Fill channel name / email / password
+-> Keep API host as api.pcloud.com unless your account is in Europe
+-> Keep storage directory as imgbed unless you need another folder
+-> Save
+-> Query quota
+-> Upload a test image
 ```

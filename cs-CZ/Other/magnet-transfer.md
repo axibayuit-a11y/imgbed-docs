@@ -1,49 +1,49 @@
-# Magnet transfer
+# Přenos magnet odkazů
 
-Magnet transfer stáhne soubory z magnet odkazu a automaticky je nahraje do vybraného cloudového kanálu.
+Přenos magnet odkazů stáhne soubory z magnet odkazu a automaticky je nahraje do zvoleného cloudového úložného kanálu.
 
-Hodí se pro přesun anime epizod, videí, archivů a podobných souborů. Vložíte magnet odkaz a ImgBed vytvoří úlohu stahování na pozadí. Po dokončení stahování se soubor nahraje do ImgBed a finální odkaz se objeví v seznamu uploadů.
+Hodí se pro přenos anime epizod, videí, archivů a podobných souborů. Vložte magnet odkaz a ImgBed vytvoří úlohu stahování na pozadí. Po dokončení stahování se soubor nahraje do ImgBed a výsledný odkaz se zobrazí v seznamu nahrání.
 
-![Magnet transfer](../../image/other/磁力链接/磁力链接.png)
+![Přenos magnet odkazů](../../image/other/磁力链接/磁力链接.png)
 
-## Kde použít
+## Kde ho použít
 
-Vstup Magnet transferu je v upload části domovské stránky.
+Vstup pro přenos magnet odkazů je v oblasti nahrávání na domovské stránce.
 
-Vložte magnet odkaz do pole, vyberte `Transfer` a nahrajte.
+Vložte magnet odkaz do vstupního pole, vyberte `Transfer` a nahrajte.
 
-![Upload anime](../../image/other/磁力链接/上传番剧.png)
+![Nahrání anime](../../image/other/磁力链接/上传番剧.png)
 
 ## Před prvním použitím
 
-Nejprve nastavte Magnet transfer v administraci.
+Nejprve nastavte přenos magnet odkazů v administračním panelu.
 
 Obvykle potřebujete:
 
-1. GitHub účet pro spuštění stahovací úlohy.
-2. Cloudový upload kanál, například Google Drive nebo OneDrive.
-3. Cílový upload adresář.
-4. Timeout úlohy.
+1. Účet GitHub pro spuštění úlohy stahování.
+2. Cloudový kanál nahrávání, například Google Drive nebo OneDrive.
+3. Cílový adresář nahrání.
+4. Časový limit úlohy.
 
-Po připravení nastavení se vraťte na domovskou stránku a vložte magnet odkaz pro spuštění transferu.
+Jakmile jsou nastavení připravená, vraťte se na domovskou stránku a vložte magnet odkaz pro spuštění přenosu.
 
 ## Nahrání magnet odkazu
 
-1. Vložte magnet odkaz do upload pole na domovské stránce.
-2. Ověřte, že je režim nastavený na `Transfer`.
-3. Klikněte na upload.
+1. Vložte magnet odkaz do pole nahrávání na domovské stránce.
+2. Ujistěte se, že je režim nastavený na `Transfer`.
+3. Klikněte na nahrání.
 4. Počkejte, než ImgBed vytvoří magnet úlohu.
-5. Po spuštění úlohy sledujte postup v plovoucím panelu `Magnet Tasks` vpravo dole.
+5. Po spuštění úlohy sledujte průběh v plovoucím panelu `Magnet Tasks` vpravo dole.
 
-Stahování a upload mohou trvat. Rychlost závisí na magnet zdroji, runtime prostředí GitHub a zvoleném cloudovém kanálu.
+Stahování a nahrávání mohou trvat. Rychlost závisí na magnet zdroji, běhovém prostředí GitHub a vybraném cloudovém úložném kanálu.
 
-![Stahování magnetu](../../image/other/磁力链接/磁力链接下载中.png)
+![Stahování magnet odkazu](../../image/other/磁力链接/磁力链接下载中.png)
 
 ## Po dokončení
 
-Po dokončení úlohy seznam uploadů ukáže název souboru a odkaz.
+Po dokončení úlohy seznam nahrání zobrazí název souboru a odkaz.
 
-Videa zobrazují video náhled, obrázky náhled obrázku a ostatní soubory běžnou ikonu souboru.
+Videa zobrazují náhled videa, obrázky náhled obrázku a ostatní soubory běžnou ikonu souboru.
 
 ![Stažené video](../../image/other/磁力链接/下载好后的视频.png)
 
@@ -52,46 +52,46 @@ Můžete zkopírovat:
 | Typ odkazu | Použití |
 | --- | --- |
 | Původní odkaz | Přímý přístup k souboru |
-| Markdown | Markdown příspěvky nebo poznámky |
+| Markdown | Příspěvky nebo poznámky Markdown |
 | HTML | Kód webové stránky |
 | BBCode | Fóra podporující BBCode |
 
 ## Panel magnet úloh
 
-Panel vpravo dole ukazuje počet úloh, název úlohy, průběh a finální stav.
+Panel magnet úloh vpravo dole zobrazuje počet úloh, název úlohy, průběh a konečný stav.
 
 Běžné stavy:
 
 | Stav | Význam |
 | --- | --- |
-| Waiting | Úloha je vytvořená a čeká na spuštění. |
-| Downloading | Magnet zdroj se stahuje. |
-| Uploading | Soubor je stažený a nahrává se do cloudového úložiště. |
-| Completed | Upload byl úspěšný a odkaz lze zkopírovat. |
-| Failed | Úloha se nedokončila úspěšně. Zkontrolujte zprávu a zkuste to znovu. |
+| Čeká | Úloha je vytvořená a čeká na spuštění. |
+| Stahuje se | Magnet zdroj se stahuje. |
+| Nahrává se | Soubor byl stažen a nahrává se do cloudového úložiště. |
+| Dokončeno | Nahrání bylo úspěšné a odkaz lze zkopírovat. |
+| Selhalo | Úloha se nedokončila úspěšně. Zkontrolujte zprávu a zkuste to znovu. |
 
 ## Tipy
 
 - Pokud magnet odkaz obsahuje více souborů, ImgBed pro zobrazení upřednostní hlavní dokončený soubor.
 - Velké soubory trvají déle. Před obnovením stránky počkejte na dokončení úlohy.
 - Pokud magnet zdroj nemá dostupné peery, může být velmi pomalý nebo selhat.
-- Pokud cloudový účet nemá místo, autorizace vypršela nebo je upload adresář špatný, úloha může selhat.
-- Náhled videa může po dokončení uploadu trvat několik sekund.
+- Pokud cloudový účet vyčerpal kvótu, vypršelo oprávnění nebo je adresář nahrání nesprávný, úloha může selhat.
+- Náhled videa se může po dokončení nahrání zobrazit až za několik sekund.
 
 ## FAQ
 
 ### Po vložení magnet odkazu se nic nespustí
 
-Ověřte, že je Magnet transfer zapnutý v administraci a že je vybraný použitelný GitHub účet i cloudový kanál.
+Ověřte, že je přenos magnet odkazů zapnutý v administračním panelu a že je vybraný použitelný účet GitHub i cloudový kanál.
 
 ### Stahování je vždy pomalé
 
-Rychlost magnetu závisí na samotném zdroji. Pokud nejsou dostupní peeři, stahování může být velmi pomalé nebo nemožné.
+Rychlost magnet odkazu závisí na samotném zdroji. Pokud nejsou dostupné peery, stahování může být velmi pomalé nebo nemožné.
 
-### Po uploadu se nezobrazí náhled
+### Po nahrání se nezobrazí náhled
 
-Nejdřív ověřte, že se odkaz na soubor otevře. Video soubory mohou v prohlížeči potřebovat chvíli k načtení, případně otevřete odkaz přímo.
+Nejdříve ověřte, že se odkaz na soubor otevře. Video soubory mohou v prohlížeči potřebovat chvíli k načtení, případně otevřete odkaz přímo.
 
 ### Co zkontrolovat, když úloha selže?
 
-Zkontrolujte, zda je magnet odkaz platný, cloudový kanál funkční a upload adresář správný. Potom úlohu odešlete znovu.
+Zkontrolujte, zda je magnet odkaz platný, cloudový kanál funguje a adresář nahrání je správný. Potom úlohu odešlete znovu.

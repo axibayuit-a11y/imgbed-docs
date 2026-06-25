@@ -1,20 +1,20 @@
-# Redundant Backup dan Read Source Switching
+# Cadangan Redundan dan Pengalihan Sumber Baca
 
-Redundant backup menyimpan salinan tambahan dari file yang sudah diupload.
+Cadangan redundan menyimpan salinan tambahan dari file yang sudah diupload.
 
-File utama dan file backup sama-sama bisa dipakai sebagai read source. Bagi pengunjung, biasanya tidak ada perbedaan. Satu-satunya perbedaan adalah storage channel mana yang menyajikan file tersebut.
+File utama dan file cadangan sama-sama dapat digunakan sebagai sumber baca. Pengunjung biasanya tidak melihat perbedaan. Satu-satunya perbedaan adalah kanal penyimpanan yang menyajikan file tersebut.
 
-## Yang Bisa Dilakukan Redundant Backup
+## Yang Dapat Dilakukan Cadangan Redundan
 
-| Fitur | Keterangan |
+| Fitur | Deskripsi |
 | --- | --- |
-| Menyimpan salinan tambahan | Membackup file ke upload channel lain untuk mengurangi risiko jika satu channel bermasalah. |
-| Mengganti read source | Setelah backup berhasil, pembacaan file bisa dipindah antara primary channel dan backup channel. |
-| Backup satu file | Membackup satu file dari halaman detail file. |
-| Batch backup | Memilih beberapa file di halaman admin lalu membackupnya bersama-sama. |
-| Global redundant backup | Membackup file berdasarkan folder dari Other Settings. |
+| Menyimpan salinan tambahan | Mencadangkan file ke kanal upload lain untuk mengurangi risiko kegagalan pada satu kanal. |
+| Mengalihkan sumber baca | Setelah cadangan berhasil, pembacaan file dapat dialihkan antara kanal utama dan kanal cadangan. |
+| Cadangan satu file | Mencadangkan satu file dari halaman detail file. |
+| Cadangan batch | Memilih beberapa file di halaman admin dan mencadangkannya bersama-sama. |
+| Cadangan redundan global | Mencadangkan file berdasarkan folder dari Pengaturan Lainnya. |
 
-## Entry Redundant Backup
+## Entri Cadangan Redundan
 
 Buka:
 
@@ -22,72 +22,72 @@ Buka:
 System Settings -> Other Settings -> Redundant Backup
 ```
 
-![Redundant backup](../../image/other/冗余备份截图.png)
+![Cadangan redundan](../../image/other/冗余备份截图.png)
 
-Entry ini paling cocok untuk menambahkan backup ke satu folder atau ke semua file secara massal.
+Entri ini paling cocok untuk menambahkan cadangan ke satu folder atau ke semua file secara massal.
 
-Backup channel bisa dipilih manual, atau Anda bisa memilih automatic switching agar ImgBed mencari backup channel yang sesuai.
+Kanal cadangan dapat dipilih secara manual, atau Anda dapat memilih pengalihan otomatis dan membiarkan ImgBed mencari kanal cadangan yang sesuai.
 
-## Backup dari File Details
+## Cadangan dari Detail File
 
-Buka halaman detail file di panel admin, lalu klik backup.
+Buka halaman detail file di panel admin, lalu klik cadangkan.
 
-![Backup in file details](../../image/other/文件详情里文件备份.png)
+![Cadangan di detail file](../../image/other/文件详情里文件备份.png)
 
-Cara ini paling cocok untuk membackup satu file penting sesuai kebutuhan.
+Cara ini paling cocok untuk mencadangkan satu file penting sesuai kebutuhan.
 
-Setelah backup berhasil, halaman detail file menampilkan read source yang tersedia.
+Setelah cadangan berhasil, halaman detail file menampilkan sumber baca yang tersedia.
 
-## Batch Backup dari Pilihan File
+## Cadangan Batch Berdasarkan Pilihan
 
-Di panel admin, pilih beberapa file dan jalankan batch backup.
+Di panel admin, pilih beberapa file dan jalankan cadangan batch.
 
-![Batch backup](../../image/other/批量备份截图.png)
+![Cadangan batch](../../image/other/批量备份截图.png)
 
-Cara ini cocok untuk memproses sekumpulan file.
+Cara ini paling cocok untuk memproses sekumpulan file.
 
-Backup berdasarkan pilihan, backup dari file details, dan redundant backup di Other Settings semuanya memakai sistem backup yang sama. Bedanya hanya titik masuknya.
+Cadangan berdasarkan pilihan, cadangan dari detail file, dan cadangan redundan di Pengaturan Lainnya semuanya menggunakan sistem cadangan yang sama. Perbedaannya hanya pada titik masuk.
 
-## Mengganti Read Source Setelah Backup
+## Mengalihkan Sumber Baca Setelah Cadangan
 
-Setelah backup selesai, halaman detail file memungkinkan Anda mengganti read source:
+Setelah cadangan selesai, halaman detail file memungkinkan Anda mengalihkan sumber baca:
 
-| Read Source | Keterangan |
+| Sumber Baca | Deskripsi |
 | --- | --- |
-| Primary channel | Membaca dari upload channel asli. |
-| Backup channel | Membaca dari backup channel. |
+| Kanal utama | Membaca dari kanal upload asli. |
+| Kanal cadangan | Membaca dari kanal cadangan. |
 
-![Switch read source after backup](../../image/other/备份成功切换读取源.png)
+![Mengalihkan sumber baca setelah cadangan](../../image/other/备份成功切换读取源.png)
 
-Pengunjung tidak perlu tahu apakah file disajikan dari primary channel atau backup channel.
+Pengunjung tidak perlu tahu apakah file disajikan dari kanal utama atau kanal cadangan.
 
-Read source yang Anda pilih akan menjadi sumber utama untuk akses file berikutnya.
+Sumber baca yang Anda pilih menjadi sumber pilihan untuk akses file berikutnya.
 
-## Kapan Backup Dilewati
+## Kapan Cadangan Dilewati
 
-Kasus berikut akan dilewati saat backup. Ini bukan error.
+Kasus berikut dilewati saat pencadangan. Ini bukan kesalahan.
 
-| Kasus | Kenapa Dilewati |
+| Kasus | Mengapa Dilewati |
 | --- | --- |
-| Sudah memiliki backup | File yang sudah punya backup tidak dibackup ulang. |
-| Primary dan backup channel sama | Backup harus disimpan di channel lain agar bermakna. |
-| Tidak ada backup channel yang bisa dipakai | Tidak ada channel alternatif yang sesuai. |
+| Sudah dicadangkan | File yang sudah memiliki cadangan tidak dicadangkan ulang. |
+| Kanal utama dan kanal cadangan sama | Cadangan harus disimpan di kanal lain agar bermakna. |
+| Tidak ada kanal cadangan yang dapat digunakan | Tidak ada kanal alternatif yang sesuai. |
 
-Singkatnya: backup harus masuk ke channel lain, dan file yang sudah dibackup tidak memakai ruang tambahan lagi.
+Singkatnya: cadangan harus disimpan di kanal lain, dan file yang sudah dicadangkan tidak menggunakan ruang tambahan lagi.
 
-## Primary Channel vs Backup Channel
+## Kanal Utama vs Kanal Cadangan
 
 | Nama | Arti |
 | --- | --- |
-| Primary channel | Channel yang dipakai saat file pertama kali diupload. |
-| Backup channel | Channel yang menyimpan salinan redundant. |
-| Primary read source | File saat ini dibaca dari primary channel. |
-| Backup read source | File saat ini dibaca dari backup channel. |
+| Kanal utama | Kanal yang digunakan saat file pertama kali diupload. |
+| Kanal cadangan | Kanal yang menyimpan salinan redundan. |
+| Sumber baca utama | File saat ini dibaca dari kanal utama. |
+| Sumber baca cadangan | File saat ini dibaca dari kanal cadangan. |
 
-Primary dan backup read source memiliki perilaku yang sama bagi pengguna.
+Sumber baca utama dan cadangan memiliki perilaku yang sama bagi pengguna.
 
-Selama file backup masih tersedia, gambar, video, dan link download tetap berjalan setelah read source dipindah ke backup.
+Selama file cadangan masih tersedia, gambar, video, dan tautan unduhan tetap berfungsi setelah sumber baca dialihkan ke sumber baca cadangan.
 
 ## Apa yang Terjadi Saat File Dihapus
 
-Saat file dihapus, ImgBed akan menghapus file utama dan file backup.
+Saat file dihapus, ImgBed menghapus file utama dan file cadangan.

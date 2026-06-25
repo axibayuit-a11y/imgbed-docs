@@ -1,4 +1,4 @@
-# Random Image API i publiczna galeria
+# API losowych obrazów i publiczna galeria
 
 Obie funkcje konfiguruje się w:
 
@@ -6,9 +6,9 @@ Obie funkcje konfiguruje się w:
 System Settings -> Other Settings
 ```
 
-## Random Image API
+## API losowych obrazów
 
-Random Image API zwraca jeden losowy plik z wybranych katalogów. Przydaje się do teł strony, rotacji avatarów albo losowych obrazów wywoływanych z zewnętrznych stron.
+API losowych obrazów zwraca jeden losowy plik z wybranych katalogów. Przydaje się do teł strony, rotacji awatarów albo losowych wywołań obrazów z zewnętrznych stron.
 
 Po włączeniu użyj:
 
@@ -16,17 +16,17 @@ Po włączeniu użyj:
 https://your-domain.com/random
 ```
 
-## Ustawienia Random Image API
+## Ustawienia API losowych obrazów
 
 | Opcja | Cel |
 | --- | --- |
-| Enable | Włącza lub wyłącza endpoint `/random`. Po wyłączeniu dostęp jest zabroniony. |
-| Directories | Ogranicza katalogi, z których API może korzystać. Katalogi spoza tej listy nie mogą być używane. |
-| Call demo | Generuje linki random API gotowe do skopiowania. |
+| Włącz | Włącza lub wyłącza punkt końcowy `/random`. Po wyłączeniu dostęp jest zabroniony. |
+| Katalogi | Ogranicza katalogi, z których API może korzystać. Katalogi spoza tej listy nie mogą być używane przez API. |
+| Demo wywołania | Generuje linki API losowych obrazów gotowe do skopiowania. |
 
-Możesz wybrać wiele katalogów. Jeśli dozwolone są tylko `/landscape/` i `/portrait/`, random API może wybierać pliki tylko z tych katalogów i ich podkatalogów.
+Możesz wybrać wiele katalogów. Jeśli dozwolone są tylko `/landscape/` i `/portrait/`, API losowych obrazów może wybierać pliki tylko z tych katalogów i ich podkatalogów.
 
-## Parametry Random Image API
+## Parametry API losowych obrazów
 
 | Parametr | Przykład | Cel |
 | --- | --- | --- |
@@ -45,30 +45,30 @@ Bez `type` API przekierowuje bezpośrednio do URL-a losowego pliku.
 
 Z `type=url` zwraca URL jako tekst.
 
-Z `type=json` zwraca informacje o pliku, w tym URL, ID, nazwę, typ, tagi, rating i powiązane metadane.
+Z `type=json` zwraca informacje o pliku, w tym URL, ID, nazwę, typ, tagi, klasyfikację i powiązane metadane.
 
 ## Reguły dostępu
 
-Random Image API przestrzega publicznych reguł dostępu:
+API losowych obrazów przestrzega publicznych reguł dostępu:
 
 | Reguła | Efekt |
 | --- | --- |
 | Ograniczenie katalogu | Wybrane mogą być tylko pliki w dozwolonych katalogach. |
-| Blocklist | Pliki z blocklist są wykluczone z puli losowania. |
-| Tryb allowlist | Po włączeniu zwracane są tylko pliki dopuszczone do publicznego dostępu. |
+| Lista blokowanych | Pliki z listy blokowanych są wykluczone z puli losowania. |
+| Tryb listy dozwolonych | Po włączeniu zwracane są tylko pliki dopuszczone do publicznego dostępu. |
 | Klasyfikacja wiekowa | R12, R16, R18 i podobne treści są filtrowane według bieżącego trybu dostępu. |
 
 Jeśli po filtrowaniu nie ma pasującego pliku, API nie zwraca wyniku.
 
-## Cache
+## Pamięć podręczna
 
-Random Image API cache'uje pule kandydatów katalogów, aby działać szybciej.
+API losowych obrazów przechowuje pule kandydatów katalogów w pamięci podręcznej, aby działać szybciej.
 
-Po zmianach plików ImgBed aktualizuje wersję cache katalogu, a kolejne żądania odbudowują pulę kandydatów. Puste katalogi są cache'owane krótko, aby uniknąć powtarzanych zapytań.
+Po zmianach plików ImgBed aktualizuje wersję pamięci podręcznej katalogu, a kolejne żądania odbudowują pulę kandydatów. Puste katalogi są krótko przechowywane w pamięci podręcznej, aby uniknąć powtarzanych zapytań.
 
 ## Publiczna galeria
 
-Publiczna galeria udostępnia odwiedzającym stronę tylko do odczytu dla katalogów, które pozwolisz im oglądać.
+Publiczna galeria udostępnia odwiedzającym stronę tylko do odczytu dla katalogów, które udostępnisz im do przeglądania.
 
 Po włączeniu odwiedzający mogą otworzyć:
 
@@ -80,16 +80,16 @@ https://your-domain.com/browse/directory-name
 
 | Opcja | Cel |
 | --- | --- |
-| Enable | Włącza lub wyłącza publiczną galerię. Po wyłączeniu odwiedzający nie mogą jej przeglądać. |
-| Image loading mode | Określa, czy podglądy używają oryginalnych obrazów, czy miniatur. |
-| Open directories | Ustala, do których katalogów odwiedzający mają dostęp. |
+| Włącz | Włącza lub wyłącza publiczną galerię. Po wyłączeniu odwiedzający nie mogą jej przeglądać. |
+| Tryb ładowania obrazów | Określa, czy podglądy używają oryginalnych obrazów, czy miniatur. |
+| Otwarte katalogi | Ustala, do których katalogów odwiedzający mają dostęp. |
 
 ## Tryb ładowania obrazów
 
 | Tryb | Cel |
 | --- | --- |
-| Original | Strona odwiedzającego ładuje bezpośrednio oryginalne pliki. |
-| Thumbnail | Strona odwiedzającego preferuje miniatury dla szybszego ładowania. |
+| Oryginał | Strona odwiedzającego ładuje bezpośrednio oryginalne pliki. |
+| Miniatura | Strona odwiedzającego preferuje miniatury dla szybszego ładowania. |
 
 ## Otwarte katalogi
 
@@ -110,7 +110,7 @@ https://your-domain.com/browse/landscape
 https://your-domain.com/browse/portrait
 ```
 
-Można też otwierać podkatalogi, np. `/2026/lucky/`. Odwiedzający są blokowani w katalogach, które nie są otwarte.
+Można też udostępniać podkatalogi, np. `/2026/lucky/`. Dostęp odwiedzających do katalogów, które nie są otwarte, jest blokowany.
 
 ## Funkcje publicznej galerii
 
@@ -121,18 +121,18 @@ Można też otwierać podkatalogi, np. `/2026/lucky/`. Odwiedzający są blokowa
 | Filtr typu | Filtrowanie obrazów, wideo, audio lub innych plików. |
 | Filtr tagów | Uwzględnianie lub wykluczanie wybranych tagów. |
 | Filtr orientacji | Filtrowanie obrazów poziomych lub pionowych. |
-| Filtr czasu | Filtrowanie według zakresu czasu uploadu. |
+| Filtr czasu | Filtrowanie według zakresu czasu przesłania. |
 | Filtr rozszerzenia | Filtrowanie po rozszerzeniu pliku. |
 | Kopiowanie linku | Kopiowanie linków dostępu do plików. |
-| Podgląd mediów | Oglądanie lub odtwarzanie obrazów, wideo i audio na stronie odwiedzającego. |
+| Podgląd mediów | Wyświetlanie obrazów oraz odtwarzanie wideo i audio na stronie odwiedzającego. |
 
-## Reguły dostępu publicznej galerii
+## Reguły dostępu do publicznej galerii
 
 Publiczna galeria również przestrzega publicznych reguł dostępu:
 
 | Reguła | Efekt |
 | --- | --- |
 | Otwarte katalogi | Pokazywane są tylko dozwolone katalogi. |
-| Access mode | Treści są filtrowane według bieżącego trybu klasyfikacji wiekowej. |
-| Tryb allowlist | Po włączeniu pokazywane są tylko pliki dopuszczone do publicznego dostępu. |
-| Blocklist | Pliki z blocklist są ukryte. |
+| Tryb dostępu | Treści są filtrowane według bieżącego trybu dostępu opartego na klasyfikacji wiekowej. |
+| Tryb listy dozwolonych | Po włączeniu pokazywane są tylko pliki dopuszczone do publicznego dostępu. |
+| Lista blokowanych | Pliki z listy blokowanych są ukryte. |

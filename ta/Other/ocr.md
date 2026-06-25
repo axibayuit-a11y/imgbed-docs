@@ -1,21 +1,21 @@
 # OCR
 
-OCR images, scans, document screenshots-இல் இருந்து text extract செய்கிறது.
+OCR படங்கள், ஸ்கேன் கோப்புகள் மற்றும் ஆவண திரைப்பிடிப்புகளில் இருந்து உரையை பிரித்தெடுக்கிறது.
 
-recognition பிறகு result copy செய்யலாம், `Markdown`, `PDF`, `Word` ஆக export செய்யலாம், அல்லது பல formats ஒன்றாக package செய்து download செய்யலாம்.
+அடையாளம் காணப்பட்ட பிறகு, முடிவை நகலெடுக்கலாம், `Markdown`, `PDF` அல்லது `Word` ஆக ஏற்றுமதி செய்யலாம், அல்லது பல வடிவங்களை ஒன்றாக தொகுத்து பதிவிறக்கலாம்.
 
-## OCR என்ன செய்ய முடியும்
+## OCR செய்யக்கூடியவை
 
-| Feature | Description |
+| அம்சம் | விளக்கம் |
 | --- | --- |
-| Image text recognition | images, screenshots, scans-இல் இருந்து text extract. |
-| Document layout recognition | tables, formulas, stamps, mixed text-image layouts-க்கு சிறந்தது. |
-| Multiple services | Baidu PaddleOCR, Microsoft Azure Vision, Google Vision support. |
-| Copy results | processing பிறகு recognized text copy. |
-| Export files | `Markdown`, `PDF`, `Word` export. |
-| Batch packaging | பல files recognize செய்த பிறகு results package download. |
+| பட உரை அடையாளம் காணல் | படங்கள், திரைப்பிடிப்புகள் மற்றும் ஸ்கேன் கோப்புகளில் இருந்து உரையை பிரித்தெடுக்கிறது. |
+| ஆவண தளவமைப்பு அடையாளம் காணல் | அட்டவணைகள், சூத்திரங்கள், முத்திரைகள் மற்றும் உரை-பட கலந்த தளவமைப்புகளுக்கு சிறந்தது. |
+| பல சேவைகள் | Baidu PaddleOCR, Microsoft Azure Vision மற்றும் Google Vision ஆதரிக்கப்படுகின்றன. |
+| முடிவுகளை நகலெடுத்தல் | செயலாக்கத்திற்குப் பிறகு அடையாளம் காணப்பட்ட உரையை நகலெடுக்கலாம். |
+| கோப்புகளை ஏற்றுமதி செய்தல் | `Markdown`, `PDF` மற்றும் `Word` ஆக ஏற்றுமதி செய்யலாம். |
+| தொகுதி தொகுத்தல் | பல கோப்புகளை அடையாளம் கண்ட பிறகு முடிவுகளை தொகுப்பாக பதிவிறக்கலாம். |
 
-## முதலில் OCR Services Configure செய்யவும்
+## முதலில் OCR சேவைகளை அமைக்கவும்
 
 திறக்கவும்:
 
@@ -23,186 +23,186 @@ recognition பிறகு result copy செய்யலாம், `Markdown`,
 System Settings -> Other Settings -> OCR
 ```
 
-![IP geolocation and OCR](../../image/other/ip定位和ocr文字识别.png)
+![IP புவியிட நிர்ணயம் மற்றும் OCR](../../image/other/ip定位和ocr文字识别.png)
 
-பயன்படுத்த வேண்டிய services-க்கு credentials நிரப்பவும்:
+நீங்கள் பயன்படுத்த விரும்பும் சேவைகளுக்கான சான்றுகளை நிரப்பவும்:
 
-| Service | What To Enter | Best For |
+| சேவை | உள்ளிட வேண்டியது | சிறந்த பயன்பாடு |
 | --- | --- | --- |
-| Baidu PaddleOCR | `PaddleOCR Token` | முதலில் பரிந்துரை. documents, images, tables, mixed layouts. |
-| Microsoft Azure Vision | `Azure Vision Endpoint` மற்றும் `Azure Vision API Key` | Microsoft cloud services ஏற்கனவே பயன்படுத்தினால் useful. |
-| Google Vision | `Google Vision API Key`. Service account `JSON` quota query-க்கு மட்டும். | Google Cloud services பயன்படுத்தினால் useful. |
+| Baidu PaddleOCR | `PaddleOCR Token` | முதன்மை பரிந்துரை. ஆவணங்கள், படங்கள், அட்டவணைகள் மற்றும் கலந்த தளவமைப்புகளுக்கு நல்லது. |
+| Microsoft Azure Vision | `Azure Vision Endpoint` மற்றும் `Azure Vision API Key` | Microsoft கிளவுட் சேவைகளை ஏற்கனவே பயன்படுத்தினால் பயனுள்ளது. |
+| Google Vision | `Google Vision API Key`. சேவை கணக்கு `JSON` ஒதுக்கீடு விசாரணைக்கு மட்டும் பயன்படுத்தப்படும். | Google Cloud சேவைகளை பயன்படுத்தினால் பயனுள்ளது. |
 
-credentials நிரப்பிய பிறகு save செய்யவும்.
+சான்றுகளை நிரப்பிய பிறகு சேமிக்கவும்.
 
-initial testing-க்கு ஒரு service போதும். மூன்றையும் configure செய்ய வேண்டியதில்லை.
+தொடக்க சோதனைக்கு ஒரு சேவையை மட்டும் அமைக்கலாம். மூன்றையும் அமைக்க வேண்டியதில்லை.
 
-## Google Vision Setup
+## Google Vision அமைப்பு
 
-Google setup இரண்டு பகுதிகள்:
+Google அமைப்பில் இரண்டு பகுதிகள் உள்ளன:
 
-| Goal | Requirement |
+| நோக்கம் | தேவை |
 | --- | --- |
-| OCR பயன்படுத்த | `Cloud Vision API` enable செய்து `API Key` உருவாக்கவும். |
-| usage query | service account உருவாக்கி `Monitoring Viewer` grant செய்து service account `JSON` download செய்யவும். |
+| OCR பயன்படுத்துதல் | `Cloud Vision API` இயக்கி, பின்னர் `API Key` உருவாக்கவும். |
+| பயன்பாட்டு எண்ணிக்கையைப் பார்க்குதல் | சேவை கணக்கை உருவாக்கி, `Monitoring Viewer` பங்கை வழங்கி, பின்னர் சேவை கணக்கு `JSON` பதிவிறக்கவும். |
 
-![Google API key and service account](../../image/other/谷歌api秘钥和服务账号截图.png)
+![Google API விசை மற்றும் சேவை கணக்கு](../../image/other/谷歌api秘钥和服务账号截图.png)
 
-### Google-ஐ OCR-க்கு பயன்படுத்துவது
+### OCR-க்கு Google பயன்படுத்துதல்
 
 1. Google Cloud Console திறக்கவும்.
 2. `APIs & Services` செல்லவும்.
-3. `Library` திறந்து `Cloud Vision API` தேடி enable செய்யவும்.
+3. `Library` திறந்து `Cloud Vision API` தேடி இயக்கவும்.
 4. `Credentials`-க்கு திரும்பவும்.
 5. `API Key` உருவாக்கவும்.
-6. API Key திறந்து copy செய்யவும்.
-7. ImgBed `Google Vision API Key`-ல் paste செய்யவும்.
-8. Save செய்யவும்.
+6. API Key-ஐ திறந்து நகலெடுக்கவும்.
+7. ImgBed-ல் `Google Vision API Key`-க்கு ஒட்டவும்.
+8. சேமிக்கவும்.
 
-பிறகு OCR dialog-ல் Google Vision தேர்வு செய்யலாம்.
+பின்னர் OCR உரையாடலில் Google Vision-ஐ தேர்வு செய்யலாம்.
 
-### Google Usage Query
+### Google பயன்பாட்டு எண்ணிக்கையைப் பார்க்குதல்
 
-Quota query recognition-க்கு required அல்ல.
+ஒதுக்கீடு விசாரணை அடையாளம் காணலுக்கு அவசியமில்லை.
 
-இது கடந்த 30 நாட்களில் Google Vision calls எவ்வளவு பயன்படுத்தப்பட்டது என rough count காட்டும்.
+அது கடந்த 30 நாட்களில் Google Vision அழைப்புகள் சுமார் எத்தனை பயன்படுத்தப்பட்டன என்பதை மட்டும் காட்டும்.
 
 1. Google Cloud Console-ல் `IAM & Admin` திறக்கவும்.
 2. `Service Accounts` திறக்கவும்.
-3. service account உருவாக்கவும், உதா. `vision-monitor`.
-4. `Monitoring Viewer` role கொடுக்கவும்.
-5. service account details திறந்து key உருவாக்கவும்.
+3. `vision-monitor` போன்ற ஒரு சேவை கணக்கை உருவாக்கவும்.
+4. அதற்கு `Monitoring Viewer` பங்கை வழங்கவும்.
+5. சேவை கணக்கு விவரங்களை திறந்து ஒரு விசை உருவாக்கவும்.
 6. `JSON` தேர்வு செய்யவும்.
-7. generated JSON file download செய்யவும்.
-8. ImgBed-க்கு திரும்பி service account `JSON` கீழ் import செய்யவும் (optional).
-9. import success ஆன பிறகு quota query கிளிக் செய்யவும்.
+7. உருவாக்கப்பட்ட JSON கோப்பை பதிவிறக்கவும்.
+8. ImgBed-க்கு திரும்பி அதை சேவை கணக்கு `JSON`-ல் இறக்குமதி செய்யவும் (விருப்பம்).
+9. இறக்குமதி வெற்றியடைந்த பிறகு, ஒதுக்கீடு விசாரணையை கிளிக் செய்யவும்.
 
-import பிறகு ImgBed service account-ன் project name காட்டும். usage query செய்யும்போது ImgBed Google monitoring data படித்து இந்த month's call count காட்டும்.
+இறக்குமதிக்குப் பிறகு, அந்த சேவை கணக்கின் திட்டப் பெயரை ImgBed காட்டும். பயன்பாட்டு எண்ணிக்கையை சரிபார்க்கும்போது, ImgBed Google கண்காணிப்பு தரவை படித்து இந்த மாதத்தின் அழைப்பு எண்ணிக்கையை காட்டும்.
 
 சுருக்கமாக:
 
-| Item | Purpose |
+| உருப்படி | நோக்கம் |
 | --- | --- |
-| `Google Vision API Key` | OCR recognition செய்யும். |
-| Service account `JSON` | Google Vision calls usage query. |
-| `Monitoring Viewer` role | service account usage data படிக்க அனுமதி. |
+| `Google Vision API Key` | OCR அடையாளம் காணலை செய்கிறது. |
+| சேவை கணக்கு `JSON` | Google Vision அழைப்புகள் எத்தனை பயன்படுத்தப்பட்டன என்பதை சரிபார்க்கிறது. |
+| `Monitoring Viewer` பங்கு | சேவை கணக்கிற்கு பயன்பாட்டு தரவை படிக்க அனுமதிக்கிறது. |
 
 ## Baidu PaddleOCR Token பெறுதல்
 
-Baidu PaddleOCR access token தேவை.
+Baidu PaddleOCR-க்கு அணுகல் டோக்கன் தேவை.
 
-![Get PaddleOCR token](../../image/other/获取飞浆令牌.png)
+![PaddleOCR டோக்கன் பெறுதல்](../../image/other/获取飞浆令牌.png)
 
-Baidu PaddleOCR page-ல் `API` call window திறந்து token பெற கிளிக் செய்து copy செய்யவும்.
+Baidu PaddleOCR பக்கத்தில் `API` அழைப்பு சாளரத்தை திறந்து, டோக்கன் பெற கிளிக் செய்து அதை நகலெடுக்கவும்.
 
-ImgBed-க்கு திரும்பி `PaddleOCR Token`-ல் paste செய்து save செய்யவும்.
+ImgBed-க்கு திரும்பி அதை `PaddleOCR Token`-ல் ஒட்டி சேமிக்கவும்.
 
-## Recognition தொடங்குதல்
+## அடையாளம் காணலை தொடங்குதல்
 
-File Management-ல் image அல்லது document screenshot தேர்வு செய்து `OCR` கிளிக் செய்யவும்.
+கோப்பு மேலாண்மையில், ஒரு படம் அல்லது ஆவண திரைப்பிடிப்பை தேர்வு செய்து `OCR`-ஐ கிளிக் செய்யவும்.
 
-![OCR recognition](../../image/other/ocr识别截图.png)
+![OCR அடையாளம் காணல்](../../image/other/ocr识别截图.png)
 
-dialog-ல் recognition service மற்றும் model தேர்வு செய்யவும்.
+உரையாடலில் அடையாளம் காணும் சேவையையும் மாதிரியையும் தேர்வு செய்யவும்.
 
-Common PaddleOCR model choices:
+பொதுவான PaddleOCR மாதிரி தேர்வுகள்:
 
-| Model | Best For |
+| மாதிரி | சிறந்த பயன்பாடு |
 | --- | --- |
-| `PP-StructureV3` | recommended default. documents, tables, formulas, stamps, mixed layouts. |
-| `PP-OCRv5` | simple images, ordinary text, lightweight recognition. |
-| `PaddleOCR-VL` | multilingual, complex images, chart-like content. |
-| `PaddleOCR-VL-1.5` | complex document pages மற்றும் layout recovery. |
+| `PP-StructureV3` | பரிந்துரைக்கப்படும் இயல்புநிலை. ஆவணங்கள், அட்டவணைகள், சூத்திரங்கள், முத்திரைகள் மற்றும் கலந்த தளவமைப்புகளுக்கு நல்லது. |
+| `PP-OCRv5` | எளிய படங்கள், சாதாரண உரை மற்றும் இலகுவான அடையாளம் காணல். |
+| `PaddleOCR-VL` | பலமொழி, சிக்கலான படங்கள் மற்றும் விளக்கப்படம் போன்ற உள்ளடக்கம். |
+| `PaddleOCR-VL-1.5` | மேலும் சிக்கலான ஆவண பக்கங்கள் மற்றும் தளவமைப்பு மீட்பு. |
 
 நிச்சயமில்லையெனில் `PP-StructureV3`-இல் தொடங்கவும்.
 
-## Advanced Options
+## மேம்பட்ட விருப்பங்கள்
 
-| Option | Description |
+| விருப்பம் | விளக்கம் |
 | --- | --- |
-| Orientation correction | image rotated அல்லது skewed என்றால். |
-| Document flattening | photographed documents-ல் curvature அல்லது tilt இருந்தால். |
-| Layout detection | headings, paragraphs, tables, image structure preserve செய்ய. |
-| Chart recognition | image-ல் charts அல்லது complex structures இருந்தால். |
-| Beautify `Markdown` | exported Markdown readable ஆகும். |
+| திசை திருத்தம் | படம் சுழன்றோ சாய்ந்தோ இருந்தால் பயன்படுத்தவும். |
+| ஆவண சமப்படுத்தல் | வளைவு அல்லது சாய்வு உள்ள புகைப்பட ஆவணங்களுக்கு பயன்படுத்தவும். |
+| தளவமைப்பு கண்டறிதல் | தலைப்புகள், பத்திகள், அட்டவணைகள் மற்றும் பட அமைப்பை பாதுகாக்க விரும்பினால் பயன்படுத்தவும். |
+| விளக்கப்பட அடையாளம் காணல் | படத்தில் விளக்கப்படங்கள் அல்லது சிக்கலான அமைப்புகள் இருந்தால் பயன்படுத்தவும். |
+| `Markdown` அழகுபடுத்தல் | ஏற்றுமதி செய்யப்பட்ட Markdown-ஐ வாசிக்க எளிதாக்கும். |
 
-regular screenshots-க்கு minimal options வைத்திருக்கவும். document scans-க்கு document-related options enable செய்யவும்.
+சாதாரண திரைப்பிடிப்புகளுக்கு குறைந்த விருப்பங்களையே வைத்திருக்கவும். ஆவண ஸ்கேன்களுக்கு ஆவண தொடர்பான விருப்பங்களை அதிகமாக இயக்கவும்.
 
-## Results பார்க்க
+## முடிவுகளை பார்க்குதல்
 
-recognition முடிந்ததும் dialog result காட்டும்.
+அடையாளம் காணல் முடிந்த பிறகு, உரையாடல் முடிவை காட்டும்.
 
-அதை நேரடியாக copy செய்யலாம் அல்லது export formats தேர்வு செய்யலாம்.
+அதை நேரடியாக நகலெடுக்கலாம் அல்லது ஏற்றுமதி வடிவங்களை தேர்வு செய்யலாம்.
 
-![PDF recognition](../../image/other/pdf识别截图.png)
+![PDF அடையாளம் காணல்](../../image/other/pdf识别截图.png)
 
-document pages-க்கு exported `PDF` page appearance preserve செய்து text searchable ஆக வைத்திருக்கலாம். scans archive செய்யவும் பின்னர் content தேடவும் useful.
+ஆவண பக்கங்களுக்கு, ஏற்றுமதி செய்யப்பட்ட `PDF` பக்க தோற்றத்தை பாதுகாத்து உரையை தேடக்கூடியதாக வைத்திருக்க முடியும். இது ஸ்கேன் கோப்புகளை காப்பகப்படுத்தவும் பின்னர் உள்ளடக்கத்தை தேடவும் உதவும்.
 
-## Export Format தேர்வு
+## ஏற்றுமதி வடிவத்தை தேர்வு செய்தல்
 
-| Format | Best For |
+| வடிவம் | சிறந்த பயன்பாடு |
 | --- | --- |
-| `Markdown (.md)` | notes, documentation systems, later editing. |
-| `PDF (.pdf)` | page appearance மற்றும் scanned document results preserve. |
-| `Word (.docx)` | layout editing, text modification, handoff. |
-| Export all | multiple formats மற்றும் original image சேமிக்க, important archives. |
+| `Markdown (.md)` | குறிப்புகள், ஆவண அமைப்புகள் மற்றும் பின்னர் திருத்துதல். |
+| `PDF (.pdf)` | பக்க தோற்றத்தையும் ஸ்கேன் செய்யப்பட்ட ஆவண முடிவுகளையும் பாதுகாத்தல். |
+| `Word (.docx)` | வடிவமைப்பை தொடர்ந்து திருத்துதல், உரை மாற்றுதல் மற்றும் பிறருக்கு ஒப்படைத்தல். |
+| அனைத்தையும் ஏற்றுமதி செய் | பல வடிவங்களையும் மூல படத்தையும் சேமிக்கும்; முக்கிய காப்பகங்களுக்கு ஏற்றது. |
 
-text மட்டும் வேண்டுமெனில் Markdown export செய்யவும்.
+உரையே தேவைப்பட்டால் Markdown-ஐ ஏற்றுமதி செய்யவும்.
 
-page appearance தேவை என்றால் PDF அல்லது Word.
+பக்க தோற்றம் தேவைப்பட்டால் PDF அல்லது Word பயன்படுத்தவும்.
 
-## Word Output
+## Word வெளியீடு
 
-exported Word documents office software-ல் open/edit செய்யலாம்.
+ஏற்றுமதி செய்யப்பட்ட Word ஆவணங்களை அலுவலக மென்பொருளில் திறந்து திருத்தலாம்.
 
-![Word result](../../image/other/word识别结果.png)
+![Word முடிவு](../../image/other/word识别结果.png)
 
-சில documents Word output-ல் recognized images, headings, paragraphs கொண்டிருக்கும்.
+சில ஆவணங்கள் Word வெளியீட்டில் அடையாளம் காணப்பட்ட படங்கள், தலைப்புகள் மற்றும் பத்திகளை சேர்க்கலாம்.
 
-recognition quality original image clarity, model choice, document complexity ஆகியவற்றை சார்ந்தது.
+அடையாளம் காணும் தரம் மூல படத்தின் தெளிவு, மாதிரி தேர்வு மற்றும் ஆவண சிக்கல்தன்மையை சார்ந்தது.
 
-## OCR-க்கு சிறந்த File Types
+## OCR-க்கு சிறந்த கோப்பு வகைகள்
 
-| File Type | Recommendation |
+| கோப்பு வகை | பரிந்துரை |
 | --- | --- |
-| Clear screenshots | directly recognize. |
-| Scans | `PP-StructureV3` prefer. |
-| Photographed documents | orientation correction மற்றும் document flattening enable. |
-| Tables, formulas, stamps | structured models prefer. |
-| Simple short text images | `PP-OCRv5` பொதுவாக போதும். |
+| தெளிவான திரைப்பிடிப்புகள் | நேரடியாக அடையாளம் காணவும். |
+| ஸ்கேன்கள் | `PP-StructureV3` விரும்பத்தக்கது. |
+| புகைப்படம் எடுத்த ஆவணங்கள் | திசை திருத்தம் மற்றும் ஆவண சமப்படுத்தலை இயக்கவும். |
+| அட்டவணைகள், சூத்திரங்கள், முத்திரைகள் | கட்டமைப்பு மாதிரிகளை விரும்பவும். |
+| எளிய குறுகிய உரைப் படங்கள் | `PP-OCRv5` பொதுவாக போதுமானது. |
 
-clearer images மற்றும் straight text நல்ல results தரும்.
+மேலும் தெளிவான, நேரான உரையுள்ள படங்கள் பொதுவாக சிறந்த முடிவுகளை தரும்.
 
-## Common Cases
+## பொதுவான நிலைகள்
 
-| Case | Meaning |
+| நிலை | பொருள் |
 | --- | --- |
-| Recognition fails | service token அல்லது key save ஆனதா பார்க்கவும். |
-| Recognition slow | complex documents மற்றும் large images நேரம் எடுக்கும். |
-| Table incomplete | structured model try செய்யவும். |
-| Text mistakes | blur, glare, skew errors அதிகரிக்கும். clearer image try செய்யவும். |
-| Word output பல images கொண்டுள்ளது | structured models சில recognized images preserve செய்யலாம். இது normal. |
+| அடையாளம் காணல் தோல்வியடைகிறது | சேவை டோக்கன் அல்லது விசை சேமிக்கப்பட்டுள்ளதா சரிபார்க்கவும். |
+| அடையாளம் காணல் மெதுவாக உள்ளது | சிக்கலான ஆவணங்கள் மற்றும் பெரிய படங்கள் அதிக நேரம் எடுக்கும். |
+| அட்டவணை முழுமையில்லை | கட்டமைப்பு மாதிரியை முயற்சிக்கவும். |
+| உரையில் பிழைகள் உள்ளன | மங்கல், ஒளிச்சுடர் மற்றும் சாய்வு அடையாளம் காணும் பிழைகளை அதிகரிக்கும். மேலும் தெளிவான படத்தை முயற்சிக்கவும். |
+| Word வெளியீட்டில் பல படங்கள் உள்ளன | கட்டமைப்பு மாதிரிகள் அடையாளம் காணப்பட்ட சில படங்களை பாதுகாக்கலாம். இது சாதாரணம். |
 
-### Google Quota Query Fail
+### Google ஒதுக்கீடு விசாரணை தோல்வியடைகிறது
 
 சரிபார்க்கவும்:
 
-1. Service account `JSON` imported.
-2. service account-க்கு `Monitoring Viewer` role உள்ளது.
-3. project-க்கு `Cloud Vision API` enabled.
+1. சேவை கணக்கு `JSON` இறக்குமதி செய்யப்பட்டிருக்க வேண்டும்.
+2. சேவை கணக்கிற்கு `Monitoring Viewer` பங்கு இருக்க வேண்டும்.
+3. திட்டத்தில் `Cloud Vision API` இயக்கப்பட்டிருக்க வேண்டும்.
 
-OCR மட்டும் வேண்டும், usage query வேண்டாம் என்றால் service account JSON தவிர்த்து `Google Vision API Key` மட்டும் நிரப்பலாம்.
+உங்களுக்கு OCR மட்டும் தேவை, பயன்பாட்டு விசாரணை தேவையில்லை என்றால், சேவை கணக்கு JSON-ஐ புறக்கணித்து `Google Vision API Key` மட்டும் நிரப்பலாம்.
 
-## Quick Flow
+## விரைவு நடைமுறை
 
 ```text
-System Settings திறக்கவும்
--> Other Settings திறக்கவும்
--> OCR service credentials நிரப்பவும்
+Open System Settings
+-> Open Other Settings
+-> Fill OCR service credentials
 -> Save
--> File Management-க்கு திரும்பவும்
--> file தேர்வு செய்து OCR கிளிக் செய்யவும்
--> model தேர்வு செய்யவும்
--> recognition முடியும் வரை காத்திருக்கவும்
--> results copy அல்லது Markdown / PDF / Word export செய்யவும்
+-> Return to File Management
+-> Select a file and click OCR
+-> Choose a model
+-> Wait for recognition
+-> Copy results or export Markdown / PDF / Word
 ```

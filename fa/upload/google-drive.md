@@ -1,115 +1,117 @@
-# افزودن Google Drive Channel
+# افزودن کانال Google Drive
 
 ## ابتدا چه چیزهایی لازم است
 
+پیش از شروع، این موارد را آماده کنید:
+
 | مورد | چرا لازم است |
 | --- | --- |
-| Google account | برای دسترسی به Google Cloud و authorize کردن Google Drive |
-| Google Cloud project | برای enable کردن Drive API و ساخت OAuth credentials |
-| OAuth 2.0 client | برای گرفتن `Client ID`، `Client Secret` و `Refresh Token` توسط ImgBed |
-| دامنه ImgBed شما | برای OAuth redirect URI. باید دقیقاً با دامنه‌ای که واقعاً استفاده می‌کنید match باشد. |
+| حساب Google | برای دسترسی به Google Cloud و مجوزدهی Google Drive استفاده می‌شود |
+| پروژه Google Cloud | برای فعال کردن Drive API و ساخت اعتبارنامه‌های OAuth استفاده می‌شود |
+| کلاینت OAuth 2.0 | ImgBed از آن برای دریافت `Client ID`، `Client Secret` و `Refresh Token` استفاده می‌کند |
+| دامنه ImgBed شما | به‌عنوان URI بازگشت OAuth استفاده می‌شود. باید با دامنه‌ای که واقعاً استفاده می‌کنید مطابقت داشته باشد. |
 
-## مراحل setup
+## مراحل پیکربندی
 
-### Step 1: Enable کردن Google Drive API
+### مرحله 1: فعال کردن Google Drive API
 
 1. Google Cloud Console را باز کنید.
-2. یک project جدید بسازید یا project موجود را انتخاب کنید.
+2. یک پروژه جدید بسازید یا پروژه موجود را انتخاب کنید.
 3. به `APIs & Services` بروید.
-4. `Enable APIs and Services` را بزنید.
+4. روی `Enable APIs and Services` کلیک کنید.
 5. `Google Drive API` را جست‌وجو کنید.
-6. آن را باز کنید و enable را بزنید.
+6. آن را باز کنید و روی فعال‌سازی کلیک کنید.
 
-### Step 2: Configure کردن OAuth Consent Screen
+### مرحله 2: پیکربندی صفحه رضایت OAuth
 
 1. در Google Cloud، `Google Auth Platform` را باز کنید.
-2. اطلاعات پایه `Branding` مثل app name، support email و developer contact email را کامل کنید.
+2. اطلاعات پایه در `Branding` را کامل کنید، مانند نام برنامه، ایمیل پشتیبانی و ایمیل تماس توسعه‌دهنده.
 3. `Audience` را باز کنید.
-4. برای بیشتر self-hosted personal deployments، `External` را انتخاب کنید.
-5. اگر `External` انتخاب کردید، Google account موردنظر برای authorization را در `Test users` اضافه کنید.
+4. برای بیشتر استقرارهای شخصی خودمیزبان، `External` را انتخاب کنید.
+5. اگر `External` را انتخاب کردید، حساب Google موردنظر برای مجوزدهی را در `Test users` اضافه کنید.
 6. `Data Access` را باز کنید.
-7. permissions موردنیاز Google Drive را اضافه کنید.
+7. مجوزهای موردنیاز Google Drive را اضافه کنید.
 
-### Step 3: ساخت OAuth 2.0 Client
+### مرحله 3: ساخت کلاینت OAuth 2.0
 
 1. در `Google Auth Platform`، `Clients` را باز کنید.
-2. یک client جدید بسازید.
-3. application type را `Web application` بگذارید.
-4. یک نام قابل‌تشخیص برای client وارد کنید.
-5. برای authorized JavaScript origins، URL ImgBed را وارد کنید، مثلاً:
+2. یک کلاینت جدید بسازید.
+3. نوع برنامه را `Web application` قرار دهید.
+4. برای کلاینت نامی قابل تشخیص وارد کنید.
+5. در بخش مبدأهای JavaScript مجاز، URL مربوط به ImgBed را وارد کنید، برای مثال:
 
 ```text
 https://img.example.com
 ```
 
-6. برای authorized redirect URIs وارد کنید:
+6. در بخش URIهای بازگشت مجاز، وارد کنید:
 
 ```text
 https://img.example.com/api/oauth/google/callback
 ```
 
-![Create OAuth client](../../image/upload/google-drive/oa客户端id创建.png)
+![ساخت کلاینت OAuth](../../image/upload/google-drive/oa客户端id创建.png)
 
-![Enter domain and callback URL](../../image/upload/google-drive/填写oa客户端url信息.png)
+![وارد کردن دامنه و URL بازگشت](../../image/upload/google-drive/填写oa客户端url信息.png)
 
-پس از ساخت client، این values را copy کنید:
+پس از ساخت کلاینت، این مقدارها را کپی کنید:
 
-| Generated Value | ImgBed Field |
+| مقدار تولیدشده | فیلد ImgBed |
 | --- | --- |
 | Client ID | `Client ID` |
 | Client Secret | `Client Secret` |
 
-## Step 4: پر کردن Google Drive Channel در ImgBed
+## مرحله 4: تکمیل کانال Google Drive
 
-در Upload Settings، `Google Drive` را انتخاب کنید و پر کنید:
+در تنظیمات بارگذاری، `Google Drive` را انتخاب کنید و این فیلدها را تکمیل کنید:
 
-| ImgBed Field | What To Enter |
+| فیلد ImgBed | مقدار لازم |
 | --- | --- |
-| Channel name | نام قابل‌تشخیص، مثل `Main Google Drive` |
-| Client ID | Client ID از Google Cloud |
-| Client Secret | Client Secret از Google Cloud |
-| Refresh Token | فعلاً خالی بگذارید. در step بعدی می‌گیرید. |
-| Root directory | اختیاری. پیش‌فرض `imgbed`. |
+| نام کانال | نامی قابل تشخیص، مانند `Main Google Drive` |
+| Client ID | `Client ID` از Google Cloud |
+| Client Secret | `Client Secret` از Google Cloud |
+| Refresh Token | فعلاً خالی بگذارید. در مرحله بعد آن را دریافت می‌کنید. |
+| دایرکتوری ریشه | اختیاری. مقدار پیش‌فرض `imgbed` است. |
 
-![Fill client details in ImgBed](../../image/upload/google-drive/粘贴回添加新渠道配置.png)
+![تکمیل اطلاعات کلاینت در ImgBed](../../image/upload/google-drive/粘贴回添加新渠道配置.png)
 
-## Step 5: گرفتن Refresh Token
+## مرحله 5: دریافت Refresh Token
 
-1. `Get Token` را بزنید.
-2. Google account موردنظر برای اتصال را انتخاب کنید.
-3. authorization prompts را کامل کنید.
-4. callback page یک `Refresh Token` نشان می‌دهد.
-5. آن را copy کنید.
-6. به ImgBed برگردید و در `Refresh Token` paste کنید.
+1. روی `Get Token` کلیک کنید.
+2. حساب Google موردنظر برای اتصال را انتخاب کنید.
+3. درخواست‌های مجوزدهی را کامل کنید.
+4. صفحه بازگشت یک `Refresh Token` نمایش می‌دهد.
+5. آن را کپی کنید.
+6. به ImgBed برگردید و آن را در فیلد `Refresh Token` قرار دهید.
 
-![Copy Refresh Token after authorization](../../image/upload/google-drive/授权完复制token.png)
+![کپی کردن Refresh Token پس از مجوزدهی](../../image/upload/google-drive/授权完复制token.png)
 
-اگر بعداً Google account را عوض کردید، OAuth client را تغییر دادید، یا authorization قبلی expire شد، لازم نیست channel را delete کنید. edit page را باز کنید و `Reauthorize` را بزنید.
+اگر بعداً حساب Google را تغییر دادید، کلاینت OAuth را عوض کردید یا مجوزدهی قبلی منقضی شد، لازم نیست کانال را حذف کنید. صفحه ویرایش را باز کنید و روی `Reauthorize` کلیک کنید.
 
-## Step 6: Save کردن Channel
+## مرحله 6: ذخیره کانال
 
-پس از پر کردن همه fields، channel را save کنید.
+پس از تکمیل همه فیلدها، کانال را ذخیره کنید.
 
-## Quick Flow
+## جریان سریع
 
 ```text
-Google Cloud را باز کنید
--> project بسازید یا انتخاب کنید
--> Google Drive API را enable کنید
--> Google Auth Platform را configure کنید
--> اگر Audience برابر External است، Google account را به Test users اضافه کنید
--> Web application OAuth client بسازید
--> https://your-domain.com/api/oauth/google/callback را به‌عنوان redirect URI بگذارید
--> Client ID و Client Secret را در ImgBed وارد کنید
--> Get Token را بزنید
--> با Google sign in و authorize کنید
--> Refresh Token را از callback page copy کنید
--> در ImgBed paste و save کنید
--> test image upload کنید
+Open Google Cloud
+-> Create or select a project
+-> Enable Google Drive API
+-> Configure Google Auth Platform
+-> If Audience is External, add your Google account to Test users
+-> Create a Web application OAuth client
+-> Use https://your-domain.com/api/oauth/google/callback as the redirect URI
+-> Fill Client ID and Client Secret into ImgBed
+-> Click Get Token
+-> Sign in with Google and authorize
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
+-> Upload a test image
 ```
 
-## References
+## منابع
 
-1. Google OAuth Web Server Applications: https://developers.google.com/identity/protocols/oauth2/web-server
-2. Google Workspace OAuth Consent Configuration: https://developers.google.com/workspace/guides/configure-oauth-consent
-3. Google Drive API Auth Scopes: https://developers.google.com/workspace/drive/api/guides/api-specific-auth
+1. برنامه‌های وب سرور برای Google OAuth: https://developers.google.com/identity/protocols/oauth2/web-server
+2. پیکربندی صفحه رضایت OAuth در Google Workspace: https://developers.google.com/workspace/guides/configure-oauth-consent
+3. محدوده‌های احراز هویت Google Drive API: https://developers.google.com/workspace/drive/api/guides/api-specific-auth

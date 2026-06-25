@@ -1,48 +1,152 @@
-# Gerenciamento de autenticação e dispositivos conectados
+# Autenticação e gerenciamento de dispositivos de login
 
-O gerenciamento de autenticação permite revisar logins, sessões ativas e dispositivos conectados ao painel ou às páginas de usuário.
+`Gerenciamento de autenticação` e `Gerenciamento de dispositivos de login` protegem o painel administrativo do ImgBed, a entrada pública de upload e o acesso WebDAV.
 
-## Login de administrador
+Use esta página para definir credenciais de acesso, revisar dispositivos conectados e revogar sessões antigas quando necessário.
 
-O administrador entra pela tela de login do painel para gerenciar arquivos e configurações.
+## Onde configurar
 
-![Login de administrador](../../image/Safety/管理端登录界面.png)
+Abra o painel administrativo e acesse:
 
-A conta administradora tem permissões altas. Mantenha as credenciais bem protegidas.
+```text
+System Settings -> Security Settings
+```
 
-## Login de usuário
+A página contém duas áreas principais:
 
-Também existe uma tela de login para usuários.
-
-![Login de usuário](../../image/Safety/用户端登录界面.png)
-
-Se você usa upload público ou acesso limitado, o login de usuário ajuda a saber quem realizou cada ação.
-
-## Tela de autenticação
-
-A tela de gerenciamento mostra sessões e dispositivos conectados.
+- Gerenciamento de autenticação
+- Gerenciamento de dispositivos de login
 
 ![Gerenciamento de autenticação](../../image/Safety/认证管理界面.png)
 
-## O que revisar nos dispositivos
+## O que o gerenciamento de autenticação faz
 
-| Campo | Descrição |
-| --- | --- |
-| Dispositivo conectado | Dispositivos com sessão ativa |
-| IP / localização | Referência da origem do acesso |
-| Último acesso | Indica se o dispositivo ainda está em uso |
-| Revogar | Encerra sessões antigas ou suspeitas |
+O gerenciamento de autenticação armazena credenciais de acesso.
 
-## Se notar algo suspeito
+Há dois tipos:
 
-1. Revogue a sessão do dispositivo.
-2. Troque senha de administrador e tokens relacionados.
-3. Revise credenciais da Cloudflare, GitHub e canais de armazenamento.
-4. Gere novos API Tokens se necessário.
+- Autenticação do lado do usuário
+- Autenticação do lado do administrador
 
-## Dicas de operação
+## Autenticação do lado do usuário
 
-- Não deixe sessões abertas em computadores compartilhados.
-- Mantenha poucas contas com permissões de administrador.
-- Revise periodicamente os dispositivos conectados.
-- Remova sessões antigas ou desconhecidas.
+A autenticação do lado do usuário é a senha de upload.
+
+Depois que uma senha de upload é definida, visitantes comuns precisam informá-la antes de usar a página de upload. Isso é útil quando você não quer deixar a página pública de upload aberta para todos.
+
+![Página de login do usuário](../../image/Safety/用户端登录界面.png)
+
+### Definir a senha de upload
+
+Quando uma senha de upload está configurada:
+
+- Visitantes precisam informar a senha antes de usar a página de upload.
+- O upload só fica disponível depois que a senha é aceita.
+- Se as sessões de dispositivo do lado do usuário estiverem habilitadas, o ImgBed registra esse dispositivo do lado do usuário.
+
+Alterar a senha de upload invalida sessões antigas do lado do usuário. Visitantes precisam informar a nova senha novamente.
+
+## Autenticação do lado do administrador
+
+A autenticação do lado do administrador usa nome de usuário e senha de administrador.
+
+Isso protege o painel administrativo. Em produção, você deve sempre configurá-la.
+
+![Página de login do administrador](../../image/Safety/管理端登录界面.png)
+
+### Definir credenciais de administrador
+
+Quando um nome de usuário e uma senha de administrador estão configurados:
+
+- Abrir o painel administrativo exige login.
+- Um login bem-sucedido cria um registro de dispositivo do administrador.
+- Você pode revisar, limpar ou forçar dispositivos a ficarem offline em Gerenciamento de dispositivos de login.
+
+Alterar o nome de usuário ou a senha do administrador invalida sessões antigas do administrador. É necessário entrar novamente.
+
+## O que o gerenciamento de dispositivos de login faz
+
+O gerenciamento de dispositivos de login mostra dispositivos que fizeram login.
+
+Ele ajuda a verificar:
+
+- Quais dispositivos acessaram o painel administrativo.
+- Quais dispositivos acessaram a página de upload do lado do usuário.
+- Quais clientes WebDAV se conectaram.
+- Se uma sessão de dispositivo ainda é válida.
+- Se dispositivos antigos devem ser forçados a ficar offline.
+
+A página tem três abas:
+
+- Administrador
+- Usuário
+- WebDAV
+
+## Segurança global de cookies
+
+No topo de Gerenciamento de dispositivos de login, você pode configurar o comportamento global dos cookies.
+
+### Duração do cookie do usuário
+
+Controla por quantos dias um login do lado do usuário pode permanecer ativo.
+
+Por exemplo, se você definir 14 dias, visitantes normalmente não precisarão informar a senha de upload novamente durante 14 dias.
+
+### Duração do cookie do administrador
+
+Controla por quantos dias um login de administrador pode permanecer ativo.
+
+Por exemplo, se você definir 14 dias, administradores normalmente não precisarão entrar novamente durante 14 dias.
+
+### Modo seguro
+
+Quando o modo seguro está habilitado, navegadores enviam cookies de login apenas por HTTPS.
+
+Habilite em sites HTTPS de produção. Não habilite em testes HTTP locais, ou você pode ver o comportamento "login feito com sucesso, mas ao atualizar sou desconectado".
+
+## Dispositivos de login do administrador
+
+A aba Administrador mostra dispositivos que fizeram login no painel administrativo.
+
+Registros de dispositivo aparecem apenas depois que as credenciais de administrador são configuradas e o painel administrativo é acessado por login.
+
+Cada cartão de dispositivo pode mostrar:
+
+- Informações de dispositivo e navegador
+- IP do primeiro login
+- IP da última atividade
+- Horário do login
+- Horário da última atividade
+- Horário de expiração
+- Status atual
+
+Se você vir um dispositivo desconhecido, use `Forçar offline` para invalidá-lo.
+
+## Limpar dispositivos antigos
+
+`Limpar dispositivos antigos` remove em lote registros de login antigos na aba atual.
+
+Use quando suspeitar que sessões antigas ainda possam estar ativas em outros dispositivos.
+
+## Forçar offline
+
+`Forçar offline` invalida uma sessão de dispositivo.
+
+Depois que um dispositivo é forçado a ficar offline:
+
+- Dispositivos de administrador precisam entrar novamente.
+- Dispositivos do lado do usuário precisam informar a senha de upload novamente.
+- Clientes WebDAV precisam autenticar novamente.
+
+Dispositivos expirados ou inválidos também podem ser removidos.
+
+## Sair do dispositivo atual
+
+O cartão do dispositivo atual é marcado como `Dispositivo atual`.
+
+Depois de sair do dispositivo atual:
+
+- A sessão atual do administrador é encerrada.
+- A sessão atual do lado do usuário é encerrada.
+
+Você precisa entrar novamente antes de continuar usando essa área.

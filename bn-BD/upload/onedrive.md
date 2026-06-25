@@ -1,21 +1,21 @@
-# OneDrive Channel যোগ করা
+# OneDrive চ্যানেল যোগ করা
 
 ## আগে যা লাগবে
 
-| Requirement | কেন লাগবে |
+| প্রয়োজনীয় তথ্য | কেন লাগবে |
 | --- | --- |
-| Microsoft account | Microsoft admin pages access এবং OneDrive authorize করতে লাগে |
-| আপনার ImgBed domain | OAuth callback URL-এর জন্য লাগে |
-| App registration | `Client ID` এবং `Client Secret` generate করতে লাগে |
-| OneDrive account | Actual file storage location হিসেবে ব্যবহৃত হবে |
+| Microsoft অ্যাকাউন্ট | Microsoft admin pages ব্যবহারের এবং OneDrive অনুমোদনের জন্য। |
+| আপনার ImgBed ডোমেইন | OAuth কলব্যাক URL হিসেবে ব্যবহার করতে। |
+| app registration | `Client ID` এবং `Client Secret` তৈরি করতে। |
+| OneDrive অ্যাকাউন্ট | প্রকৃত ফাইল সংরক্ষণস্থল হিসেবে ব্যবহার হবে। |
 
-## Setup Steps
+## সেটআপ ধাপ
 
-### Step 1: Microsoft Entra ID খুলুন
+### ধাপ 1: Microsoft Entra ID খুলুন
 
 1. `portal.azure.com` খুলুন।
-2. উপরে `Microsoft Entra ID` search করুন।
-3. Dropdown-এ target page না দেখালে নির্বাচন করুন:
+2. উপরে `Microsoft Entra ID` খুঁজুন।
+3. dropdown-এ target page না দেখালে নির্বাচন করুন:
 
 ```text
 Continue searching in Microsoft Entra ID
@@ -25,123 +25,123 @@ Continue searching in Microsoft Entra ID
 5. `App registrations` খুলুন।
 6. `New registration` ক্লিক করুন।
 
-### Step 2: App Register করুন
+### ধাপ 2: অ্যাপ Register করুন
 
-`New registration` page-এ পূরণ করুন:
+`New registration` পৃষ্ঠায় পূরণ করুন:
 
-| Field | কী দেবেন |
+| ক্ষেত্র | কী দেবেন |
 | --- | --- |
-| Name | চেনা যায় এমন নাম, যেমন `imgbed-onedrive` |
-| Supported account types | নিচের table অনুযায়ী নির্বাচন করুন |
-| Redirect URI type | `Web` |
+| নাম | সহজে চেনা যায় এমন নাম, যেমন `imgbed-onedrive`। |
+| Supported account types | নিচের table অনুযায়ী নির্বাচন করুন। |
+| Redirect URI ধরন | `Web` |
 | Redirect URI | `https://your-domain.com/api/oauth/onedrive/callback` |
 
-Account type guidance:
+অ্যাকাউন্ট ধরন guidance:
 
-| আপনার Scenario | Supported Account Types |
+| আপনার scenario | Supported account types |
 | --- | --- |
-| শুধু personal OneDrive | Personal Microsoft account option নির্বাচন করুন। |
-| Personal এবং work/school দুটোই | Personal এবং organizational accounts দুটো support করে এমন option নির্বাচন করুন। |
-| শুধু company বা school OneDrive | Organizational account option নির্বাচন করুন। |
+| শুধু personal OneDrive | personal Microsoft account option নির্বাচন করুন। |
+| personal এবং work/school দুটোই | personal এবং organizational accounts দুটোই সমর্থন করে এমন option নির্বাচন করুন। |
+| শুধু company বা school OneDrive | organizational account option নির্বাচন করুন। |
 
-Form পূরণ শেষে register ক্লিক করুন।
+form পূরণ শেষে register ক্লিক করুন।
 
-![Create OneDrive app](../../image/upload/onedrive/添加应用程序注册.png)
+![OneDrive অ্যাপ তৈরি করা](../../image/upload/onedrive/添加应用程序注册.png)
 
-### Step 3: App Information Copy করুন
+### ধাপ 3: অ্যাপ Information কপি করুন
 
-App তৈরি হলে overview page থেকে এগুলো copy করুন:
+অ্যাপ তৈরি হলে overview পৃষ্ঠা থেকে এগুলো কপি করুন:
 
-| Microsoft Field | ImgBed Field |
+| Microsoft ক্ষেত্র | ImgBed ক্ষেত্র |
 | --- | --- |
 | `Application (client) ID` | `Client ID` |
-| `Directory (tenant) ID` | Organizational accounts-এর জন্য `Tenant ID` |
+| `Directory (tenant) ID` | organizational accounts-এর `Tenant ID` |
 
-![Application and tenant IDs](../../image/upload/onedrive/应用程序ID和目录租户ID位.png)
+![অ্যাপ্লিকেশন এবং tenant IDs](../../image/upload/onedrive/应用程序ID和目录租户ID位.png)
 
-### Step 4: Client Secret তৈরি করুন
+### ধাপ 4: Client Secret তৈরি করুন
 
 1. `Certificates & secrets` খুলুন।
 2. `New client secret` ক্লিক করুন।
 3. নিজের পছন্দমতো description দিন।
-4. Expiration period নির্বাচন করুন।
-5. তৈরি হওয়ার সঙ্গে সঙ্গে `Value` copy করুন।
+4. মেয়াদ period নির্বাচন করুন।
+5. তৈরি হওয়ার সঙ্গে সঙ্গে `Value` কপি করুন।
 
-![Save client secret value](../../image/upload/onedrive/保存客户端密码值.png)
+![client secret মান সংরক্ষণ করা](../../image/upload/onedrive/保存客户端密码值.png)
 
-### Step 5: API Permissions যোগ করুন
+### ধাপ 5: API অনুমতি যোগ করুন
 
 1. `API permissions` খুলুন।
 2. `Add a permission` ক্লিক করুন।
 3. `Microsoft Graph` নির্বাচন করুন।
 4. `Delegated permissions` নির্বাচন করুন।
-5. এই permissions যোগ করুন:
+5. নিচের অনুমতি যোগ করুন:
 
-| Permission | Purpose |
+| অনুমতি | উদ্দেশ্য |
 | --- | --- |
-| `Files.ReadWrite.All` | Files upload, folders create এবং files delete করে |
-| `offline_access` | ImgBed-কে `Refresh Token` নিতে দেয় |
-| `User.Read` | Account এবং quota information পড়ে |
+| `Files.ReadWrite.All` | ফাইল আপলোড, ফোল্ডার তৈরি এবং ফাইল মুছে ফেলে। |
+| `offline_access` | ImgBed-কে `Refresh Token` নিতে দেয়। |
+| `User.Read` | অ্যাকাউন্ট এবং quota information পড়ে। |
 
-### Step 6: OneDrive Channel পূরণ করুন
+### ধাপ 6: OneDrive চ্যানেল পূরণ করুন
 
-Upload Settings-এ `OneDrive` নির্বাচন করে পূরণ করুন:
+আপলোড সেটিংস-এ `OneDrive` নির্বাচন করে পূরণ করুন:
 
-| ImgBed Field | কী দেবেন |
+| ImgBed ক্ষেত্র | কী দেবেন |
 | --- | --- |
-| Channel name | চেনা যায় এমন নাম, যেমন `Main OneDrive` |
-| Client ID | Microsoft `Application (client) ID` |
-| Client Secret | Copy করা `Client Secret Value` |
-| Tenant ID | নিচের table অনুযায়ী |
-| Refresh Token | আপাতত empty রাখুন |
-| Root directory | Optional। Default `imgbed`। |
-| Note | Optional |
+| চ্যানেল নাম | সহজে চেনা যায় এমন নাম, যেমন `Main OneDrive`। |
+| Client ID | Microsoft `Application (client) ID`। |
+| Client Secret | কপি করা `Client Secret Value`। |
+| Tenant ID | নিচের table অনুযায়ী। |
+| Refresh Token | আপাতত খালি রাখুন। |
+| Root directory | ঐচ্ছিক। ডিফল্ট `imgbed`। |
+| Note | ঐচ্ছিক। |
 
-![Fill OneDrive channel config](../../image/upload/onedrive/添加新渠道配置.png)
+![OneDrive চ্যানেল config পূরণ করা](../../image/upload/onedrive/添加新渠道配置.png)
 
 `Tenant ID` কীভাবে দেবেন:
 
-| Account Type You Chose | ImgBed `Tenant ID` |
+| নির্বাচিত অ্যাকাউন্ট ধরন | ImgBed `Tenant ID` |
 | --- | --- |
 | Personal accounts | `consumers` |
 | Personal + organizational accounts | `common` |
-| Current organization only | `Directory (tenant) ID` |
+| শুধু বর্তমান organization | `Directory (tenant) ID` |
 
-### Step 7: Refresh Token নিন
+### ধাপ 7: Refresh Token নিন
 
 1. ImgBed-এ `Get Token` ক্লিক করুন।
-2. যে Microsoft account connect করতে চান সেটিতে sign in করুন।
-3. Authorization prompt approve করুন।
-4. Callback page একটি `Refresh Token` দেখাবে।
-5. সেটি copy করুন।
-6. ImgBed-এ ফিরে `Refresh Token` field-এ paste করুন।
+2. যে Microsoft অ্যাকাউন্ট যুক্ত করতে চান, সেটিতে সাইন ইন করুন।
+3. অনুমোদন বার্তা অনুমোদন করুন।
+4. কলব্যাক পৃষ্ঠা একটি `Refresh Token` দেখাবে।
+5. সেটি কপি করুন।
+6. ImgBed-এ ফিরে `Refresh Token` ক্ষেত্র-এ paste করুন।
 
-![Copy refresh token](../../image/upload/onedrive/复制刷新令牌.png)
+![refresh টোকেন কপি করা](../../image/upload/onedrive/复制刷新令牌.png)
 
-### Step 8: Channel Save করুন
+### ধাপ 8: চ্যানেল সংরক্ষণ করুন
 
-সব fields পূরণ হলে channel save করুন।
+সব ক্ষেত্রগুলো পূরণ হলে চ্যানেল সংরক্ষণ করুন।
 
-## Quick Flow
+## দ্রুত প্রবাহ
 
 ```text
-portal.azure.com খুলুন
--> Microsoft Entra ID search করুন
--> App registrations খুলুন
--> নতুন app register করুন
--> Name / Supported account types / Web redirect URI পূরণ করুন
+Open portal.azure.com
+-> Search for Microsoft Entra ID
+-> Open App registrations
+-> Register a new app
+-> Fill Name / Supported account types / Web redirect URI
 -> Register
--> Application (client) ID copy করুন
--> Authentication-এ callback URL check করুন
--> Certificates & secrets-এ Client Secret তৈরি করুন
--> API permissions যোগ করুন
--> ImgBed-এ Client ID / Client Secret / Tenant ID পূরণ করুন
--> Get Token ক্লিক করুন
--> Callback page থেকে Refresh Token copy করুন
--> ImgBed-এ paste করে save করুন
+-> Copy Application (client) ID
+-> Check the callback URL in Authentication
+-> Create a Client Secret in Certificates & secrets
+-> Add permissions in API permissions
+-> Fill Client ID / Client Secret / Tenant ID into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
-## References
+## তথ্যসূত্র
 
 1. Microsoft Entra app registration: https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
 2. Microsoft identity platform authorization code flow: https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow

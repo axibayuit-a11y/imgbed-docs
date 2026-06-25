@@ -1,97 +1,97 @@
-# Magnet Transfer
+# Chuyển Bằng Liên Kết Magnet
 
-Magnet transfer tải files từ magnet link và tự động upload chúng lên cloud storage channel bạn chọn.
+Chuyển bằng liên kết magnet tải tệp từ một liên kết magnet và tự động tải tệp đó lên kênh lưu trữ đám mây bạn chọn.
 
-Tính năng này hữu ích khi chuyển anime episodes, videos, archives và các files tương tự. Paste magnet link, ImgBed tạo background download task. Sau khi download xong, file được upload vào ImgBed và final link xuất hiện trong upload list.
+Tính năng này hữu ích để chuyển tập phim anime, video, tệp nén và các tệp tương tự. Dán một liên kết magnet, ImgBed sẽ tạo tác vụ tải xuống chạy nền. Sau khi tải xuống xong, tệp được tải lên ImgBed và liên kết cuối cùng xuất hiện trong danh sách tải lên.
 
-![Magnet transfer](../../image/other/磁力链接/磁力链接.png)
+![Chuyển bằng liên kết magnet](../../image/other/磁力链接/磁力链接.png)
 
-## Dùng ở đâu
+## Dùng Ở Đâu
 
-Magnet transfer entry nằm trong homepage upload area.
+Lối vào chuyển bằng liên kết magnet nằm trong khu vực tải lên của trang chủ.
 
-Paste magnet link vào input box, chọn `Transfer`, rồi upload.
+Dán liên kết magnet vào ô nhập, chọn `Transfer`, rồi tải lên.
 
-![Upload anime](../../image/other/磁力链接/上传番剧.png)
+![Tải anime lên](../../image/other/磁力链接/上传番剧.png)
 
-## Trước lần dùng đầu tiên
+## Trước Lần Dùng Đầu Tiên
 
-Trước tiên cần cấu hình magnet transfer trong admin panel.
+Trước tiên hãy cấu hình chuyển bằng liên kết magnet trong bảng quản trị.
 
-Thường bạn cần:
+Thông thường bạn cần:
 
-1. GitHub account để chạy download task.
-2. Cloud upload channel, ví dụ Google Drive hoặc OneDrive.
-3. Target upload directory.
-4. Task timeout.
+1. Một tài khoản GitHub để chạy tác vụ tải xuống.
+2. Một kênh tải lên đám mây, như Google Drive hoặc OneDrive.
+3. Thư mục tải lên đích.
+4. Thời gian chờ của tác vụ.
 
-Khi settings đã sẵn sàng, quay lại homepage và paste magnet link để bắt đầu transfer.
+Sau khi cài đặt sẵn sàng, quay lại trang chủ và dán liên kết magnet để bắt đầu chuyển.
 
-## Upload Magnet Link
+## Tải Lên Liên Kết Magnet
 
-1. Paste magnet link vào homepage upload box.
-2. Đảm bảo mode được đặt là `Transfer`.
-3. Nhấn upload.
-4. Chờ ImgBed tạo magnet task.
-5. Sau khi task bắt đầu, dùng floating panel `Magnet Tasks` ở góc dưới bên phải để xem progress.
+1. Dán liên kết magnet vào ô tải lên trên trang chủ.
+2. Đảm bảo chế độ được đặt là `Transfer`.
+3. Nhấp tải lên.
+4. Chờ ImgBed tạo tác vụ magnet.
+5. Sau khi tác vụ bắt đầu, dùng bảng nổi `Magnet Tasks` ở góc dưới bên phải để xem tiến trình.
 
-Download và upload có thể mất thời gian. Speed phụ thuộc vào magnet resource, GitHub runtime environment và selected cloud storage channel.
+Tải xuống và tải lên có thể mất thời gian. Tốc độ phụ thuộc vào tài nguyên magnet, môi trường chạy GitHub và kênh lưu trữ đám mây đã chọn.
 
-![Magnet downloading](../../image/other/磁力链接/磁力链接下载中.png)
+![Magnet đang tải xuống](../../image/other/磁力链接/磁力链接下载中.png)
 
-## Sau khi hoàn tất
+## Sau Khi Hoàn Tất
 
-Khi task hoàn tất, upload list hiển thị file name và link.
+Sau khi tác vụ hoàn tất, danh sách tải lên hiển thị tên tệp và liên kết.
 
-Videos hiển thị video preview, images hiển thị image preview, và other files hiển thị regular file icon.
+Video hiển thị bản xem trước video, hình ảnh hiển thị bản xem trước ảnh, còn các tệp khác hiển thị biểu tượng tệp thông thường.
 
-![Downloaded video](../../image/other/磁力链接/下载好后的视频.png)
+![Video đã tải xuống](../../image/other/磁力链接/下载好后的视频.png)
 
-Bạn có thể copy:
+Bạn có thể sao chép:
 
-| Link Type | Use Case |
+| Loại liên kết | Trường hợp dùng |
 | --- | --- |
-| Original link | Direct file access |
-| Markdown | Markdown posts hoặc notes |
-| HTML | Web page code |
-| BBCode | Forums hỗ trợ BBCode |
+| Liên kết gốc | Truy cập tệp trực tiếp |
+| Markdown | Bài viết hoặc ghi chú Markdown |
+| HTML | Mã trang web |
+| BBCode | Diễn đàn hỗ trợ BBCode |
 
-## Magnet Task Panel
+## Bảng Tác Vụ Magnet
 
-Magnet task panel ở góc dưới bên phải hiển thị task count, task name, progress và final status.
+Bảng tác vụ magnet ở góc dưới bên phải hiển thị số tác vụ, tên tác vụ, tiến trình và trạng thái cuối.
 
-Common states:
+Trạng thái thường gặp:
 
-| Status | Meaning |
+| Trạng thái | Ý nghĩa |
 | --- | --- |
-| Waiting | Task đã được tạo và đang chờ chạy. |
-| Downloading | Magnet resource đang được download. |
-| Uploading | File đã download xong và đang upload lên cloud storage. |
-| Completed | Upload thành công và link có thể copy. |
-| Failed | Task không hoàn tất thành công. Kiểm tra message rồi thử lại. |
+| Đang chờ | Tác vụ đã được tạo và đang chờ chạy. |
+| Đang tải xuống | Tài nguyên magnet đang được tải xuống. |
+| Đang tải lên | Tệp đã tải xuống và đang được tải lên bộ lưu trữ đám mây. |
+| Hoàn tất | Tải lên thành công và có thể sao chép liên kết. |
+| Thất bại | Tác vụ không hoàn tất thành công. Kiểm tra thông báo và thử lại. |
 
-## Tips
+## Mẹo
 
-- Nếu magnet link chứa nhiều files, ImgBed ưu tiên main completed file để hiển thị.
-- Large files mất nhiều thời gian hơn. Hãy chờ task finish trước khi refresh page.
-- Nếu magnet resource không có available peers, download có thể rất chậm hoặc fail.
-- Nếu cloud account hết quota, authorization hết hạn hoặc upload directory sai, task có thể fail.
-- Video preview có thể cần vài giây sau khi upload complete.
+- Nếu một liên kết magnet chứa nhiều tệp, ImgBed ưu tiên hiển thị tệp chính đã hoàn tất.
+- Tệp lớn mất nhiều thời gian hơn. Chờ tác vụ hoàn tất trước khi làm mới trang.
+- Nếu tài nguyên magnet không có máy ngang hàng khả dụng, tác vụ có thể rất chậm hoặc thất bại.
+- Nếu tài khoản đám mây hết hạn mức, ủy quyền hết hạn hoặc thư mục tải lên sai, tác vụ có thể thất bại.
+- Bản xem trước video có thể mất vài giây sau khi tải lên hoàn tất.
 
-## FAQ
+## Câu Hỏi Thường Gặp
 
-### Paste Magnet Link rồi nhưng không có gì bắt đầu
+### Không Có Gì Bắt Đầu Sau Khi Dán Liên Kết Magnet
 
-Xác nhận magnet transfer đã enabled trong admin panel và đã chọn GitHub account cùng cloud channel dùng được.
+Xác nhận rằng chuyển bằng liên kết magnet đã được bật trong bảng quản trị và đã chọn tài khoản GitHub cùng kênh đám mây có thể dùng.
 
-### Download luôn chậm
+### Tải Xuống Luôn Chậm
 
-Magnet speed phụ thuộc vào chính resource. Nếu không có available peers, download có thể rất chậm hoặc không thể tải.
+Tốc độ magnet phụ thuộc vào chính tài nguyên đó. Nếu không có máy ngang hàng khả dụng, tải xuống có thể rất chậm hoặc không thể hoàn tất.
 
-### Upload xong nhưng không có Preview
+### Không Có Xem Trước Sau Khi Tải Lên
 
-Trước tiên xác nhận file link mở được. Video files có thể cần một chút thời gian để load trong browser, hoặc bạn có thể mở link trực tiếp.
+Trước tiên hãy xác nhận liên kết tệp mở được. Tệp video có thể cần một thời gian ngắn để tải trong trình duyệt, hoặc bạn có thể mở liên kết trực tiếp.
 
-### Task fail thì cần kiểm tra gì?
+### Nên Kiểm Tra Gì Nếu Tác Vụ Thất Bại?
 
-Kiểm tra magnet link có valid không, cloud channel có hoạt động không và upload directory có đúng không. Sau đó submit task lại.
+Kiểm tra liên kết magnet có hợp lệ không, kênh đám mây có hoạt động không và thư mục tải lên có đúng không. Sau đó gửi lại tác vụ.

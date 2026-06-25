@@ -3,102 +3,176 @@
 A etiquetagem automática é configurada em:
 
 ```text
-Configurações do sistema -> Outras configurações -> Etiquetagem automática
+System Settings -> Other Settings -> Auto Tagging
 ```
 
-Ela gera tags para imagens e facilita busca, filtros da API aleatória, galeria pública e controle de acesso por classificação etária.
+Ela gera tags de imagem automaticamente, úteis para busca, filtragem de imagens aleatórias, filtros da galeria pública e controle de acesso por classificação etária.
 
-## O que ela faz
+## O que a etiquetagem automática pode fazer
 
 | Recurso | Descrição |
 | --- | --- |
-| Tags de conteúdo | Adiciona tags de pessoas, cenas, objetos, estilo visual e outros elementos |
-| Tags de personagem | Útil para imagens de anime e ilustrações |
-| Tags de orientação | Adiciona `landscape`, `portrait` ou `square` |
-| Classificação da imagem | Salva resultados `G/S/Q/E` |
-| Etiquetar ao enviar | Processa automaticamente imagens novas |
-| Etiquetagem em lote | Adiciona tags a imagens antigas em uma ou várias pastas |
+| Gerar tags de conteúdo | Adiciona tags para pessoas, cenas, objetos, estilo artístico e conteúdos visuais semelhantes. |
+| Gerar tags de personagens | Útil para imagens de anime e ilustrações. |
+| Adicionar tags de orientação | Adiciona `landscape`, `portrait` ou `square`. |
+| Adicionar classificação da imagem | Salva resultados de classificação `G/S/Q/E` para conteúdo geral, sensível, questionável ou explícito. |
+| Etiquetar automaticamente no upload | Imagens recém-enviadas entram automaticamente no fluxo de etiquetagem. |
+| Etiquetagem em lote | Adiciona tags a imagens antigas em todas as pastas ou em pastas selecionadas. |
 
-## O que preparar
+## O que preparar primeiro
 
-Você precisa de pelo menos uma URL acessível de Hugging Face Space.
+Prepare pelo menos uma URL acessível de um Hugging Face Space.
 
-O recomendado é duplicar o Space `wd-tagger` do SmilingWolf na sua própria conta do Hugging Face:
+A abordagem recomendada é duplicar o Space `wd-tagger` do SmilingWolf para a sua própria conta do Hugging Face:
 
 ```text
 https://huggingface.co/spaces/SmilingWolf/wd-tagger
 ```
 
-Você pode usar o Space público para testes, mas ele é compartilhado por muitos usuários e pode ter fila, lentidão ou indisponibilidade. Para uso contínuo, uma cópia própria é mais estável.
+Você pode usar temporariamente o Space público, mas Spaces públicos são compartilhados por muitos usuários e podem ter fila, ficar lentos ou ficar indisponíveis. Um Space duplicado na sua própria conta é mais estável para etiquetagem automática de longo prazo.
 
-## Duplicar o Space
+## Duplicar o Space do SmilingWolf
 
 1. Entre no Hugging Face.
 2. Abra `https://huggingface.co/spaces/SmilingWolf/wd-tagger`.
 
 ![Space público do SmilingWolf](../../image/other/微笑狼的公开仓库.png)
 
-3. Abra o menu no canto superior direito.
+3. Clique no menu de três pontos no canto superior direito.
 4. Escolha `Duplicate this Space`.
-5. Mantenha o nome ou use algo fácil de reconhecer, como `wd-tagger`.
-6. Deixe como `Public`; assim o ImgBed consegue chamar com menos atrito.
-7. Comece com o hardware gratuito.
-8. Crie o Space e aguarde a build terminar.
+5. Mantenha o nome padrão do Space ou escolha seu próprio nome, como `wd-tagger`.
+6. Defina a visibilidade como `Public`. Spaces públicos são mais fáceis para o ImgBed chamar.
+7. Mantenha o hardware gratuito padrão no início. Faça upgrade depois apenas se a fila ficar evidente.
+8. Crie o Space e aguarde a conclusão da build.
 
-Depois, copie a URL do navegador e cole em `Space URLs` no ImgBed.
+Depois que a build terminar, abra a página do seu Space. A URL normalmente se parece com:
 
-## Configurações recomendadas
+```text
+https://huggingface.co/spaces/your-name/wd-tagger
+```
+
+Copie a URL do navegador e cole em `Space URLs` no ImgBed.
+
+## Preencher várias Space URLs
+
+Insira uma Space URL por linha.
+
+Exemplos:
+
+| Valor | Descrição |
+| --- | --- |
+| `https://huggingface.co/spaces/SmilingWolf/wd-tagger` | Space público do SmilingWolf. Bom para testes temporários. |
+| `https://huggingface.co/spaces/lintonxue00/wd-tagger` | URL de uma página de Space copiada. |
+| `https://huggingface.co/spaces/your-name/wd-tagger` | Página do seu próprio Space duplicado. |
+
+Você pode inserir várias URLs. O ImgBed usa vários Spaces em conjunto, o que pode melhorar a velocidade.
+
+Se um Space ficar temporariamente indisponível, os outros podem continuar processando.
+
+## Configurações
 
 | Opção | Recomendação |
 | --- | --- |
-| `Space URLs` | Uma URL por linha |
-| Pasta alvo | Vazio para todas; selecione uma pasta se quiser limitar |
-| Modelo | Comece com `wd-swinv2-tagger-v3` |
-| Limiar de tags gerais | Comece perto de `0.35` |
-| Limiar de personagens | Comece perto de `0.85` para reduzir falso positivo |
-| `MCut` | Deixe desligado no início |
-| Etiquetar ao enviar | Ative se quiser processar imagens novas automaticamente |
+| `Space URLs` | Insira as URLs dos Spaces que você preparou. Use pelo menos uma. |
+| Pasta de destino | Deixe em branco para todas as pastas. Selecione uma pasta apenas quando quiser processar um diretório específico. |
+| Modelo de reconhecimento | Mantenha `wd-swinv2-tagger-v3` por padrão. |
+| Limiar de tags gerais | O padrão funciona para a maioria das imagens. Valores menores geram mais tags; valores maiores geram menos tags. |
+| Limiar de tags de personagem | O padrão é conservador e ajuda a evitar tags de personagem incorretas. |
+| Limiar automático `MCut` | Deixe desativado no início. Ative quando quiser que o modelo decida automaticamente a quantidade de tags. |
+| Etiquetar automaticamente no upload | Ative se imagens recém-enviadas devem receber tags automaticamente. |
+| Iniciar etiquetagem | Faz etiquetagem em lote manual de imagens antigas. |
 
-Se vierem tags demais, suba um pouco o limiar geral. Se vierem poucas, reduza levemente.
+## Valores iniciais recomendados
+
+| Opção | Valor recomendado |
+| --- | --- |
+| Modelo de reconhecimento | `wd-swinv2-tagger-v3` |
+| Limiar de tags gerais | `0.35` |
+| Limiar de tags de personagem | `0.85` |
+| `MCut` | Desativado no início |
+| Etiquetar automaticamente no upload | Ative se necessário |
+
+Se houver tags demais, aumente ligeiramente o limiar geral.
+
+Se houver tags de menos, reduza ligeiramente o limiar geral.
 
 ## Etiquetagem em lote
 
 1. Preencha `Space URLs`.
-2. Escolha uma pasta alvo.
-3. Inicie a etiquetagem.
+2. Selecione uma pasta de destino.
+3. Clique para iniciar a etiquetagem.
 4. Aguarde o progresso terminar.
 
-Se a pasta alvo estiver vazia, o ImgBed processa todas as pastas.
+Se a pasta de destino estiver vazia, o ImgBed processa todas as pastas.
 
-## Etiquetar ao enviar
+A etiquetagem em lote é mais indicada para imagens antigas. Para imagens novas, ative a etiquetagem automática no upload para não precisar executá-la manualmente todas as vezes.
 
-Com essa opção ativa, imagens novas chamam automaticamente os `Space URLs` configurados.
+## Etiquetar automaticamente no upload
 
-Se o Space estiver em fila, o upload pode terminar primeiro e a etiquetagem continuar em segundo plano.
+Depois que a etiquetagem automática no upload é ativada, as imagens recém-enviadas chamam automaticamente as `Space URLs` configuradas.
 
-## Perguntas comuns
+Isso é adequado para uso de longo prazo.
+
+Se o seu Space estiver em fila, o upload em si ainda pode terminar primeiro, e a etiquetagem continuará depois.
+
+## Quais imagens são processadas
+
+A etiquetagem automática processa principalmente arquivos de imagem.
+
+Imagens que já têm tags, orientação, classificação, largura e altura completas são ignoradas para evitar chamadas desnecessárias ao Space.
+
+Quando possível, o ImgBed preenche apenas as informações ausentes. Por exemplo, se apenas a orientação estiver ausente, ele tenta adicionar a orientação sem chamar todo o fluxo de tags de conteúdo.
+
+## FAQ
 
 ### Por que duplicar meu próprio Space?
 
-Spaces públicos são compartilhados por muita gente. Uma cópia própria costuma ser mais rápida e estável para seu site.
+Spaces públicos são compartilhados por muitos usuários. Seu próprio Space duplicado é usado principalmente pelo seu site ImgBed, então normalmente é mais rápido e confiável.
 
-### Por que as tags saem em inglês?
+### O Space continua inicializando
 
-Isso é normal. Os modelos do SmilingWolf retornam tags em inglês. O ImgBed usa essas tags para busca, filtros, API aleatória e galeria pública.
+Após a primeira criação, ou depois de um longo período ocioso, um Space pode precisar de tempo para iniciar.
 
-### Para que serve a classificação?
+Abra primeiro a página do seu Space. Depois que ele conseguir reconhecer uma imagem normalmente, volte ao ImgBed e inicie a etiquetagem.
 
-A classificação trabalha junto com o modo de acesso em Segurança. Por exemplo, ao limitar visitantes por classificação etária, a galeria e a API aleatória seguem essas regras.
+### Como copiar a URL do Space?
+
+Abra a página do seu Hugging Face Space e copie o endereço do navegador.
+
+Exemplos:
+
+```text
+https://huggingface.co/spaces/lintonxue00/wd-tagger
+https://huggingface.co/spaces/SmilingWolf/wd-tagger
+```
+
+### Posso adicionar vários Spaces?
+
+Sim. Insira um Space URL por linha.
+
+Vários Spaces processam imagens em conjunto e são úteis quando você tem muitas imagens.
+
+### Por que as tags estão em inglês?
+
+Os modelos do SmilingWolf geram tags em inglês. Isso é esperado.
+
+As tags são usadas principalmente para busca, filtragem, Random Image API e filtros da galeria pública.
+
+### Para que servem as tags de classificação?
+
+Os resultados de classificação funcionam junto com o modo de acesso nas Configurações de Segurança.
+
+Por exemplo, quando o acesso de visitantes é limitado por classificação etária, a navegação pública e os recursos de imagem aleatória filtram imagens de acordo com essas regras.
 
 ## Fluxo rápido
 
 ```text
-Entrar no Hugging Face
--> Abrir SmilingWolf/wd-tagger
--> Duplicar o Space
--> Aguardar build
--> Copiar URL do Space
--> Colar em Space URLs
--> Ajustar modelo e limiares
--> Iniciar etiquetagem ou ativar etiquetar ao enviar
+Sign in to Hugging Face
+-> Open SmilingWolf/wd-tagger
+-> Duplicate this Space
+-> Wait for the Space to build
+-> Copy your Space URL
+-> Fill Space URLs in ImgBed
+-> Choose model and thresholds
+-> Start tagging or enable auto-tag on upload
 ```

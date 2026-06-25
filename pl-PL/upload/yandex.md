@@ -94,15 +94,15 @@ Po wypełnieniu wszystkich pól zapisz kanał.
 ## Szybki przebieg
 
 ```text
-Otwórz Yandex OAuth Console
--> Utwórz aplikację
--> Dodaj https://your-domain.com/api/oauth/yandex/callback
--> Potwierdź uprawnienia Yandex Disk
--> Skopiuj Client ID i Client Secret
--> Wpisz Client ID / Client Secret w ImgBed
--> Kliknij Get Token
--> Skopiuj Refresh Token ze strony callback
--> Wklej go z powrotem w ImgBed i zapisz
+Open Yandex OAuth Console
+-> Create an app
+-> Add https://your-domain.com/api/oauth/yandex/callback
+-> Confirm Yandex Disk permissions
+-> Copy Client ID and Client Secret
+-> Fill Client ID / Client Secret into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## Referencje

@@ -95,19 +95,19 @@ https://img.example.com/api/oauth/google/callback
 ## Короткий сценарий
 
 ```text
-Открыть Google Cloud
--> Создать или выбрать проект
--> Включить Google Drive API
--> Настроить Google Auth Platform
--> Если Audience = External, добавить свой Google-аккаунт в Test users
--> Создать Web application OAuth client
--> Использовать https://your-domain.com/api/oauth/google/callback как redirect URI
--> Ввести Client ID и Client Secret в ImgBed
--> Нажать Get Token
--> Войти через Google и авторизовать
--> Скопировать Refresh Token с callback-страницы
--> Вставить его обратно в ImgBed и сохранить
--> Загрузить тестовое изображение
+Open Google Cloud
+-> Create or select a project
+-> Enable Google Drive API
+-> Configure Google Auth Platform
+-> If Audience is External, add your Google account to Test users
+-> Create a Web application OAuth client
+-> Use https://your-domain.com/api/oauth/google/callback as the redirect URI
+-> Fill Client ID and Client Secret into ImgBed
+-> Click Get Token
+-> Sign in with Google and authorize
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
+-> Upload a test image
 ```
 
 ## Ссылки

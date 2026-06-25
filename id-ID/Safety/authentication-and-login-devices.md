@@ -1,12 +1,12 @@
-# Authentication dan Login Device Management
+# Manajemen Autentikasi dan Perangkat Login
 
-`Authentication Management` dan `Login Device Management` melindungi ImgBed admin panel, public upload entry, dan WebDAV access.
+`Manajemen Autentikasi` dan `Manajemen Perangkat Login` melindungi panel admin ImgBed, pintu unggah publik, dan akses WebDAV.
 
-Gunakan halaman ini untuk mengatur access credentials, meninjau devices yang sudah sign in, dan revoke sessions lama saat diperlukan.
+Gunakan halaman ini untuk mengatur kredensial akses, meninjau perangkat yang sudah login, dan mencabut sesi lama saat diperlukan.
 
 ## Di Mana Mengonfigurasinya
 
-Buka admin panel, lalu masuk ke:
+Buka panel admin, lalu masuk ke:
 
 ```text
 System Settings -> Security Settings
@@ -14,139 +14,139 @@ System Settings -> Security Settings
 
 Halaman ini memiliki dua area utama:
 
-- Authentication Management
-- Login Device Management
+- Manajemen Autentikasi
+- Manajemen Perangkat Login
 
-![Authentication management](../../image/Safety/认证管理界面.png)
+![Manajemen autentikasi](../../image/Safety/认证管理界面.png)
 
-## Fungsi Authentication Management
+## Fungsi Manajemen Autentikasi
 
-Authentication Management menyimpan access credentials.
+Manajemen Autentikasi menyimpan kredensial akses.
 
 Ada dua jenis:
 
-- User-side authentication
-- Admin-side authentication
+- Autentikasi sisi pengguna
+- Autentikasi sisi admin
 
-## User-Side Authentication
+## Autentikasi Sisi Pengguna
 
-User-side authentication adalah upload password.
+Autentikasi sisi pengguna adalah kata sandi unggah.
 
-Setelah upload password diatur, visitors biasa harus memasukkannya sebelum menggunakan upload page. Ini berguna jika Anda tidak ingin public upload page terbuka untuk semua orang.
+Setelah kata sandi unggah diatur, pengunjung biasa harus memasukkannya sebelum menggunakan halaman unggah. Ini berguna jika Anda tidak ingin halaman unggah publik terbuka untuk semua orang.
 
-![User login page](../../image/Safety/用户端登录界面.png)
+![Halaman login pengguna](../../image/Safety/用户端登录界面.png)
 
-### Mengatur Upload Password
+### Mengatur Kata Sandi Unggah
 
-Saat upload password dikonfigurasi:
+Saat kata sandi unggah dikonfigurasi:
 
-- Visitors harus memasukkan password sebelum menggunakan upload page.
-- Upload hanya tersedia setelah password diterima.
-- Jika user-side device sessions diaktifkan, ImgBed mencatat user-side device tersebut.
+- Pengunjung harus memasukkan kata sandi sebelum menggunakan halaman unggah.
+- Unggahan hanya tersedia setelah kata sandi diterima.
+- Jika sesi perangkat sisi pengguna diaktifkan, ImgBed mencatat perangkat sisi pengguna tersebut.
 
-Mengubah upload password akan membuat user-side sessions lama invalid. Visitors perlu memasukkan password baru lagi.
+Mengubah kata sandi unggah akan membuat sesi sisi pengguna lama tidak berlaku. Pengunjung perlu memasukkan kata sandi baru lagi.
 
-## Admin-Side Authentication
+## Autentikasi Sisi Admin
 
-Admin-side authentication memakai admin username dan password.
+Autentikasi sisi admin memakai nama pengguna admin dan kata sandi admin.
 
-Ini melindungi admin panel. Untuk production use, sebaiknya selalu dikonfigurasi.
+Ini melindungi panel admin. Untuk penggunaan produksi, Anda sebaiknya selalu mengonfigurasinya.
 
-![Admin login page](../../image/Safety/管理端登录界面.png)
+![Halaman login admin](../../image/Safety/管理端登录界面.png)
 
-### Mengatur Admin Credentials
+### Mengatur Kredensial Admin
 
-Saat admin username dan password dikonfigurasi:
+Saat nama pengguna admin dan kata sandi admin dikonfigurasi:
 
-- Membuka admin panel akan meminta login.
-- Login berhasil membuat admin device record.
-- Anda dapat review, clean up, atau force devices offline di Login Device Management.
+- Membuka panel admin akan meminta login.
+- Login berhasil akan membuat catatan perangkat admin.
+- Anda dapat meninjau, membersihkan, atau memaksa perangkat offline di Manajemen Perangkat Login.
 
-Mengubah admin username atau password akan membuat admin sessions lama invalid. Anda perlu sign in lagi.
+Mengubah nama pengguna admin atau kata sandi admin akan membuat sesi admin lama tidak berlaku. Anda perlu login lagi.
 
-## Fungsi Login Device Management
+## Fungsi Manajemen Perangkat Login
 
-Login Device Management menampilkan devices yang pernah sign in.
+Manajemen Perangkat Login menampilkan perangkat yang pernah login.
 
-Ini membantu memeriksa:
+Ini membantu Anda memeriksa:
 
-- Devices mana yang mengakses admin panel.
-- Devices mana yang mengakses user-side upload page.
-- WebDAV clients mana yang connected.
-- Apakah device session masih valid.
-- Apakah devices lama perlu force offline.
+- Perangkat mana yang pernah mengakses panel admin.
+- Perangkat mana yang pernah mengakses halaman unggah sisi pengguna.
+- Klien WebDAV mana yang pernah terhubung.
+- Apakah sesi perangkat masih valid.
+- Apakah perangkat lama perlu dipaksa offline.
 
-Halaman ini memiliki tiga tabs:
+Halaman ini memiliki tiga tab:
 
 - Admin
-- User
+- Pengguna
 - WebDAV
 
-## Global Cookie Security
+## Keamanan Cookie Global
 
-Di bagian atas Login Device Management, Anda dapat mengatur global cookie behavior.
+Di bagian atas Manajemen Perangkat Login, Anda dapat mengatur perilaku cookie global.
 
-### User Cookie Lifetime
+### Masa Aktif Cookie Pengguna
 
-Mengontrol berapa hari user-side login dapat tetap active.
+Mengontrol berapa hari login sisi pengguna dapat tetap aktif.
 
-Contohnya, jika diatur ke 14 days, visitors biasanya tidak perlu memasukkan upload password lagi dalam 14 hari.
+Misalnya, jika diatur ke 14 hari, pengunjung biasanya tidak perlu memasukkan kata sandi unggah lagi selama 14 hari.
 
-### Admin Cookie Lifetime
+### Masa Aktif Cookie Admin
 
-Mengontrol berapa hari admin login dapat tetap active.
+Mengontrol berapa hari login admin dapat tetap aktif.
 
-Contohnya, jika diatur ke 14 days, administrators biasanya tidak perlu sign in lagi dalam 14 hari.
+Misalnya, jika diatur ke 14 hari, administrator biasanya tidak perlu login lagi selama 14 hari.
 
-### Secure Mode
+### Mode Aman
 
-Saat Secure mode aktif, browsers hanya mengirim login cookies lewat HTTPS.
+Saat mode aman diaktifkan, peramban hanya mengirim cookie login melalui HTTPS.
 
-Aktifkan untuk production HTTPS sites. Jangan aktifkan untuk local HTTP testing, atau Anda bisa melihat perilaku "login berhasil, tetapi refresh membuat saya logout".
+Aktifkan untuk situs produksi yang memakai HTTPS. Jangan aktifkan untuk pengujian HTTP lokal, karena Anda mungkin melihat perilaku "login berhasil, tetapi setelah refresh saya keluar".
 
-## Admin Login Devices
+## Perangkat Login Admin
 
-Admin tab menampilkan devices yang sign in ke admin panel.
+Tab Admin menampilkan perangkat yang login ke panel admin.
 
-Device records hanya muncul setelah admin credentials dikonfigurasi dan admin panel diakses lewat login.
+Catatan perangkat hanya muncul setelah kredensial admin dikonfigurasi dan panel admin diakses melalui login.
 
-Setiap device card dapat menampilkan:
+Setiap kartu perangkat dapat menampilkan:
 
-- Device dan browser information
-- First login IP
-- Last active IP
-- Login time
-- Last active time
-- Expiration time
-- Current status
+- Informasi perangkat dan peramban
+- IP login pertama
+- IP aktif terakhir
+- Waktu login
+- Waktu aktif terakhir
+- Waktu kedaluwarsa
+- Status saat ini
 
-Jika melihat device yang tidak dikenal, gunakan `Force Offline` untuk membuatnya invalid.
+Jika Anda melihat perangkat yang tidak dikenal, gunakan `Paksa Offline` untuk membuatnya tidak berlaku.
 
-## Clean Up Old Devices
+## Bersihkan Perangkat Lama
 
-`Clean Up Old Devices` menghapus login records lama di tab saat ini secara bulk.
+`Bersihkan Perangkat Lama` menghapus catatan login lama secara massal pada tab saat ini.
 
-Gunakan saat Anda mencurigai sessions lama masih active di devices lain.
+Gunakan saat Anda mencurigai sesi lama mungkin masih aktif di perangkat lain.
 
-## Force Offline
+## Paksa Offline
 
-`Force Offline` membuat satu device session invalid.
+`Paksa Offline` membuat satu sesi perangkat tidak berlaku.
 
-Setelah device dipaksa offline:
+Setelah perangkat dipaksa offline:
 
-- Admin devices harus sign in lagi.
-- User-side devices harus memasukkan upload password lagi.
-- WebDAV clients harus authenticate lagi.
+- Perangkat admin harus login lagi.
+- Perangkat sisi pengguna harus memasukkan kata sandi unggah lagi.
+- Klien WebDAV harus melakukan autentikasi lagi.
 
-Expired atau invalid devices juga dapat dihapus.
+Perangkat yang kedaluwarsa atau tidak valid juga dapat dihapus.
 
-## Sign Out Current Device
+## Keluar dari Perangkat Saat Ini
 
-Current device card ditandai sebagai `Current Device`.
+Kartu perangkat saat ini ditandai sebagai `Perangkat Saat Ini`.
 
-Setelah sign out current device:
+Setelah keluar dari perangkat saat ini:
 
-- Current admin session akan sign out.
-- Current user-side session akan sign out.
+- Sesi admin saat ini akan keluar.
+- Sesi sisi pengguna saat ini akan keluar.
 
-Anda perlu sign in lagi sebelum melanjutkan penggunaan area tersebut.
+Anda perlu login lagi sebelum melanjutkan penggunaan area tersebut.

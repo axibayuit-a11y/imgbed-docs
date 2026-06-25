@@ -1,152 +1,152 @@
-# Authentication و Login Device Management
+# مدیریت احراز هویت و دستگاه‌های ورود
 
-`Authentication Management` و `Login Device Management` از ImgBed admin panel، public upload entry و WebDAV access محافظت می‌کنند.
+مدیریت احراز هویت و مدیریت دستگاه‌های ورود از پنل مدیریت ImgBed، ورودی عمومی آپلود و دسترسی WebDAV محافظت می‌کنند.
 
-از این صفحه برای تنظیم access credentials، بررسی signed-in devices و revoke کردن sessions قدیمی در صورت نیاز استفاده کنید.
+در این صفحه می‌توانید اطلاعات ورود را تنظیم کنید، دستگاه‌های واردشده را بررسی کنید و در صورت نیاز نشست‌های قدیمی را لغو کنید.
 
-## کجا Configure کنیم
+## محل پیکربندی
 
-admin panel را باز کنید و بروید به:
+پنل مدیریت را باز کنید و به مسیر زیر بروید:
 
 ```text
 System Settings -> Security Settings
 ```
 
-این page دو بخش اصلی دارد:
+این صفحه دو بخش اصلی دارد:
 
-- Authentication Management
-- Login Device Management
+- مدیریت احراز هویت
+- مدیریت دستگاه‌های ورود
 
-![Authentication management](../../image/Safety/认证管理界面.png)
+![مدیریت احراز هویت](../../image/Safety/认证管理界面.png)
 
-## Authentication Management چه می‌کند
+## مدیریت احراز هویت چه کاری انجام می‌دهد
 
-Authentication Management، access credentials را ذخیره می‌کند.
+مدیریت احراز هویت اطلاعات دسترسی را نگهداری می‌کند.
 
-دو نوع دارد:
+دو نوع وجود دارد:
 
-- User-side authentication
-- Admin-side authentication
+- احراز هویت سمت کاربر
+- احراز هویت سمت مدیریت
 
-## User-Side Authentication
+## احراز هویت سمت کاربر
 
-User-side authentication همان upload password است.
+احراز هویت سمت کاربر همان رمز عبور آپلود است.
 
-بعد از تنظیم upload password، visitors عادی باید پیش از استفاده از upload page آن را وارد کنند. اگر نمی‌خواهید public upload page برای همه باز باشد، این گزینه مناسب است.
+پس از تنظیم رمز عبور آپلود، بازدیدکنندگان عادی باید پیش از استفاده از صفحه آپلود آن را وارد کنند. این گزینه زمانی مفید است که نمی‌خواهید صفحه آپلود عمومی برای همه آزاد باشد.
 
-![User login page](../../image/Safety/用户端登录界面.png)
+![صفحه ورود کاربر](../../image/Safety/用户端登录界面.png)
 
-### تنظیم Upload Password
+### تنظیم رمز عبور آپلود
 
-وقتی upload password configured باشد:
+وقتی رمز عبور آپلود تنظیم شده باشد:
 
-- visitors پیش از استفاده از upload page باید password وارد کنند.
-- upload فقط پس از پذیرفته شدن password در دسترس است.
-- اگر user-side device sessions enabled باشد، ImgBed آن user-side device را record می‌کند.
+- بازدیدکنندگان باید پیش از استفاده از صفحه آپلود رمز عبور را وارد کنند.
+- آپلود فقط پس از پذیرفته شدن رمز عبور در دسترس است.
+- اگر نشست‌های دستگاه سمت کاربر فعال باشد، ImgBed آن دستگاه کاربر را ثبت می‌کند.
 
-تغییر upload password باعث invalid شدن user-side sessions قدیمی می‌شود. visitors باید password جدید را دوباره وارد کنند.
+تغییر رمز عبور آپلود، نشست‌های قدیمی سمت کاربر را نامعتبر می‌کند. بازدیدکنندگان باید رمز عبور جدید را دوباره وارد کنند.
 
-## Admin-Side Authentication
+## احراز هویت سمت مدیریت
 
-Admin-side authentication از admin username و password استفاده می‌کند.
+احراز هویت سمت مدیریت از نام کاربری و رمز عبور مدیر استفاده می‌کند.
 
-این مورد admin panel را محافظت می‌کند. برای production use، همیشه باید آن را configure کنید.
+این تنظیم از پنل مدیریت محافظت می‌کند. برای استفاده در محیط عملیاتی، همیشه بهتر است آن را پیکربندی کنید.
 
-![Admin login page](../../image/Safety/管理端登录界面.png)
+![صفحه ورود مدیر](../../image/Safety/管理端登录界面.png)
 
-### تنظیم Admin Credentials
+### تنظیم اطلاعات ورود مدیر
 
-وقتی admin username و password configured باشند:
+وقتی نام کاربری و رمز عبور مدیر تنظیم شده باشد:
 
-- باز کردن admin panel نیاز به login دارد.
-- login موفق یک admin device record ایجاد می‌کند.
-- در Login Device Management می‌توانید devices را review، clean up یا force offline کنید.
+- ورود به پنل مدیریت نیازمند ورود به حساب است.
+- ورود موفق یک رکورد دستگاه مدیریت ایجاد می‌کند.
+- می‌توانید دستگاه‌ها را در مدیریت دستگاه‌های ورود بررسی، پاک‌سازی یا به‌اجبار خارج کنید.
 
-تغییر admin username یا password باعث invalid شدن admin sessions قدیمی می‌شود. باید دوباره sign in کنید.
+تغییر نام کاربری یا رمز عبور مدیر، نشست‌های قدیمی مدیریت را نامعتبر می‌کند. باید دوباره وارد شوید.
 
-## Login Device Management چه می‌کند
+## مدیریت دستگاه‌های ورود چه کاری انجام می‌دهد
 
-Login Device Management دستگاه‌هایی را نشان می‌دهد که sign in کرده‌اند.
+مدیریت دستگاه‌های ورود دستگاه‌هایی را نشان می‌دهد که وارد شده‌اند.
 
-به شما کمک می‌کند بررسی کنید:
+این بخش به شما کمک می‌کند بررسی کنید:
 
-- کدام devices به admin panel دسترسی داشته‌اند.
-- کدام devices به user-side upload page دسترسی داشته‌اند.
-- کدام WebDAV clients متصل شده‌اند.
-- device session هنوز valid است یا نه.
-- آیا devices قدیمی باید force offline شوند یا نه.
+- کدام دستگاه‌ها به پنل مدیریت دسترسی داشته‌اند.
+- کدام دستگاه‌ها به صفحه آپلود سمت کاربر دسترسی داشته‌اند.
+- کدام کلاینت‌های WebDAV متصل شده‌اند.
+- نشست یک دستگاه هنوز معتبر است یا نه.
+- آیا لازم است دستگاه‌های قدیمی به‌اجبار خارج شوند یا نه.
 
-این page سه tab دارد:
+این صفحه سه زبانه دارد:
 
-- Admin
-- User
+- مدیریت
+- کاربر
 - WebDAV
 
-## Global Cookie Security
+## امنیت عمومی Cookie
 
-بالای Login Device Management می‌توانید global cookie behavior را configure کنید.
+در بالای بخش مدیریت دستگاه‌های ورود می‌توانید رفتار عمومی Cookie را پیکربندی کنید.
 
-### User Cookie Lifetime
+### مدت اعتبار Cookie کاربر
 
-کنترل می‌کند user-side login چند روز active بماند.
+مشخص می‌کند ورود سمت کاربر چند روز فعال بماند.
 
-مثلاً اگر آن را 14 days بگذارید، visitors معمولاً تا 14 روز لازم نیست upload password را دوباره وارد کنند.
+برای مثال، اگر آن را روی 14 روز تنظیم کنید، بازدیدکنندگان معمولاً تا 14 روز نیازی به وارد کردن دوباره رمز عبور آپلود ندارند.
 
-### Admin Cookie Lifetime
+### مدت اعتبار Cookie مدیریت
 
-کنترل می‌کند admin login چند روز active بماند.
+مشخص می‌کند ورود مدیر چند روز فعال بماند.
 
-مثلاً اگر 14 days تنظیم شود، administrators معمولاً تا 14 روز لازم نیست دوباره sign in کنند.
+برای مثال، اگر آن را روی 14 روز تنظیم کنید، مدیران معمولاً تا 14 روز نیازی به ورود دوباره ندارند.
 
-### Secure Mode
+### حالت Secure
 
-وقتی Secure mode enabled باشد، browsers login cookies را فقط از طریق HTTPS ارسال می‌کنند.
+وقتی حالت Secure فعال باشد، مرورگرها Cookie ورود را فقط از طریق HTTPS ارسال می‌کنند.
 
-برای production HTTPS sites آن را enable کنید. برای local HTTP testing آن را enable نکنید؛ وگرنه ممکن است رفتار «login succeeded, but refresh logs me out» ببینید.
+برای سایت‌های عملیاتی HTTPS آن را فعال کنید. برای آزمایش محلی با HTTP آن را فعال نکنید؛ در غیر این صورت ممکن است با رفتاری مانند «ورود موفق بود، اما پس از تازه‌سازی خارج می‌شوم» روبه‌رو شوید.
 
-## Admin Login Devices
+## دستگاه‌های ورود مدیریت
 
-Admin tab دستگاه‌هایی را نشان می‌دهد که وارد admin panel شده‌اند.
+زبانه مدیریت دستگاه‌هایی را نشان می‌دهد که وارد پنل مدیریت شده‌اند.
 
-device records فقط بعد از configure شدن admin credentials و دسترسی به admin panel از طریق login ظاهر می‌شوند.
+رکوردهای دستگاه فقط پس از پیکربندی اطلاعات ورود مدیر و ورود به پنل مدیریت ایجاد می‌شوند.
 
-هر device card می‌تواند نشان دهد:
+هر کارت دستگاه می‌تواند این موارد را نشان دهد:
 
-- device و browser information
-- first login IP
-- last active IP
-- login time
-- last active time
-- expiration time
-- current status
+- اطلاعات دستگاه و مرورگر
+- IP نخستین ورود
+- IP آخرین فعالیت
+- زمان ورود
+- زمان آخرین فعالیت
+- زمان انقضا
+- وضعیت فعلی
 
-اگر device ناآشنا دیدید، از `Force Offline` برای invalidate کردن آن استفاده کنید.
+اگر دستگاهی ناشناس دیدید، از «خروج اجباری» برای نامعتبر کردن آن استفاده کنید.
 
-## Clean Up Old Devices
+## پاک‌سازی دستگاه‌های قدیمی
 
-`Clean Up Old Devices`، login records قدیمی را در tab فعلی به‌صورت bulk حذف می‌کند.
+«پاک‌سازی دستگاه‌های قدیمی» رکوردهای ورود قدیمی را در زبانه فعلی به‌صورت گروهی حذف می‌کند.
 
-وقتی شک دارید sessions قدیمی هنوز روی دستگاه‌های دیگر active هستند، از آن استفاده کنید.
+اگر فکر می‌کنید نشست‌های قدیمی هنوز روی دستگاه‌های دیگر فعال هستند، از این گزینه استفاده کنید.
 
-## Force Offline
+## خروج اجباری
 
-`Force Offline` یک device session را invalidate می‌کند.
+«خروج اجباری» یک نشست دستگاه را نامعتبر می‌کند.
 
-پس از force offline شدن device:
+پس از خروج اجباری دستگاه:
 
-- Admin devices باید دوباره sign in کنند.
-- User-side devices باید upload password را دوباره وارد کنند.
-- WebDAV clients باید دوباره authenticate کنند.
+- دستگاه‌های مدیریت باید دوباره وارد شوند.
+- دستگاه‌های سمت کاربر باید رمز عبور آپلود را دوباره وارد کنند.
+- کلاینت‌های WebDAV باید دوباره احراز هویت شوند.
 
-Expired یا invalid devices را هم می‌توان remove کرد.
+دستگاه‌های منقضی‌شده یا نامعتبر نیز قابل حذف هستند.
 
-## Sign Out Current Device
+## خروج از دستگاه فعلی
 
-current device card با `Current Device` مشخص می‌شود.
+کارت دستگاه فعلی با برچسب «دستگاه فعلی» مشخص می‌شود.
 
-پس از sign out کردن current device:
+پس از خروج از دستگاه فعلی:
 
-- current admin session خارج می‌شود.
-- current user-side session خارج می‌شود.
+- نشست فعلی مدیریت خارج می‌شود.
+- نشست فعلی سمت کاربر خارج می‌شود.
 
-برای ادامه استفاده از آن بخش باید دوباره sign in کنید.
+برای ادامه استفاده از آن بخش باید دوباره وارد شوید.

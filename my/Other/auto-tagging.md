@@ -1,174 +1,178 @@
-# Auto Tagging
+# အလိုအလျောက် တဂ်တပ်ခြင်း
 
-Auto tagging ကို ဒီနေရာမှာ configure လုပ်နိုင်ပါတယ်:
+အလိုအလျောက် တဂ်တပ်ခြင်းကို အောက်ပါနေရာတွင် သတ်မှတ်နိုင်သည်။
 
 ```text
 System Settings -> Other Settings -> Auto Tagging
 ```
 
-ဒီ feature က image tags တွေကိုအလိုအလျောက်ဖန်တီးပေးပါတယ်။ အဲဒီ tags တွေက search, random image filtering, public gallery filtering, age-rating access control တို့အတွက်အသုံးဝင်ပါတယ်။
+ဤလုပ်ဆောင်ချက်သည် ပုံတဂ်များကို အလိုအလျောက် ထုတ်ပေးသည်။ ထိုတဂ်များသည် ရှာဖွေခြင်း၊ ကျပန်းပုံ စစ်ထုတ်ခြင်း၊ အများပြည်သူ ဂယ်လာရီ စစ်ထုတ်ခြင်းနှင့် အသက်အဆင့် သတ်မှတ်ချက်အခြေခံ အသုံးပြုခွင့်ထိန်းချုပ်မှုများအတွက် အသုံးဝင်သည်။
 
-## Auto Tagging က ဘာတွေလုပ်နိုင်လဲ
+## အလိုအလျောက် တဂ်တပ်ခြင်းဖြင့် လုပ်နိုင်သောအရာများ
 
-| Feature | Description |
+| လုပ်ဆောင်ချက် | ဖော်ပြချက် |
 | --- | --- |
-| content tags ဖန်တီးခြင်း | people, scenes, objects, art style နဲ့ အလားတူ visual content အတွက် tags ထည့်ပေးသည်။ |
-| character tags ဖန်တီးခြင်း | anime images နဲ့ illustrations အတွက်အသုံးဝင်သည်။ |
-| orientation tags ထည့်ခြင်း | `landscape`, `portrait`, `square` ကိုထည့်ပေးသည်။ |
-| image rating ထည့်ခြင်း | general, sensitive, questionable, explicit content အတွက် `G/S/Q/E` rating results သိမ်းသည်။ |
-| upload မှာ auto-tag | newly uploaded images တွေက tagging flow ထဲအလိုအလျောက်ဝင်သည်။ |
-| Batch tagging | folders အားလုံး သို့မဟုတ် selected folders ထဲက images အဟောင်းတွေကို tags ထည့်သည်။ |
+| အကြောင်းအရာတဂ်များ ထုတ်ပေးခြင်း | လူများ၊ မြင်ကွင်းများ၊ အရာဝတ္ထုများ၊ အနုပညာစတိုင်နှင့် ဆင်တူသော မြင်ကွင်းအကြောင်းအရာများအတွက် တဂ်များကို ထည့်ပေးသည်။ |
+| ဇာတ်ကောင်တဂ်များ ထုတ်ပေးခြင်း | အန်နီမေးပုံများနှင့် ပန်းချီပုံများအတွက် အသုံးဝင်သည်။ |
+| ဦးတည်ချက်တဂ်များ ထည့်ခြင်း | `landscape`၊ `portrait` သို့မဟုတ် `square` ကို ထည့်ပေးသည်။ |
+| ပုံအဆင့်သတ်မှတ်ချက် ထည့်ခြင်း | သာမန်၊ ထိလွယ်ရှလွယ်၊ သံသယဖြစ်ဖွယ် သို့မဟုတ် လိင်ပိုင်းဆိုင်ရာ ထင်ရှားသော အကြောင်းအရာများအတွက် `G/S/Q/E` အဆင့်သတ်မှတ်ချက်ရလဒ်များကို သိမ်းဆည်းသည်။ |
+| အပ်လုဒ်တင်ချိန်တွင် အလိုအလျောက် တဂ်တပ်ခြင်း | အသစ်တင်ထားသောပုံများသည် တဂ်တပ်ခြင်း လုပ်ငန်းစဉ်သို့ အလိုအလျောက် ဝင်ရောက်သည်။ |
+| အစုလိုက် တဂ်တပ်ခြင်း | ဖိုင်တွဲအားလုံး သို့မဟုတ် ရွေးထားသောဖိုင်တွဲများရှိ ပုံဟောင်းများတွင် တဂ်များ ထည့်ပေးသည်။ |
 
-## အရင်ပြင်ဆင်ရမယ့်အရာ
+## ပထမဆုံး လိုအပ်သောအရာ
 
-အနည်းဆုံး accessible Hugging Face Space URL တစ်ခုပြင်ဆင်ပါ။
+ဝင်ရောက်အသုံးပြုနိုင်သော Hugging Face Space URL အနည်းဆုံးတစ်ခုကို ပြင်ဆင်ထားပါ။
 
-အကြံပြုတဲ့နည်းက SmilingWolf ရဲ့ `wd-tagger` Space ကို ကိုယ့် Hugging Face account ထဲ duplicate လုပ်ခြင်းဖြစ်ပါတယ်:
+အကြံပြုသည့်နည်းလမ်းမှာ SmilingWolf ၏ `wd-tagger` Space ကို သင့် Hugging Face အကောင့်ထဲသို့ မိတ္တူပွားယူခြင်း ဖြစ်သည်။
 
 ```text
 https://huggingface.co/spaces/SmilingWolf/wd-tagger
 ```
 
-public Space ကို temporary testing အတွက်သုံးနိုင်ပေမယ့် public Spaces တွေကို users အများကြီး share သုံးပါတယ်။ queue ရှိနိုင်၊ နှေးနိုင်၊ မရနိုင်တဲ့အချိန်ရှိနိုင်ပါတယ်။ ကိုယ်ပိုင် account ထဲ duplicated Space က long-term auto tagging အတွက်ပိုတည်ငြိမ်ပါတယ်။
+အများသုံး Space ကို ယာယီအသုံးပြုနိုင်သော်လည်း အများသုံး Spaces များကို အသုံးပြုသူများစွာ မျှဝေသုံးစွဲကြသောကြောင့် စောင့်တန်းရနိုင်သည်၊ နှေးနိုင်သည် သို့မဟုတ် မရနိုင်သည့်အချိန်များ ရှိနိုင်သည်။ သင့်အကောင့်အောက်တွင် မိတ္တူပွားထားသော Space သည် ရေရှည် အလိုအလျောက် တဂ်တပ်ခြင်းအတွက် ပိုမိုတည်ငြိမ်သည်။
 
-## SmilingWolf Space Duplicate လုပ်ပါ
+## SmilingWolf ၏ Space ကို မိတ္တူပွားခြင်း
 
-1. Hugging Face ထဲ sign in ဝင်ပါ။
-2. `https://huggingface.co/spaces/SmilingWolf/wd-tagger` ကိုဖွင့်ပါ။
+1. Hugging Face သို့ ဝင်ရောက်ပါ။
+2. `https://huggingface.co/spaces/SmilingWolf/wd-tagger` ကို ဖွင့်ပါ။
 
-![SmilingWolf public Space](../../image/other/微笑狼的公开仓库.png)
+![SmilingWolf ၏ အများသုံး Space](../../image/other/微笑狼的公开仓库.png)
 
-3. ညာဘက်အပေါ်ထောင့်က three-dot menu ကိုနှိပ်ပါ။
-4. `Duplicate this Space` ကိုရွေးပါ။
-5. default Space name ကိုထားနိုင်သလို `wd-tagger` စတဲ့အမည်လည်းပေးနိုင်ပါတယ်။
-6. visibility ကို `Public` ထားပါ။ Public Spaces တွေကို ImgBed က call လုပ်ရပိုလွယ်ပါတယ်။
-7. စစချင်း default free hardware ကိုထားပါ။ queue ကပြဿနာဖြစ်လာမှ upgrade လုပ်ပါ။
-8. Space ကို create လုပ်ပြီး build ပြီးအောင်စောင့်ပါ။
+3. ညာဘက်အပေါ်ထောင့်ရှိ အစက်သုံးစက် မီနူးကို နှိပ်ပါ။
+4. `Duplicate this Space` ကို ရွေးပါ။
+5. မူလ Space အမည်ကို ထားနိုင်သလို `wd-tagger` ကဲ့သို့ ကိုယ်ပိုင်အမည်ကိုလည်း ရွေးနိုင်သည်။
+6. မြင်နိုင်မှုကို `Public` အဖြစ် သတ်မှတ်ပါ။ Public Spaces များကို ImgBed မှ ခေါ်သုံးရန် ပိုလွယ်သည်။
+7. အစပိုင်းတွင် မူလ အခမဲ့ ဟာ့ဒ်ဝဲကိုသာ ထားပါ။ စောင့်တန်းမှု သိသာလာမှသာ နောက်ပိုင်းတွင် အဆင့်မြှင့်ပါ။
+8. Space ကို ဖန်တီးပြီး တည်ဆောက်မှု ပြီးဆုံးသည်အထိ စောင့်ပါ။
 
-build ပြီးရင် သင့် Space page ကိုဖွင့်ပါ။ URL က များသောအားဖြင့်ဒီလိုဖြစ်ပါတယ်:
+တည်ဆောက်မှု ပြီးဆုံးပြီးနောက် သင့် Space စာမျက်နှာကို ဖွင့်ပါ။ URL သည် ပုံမှန်အားဖြင့် အောက်ပါပုံစံဖြစ်သည်။
 
 ```text
 https://huggingface.co/spaces/your-name/wd-tagger
 ```
 
-browser URL ကို copy လုပ်ပြီး ImgBed ထဲက `Space URLs` မှာ paste လုပ်ပါ။
+ဘရောက်ဇာ URL ကို ကူးယူပြီး ImgBed ၏ `Space URLs` ထဲသို့ ထည့်ပါ။
 
-## Space URL အများကြီးထည့်ခြင်း
+## Space URL အများအပြား ဖြည့်ခြင်း
 
-line တစ်ကြောင်းမှာ Space URL တစ်ခုစီထည့်ပါ။
+တစ်ကြောင်းလျှင် Space URL တစ်ခုစီ ထည့်ပါ။
 
-| Value | Description |
+ဥပမာများ:
+
+| တန်ဖိုး | ဖော်ပြချက် |
 | --- | --- |
-| `https://huggingface.co/spaces/SmilingWolf/wd-tagger` | SmilingWolf public Space။ temporary testing အတွက်သင့်တော်သည်။ |
-| `https://huggingface.co/spaces/lintonxue00/wd-tagger` | copy လုပ်ထားတဲ့ Space page URL။ |
-| `https://huggingface.co/spaces/your-name/wd-tagger` | သင့်ကိုယ်ပိုင် duplicated Space page URL။ |
+| `https://huggingface.co/spaces/SmilingWolf/wd-tagger` | SmilingWolf ၏ အများသုံး Space။ ယာယီစမ်းသပ်ရန် သင့်တော်သည်။ |
+| `https://huggingface.co/spaces/lintonxue00/wd-tagger` | ကူးယူထားသော Space စာမျက်နှာ URL။ |
+| `https://huggingface.co/spaces/your-name/wd-tagger` | သင့်ကိုယ်ပိုင် မိတ္တူပွားထားသော Space စာမျက်နှာ URL။ |
 
-URLs အများကြီးထည့်နိုင်ပါတယ်။ ImgBed က Spaces အများကြီးကိုအတူသုံးပြီး speed ပိုကောင်းနိုင်ပါတယ်။
+URL အများအပြား ထည့်နိုင်သည်။ ImgBed သည် Spaces အများအပြားကို အတူတကွ အသုံးပြုသောကြောင့် မြန်နှုန်း တိုးတက်နိုင်သည်။
 
-Space တစ်ခု temporary unavailable ဖြစ်လည်း အခြား Spaces တွေက processing ဆက်လုပ်နိုင်ပါတယ်။
+Space တစ်ခု ယာယီမရနိုင်ပါက အခြား Spaces များသည် ဆက်လက်လုပ်ဆောင်နိုင်သည်။
 
-## Settings
+## ဆက်တင်များ
 
-| Option | Recommendation |
+| ရွေးချယ်စရာ | အကြံပြုချက် |
 | --- | --- |
-| `Space URLs` | ပြင်ဆင်ထားတဲ့ Space URLs ထည့်ပါ။ အနည်းဆုံးတစ်ခုလိုပါတယ်။ |
-| Target folder | folders အားလုံးအတွက် ဗလာထားပါ။ specific directory ကို process လုပ်ချင်မှသာ folder ရွေးပါ။ |
-| Recognition model | default `wd-swinv2-tagger-v3` ကိုထားပါ။ |
-| General tag threshold | default က images အများစုအတွက်သင့်တော်ပါတယ်။ တန်ဖိုးနည်းလျှင် tags ပိုများ၊ တန်ဖိုးမြင့်လျှင် tags ပိုနည်းသည်။ |
-| Character tag threshold | default က conservative ဖြစ်ပြီးမှားယွင်းတဲ့ character tags လျော့စေသည်။ |
-| `MCut` automatic threshold | စစချင်း off ထားပါ။ model က tag count ကိုအလိုအလျောက်ဆုံးဖြတ်စေချင်ရင် on လုပ်ပါ။ |
-| Auto-tag on upload | newly uploaded images တွေကို auto tag ပေးချင်လျှင် on လုပ်ပါ။ |
-| Start tagging | images အဟောင်းတွေအတွက် manual batch-tagging စတင်သည်။ |
+| `Space URLs` | သင်ပြင်ဆင်ထားသော Space URLs များကို ထည့်ပါ။ အနည်းဆုံးတစ်ခု အသုံးပြုပါ။ |
+| ပစ်မှတ်ဖိုင်တွဲ | ဖိုင်တွဲအားလုံးအတွက် အလွတ်ထားပါ။ သီးခြား ဖိုင်တွဲတစ်ခုကိုသာ လုပ်ဆောင်လိုသည့်အခါမှသာ ဖိုင်တွဲကို ရွေးပါ။ |
+| အသိအမှတ်ပြုမော်ဒယ် | မူလအတိုင်း `wd-swinv2-tagger-v3` ကို ထားပါ။ |
+| အထွေထွေတဂ် ကန့်သတ်တန်ဖိုး | မူလတန်ဖိုးသည် ပုံအများစုအတွက် သင့်တော်သည်။ တန်ဖိုးနိမ့်လျှင် တဂ်ပိုများပြီး တန်ဖိုးမြင့်လျှင် တဂ်ပိုနည်းသည်။ |
+| ဇာတ်ကောင်တဂ် ကန့်သတ်တန်ဖိုး | မူလတန်ဖိုးသည် သတိထားသောတန်ဖိုးဖြစ်ပြီး မှားယွင်းသော ဇာတ်ကောင်တဂ်များကို ရှောင်ရှားရန် ကူညီသည်။ |
+| `MCut` အလိုအလျောက် ကန့်သတ်တန်ဖိုး | အစတွင် ပိတ်ထားပါ။ မော်ဒယ်ကို တဂ်အရေအတွက် အလိုအလျောက် ဆုံးဖြတ်စေလိုသည့်အခါ ဖွင့်ပါ။ |
+| အပ်လုဒ်တင်ချိန်တွင် အလိုအလျောက် တဂ်တပ်ခြင်း | အသစ်တင်သောပုံများကို အလိုအလျောက် တဂ်ရစေလိုပါက ဖွင့်ပါ။ |
+| တဂ်တပ်ခြင်း စတင်ရန် | ပုံဟောင်းများကို လက်ဖြင့် အစုလိုက် တဂ်တပ်သည်။ |
 
-## အကြံပြု Starting Values
+## အကြံပြုထားသော စတင်တန်ဖိုးများ
 
-| Option | Recommended Value |
+| ရွေးချယ်စရာ | အကြံပြုတန်ဖိုး |
 | --- | --- |
-| Recognition model | `wd-swinv2-tagger-v3` |
-| General tag threshold | `0.35` |
-| Character tag threshold | `0.85` |
-| `MCut` | စစချင်း Off |
-| Auto-tag on upload | လိုအပ်လျှင် Enable |
+| အသိအမှတ်ပြုမော်ဒယ် | `wd-swinv2-tagger-v3` |
+| အထွေထွေတဂ် ကန့်သတ်တန်ဖိုး | `0.35` |
+| ဇာတ်ကောင်တဂ် ကန့်သတ်တန်ဖိုး | `0.85` |
+| `MCut` | အစတွင် ပိတ် |
+| အပ်လုဒ်တင်ချိန်တွင် အလိုအလျောက် တဂ်တပ်ခြင်း | လိုအပ်ပါက ဖွင့်ပါ |
 
-tags များလွန်းရင် general threshold ကိုအနည်းငယ်မြှင့်ပါ။
+တဂ်များ များလွန်းပါက အထွေထွေ ကန့်သတ်တန်ဖိုးကို အနည်းငယ် မြှင့်ပါ။
 
-tags နည်းလွန်းရင် general threshold ကိုအနည်းငယ်လျှော့ပါ။
+တဂ်များ နည်းလွန်းပါက အထွေထွေ ကန့်သတ်တန်ဖိုးကို အနည်းငယ် လျှော့ပါ။
 
-## Batch Tagging
+## အစုလိုက် တဂ်တပ်ခြင်း
 
-1. `Space URLs` ဖြည့်ပါ။
-2. target folder ရွေးပါ။
-3. start tagging ကိုနှိပ်ပါ။
-4. progress ပြီးအောင်စောင့်ပါ။
+1. `Space URLs` ကို ဖြည့်ပါ။
+2. ပစ်မှတ်ဖိုင်တွဲကို ရွေးပါ။
+3. တဂ်တပ်ခြင်း စတင်ရန် နှိပ်ပါ။
+4. တိုးတက်မှု ပြီးဆုံးသည်အထိ စောင့်ပါ။
 
-target folder ဗလာဖြစ်လျှင် ImgBed က folders အားလုံးကို process လုပ်ပါမယ်။
+ပစ်မှတ်ဖိုင်တွဲ အလွတ်ဖြစ်ပါက ImgBed သည် ဖိုင်တွဲအားလုံးကို လုပ်ဆောင်သည်။
 
-Batch tagging က images အဟောင်းတွေအတွက်အကောင်းဆုံးပါ။ images အသစ်တွေအတွက် auto-tag on upload ကို enable လုပ်ထားရင် တစ်ခါတစ်ခါ manual run မလိုတော့ပါ။
+အစုလိုက် တဂ်တပ်ခြင်းသည် ပုံဟောင်းများအတွက် အကောင်းဆုံးဖြစ်သည်။ ပုံအသစ်များအတွက် အပ်လုဒ်တင်ချိန်တွင် အလိုအလျောက် တဂ်တပ်ခြင်းကို ဖွင့်ထားပါက တစ်ခါတစ်ရံ လက်ဖြင့် ပြန်လုပ်ရန် မလိုပါ။
 
-## Upload အချိန် Auto-Tag
+## အပ်လုဒ်တင်ချိန်တွင် အလိုအလျောက် တဂ်တပ်ခြင်း
 
-auto-tag on upload enabled ဖြစ်ပြီးနောက် newly uploaded images တွေက configured `Space URLs` ကိုအလိုအလျောက် call လုပ်ပါမယ်။
+အပ်လုဒ်တင်ချိန်တွင် အလိုအလျောက် တဂ်တပ်ခြင်းကို ဖွင့်ပြီးနောက် အသစ်တင်သောပုံများသည် သတ်မှတ်ထားသော `Space URLs` ကို အလိုအလျောက် ခေါ်သုံးသည်။
 
-ဒီဟာက long-term use အတွက်သင့်တော်ပါတယ်။
+ဤသည်မှာ ရေရှည်အသုံးပြုရန် သင့်တော်သည်။
 
-Space queue ရှိနေရင် upload ကိုအရင် finish လုပ်နိုင်ပြီး tagging ကနောက်မှာဆက်လုပ်ပါမယ်။
+သင့် Space သည် စောင့်တန်းနေပါက အပ်လုဒ်တင်ခြင်းကို အရင်ဆုံး ပြီးစေနိုင်ပြီး တဂ်တပ်ခြင်းကို နောက်မှ ဆက်လက်လုပ်ဆောင်နိုင်သည်။
 
-## ဘယ် Images တွေ Process လုပ်လဲ
+## မည်သည့်ပုံများကို လုပ်ဆောင်သနည်း
 
-Auto tagging က image files တွေကိုအဓိက process လုပ်ပါတယ်။
+အလိုအလျောက် တဂ်တပ်ခြင်းသည် အဓိကအားဖြင့် ပုံဖိုင်များကို လုပ်ဆောင်သည်။
 
-tags, orientation, rating, width, height ပြည့်စုံပြီးသား images တွေကို skip လုပ်ပါတယ်။ unnecessary Space calls မဖြစ်စေဖို့ပါ။
+တဂ်၊ ဦးတည်ချက်၊ အဆင့်သတ်မှတ်ချက်၊ အကျယ်နှင့် အမြင့် ပြည့်စုံပြီးသား ပုံများကို မလိုအပ်သော Space ခေါ်ဆိုမှုများ မဖြစ်စေရန် ကျော်သွားသည်။
 
-ဖြစ်နိုင်ရင် ImgBed က missing information ကိုပဲဖြည့်ပါတယ်။ ဥပမာ orientation ပဲမရှိလျှင် full content tag flow မခေါ်ဘဲ orientation ထည့်ဖို့ကြိုးစားပါတယ်။
+ဖြစ်နိုင်သည့်အခါ ImgBed သည် ပျောက်နေသောအချက်အလက်များကိုသာ ဖြည့်သည်။ ဥပမာ၊ ဦးတည်ချက်တစ်ခုတည်းသာ ပျောက်နေပါက အကြောင်းအရာတဂ်လုပ်ငန်းစဉ် အပြည့်အစုံကို မခေါ်ဘဲ ဦးတည်ချက်ကို ထည့်ရန် ကြိုးစားသည်။
 
-## FAQ
+## မေးလေ့ရှိသော မေးခွန်းများ
 
-### ကိုယ်ပိုင် Space ကိုဘာကြောင့် Duplicate လုပ်သင့်လဲ?
+### ကိုယ်ပိုင် Space ကို ဘာကြောင့် မိတ္တူပွားသင့်သနည်း
 
-Public Spaces တွေကို users အများကြီး share သုံးပါတယ်။ ကိုယ်ပိုင် duplicated Space က အဓိကအားဖြင့် သင့် ImgBed site ပဲသုံးတာကြောင့် ပိုမြန်ပြီးပိုယုံကြည်စိတ်ချရပါတယ်။
+အများသုံး Spaces များကို အသုံးပြုသူများစွာ မျှဝေသုံးစွဲကြသည်။ သင့်ကိုယ်ပိုင် မိတ္တူပွားထားသော Space သည် အဓိကအားဖြင့် သင့် ImgBed ဆိုက်ကသာ အသုံးပြုသောကြောင့် ပုံမှန်အားဖြင့် ပိုမြန်ပြီး ပိုယုံကြည်စိတ်ချရသည်။
 
-### Space က Starting Up အဖြစ်ဆက်ပြနေတယ်
+### Space သည် စတင်နေဆဲ ဖြစ်နေသည်
 
-ပထမဆုံးဖန်တီးပြီးနောက် သို့မဟုတ် idle ကြာပြီးနောက် Space start ဖြစ်ဖို့အချိန်ယူနိုင်ပါတယ်။
+ပထမဆုံး ဖန်တီးပြီးနောက် သို့မဟုတ် ကြာမြင့်စွာ မသုံးဘဲထားပြီးနောက် Space စတင်ရန် အချိန်လိုနိုင်သည်။
 
-အရင်ဆုံး Space page ကိုဖွင့်ပါ။ image ကိုပုံမှန် recognize လုပ်နိုင်ပြီဆိုရင် ImgBed ကိုပြန်သွားပြီး tagging စပါ။
+အရင်ဆုံး သင့် Space စာမျက်နှာကို ဖွင့်ပါ။ ပုံတစ်ပုံကို ပုံမှန် အသိအမှတ်ပြုနိုင်ပြီဆိုပါက ImgBed သို့ ပြန်သွားပြီး တဂ်တပ်ခြင်းကို စတင်ပါ။
 
-### Space URL ဘယ်လို Copy လုပ်မလဲ?
+### Space URL ကို ဘယ်လို ကူးယူမလဲ
 
-သင့် Hugging Face Space page ကိုဖွင့်ပြီး browser address ကို copy လုပ်ပါ။
+သင့် Hugging Face Space စာမျက်နှာကို ဖွင့်ပြီး ဘရောက်ဇာ လိပ်စာကို ကူးယူပါ။
+
+ဥပမာများ:
 
 ```text
 https://huggingface.co/spaces/lintonxue00/wd-tagger
 https://huggingface.co/spaces/SmilingWolf/wd-tagger
 ```
 
-### Spaces အများကြီးထည့်လို့ရလား?
+### Spaces အများအပြား ထည့်နိုင်သလား
 
-ရပါတယ်။ line တစ်ကြောင်းမှာ Space URL တစ်ခုစီထည့်ပါ။
+ထည့်နိုင်သည်။ တစ်ကြောင်းလျှင် Space URL တစ်ခုစီ ထည့်ပါ။
 
-Spaces အများကြီးက images တွေကိုအတူ process လုပ်ပြီး images များတဲ့အခါအသုံးဝင်ပါတယ်။
+Spaces အများအပြားသည် ပုံများကို အတူတကွ လုပ်ဆောင်ပြီး ပုံများများရှိသောအခါ အသုံးဝင်သည်။
 
-### Tags တွေ English ဖြစ်တာဘာကြောင့်လဲ?
+### တဂ်များ ဘာကြောင့် အင်္ဂလိပ်ဘာသာဖြစ်သနည်း
 
-SmilingWolf models တွေက English tags output ပေးတာဖြစ်ပါတယ်။ ဒါက expected ဖြစ်ပါတယ်။
+SmilingWolf မော်ဒယ်များသည် အင်္ဂလိပ်တဂ်များကို ထုတ်ပေးသည်။ ဤသည်မှာ မျှော်လင့်ထားသည့် အပြုအမူဖြစ်သည်။
 
-tags တွေကို search, filtering, random image API, public gallery filters အတွက်အဓိကသုံးပါတယ်။
+တဂ်များကို အဓိကအားဖြင့် ရှာဖွေခြင်း၊ စစ်ထုတ်ခြင်း၊ ကျပန်းပုံ API နှင့် အများပြည်သူ ဂယ်လာရီ စစ်ထုတ်မှုများအတွက် အသုံးပြုသည်။
 
-### Rating Tags ကိုဘာအတွက်သုံးလဲ?
+### အဆင့်သတ်မှတ်ချက်တဂ်များကို ဘာအတွက် အသုံးပြုသနည်း
 
-rating results တွေက Security Settings ထဲက access mode နဲ့အတူအလုပ်လုပ်ပါတယ်။
+အဆင့်သတ်မှတ်ချက်ရလဒ်များသည် လုံခြုံရေး ဆက်တင်များထဲရှိ အသုံးပြုခွင့်မုဒ်နှင့်အတူ အလုပ်လုပ်သည်။
 
-ဥပမာ visitor access ကို age rating အလိုက်ကန့်သတ်ထားရင် public browsing နဲ့ random image features တွေက အဲဒီ rules အတိုင်း images တွေကို filter လုပ်ပါတယ်။
+ဥပမာ၊ ဧည့်သည်အသုံးပြုခွင့်ကို အသက်အဆင့်သတ်မှတ်ချက်ဖြင့် ကန့်သတ်ထားပါက အများပြည်သူ ကြည့်ရှုခြင်းနှင့် ကျပန်းပုံ လုပ်ဆောင်ချက်များသည် ထိုစည်းမျဉ်းများအတိုင်း ပုံများကို စစ်ထုတ်သည်။
 
-## Quick Flow
+## အမြန်လုပ်ငန်းစဉ်
 
 ```text
-Hugging Face ထဲ sign in ဝင်ပါ
--> SmilingWolf/wd-tagger ဖွင့်ပါ
+Sign in to Hugging Face
+-> Open SmilingWolf/wd-tagger
 -> Duplicate this Space
--> Space build ပြီးအောင်စောင့်ပါ
--> သင့် Space URL copy လုပ်ပါ
--> ImgBed ထဲ Space URLs ဖြည့်ပါ
--> model နဲ့ thresholds ရွေးပါ
--> Start tagging သို့မဟုတ် auto-tag on upload enable လုပ်ပါ
+-> Wait for the Space to build
+-> Copy your Space URL
+-> Fill Space URLs in ImgBed
+-> Choose model and thresholds
+-> Start tagging or enable auto-tag on upload
 ```

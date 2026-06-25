@@ -1,14 +1,14 @@
-# Federated Distributed Index
+# Chỉ Mục Phân Tán Liên Minh
 
-Federated distributed index cho phép nhiều ImgBed sites share file lists với nhau.
+Chỉ mục phân tán liên minh cho phép nhiều trang ImgBed chia sẻ danh sách tệp với nhau.
 
 Hiểu đơn giản:
 
-- Bạn có thể share selected folders từ site của mình cho người khác.
-- Bạn có thể join node khác và sync shared file list của node đó vào admin panel của mình.
-- Federated files chủ yếu dùng để browse, search và mở links. Chúng không được re-upload vào storage của bạn.
+- Bạn có thể chia sẻ các thư mục đã chọn từ trang của mình với người khác.
+- Bạn có thể tham gia một nút khác và đồng bộ danh sách tệp được chia sẻ của nút đó vào bảng quản trị của mình.
+- Tệp liên minh chủ yếu dùng để duyệt, tìm kiếm và mở liên kết. Chúng không được tải lại vào kho lưu trữ của bạn.
 
-## Cấu hình ở đâu
+## Cấu Hình Ở Đâu
 
 Mở:
 
@@ -16,41 +16,41 @@ Mở:
 System Settings -> Other Settings -> Federated Distributed Index
 ```
 
-![Local federation node](../../image/other/联盟图/联盟分布式索引本地节点.png)
+![Nút liên minh cục bộ](../../image/other/联盟图/联盟分布式索引本地节点.png)
 
-Trang có ba tabs:
+Trang có ba thẻ:
 
-| Tab | Purpose |
+| Thẻ | Mục đích |
 | --- | --- |
-| Local Node | Enable node của bạn, confirm public domain, chọn shared folders và update outbound index |
-| Nodes I Joined | Manage các ImgBed nodes khác mà bạn đã join |
-| Nodes Joining Me | Manage requests từ người khác muốn join node của bạn |
+| Nút cục bộ | Bật nút của bạn, xác nhận tên miền công khai, chọn thư mục chia sẻ và cập nhật chỉ mục ra |
+| Nút tôi đã tham gia | Quản lý các nút ImgBed khác mà bạn đã tham gia |
+| Nút tham gia tôi | Quản lý yêu cầu từ những người muốn tham gia nút của bạn |
 
-## First-Time Setup
+## Thiết Lập Lần Đầu
 
 1. Mở `Local Node`.
 2. Bật `Enable`.
-3. Chọn folders muốn share trong `Sync folders`.
-4. Nhấn `Update Outbound Index`.
-5. Nếu ImgBed detect domain change, confirm current domain đúng trước khi tiếp tục.
+3. Chọn thư mục cần chia sẻ trong `Sync folders`.
+4. Nhấp `Update Outbound Index`.
+5. Nếu ImgBed phát hiện thay đổi tên miền, hãy xác nhận tên miền hiện tại là đúng trước khi tiếp tục.
 
-Bạn có thể chọn nhiều sync folders.
+Bạn có thể chọn nhiều thư mục đồng bộ.
 
-Nếu sync folder list trống, tất cả folders sẽ được share.
+Nếu danh sách thư mục đồng bộ trống, tất cả thư mục sẽ được chia sẻ.
 
-## Local Node
+## Nút Cục Bộ
 
-### Public Domain
+### Tên Miền Công Khai
 
-Public domain là site URL mà nodes khác dùng để access node của bạn.
+Tên miền công khai là URL trang mà các nút khác dùng để truy cập nút của bạn.
 
-ImgBed tự detect. Bạn không cần nhập thủ công. Lần đầu update index, ImgBed sẽ hỏi current access URL có phải production domain không.
+ImgBed tự động phát hiện giá trị này. Bạn không cần nhập thủ công. Lần đầu cập nhật chỉ mục, ImgBed sẽ yêu cầu xác nhận URL truy cập hiện tại có phải tên miền chính thức hay không.
 
-Nếu sau này đổi domain, khi update index sẽ hỏi confirmation lại.
+Nếu sau này bạn đổi tên miền, thao tác cập nhật chỉ mục sẽ yêu cầu xác nhận lại.
 
-### Sync Folders
+### Thư Mục Đồng Bộ
 
-Sync folders quyết định files nào được share với federation nodes.
+Thư mục đồng bộ quyết định tệp nào được chia sẻ với các nút liên minh.
 
 Ví dụ, nếu bạn chỉ chọn:
 
@@ -59,135 +59,135 @@ Ví dụ, nếu bạn chỉ chọn:
 /2/
 ```
 
-Nodes khác chỉ thấy files trong hai directories đó.
+các nút khác chỉ có thể thấy tệp trong hai thư mục đó.
 
-### Update Outbound Index
+### Cập Nhật Chỉ Mục Ra
 
-Thao tác này update file list mà nodes khác có thể sync từ bạn.
+Thao tác này cập nhật danh sách tệp mà các nút khác có thể đồng bộ từ bạn.
 
-Dùng khi:
+Hãy dùng khi:
 
-- Bạn enable federation lần đầu.
-- Bạn upload files muốn share.
-- Bạn đổi sync folders.
-- Bạn đổi public domain và cần confirm.
+- Bạn bật liên minh lần đầu.
+- Bạn tải lên các tệp muốn chia sẻ.
+- Bạn thay đổi thư mục đồng bộ.
+- Bạn thay đổi tên miền công khai và cần xác nhận.
 
-## Nodes I Joined
+## Nút Tôi Đã Tham Gia
 
-`Nodes I Joined` là nơi bạn subscribe nodes khác.
+`Nodes I Joined` là nơi bạn quản lý các nút khác mà mình đã tham gia.
 
-![Nodes I joined](../../image/other/联盟图/我加入的节点.png)
+![Nút tôi đã tham gia](../../image/other/联盟图/我加入的节点.png)
 
-### Gửi Request Join Node Khác
+### Gửi Yêu Cầu Tham Gia Nút Khác
 
-1. Xin invitation link từ owner phía bên kia.
-2. Paste vào input box.
-3. Nhấn `Request to Join`.
-4. Chờ owner phía bên kia approve trong admin panel của họ.
+1. Hỏi chủ sở hữu bên kia để lấy liên kết mời.
+2. Dán liên kết vào ô nhập.
+3. Nhấp `Request to Join`.
+4. Chờ chủ sở hữu bên kia phê duyệt trong bảng quản trị của họ.
 
-Sau khi approval, node status sẽ thành approved.
+Sau khi được phê duyệt, trạng thái nút sẽ chuyển thành đã phê duyệt.
 
-### Update Inbound Index
+### Cập Nhật Chỉ Mục Vào
 
-`Update Inbound Index` sync file lists từ các nodes bạn đã joined.
+`Update Inbound Index` đồng bộ danh sách tệp từ các nút bạn đã tham gia.
 
-Dùng khi:
+Hãy dùng khi:
 
-- Owner phía bên kia vừa approve request của bạn.
-- Owner phía bên kia báo shared content đã update.
-- Bạn muốn refresh tất cả joined federation file lists.
+- Chủ sở hữu bên kia vừa phê duyệt yêu cầu của bạn.
+- Chủ sở hữu bên kia báo rằng nội dung chia sẻ đã được cập nhật.
+- Bạn muốn làm mới toàn bộ danh sách tệp liên minh từ các nút đã tham gia.
 
-Để update chỉ một node, nhấn `Update Index` trên node card đó.
+Để chỉ cập nhật một nút, nhấp `Update Index` trên thẻ của nút đó.
 
-![Update index](../../image/other/联盟图/更新索引.png)
+![Cập nhật chỉ mục](../../image/other/联盟图/更新索引.png)
 
-### Unsubscribe
+### Hủy Tham Gia
 
-Nếu không muốn sync một node nữa, nhấn `Unsubscribe`.
+Nếu không muốn tiếp tục đồng bộ một nút, hãy nhấp `Unsubscribe`.
 
-Sau khi unsubscribe, federated index của node đó sẽ bị xóa khỏi local site của bạn.
+Sau khi hủy tham gia, chỉ mục liên minh của nút đó sẽ bị xóa khỏi trang cục bộ của bạn.
 
-## Nodes Joining Me
+## Nút Tham Gia Tôi
 
-`Nodes Joining Me` là nơi xử lý requests từ người khác.
+`Nodes Joining Me` là nơi bạn xử lý yêu cầu từ người khác.
 
-![Nodes joining me](../../image/other/联盟图/加入我的节点.png)
+![Nút tham gia tôi](../../image/other/联盟图/加入我的节点.png)
 
-### Generate Invitation Link
+### Tạo Liên Kết Mời
 
-1. Đảm bảo local node đã enabled.
-2. Nhấn `Update Outbound Index` ít nhất một lần để ImgBed confirm public domain.
+1. Đảm bảo nút cục bộ đã bật.
+2. Nhấp `Update Outbound Index` ít nhất một lần để ImgBed xác nhận tên miền công khai.
 3. Mở `Nodes Joining Me`.
-4. Nhấn `Reset Invitation Link`.
-5. Copy invitation link và gửi cho owner phía bên kia.
+4. Nhấp `Reset Invitation Link`.
+5. Sao chép liên kết mời và gửi cho chủ sở hữu bên kia.
 
-Nếu invitation link trống, thường là public domain chưa được confirm. Quay lại `Local Node` và nhấn `Update Outbound Index`.
+Nếu liên kết mời trống, thường là tên miền công khai chưa được xác nhận. Quay lại `Local Node` và nhấp `Update Outbound Index`.
 
-### Xử lý Join Requests
+### Xử Lý Yêu Cầu Tham Gia
 
-Khi ai đó submit request, nó xuất hiện trong list `Nodes Joining Me`.
+Khi ai đó gửi yêu cầu, yêu cầu đó sẽ xuất hiện trong danh sách `Nodes Joining Me`.
 
-| Action | Meaning |
+| Hành động | Ý nghĩa |
 | --- | --- |
-| Approve | Cho phép node bên kia sync shared file list của bạn |
-| Reject | Từ chối join request |
-| Delete | Xóa finished record |
-| Check Status | Kiểm tra phía bên kia còn giữ relationship này không |
+| Phê duyệt | Cho phép nút khác đồng bộ danh sách tệp bạn chia sẻ |
+| Từ chối | Từ chối yêu cầu tham gia |
+| Xóa | Xóa bản ghi đã hoàn tất |
+| Kiểm tra trạng thái | Kiểm tra xem bên kia còn giữ quan hệ này hay không |
 
-Sau approval, phía bên kia vẫn cần nhấn `Update Inbound Index` trước khi shared files của bạn xuất hiện ở đó.
+Sau khi phê duyệt, bên kia vẫn cần nhấp `Update Inbound Index` trước khi các tệp bạn chia sẻ xuất hiện ở đó.
 
-![Approve invited node](../../image/other/联盟图/邀请节点同意.png)
+![Phê duyệt nút được mời](../../image/other/联盟图/邀请节点同意.png)
 
-## Messages
+## Tin Nhắn
 
-Sau khi relationship approved, nhấn `Message` trên node card.
+Sau khi một quan hệ được phê duyệt, hãy nhấp `Message` trên thẻ nút.
 
-Messages chỉ dùng để trao đổi về federation relationship. Chúng không thay đổi files, tags, directories hoặc permissions.
+Tin nhắn chỉ dùng để trao đổi về quan hệ liên minh. Chúng không thay đổi tệp, thẻ, thư mục hoặc quyền.
 
-![Messages](../../image/other/联盟图/留言功能.png)
+![Tin nhắn](../../image/other/联盟图/留言功能.png)
 
-## Xem Federated Files
+## Xem Tệp Liên Minh
 
-Sau khi sync hoàn tất, quay lại admin file list.
+Sau khi đồng bộ hoàn tất, quay lại danh sách tệp trong bảng quản trị.
 
-Ở đầu page, chuyển giữa local files và federated files. Trong federated files, bạn có thể browse synced content.
+Ở đầu trang, chuyển giữa tệp cục bộ và tệp liên minh. Trong tệp liên minh, bạn có thể duyệt nội dung đã đồng bộ.
 
-Federated files chủ yếu để viewing, searching, previewing và copying links. Chúng không phải local files, nên bạn không thể move, delete, retag hoặc back up từ site của mình.
+Tệp liên minh chủ yếu dùng để xem, tìm kiếm, xem trước và sao chép liên kết. Chúng không phải tệp cục bộ, nên bạn không thể di chuyển, xóa, đổi thẻ hoặc sao lưu chúng từ trang của mình.
 
-![Federated files in admin](../../image/other/联盟图/联盟管理显示效果图.png)
+![Tệp liên minh trong bảng quản trị](../../image/other/联盟图/联盟管理显示效果图.png)
 
-## FAQ
+## Câu Hỏi Thường Gặp
 
-### Vì sao hệ thống yêu cầu Reapply vì không có Relationship Record?
+### Vì Sao Hệ Thống Yêu Cầu Gửi Lại Vì Không Có Bản Ghi Quan Hệ?
 
-Thường nghĩa là phía bên kia đã delete bạn và xóa record, nên relationship không còn tìm được. Hãy submit join request mới.
+Điều này thường có nghĩa là bên kia đã xóa bạn và xóa bản ghi, nên quan hệ không còn được tìm thấy. Hãy gửi yêu cầu tham gia mới.
 
-![Reapply when no relationship record exists](../../image/other/联盟图/无关系记录重新申请.png)
+![Gửi lại khi không có bản ghi quan hệ](../../image/other/联盟图/无关系记录重新申请.png)
 
-### Vì sao join rồi vẫn không thấy Files?
+### Vì Sao Sau Khi Tham Gia Tôi Không Thấy Tệp?
 
-Kiểm tra:
+Hãy kiểm tra:
 
-1. Owner phía bên kia đã approve request của bạn.
-2. Owner phía bên kia đã nhấn `Update Outbound Index`.
-3. Bạn đã nhấn `Update Inbound Index`.
-4. Sync folders của owner phía bên kia có chứa directories họ muốn share.
+1. Chủ sở hữu bên kia đã phê duyệt yêu cầu của bạn.
+2. Chủ sở hữu bên kia đã nhấp `Update Outbound Index`.
+3. Bạn đã nhấp `Update Inbound Index`.
+4. Thư mục đồng bộ của chủ sở hữu bên kia bao gồm các thư mục họ muốn chia sẻ.
 
-### Domain Change Detected thì làm gì?
+### Nên Làm Gì Khi Phát Hiện Thay Đổi Tên Miền?
 
-Nếu bạn đang mở admin panel bằng production domain, confirm và tiếp tục.
+Nếu bạn đang mở bảng quản trị bằng tên miền chính thức, hãy xác nhận và tiếp tục.
 
-Nếu đang dùng temporary address, cancel, mở lại admin panel bằng production domain rồi thử lại.
+Nếu đang dùng địa chỉ tạm thời, hãy hủy, mở lại bảng quản trị bằng tên miền chính thức rồi thử lại.
 
-### Empty Sync Folder List nghĩa là gì?
+### Danh Sách Thư Mục Đồng Bộ Trống Có Nghĩa Là Gì?
 
-Empty sync folder list nghĩa là share tất cả folders.
+Danh sách thư mục đồng bộ trống nghĩa là tất cả thư mục được chia sẻ.
 
-Nếu chỉ muốn share vài directories, hãy chọn folders thủ công.
+Để chỉ chia sẻ một số thư mục, hãy chọn thủ công các thư mục đó.
 
-### Khác nhau giữa Outbound và Inbound Index Updates
+### Khác Biệt Giữa Cập Nhật Chỉ Mục Ra Và Vào
 
-| Button | Simple Meaning |
+| Nút | Ý nghĩa đơn giản |
 | --- | --- |
-| Update Outbound Index | Update những gì người khác có thể sync từ tôi |
-| Update Inbound Index | Update những gì tôi đã sync từ người khác |
+| Cập nhật chỉ mục ra | Cập nhật những gì người khác có thể đồng bộ từ tôi |
+| Cập nhật chỉ mục vào | Cập nhật những gì tôi đã đồng bộ từ người khác |

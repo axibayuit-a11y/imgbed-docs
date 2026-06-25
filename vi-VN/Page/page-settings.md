@@ -1,67 +1,67 @@
-# Page Settings
+# Cài đặt trang
 
-Page settings kiểm soát site display, upload page defaults, background images và admin panel appearance.
+Cài đặt trang kiểm soát cách hiển thị trang web, các giá trị mặc định của trang tải lên, ảnh nền và giao diện của bảng quản trị.
 
-## Global Settings
+## Cài đặt chung
 
-| Option | Purpose |
+| Tùy chọn | Mục đích |
 | --- | --- |
-| Site title | Title hiển thị trong browser tab. |
-| Site icon | Icon nhỏ hiển thị trong browser tab. |
-| ImgBed name | Name hiển thị trên frontend pages. |
-| ImgBed logo | Logo image hiển thị trên frontend pages. |
-| Logo link | URL mở khi click logo hoặc avatar. |
-| Background switch interval | Rotation interval cho nhiều backgrounds, tính bằng milliseconds. `60000` nghĩa là 60 seconds. |
-| Background opacity | Opacity của background image từ `0` đến `1`. Giá trị thấp hơn sẽ nhạt hơn. |
-| Default URL prefix | Prefix dùng khi generate image links. Để trống sẽ dùng current site domain. |
+| Tiêu đề trang web | Tiêu đề hiển thị trên thẻ trình duyệt. |
+| Biểu tượng trang web | Biểu tượng nhỏ hiển thị trên thẻ trình duyệt. |
+| Tên ImgBed | Tên hiển thị trên các trang giao diện công khai. |
+| Logo ImgBed | Hình logo hiển thị trên các trang giao diện công khai. |
+| Liên kết logo | URL được mở khi nhấp vào logo hoặc ảnh đại diện. |
+| Khoảng thời gian đổi nền | Khoảng thời gian xoay vòng nhiều ảnh nền, tính bằng mili giây. `60000` nghĩa là 60 giây. |
+| Độ mờ của nền | Độ mờ của ảnh nền từ `0` đến `1`. Giá trị thấp hơn làm ảnh nhạt hơn. |
+| Tiền tố URL mặc định | Tiền tố dùng khi tạo liên kết ảnh. Nếu để trống, hệ thống dùng tên miền hiện tại của trang web. |
 
-## Client Settings
+## Cài đặt máy khách
 
-| Option | Purpose |
+| Tùy chọn | Mục đích |
 | --- | --- |
-| Announcement | Announcement hiển thị ở đầu upload page. Hỗ trợ HTML. |
-| Default upload channel | Upload channel được chọn mặc định trên upload page. Cũng có thể chọn Smart Dispatch. |
-| Default upload directory | Default upload directory, ví dụ `/user/`. Để trống hoặc `/` nghĩa là root. |
-| Default naming method | Strategy generate filename mặc định sau upload. Xem bên dưới. |
-| Convert to WebP by default | Convert images sang WebP trước khi upload. |
-| Enable compression by default | Compress images local trong browser trước khi upload. |
-| Default compression threshold | Tự động compress khi image vượt size này, tính bằng MB. |
-| Default target size | Target file size sau compression, tính bằng MB. |
-| Login page background | Background image cho user login page. |
-| Upload page background | Background image cho upload page. |
-| Footer portal link | URL mở khi nhấn footer portal button. |
-| Hide footer | Khi enabled, ẩn frontend footer. |
+| Thông báo | Thông báo hiển thị ở đầu trang tải lên. Hỗ trợ HTML. |
+| Kênh tải lên mặc định | Kênh tải lên được chọn mặc định trên trang tải lên. Cũng có thể chọn Smart Dispatch. |
+| Thư mục tải lên mặc định | Thư mục tải lên mặc định, ví dụ `/user/`. Để trống hoặc `/` nghĩa là thư mục gốc. |
+| Phương thức đặt tên mặc định | Chiến lược mặc định để tạo tên tệp sau khi tải lên. Xem bên dưới. |
+| Mặc định chuyển sang WebP | Chuyển ảnh sang WebP trước khi tải lên. |
+| Mặc định bật nén | Nén ảnh cục bộ trong trình duyệt trước khi tải lên. |
+| Ngưỡng nén mặc định | Tự động nén khi ảnh vượt quá kích thước này, tính bằng MB. |
+| Kích thước mục tiêu mặc định | Kích thước tệp mục tiêu sau khi nén, tính bằng MB. |
+| Nền trang đăng nhập | Ảnh nền cho trang đăng nhập của người dùng. |
+| Nền trang tải lên | Ảnh nền cho trang tải lên. |
+| Liên kết cổng ở chân trang | URL được mở bằng nút cổng ở chân trang. |
+| Ẩn chân trang | Ẩn chân trang của giao diện công khai khi bật. |
 
-## Admin Settings
+## Cài đặt quản trị
 
-| Option | Purpose |
+| Tùy chọn | Mục đích |
 | --- | --- |
-| Admin login background | Background image cho admin login page. |
-| Admin background | Background image cho admin pages. Dùng một image URL hoặc nhiều URLs. |
-| Image loading mode | Preview loading mode cho admin file list. Original load original images. Smart loading ưu tiên thumbnails cho public images và originals cho restricted images. |
-| Thumbnail source | Service dùng để generate thumbnails: wsrv.nl, Cloudflare Image Resizing hoặc WordPress Photon. Cloudflare Image Resizing phải được enable trong Cloudflare trước khi chọn. |
-| Live2D widget | Hiển thị Live2D character trong admin panel. |
-| Firework click effect | Hiển thị firework effect khi click page. |
-| Star cursor trail | Hiển thị star trail khi di chuyển mouse. |
+| Nền đăng nhập quản trị | Ảnh nền cho trang đăng nhập quản trị. |
+| Nền quản trị | Ảnh nền cho các trang quản trị. Có thể dùng một URL ảnh hoặc nhiều URL. |
+| Chế độ tải ảnh | Chế độ tải bản xem trước trong danh sách tệp quản trị. Chế độ ảnh gốc tải ảnh gốc. Tải thông minh ưu tiên ảnh thu nhỏ cho ảnh công khai và ảnh gốc cho ảnh bị hạn chế. |
+| Nguồn ảnh thu nhỏ | Dịch vụ dùng để tạo ảnh thu nhỏ: wsrv.nl, Cloudflare Image Resizing hoặc WordPress Photon. Cloudflare Image Resizing phải được bật trong Cloudflare trước khi chọn. |
+| Tiện ích Live2D | Hiển thị nhân vật Live2D trong bảng quản trị. |
+| Hiệu ứng pháo hoa khi nhấp | Hiển thị hiệu ứng pháo hoa khi nhấp vào trang. |
+| Vệt sao của con trỏ | Hiển thị vệt sao khi di chuyển chuột. |
 
-## Background Image Formats
+## Định dạng ảnh nền
 
-Login page background, upload page background và admin login background hỗ trợ các formats này:
+Nền trang đăng nhập, nền trang tải lên và nền đăng nhập quản trị hỗ trợ các định dạng sau:
 
-| Value | Effect |
+| Giá trị | Hiệu ứng |
 | --- | --- |
-| `bing` | Dùng Bing wallpaper rotation. |
-| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | Rotate nhiều images. |
-| `["https://example.com/1.jpg"]` | Dùng một background image. |
-| `["https://your-domain.com/random?..."]` | Dùng random image API link. Bạn có thể cấu hình Random Image API của mình trong Other Settings, rồi paste generated random image link ở đây như single-background entry. |
+| `bing` | Dùng chế độ xoay vòng hình nền Bing. |
+| `["https://example.com/1.jpg","https://example.com/2.jpg"]` | Xoay vòng nhiều ảnh. |
+| `["https://example.com/1.jpg"]` | Dùng một ảnh nền. |
+| `["https://your-domain.com/random?..."]` | Dùng liên kết API ảnh ngẫu nhiên. Bạn có thể cấu hình API ảnh ngẫu nhiên của mình trong Cài đặt khác, rồi dán liên kết ảnh ngẫu nhiên đã tạo vào đây như một mục nền đơn. |
 
-Admin background hỗ trợ image URLs. Có thể tách nhiều URLs bằng English commas theo prompt trên page. Để trống sẽ dùng default background.
+Nền quản trị hỗ trợ URL ảnh. Có thể tách nhiều URL bằng dấu phẩy tiếng Anh theo gợi ý trên trang. Nếu để trống, hệ thống dùng nền mặc định.
 
-## Default Naming Method
+## Phương thức đặt tên mặc định
 
-| Method | Result |
+| Phương thức | Kết quả |
 | --- | --- |
-| Default | Time-random prefix + original filename, ví dụ `1760000000000_cat.png`. |
-| Prefix only | Chỉ time-random prefix và extension, ví dụ `1760000000000.png`. |
-| Original name only | Giữ original filename, ví dụ `cat.png`. Nếu trùng, ImgBed thêm `(1)`, `(2)`, v.v. |
-| Short link | Dùng 8-character short ID và extension, ví dụ `a1b2c3d4.png`. |
+| Mặc định | Tiền tố ngẫu nhiên theo thời gian + tên tệp gốc, ví dụ `1760000000000_cat.png`. |
+| Chỉ tiền tố | Chỉ dùng tiền tố ngẫu nhiên theo thời gian và phần mở rộng, ví dụ `1760000000000.png`. |
+| Chỉ tên gốc | Giữ tên tệp gốc, ví dụ `cat.png`. Nếu trùng, ImgBed thêm `(1)`, `(2)` và tiếp tục như vậy. |
+| Liên kết ngắn | Dùng ID ngắn 8 ký tự kèm phần mở rộng, ví dụ `a1b2c3d4.png`. |

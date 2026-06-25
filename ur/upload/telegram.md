@@ -11,23 +11,23 @@
 
 ## کہاں شامل کریں
 
-1. System Settings کھولیں۔
-2. Upload Settings میں جائیں۔
-3. اوپر دائیں طرف Add Channel پر کلک کریں۔
+1. سسٹم سیٹنگز کھولیں۔
+2. اپ لوڈ سیٹنگز میں جائیں۔
+3. اوپر دائیں طرف چینل شامل کریں پر کلک کریں۔
 4. `Telegram` منتخب کریں۔
 
-## Field Reference
+## فیلڈز کی تفصیل
 
-| Field | کام | Required |
+| فیلڈ | کام | ضروری |
 | --- | --- | --- |
-| Channel name | اس channel کا واضح نام، مثلاً "Telegram Primary"۔ | Required |
-| Active | اس channel کو enable یا disable کرتا ہے۔ | Recommended |
-| Bot Token | آپ کے Telegram bot کا token۔ | Required |
-| Session ID (Chat ID) | Telegram channel کی ID۔ | Required |
-| Relay Proxy URL (optional) | صرف اس وقت استعمال کریں جب Telegram access غیر مستحکم ہو۔ مکمل proxy URL لکھیں، `https://` سمیت۔ | Optional |
-| Remark | آئندہ maintenance کے لیے نوٹس۔ | Optional |
+| Channel name | اس channel کا واضح نام، مثلاً "Telegram Primary"۔ | ضروری |
+| Active | اس channel کو فعال یا disable کرتا ہے۔ | تجویز کردہ |
+| Bot Token | آپ کے Telegram bot کا token۔ | ضروری |
+| Session ID (Chat ID) | Telegram channel کی ID۔ | ضروری |
+| Relay Proxy URL (اختیاری) | صرف اس وقت استعمال کریں جب Telegram access غیر مستحکم ہو۔ مکمل proxy URL لکھیں، `https://` سمیت۔ | اختیاری |
+| Remark | آئندہ maintenance کے لیے نوٹس۔ | اختیاری |
 
-## Setup Steps
+## سیٹ اپ کے مراحل
 
 ### 1. Telegram Bot بنائیں
 
@@ -50,7 +50,7 @@
 
 Public اور private دونوں channels استعمال کیے جا سکتے ہیں۔
 
-![Create a channel](../../image/upload/telegram/新建频道.png)
+![چینل بنائیں](../../image/upload/telegram/新建频道.png)
 
 ### 3. Bot کو Channel میں شامل کریں
 
@@ -64,59 +64,59 @@ Public اور private دونوں channels استعمال کیے جا سکتے ہ
 
 ![Invite the bot to the channel](../../image/upload/telegram/邀请机器人进频道里.png)
 
-### 4. User Info - Get ID - IDbot سے Channel ID حاصل کریں
+### 4. `User Info - Get ID - IDbot` سے Channel ID حاصل کریں
 
 1. Telegram میں `@userinfobot` تلاش کریں۔ اس کا display name عموماً `User Info - Get ID - IDbot` ہوتا ہے۔
 2. chat کھول کر `Start` پر کلک کریں۔
 3. bot کے options میں سے `Channel` منتخب کریں۔
 4. message picker میں target channel منتخب کریں اور اسے `@userinfobot` کو بھیجیں۔
-5. جب `@userinfobot` نتیجہ دے، تو `Id: -100...` کے طور پر دکھایا گیا number copy کریں۔
+5. جب `@userinfobot` نتیجہ دے، تو `Id: -100...` کے طور پر دکھایا گیا number کاپی کریں۔
 
 `-100` سے شروع ہونے والا number وہی `Session ID (Chat ID)` ہے جو ImgBed کو چاہیے۔
 
-![Get the channel ID](../../image/upload/telegram/获取频道id.png)
+![channel ID حاصل کریں](../../image/upload/telegram/获取频道id.png)
 
 ### 5. ImgBed میں Telegram Channel بھریں
 
-channel configuration dialog پر واپس جائیں اور fields یوں بھریں:
+channel configuration dialog پر واپس جائیں اور فیلڈز یوں بھریں:
 
-| UI Field | Value |
+| UI فیلڈ | قدر |
 | --- | --- |
 | Channel Identifier | اپنی مرضی کا channel name، مثلاً `TelegramPrimary`۔ |
-| Active | Recommended۔ |
+| Active | تجویز کردہ۔ |
 | Bot Token | `@BotFather` سے ملا ہوا bot token۔ |
 | Session ID (Chat ID) | `@userinfobot` سے ملا ہوا `-100...` number۔ |
-| Relay Proxy URL (optional) | صرف ضرورت ہو تو، مثلاً `https://your-tg-proxy.example.com`۔ |
-| Remark | optional notes۔ |
+| Relay Proxy URL (اختیاری) | صرف ضرورت ہو تو، مثلاً `https://your-tg-proxy.example.com`. |
+| Remark | اختیاری نوٹس۔ |
 
 کام مکمل ہو جائے تو Save پر کلک کریں۔
 
-![Edit the configuration](../../image/upload/telegram/编辑配置.png)
+![configuration میں ترمیم کریں](../../image/upload/telegram/编辑配置.png)
 
 ## Verify کیسے کریں
 
-| Check | Verify کرنے کا طریقہ |
+| جانچ | Verify کرنے کا طریقہ |
 | --- | --- |
-| Channel card appears | Save کے بعد Upload Settings میں Telegram channel card نظر آنا چاہیے۔ |
-| Channel can be enabled | Active switch on رہنا چاہیے۔ |
-| Configuration is saved | detail view میں Bot Token اور Chat ID محفوظ دکھنے چاہئیں۔ |
-| Upload works | ایک test image upload کریں اور دیکھیں کہ وہ target Telegram channel میں آتی ہے یا نہیں۔ |
+| چینل card ظاہر ہوتا ہے | محفوظ کرنے کے بعد اپ لوڈ سیٹنگز میں Telegram چینل card نظر آنا چاہیے۔ |
+| Channel can be فعال | Active switch on رہنا چاہیے۔ |
+| configuration محفوظ ہے | تفصیلی منظر میں Bot Token اور Chat ID محفوظ دکھنے چاہئیں۔ |
+| Upload کام کرتا ہے | ایک آزمائشی تصویر upload کریں اور دیکھیں کہ وہ target Telegram چینل میں آتی ہے یا نہیں۔ |
 
-## Quick Checklist
+## فوری چیک لسٹ
 
 ```text
-@BotFather سے bot بنائیں
--> Bot Token محفوظ کریں
--> Telegram channel بنائیں
--> bot کو channel میں شامل کریں اور administrator permissions دیں
--> @userinfobot تلاش کریں اور Channel منتخب کریں
--> channel کا کوئی message @userinfobot کو forward کریں
--> واپس آنے والا Id: -100... copy کریں
--> ImgBed میں Bot Token اور Chat ID درج کریں
--> Save کریں اور test image upload کریں
+Create a bot with @BotFather
+-> Save the Bot Token
+-> Create a Telegram channel
+-> Add the bot to the channel and grant administrator permissions
+-> Search for @userinfobot and choose Channel
+-> Forward any message from the channel to @userinfobot
+-> Copy the returned Id: -100...
+-> Enter the Bot Token and Chat ID in ImgBed
+-> Save and upload a test image
 ```
 
-## References
+## حوالہ جات
 
 1. Telegram bots: https://core.telegram.org/bots
 2. Telegram Bot API: https://core.telegram.org/bots/api

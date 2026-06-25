@@ -1,97 +1,97 @@
-# Magnet Transfer
+# मैग्नेट स्थानांतरण
 
-Magnet transfer magnet link से files download करता है और उन्हें आपके चुने हुए cloud storage channel पर automatically upload कर देता है।
+मैग्नेट स्थानांतरण किसी मैग्नेट लिंक से फ़ाइलें डाउनलोड करता है और उन्हें आपके चुने हुए क्लाउड स्टोरेज चैनल पर अपने आप अपलोड कर देता है।
 
-यह anime episodes, videos, archives और similar files transfer करने के लिए उपयोगी है। Magnet link paste करें, ImgBed background download task बनाता है। Download पूरा होने के बाद file ImgBed पर upload होती है और final link upload list में दिखता है।
+यह एनीमे एपिसोड, वीडियो, संपीड़ित फ़ाइलों और इसी तरह की फ़ाइलों को स्थानांतरित करने के लिए उपयोगी है। मैग्नेट लिंक पेस्ट करें, और ImgBed पृष्ठभूमि में डाउनलोड कार्य बना देता है। डाउनलोड पूरा होने के बाद फ़ाइल ImgBed पर अपलोड होती है और अंतिम लिंक अपलोड सूची में दिखाई देता है।
 
-![Magnet transfer](../../image/other/磁力链接/磁力链接.png)
+![मैग्नेट स्थानांतरण](../../image/other/磁力链接/磁力链接.png)
 
-## कहाँ इस्तेमाल करें
+## इसे कहाँ उपयोग करें
 
-Magnet transfer entry homepage upload area में होती है।
+मैग्नेट स्थानांतरण का प्रवेश बिंदु होमपेज के अपलोड क्षेत्र में है।
 
-Magnet link input box में paste करें, `Transfer` चुनें, फिर upload करें।
+मैग्नेट लिंक को इनपुट बॉक्स में पेस्ट करें, `Transfer` चुनें, फिर अपलोड करें।
 
-![Upload anime](../../image/other/磁力链接/上传番剧.png)
+![एनीमे अपलोड](../../image/other/磁力链接/上传番剧.png)
 
-## पहली बार इस्तेमाल से पहले
+## पहली बार उपयोग से पहले
 
-पहले admin panel में magnet transfer configure करें।
+पहले एडमिन पैनल में मैग्नेट स्थानांतरण कॉन्फ़िगर करें।
 
-आम तौर पर आपको चाहिए:
+आमतौर पर आपको चाहिए:
 
-1. Download task चलाने के लिए GitHub account।
-2. Cloud upload channel, जैसे Google Drive या OneDrive।
-3. Target upload directory।
-4. Task timeout।
+1. डाउनलोड कार्य चलाने के लिए GitHub खाता।
+2. कोई क्लाउड अपलोड चैनल, जैसे Google Drive या OneDrive।
+3. लक्ष्य अपलोड डायरेक्टरी।
+4. कार्य की समय-सीमा।
 
-Settings ready होने के बाद homepage पर लौटें और transfer शुरू करने के लिए magnet link paste करें।
+सेटिंग्स तैयार होने के बाद, होमपेज पर लौटें और स्थानांतरण शुरू करने के लिए मैग्नेट लिंक पेस्ट करें।
 
-## Magnet Link Upload करना
+## मैग्नेट लिंक अपलोड करना
 
-1. Homepage upload box में magnet link paste करें।
-2. Confirm करें कि mode `Transfer` है।
-3. Upload click करें।
-4. ImgBed द्वारा magnet task create करने का इंतज़ार करें।
-5. Task start होने के बाद progress देखने के लिए bottom-right corner वाला `Magnet Tasks` floating panel इस्तेमाल करें।
+1. होमपेज के अपलोड बॉक्स में मैग्नेट लिंक पेस्ट करें।
+2. सुनिश्चित करें कि मोड `Transfer` पर सेट है।
+3. अपलोड पर क्लिक करें।
+4. ImgBed द्वारा मैग्नेट कार्य बनाए जाने की प्रतीक्षा करें।
+5. कार्य शुरू होने के बाद प्रगति देखने के लिए नीचे दाएँ कोने में मौजूद `Magnet Tasks` फ़्लोटिंग पैनल का उपयोग करें।
 
-Download और upload में समय लग सकता है। Speed magnet resource, GitHub runtime environment और selected cloud storage channel पर depend करती है।
+डाउनलोड और अपलोड में समय लग सकता है। गति मैग्नेट संसाधन, GitHub रनटाइम वातावरण और चुने गए क्लाउड स्टोरेज चैनल पर निर्भर करती है।
 
-![Magnet downloading](../../image/other/磁力链接/磁力链接下载中.png)
+![मैग्नेट डाउनलोड हो रहा है](../../image/other/磁力链接/磁力链接下载中.png)
 
-## Completion के बाद
+## पूरा होने के बाद
 
-Task complete होने पर upload list file name और link दिखाती है।
+कार्य पूरा होने के बाद, अपलोड सूची फ़ाइल नाम और लिंक दिखाती है।
 
-Videos में video preview, images में image preview, और other files में regular file icon दिखता है।
+वीडियो में वीडियो पूर्वावलोकन, छवियों में छवि पूर्वावलोकन और अन्य फ़ाइलों में सामान्य फ़ाइल आइकन दिखाई देता है।
 
-![Downloaded video](../../image/other/磁力链接/下载好后的视频.png)
+![डाउनलोड किया गया वीडियो](../../image/other/磁力链接/下载好后的视频.png)
 
-आप copy कर सकते हैं:
+आप कॉपी कर सकते हैं:
 
-| Link Type | Use Case |
+| लिंक प्रकार | उपयोग का मामला |
 | --- | --- |
-| Original link | Direct file access |
-| Markdown | Markdown posts या notes |
-| HTML | Web page code |
-| BBCode | BBCode support करने वाले forums |
+| मूल लिंक | फ़ाइल तक सीधी पहुँच |
+| Markdown | Markdown पोस्ट या नोट्स |
+| HTML | वेब पेज कोड |
+| BBCode | BBCode का समर्थन करने वाले फ़ोरम |
 
-## Magnet Task Panel
+## मैग्नेट कार्य पैनल
 
-Bottom-right magnet task panel task count, task name, progress और final status दिखाता है।
+नीचे दाएँ स्थित मैग्नेट कार्य पैनल कार्य संख्या, कार्य नाम, प्रगति और अंतिम स्थिति दिखाता है।
 
-Common states:
+सामान्य स्थितियाँ:
 
-| Status | Meaning |
+| स्थिति | अर्थ |
 | --- | --- |
-| Waiting | Task created है और run होने का इंतज़ार कर रहा है। |
-| Downloading | Magnet resource download हो रहा है। |
-| Uploading | File download हो चुकी है और cloud storage पर upload हो रही है। |
-| Completed | Upload successful है और link copy किया जा सकता है। |
-| Failed | Task successful finish नहीं हुआ। Message check करें और फिर कोशिश करें। |
+| प्रतीक्षा में | कार्य बनाया जा चुका है और चलने की प्रतीक्षा कर रहा है। |
+| डाउनलोड हो रहा है | मैग्नेट संसाधन डाउनलोड हो रहा है। |
+| अपलोड हो रहा है | फ़ाइल डाउनलोड हो चुकी है और क्लाउड स्टोरेज पर अपलोड हो रही है। |
+| पूर्ण | अपलोड सफल हुआ और लिंक कॉपी किया जा सकता है। |
+| विफल | कार्य सफलतापूर्वक पूरा नहीं हुआ। संदेश देखें और फिर प्रयास करें। |
 
-## Tips
+## सुझाव
 
-- अगर magnet link में multiple files हैं, तो ImgBed display के लिए मुख्य completed file को priority देता है।
-- Large files में ज़्यादा समय लगेगा। Page refresh करने से पहले task finish होने दें।
-- अगर magnet resource के available peers नहीं हैं, तो download बहुत slow हो सकता है या fail हो सकता है।
-- Cloud account quota खत्म हो, authorization expired हो, या upload directory गलत हो, तो task fail हो सकता है।
-- Upload complete होने के बाद video preview दिखने में कुछ seconds लग सकते हैं।
+- यदि मैग्नेट लिंक में कई फ़ाइलें हैं, तो ImgBed प्रदर्शन के लिए मुख्य पूर्ण फ़ाइल को प्राथमिकता देता है।
+- बड़ी फ़ाइलों में अधिक समय लगता है। पेज रीफ़्रेश करने से पहले कार्य पूरा होने की प्रतीक्षा करें।
+- यदि मैग्नेट संसाधन के लिए कोई उपलब्ध पीयर नहीं है, तो यह बहुत धीमा हो सकता है या विफल हो सकता है।
+- यदि क्लाउड खाते का कोटा समाप्त हो गया है, अनुमति की अवधि समाप्त हो गई है या अपलोड डायरेक्टरी गलत है, तो कार्य विफल हो सकता है।
+- अपलोड पूरा होने के बाद वीडियो पूर्वावलोकन में कुछ सेकंड लग सकते हैं।
 
-## FAQ
+## अक्सर पूछे जाने वाले प्रश्न
 
-### Magnet Link paste करने के बाद कुछ start नहीं हो रहा
+### मैग्नेट लिंक पेस्ट करने के बाद कुछ शुरू नहीं होता
 
-Confirm करें कि admin panel में magnet transfer enabled है और usable GitHub account तथा cloud channel selected हैं।
+पुष्टि करें कि एडमिन पैनल में मैग्नेट स्थानांतरण सक्षम है और उपयोग योग्य GitHub खाता तथा क्लाउड चैनल चुने गए हैं।
 
-### Download हमेशा slow है
+### डाउनलोड हमेशा धीमा है
 
-Magnet speed resource पर depend करती है। अगर available peers नहीं हैं, तो download बहुत slow या impossible हो सकता है।
+मैग्नेट की गति संसाधन पर निर्भर करती है। यदि कोई उपलब्ध पीयर नहीं है, तो डाउनलोड बहुत धीमा या असंभव हो सकता है।
 
-### Upload के बाद Preview नहीं दिख रहा
+### अपलोड के बाद कोई पूर्वावलोकन नहीं दिखता
 
-पहले confirm करें कि file link खुल रहा है। Video files को browser में load होने में थोड़ा समय लग सकता है, या आप link direct खोल सकते हैं।
+पहले पुष्टि करें कि फ़ाइल लिंक खुलता है। वीडियो फ़ाइलों को ब्राउज़र में लोड होने में थोड़ा समय लग सकता है, या आप लिंक को सीधे खोल सकते हैं।
 
-### Task fail हो तो क्या check करें?
+### कार्य विफल होने पर क्या जाँचें?
 
-Magnet link valid है या नहीं, cloud channel काम कर रहा है या नहीं, और upload directory सही है या नहीं, यह check करें। फिर task दोबारा submit करें।
+जाँचें कि मैग्नेट लिंक मान्य है या नहीं, क्लाउड चैनल काम कर रहा है या नहीं, और अपलोड डायरेक्टरी सही है या नहीं। फिर कार्य दोबारा सबमिट करें।

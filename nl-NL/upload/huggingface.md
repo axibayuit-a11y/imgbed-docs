@@ -55,13 +55,13 @@ Het systeem handelt deze details af:
 ## Snelle checklist
 
 ```text
-Log in bij Hugging Face
--> Maak een Access Token
--> Selecteer write-machtiging
--> Ga terug naar ImgBed en vul token en repositorynaam in
--> Sla op
--> Als alleen een repo-naam is ingevuld, voegt ImgBed automatisch de huidige gebruikersnaam toe
--> Als username/repo is ingevuld, gebruikt ImgBed dit zoals het is
--> ImgBed controleert of maakt de dataset-repository
--> Upload een testafbeelding
+Sign in to Hugging Face
+-> Create an Access Token
+-> Select write permission
+-> Return to ImgBed and enter the token and repository name
+-> Save
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> ImgBed checks or creates the dataset repository
+-> Upload a test image
 ```

@@ -22,7 +22,7 @@ WebDAV kanalını şu durumlarda kullanın:
 
 1. Sistem Ayarları'nı açın.
 2. Yükleme Ayarları'na gidin.
-3. Sağ üst köşedeki Add Channel düğmesine tıklayın.
+3. Sağ üst köşedeki Kanal Ekle düğmesine tıklayın.
 4. `WebDAV` seçeneğini seçin.
 
 ## Alan Açıklamaları
@@ -82,7 +82,7 @@ Parça dizini yalnızca uzak depolama düzenini etkiler. ImgBed'deki dosya URL's
 ## Kurulum Adımları
 
 1. Yükleme Ayarları'nı açın.
-2. Add Channel düğmesine tıklayın.
+2. Kanal Ekle düğmesine tıklayın.
 3. `WebDAV` seçeneğini seçin.
 4. Tanıyabileceğiniz bir kanal adı girin, örneğin `koofr`.
 5. WebDAV endpoint adresini girin, örneğin `https://app.koofr.net/dav/Koofr`.
@@ -130,14 +130,14 @@ Emin değilseniz otomatik anlaşmayı kullanın.
 ## Kısa Kontrol Listesi
 
 ```text
-WebDAV endpoint, username ve password hazırla
--> Yükleme Ayarları'nı aç
--> Kanal ekle
--> WebDAV seç
--> Endpoint / username / password gir
--> Varsayılan olarak authentication mode değerini Basic bırak
--> Varsayılan olarak storage directory değerini imgbed bırak
--> Kaydet
--> Kapasite sorgula
--> Test dosyası yükle
+Prepare WebDAV endpoint, username, and password
+-> Open Upload Settings
+-> Add Channel
+-> Select WebDAV
+-> Enter Endpoint / username / password
+-> Keep authentication mode as Basic by default
+-> Keep storage directory as imgbed by default
+-> Save
+-> Query capacity
+-> Upload a test file
 ```

@@ -1,44 +1,46 @@
-# Uso del blog
+# Blog
 
-La función de blog añade una página de blog independiente a tu sitio ImgBed.
+La función de blog añade una página de blog independiente a su sitio ImgBed.
 
-Cuando esté activada, los visitantes podrán entrar desde:
+Después de activarla, los visitantes pueden abrir:
 
 ```text
-https://tu-dominio/blog/
+https://your-domain.com/blog/
 ```
 
 ![Página principal del blog](../../image/other/博客/博客首页.png)
 
-El blog está adaptado a partir del proyecto de código abierto [LyraVoid/Mizuki](https://github.com/LyraVoid/Mizuki). ImgBed lo reescribe e integra con Vue para que funcione como parte del sitio de alojamiento de archivos.
+El blog está adaptado a partir del proyecto de código abierto [LyraVoid/Mizuki](https://github.com/LyraVoid/Mizuki). ImgBed lo reescribe e integra con Vue para que pueda ejecutarse como parte del sitio de alojamiento de imágenes.
 
-## Dónde se configura
+## Dónde configurarlo
+
+Los ajustes del blog se encuentran en:
 
 ```text
-Configuración del sistema -> Otros ajustes -> Blog
+System Settings -> Other Settings -> Blog
 ```
 
 ![Ajustes del blog](../../image/other/博客/QQ20260611-221702.png)
 
-## Primer uso
+## Configuración inicial
 
-1. Activa el interruptor `Habilitar`.
-2. Elige la cuenta de GitHub donde se guardará la configuración del blog.
-3. Haz clic en `Actualizar blog`.
-4. Espera el mensaje de actualización correcta.
-5. Abre `https://tu-dominio/blog/` para comprobar el resultado.
+1. Active `Enable`.
+2. Seleccione la cuenta de GitHub que se usará para guardar la configuración del blog.
+3. Haga clic en `Update Blog`.
+4. Espere el mensaje de éxito.
+5. Abra `https://your-domain.com/blog/` para ver el blog.
 
-En el primer uso, ImgBed prepara un repositorio privado en la cuenta de GitHub seleccionada:
+En el primer uso, ImgBed prepara un repositorio privado de GitHub en la cuenta seleccionada:
 
 ```text
 imgbed-blog-config
 ```
 
-Ese repositorio guarda la configuración del blog y el contenido de los artículos.
+Este repositorio guarda los ajustes del blog y el contenido de las entradas.
 
-## Cómo escribir artículos
+## Escribir entradas
 
-Los artículos se editan en tu repositorio privado de GitHub:
+Edite las entradas del blog en su repositorio privado de GitHub:
 
 ```text
 imgbed-blog-config
@@ -46,40 +48,40 @@ imgbed-blog-config
 
 Flujo habitual:
 
-1. Abre GitHub.
-2. Entra en el repositorio `imgbed-blog-config`.
-3. Crea o modifica archivos de artículos.
-4. Guarda los cambios con un commit.
-5. Vuelve al panel de administración de ImgBed y pulsa `Actualizar blog`. También puedes hacer clic tres veces en el logotipo de la esquina superior izquierda del blog para forzar la actualización.
+1. Abra GitHub.
+2. Entre en el repositorio privado `imgbed-blog-config`.
+3. Edite o añada archivos de entradas.
+4. Confirme los cambios.
+5. Vuelva al panel de administración de ImgBed y haga clic en `Update Blog`, o haga clic tres veces en el logotipo de la esquina superior izquierda de la página principal del blog para activar una actualización del blog.
 
-`Actualizar blog` no sobrescribe los artículos que ya escribiste. Se usa sobre todo para inicializar el repositorio o refrescar la caché del blog.
+`Update Blog` no sobrescribe el contenido que haya escrito. Inicializa el repositorio cuando es necesario y actualiza la caché del blog.
 
-## Funciones disponibles
+## Funciones admitidas
 
-El blog incluye listado de artículos, categorías, etiquetas, archivo, búsqueda, modo oscuro y cambio de idioma.
+El blog admite funciones habituales de blog, como listas de entradas, categorías, etiquetas, archivo, búsqueda, modo oscuro y cambio de idioma.
 
 También admite comentarios y estadísticas de visitas.
 
 ![Comentarios del blog](../../image/other/博客/支持留言.png)
 
-Los comentarios aparecen debajo de cada artículo. El visitante puede enviar avatar, apodo, correo electrónico y contenido del comentario.
+Los comentarios aparecen debajo de las entradas. Los visitantes pueden enviar un avatar, un apodo, un correo electrónico y el contenido del comentario.
 
-Las estadísticas muestran visitas de artículos y visitas del sitio, útiles para entender el tráfico del blog.
+Las estadísticas de visitas muestran vistas de las entradas y visitas del sitio, lo que ayuda a entender el tráfico del blog.
 
-## Dirección de acceso
+## URL
 
-El blog siempre se publica bajo `/blog/`.
+El blog siempre está disponible en `/blog/`.
 
-Si tu dominio de ImgBed es:
+Por ejemplo, si su dominio de ImgBed es:
 
 ```text
 https://image.example.com
 ```
 
-la dirección del blog será:
+la URL del blog será:
 
 ```text
 https://image.example.com/blog/
 ```
 
-Si desactivas el blog, los visitantes ya no podrán acceder a esa página.
+Después de desactivar el blog, los visitantes ya no podrán acceder a la página del blog.

@@ -1,152 +1,153 @@
-# Authentication এবং Login Device Management
+# প্রমাণীকরণ ও লগইন ডিভাইস ব্যবস্থাপনা
 
-`Authentication Management` এবং `Login Device Management` আপনার ImgBed admin panel, public upload entry এবং WebDAV access সুরক্ষিত রাখে।
+প্রমাণীকরণ ব্যবস্থাপনা এবং লগইন ডিভাইস ব্যবস্থাপনা আপনার ImgBed অ্যাডমিন প্যানেল, প্রকাশ্য আপলোড প্রবেশপথ এবং WebDAV প্রবেশাধিকার সুরক্ষিত রাখে.
 
-এই পেজ থেকে access credentials সেট করা, signed-in devices দেখা এবং দরকার হলে পুরোনো sessions revoke করা যায়।
+এই পাতায় প্রবেশাধিকার পরিচয়পত্র সেট করা, লগইন করা ডিভাইস পর্যালোচনা করা এবং প্রয়োজন হলে পুরোনো সেশন বাতিল করা যায়.
 
-## কোথায় Configure করবেন
+## কোথায় কনফিগার করবেন
 
-Admin panel খুলে যান:
+অ্যাডমিন প্যানেল খুলে যান:
 
 ```text
 System Settings -> Security Settings
 ```
 
-এই page-এ দুটি প্রধান area আছে:
+পাতায় দুটি প্রধান অংশ আছে:
 
-- Authentication Management
-- Login Device Management
+- প্রমাণীকরণ ব্যবস্থাপনা
+- লগইন ডিভাইস ব্যবস্থাপনা
 
-![Authentication management](../../image/Safety/认证管理界面.png)
+![প্রমাণীকরণ ব্যবস্থাপনা](../../image/Safety/认证管理界面.png)
 
-## Authentication Management কী করে
+## প্রমাণীকরণ ব্যবস্থাপনা কী করে
 
-Authentication Management access credentials সংরক্ষণ করে।
+প্রমাণীকরণ ব্যবস্থাপনা প্রবেশাধিকার পরিচয়পত্র সংরক্ষণ করে.
 
-এর দুই ধরনের authentication আছে:
+এটি দুই ধরনের:
 
-- User-side authentication
-- Admin-side authentication
+- ব্যবহারকারী-পক্ষের প্রমাণীকরণ
+- অ্যাডমিন-পক্ষের প্রমাণীকরণ
 
-## User-Side Authentication
+## ব্যবহারকারী-পক্ষের প্রমাণীকরণ
 
-User-side authentication হলো upload password।
+ব্যবহারকারী-পক্ষের প্রমাণীকরণ হলো আপলোড পাসওয়ার্ড.
 
-Upload password সেট করলে সাধারণ visitors-কে upload page ব্যবহার করার আগে password দিতে হবে। Public upload page সবার জন্য খোলা রাখতে না চাইলে এটি কাজে লাগে।
+আপলোড পাসওয়ার্ড সেট করলে সাধারণ দর্শকদের আপলোড পাতা ব্যবহার করার আগে পাসওয়ার্ড দিতে হবে. আপনি প্রকাশ্য আপলোড পাতা সবার জন্য খোলা রাখতে না চাইলে এটি কার্যকর.
 
-![User login page](../../image/Safety/用户端登录界面.png)
+![ব্যবহারকারী লগইন পাতা](../../image/Safety/用户端登录界面.png)
 
-### Upload Password সেট করা
+### আপলোড পাসওয়ার্ড সেট করা
 
-Upload password configured থাকলে:
+আপলোড পাসওয়ার্ড কনফিগার করা হলে:
 
-- Visitors-কে upload page ব্যবহারের আগে password দিতে হবে।
-- Password accepted হওয়ার পরই upload করা যাবে।
-- User-side device sessions enabled থাকলে ImgBed সেই user-side device record করে।
+- দর্শকদের আপলোড পাতা ব্যবহার করার আগে পাসওয়ার্ড দিতে হবে.
+- পাসওয়ার্ড গ্রহণ হওয়ার পরই আপলোড ব্যবহার করা যাবে.
+- ব্যবহারকারী-পক্ষের ডিভাইস সেশন চালু থাকলে ImgBed সেই ব্যবহারকারী-পক্ষের ডিভাইস রেকর্ড করবে.
 
-Upload password বদলালে পুরোনো user-side sessions invalid হয়ে যায়। Visitors-কে নতুন password আবার দিতে হবে।
+আপলোড পাসওয়ার্ড বদলালে পুরোনো ব্যবহারকারী-পক্ষের সেশন বাতিল হয়ে যায়. দর্শকদের নতুন পাসওয়ার্ড আবার দিতে হবে.
 
-## Admin-Side Authentication
+## অ্যাডমিন-পক্ষের প্রমাণীকরণ
 
-Admin-side authentication admin username এবং password ব্যবহার করে।
+অ্যাডমিন-পক্ষের প্রমাণীকরণ অ্যাডমিন ব্যবহারকারীর নাম এবং পাসওয়ার্ড ব্যবহার করে.
 
-এটি admin panel সুরক্ষিত রাখে। Production use-এর জন্য এটি সবসময় configure করা উচিত।
+এটি অ্যাডমিন প্যানেল সুরক্ষিত রাখে. উৎপাদন পরিবেশে এটি সবসময় কনফিগার করা উচিত.
 
-![Admin login page](../../image/Safety/管理端登录界面.png)
+![অ্যাডমিন লগইন পাতা](../../image/Safety/管理端登录界面.png)
 
-### Admin Credentials সেট করা
+### অ্যাডমিন পরিচয়পত্র সেট করা
 
-Admin username এবং password configured থাকলে:
+অ্যাডমিন ব্যবহারকারীর নাম এবং পাসওয়ার্ড কনফিগার করা হলে:
 
-- Admin panel খুলতে login করতে হবে।
-- Successful login একটি admin device record তৈরি করে।
-- Login Device Management-এ devices review, clean up বা force offline করা যায়।
+- অ্যাডমিন প্যানেল খুলতে লগইন করতে হবে.
+- সফল লগইন একটি অ্যাডমিন ডিভাইস রেকর্ড তৈরি করে.
+- লগইন ডিভাইস ব্যবস্থাপনায় ডিভাইস পর্যালোচনা, পরিষ্কার বা জোর করে অফলাইন করা যায়.
 
-Admin username বা password বদলালে পুরোনো admin sessions invalid হয়ে যায়। আপনাকে আবার sign in করতে হবে।
+অ্যাডমিন ব্যবহারকারীর নাম বা পাসওয়ার্ড বদলালে পুরোনো অ্যাডমিন সেশন বাতিল হয়ে যায়. আবার সাইন ইন করতে হবে.
 
-## Login Device Management কী করে
+## লগইন ডিভাইস ব্যবস্থাপনা কী করে
 
-Login Device Management signed-in devices দেখায়।
+লগইন ডিভাইস ব্যবস্থাপনা সাইন ইন করা ডিভাইস দেখায়.
 
-এটি দিয়ে দেখা যায়:
+এটি দিয়ে যাচাই করা যায়:
 
-- কোন devices admin panel access করেছে।
-- কোন devices user-side upload page access করেছে।
-- কোন WebDAV clients connected হয়েছে।
-- কোনো device session এখনও valid আছে কি না।
-- পুরোনো devices force offline করা উচিত কি না।
+- কোন ডিভাইস অ্যাডমিন প্যানেলে প্রবেশ করেছে.
+- কোন ডিভাইস ব্যবহারকারী-পক্ষের আপলোড পাতায় প্রবেশ করেছে.
+- কোন WebDAV ক্লায়েন্ট সংযুক্ত হয়েছে.
+- কোনো ডিভাইস সেশন এখনও বৈধ কি না.
+- পুরোনো ডিভাইস জোর করে অফলাইন করা দরকার কি না.
 
-Page-এ তিনটি tabs আছে:
+পাতায় তিনটি ট্যাব আছে:
 
-- Admin
-- User
+- অ্যাডমিন
+- ব্যবহারকারী
 - WebDAV
 
-## Global Cookie Security
+## সার্বিক Cookie নিরাপত্তা
 
-Login Device Management-এর উপরে global cookie behavior configure করা যায়।
+লগইন ডিভাইস ব্যবস্থাপনার ওপরের অংশে সার্বিক Cookie আচরণ কনফিগার করা যায়.
 
-### User Cookie Lifetime
+### ব্যবহারকারী Cookie-এর মেয়াদ
 
-User-side login কত দিন active থাকবে তা control করে।
+ব্যবহারকারী-পক্ষের লগইন কত দিন সক্রিয় থাকবে তা নিয়ন্ত্রণ করে.
 
-যেমন, 14 days সেট করলে visitors সাধারণত 14 দিনের মধ্যে upload password আবার দিতে হবে না।
+যেমন 14 দিন সেট করলে, দর্শকদের সাধারণত 14 দিনের মধ্যে আবার আপলোড পাসওয়ার্ড দিতে হবে না.
 
-### Admin Cookie Lifetime
+### অ্যাডমিন Cookie-এর মেয়াদ
 
-Admin login কত দিন active থাকবে তা control করে।
+অ্যাডমিন লগইন কত দিন সক্রিয় থাকবে তা নিয়ন্ত্রণ করে.
 
-যেমন, 14 days সেট করলে administrators সাধারণত 14 দিনের মধ্যে আবার sign in করতে হবে না।
+যেমন 14 দিন সেট করলে, অ্যাডমিনদের সাধারণত 14 দিনের মধ্যে আবার সাইন ইন করতে হবে না.
 
-### Secure Mode
+### Secure মোড
 
-Secure mode enabled থাকলে browsers login cookies শুধু HTTPS দিয়ে পাঠায়।
+Secure মোড চালু থাকলে ব্রাউজার শুধু HTTPS-এ লগইন Cookie পাঠায়.
 
-Production HTTPS sites-এর জন্য এটি enable করুন। Local HTTP testing-এ enable করবেন না, না হলে "login successful, কিন্তু refresh করলে logout" ধরনের আচরণ দেখা যেতে পারে।
+উৎপাদন HTTPS সাইটের জন্য এটি চালু করুন. স্থানীয় HTTP পরীক্ষায় এটি চালু করবেন না; নইলে “লগইন সফল হয়েছে, কিন্তু রিফ্রেশ করলে লগআউট হয়ে যায়” ধরনের আচরণ দেখা যেতে পারে.
 
-## Admin Login Devices
+## অ্যাডমিন লগইন ডিভাইস
 
-Admin tab admin panel-এ sign in করা devices দেখায়।
+অ্যাডমিন ট্যাব অ্যাডমিন প্যানেলে সাইন ইন করা ডিভাইস দেখায়.
 
-Device records তখনই দেখা যায় যখন admin credentials configured থাকে এবং admin panel login-এর মাধ্যমে access করা হয়।
+অ্যাডমিন পরিচয়পত্র কনফিগার করার পর এবং লগইনের মাধ্যমে অ্যাডমিন প্যানেলে প্রবেশ করলে তবেই ডিভাইস রেকর্ড দেখা যায়.
 
-প্রতিটি device card-এ দেখা যেতে পারে:
+প্রতিটি ডিভাইস কার্ডে দেখা যেতে পারে:
 
-- Device এবং browser information
-- First login IP
-- Last active IP
-- Login time
-- Last active time
-- Expiration time
-- Current status
+- ডিভাইস এবং ব্রাউজারের তথ্য
+- প্রথম লগইনের IP
+- শেষ সক্রিয় IP
+- লগইনের সময়
+- শেষ সক্রিয় সময়
+- মেয়াদ শেষ হওয়ার সময়
+- বর্তমান অবস্থা
 
-অচেনা device দেখলে সেটি invalid করতে `Force Offline` ব্যবহার করুন।
+অপরিচিত ডিভাইস দেখলে সেটি বাতিল করতে "জোর করে অফলাইন" ব্যবহার করুন.
 
-## পুরোনো Devices Clean Up করা
+## পুরোনো ডিভাইস পরিষ্কার করা
 
-`Clean Up Old Devices` current tab-এর পুরোনো login records bulk-এ সরায়।
+"পুরোনো ডিভাইস পরিষ্কার করা" বর্তমান ট্যাবের পুরোনো লগইন রেকর্ডগুলো একসঙ্গে সরিয়ে দেয়.
 
-যখন মনে হয় পুরোনো sessions অন্য devices-এ এখনও active থাকতে পারে, তখন এটি ব্যবহার করুন।
+অন্য ডিভাইসে পুরোনো সেশন এখনও সক্রিয় থাকতে পারে সন্দেহ হলে এটি ব্যবহার করুন.
 
-## Force Offline
+## জোর করে অফলাইন
 
-`Force Offline` একটি device session invalid করে।
+"জোর করে অফলাইন" একটি ডিভাইস সেশন বাতিল করে.
 
-Device force offline করার পর:
+কোনো ডিভাইস জোর করে অফলাইন করার পর:
 
-- Admin devices-কে আবার sign in করতে হবে।
-- User-side devices-কে upload password আবার দিতে হবে।
-- WebDAV clients-কে আবার authenticate করতে হবে।
+- অ্যাডমিন ডিভাইসকে আবার সাইন ইন করতে হবে.
+- ব্যবহারকারী-পক্ষের ডিভাইসকে আবার আপলোড পাসওয়ার্ড দিতে হবে.
+- WebDAV ক্লায়েন্টকে আবার প্রমাণীকরণ করতে হবে.
 
-Expired বা invalid devices সরিয়েও দেওয়া যায়।
+মেয়াদোত্তীর্ণ বা অকার্যকর ডিভাইসও সরানো যায়.
 
-## Current Device থেকে Sign Out
+## বর্তমান ডিভাইস থেকে সাইন আউট
 
-Current device card-এ `Current Device` mark থাকে।
+বর্তমান ডিভাইস কার্ডে "বর্তমান ডিভাইস" চিহ্ন থাকে.
 
-Current device sign out করলে:
+বর্তমান ডিভাইস থেকে সাইন আউট করলে:
 
-- Current admin session sign out হয়।
-- Current user-side session sign out হয়।
+- বর্তমান অ্যাডমিন সেশন সাইন আউট হবে.
+- বর্তমান ব্যবহারকারী-পক্ষের সেশন সাইন আউট হবে.
 
-ওই area ব্যবহার চালিয়ে যেতে আবার sign in করতে হবে।
+সেই অংশ ব্যবহার চালিয়ে যেতে আবার সাইন ইন করতে হবে.
+

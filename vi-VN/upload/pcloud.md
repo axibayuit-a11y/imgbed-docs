@@ -7,7 +7,7 @@
 
 ## Cần chuẩn bị trước
 
-| Requirement | Vì sao cần |
+| Yêu cầu | Vì sao cần |
 | --- | --- |
 | pCloud account email | Dùng để sign in vào pCloud API |
 | pCloud password | Dùng để sign in vào pCloud API |
@@ -16,31 +16,31 @@
 
 ## Thêm ở đâu
 
-1. Mở System Settings.
-2. Mở Upload Settings.
+1. Mở Cài đặt hệ thống.
+2. Mở Cài đặt tải lên.
 3. Nhấn `Add Channel` ở góc trên bên phải.
 4. Chọn `pCloud`.
 
-## Field Reference
+## Tham chiếu trường
 
-| Field | Purpose | Required |
+| Trường | Mục đích | Bắt buộc |
 | --- | --- | --- |
-| Channel name | Xác định pCloud channel này, ví dụ `Personal pCloud` | Yes |
-| Account email | Email đăng nhập pCloud của bạn | Yes |
-| Password | pCloud password của bạn | Yes |
-| API host | pCloud API host. Mặc định `api.pcloud.com`. | No |
-| Storage directory | Directory dùng để lưu files. Mặc định `imgbed`. | No |
+| Channel name | Xác định pCloud channel này, ví dụ `Personal pCloud` | Có |
+| Account email | Email đăng nhập pCloud của bạn | Có |
+| Password | pCloud password của bạn | Có |
+| API host | pCloud API host. Mặc định `api.pcloud.com`. | Không |
+| Storage directory | Directory dùng để lưu files. Mặc định `imgbed`. | Không |
 
 Chọn API host theo account region:
 
 | Account Region | API Host |
 | --- | --- |
-| Default / US | `api.pcloud.com` |
+| Mặc định / US | `api.pcloud.com` |
 | Europe | `eapi.pcloud.com` |
 
 ## Các bước thiết lập
 
-1. Mở Upload Settings.
+1. Mở Cài đặt tải lên.
 2. Nhấn `Add Channel`.
 3. Chọn `pCloud`.
 4. Nhập channel name dễ nhận biết.
@@ -54,21 +54,21 @@ Chọn API host theo account region:
 
 ## Cách kiểm tra
 
-| Check | Expected Result |
+| Kiểm tra | Kết quả mong đợi |
 | --- | --- |
 | Channel card | pCloud channel card xuất hiện sau khi save. |
-| Channel switch | Switch trên card vẫn enabled. |
-| Email display | Card hiển thị connected pCloud email. |
+| Channel switch | Switch trên card vẫn bật. |
+| Email display | Card hiển thị kết nốied pCloud email. |
 | Quota query | Sau khi query thành công, used và total capacity được hiển thị. |
-| Upload test | Test image xuất hiện trong configured pCloud storage directory. |
+| Upload test | Test image xuất hiện trong đã cấu hình pCloud storage directory. |
 
-![Quota query success](../../image/upload/pcloud/查询额度成功.png)
+![Quota query thành công](../../image/upload/pcloud/查询额度成功.png)
 
-## Troubleshooting
+## Khắc phục sự cố
 
 ### Vì sao không dùng OAuth2?
 
-pCloud OAuth2 mặc định không self-service. Bạn cần email cho pCloud để yêu cầu họ enable.
+pCloud OAuth2 mặc định không self-service. Bạn cần email cho pCloud để yêu cầu họ bật.
 
 Flow pCloud OAuth2 hiện tại cũng không hỗ trợ short-lived upload link workflow mà ImgBed cần, nên channel này dùng account email và password login.
 
@@ -86,17 +86,17 @@ Với EU accounts:
 eapi.pcloud.com
 ```
 
-## Quick Flow
+## Luồng nhanh
 
 ```text
-Chuẩn bị pCloud email và password
--> Mở Upload Settings
+Prepare your pCloud email and password
+-> Open Upload Settings
 -> Add Channel
--> Chọn pCloud
--> Điền channel name / email / password
--> Giữ API host là api.pcloud.com trừ khi account ở Europe
--> Giữ storage directory là imgbed trừ khi cần folder khác
+-> Choose pCloud
+-> Fill channel name / email / password
+-> Keep API host as api.pcloud.com unless your account is in Europe
+-> Keep storage directory as imgbed unless you need another folder
 -> Save
 -> Query quota
--> Upload test image
+-> Upload a test image
 ```

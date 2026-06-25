@@ -1,21 +1,21 @@
-# Menambahkan OneDrive Channel
+# Menambahkan Kanal OneDrive
 
-## Yang Perlu Disiapkan Dahulu
+## Yang Diperlukan Sebelum Memulai
 
-| Requirement | Mengapa Dibutuhkan |
+| Kebutuhan | Alasan Diperlukan |
 | --- | --- |
-| Microsoft account | Digunakan untuk mengakses Microsoft admin pages dan authorize OneDrive |
-| ImgBed domain Anda | Digunakan untuk OAuth callback URL |
-| App registration | Digunakan untuk generate `Client ID` dan `Client Secret` |
-| OneDrive account | Digunakan sebagai lokasi file storage sebenarnya |
+| Akun Microsoft | Digunakan untuk mengakses halaman admin Microsoft dan mengotorisasi OneDrive |
+| Domain ImgBed Anda | Digunakan untuk URL callback OAuth |
+| Registrasi aplikasi | Digunakan untuk menghasilkan `Client ID` dan `Client Secret` |
+| Akun OneDrive | Digunakan sebagai lokasi penyimpanan berkas yang sebenarnya |
 
-## Langkah Setup
+## Langkah Konfigurasi
 
-### Step 1: Buka Microsoft Entra ID
+### Langkah 1: Buka Microsoft Entra ID
 
 1. Buka `portal.azure.com`.
 2. Cari `Microsoft Entra ID` di bagian atas.
-3. Jika target page tidak muncul di dropdown, pilih:
+3. Jika halaman tujuan tidak muncul dalam menu tarik-turun, pilih:
 
 ```text
 Continue searching in Microsoft Entra ID
@@ -25,124 +25,124 @@ Continue searching in Microsoft Entra ID
 5. Buka `App registrations`.
 6. Klik `New registration`.
 
-### Step 2: Register App
+### Langkah 2: Daftarkan Aplikasi
 
-Di halaman `New registration`, isi:
+Pada halaman `New registration`, isi:
 
-| Field | Yang Diisi |
+| Kolom | Yang Harus Diisi |
 | --- | --- |
-| Name | Nama yang mudah dikenali, misalnya `imgbed-onedrive` |
-| Supported account types | Pilih sesuai tabel di bawah |
-| Redirect URI type | `Web` |
+| Nama | Nama yang mudah dikenali, misalnya `imgbed-onedrive` |
+| Jenis akun yang didukung | Pilih berdasarkan tabel di bawah |
+| Jenis Redirect URI | `Web` |
 | Redirect URI | `https://your-domain.com/api/oauth/onedrive/callback` |
 
-Panduan account type:
+Panduan jenis akun:
 
-| Skenario Anda | Supported Account Types |
+| Skenario Anda | Jenis Akun yang Didukung |
 | --- | --- |
-| Personal OneDrive saja | Pilih opsi personal Microsoft account. |
-| Personal dan work/school accounts | Pilih opsi yang mendukung personal dan organizational accounts. |
-| Company atau school OneDrive saja | Pilih organizational account option. |
+| Hanya OneDrive pribadi | Pilih opsi akun Microsoft pribadi. |
+| Akun pribadi dan akun kerja/sekolah | Pilih opsi yang mendukung akun pribadi dan akun organisasi. |
+| Hanya OneDrive perusahaan atau sekolah | Pilih opsi akun organisasi. |
 
-Klik register setelah form selesai diisi.
+Klik Daftar setelah formulir selesai diisi.
 
-![Create OneDrive app](../../image/upload/onedrive/添加应用程序注册.png)
+![Membuat aplikasi OneDrive](../../image/upload/onedrive/添加应用程序注册.png)
 
-### Step 3: Copy App Information
+### Langkah 3: Salin Informasi Aplikasi
 
-Setelah app dibuat, copy nilai berikut dari overview page:
+Setelah aplikasi dibuat, salin nilai berikut dari halaman ringkasan:
 
-| Microsoft Field | ImgBed Field |
+| Kolom Microsoft | Kolom ImgBed |
 | --- | --- |
 | `Application (client) ID` | `Client ID` |
-| `Directory (tenant) ID` | `Tenant ID` untuk organizational accounts |
+| `Directory (tenant) ID` | `Tenant ID` untuk akun organisasi |
 
-![Application and tenant IDs](../../image/upload/onedrive/应用程序ID和目录租户ID位.png)
+![Application dan tenant ID](../../image/upload/onedrive/应用程序ID和目录租户ID位.png)
 
-### Step 4: Buat Client Secret
+### Langkah 4: Buat Client Secret
 
 1. Buka `Certificates & secrets`.
 2. Klik `New client secret`.
-3. Masukkan description sesuai kebutuhan.
-4. Pilih expiration period.
-5. Copy `Value` segera setelah dibuat.
+3. Masukkan deskripsi sesuai kebutuhan.
+4. Pilih periode kedaluwarsa.
+5. Salin `Value` segera setelah dibuat.
 
-![Save client secret value](../../image/upload/onedrive/保存客户端密码值.png)
+![Menyimpan nilai client secret](../../image/upload/onedrive/保存客户端密码值.png)
 
-### Step 5: Tambahkan API Permissions
+### Langkah 5: Tambahkan Izin API
 
 1. Buka `API permissions`.
 2. Klik `Add a permission`.
 3. Pilih `Microsoft Graph`.
 4. Pilih `Delegated permissions`.
-5. Tambahkan permissions ini:
+5. Tambahkan izin berikut:
 
-| Permission | Purpose |
+| Izin | Tujuan |
 | --- | --- |
-| `Files.ReadWrite.All` | Upload files, membuat folders, dan delete files |
-| `offline_access` | Mengizinkan ImgBed mendapatkan `Refresh Token` |
-| `User.Read` | Membaca account dan quota information |
+| `Files.ReadWrite.All` | Mengunggah berkas, membuat folder, dan menghapus berkas |
+| `offline_access` | Memungkinkan ImgBed mendapatkan `Refresh Token` |
+| `User.Read` | Membaca informasi akun dan kuota |
 
-### Step 6: Isi OneDrive Channel
+### Langkah 6: Isi Kanal OneDrive
 
-Di Upload Settings, pilih `OneDrive` dan isi:
+Di Pengaturan Unggah, pilih `OneDrive`, lalu isi:
 
-| ImgBed Field | Yang Diisi |
+| Kolom ImgBed | Yang Harus Diisi |
 | --- | --- |
-| Channel name | Nama yang mudah dikenali, misalnya `Main OneDrive` |
-| Client ID | Microsoft `Application (client) ID` |
-| Client Secret | `Client Secret Value` yang Anda copy |
+| Nama kanal | Nama yang mudah dikenali, misalnya `Main OneDrive` |
+| Client ID | `Application (client) ID` Microsoft |
+| Client Secret | `Client Secret Value` yang telah Anda salin |
 | Tenant ID | Gunakan tabel di bawah |
-| Refresh Token | Biarkan kosong dulu |
-| Root directory | Optional. Default adalah `imgbed`. |
-| Note | Optional |
+| Refresh Token | Biarkan kosong untuk sementara |
+| Direktori root | Opsional. Nilai bawaannya `imgbed`. |
+| Catatan | Opsional |
 
-![Fill OneDrive channel config](../../image/upload/onedrive/添加新渠道配置.png)
+![Mengisi konfigurasi kanal OneDrive](../../image/upload/onedrive/添加新渠道配置.png)
 
 Cara mengisi `Tenant ID`:
 
-| Account Type You Chose | ImgBed `Tenant ID` |
+| Jenis Akun yang Dipilih | `Tenant ID` ImgBed |
 | --- | --- |
-| Personal accounts | `consumers` |
-| Personal + organizational accounts | `common` |
-| Current organization only | `Directory (tenant) ID` |
+| Akun pribadi | `consumers` |
+| Akun pribadi + organisasi | `common` |
+| Hanya organisasi saat ini | `Directory (tenant) ID` |
 
-### Step 7: Dapatkan Refresh Token
+### Langkah 7: Dapatkan Refresh Token
 
 1. Di ImgBed, klik `Get Token`.
-2. Sign in ke Microsoft account yang ingin dihubungkan.
-3. Approve authorization prompt.
-4. Callback page akan menampilkan `Refresh Token`.
-5. Copy token tersebut.
-6. Kembali ke ImgBed dan paste ke field `Refresh Token`.
+2. Masuk ke akun Microsoft yang ingin Anda hubungkan.
+3. Setujui permintaan otorisasi.
+4. Halaman callback akan menampilkan `Refresh Token`.
+5. Salin token tersebut.
+6. Kembali ke ImgBed dan tempelkan ke kolom `Refresh Token`.
 
-![Copy refresh token](../../image/upload/onedrive/复制刷新令牌.png)
+![Menyalin refresh token](../../image/upload/onedrive/复制刷新令牌.png)
 
-### Step 8: Save Channel
+### Langkah 8: Simpan Kanal
 
-Setelah semua field terisi, save channel.
+Setelah semua kolom diisi, simpan kanal.
 
-## Quick Flow
+## Alur Cepat
 
 ```text
-Buka portal.azure.com
--> Cari Microsoft Entra ID
--> Buka App registrations
--> Register app baru
--> Isi Name / Supported account types / Web redirect URI
+Open portal.azure.com
+-> Search for Microsoft Entra ID
+-> Open App registrations
+-> Register a new app
+-> Fill Name / Supported account types / Web redirect URI
 -> Register
 -> Copy Application (client) ID
--> Cek callback URL di Authentication
--> Buat Client Secret di Certificates & secrets
--> Tambahkan permissions di API permissions
--> Isi Client ID / Client Secret / Tenant ID ke ImgBed
--> Klik Get Token
--> Copy Refresh Token dari callback page
--> Paste kembali ke ImgBed dan save
+-> Check the callback URL in Authentication
+-> Create a Client Secret in Certificates & secrets
+-> Add permissions in API permissions
+-> Fill Client ID / Client Secret / Tenant ID into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
-## References
+## Referensi
 
-1. Microsoft Entra app registration: https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
-2. Microsoft identity platform authorization code flow: https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow
-3. Microsoft Graph user authentication: https://learn.microsoft.com/en-us/graph/auth-v2-user
+1. Registrasi aplikasi Microsoft Entra: https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
+2. Alur kode otorisasi Microsoft identity platform: https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow
+3. Autentikasi pengguna Microsoft Graph: https://learn.microsoft.com/en-us/graph/auth-v2-user

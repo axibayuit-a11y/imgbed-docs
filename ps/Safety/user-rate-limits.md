@@ -1,76 +1,74 @@
-# د User Rate Limits
+# د کارن د پورته کولو نرخ محدودیتونه
 
-User rate limits کنټرولوي چې عادي users یا visitors له homepage څخه څو ځله files upload کولای شي. دا د public upload pages د ناوړه کارونې مخنیوي کې مرسته کوي.
+د کارن د نرخ محدودیتونه کنټرولوي چې عادي کارونکي یا لیدونکي له کورپاڼې څخه څو ځله فایلونه پورته کولای شي. دا د عامه پورته کولو پاڼو د ناوړه کارونې په مخنیوي کې مرسته کوي.
 
-دا feature یوازې homepage uploads اغېزمنوي. Admin uploads او د API Tokens له لارې uploads د user rate limits له خوا نه محدودېږي.
+دا ځانګړنه یوازې د کورپاڼې له لارې پورته کولو باندې پلي کېږي. د مدیر پورته کول او د API Tokens له لارې پورته کول د دغو کارن محدودیتونو له خوا نه محدودېږي.
 
 ## چېرته یې تنظیم کړئ
 
-admin panel پرانیزئ، بیا دې ځای ته لاړ شئ:
+د ادارې پینل پرانیزئ، بیا دې ځای ته لاړ شئ:
 
 ```text
-System Settings -> Security Settings -> Upload Management -> User Rate Limits
+System Settings -> Security Settings -> User Rate Limits
 ```
 
-![User rate limit settings](../../image/other/用户频控截图.png)
+![د کارن د نرخ محدودیتونو تنظیمات](../../image/other/用户频控截图.png)
 
-## Rate Limits فعالول
+## د نرخ محدودیتونه څه کوي
 
-کله چې `Enable Rate Limits` فعال شي، ImgBed وروستي uploads د uploader IP address له مخې track کوي.
+کله چې `د نرخ محدودیتونه فعال کړئ` چالان شي، ImgBed وروستي پورته کول د پورته کوونکي IP پته له مخې تعقیبوي.
 
-Default values:
+عام تنظیمات:
 
-| Setting | Default | تشریح |
+| تنظیم | د بېلګې ارزښت | معنا |
 | --- | --- | --- |
-| Detection window | 1.5 hours | upload records څو شاته وخت پورې شمېرل کېږي. |
-| Max file count | 20 | په detection window کې د allowed files اعظمي شمېر. |
-| Single file size limit | 20 MB | د یوه file اعظمي size. |
-| Total upload size limit | 200 MB | په detection window کې د upload ټول اعظمي size. |
+| د موندنې کړکۍ | 1.5 ساعته | د پورته کولو ریکارډونه تر کومه شاته حسابېږي. |
+| د فایل شمېر حد | 20 | په کړکۍ کې اعظمي د فایلونو شمېر. |
+| د هر فایل اندازه | 20 MB | د یوه پورته شوي فایل اعظمي اندازه. |
+| د ټول پورته کولو حد | 200 MB | په موندنې کړکۍ کې د پورته کولو ټول اعظمي اندازه. |
 
-د بېلګې په توګه، که window 1.5 hours وي، 20 files، هر file 20 MB، او total 200 MB وي، له هماغه IP څخه uploads هغه وخت block کېږي چې له ټاکل شوو limits څخه کوم یو واوړي.
+د بېلګې په توګه، که کړکۍ 1.5 ساعته، د فایلونو حد 20، د هر فایل حد 20 MB او ټول حد 200 MB وي، له همدې IP څخه پورته کول به هغه وخت بند شي چې له ټاکل شویو محدودیتونو څخه هر یو واوړي.
 
-## د File Types منع کول
+## د پورته کولو د فایل ډولونو ایستل
 
-`Excluded upload file types` عادي users یا visitors له ټاکلو file categories upload کولو منع کوي.
+`د پورته کېدونکو فایلونو ایستل شوي ډولونه` عادي کارونکي یا لیدونکي د ټاکلو فایل کټګوریو له پورته کولو منع کوي.
 
-شته categories:
+شته کټګورۍ پکې شاملې دي:
 
-| Type | تشریح |
+| کټګوري | عامې پسوندونه |
 | --- | --- |
-| Images | jpg, png, webp, gif او ورته image files |
-| Videos | mp4, webm, mov او ورته video files |
-| Audio | mp3, flac, wav او ورته audio files |
-| Documents | pdf, txt, md, docx او ورته document files |
-| Other | له پورته categories بهر files، لکه zip, rar, exe, apk |
+| نصب کوونکي | exe، apk، msi |
+| ارشیفونه | zip، rar، 7z |
+| سندونه | pdf، doc، docx |
+| نور | هغه ډولونه چې د انځورونو لپاره عادي نه دي |
 
-په default ډول type نه وي selected، یعنې allowed دی.
+که `Other` ټاکل شوی وي، هغه لیدونکي چې zip یا rar فایلونه پورته کوي بندېږي او ورته ویل کېږي چې دا فایل ډول ملاتړ نه لري.
 
-پر type کلیک کول یې highlight کوي، یعنې هغه type block شوی دی.
+## کله چې کارن محدود شي
 
-که `Other` selected وي، visitors چې zip یا rar files upload کوي block کېږي او ورته ویل کېږي چې دا file type supported نه دی.
+کله چې کارن یو حد واوړي، ImgBed پورته کول ردوي او روښانه پیغام ښيي.
 
-## Block Messages
+![د ډېر تکراري پورته کولو پیغام](../../image/other/频繁报错提示.png)
 
-کله چې limit trigger شي، users ورته مناسب message ویني:
+عامې پایلې:
 
-![Too frequent upload message](../../image/other/频繁报错提示.png)
-
-| Scenario | د message معنا |
+| حالت | پایله |
 | --- | --- |
-| Single file too large | file ډېر لوی دی او له upload مخکې باید compressed شي. |
-| File type blocked | دا file type supported نه دی. لرې یې کړئ او بیا هڅه وکړئ. |
-| Uploads too frequent | وروستي uploads ډېر frequent دي، retry time هم ښکاره کېږي. |
-| Total size too high | د وروستیو uploads ټول size ډېر لوړ دی، retry time هم ښکاره کېږي. |
+| یو فایل ډېر لوی دی | فایل ډېر لوی دی او باید له پورته کولو مخکې کم یا کمپرس شي. |
+| د فایل ډول بند شوی | دا فایل ډول ملاتړ نه لري. دا لرې کړئ او بیا هڅه وکړئ. |
+| ډېر فایلونه | په وروستۍ کړکۍ کې ډېر فایلونه پورته شوي؛ د بیا هڅې وخت ښودل کېږي. |
+| پورته کول ډېر تکراري دي | وروستي پورته کول ډېر تکراري دي؛ د بیا هڅې وخت ښودل کېږي. |
+| ټول اندازه ډېره ده | د وروستي پورته کولو ټول اندازه ډېره ده؛ د بیا هڅې وخت ښودل کېږي. |
 
 ## کله یې فعال کړئ
 
-که ستاسو upload homepage public access ولري، user rate limits فعال کړئ.
+د کارن محدودیتونه فعال کړئ که ستاسو د پورته کولو کورپاڼه عامه لاسرسی لري.
 
-عام دلیلونه:
+عام لاملونه:
 
-- د scripted bulk uploads په اړه اندېښنه لرئ.
-- غواړئ د visitors لوی uploads محدود کړئ.
-- غواړئ عادي users یوازې images upload کړي، archives یا installers نه.
-- غواړئ public upload فعال پاتې شي خو resource usage کنټرول شي.
+- د سکرېپټي ډله‌ییز پورته کولو اندېښنه لرئ.
+- غواړئ د لیدونکو لوی پورته کول محدود کړئ.
+- غواړئ عادي کارونکي یوازې انځورونه پورته کړي، نه ارشیفونه یا نصب کوونکي.
+- غواړئ عامه پورته کول فعال پاتې شي، خو د سرچینو کارول کنټرول شي.
 
-که site یوازې ستاسو لپاره وي، یا یوازې administrators upload کوي، دا disabled پرېښودلای شئ.
+که سایټ یوازې ستاسو لپاره وي، یا یوازې مدیران پورته کولای شي، دا ځانګړنه بند پرېښودلای شئ.

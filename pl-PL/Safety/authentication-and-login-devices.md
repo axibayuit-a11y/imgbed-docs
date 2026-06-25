@@ -1,6 +1,6 @@
 # Uwierzytelnianie i zarządzanie urządzeniami logowania
 
-`Authentication Management` i `Login Device Management` chronią panel administracyjny ImgBed, publiczne wejście uploadu i dostęp WebDAV.
+`Zarządzanie uwierzytelnianiem` i `Zarządzanie urządzeniami logowania` chronią panel administracyjny ImgBed, publiczne wejście przesyłania i dostęp WebDAV.
 
 Na tej stronie ustawiasz dane dostępu, sprawdzasz zalogowane urządzenia i unieważniasz stare sesje, gdy jest to potrzebne.
 
@@ -14,14 +14,14 @@ System Settings -> Security Settings
 
 Strona zawiera dwa główne obszary:
 
-- Authentication Management
-- Login Device Management
+- Zarządzanie uwierzytelnianiem
+- Zarządzanie urządzeniami logowania
 
 ![Zarządzanie uwierzytelnianiem](../../image/Safety/认证管理界面.png)
 
-## Do czego służy Authentication Management
+## Do czego służy zarządzanie uwierzytelnianiem
 
-Authentication Management przechowuje dane dostępowe.
+Zarządzanie uwierzytelnianiem przechowuje dane dostępowe.
 
 Są dwa typy:
 
@@ -30,21 +30,21 @@ Są dwa typy:
 
 ## Uwierzytelnianie po stronie użytkownika
 
-Uwierzytelnianie po stronie użytkownika to hasło do uploadu.
+Uwierzytelnianie po stronie użytkownika to hasło do przesyłania.
 
-Po ustawieniu hasła zwykli odwiedzający muszą je wpisać przed użyciem strony przesyłania. To przydatne, gdy nie chcesz zostawiać publicznej strony uploadu otwartej dla wszystkich.
+Po ustawieniu hasła zwykli odwiedzający muszą je wpisać przed użyciem strony przesyłania. To przydatne, gdy nie chcesz zostawiać publicznej strony przesyłania otwartej dla wszystkich.
 
 ![Strona logowania użytkownika](../../image/Safety/用户端登录界面.png)
 
-### Ustawianie hasła uploadu
+### Ustawianie hasła do przesyłania
 
-Po skonfigurowaniu hasła uploadu:
+Po skonfigurowaniu hasła do przesyłania:
 
-- odwiedzający muszą wpisać hasło przed użyciem strony uploadu.
+- odwiedzający muszą wpisać hasło przed użyciem strony przesyłania.
 - przesyłanie jest dostępne dopiero po zaakceptowaniu hasła.
 - jeśli sesje urządzeń użytkownika są włączone, ImgBed zapisuje takie urządzenie.
 
-Zmiana hasła uploadu unieważnia stare sesje użytkowników. Odwiedzający muszą wpisać nowe hasło ponownie.
+Zmiana hasła do przesyłania unieważnia stare sesje użytkowników. Odwiedzający muszą wpisać nowe hasło ponownie.
 
 ## Uwierzytelnianie administratora
 
@@ -60,18 +60,18 @@ Po skonfigurowaniu nazwy użytkownika i hasła administratora:
 
 - otwarcie panelu administracyjnego wymaga logowania.
 - udane logowanie tworzy rekord urządzenia administratora.
-- możesz sprawdzać, czyścić lub wymuszać wylogowanie urządzeń w Login Device Management.
+- możesz sprawdzać, czyścić lub wymuszać wylogowanie urządzeń w Zarządzaniu urządzeniami logowania.
 
 Zmiana nazwy użytkownika albo hasła administratora unieważnia stare sesje administratora. Trzeba zalogować się ponownie.
 
-## Do czego służy Login Device Management
+## Do czego służy zarządzanie urządzeniami logowania
 
-Login Device Management pokazuje urządzenia, które się zalogowały.
+Zarządzanie urządzeniami logowania pokazuje urządzenia, które się zalogowały.
 
 Pomaga sprawdzić:
 
 - które urządzenia uzyskały dostęp do panelu administracyjnego.
-- które urządzenia używały strony uploadu po stronie użytkownika.
+- które urządzenia używały strony przesyłania po stronie użytkownika.
 - które klienty WebDAV się połączyły.
 - czy sesja urządzenia jest nadal ważna.
 - czy stare urządzenia powinny zostać wylogowane.
@@ -84,13 +84,13 @@ Strona ma trzy karty:
 
 ## Globalne bezpieczeństwo cookies
 
-Na górze Login Device Management możesz ustawić globalne zachowanie cookies.
+Na górze Zarządzania urządzeniami logowania możesz ustawić globalne zachowanie plików cookie.
 
 ### Czas życia cookie użytkownika
 
 Określa, ile dni logowanie po stronie użytkownika pozostaje aktywne.
 
-Na przykład przy 14 dniach odwiedzający zwykle nie muszą wpisywać hasła uploadu przez 14 dni.
+Na przykład przy 14 dniach odwiedzający zwykle nie muszą wpisywać hasła do przesyłania przez 14 dni.
 
 ### Czas życia cookie administratora
 
@@ -98,9 +98,9 @@ Określa, ile dni logowanie administratora pozostaje aktywne.
 
 Na przykład przy 14 dniach administratorzy zwykle nie muszą logować się ponownie przez 14 dni.
 
-### Secure Mode
+### Tryb bezpieczny
 
-Gdy Secure mode jest włączony, przeglądarki wysyłają cookies logowania tylko przez HTTPS.
+Gdy tryb bezpieczny jest włączony, przeglądarki wysyłają pliki cookie logowania tylko przez HTTPS.
 
 Włącz to dla produkcyjnych stron HTTPS. Nie włączaj przy lokalnych testach HTTP, bo możesz zobaczyć zachowanie typu "logowanie udane, ale po odświeżeniu jestem wylogowany".
 
@@ -120,29 +120,29 @@ Każda karta urządzenia może pokazywać:
 - czas wygaśnięcia
 - aktualny status
 
-Jeśli widzisz nieznane urządzenie, użyj `Force Offline`, aby unieważnić sesję.
+Jeśli widzisz nieznane urządzenie, użyj `Wymuś offline`, aby unieważnić sesję.
 
 ## Czyszczenie starych urządzeń
 
-`Clean Up Old Devices` masowo usuwa stare rekordy logowania w bieżącej karcie.
+`Wyczyść stare urządzenia` masowo usuwa stare rekordy logowania w bieżącej karcie.
 
 Użyj tego, gdy podejrzewasz, że stare sesje mogą nadal być aktywne na innych urządzeniach.
 
 ## Wymuszenie offline
 
-`Force Offline` unieważnia jedną sesję urządzenia.
+`Wymuś offline` unieważnia jedną sesję urządzenia.
 
 Po wymuszeniu offline:
 
 - urządzenia administratora muszą zalogować się ponownie.
-- urządzenia użytkownika muszą ponownie wpisać hasło uploadu.
+- urządzenia użytkownika muszą ponownie wpisać hasło do przesyłania.
 - klienty WebDAV muszą ponownie się uwierzytelnić.
 
 Wygasłe lub nieważne urządzenia można też usunąć.
 
 ## Wylogowanie bieżącego urządzenia
 
-Karta bieżącego urządzenia jest oznaczona jako `Current Device`.
+Karta bieżącego urządzenia jest oznaczona jako `Bieżące urządzenie`.
 
 Po wylogowaniu bieżącego urządzenia:
 

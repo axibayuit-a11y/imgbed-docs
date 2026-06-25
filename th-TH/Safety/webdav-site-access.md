@@ -1,156 +1,156 @@
-# WebDAV Site Access (Beta)
+# การเข้าถึงไซต์ผ่าน WebDAV (Beta)
 
-WebDAV setting ใน Security Settings ทำให้ ImgBed site ของคุณเป็น WebDAV endpoint
+การตั้งค่า WebDAV ในการตั้งค่าความปลอดภัยจะเปิดเผยไซต์ ImgBed ของคุณเป็นจุดปลาย WebDAV
 
-หลัง enable แล้ว คุณสามารถใช้ Windows, macOS, mobile file managers หรือ WebDAV-compatible client ใด ๆ เพื่อ browse, upload, delete และ manage ImgBed files เหมือน remote folder
+หลังจากเปิดใช้แล้ว คุณสามารถใช้ Windows, macOS, ตัวจัดการไฟล์บนมือถือ หรือไคลเอนต์ที่รองรับ WebDAV เพื่อเรียกดู อัปโหลด ลบ และจัดการไฟล์ ImgBed ได้เหมือนโฟลเดอร์ระยะไกล
 
-นี่คือ WebDAV access entry ของ site แตกต่างจาก WebDAV storage channel ใน Upload Settings Upload channel ใช้ store files ใน third-party WebDAV service ส่วน setting นี้ให้ ImgBed site ของคุณ provide WebDAV access ให้ clients
+นี่คือทางเข้าการเข้าถึง WebDAV ของตัวไซต์เอง ซึ่งต่างจากช่องทางจัดเก็บ WebDAV ในการตั้งค่าอัปโหลด ช่องทางอัปโหลดจะเก็บไฟล์ไว้ในบริการ WebDAV ของบุคคลที่สาม ส่วนการตั้งค่านี้ทำให้ไซต์ ImgBed ของคุณให้บริการ WebDAV แก่ไคลเอนต์ได้
 
 ## ตั้งค่าที่ไหน
 
-เปิด admin panel แล้วไปที่:
+เปิดแผงผู้ดูแลระบบ แล้วไปที่:
 
 ```text
 System Settings -> Security Settings -> WebDAV
 ```
 
-Available settings:
+การตั้งค่าที่ใช้ได้:
 
-- Enable
-- Username
-- Password
-- Image loading mode
-- Default channel
+- เปิดใช้
+- ชื่อผู้ใช้
+- รหัสผ่าน
+- โหมดการโหลดรูปภาพ
+- ช่องทางเริ่มต้น
 
-## Feature นี้ทำอะไร
+## ฟีเจอร์นี้ทำอะไร
 
-หลัง WebDAV enabled ImgBed จะให้ fixed access URL:
+หลังจากเปิดใช้ WebDAV แล้ว ImgBed จะให้ URL เข้าถึงแบบคงที่:
 
 ```text
 https://your-domain.com/dav
 ```
 
-ใช้ URL นี้เพื่อ connect เข้า ImgBed file directory
+ใช้ URL นี้เพื่อเชื่อมต่อกับไดเรกทอรีไฟล์ ImgBed ของคุณ
 
-Use cases ที่เหมาะ:
+กรณีใช้งานที่เหมาะสม:
 
-- Browse ImgBed files จาก computer file manager โดยตรง
-- Drag images เข้า WebDAV folder เพื่อ upload
-- Organize ImgBed folders จาก local file manager
-- ใช้ WebDAV-compatible software เพื่อ sync หรือ manage images
-- Access ImgBed content โดยไม่ต้องเปิด admin panel
+- เรียกดูไฟล์ ImgBed โดยตรงจากตัวจัดการไฟล์บนคอมพิวเตอร์
+- ลากรูปภาพลงในโฟลเดอร์ WebDAV เพื่ออัปโหลด
+- จัดระเบียบโฟลเดอร์ ImgBed จากตัวจัดการไฟล์ในเครื่อง
+- ใช้ซอฟต์แวร์ที่รองรับ WebDAV เพื่อซิงก์หรือจัดการรูปภาพ
+- เข้าถึงเนื้อหา ImgBed โดยไม่ต้องเปิดแผงผู้ดูแลระบบ
 
-## Settings
+## การตั้งค่า
 
-### Enable
+### เปิดใช้
 
-เปิด WebDAV endpoint
+เปิดจุดปลาย WebDAV
 
-เมื่อ disabled clients จะ connect ผ่าน WebDAV ไม่ได้
+เมื่อปิดอยู่ ไคลเอนต์จะเชื่อมต่อผ่าน WebDAV ไม่ได้
 
-### Username และ Password
+### ชื่อผู้ใช้และรหัสผ่าน
 
-Credentials นี้ใช้เมื่อ WebDAV clients connect
+ไคลเอนต์ WebDAV ใช้ข้อมูลรับรองเหล่านี้เมื่อเชื่อมต่อ
 
-ใช้ dedicated WebDAV username และ password อย่า reuse admin password หรือ upload password
+ใช้ชื่อผู้ใช้และรหัสผ่านเฉพาะสำหรับ WebDAV อย่าใช้รหัสผ่านผู้ดูแลระบบหรือรหัสผ่านอัปโหลดซ้ำ
 
-ถ้า username หรือ password ว่าง WebDAV clients จะ connect ได้ไม่ถูกต้อง
+หากชื่อผู้ใช้หรือรหัสผ่านว่าง ไคลเอนต์ WebDAV จะเชื่อมต่อได้ไม่ถูกต้อง
 
-### Image Loading Mode
+### โหมดการโหลดรูปภาพ
 
-Image loading mode ตัดสินว่า WebDAV clients จะ prefer image URL แบบใดเมื่ออ่าน images
+โหมดการโหลดรูปภาพกำหนดว่าไคลเอนต์ WebDAV ควรเลือก URL รูปภาพใดเมื่ออ่านรูปภาพ
 
-Common choices:
+ตัวเลือกที่พบบ่อย:
 
-| Mode | Description |
+| โหมด | คำอธิบาย |
 | --- | --- |
-| Smart loading | ImgBed เลือกตาม context เหมาะกับ normal use |
-| Original | Prefer original images |
-| Thumbnail | Prefer thumbnails เหมาะกับ fast preview |
+| โหลดแบบอัจฉริยะ | ImgBed เลือกตามบริบท แนะนำสำหรับการใช้งานทั่วไป |
+| ต้นฉบับ | เลือกรูปภาพต้นฉบับก่อน |
+| ภาพขนาดย่อ | เลือกภาพขนาดย่อก่อน มีประโยชน์สำหรับการแสดงตัวอย่างอย่างรวดเร็ว |
 
-ถ้าไม่แน่ใจ ให้ใช้ `Smart loading`
+หากไม่แน่ใจ ให้คง `โหลดแบบอัจฉริยะ` ไว้
 
-### Default Channel
+### ช่องทางเริ่มต้น
 
-Default channel ใช้สำหรับ WebDAV uploads
+ช่องทางเริ่มต้นใช้สำหรับการอัปโหลดผ่าน WebDAV
 
-เมื่อ copy files เข้า WebDAV directory จาก Windows หรือ client อื่น ImgBed จะ upload ผ่าน selected default upload channel
+เมื่อคุณคัดลอกไฟล์ลงในไดเรกทอรี WebDAV จาก Windows หรือไคลเอนต์อื่น ImgBed จะอัปโหลดไฟล์ผ่านช่องทางอัปโหลดเริ่มต้นที่เลือกไว้
 
-ถ้าไม่เลือก default channel การ browse อาจทำงานได้ แต่ uploads อาจ fail
+หากไม่ได้เลือกช่องทางเริ่มต้น การเรียกดูอาจทำงานได้ แต่การอัปโหลดอาจล้มเหลว
 
-## เข้าถึง WebDAV ใน Windows 11
+## การเข้าถึง WebDAV ใน Windows 11
 
-Windows 11 เพิ่ม WebDAV เป็น network location ได้
+Windows 11 สามารถเพิ่ม WebDAV เป็นตำแหน่งเครือข่ายได้
 
-1. เปิด `This PC`
-2. เลือก `Add a network location`
-3. ใส่ `https://your-domain.com/dav`
-4. เมื่อมี prompt ให้ใส่ WebDAV username และ password
-5. ทำ wizard ให้เสร็จ จากนั้นเปิด WebDAV directory ใน File Explorer ได้
+1. เปิด `พีซีเครื่องนี้`
+2. เลือก `เพิ่มตำแหน่งเครือข่าย`
+3. ป้อน `https://your-domain.com/dav`
+4. เมื่อระบบถาม ให้ป้อนชื่อผู้ใช้และรหัสผ่าน WebDAV
+5. ทำตามตัวช่วยให้เสร็จ จากนั้นสามารถเปิดไดเรกทอรี WebDAV ในตัวสำรวจไฟล์ได้
 
-![Add WebDAV in Windows 11](../../image/Safety/webdav在win11配置.png)
+![เพิ่ม WebDAV ใน Windows 11](../../image/Safety/webdav在win11配置.png)
 
-หลังเพิ่มแล้ว WebDAV directory จะแสดงใน Windows File Explorer คุณสามารถ open, copy และ manage files เหมือน folder ปกติ
+หลังจากเพิ่มแล้ว ไดเรกทอรี WebDAV จะปรากฏในตัวสำรวจไฟล์ของ Windows คุณสามารถเปิด คัดลอก และจัดการไฟล์ได้เหมือนโฟลเดอร์ปกติ
 
-![WebDAV in Windows](../../image/Safety/webdav在win显示效果.png)
+![WebDAV ใน Windows](../../image/Safety/webdav在win显示效果.png)
 
-## Supported Operations
+## การดำเนินการที่รองรับ
 
-หลัง WebDAV connection สำเร็จ โดยทั่วไปทำได้:
+หลังจากเชื่อมต่อ WebDAV สำเร็จ โดยทั่วไปคุณสามารถ:
 
-- View files และ folders
-- Upload files
-- Create folders
-- Rename files หรือ folders
-- Move files
-- Delete files
+- ดูไฟล์และโฟลเดอร์
+- อัปโหลดไฟล์
+- สร้างโฟลเดอร์
+- เปลี่ยนชื่อไฟล์หรือโฟลเดอร์
+- ย้ายไฟล์
+- ลบไฟล์
 
-WebDAV เหมาะกับ everyday access และ small-scale file management สำหรับ large moves, bulk deletes หรือ organization ที่ซับซ้อน แนะนำใช้ admin panel
+WebDAV เหมาะสำหรับการเข้าถึงประจำวันและการจัดการไฟล์ขนาดเล็ก สำหรับการย้ายจำนวนมาก การลบเป็นชุด หรือการจัดระเบียบที่ซับซ้อน ให้ใช้แผงผู้ดูแลระบบ
 
-## Login Device Management
+## การจัดการอุปกรณ์เข้าสู่ระบบ
 
-Successful WebDAV connections จะแสดงใน WebDAV tab ของ Login Device Management ด้วย
+การเชื่อมต่อ WebDAV ที่สำเร็จจะแสดงในแท็บ WebDAV ภายในการจัดการอุปกรณ์เข้าสู่ระบบด้วย
 
-คุณสามารถ review WebDAV clients และ force old devices offline เมื่อจำเป็น
+คุณสามารถตรวจสอบไคลเอนต์ WebDAV ที่นั่น และบังคับให้อุปกรณ์เก่าออฟไลน์เมื่อจำเป็น
 
-ถ้าเปลี่ยน WebDAV username หรือ password clients เก่าต้อง sign in ใหม่
+หากเปลี่ยนชื่อผู้ใช้หรือรหัสผ่าน WebDAV ไคลเอนต์เก่าต้องเข้าสู่ระบบใหม่
 
 ## FAQ
 
-### Windows ถาม Username และ Password ซ้ำ
+### Windows ถามชื่อผู้ใช้และรหัสผ่านซ้ำ ๆ
 
-ตรวจว่า:
+ตรวจสอบ:
 
-- URL คือ `https://your-domain.com/dav`
-- Username และ password ตรงกับ WebDAV settings
-- WebDAV enabled
-- Site access ผ่าน HTTPS ได้
+- URL ต้องเป็น `https://your-domain.com/dav`
+- ชื่อผู้ใช้และรหัสผ่านตรงกับการตั้งค่า WebDAV
+- เปิดใช้ WebDAV แล้ว
+- ไซต์สามารถเข้าถึงผ่าน HTTPS ได้
 
-### Browsing ได้ แต่ Upload fail
+### เรียกดูได้ แต่อัปโหลดไม่ได้
 
-ตรวจ `Default channel`
+ตรวจสอบ `ช่องทางเริ่มต้น`
 
-WebDAV uploads ต้องใช้ default upload channel ถ้า missing, disabled หรือ misconfigured uploads อาจ fail
+การอัปโหลดผ่าน WebDAV ต้องมีช่องทางอัปโหลดเริ่มต้น หากไม่มี ถูกปิด หรือกำหนดค่าผิด การอัปโหลดอาจล้มเหลว
 
-### Access Speed ไม่เสถียร
+### ความเร็วการเข้าถึงไม่เสถียร
 
-WebDAV performance ขึ้นกับ client, network, file count และ default upload channel
+ประสิทธิภาพของ WebDAV ขึ้นอยู่กับไคลเอนต์ เครือข่าย จำนวนไฟล์ และช่องทางอัปโหลดเริ่มต้น
 
-ถ้า directory มี files จำนวนมาก ให้จัดเป็น folders แทนการเก็บทุกอย่างใน directory เดียว
+หากไดเรกทอรีมีไฟล์จำนวนมาก ให้จัดลงโฟลเดอร์แทนการเก็บไฟล์มากเกินไปในไดเรกทอรีเดียว
 
-## Security Recommendations
+## คำแนะนำด้านความปลอดภัย
 
-- ใช้ HTTPS สำหรับ WebDAV access
-- ตั้ง strong password
-- อย่า share WebDAV password กับคนที่ไม่ trusted
+- ใช้ HTTPS สำหรับการเข้าถึง WebDAV
+- ตั้งรหัสผ่านที่แข็งแรง
+- อย่าแชร์รหัสผ่าน WebDAV กับคนที่ไม่น่าเชื่อถือ
 - ปิด WebDAV เมื่อไม่ได้ใช้งาน
-- Clean up unused WebDAV devices เป็นระยะใน Login Device Management
+- ล้างอุปกรณ์ WebDAV ที่ไม่ได้ใช้งานในส่วนการจัดการอุปกรณ์เข้าสู่ระบบเป็นระยะ
 
-## WebDAV Upload File Size
+## ขนาดไฟล์สำหรับการอัปโหลดผ่าน WebDAV
 
-WebDAV clients ไม่ใช้ large-file chunking flow ของ browser upload page สำหรับ files ที่ใหญ่กว่า suggested limits ด้านล่าง ให้ใช้ web upload page แทน
+ไคลเอนต์ WebDAV ไม่ใช้กระบวนการแบ่งไฟล์ขนาดใหญ่ของหน้าอัปโหลดในเบราว์เซอร์ สำหรับไฟล์ที่ใหญ่กว่าขีดจำกัดที่แนะนำด้านล่าง ให้ใช้หน้าอัปโหลดบนเว็บแทน
 
-| Default Upload Channel | Suggested Single-File Limit for WebDAV |
+| ช่องทางอัปโหลดเริ่มต้น | ขีดจำกัดไฟล์เดี่ยวที่แนะนำสำหรับ WebDAV |
 | --- | ---: |
 | Telegram | 20 MB |
 | Discord | 10 MB |

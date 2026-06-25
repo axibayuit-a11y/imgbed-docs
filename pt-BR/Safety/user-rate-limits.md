@@ -1,47 +1,76 @@
-# Limite de frequência de usuários
+# Limites de taxa de usuários
 
-O limite de frequência controla o uso quando um IP ou usuário realiza muitas ações em pouco tempo.
+Os limites de taxa de usuários controlam com que frequência usuários comuns ou visitantes podem enviar arquivos pela página inicial. Isso ajuda a evitar abuso em páginas públicas de upload.
 
-Em sites com upload público, esse recurso ajuda a reduzir spam, abuso e envios em massa indesejados.
+Esta função afeta apenas uploads feitos pela página inicial. Uploads de administradores e uploads feitos com API Tokens não são limitados pelos limites de usuários.
 
 ## Onde configurar
 
+Abra o painel administrativo e acesse:
+
 ```text
-Configurações do sistema -> Segurança -> Limite de frequência
+System Settings -> Security Settings -> Upload Management -> User Rate Limits
 ```
 
-![Limite de frequência](../../image/other/用户频控截图.png)
+![Configurações de limite de taxa de usuários](../../image/other/用户频控截图.png)
 
-## Principais opções
+## Habilitar limites de taxa
 
-| Opção | Descrição |
+Depois que `Habilitar limites de taxa` é ativado, o ImgBed rastreia uploads recentes pelo endereço IP de quem enviou.
+
+Valores padrão:
+
+| Configuração | Padrão | Descrição |
+| --- | --- | --- |
+| Janela de detecção | 1,5 hora | Até onde os registros de upload são contados retroativamente. |
+| Contagem máxima de arquivos | 20 | Número máximo de arquivos permitido na janela de detecção. |
+| Limite de tamanho por arquivo | 20 MB | Tamanho máximo de um arquivo. |
+| Limite de tamanho total de upload | 200 MB | Tamanho total máximo de upload na janela de detecção. |
+
+Por exemplo, com uma janela de 1,5 hora, 20 arquivos, 20 MB por arquivo e 200 MB no total, uploads do mesmo IP são bloqueados assim que qualquer limite configurado é excedido.
+
+## Excluir tipos de arquivo
+
+`Tipos de arquivo de upload excluídos` impede usuários comuns ou visitantes de enviar categorias de arquivo selecionadas.
+
+Categorias disponíveis:
+
+| Tipo | Descrição |
 | --- | --- |
-| Habilitar | Liga ou desliga o limite |
-| Janela de tempo | Período usado para contar ações |
-| Número máximo | Quantidade máxima permitida dentro da janela |
-| Ação alvo | Upload ou outra operação a limitar |
-| Tempo de bloqueio | Duração do bloqueio após exceder o limite |
+| Imagens | jpg, png, webp, gif e arquivos de imagem semelhantes |
+| Vídeos | mp4, webm, mov e arquivos de vídeo semelhantes |
+| Áudio | mp3, flac, wav e arquivos de áudio semelhantes |
+| Documentos | pdf, txt, md, docx e arquivos de documento semelhantes |
+| Outros | Arquivos fora das categorias acima, como zip, rar, exe, apk |
 
-## Exemplo razoável
+Por padrão, um tipo não selecionado significa que ele é permitido.
 
-Para upload público, comece com uma configuração moderada e ajuste conforme o uso real.
+Clicar em um tipo o destaca, o que significa que esse tipo está bloqueado.
 
-```text
-30 ações a cada 10 minutos
-bloqueio de 30 minutos ao exceder
-```
+Se `Outros` estiver selecionado, visitantes que enviarem arquivos zip ou rar serão bloqueados e informados de que esse tipo de arquivo não é compatível.
 
-Isso costuma permitir uso normal e frear padrões claramente anormais.
+## Mensagens de bloqueio
 
-## Aviso de limite
+Quando um limite é acionado, usuários veem uma mensagem correspondente:
 
-Quando o limite é excedido, o usuário vê um aviso de que a ação foi recusada.
+![Mensagem de upload muito frequente](../../image/other/频繁报错提示.png)
 
-![Aviso de erros frequentes](../../image/other/频繁报错提示.png)
+| Cenário | Significado da mensagem |
+| --- | --- |
+| Arquivo único grande demais | O arquivo é grande demais e deve ser compactado antes do upload. |
+| Tipo de arquivo bloqueado | Este tipo de arquivo não é compatível. Remova-o e tente novamente. |
+| Uploads frequentes demais | Uploads recentes são frequentes demais; o horário para nova tentativa é mostrado. |
+| Tamanho total alto demais | O tamanho total recente dos uploads é alto demais; o horário para nova tentativa é mostrado. |
 
-## Dicas
+## Quando habilitar
 
-- Limite rígido demais pode bloquear uploads legítimos em lote.
-- Em sites públicos, evite deixar upload totalmente sem limite.
-- Combine com geolocalização por IP e gerenciamento de usuários para investigar abuso.
-- Se houver pico temporário esperado, você pode afrouxar o limite por um período.
+Habilite os limites de taxa de usuários se sua página inicial de upload for acessível publicamente.
+
+Motivos comuns:
+
+- Você se preocupa com uploads em massa por script.
+- Você quer limitar uploads grandes de visitantes.
+- Você quer permitir que usuários comuns enviem apenas imagens, não arquivos compactados ou instaladores.
+- Você quer manter o upload público disponível enquanto controla o uso de recursos.
+
+Se o site é apenas para você, ou se apenas administradores podem enviar arquivos, você pode deixar isso desabilitado.

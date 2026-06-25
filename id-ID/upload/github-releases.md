@@ -1,69 +1,69 @@
-# Menambahkan GitHub Releases Channel
+# Menambahkan Kanal GitHub Releases
 
-## Yang Perlu Disiapkan Sebelum Mulai
+## Yang Diperlukan Sebelum Memulai
 
-Anda hanya perlu tiga hal:
+Anda hanya memerlukan tiga hal:
 
-| Requirement | Purpose |
+| Kebutuhan | Tujuan |
 | --- | --- |
-| GitHub account | Digunakan untuk generate access token dan memiliki repository. |
-| GitHub Access Token | Digunakan ImgBed untuk mengakses GitHub API, membuat releases, dan upload files. |
-| Repository name | Anda bisa memasukkan repository name saja, misalnya `image`. |
+| Akun GitHub | Digunakan untuk membuat token akses dan memiliki repositori. |
+| GitHub Access Token | Digunakan oleh ImgBed untuk mengakses GitHub API, membuat release, dan mengunggah berkas. |
+| Nama repositori | Anda dapat memasukkan nama repositori saja, misalnya `image`. |
 
-## Langkah Setup
+## Langkah Konfigurasi
 
-### Step 1: Sign in ke GitHub dan Buat Access Token
+### Langkah 1: Masuk ke GitHub dan Buat Access Token
 
-1. Sign in ke GitHub.
-2. Klik avatar di kanan atas dan buka `Settings`.
-3. Buka `Developer settings` dari left sidebar.
+1. Masuk ke GitHub.
+2. Klik avatar Anda di sudut kanan atas, lalu buka `Settings`.
+3. Buka `Developer settings` dari sidebar kiri.
 4. Buka `Personal access tokens`.
 5. Buka `Tokens (classic)`.
 6. Klik `Generate new token (classic)`.
-7. Beri nama token yang mudah dikenali.
-8. Pilih expiration date sesuai preferensi maintenance Anda.
-9. Pilih scopes `repo` dan `workflow`.
-10. Copy dan simpan token segera setelah dibuat.
+7. Beri token nama yang mudah dikenali.
+8. Pilih tanggal kedaluwarsa sesuai preferensi pemeliharaan Anda.
+9. Pilih cakupan `repo` dan `workflow`.
+10. Salin dan simpan token segera setelah dibuat.
 
-![Add GitHub permissions](../../image/upload/github-releases/添加github权限.png)
+![Menambahkan izin GitHub](../../image/upload/github-releases/添加github权限.png)
 
-## Step 2: Isi GitHub Releases Channel di ImgBed
+## Langkah 2: Isi Kanal GitHub Releases di ImgBed
 
-Setelah memilih `GitHub Releases` di Upload Settings, isi field sebagai berikut:
+Setelah memilih `GitHub Releases` di Pengaturan Unggah, isi kolom sebagai berikut:
 
-| UI Field | Yang Diisi |
+| Kolom UI | Yang Harus Diisi |
 | --- | --- |
-| Channel name | Nama pilihan Anda, misalnya `GitHubPrimary`. |
-| Access Token | GitHub Personal Access Token yang baru dibuat. |
-| Repository name | Repo name pendek seperti `image`, atau full path seperti `username/image`. |
-| Private repository | Aktifkan atau nonaktifkan sesuai kebutuhan. |
-| Remark | Optional, misalnya `Primary upload channel`. |
+| Nama kanal | Nama pilihan Anda, misalnya `GitHubPrimary`. |
+| Access Token | GitHub Personal Access Token yang baru Anda buat. |
+| Nama repositori | Nama repositori pendek seperti `image`, atau jalur lengkap seperti `username/image`. |
+| Repositori privat | Aktifkan atau nonaktifkan sesuai kebutuhan. |
+| Catatan | Opsional, misalnya `Primary upload channel`. |
 
-![Fill in the GitHub channel configuration](../../image/upload/github-releases/填写github渠道配置.png)
+![Mengisi konfigurasi kanal GitHub](../../image/upload/github-releases/填写github渠道配置.png)
 
-## Step 3: Save Channel
+## Langkah 3: Simpan Kanal
 
-Setelah mengisi field, klik Save.
+Setelah semua kolom diisi, klik Simpan.
 
-System akan menangani detail berikut:
+Sistem akan menangani detail berikut:
 
-| System Behavior | Description |
+| Perilaku Sistem | Deskripsi |
 | --- | --- |
-| Short repository name | ImgBed mengenali current GitHub account dan memperluas value menjadi full repository path. |
-| Full repository path | ImgBed memakai path `username/repository` persis seperti yang dimasukkan. |
-| Repository check | Jika memakai current personal account path, ImgBed otomatis membuat repository saat belum ada. Jika memasukkan full path manual, ImgBed langsung memakai path tersebut. |
-| Public/private state | Repository visibility disinkronkan sesuai current switch. |
+| Nama repositori pendek | ImgBed mengidentifikasi akun GitHub saat ini dan memperluas nilainya menjadi jalur repositori lengkap. |
+| Jalur repositori lengkap | ImgBed menggunakan jalur `username/repository` persis seperti yang dimasukkan. |
+| Pemeriksaan repositori | Jika Anda menggunakan jalur akun pribadi saat ini, ImgBed otomatis membuat repositori saat belum ada. Jika Anda memasukkan jalur lengkap secara manual, ImgBed langsung menggunakan jalur tersebut. |
+| Status publik/privat | Visibilitas repositori disinkronkan sesuai sakelar saat ini. |
 
-## Quick Checklist
+## Daftar Periksa Cepat
 
 GitHub Releases bekerja seperti ini:
 
 ```text
-Sign in ke GitHub
--> Buat Access Token
--> Kembali ke ImgBed dan masukkan token serta repository name
+Sign in to GitHub
+-> Create an Access Token
+-> Return to ImgBed and enter the token and repository name
 -> Save
--> Jika hanya repo name yang dimasukkan, ImgBed menambahkan current username otomatis
--> Jika username/repo dimasukkan, ImgBed memakainya apa adanya
--> Upload test image
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

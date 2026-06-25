@@ -1,27 +1,27 @@
-# Yandex Channel சேர்க்கவும்
+# Yandex சேனல் சேர்க்கவும்
 
 ## முதலில் தேவையானவை
 
 | தேவை | ஏன் தேவை |
 | --- | --- |
-| Yandex account | sign in செய்து Yandex Disk authorize செய்ய |
-| Yandex OAuth app | `Client ID` மற்றும் `Client Secret` உருவாக்க |
-| உங்கள் ImgBed domain | OAuth redirect URI-க்கு |
-| கிடைக்கும் Yandex Disk storage | உண்மையான file storage location ஆக |
+| Yandex கணக்கு | உள்நுழைய செய்து Yandex Disk authorize செய்ய |
+| Yandex OAuth செயலி | `Client ID` மற்றும் `Client Secret` உருவாக்க |
+| உங்கள் ImgBed டொமைன் | OAuth redirect URI-க்கு |
+| கிடைக்கும் Yandex Disk சேமிப்பு | உண்மையான கோப்பு சேமிப்பு location ஆக |
 
-## Setup Steps
+## அமைப்பு படிகள்
 
-### Step 1: Yandex OAuth App உருவாக்கவும்
+### படி 1: Yandex OAuth செயலி உருவாக்கவும்
 
-1. Yandex OAuth app creation page திறக்கவும்:
+1. Yandex OAuth செயலி creation page திறக்கவும்:
 
 ```text
 https://oauth.yandex.com/client/new
 ```
 
-2. sign in page-க்கு redirect ஆனால் முதலில் Yandex account-ல் sign in செய்யவும்.
-3. புதிய app உருவாக்கவும்.
-4. app-க்கு அறியக்கூடிய பெயர் கொடுக்கவும், உதா. `imgbed-yandex`.
+2. உள்நுழைய page-க்கு redirect ஆனால் முதலில் Yandex கணக்கு-ல் உள்நுழைய செய்யவும்.
+3. புதிய செயலி உருவாக்கவும்.
+4. செயலி-க்கு அறியக்கூடிய பெயர் கொடுக்கவும், உதா. `imgbed-yandex`.
 5. callback அல்லது redirect URL settings கண்டறியவும்.
 6. உள்ளிடவும்:
 
@@ -29,84 +29,84 @@ https://oauth.yandex.com/client/new
 https://your-domain.com/api/oauth/yandex/callback
 ```
 
-### Step 2: Permissions Confirm செய்யவும்
+### படி 2: அனுமதிகளை உறுதிப்படுத்தவும்
 
 தற்போதைய ImgBed Yandex integration-க்கு `Yandex.Disk REST API` கீழ் இந்த permissions வேண்டும்:
 
-| Permission | Purpose |
+| அனுமதி | நோக்கம் |
 | --- | --- |
-| `cloud_api:disk.app_folder` | ImgBed app folder-ல் files சேமிக்க அனுமதி |
-| `cloud_api:disk.read` | files மற்றும் download links படிக்கும் |
-| `cloud_api:disk.write` | files upload, folders create, files delete செய்யும் |
-| `Access to information about Yandex.Disk` | disk quota மற்றும் used space படிக்கும் |
+| `cloud_api:disk.app_folder` | ImgBed செயலி folder-ல் கோப்புகள் சேமிக்க அனுமதிக்கிறது |
+| `cloud_api:disk.read` | கோப்புகள் மற்றும் download links படிக்கிறது |
+| `cloud_api:disk.write` | கோப்புகளைப் பதிவேற்ற, folders உருவாக்க, கோப்புகளை நீக்க அனுமதிக்கிறது |
+| `Access to information about Yandex.Disk` | disk quota மற்றும் used space படிக்கிறது |
 
-`Yandex ID API` கீழ் இவை தெரிந்தால் optional:
+`Yandex ID API` கீழ் இவை தெரிந்தால் விருப்பமான:
 
-| Permission Text | Recommendation |
+| அனுமதி உரை | பரிந்துரை |
 | --- | --- |
-| `Access to username, first name and surname, gender` | Optional |
-| `Access to email address` | Optional |
+| `Access to username, first name and surname, gender` | விருப்பத்தேர்வு |
+| `Access to email address` | விருப்பத்தேர்வு |
 
-core upload, download, deletion, quota features மேலே உள்ள நான்கு `Yandex.Disk REST API` permissions-ஐ சார்ந்தவை.
+core பதிவேற்றம், download, deletion, quota அம்சங்கள் மேலே உள்ள நான்கு `Yandex.Disk REST API` permissions-ஐ சார்ந்தவை.
 
-![Configure Yandex Disk permissions](../../image/upload/yandex/dataaccess配置软盘权限.png)
+![Yandex Disk permissions-ஐ கட்டமைக்கவும்](../../image/upload/yandex/dataaccess配置软盘权限.png)
 
-### Step 3: App Credentials Copy செய்யவும்
+### படி 3: செயலி சான்றுகளை நகலெடுக்கவும்
 
-app உருவான பிறகு:
+செயலி உருவான பிறகு:
 
-| Yandex Field | ImgBed Field |
+| Yandex புலம் | ImgBed புலம் |
 | --- | --- |
 | `Client ID` | `Client ID` |
 | `Client Secret` | `Client Secret` |
 
-![Record Client ID and Secret](../../image/upload/yandex/记录客户端id和secret.png)
+![Client ID மற்றும் Secret-ஐ பதிவு செய்யவும்](../../image/upload/yandex/记录客户端id和secret.png)
 
-### Step 4: ImgBed-ல் Yandex Channel நிரப்பவும்
+### படி 4: ImgBed-ல் Yandex சேனல் நிரப்பவும்
 
-Upload Settings-ல் `Yandex` தேர்வு செய்து:
+பதிவேற்ற அமைப்புகள்-ல் `Yandex` தேர்வு செய்து:
 
-| ImgBed Field | What To Enter |
+| ImgBed புலம் | எதை உள்ளிட வேண்டும் |
 | --- | --- |
-| Channel name | அறியக்கூடிய பெயர், உதா. `Main Yandex` |
-| Client ID | Yandex app `Client ID` |
-| Client Secret | Yandex app `Client Secret` |
-| Refresh Token | இப்போது காலியாக விடவும் |
-| Root directory | Optional. default `imgbed`. |
+| சேனல் பெயர் | அறியக்கூடிய பெயர், உதா. `Main Yandex` |
+| Client ID | Yandex செயலி `Client ID` |
+| Client Secret | Yandex செயலி `Client Secret` |
+| Refresh டோக்கன் | இப்போது காலியாக விடவும் |
+| வேர் அடைவு | விருப்பத்தேர்வு. இயல்புநிலை `imgbed`. |
 
-![Edit channel config](../../image/upload/yandex/编辑配置渠道.png)
+![சேனல் config-ஐ திருத்தவும்](../../image/upload/yandex/编辑配置渠道.png)
 
-### Step 5: Refresh Token பெறவும்
+### படி 5: Refresh டோக்கன் பெறவும்
 
 1. ImgBed-ல் `Get Token` கிளிக் செய்யவும்.
-2. connect செய்ய வேண்டிய Yandex account-ல் sign in செய்யவும்.
-3. authorization prompt approve செய்யவும்.
-4. callback page `Refresh Token` காட்டும்.
-5. அதை copy செய்யவும்.
-6. ImgBed-க்கு திரும்பி `Refresh Token` field-ல் paste செய்யவும்.
+2. இணைக்க வேண்டிய Yandex கணக்கில் உள்நுழையவும்.
+3. authorization prompt-ஐ அனுமதிக்கவும்.
+4. callback பக்கம் `Refresh Token` காட்டும்.
+5. அதை நகலெடுக்கவும்.
+6. ImgBed-க்கு திரும்பி, அதை `Refresh Token` புலத்தில் ஒட்டவும்.
 
-![Copy refresh token after authorization](../../image/upload/yandex/授权后复制刷新令牌.png)
+![authorization முடிந்த பிறகு refresh டோக்கனை நகலெடுக்கவும்](../../image/upload/yandex/授权后复制刷新令牌.png)
 
-### Step 6: Channel Save செய்யவும்
+### படி 6: சேனல் சேமி செய்யவும்
 
-அனைத்து fields நிரப்பிய பிறகு channel save செய்யவும்.
+அனைத்து புலங்களையும் நிரப்பிய பிறகு சேனலை சேமிக்கவும்.
 
-## Quick Flow
+## விரைவு ஓட்டம்
 
 ```text
-Yandex OAuth Console திறக்கவும்
--> app உருவாக்கவும்
--> https://your-domain.com/api/oauth/yandex/callback சேர்க்கவும்
--> Yandex Disk permissions confirm செய்யவும்
--> Client ID மற்றும் Client Secret copy செய்யவும்
--> ImgBed-ல் Client ID / Client Secret நிரப்பவும்
--> Get Token கிளிக் செய்யவும்
--> callback page-ல் இருந்து Refresh Token copy செய்யவும்
--> ImgBed-ல் paste செய்து save செய்யவும்
+Open Yandex OAuth Console
+-> Create an app
+-> Add https://your-domain.com/api/oauth/yandex/callback
+-> Confirm Yandex Disk permissions
+-> Copy Client ID and Client Secret
+-> Fill Client ID / Client Secret into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
-## References
+## மேற்கோள்கள்
 
-1. Register a Yandex app: https://yandex.com/dev/id/doc/en/register-client
-2. Get an authorization code through URL: https://yandex.com/dev/id/doc/en/codes/code-url
-3. Yandex OAuth token endpoint: https://yandex.com/dev/id/doc/en/tokens/token
+1. Yandex செயலியை பதிவு செய்யவும்: https://yandex.com/dev/id/doc/en/register-client
+2. URL மூலம் authorization code பெறவும்: https://yandex.com/dev/id/doc/en/codes/code-url
+3. Yandex OAuth டோக்கன் endpoint: https://yandex.com/dev/id/doc/en/tokens/token

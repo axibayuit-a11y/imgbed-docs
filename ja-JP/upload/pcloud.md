@@ -1,86 +1,102 @@
-# pCloud チャンネルの追加
+# pCloud チャネルを追加する
 
-pCloud チャンネルは、pCloud アカウントのストレージを ImgBed の保存先として利用します。
+## 適している場合
 
-## 向いているケース
+- pCloud アカウントがあり、ImgBed の画像を pCloud に保存したい。
+- pCloud アカウントのメールアドレスとパスワードをチャネル認証情報として使用しても問題ない。
 
-- pCloud アカウントを持っている。
-- 画像やファイルを pCloud 側にも保存したい。
-- メールアドレスとパスワードでの接続を許容できる。
+## 始める前に必要なもの
 
-## 事前に用意するもの
-
-| 必要なもの | 用途 |
+| 必要なもの | 必要な理由 |
 | --- | --- |
-| pCloud メールアドレス | pCloud API へのログイン |
-| pCloud パスワード | pCloud API へのログイン |
-| Host | 通常は `api.pcloud.com`、EU は `eapi.pcloud.com` |
-| 保存ディレクトリ | 任意。通常は `imgbed` |
+| pCloud アカウントのメールアドレス | pCloud API へのサインインに使用します。 |
+| pCloud パスワード | pCloud API へのサインインに使用します。 |
+| API host | デフォルトは `api.pcloud.com` です。EU アカウントでは `eapi.pcloud.com` を使用できます。 |
+| Storage directory | ファイルの保存先です。デフォルトは `imgbed` です。 |
 
-## 設定場所
+## 追加する場所
 
 1. システム設定を開きます。
 2. アップロード設定を開きます。
-3. 「チャンネル追加」をクリックします。
+3. 右上の `Add Channel` をクリックします。
 4. `pCloud` を選択します。
 
-## 入力項目
+## 項目リファレンス
 
-| 項目 | 入力内容 |
+| 項目 | 目的 | 必須 |
+| --- | --- | --- |
+| チャネル名 | この pCloud チャネルを識別します。例: `Personal pCloud` | はい |
+| Account email | pCloud のログインメールアドレス | はい |
+| Password | pCloud パスワード | はい |
+| API host | pCloud API host。デフォルトは `api.pcloud.com` です。 | いいえ |
+| Storage directory | ファイル保存に使用する directory。デフォルトは `imgbed` です。 | いいえ |
+
+アカウントのリージョンに応じて API host を選択します。
+
+| アカウントリージョン | API Host |
 | --- | --- |
-| チャンネル名 | 例：`pCloud Main` |
-| メールアドレス | pCloud のログインメール |
-| パスワード | pCloud のログインパスワード |
-| Host | 通常は `api.pcloud.com` |
-| 保存ディレクトリ | 任意。初期値は `imgbed` |
+| デフォルト / US | `api.pcloud.com` |
+| ヨーロッパ | `eapi.pcloud.com` |
 
-Host はアカウントの地域に合わせます。
+## 設定手順
 
-| アカウント地域 | Host |
-| --- | --- |
-| 通常 / US | `api.pcloud.com` |
-| EU | `eapi.pcloud.com` |
+1. アップロード設定を開きます。
+2. `Add Channel` をクリックします。
+3. `pCloud` を選択します。
+4. 識別しやすいチャネル名を入力します。
+5. pCloud アカウントのメールアドレスを入力します。
+6. pCloud パスワードを入力します。
+7. API host は `api.pcloud.com` のままにするか、EU アカウントの場合は `eapi.pcloud.com` を使用します。
+8. storage directory は `imgbed` のままにするか、任意のフォルダーに変更します。
+9. チャネルを保存します。
 
-![pCloud 設定](../../image/upload/pcloud/配置渠道.png)
+![チャネルを設定する](../../image/upload/pcloud/配置渠道.png)
 
 ## 確認方法
 
-保存後、チャンネルカードが表示されることを確認します。容量確認が成功すれば接続できています。
+| 確認項目 | 期待される結果 |
+| --- | --- |
+| チャネルカード | 保存後、pCloud チャネルカードが表示されます。 |
+| チャネルスイッチ | カード上のスイッチが有効のままになります。 |
+| メールアドレス表示 | カードに接続済みの pCloud メールアドレスが表示されます。 |
+| quota 照会 | 照会に成功すると、使用済み容量と総容量が表示されます。 |
+| アップロードテスト | テスト画像が設定済みの pCloud storage directory に表示されます。 |
 
-![容量確認](../../image/upload/pcloud/查询额度成功.png)
+![quota 照会成功](../../image/upload/pcloud/查询额度成功.png)
 
-その後、テスト画像をアップロードし、pCloud の保存ディレクトリにファイルが作成されることを確認します。
+## トラブルシューティング
 
-## よくある質問
+### なぜ OAuth2 ではないのですか?
 
-### OAuth2 は使わないのですか？
+pCloud OAuth2 は、デフォルトではセルフサービスで有効にできません。pCloud に email を送り、有効化を依頼する必要があります。
 
-pCloud の OAuth2 は標準で自由に使える形ではなく、公式への申請が必要です。また ImgBed が必要とする短期アップロードリンクの流れに合わないため、ここではメールアドレスとパスワードで接続します。
+また、現在の pCloud OAuth2 フローは、ImgBed が必要とする短時間有効なアップロードリンクのワークフローをサポートしていません。そのため、このチャネルではアカウントのメールアドレスとパスワードによるログインを使用します。
 
-### Host は何を入れればよいですか？
+### どの API Host を使うべきですか?
 
-通常は次を入力します。
+デフォルト:
 
 ```text
 api.pcloud.com
 ```
 
-EU アカウントの場合は次を使います。
+EU アカウントの場合:
 
 ```text
 eapi.pcloud.com
 ```
 
-## クイック手順
+## クイックフロー
 
 ```text
-pCloud のメールアドレスとパスワードを用意
--> アップロード設定を開く
--> チャンネル追加
--> pCloud を選択
--> チャンネル名 / メール / パスワードを入力
--> Host を確認
--> 保存
--> 容量確認
--> テスト画像をアップロード
+Prepare your pCloud email and password
+-> Open Upload Settings
+-> Add Channel
+-> Choose pCloud
+-> Fill channel name / email / password
+-> Keep API host as api.pcloud.com unless your account is in Europe
+-> Keep storage directory as imgbed unless you need another folder
+-> Save
+-> Query quota
+-> Upload a test image
 ```

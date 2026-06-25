@@ -9,7 +9,7 @@
 進入後台後打開：
 
 ```text
-系統設定 -> 安全設定 -> 上傳管理 -> 使用者頻控
+System Settings -> Security Settings -> Upload Management -> User Rate Limits
 ```
 
 ![使用者頻控截圖](../../image/other/用户频控截图.png)
@@ -72,3 +72,4 @@
 - 想保留公開上傳能力，但控制伺服器資源消耗。
 
 如果站台只給自己用，或已經只允許管理員上傳，可以保持關閉。
+

@@ -105,15 +105,15 @@
 ## Короткий чек-лист
 
 ```text
-Создать бота через @BotFather
--> Сохранить Bot Token
--> Создать Telegram-канал
--> Добавить бота в канал и выдать права администратора
--> Найти @userinfobot и выбрать Channel
--> Переслать любое сообщение из канала в @userinfobot
--> Скопировать возвращенный Id: -100...
--> Ввести Bot Token и Chat ID в ImgBed
--> Сохранить и загрузить тестовое изображение
+Create a bot with @BotFather
+-> Save the Bot Token
+-> Create a Telegram channel
+-> Add the bot to the channel and grant administrator permissions
+-> Search for @userinfobot and choose Channel
+-> Forward any message from the channel to @userinfobot
+-> Copy the returned Id: -100...
+-> Enter the Bot Token and Chat ID in ImgBed
+-> Save and upload a test image
 ```
 
 ## Ссылки

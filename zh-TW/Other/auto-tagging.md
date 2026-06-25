@@ -1,155 +1,178 @@
-# 自動打標籤使用說明
+# 自動打標籤
 
-自動打標籤在：
+自動打標籤在以下位置設定：
 
 ```text
-系統設定 -> 其他設定 -> 自動打標籤
+System Settings -> Other Settings -> Auto Tagging
 ```
 
-這個功能會替圖片自動產生標籤，方便之後搜尋、隨機圖篩選、訪客圖庫篩選，以及年齡分級存取控制。
+這個功能會自動為圖片產生標籤，適合後續用於搜尋、隨機圖片篩選、訪客圖庫篩選，以及年齡分級存取控制。
 
 ## 自動打標籤能做什麼
 
 | 功能 | 說明 |
 | --- | --- |
-| 產生內容標籤 | 例如人物、場景、物件、畫風等標籤 |
-| 產生角色標籤 | 對動漫圖、插畫裡的角色特別有用 |
-| 補方向標籤 | 自動補 `landscape`、`portrait`、`square` |
-| 補圖片分級 | 儲存 `G/S/Q/E` 分級結果 |
-| 上傳時自動打標 | 開啟後，新上傳圖片會自動進入打標流程 |
-| 批次打標 | 可以替全部或指定資料夾裡的舊圖片補標籤 |
+| 產生內容標籤 | 為人物、場景、物體、畫風等視覺內容加入標籤。 |
+| 產生角色標籤 | 適合動漫圖片和插畫。 |
+| 補上方向標籤 | 加入 `landscape`、`portrait` 或 `square`。 |
+| 補上圖片分級 | 儲存 `G/S/Q/E` 分級結果，對應一般、敏感、可疑或露骨內容。 |
+| 上傳時自動打標 | 新上傳的圖片會自動進入打標流程。 |
+| 批次打標 | 可為全部資料夾或指定資料夾中的舊圖片批次補標籤。 |
 
 ## 需要先準備什麼
 
-你需要至少一個可以存取的 Hugging Face Space。
+請先準備至少一個可存取的 Hugging Face Space URL。
 
-建議把 SmilingWolf 的 `wd-tagger` 複製到自己的 Hugging Face 帳號使用：
+建議將 SmilingWolf 的 `wd-tagger` Space 複製到你自己的 Hugging Face 帳號下：
 
 ```text
 https://huggingface.co/spaces/SmilingWolf/wd-tagger
 ```
 
-也可以先臨時使用公開 Space，但公開 Space 很多人一起用，容易排隊、變慢或暫時不可用。自己的 Space 比較穩，也比較適合長期自動打標。
+你可以暫時使用公開 Space 進行測試，但公開 Space 由許多使用者共用，可能需要排隊、變慢或暫時無法使用。複製到自己帳號下的 Space 更穩定，也更適合長期自動打標籤。
 
 ## 複製 SmilingWolf 的 Space
 
 1. 登入 Hugging Face。
-2. 打開 `https://huggingface.co/spaces/SmilingWolf/wd-tagger`。
+2. 開啟 `https://huggingface.co/spaces/SmilingWolf/wd-tagger`。
 
 ![SmilingWolf 公開 Space](../../image/other/微笑狼的公开仓库.png)
 
-3. 點右上角三個點。
-4. 選 `Duplicate this Space`。
-5. Space 名稱可保持預設，也可以改成自己喜歡的名字，例如 `wd-tagger`。
-6. 可見性建議選 `Public`，比較方便 ImgBed 呼叫。
-7. 硬體先用預設免費配置即可，排隊明顯時再考慮升級。
-8. 建立後等待 Space 建置完成。
+3. 點選右上角的三點選單。
+4. 選擇 `Duplicate this Space`。
+5. Space 名稱可保留預設值，也可改成你自己的名稱，例如 `wd-tagger`。
+6. 將可見性設定為 `Public`。公開 Space 較方便 ImgBed 呼叫。
+7. 一開始保留預設免費硬體即可，只有在排隊情況明顯時再考慮升級。
+8. 建立 Space，並等待建置完成。
 
-建置完成後，進入你自己的 Space 頁面。網址通常像：
+建置完成後，開啟你自己的 Space 頁面。URL 通常類似：
 
 ```text
-https://huggingface.co/spaces/你的使用者名稱/wd-tagger
+https://huggingface.co/spaces/your-name/wd-tagger
 ```
 
-直接複製瀏覽器網址，貼到 ImgBed 的 `Space URLs`。
+複製瀏覽器中的 URL，貼到 ImgBed 的 `Space URLs`。
 
-## 多個 Space URLs 怎麼填
+## 填寫多個 Space URLs
 
-`Space URLs` 一行填一個。
+每行填寫一個 Space URL。
 
-| 填寫內容 | 說明 |
+範例：
+
+| 值 | 說明 |
 | --- | --- |
-| `https://huggingface.co/spaces/SmilingWolf/wd-tagger` | SmilingWolf 公開 Space，適合臨時測試 |
-| `https://huggingface.co/spaces/lintonxue00/wd-tagger` | 直接複製 Space 頁面連結 |
-| `https://huggingface.co/spaces/你的使用者名稱/wd-tagger` | 你自己複製後的 Space |
+| `https://huggingface.co/spaces/SmilingWolf/wd-tagger` | SmilingWolf 的公開 Space，適合暫時測試。 |
+| `https://huggingface.co/spaces/lintonxue00/wd-tagger` | 已複製 Space 的頁面 URL。 |
+| `https://huggingface.co/spaces/your-name/wd-tagger` | 你自己複製後的 Space 頁面 URL。 |
 
-可以填多個地址。系統會同時使用多個 Space 處理圖片，速度會更快；其中一個暫時不可用時，其他 Space 仍可繼續處理。
+可以填入多個 URL。ImgBed 會一起使用多個 Space，速度可能會更快。
 
-## 頁面選項怎麼填
+如果其中一個 Space 暫時不可用，其他 Space 仍可繼續處理。
+
+## 設定項目
 
 | 選項 | 建議 |
 | --- | --- |
-| `Space URLs` | 填你準備好的 Space 地址，建議至少 1 個 |
-| 目標資料夾 | 不選就是全部資料夾；只想處理某個目錄時再選 |
-| 辨識模型 | 預設 `wd-swinv2-tagger-v3` 即可 |
-| 通用標籤閾值 | 預設值適合大多數圖片，越低標籤越多，越高標籤越少 |
-| 角色標籤閾值 | 預設值偏穩，適合避免角色誤判 |
-| 使用 `MCut` | 不確定時先關閉，需要模型自動判斷標籤數量時再開 |
-| 上傳時自動打標 | 想讓新圖自動有標籤就開啟 |
-| 開始打標籤 | 手動替舊圖片批次補標籤 |
+| `Space URLs` | 填入準備好的 Space URLs，至少需要一個。 |
+| 目標資料夾 | 留空表示全部資料夾。只有想處理特定目錄時才選擇資料夾。 |
+| 辨識模型 | 預設保留 `wd-swinv2-tagger-v3`。 |
+| 一般標籤閾值 | 預設值適合大多數圖片。數值越低，標籤越多；數值越高，標籤越少。 |
+| 角色標籤閾值 | 預設值較保守，有助於避免錯誤的角色標籤。 |
+| `MCut` 自動閾值 | 一開始先關閉。想讓模型自動決定標籤數量時再開啟。 |
+| 上傳時自動打標 | 若希望新上傳圖片自動取得標籤，請開啟。 |
+| 開始打標籤 | 手動為舊圖片批次打標。 |
 
-## 推薦初始設定
+## 建議起始值
 
-| 選項 | 推薦值 |
+| 選項 | 建議值 |
 | --- | --- |
 | 辨識模型 | `wd-swinv2-tagger-v3` |
-| 通用標籤閾值 | `0.35` |
+| 一般標籤閾值 | `0.35` |
 | 角色標籤閾值 | `0.85` |
-| `MCut` | 先關閉 |
-| 上傳時自動打標 | 依需求開啟 |
+| `MCut` | 一開始關閉 |
+| 上傳時自動打標 | 視需求開啟 |
 
-如果標籤太多，可以把通用標籤閾值調高一點；標籤太少，就調低一點。
+如果標籤太多，可以稍微提高一般標籤閾值。
 
-## 批次打標怎麼用
+如果標籤太少，可以稍微降低一般標籤閾值。
 
-1. 先填好 `Space URLs`。
+## 批次打標
+
+1. 填寫 `Space URLs`。
 2. 選擇目標資料夾。
-3. 點開始打標籤。
-4. 等進度完成。
+3. 點選開始打標籤。
+4. 等待進度完成。
 
-目標資料夾留空時會處理全部資料夾。
+若目標資料夾為空，ImgBed 會處理全部資料夾。
 
-批次打標適合處理舊圖片。新圖片建議開啟上傳時自動打標，之後就不用每次手動跑。
+批次打標適合處理舊圖片。新圖片建議開啟上傳時自動打標，之後就不需要每次手動執行。
 
 ## 上傳時自動打標
 
-開啟後，新上傳圖片會自動呼叫你填的 `Space URLs`。
+開啟上傳時自動打標後，新上傳的圖片會自動呼叫你設定的 `Space URLs`。
 
-如果 Space 正在排隊，上傳本身會先完成，打標會在後面繼續處理。
+這個開關適合長期使用。
+
+如果你的 Space 正在排隊，上傳本身仍可先完成，打標會在後續繼續處理。
 
 ## 哪些圖片會被處理
 
-自動打標主要處理圖片檔。
+自動打標籤主要處理圖片檔案。
 
-已經有完整標籤、方向、分級、寬高資訊的圖片會跳過，不會重複浪費 Space 呼叫。
+已經有完整標籤、方向、分級、寬度和高度資訊的圖片會被略過，避免不必要的 Space 呼叫。
 
-缺什麼就補什麼。例如只缺方向標籤時，系統會盡量只補方向；缺內容標籤時，才會呼叫 Space 產生內容標籤。
+ImgBed 會盡量只補缺少的資訊。例如只有方向缺失時，系統會嘗試補上方向，而不呼叫完整的內容標籤流程。
 
 ## 常見問題
 
-### 為什麼建議複製自己的 Space？
+### 為什麼要複製自己的 Space？
 
-公開 Space 是大家一起用的，別人也在排隊。複製到自己的帳號後，主要供你的 ImgBed 使用，速度和穩定性通常更好。
+公開 Space 由許多使用者共用。你自己複製的 Space 主要由你的 ImgBed 網站使用，所以通常更快、更可靠。
 
-### Space 一直啟動中怎麼辦？
+### Space 一直在啟動
 
-第一次打開或長時間沒人用時，Space 可能需要啟動一下。可以先打開你的 Space 頁面，等它能正常辨識圖片後，再回 ImgBed 開始打標。
+首次建立後，或長時間閒置後，Space 可能需要一些時間啟動。
 
-### Space 地址怎麼複製？
+先開啟你的 Space 頁面。確認它能正常辨識圖片後，再回到 ImgBed 開始打標。
 
-打開你的 Hugging Face Space 頁面，直接複製瀏覽器網址即可。
+### 如何複製 Space URL？
 
-### 可以填多個 Space 嗎？
+開啟你的 Hugging Face Space 頁面，直接複製瀏覽器網址。
 
-可以。每行一個 Space 地址。圖片很多時，多個 Space 會一起處理。
+範例：
 
-### 標籤語言為什麼是英文？
+```text
+https://huggingface.co/spaces/lintonxue00/wd-tagger
+https://huggingface.co/spaces/SmilingWolf/wd-tagger
+```
 
-SmilingWolf 模型輸出的是英文標籤，這是正常現象。這些標籤主要用於搜尋、篩選、隨機圖 API 和公開圖庫篩選。
+### 可以加入多個 Space 嗎？
+
+可以。每行填寫一個 Space URL。
+
+多個 Space 會一起處理圖片，圖片數量多時很有用。
+
+### 為什麼標籤是英文？
+
+SmilingWolf 模型輸出的是英文標籤，這是預期行為。
+
+這些標籤主要用於搜尋、篩選、隨機圖片 API，以及訪客圖庫篩選。
 
 ### 分級標籤有什麼用？
 
-分級結果會配合安全設定裡的存取模式使用。例如訪客模式限制年齡分級後，公開瀏覽和隨機圖會依規則過濾圖片。
+分級結果會與安全性設定中的存取模式搭配使用。
+
+例如訪客存取受到年齡分級限制時，公開瀏覽和隨機圖片功能會依照這些規則篩選圖片。
 
 ## 快速流程
 
 ```text
-登入 Hugging Face
--> 打開 SmilingWolf/wd-tagger
+Sign in to Hugging Face
+-> Open SmilingWolf/wd-tagger
 -> Duplicate this Space
--> 等 Space 建置完成
--> 複製自己的 Space 地址
--> 回 ImgBed 填 Space URLs
--> 選模型和閾值
--> 開始打標或開啟上傳時自動打標
+-> Wait for the Space to build
+-> Copy your Space URL
+-> Fill Space URLs in ImgBed
+-> Choose model and thresholds
+-> Start tagging or enable auto-tag on upload
 ```

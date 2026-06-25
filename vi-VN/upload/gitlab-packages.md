@@ -4,7 +4,7 @@
 
 Bạn chỉ cần ba thứ:
 
-| Requirement | Purpose |
+| Yêu cầu | Mục đích |
 | --- | --- |
 | GitLab account | Dùng để generate access token và sở hữu project. |
 | GitLab Personal Access Token | ImgBed dùng để access GitLab API, tạo projects và upload files vào Generic Packages. |
@@ -12,7 +12,7 @@ Bạn chỉ cần ba thứ:
 
 ## Các bước thiết lập
 
-### Step 1: Sign in vào GitLab và tạo Access Token
+### Bước 1: Sign in vào GitLab và tạo Access Token
 
 1. Sign in vào GitLab.
 2. Nhấn avatar ở góc trên bên phải và mở `Preferences`.
@@ -20,48 +20,48 @@ Bạn chỉ cần ba thứ:
 4. Đặt tên token dễ nhận biết.
 5. Chọn expiration date theo cách bạn muốn bảo trì.
 6. Chọn scope `api`.
-7. Copy và lưu token ngay sau khi tạo.
+7. Sao chép và lưu token ngay sau khi tạo.
 
-![Create a legacy token](../../image/upload/gitlab-packages/点击生成旧版令牌.png)
+![Tạo legacy token](../../image/upload/gitlab-packages/点击生成旧版令牌.png)
 
 ![Select token permissions](../../image/upload/gitlab-packages/勾选令牌权限.png)
 
-## Step 2: Điền GitLab Packages Channel trong ImgBed
+## Bước 2: Điền GitLab Packages Channel trong ImgBed
 
-Sau khi chọn `GitLab Packages` trong Upload Settings, điền các field như sau:
+Sau khi chọn `GitLab Packages` trong Cài đặt tải lên, điền các trường như sau:
 
-| UI Field | Nhập gì |
+| Trường UI | Nhập gì |
 | --- | --- |
 | Channel name | Tên bạn chọn, ví dụ `GitLabPrimary`. |
 | Access Token | GitLab Personal Access Token vừa tạo. |
-| Project name | Project name ngắn như `imgbed`, hoặc full path như `username/imgbed`. |
+| Project name | Project name ngắn như `imgbed`, hoặc đường dẫn đầy đủ như `username/imgbed`. |
 | Private repository | Bật hoặc tắt theo nhu cầu. |
-| Remark | Optional, ví dụ `Primary upload channel`. |
+| Remark | Không bắt buộc, ví dụ `Primary upload channel`. |
 
 ![Configure the channel](../../image/upload/gitlab-packages/配置渠道内容.png)
 
-## Step 3: Save Channel
+## Bước 3: Save Channel
 
-Sau khi điền fields, nhấn Save.
+Sau khi điền trường, nhấn Save.
 
-System sẽ xử lý các chi tiết sau:
+Hệ thống sẽ xử lý các chi tiết sau:
 
-| System Behavior | Description |
+| Hành vi hệ thống | Mô tả |
 | --- | --- |
-| Short project name | ImgBed xác định current GitLab account và mở rộng value thành full project path. |
+| Tên project ngắn | ImgBed xác định GitLab account hiện tại và mở rộng giá trị thành đường dẫn project đầy đủ. |
 | Full project path | ImgBed dùng path `username/project` đúng như bạn nhập. |
-| Project check | Nếu dùng current personal account path, ImgBed tự tạo project khi chưa tồn tại. Nếu nhập full path thủ công, ImgBed dùng path đó trực tiếp. |
+| Kiểm tra project | Nếu dùng đường dẫn personal account hiện tại, ImgBed tự tạo project khi chưa tồn tại. Nếu nhập đường dẫn đầy đủ thủ công, ImgBed dùng path đó trực tiếp. |
 | Public/private state | Project visibility được sync theo switch hiện tại. |
 
-## Quick Checklist
+## Danh sách kiểm tra nhanh
 
 ```text
-Sign in vào GitLab
--> Tạo Access Token
--> Chỉ chọn api scope
--> Quay lại ImgBed và nhập token cùng project name
+Sign in to GitLab
+-> Create an Access Token
+-> Select only the api scope
+-> Return to ImgBed and enter the token and project name
 -> Save
--> Nếu chỉ nhập project name, ImgBed tự thêm current username
--> Nếu nhập username/project, ImgBed dùng nguyên giá trị đó
--> Upload test image
+-> If only a project name is entered, ImgBed adds the current username automatically
+-> If username/project is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

@@ -1,6 +1,6 @@
 # Discord-Kanal hinzufügen
 
-## Was du vorher brauchst
+## Was Sie vorher benötigen
 
 | Voraussetzung | Zweck |
 | --- | --- |
@@ -11,10 +11,10 @@
 
 ## Wo hinzufügen
 
-1. Öffne die Systemeinstellungen.
-2. Gehe zu Upload-Einstellungen.
-3. Klicke oben rechts auf Kanal hinzufügen.
-4. Wähle `Discord`.
+1. Öffnen Sie die Systemeinstellungen.
+2. Gehen Sie zu Upload-Einstellungen.
+3. Klicken Sie oben rechts auf Kanal hinzufügen.
+4. Wählen Sie `Discord`.
 
 ## Feldübersicht
 
@@ -29,30 +29,30 @@
 
 ### 1. Discord-Server und Textkanal erstellen
 
-1. Öffne Discord.
-2. Erstelle einen neuen Server oder verwende einen bestehenden Server, den du besitzt.
-3. Erstelle in diesem Server einen Textkanal.
+1. Öffnen Sie Discord.
+2. Erstellen Sie einen neuen Server oder verwenden Sie einen bestehenden Server, den Sie besitzt.
+3. Erstellen Sie in diesem Server einen Textkanal.
 
 ![Server erstellen](../../image/upload/discord/创建服务器.png)
 
 ### 2. Bot im Discord Developer Portal erstellen
 
-1. Öffne das Discord Developer Portal: `https://discord.com/developers/applications`
-2. Klicke auf `New Application`.
-3. Gib einen Anwendungsnamen ein und erstelle sie.
-4. Öffne links die Seite `Bot`.
-5. Erzeuge oder setze das Token auf der `Bot`-Seite zurück.
-6. Speichere das Token.
+1. Öffnen Sie das Discord Developer Portal: `https://discord.com/developers/applications`
+2. Klicken Sie auf `New Application`.
+3. Geben Sie einen Anwendungsnamen ein und erstellen Sie sie.
+4. Öffnen Sie links die Seite `Bot`.
+5. Erzeuge oder setzen Sie das Token auf der `Bot`-Seite zurück.
+6. Speichern Sie das Token.
 
-Dieses Token trägst du in ImgBed als `Bot Token` ein.
+Dieses Token tragen Sie in ImgBed als `Bot Token` ein.
 
 ![Bot-Token ansehen](../../image/upload/discord/查看机器人令牌.png)
 
 ### 3. OAuth2-Einladungslink erstellen und Bot installieren
 
-1. Öffne links die Seite `OAuth2`.
-2. Wähle unter Scopes `bot`.
-3. Aktiviere im Berechtigungsbereich diese Rechte:
+1. Öffnen Sie links die Seite `OAuth2`.
+2. Wählen Sie unter Scopes `bot`.
+3. Aktivieren Sie im Berechtigungsbereich diese Rechte:
 
 | Berechtigung | Erforderlich |
 | --- | --- |
@@ -61,10 +61,10 @@ Dieses Token trägst du in ImgBed als `Bot Token` ein.
 | Attach Files | Ja |
 | Read Message History | Ja |
 
-4. Prüfe unten auf der Seite, dass der Integrationstyp `Guild Install` ist.
-5. Kopiere die generierte URL.
-6. Öffne diese URL im Browser.
-7. Wähle den Zielserver aus.
+4. Prüfen Sie unten auf der Seite, dass der Integrationstyp `Guild Install` ist.
+5. Kopieren Sie die generierte URL.
+6. Öffnen Sie diese URL im Browser.
+7. Wählen Sie den Zielserver aus.
 8. Schließe die Autorisierung ab.
 
 ![Bot-Berechtigungen in OAuth2 auswählen](../../image/upload/discord/在oa2勾选机器人权限.png)
@@ -73,12 +73,12 @@ Dieses Token trägst du in ImgBed als `Bot Token` ein.
 
 ### 4. Entwicklermodus aktivieren und Channel ID kopieren
 
-1. Klicke unten links neben deinem Avatar auf das Zahnrad.
-2. Öffne links `Advanced`.
-3. Aktiviere den Entwicklermodus.
-4. Gehe zurück zum Ziel-Textkanal.
-5. Klicke mit der rechten Maustaste auf den Kanalnamen.
-6. Klicke auf Copy Channel ID.
+1. Klicken Sie unten links neben Ihrem Avatar auf das Zahnrad.
+2. Öffnen Sie links `Advanced`.
+3. Aktivieren Sie den Entwicklermodus.
+4. Gehen Sie zurück zum Ziel-Textkanal.
+5. Klicken Sie mit der rechten Maustaste auf den Kanalnamen.
+6. Klicken Sie auf Copy Channel ID.
 
 Die kopierte Zahl ist die `Channel ID`, die ImgBed braucht.
 
@@ -88,7 +88,7 @@ Die kopierte Zahl ist die `Channel ID`, die ImgBed braucht.
 
 ### 5. Discord-Kanal in ImgBed ausfüllen
 
-Kehre zum Konfigurationsdialog zurück und fülle die Felder aus:
+Kehren Sie zum Konfigurationsdialog zurück und füllen Sie die Felder aus:
 
 | UI-Feld | Wert |
 | --- | --- |
@@ -97,33 +97,33 @@ Kehre zum Konfigurationsdialog zurück und fülle die Felder aus:
 | Channel ID | Die aus Discord kopierte Channel ID. |
 | Proxy URL (optional) | Nur bei Bedarf, z. B. `https://your-proxy.example.com`. |
 
-Klicke anschließend auf Speichern.
+Klicken Sie anschließend auf Speichern.
 
 ![Discord-Kanalkonfiguration hinzufügen](../../image/upload/discord/添加dc新渠道配置.png)
 
 ## Prüfung
 
-| Prüfung | So prüfst du es |
+| Prüfung | So prüfen Sie es |
 | --- | --- |
 | Kanalkarte erscheint | Nach dem Speichern sollte in den Upload-Einstellungen eine Discord-Kanalkarte sichtbar sein. |
 | Kanal lässt sich aktivieren | Der Aktiv-Schalter bleibt eingeschaltet. |
 | Konfiguration ist gespeichert | Die Detailansicht zeigt, dass Bot Token und Channel ID gespeichert wurden. |
-| Upload funktioniert | Lade ein Testbild hoch und prüfe, ob es im Ziel-Textkanal von Discord erscheint. |
+| Upload funktioniert | Laden Sie ein Testbild hoch und prüfen Sie, ob es im Ziel-Textkanal von Discord erscheint. |
 
 ## Kurzcheck
 
 ```text
-Discord-Server erstellen
--> Textkanal erstellen
--> Bot im Discord Developer Portal erstellen
--> Bot Token von der Bot-Seite speichern
--> In OAuth2 bot, View Channels, Send Messages, Attach Files und Read Message History auswählen
--> Generierte URL kopieren und Bot für den Zielserver autorisieren
--> Sicherstellen, dass der Ziel-Textkanal dieselben Berechtigungen erlaubt
--> Entwicklermodus aktivieren
--> Ziel-Textkanal rechtsklicken und Channel ID kopieren
--> Bot Token und Channel ID in ImgBed eintragen
--> Speichern und Testbild hochladen
+Create a Discord server
+-> Create a text channel
+-> Create a bot in the Discord Developer Portal
+-> Save the Bot Token from the Bot page
+-> In OAuth2, select bot, View Channels, Send Messages, Attach Files, and Read Message History
+-> Copy the generated URL and authorize the bot for the target server
+-> Make sure the target text channel grants the same permissions
+-> Enable Developer Mode
+-> Right-click the target text channel and copy the Channel ID
+-> Enter the Bot Token and Channel ID in ImgBed
+-> Save and upload a test image
 ```
 
 ## Referenzen

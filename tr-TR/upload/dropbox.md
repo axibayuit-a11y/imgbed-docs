@@ -134,18 +134,18 @@ Quota limits etkinse kota sorgusuna tıklayın. Başarılı sorgudan sonra kanal
 ## Kısa Akış
 
 ```text
-Dropbox App Console'u aç
--> App oluştur
--> App folder access seç
--> https://your-domain.com/api/oauth/dropbox/callback ekle
--> account_info.read / files.metadata.read / files.metadata.write / files.content.write etkinleştir
--> İsteğe bağlı olarak files.content.read etkinleştir
--> Submit tıkla
--> App Key ve App Secret kopyala
--> ImgBed'e gir
--> Get Token tıkla
--> Callback sayfasından Refresh Token kopyala
--> ImgBed'e yapıştır ve kaydet
+Open Dropbox App Console
+-> Create an app
+-> Choose App folder access
+-> Add https://your-domain.com/api/oauth/dropbox/callback
+-> Enable account_info.read / files.metadata.read / files.metadata.write / files.content.write
+-> Optionally enable files.content.read
+-> Click Submit
+-> Copy App Key and App Secret
+-> Fill them into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## Kaynaklar

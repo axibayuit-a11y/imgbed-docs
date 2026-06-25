@@ -22,7 +22,7 @@ Připravte si:
 5. Vyhledejte `Google Drive API`.
 6. Otevřete ji a zapněte.
 
-### Krok 2: Nastavte OAuth consent screen
+### Krok 2: Nastavte obrazovku souhlasu OAuth
 
 1. V Google Cloud otevřete `Google Auth Platform`.
 2. Vyplňte základní údaje v `Branding`, například název aplikace, e-mail podpory a kontakt vývojáře.
@@ -52,7 +52,7 @@ https://img.example.com/api/oauth/google/callback
 
 ![Vytvoření OAuth klienta](../../image/upload/google-drive/oa客户端id创建.png)
 
-![Zadání domény a callback URL](../../image/upload/google-drive/填写oa客户端url信息.png)
+![Zadání domény a URL callbacku](../../image/upload/google-drive/填写oa客户端url信息.png)
 
 Po vytvoření zkopírujte:
 
@@ -80,7 +80,7 @@ V Nastavení nahrávání zvolte `Google Drive` a vyplňte:
 1. Klikněte na `Get Token`.
 2. Vyberte Google účet, který chcete připojit.
 3. Dokončete autorizační kroky.
-4. Callback stránka zobrazí `Refresh Token`.
+4. Stránka callbacku zobrazí `Refresh Token`.
 5. Zkopírujte ho.
 6. Vraťte se do ImgBed a vložte ho do `Refresh Token`.
 
@@ -95,22 +95,22 @@ Po vyplnění všech polí kanál uložte.
 ## Rychlý postup
 
 ```text
-Otevřete Google Cloud
--> Vytvořte nebo vyberte projekt
--> Zapněte Google Drive API
--> Nastavte Google Auth Platform
--> Pokud je Audience External, přidejte svůj Google účet do Test users
--> Vytvořte OAuth klienta typu Web application
--> Použijte https://your-domain.com/api/oauth/google/callback jako redirect URI
--> Zadejte Client ID a Client Secret do ImgBed
--> Klikněte Get Token
--> Přihlaste se přes Google a autorizujte
--> Zkopírujte Refresh Token z callback stránky
--> Vložte ho zpět do ImgBed a uložte
--> Nahrajte testovací obrázek
+Open Google Cloud
+-> Create or select a project
+-> Enable Google Drive API
+-> Configure Google Auth Platform
+-> If Audience is External, add your Google account to Test users
+-> Create a Web application OAuth client
+-> Use https://your-domain.com/api/oauth/google/callback as the redirect URI
+-> Fill Client ID and Client Secret into ImgBed
+-> Click Get Token
+-> Sign in with Google and authorize
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
+-> Upload a test image
 ```
 
-## Reference
+## Odkazy
 
 1. Google OAuth Web Server Applications: https://developers.google.com/identity/protocols/oauth2/web-server
 2. Google Workspace OAuth Consent Configuration: https://developers.google.com/workspace/guides/configure-oauth-consent

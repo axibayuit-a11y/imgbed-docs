@@ -3,102 +3,176 @@
 El etiquetado automático se configura en:
 
 ```text
-Configuración del sistema -> Otros ajustes -> Etiquetado automático
+System Settings -> Other Settings -> Auto Tagging
 ```
 
-Esta función genera etiquetas para las imágenes y facilita la búsqueda, los filtros de la API aleatoria, la galería pública y el control de acceso por clasificación de edad.
+Genera etiquetas de imagen automáticamente. Estas etiquetas son útiles para la búsqueda, el filtrado de imágenes aleatorias, el filtrado de la galería pública y el control de acceso por clasificación de edad.
 
-## Qué puede hacer
+## Qué puede hacer el etiquetado automático
 
 | Función | Descripción |
 | --- | --- |
-| Etiquetas de contenido | Añade etiquetas de personas, escenas, objetos, estilo visual y más |
-| Etiquetas de personajes | Útil para imágenes de anime e ilustraciones |
-| Etiquetas de orientación | Añade `landscape`, `portrait` o `square` |
-| Clasificación de imagen | Guarda resultados `G/S/Q/E` |
-| Etiquetar al subir | Procesa automáticamente las imágenes nuevas |
-| Etiquetado por lotes | Añade etiquetas a imágenes antiguas en una o varias carpetas |
+| Generar etiquetas de contenido | Añade etiquetas para personas, escenas, objetos, estilo artístico y contenido visual similar. |
+| Generar etiquetas de personajes | Útil para imágenes de anime e ilustraciones. |
+| Añadir etiquetas de orientación | Añade `landscape`, `portrait` o `square`. |
+| Añadir clasificación de imagen | Guarda resultados de clasificación `G/S/Q/E` para contenido general, sensible, cuestionable o explícito. |
+| Etiquetar automáticamente al subir | Las imágenes recién subidas entran automáticamente en el flujo de etiquetado. |
+| Etiquetado por lotes | Añade etiquetas a imágenes antiguas en todas las carpetas o en carpetas seleccionadas. |
 
-## Qué preparar primero
+## Qué debe preparar primero
 
-Necesitas al menos una URL accesible de Hugging Face Space.
+Prepare al menos una URL accesible de un Hugging Face Space.
 
-Lo recomendable es duplicar el Space `wd-tagger` de SmilingWolf en tu propia cuenta de Hugging Face:
+El método recomendado es duplicar el Space `wd-tagger` de SmilingWolf en su propia cuenta de Hugging Face:
 
 ```text
 https://huggingface.co/spaces/SmilingWolf/wd-tagger
 ```
 
-Puedes usar el Space público para pruebas, pero lo comparten muchos usuarios y puede tener cola, ir lento o quedar no disponible. Para uso continuo conviene tener una copia propia.
+Puede usar temporalmente el Space público, pero los Spaces públicos son compartidos por muchos usuarios y pueden generar colas, volverse lentos o dejar de estar disponibles. Un Space duplicado en su propia cuenta es más estable para el etiquetado automático a largo plazo.
 
-## Duplicar el Space
+## Duplicar el Space de SmilingWolf
 
-1. Inicia sesión en Hugging Face.
-2. Abre `https://huggingface.co/spaces/SmilingWolf/wd-tagger`.
+1. Inicie sesión en Hugging Face.
+2. Abra `https://huggingface.co/spaces/SmilingWolf/wd-tagger`.
 
 ![Space público de SmilingWolf](../../image/other/微笑狼的公开仓库.png)
 
-3. Abre el menú de la esquina superior derecha.
-4. Elige `Duplicate this Space`.
-5. Mantén el nombre o usa uno reconocible, como `wd-tagger`.
-6. Déjalo como `Public`; así ImgBed puede llamarlo con menos fricción.
-7. Empieza con el hardware gratuito.
-8. Crea el Space y espera a que termine la compilación.
+3. Haga clic en el menú de tres puntos de la esquina superior derecha.
+4. Elija `Duplicate this Space`.
+5. Mantenga el nombre predeterminado del Space o elija uno propio, como `wd-tagger`.
+6. Configure la visibilidad como `Public`. Los Spaces públicos son más fáciles de llamar desde ImgBed.
+7. Al principio, mantenga el hardware gratuito predeterminado. Actualícelo más adelante solo si las colas se vuelven evidentes.
+8. Cree el Space y espere a que termine la compilación.
 
-Cuando termine, copia la URL del navegador y pégala en `Space URLs` dentro de ImgBed.
+Cuando la compilación termine, abra la página de su Space. La URL suele tener este aspecto:
 
-## Ajustes recomendados
+```text
+https://huggingface.co/spaces/your-name/wd-tagger
+```
+
+Copie la URL del navegador y péguela en `Space URLs` dentro de ImgBed.
+
+## Rellenar varias Space URLs
+
+Introduzca una URL de Space por línea.
+
+Ejemplos:
+
+| Valor | Descripción |
+| --- | --- |
+| `https://huggingface.co/spaces/SmilingWolf/wd-tagger` | Space público de SmilingWolf. Adecuado para pruebas temporales. |
+| `https://huggingface.co/spaces/lintonxue00/wd-tagger` | URL copiada de una página de Space. |
+| `https://huggingface.co/spaces/your-name/wd-tagger` | Página del Space que duplicó en su propia cuenta. |
+
+Puede introducir varias URL. ImgBed usa varios Spaces en conjunto, lo que puede mejorar la velocidad.
+
+Si un Space no está disponible temporalmente, los demás pueden seguir procesando.
+
+## Ajustes
 
 | Opción | Recomendación |
 | --- | --- |
-| `Space URLs` | Una URL por línea |
-| Carpeta objetivo | Vacío para todas; selecciona una carpeta si quieres limitarlo |
-| Modelo | Mantén `wd-swinv2-tagger-v3` al principio |
-| Umbral de etiquetas generales | Empieza cerca de `0.35` |
-| Umbral de personajes | Empieza cerca de `0.85` para evitar falsos positivos |
-| `MCut` | Déjalo apagado al principio |
-| Etiquetar al subir | Actívalo si quieres procesar nuevas imágenes automáticamente |
+| `Space URLs` | Introduzca las URL de Space que preparó. Use al menos una. |
+| Carpeta de destino | Déjela vacía para todas las carpetas. Seleccione una carpeta solo si desea procesar un directorio específico. |
+| Modelo de reconocimiento | Mantenga `wd-swinv2-tagger-v3` de forma predeterminada. |
+| Umbral de etiquetas generales | El valor predeterminado funciona para la mayoría de las imágenes. Los valores más bajos generan más etiquetas; los más altos generan menos. |
+| Umbral de etiquetas de personajes | El valor predeterminado es conservador y ayuda a evitar etiquetas de personajes incorrectas. |
+| Umbral automático `MCut` | Déjelo desactivado al principio. Actívelo cuando quiera que el modelo decida automáticamente la cantidad de etiquetas. |
+| Etiquetar automáticamente al subir | Actívelo si las imágenes recién subidas deben recibir etiquetas automáticamente. |
+| Iniciar etiquetado | Ejecuta manualmente el etiquetado por lotes de imágenes antiguas. |
 
-Si salen demasiadas etiquetas, sube un poco el umbral general. Si salen muy pocas, bájalo ligeramente.
+## Valores iniciales recomendados
+
+| Opción | Valor recomendado |
+| --- | --- |
+| Modelo de reconocimiento | `wd-swinv2-tagger-v3` |
+| Umbral de etiquetas generales | `0.35` |
+| Umbral de etiquetas de personajes | `0.85` |
+| `MCut` | Desactivado al principio |
+| Etiquetar automáticamente al subir | Activar si es necesario |
+
+Si hay demasiadas etiquetas, aumente ligeramente el umbral general.
+
+Si hay muy pocas etiquetas, reduzca ligeramente el umbral general.
 
 ## Etiquetado por lotes
 
-1. Rellena `Space URLs`.
-2. Selecciona una carpeta objetivo.
-3. Inicia el etiquetado.
-4. Espera a que termine el progreso.
+1. Rellene `Space URLs`.
+2. Seleccione una carpeta de destino.
+3. Haga clic en iniciar etiquetado.
+4. Espere a que termine el progreso.
 
-Si la carpeta objetivo queda vacía, ImgBed procesa todas las carpetas.
+Si la carpeta de destino está vacía, ImgBed procesa todas las carpetas.
 
-## Etiquetar al subir
+El etiquetado por lotes es más adecuado para imágenes antiguas. Para imágenes nuevas, active el etiquetado automático al subir, de modo que no tenga que ejecutarlo manualmente cada vez.
 
-Cuando esta opción está activa, las imágenes nuevas llaman automáticamente a los `Space URLs` configurados.
+## Etiquetado automático al subir
 
-Si el Space tiene cola, la subida puede terminar primero y el etiquetado continuar después en segundo plano.
+Después de activar el etiquetado automático al subir, las imágenes recién subidas llaman automáticamente a las `Space URLs` configuradas.
 
-## Preguntas habituales
+Esto es adecuado para uso a largo plazo.
+
+Si su Space está en cola, la subida puede completarse primero y el etiquetado continuará después.
+
+## Qué imágenes se procesan
+
+El etiquetado automático procesa principalmente archivos de imagen.
+
+Las imágenes que ya tienen etiquetas, orientación, clasificación, anchura y altura completas se omiten para evitar llamadas innecesarias al Space.
+
+ImgBed rellena solo la información que falta siempre que es posible. Por ejemplo, si solo falta la orientación, intenta añadir la orientación sin llamar al flujo completo de etiquetas de contenido.
+
+## Preguntas frecuentes
 
 ### ¿Por qué duplicar mi propio Space?
 
-Los Spaces públicos se comparten entre muchos usuarios. Una copia propia suele ser más rápida y estable para tu sitio.
+Los Spaces públicos se comparten entre muchos usuarios. Su propio Space duplicado lo usa principalmente su sitio ImgBed, por lo que suele ser más rápido y fiable.
+
+### El Space sigue iniciándose
+
+Después de crearlo por primera vez, o tras un período prolongado de inactividad, un Space puede necesitar tiempo para iniciarse.
+
+Abra primero la página de su Space. Cuando pueda reconocer una imagen con normalidad, vuelva a ImgBed e inicie el etiquetado.
+
+### ¿Cómo copio la URL del Space?
+
+Abra su página de Hugging Face Space y copie la dirección del navegador.
+
+Ejemplos:
+
+```text
+https://huggingface.co/spaces/lintonxue00/wd-tagger
+https://huggingface.co/spaces/SmilingWolf/wd-tagger
+```
+
+### ¿Puedo añadir varios Spaces?
+
+Sí. Introduzca una URL de Space por línea.
+
+Varios Spaces procesan las imágenes en conjunto y son útiles cuando tiene muchas imágenes.
 
 ### ¿Por qué las etiquetas están en inglés?
 
-Es normal. Los modelos de SmilingWolf devuelven etiquetas en inglés. ImgBed las usa para búsqueda, filtros, API aleatoria y galería pública.
+Los modelos de SmilingWolf generan etiquetas en inglés. Es lo esperado.
 
-### ¿Para qué sirve la clasificación?
+Las etiquetas se usan principalmente para búsqueda, filtrado, la API de imágenes aleatorias y los filtros de la galería pública.
 
-La clasificación trabaja con el modo de acceso de seguridad. Por ejemplo, si limitas lo que pueden ver los visitantes por edad, la galería y la API aleatoria filtrarán según esas reglas.
+### ¿Para qué sirven las etiquetas de clasificación?
+
+Los resultados de clasificación funcionan con el modo de acceso de la configuración de seguridad.
+
+Por ejemplo, cuando el acceso de visitantes se limita por clasificación de edad, la navegación pública y las funciones de imágenes aleatorias filtran las imágenes según esas reglas.
 
 ## Flujo rápido
 
 ```text
-Iniciar sesión en Hugging Face
--> Abrir SmilingWolf/wd-tagger
--> Duplicar el Space
--> Esperar la compilación
--> Copiar la URL del Space
--> Pegarla en Space URLs
--> Ajustar modelo y umbrales
--> Iniciar etiquetado o activar etiquetado al subir
+Sign in to Hugging Face
+-> Open SmilingWolf/wd-tagger
+-> Duplicate this Space
+-> Wait for the Space to build
+-> Copy your Space URL
+-> Fill Space URLs in ImgBed
+-> Choose model and thresholds
+-> Start tagging or enable auto-tag on upload
 ```

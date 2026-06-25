@@ -1,103 +1,103 @@
 # Cloudflare API Token
 
-Cloudflare API credentials ImgBed کو file changes کے بعد Cloudflare CDN cache purge کرنے دیتے ہیں۔
+Cloudflare API اسناد ImgBed کو فائلیں تبدیل ہونے کے بعد Cloudflare CDN کیش صاف کرنے کی اجازت دیتی ہیں۔
 
-![Cloudflare API Token settings](../../image/Safety/cloudflare%20api%20token截图.png)
+![Cloudflare API Token کی ترتیبات](../../image/Safety/cloudflare%20api%20token截图.png)
 
-## کہاں Configure کریں
+## کہاں ترتیب دیں
 
-admin panel کھولیں، پھر جائیں:
+ایڈمن پینل کھولیں، پھر یہاں جائیں:
 
 ```text
 System Settings -> Security Settings -> Cloudflare API Token
 ```
 
-آپ کو یہ fields بھرنی ہیں:
+آپ کو یہ معلومات بھرنی ہوں گی:
 
 - Zone ID
-- Account email
+- اکاؤنٹ ای میل
 - API Key
 
-## یہ Setting کیا کرتی ہے
+## یہ ترتیب کیا کرتی ہے
 
-Cloudflare public image URLs کو cache کر سکتا ہے۔
+Cloudflare عوامی تصویر URLs کو کیش کر سکتا ہے۔
 
-Caching image delivery کو تیز بناتی ہے، لیکن file delete، block، replace، یا move کرنے کے بعد پرانا content کچھ وقت تک دکھ سکتا ہے۔
+کیشنگ تصویر کی ترسیل تیز کرتی ہے، لیکن فائل حذف، بلاک، تبدیل، یا منتقل کرنے کے بعد پرانا مواد کچھ وقت تک دکھائی بھی دے سکتا ہے۔
 
-Cloudflare API credentials configure ہونے کے بعد ImgBed ان operations کے مکمل ہونے پر متعلقہ Cloudflare cache purge کرنے کی کوشش کرتا ہے۔
+Cloudflare API اسناد ترتیب دینے کے بعد ImgBed ان کارروائیوں کے مکمل ہونے پر متعلقہ Cloudflare کیش صاف کرنے کی کوشش کرتا ہے۔
 
 یہ اس وقت مفید ہے جب:
 
-- آپ image delete کریں اور چاہتے ہوں کہ public link جلد از جلد کام کرنا بند کر دے۔
-- آپ image block کریں اور چاہتے ہوں کہ visitors original file نہ دیکھ سکیں۔
-- آپ same name سے file replace کریں اور چاہتے ہوں کہ visitors نئی version جلد دیکھیں۔
-- آپ files move یا rename کریں اور چاہتے ہوں کہ old path cache جلد refresh ہو۔
-- آپ public access rules بدلیں اور چاہتے ہوں کہ public gallery یا random image cache جلد update ہو۔
+- آپ کوئی تصویر حذف کریں اور چاہتے ہوں کہ عوامی لنک جلد از جلد کام کرنا بند کر دے۔
+- آپ کوئی تصویر بلاک کریں اور چاہتے ہوں کہ وزٹرز اصل فائل نہ دیکھ سکیں۔
+- آپ اسی نام سے فائل تبدیل کریں اور چاہتے ہوں کہ وزٹرز نئی فائل جلد دیکھ سکیں۔
+- آپ فائلیں منتقل یا نام تبدیل کریں اور چاہتے ہوں کہ پرانے راستے کا کیش جلد تازہ ہو۔
+- آپ عوامی رسائی کے اصول بدلیں اور چاہتے ہوں کہ عوامی گیلری یا بے ترتیب تصویر API کا کیش جلد اپ ڈیٹ ہو۔
 
-## خالی چھوڑنے سے کیا ہوگا
+## خالی چھوڑنے پر کیا ہوتا ہے
 
-اس setting کے بغیر بھی ImgBed normally کام کرتا ہے۔
+اس ترتیب کے بغیر بھی ImgBed معمول کے مطابق کام کرتا ہے۔
 
-فرق صرف یہ ہے کہ ImgBed actively Cloudflare CDN cache purge نہیں کرے گا۔ visitors پرانا content Cloudflare cache کے naturally expire ہونے تک دیکھ سکتے ہیں۔
+صرف اتنا فرق ہوتا ہے کہ ImgBed Cloudflare CDN کیش کو فعال طور پر صاف نہیں کرے گا۔ وزٹرز اس وقت تک پرانا مواد دیکھ سکتے ہیں جب تک Cloudflare کیش قدرتی طور پر ختم نہ ہو جائے۔
 
 ## Zone ID کیسے تلاش کریں
 
-Zone ID اس site کا Cloudflare Zone ID ہے جو آپ کے ImgBed domain کے لیے استعمال ہوتی ہے۔
+Zone ID اس سائٹ کا Cloudflare Zone ID ہے جو آپ کے ImgBed ڈومین کے لیے استعمال ہوتی ہے۔
 
-1. Cloudflare dashboard میں sign in کریں۔
-2. وہ site کھولیں جس میں آپ کا ImgBed domain شامل ہے۔
-3. site overview page پر `Zone ID` تلاش کریں۔
-4. اسے ImgBed کے `Zone ID` field میں copy کریں۔
+1. Cloudflare ڈیش بورڈ میں سائن ان کریں۔
+2. وہ سائٹ کھولیں جس میں آپ کا ImgBed ڈومین شامل ہے۔
+3. سائٹ کے جائزہ صفحے پر `Zone ID` تلاش کریں۔
+4. اسے کاپی کر کے ImgBed کے `Zone ID` فیلڈ میں چسپاں کریں۔
 
-یہ site Zone ID ہے، account ID نہیں۔
+یہ سائٹ Zone ID ہے، اکاؤنٹ ID نہیں۔
 
-## Account Email
+## اکاؤنٹ ای میل
 
-وہ email address درج کریں جس سے آپ Cloudflare میں sign in کرتے ہیں۔
+وہ ای میل پتہ درج کریں جس سے آپ Cloudflare میں سائن ان کرتے ہیں۔
 
-یہ نیچے دی گئی API Key سے match ہونا چاہیے۔
+یہ نیچے دی گئی API Key سے مطابقت رکھنا چاہیے۔
 
 ## API Key
 
 اپنی Cloudflare Global API Key درج کریں۔
 
-1. Cloudflare dashboard میں sign in کریں۔
-2. اپنا profile کھولیں۔
-3. API Tokens page پر جائیں۔
+1. Cloudflare ڈیش بورڈ میں سائن ان کریں۔
+2. اپنا پروفائل کھولیں۔
+3. API Tokens صفحے پر جائیں۔
 4. `Global API Key` تلاش کریں۔
-5. اسے view اور copy کریں۔
-6. ImgBed کے `API Key` field میں paste کریں۔
+5. اسے دیکھیں اور کاپی کریں۔
+6. اسے ImgBed کے `API Key` فیلڈ میں چسپاں کریں۔
 
-![View global API key](../../image/Safety/查看全局令牌.png)
+![گلوبل API کلید دیکھیں](../../image/Safety/查看全局令牌.png)
 
-## کب اثر کرے گا
+## کب مؤثر ہوتی ہے
 
-fields بھرنے کے بعد settings save کریں۔
+فیلڈز بھرنے کے بعد ترتیبات محفوظ کریں۔
 
-آئندہ file changes خودکار طور پر Cloudflare cache purge کرنے کی کوشش کریں گی۔ پچھلے operations retroactively purge نہیں ہوتے۔ اگر آپ نے setup سے پہلے file delete یا replace کی ہے، تو Cloudflare cache expire ہونے کا انتظار کریں یا Cloudflare میں manual purge کریں۔
+آئندہ فائل تبدیلیوں پر Cloudflare کیش صاف کرنے کی کوشش خودکار طور پر کی جائے گی۔ پچھلی کارروائیوں پر یہ عمل سابقہ طور پر لاگو نہیں ہوتا۔ اگر آپ نے یہ ترتیب دینے سے پہلے کوئی فائل حذف یا تبدیل کی تھی تو Cloudflare کیش ختم ہونے کا انتظار کریں یا Cloudflare میں اسے دستی طور پر صاف کریں۔
 
-## FAQ
+## عمومی سوالات
 
-### کیا یہ Required ہے؟
+### کیا یہ لازمی ہے؟
 
 نہیں۔
 
-اگر آپ کا domain Cloudflare استعمال نہیں کرتا، یا CDN cache delay سے مسئلہ نہیں، تو اسے خالی چھوڑ سکتے ہیں۔
+اگر آپ کا ڈومین Cloudflare استعمال نہیں کرتا، یا آپ CDN کیش میں تاخیر سے مطمئن ہیں، تو آپ اسے خالی چھوڑ سکتے ہیں۔
 
-### غلط Credentials Uploads کو خراب کریں گے؟
+### کیا غلط اسناد اپ لوڈز خراب کر دیں گی؟
 
-عموماً نہیں۔
+عام طور پر نہیں۔
 
-غلط credentials صرف ImgBed کو Cloudflare cache purge کرنے سے روکیں گے۔ upload اور normal file access جاری رہنا چاہیے۔
+غلط اسناد صرف ImgBed کو Cloudflare کیش صاف کرنے سے روکتی ہیں۔ اپ لوڈ اور معمول کی فائل رسائی جاری رہنی چاہیے۔
 
-### Deleted Image اب بھی کیوں کھل رہی ہے؟
+### حذف شدہ تصویر اب بھی کیوں کھل رہی ہے؟
 
-سب سے عام وجہ یہ ہے کہ Cloudflare کے پاس پرانی file cached ہے۔
+سب سے عام وجہ یہ ہے کہ Cloudflare کے پاس اب بھی پرانی فائل کیش میں موجود ہے۔
 
-صحیح Cloudflare API credentials کے ساتھ ImgBed file delete ہونے پر متعلقہ URL cache purge کرتا ہے۔
+درست Cloudflare API اسناد کے ساتھ، فائل حذف ہونے پر ImgBed متعلقہ URL کیش صاف کرتا ہے۔
 
-### File Replace کرنے کے بعد پرانی Image کیوں دکھ رہی ہے؟
+### فائل تبدیل کرنے کے بعد بھی پرانی تصویر کیوں دکھائی دے رہی ہے؟
 
-یہ بھی عموماً CDN cache کی وجہ سے ہوتا ہے۔
+یہ بھی عموماً CDN کیش کی وجہ سے ہوتا ہے۔
 
-یہ setting configured ہونے کے بعد ImgBed same name والی file overwrite ہونے پر old URL cache purge کرنے کی کوشش کرتا ہے۔
+یہ ترتیب مکمل ہونے کے بعد، اسی نام کی فائل overwrite ہونے پر ImgBed پرانے URL کا کیش صاف کرنے کی کوشش کرتا ہے۔

@@ -1,17 +1,17 @@
-# OneDrive Channel சேர்க்கவும்
+# OneDrive சேனல் சேர்க்கவும்
 
 ## தொடங்குவதற்கு முன் தேவையானவை
 
 | தேவை | ஏன் தேவை |
 | --- | --- |
-| Microsoft account | Microsoft admin pages அணுகவும் OneDrive authorize செய்யவும் |
-| உங்கள் ImgBed domain | OAuth callback URL-க்கு |
-| App registration | `Client ID` மற்றும் `Client Secret` உருவாக்க |
-| OneDrive account | உண்மையான file storage location ஆக |
+| Microsoft கணக்கு | Microsoft admin pages அணுகவும் OneDrive authorize செய்யவும் |
+| உங்கள் ImgBed டொமைன் | OAuth callback URL-க்கு |
+| செயலி registration | `Client ID` மற்றும் `Client Secret` உருவாக்க |
+| OneDrive கணக்கு | உண்மையான கோப்பு சேமிப்பு location ஆக |
 
-## Setup Steps
+## அமைப்பு படிகள்
 
-### Step 1: Microsoft Entra ID திறக்கவும்
+### படி 1: Microsoft Entra ID திறக்கவும்
 
 1. `portal.azure.com` திறக்கவும்.
 2. மேலே search-ல் `Microsoft Entra ID` தேடவும்.
@@ -25,124 +25,124 @@ Continue searching in Microsoft Entra ID
 5. `App registrations` திறக்கவும்.
 6. `New registration` கிளிக் செய்யவும்.
 
-### Step 2: App Register செய்யவும்
+### படி 2: செயலி Register செய்யவும்
 
 `New registration` page-ல்:
 
-| Field | What To Enter |
+| புலம் | எதை உள்ளிட வேண்டும் |
 | --- | --- |
 | Name | அறியக்கூடிய பெயர், உதா. `imgbed-onedrive` |
-| Supported account types | கீழே உள்ள table படி தேர்வு செய்யவும் |
+| Supported கணக்கு types | கீழே உள்ள table படி தேர்வு செய்யவும் |
 | Redirect URI type | `Web` |
 | Redirect URI | `https://your-domain.com/api/oauth/onedrive/callback` |
 
-Account type வழிகாட்டி:
+கணக்கு type வழிகாட்டி:
 
-| உங்கள் Scenario | Supported Account Types |
+| உங்கள் Scenario | Supported கணக்கு Types |
 | --- | --- |
-| Personal OneDrive மட்டும் | personal Microsoft account option தேர்வு செய்யவும். |
-| personal மற்றும் work/school accounts இரண்டும் | இரண்டையும் support செய்யும் option தேர்வு செய்யவும். |
-| Company அல்லது school OneDrive மட்டும் | organizational account option தேர்வு செய்யவும். |
+| Personal OneDrive மட்டும் | personal Microsoft கணக்கு option தேர்வு செய்யவும். |
+| தனிப்பட்ட மற்றும் work/school கணக்குகள் இரண்டும் | இரண்டையும் support செய்யும் option-ஐத் தேர்வு செய்யவும். |
+| நிறுவனம் அல்லது school OneDrive மட்டும் | organizational கணக்கு option-ஐத் தேர்வு செய்யவும். |
 
-form நிரப்பிய பிறகு register கிளிக் செய்யவும்.
+form நிரப்பிய பிறகு register என்பதைக் கிளிக் செய்யவும்.
 
-![Create OneDrive app](../../image/upload/onedrive/添加应用程序注册.png)
+![OneDrive செயலி உருவாக்கவும்](../../image/upload/onedrive/添加应用程序注册.png)
 
-### Step 3: App Information Copy செய்யவும்
+### படி 3: செயலி தகவலை நகலெடுக்கவும்
 
-app உருவான பிறகு overview page-ல் இருந்து:
+செயலி உருவான பிறகு overview page-ல் இருந்து:
 
-| Microsoft Field | ImgBed Field |
+| Microsoft புலம் | ImgBed புலம் |
 | --- | --- |
 | `Application (client) ID` | `Client ID` |
-| `Directory (tenant) ID` | organizational accounts-க்கு `Tenant ID` |
+| `Directory (tenant) ID` | organizational கணக்குகளுக்கான `Tenant ID` |
 
-![Application and tenant IDs](../../image/upload/onedrive/应用程序ID和目录租户ID位.png)
+![Application மற்றும் tenant IDs](../../image/upload/onedrive/应用程序ID和目录租户ID位.png)
 
-### Step 4: Client Secret உருவாக்கவும்
+### படி 4: Client Secret உருவாக்கவும்
 
 1. `Certificates & secrets` திறக்கவும்.
 2. `New client secret` கிளிக் செய்யவும்.
-3. description உள்ளிடவும்.
-4. expiration period தேர்வு செய்யவும்.
-5. உருவானதும் `Value` உடனே copy செய்யவும்.
+3. விரும்பிய விளக்கத்தை உள்ளிடவும்.
+4. காலாவதி காலத்தைத் தேர்வு செய்யவும்.
+5. உருவானதும் `Value`-ஐ உடனே நகலெடுக்கவும்.
 
-![Save client secret value](../../image/upload/onedrive/保存客户端密码值.png)
+![Client Secret மதிப்பைச் சேமிக்கவும்](../../image/upload/onedrive/保存客户端密码值.png)
 
-### Step 5: API Permissions சேர்க்கவும்
+### படி 5: API அனுமதிகளைச் சேர்க்கவும்
 
 1. `API permissions` திறக்கவும்.
 2. `Add a permission` கிளிக் செய்யவும்.
 3. `Microsoft Graph` தேர்வு செய்யவும்.
 4. `Delegated permissions` தேர்வு செய்யவும்.
-5. இந்த permissions சேர்க்கவும்:
+5. இந்த permissions-ஐச் சேர்க்கவும்:
 
-| Permission | Purpose |
+| அனுமதி | நோக்கம் |
 | --- | --- |
-| `Files.ReadWrite.All` | files upload, folders create, files delete செய்ய |
-| `offline_access` | ImgBed `Refresh Token` பெற அனுமதி |
-| `User.Read` | account மற்றும் quota information படிக்க |
+| `Files.ReadWrite.All` | கோப்புகளைப் பதிவேற்ற, folders உருவாக்க, கோப்புகளை நீக்க |
+| `offline_access` | ImgBed `Refresh Token` பெற அனுமதிக்கிறது |
+| `User.Read` | கணக்கு மற்றும் quota தகவலைப் படிக்கிறது |
 
-### Step 6: ImgBed-ல் OneDrive Channel நிரப்பவும்
+### படி 6: ImgBed-ல் OneDrive சேனல் நிரப்பவும்
 
-Upload Settings-ல் `OneDrive` தேர்வு செய்து:
+பதிவேற்ற அமைப்புகள்-ல் `OneDrive` தேர்வு செய்து:
 
-| ImgBed Field | What To Enter |
+| ImgBed புலம் | எதை உள்ளிட வேண்டும் |
 | --- | --- |
-| Channel name | அறியக்கூடிய பெயர், உதா. `Main OneDrive` |
+| சேனல் பெயர் | அறியக்கூடிய பெயர், உதா. `Main OneDrive` |
 | Client ID | Microsoft `Application (client) ID` |
-| Client Secret | copy செய்த `Client Secret Value` |
+| Client Secret | நகலெடு செய்த `Client Secret Value` |
 | Tenant ID | கீழே உள்ள table படி |
-| Refresh Token | இப்போது காலியாக விடவும் |
-| Root directory | Optional. default `imgbed`. |
-| Note | Optional |
+| Refresh டோக்கன் | இப்போது காலியாக விடவும் |
+| வேர் அடைவு | விருப்பத்தேர்வு. இயல்புநிலை `imgbed`. |
+| குறிப்பு | விருப்பத்தேர்வு |
 
-![Fill OneDrive channel config](../../image/upload/onedrive/添加新渠道配置.png)
+![OneDrive சேனல் config-ஐ நிரப்பவும்](../../image/upload/onedrive/添加新渠道配置.png)
 
 `Tenant ID` நிரப்புவது:
 
-| நீங்கள் தேர்வு செய்த Account Type | ImgBed `Tenant ID` |
+| நீங்கள் தேர்வு செய்த கணக்கு வகை | ImgBed `Tenant ID` |
 | --- | --- |
-| Personal accounts | `consumers` |
-| Personal + organizational accounts | `common` |
-| Current organization only | `Directory (tenant) ID` |
+| தனிப்பட்ட கணக்குகள் | `consumers` |
+| தனிப்பட்ட + நிறுவனம் சார்ந்த கணக்குகள் | `common` |
+| தற்போதைய நிறுவனம் மட்டும் | `Directory (tenant) ID` |
 
-### Step 7: Refresh Token பெறவும்
+### படி 7: Refresh டோக்கன் பெறவும்
 
 1. ImgBed-ல் `Get Token` கிளிக் செய்யவும்.
-2. connect செய்ய வேண்டிய Microsoft account-ல் sign in செய்யவும்.
-3. authorization prompt approve செய்யவும்.
+2. இணைக்க வேண்டிய Microsoft கணக்கில் உள்நுழையவும்.
+3. authorization prompt-ஐ அனுமதிக்கவும்.
 4. callback page `Refresh Token` காட்டும்.
-5. அதை copy செய்யவும்.
-6. ImgBed-க்கு திரும்பி `Refresh Token` field-ல் paste செய்யவும்.
+5. அதை நகலெடுக்கவும்.
+6. ImgBed-க்கு திரும்பி, அதை `Refresh Token` புலத்தில் ஒட்டவும்.
 
-![Copy refresh token](../../image/upload/onedrive/复制刷新令牌.png)
+![நகலெடு refresh டோக்கன்](../../image/upload/onedrive/复制刷新令牌.png)
 
-### Step 8: Channel Save செய்யவும்
+### படி 8: சேனல் சேமி செய்யவும்
 
-அனைத்து fields நிரப்பிய பிறகு channel save செய்யவும்.
+அனைத்து புலங்களையும் நிரப்பிய பிறகு சேனலை சேமிக்கவும்.
 
-## Quick Flow
+## விரைவு ஓட்டம்
 
 ```text
-portal.azure.com திறக்கவும்
--> Microsoft Entra ID தேடவும்
--> App registrations திறக்கவும்
--> புதிய app register செய்யவும்
--> Name / Supported account types / Web redirect URI நிரப்பவும்
+Open portal.azure.com
+-> Search for Microsoft Entra ID
+-> Open App registrations
+-> Register a new app
+-> Fill Name / Supported account types / Web redirect URI
 -> Register
--> Application (client) ID copy செய்யவும்
--> Authentication-ல் callback URL சரிபார்க்கவும்
--> Certificates & secrets-ல் Client Secret உருவாக்கவும்
--> API permissions சேர்க்கவும்
--> ImgBed-ல் Client ID / Client Secret / Tenant ID நிரப்பவும்
--> Get Token கிளிக் செய்யவும்
--> callback page-ல் இருந்து Refresh Token copy செய்யவும்
--> ImgBed-ல் paste செய்து save செய்யவும்
+-> Copy Application (client) ID
+-> Check the callback URL in Authentication
+-> Create a Client Secret in Certificates & secrets
+-> Add permissions in API permissions
+-> Fill Client ID / Client Secret / Tenant ID into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
-## References
+## மேற்கோள்கள்
 
-1. Microsoft Entra app registration: https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
+1. Microsoft Entra செயலி registration: https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
 2. Microsoft identity platform authorization code flow: https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow
 3. Microsoft Graph user authentication: https://learn.microsoft.com/en-us/graph/auth-v2-user

@@ -6,7 +6,7 @@
 
 | المتطلب | الغرض |
 | --- | --- |
-| حساب GitLab | لإنشاء access token وامتلاك المشروع. |
+| حساب GitLab | لإنشاء رمز وصول وامتلاك المشروع. |
 | GitLab Personal Access Token | يستخدمه ImgBed للوصول إلى GitLab API وإنشاء المشاريع ورفع الملفات إلى Generic Packages. |
 | اسم المشروع | يمكن إدخال اسم المشروع فقط، مثل `imgbed`. |
 
@@ -19,10 +19,10 @@
 3. افتح `Access Tokens` من الشريط الجانبي.
 4. أعطِ الرمز اسمًا واضحًا.
 5. اختر تاريخ انتهاء يناسب أسلوبك في الصيانة.
-6. اختر scope وهو `api`.
+6. اختر نطاق الأذونات `api`.
 7. انسخ الرمز واحفظه مباشرة بعد إنشائه.
 
-![إنشاء legacy token](../../image/upload/gitlab-packages/点击生成旧版令牌.png)
+![إنشاء رمز تقليدي](../../image/upload/gitlab-packages/点击生成旧版令牌.png)
 
 ![اختيار صلاحيات الرمز](../../image/upload/gitlab-packages/勾选令牌权限.png)
 
@@ -32,17 +32,17 @@
 
 | حقل الواجهة | ما الذي تدخله |
 | --- | --- |
-| Channel name | اسم تختاره، مثل `GitLabPrimary`. |
+| اسم القناة | اسم تختاره، مثل `GitLabPrimary`. |
 | Access Token | GitLab Personal Access Token الذي أنشأته للتو. |
-| Project name | اسم مشروع قصير مثل `imgbed`، أو مسار كامل مثل `username/imgbed`. |
-| Private repository | فعّله أو عطّله حسب حاجتك. |
-| Remark | اختياري، مثل `Primary upload channel`. |
+| اسم المشروع | اسم مشروع قصير مثل `imgbed`، أو مسار كامل مثل `username/imgbed`. |
+| مستودع خاص | فعّله أو عطّله حسب حاجتك. |
+| ملاحظة | اختياري، مثل `Primary upload channel`. |
 
 ![إعداد القناة](../../image/upload/gitlab-packages/配置渠道内容.png)
 
 ## الخطوة 3: احفظ القناة
 
-بعد ملء الحقول اضغط Save.
+بعد ملء الحقول اضغط حفظ.
 
 سيتولى النظام التفاصيل التالية:
 
@@ -56,12 +56,12 @@
 ## قائمة تحقق سريعة
 
 ```text
-سجّل الدخول إلى GitLab
--> أنشئ Access Token
--> اختر scope api فقط
--> ارجع إلى ImgBed وأدخل الرمز واسم المشروع
--> احفظ
--> إذا أدخلت اسم project فقط، يضيف ImgBed اسم المستخدم الحالي تلقائيًا
--> إذا أدخلت username/project، يستخدمه ImgBed كما هو
--> ارفع صورة تجريبية
+Sign in to GitLab
+-> Create an Access Token
+-> Select only the api scope
+-> Return to ImgBed and enter the token and project name
+-> Save
+-> If only a project name is entered, ImgBed adds the current username automatically
+-> If username/project is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

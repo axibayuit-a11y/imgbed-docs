@@ -2,7 +2,7 @@
 
 La moderazione assegna una classificazione per età alle immagini caricate. La modalità di accesso decide quali classificazioni possono essere viste pubblicamente.
 
-Questo influisce su gallery pubblica, URL pubblici dei file e Random Image API. Non limita il pannello admin: gli amministratori possono sempre vedere e gestire tutti i file.
+Questo influisce sulla galleria pubblica, sugli URL pubblici dei file e sull'API per immagini casuali. Non limita il pannello di amministrazione: gli amministratori possono sempre vedere e gestire tutti i file.
 
 ## Dove configurare
 
@@ -14,34 +14,34 @@ System Settings -> Security Settings -> Upload Management -> Image Moderation
 
 Le impostazioni principali sono:
 
-- Access mode
-- Enable moderation
-- Moderation provider
+- Modalità di accesso
+- Abilita moderazione
+- Fornitore di moderazione
 
-## A cosa serve Access Mode
+## A cosa serve la modalità di accesso
 
-Access mode decide quali classificazioni per età possono essere mostrate pubblicamente.
+La modalità di accesso decide quali classificazioni per età possono essere mostrate pubblicamente.
 
 Modalità attuali:
 
-| Access Mode | Classificazioni visibili pubblicamente |
+| Modalità di accesso | Classificazioni visibili pubblicamente |
 | --- | --- |
-| Adult mode | General, R12, R16, R18 |
-| Youth mode | General, R12, R16 |
-| Teen mode | General, R12 |
-| Child mode | Solo General |
+| Modalità adulti | General, R12, R16, R18 |
+| Modalità giovani | General, R12, R16 |
+| Modalità adolescenti | General, R12 |
+| Modalità bambini | Solo General |
 
-Il default è Adult mode.
+La modalità predefinita è la modalità adulti.
 
-Per siti privati o con contenuti maturi, Adult mode può essere adatto. Per una gallery pubblica più prudente, scegli Youth, Teen o Child mode.
+Per siti privati o con contenuti per adulti, la modalità adulti può essere adatta. Per una galleria pubblica più prudente, scegli la modalità giovani, adolescenti o bambini.
 
 ## Cosa succede abilitando la moderazione
 
-Quando la moderazione è attiva, ImgBed chiama il provider scelto durante l'upload e salva la classificazione rilevata.
+Quando la moderazione è attiva, ImgBed chiama il fornitore scelto durante il caricamento e salva la classificazione rilevata.
 
 Classificazioni principali:
 
-| Rating | Significato |
+| Classificazione | Significato |
 | --- | --- |
 | General | Contenuto pubblico sicuro |
 | R12 | Contenuto lievemente sensibile |
@@ -50,77 +50,77 @@ Classificazioni principali:
 
 Il risultato viene usato per decidere l'accesso pubblico.
 
-Se la moderazione non è attiva, o i vecchi file non hanno rating, quei file restano non classificati. I file senza rating non vengono rimossi automaticamente dalla gallery pubblica o dalla Random Image API solo perché manca un risultato di moderazione.
+Se la moderazione non è attiva, o i vecchi file non hanno classificazione, quei file restano non classificati. I file senza classificazione non vengono rimossi automaticamente dalla galleria pubblica o dall'API per immagini casuali solo perché manca un risultato di moderazione.
 
 ## Scegliere un provider di moderazione
 
-I provider disponibili includono:
+I fornitori disponibili includono:
 
 - moderatecontent.com
 - nsfwjs
 - Sightengine
 
-Ogni provider ha requisiti diversi:
+Ogni fornitore ha requisiti diversi:
 
 - moderatecontent.com di solito richiede una API Key.
-- nsfwjs di solito richiede un URL endpoint API.
+- nsfwjs di solito richiede un URL del punto di accesso API.
 - Sightengine richiede API user e API secret.
 
-Scegli in base al tuo account, alla disponibilità e alla qualità del rilevamento. Se moderazione è attiva e configurata correttamente, ImgBed prova a scrivere un rating durante l'upload.
+Scegli in base al tuo account, alla disponibilità e alla qualità del rilevamento. Se la moderazione è attiva e configurata correttamente, ImgBed prova a scrivere una classificazione durante il caricamento.
 
-## Effetto sulla gallery pubblica
+## Effetto sulla galleria pubblica
 
-La gallery pubblica filtra i file in base alla modalità di accesso.
+La galleria pubblica filtra i file in base alla modalità di accesso.
 
 Esempi:
 
-- Adult mode: le immagini R18 possono comparire.
-- Youth mode: le immagini R18 sono nascoste.
-- Teen mode: le immagini R16 e R18 sono nascoste.
-- Child mode: vengono mostrate solo immagini General.
+- Modalità adulti: le immagini R18 possono comparire.
+- Modalità giovani: le immagini R18 sono nascoste.
+- Modalità adolescenti: le immagini R16 e R18 sono nascoste.
+- Modalità bambini: vengono mostrate solo immagini General.
 
-Questo vale solo per l'accesso pubblico normale. Il pannello admin mostra comunque tutti i file.
+Questo vale solo per l'accesso pubblico normale. Il pannello di amministrazione mostra comunque tutti i file.
 
 ## Effetto sugli URL pubblici
 
 Gli URL pubblici sono link diretti aperti dai visitatori.
 
-Se il rating del file è consentito dalla modalità corrente, ImgBed restituisce l'immagine originale.
+Se il classificazione del file è consentito dalla modalità corrente, ImgBed restituisce l'immagine di origine.
 
-Se il rating supera il livello consentito, l'accesso pubblico normale non restituisce l'originale. ImgBed restituisce invece il risultato bloccato o l'immagine sostitutiva configurata.
+Se il classificazione supera il livello consentito, l'accesso pubblico normale non restituisce l'di origine. ImgBed restituisce invece il risultato bloccato o l'immagine sostitutiva configurata.
 
 Esempio:
 
-- La modalità corrente è Child mode.
+- La modalità corrente è la modalità bambini.
 - Un'immagine è classificata R18.
 - Un visitatore apre direttamente l'URL pubblico.
-- ImgBed non restituisce a quel visitatore l'immagine R18 originale.
+- ImgBed non restituisce a quel visitatore l'immagine R18 di origine.
 
 ![Immagine file limitata](../../image/Safety/文件受限图.png)
 
-Gli amministratori nel pannello admin non sono interessati da questa limitazione.
+Gli amministratori nel pannello di amministrazione non sono interessati da questa limitazione.
 
-## Effetto sulla Random Image API
+## Effetto sull'API per immagini casuali
 
-Anche la Random Image API filtra il proprio insieme di candidati secondo la modalità di accesso.
+Anche l'API per immagini casuali filtra il proprio insieme di candidati secondo la modalità di accesso.
 
-In Child mode, le immagini casuali vengono scelte solo tra file General.
+In modalità bambini, le immagini casuali vengono scelte solo tra file General.
 
-In Youth mode, possono arrivare da file General, R12 e R16, ma non R18.
+In modalità giovani, possono arrivare da file General, R12 e R16, ma non R18.
 
-Così la Random Image API non può aggirare le restrizioni della gallery pubblica.
+Così l'API per immagini casuali non può aggirare le restrizioni della galleria pubblica.
 
 ## Rapporto con allowlist e blocklist
 
-Access mode non è l'unica regola di accesso pubblico. Lavora insieme ad allowlist e blocklist.
+La modalità di accesso non è l'unica regola di accesso pubblico. Lavora insieme alle liste di autorizzazione e di blocco.
 
 In breve:
 
-- I contenuti in allowlist sono pubblici per primi.
-- I contenuti in blocklist non possono essere visti direttamente dai visitatori normali.
-- I contenuti non presenti in nessuna lista vengono poi controllati rispetto ad access mode.
+- I contenuti nella lista di autorizzazione hanno priorità come contenuti pubblici.
+- I contenuti nella lista di blocco non possono essere visti direttamente dai visitatori normali.
+- I contenuti non presenti in nessuna lista vengono poi controllati rispetto alla modalità di accesso.
 
-Se un'immagine è limitata sia dal rating sia dalle regole di lista, i visitatori normali non possono comunque vedere il file originale direttamente.
+Se un'immagine è limitata sia dal classificazione sia dalle regole di lista, i visitatori normali non possono comunque vedere il file di origine direttamente.
 
 ## Impostazioni consigliate
 
@@ -128,38 +128,39 @@ Per siti pubblici:
 
 - Abilita la moderazione.
 - Scegli una modalità adatta al pubblico del sito.
-- Usa Child mode o Teen mode per visitatori di tutte le età.
-- Evita Adult mode se non vuoi mostrare contenuti maturi pubblicamente.
-- Controlla i rating nel pannello admin e correggili manualmente quando serve.
+- Usa la modalità bambini o la modalità adolescenti per visitatori di tutte le età.
+- Evita la modalità adulti se non vuoi mostrare contenuti per adulti pubblicamente.
+- Controlla le classificazioni nel pannello di amministrazione e correggile manualmente quando serve.
 
 Per siti privati o personali:
 
-- Adult mode di solito va bene.
+- La modalità adulti di solito va bene.
 - Abilita la moderazione se ti è utile.
-- Rivedi e correggi i rating nel pannello admin quando necessario.
+- Rivedi e correggi le classificazioni nel pannello di amministrazione quando necessario.
 
 ## FAQ
 
-### I file spariscono dal pannello admin se cambio Access Mode?
+### I file spariscono dal pannello di amministrazione se cambio modalità di accesso?
 
 No.
 
-Access mode riguarda solo l'accesso pubblico normale. Non influisce sul pannello admin.
+La modalità di accesso riguarda solo l'accesso pubblico normale. Non influisce sul pannello di amministrazione.
 
-### Perché la gallery pubblica mostra meno immagini in Child mode?
+### Perché la galleria pubblica mostra meno immagini in modalità bambini?
 
-Child mode consente pubblicamente solo file General. R12, R16 e R18 vengono filtrati.
+La modalità bambini consente pubblicamente solo file General. R12, R16 e R18 vengono filtrati.
 
 ### Gli URL pubblici possono ancora aprire immagini per adulti?
 
-Se la modalità corrente non consente quel rating, gli URL pubblici normali non restituiscono l'immagine originale.
+Se la modalità corrente non consente quel classificazione, gli URL pubblici normali non restituiscono l'immagine di origine.
 
-### La Random Image API può restituire immagini limitate?
+### L'API per immagini casuali può restituire immagini limitate?
 
 No.
 
-La Random Image API filtra i candidati secondo la modalità di accesso corrente.
+L'API per immagini casuali filtra i candidati secondo la modalità di accesso corrente.
 
-### Cosa succede ai vecchi file senza rating?
+### Cosa succede ai vecchi file senza classificazione?
 
-Le immagini senza rating non vengono nascoste automaticamente solo perché non hanno risultato di moderazione. Puoi correggere il rating in seguito dal pannello admin.
+Le immagini senza classificazione non vengono nascoste automaticamente solo perché non hanno risultato di moderazione. Puoi correggere la classificazione in seguito dal pannello di amministrazione.
+

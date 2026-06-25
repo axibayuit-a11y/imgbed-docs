@@ -2,137 +2,192 @@
 
 El índice distribuido federado permite que varios sitios ImgBed compartan listas de archivos entre sí.
 
-En pocas palabras:
+En términos sencillos:
 
-- Puedes compartir algunas carpetas de tu sitio con otras personas.
-- Puedes unirte al nodo de otra persona y sincronizar su lista compartida en tu panel.
-- Los archivos federados sirven para explorar, buscar, previsualizar y copiar enlaces. No se vuelven a subir a tu propio almacenamiento.
+- Puede compartir carpetas seleccionadas de su sitio con otras personas.
+- Puede unirse a otro nodo y sincronizar la lista de archivos compartidos de ese nodo en su panel de administración.
+- Los archivos federados sirven principalmente para explorar, buscar y abrir enlaces. No se vuelven a subir a su propio almacenamiento.
 
-## Dónde se configura
+## Dónde configurarlo
+
+Abra:
 
 ```text
-Configuración del sistema -> Otros ajustes -> Índice distribuido federado
+System Settings -> Other Settings -> Federated Distributed Index
 ```
 
-![Nodo local](../../image/other/联盟图/联盟分布式索引本地节点.png)
+![Nodo de federación local](../../image/other/联盟图/联盟分布式索引本地节点.png)
 
 La página tiene tres pestañas:
 
-| Pestaña | Uso |
+| Pestaña | Propósito |
 | --- | --- |
-| Nodo local | Configurar tu nodo, dominio público, carpetas compartidas e índice saliente |
-| Nodos unidos | Gestionar los nodos de otros sitios a los que te uniste |
-| Solicitudes a mi nodo | Gestionar solicitudes de otras personas para unirse a tu nodo |
+| Nodo local | Activar su nodo, confirmar el dominio público, seleccionar carpetas compartidas y actualizar el índice saliente |
+| Nodos a los que me he unido | Gestionar otros nodos de ImgBed a los que se ha unido |
+| Nodos que se unen a mí | Gestionar solicitudes de otras personas que quieren unirse a su nodo |
 
 ## Configuración inicial
 
-1. Abre `Nodo local`.
-2. Activa `Habilitar`.
-3. Elige las carpetas que quieres compartir en `Carpetas de sincronización`.
-4. Haz clic en `Actualizar índice saliente`.
-5. Si ImgBed detecta un cambio de dominio, confirma que el dominio actual es el dominio real de producción.
+1. Abra `Local Node`.
+2. Active `Enable`.
+3. Seleccione las carpetas que desea compartir en `Sync folders`.
+4. Haga clic en `Update Outbound Index`.
+5. Si ImgBed detecta un cambio de dominio, confirme que el dominio actual es correcto antes de continuar.
 
-Puedes seleccionar varias carpetas. Si dejas la lista vacía, se comparten todas las carpetas.
+Puede seleccionar varias carpetas de sincronización.
+
+Si la lista de carpetas de sincronización está vacía, se comparten todas las carpetas.
 
 ## Nodo local
 
 ### Dominio público
 
-El dominio público es la dirección que otros nodos usan para acceder a tu sitio.
+El dominio público es la URL del sitio que otros nodos usan para acceder a su nodo.
 
-ImgBed lo detecta automáticamente, así que normalmente no hace falta escribirlo. Al actualizar el índice por primera vez, o después de cambiar de dominio, pedirá confirmación.
+ImgBed lo detecta automáticamente. No necesita escribirlo manualmente. La primera vez que actualice el índice, ImgBed le pedirá confirmar si la URL de acceso actual es el dominio de producción.
+
+Si cambia de dominio más adelante, la actualización del índice volverá a pedir confirmación.
 
 ### Carpetas de sincronización
 
-Estas carpetas deciden qué archivos se comparten.
+Las carpetas de sincronización determinan qué archivos se comparten con los nodos federados.
 
-Por ejemplo:
+Por ejemplo, si selecciona solo:
 
 ```text
 /1/
 /2/
 ```
 
-En este caso, otros nodos solo verán archivos dentro de esos dos directorios.
+los demás nodos solo podrán ver los archivos de esos dos directorios.
 
 ### Actualizar índice saliente
 
-Este botón actualiza la lista de archivos que otros nodos pueden sincronizar desde tu sitio.
+Esto actualiza la lista de archivos que otros nodos pueden sincronizar desde usted.
 
-Úsalo cuando:
+Úselo cuando:
 
-- Activas la federación por primera vez.
-- Subes nuevos archivos que quieres compartir.
-- Cambias las carpetas compartidas.
-- Cambias el dominio público y necesitas confirmarlo.
+- active la federación por primera vez.
+- suba archivos que desea compartir.
+- cambie las carpetas de sincronización.
+- cambie el dominio público y necesite confirmarlo.
 
-## Unirse a otros nodos
+## Nodos a los que me he unido
 
-`Nodos unidos` es el lugar donde te suscribes a nodos de otros sitios ImgBed.
+`Nodes I Joined` es donde se suscribe a otros nodos.
 
-![Nodos unidos](../../image/other/联盟图/我加入的节点.png)
+![Nodos a los que me he unido](../../image/other/联盟图/我加入的节点.png)
 
-1. Pide al propietario del otro nodo un enlace de invitación.
-2. Pégalo en el cuadro de entrada.
-3. Haz clic en `Solicitar unión`.
-4. Espera a que la otra parte lo apruebe en su panel.
+### Solicitar unirse a otro nodo
 
-Después de la aprobación, usa `Actualizar índice entrante` para sincronizar los archivos compartidos.
+1. Pida al otro propietario un enlace de invitación.
+2. Péguelo en el cuadro de entrada.
+3. Haga clic en `Request to Join`.
+4. Espere a que el otro propietario lo apruebe en su panel de administración.
 
-Si solo quieres actualizar un nodo concreto, usa `Actualizar índice` en la tarjeta de ese nodo.
+Después de la aprobación, el estado del nodo pasa a aprobado.
+
+### Actualizar índice entrante
+
+`Update Inbound Index` sincroniza listas de archivos desde los nodos a los que se ha unido.
+
+Úselo cuando:
+
+- el otro propietario acaba de aprobar su solicitud.
+- el otro propietario le informa que el contenido compartido se actualizó.
+- desea actualizar todas las listas de archivos federadas a las que se ha unido.
+
+Para actualizar solo un nodo, haga clic en `Update Index` en la tarjeta de ese nodo.
 
 ![Actualizar índice](../../image/other/联盟图/更新索引.png)
 
-## Gestionar solicitudes a tu nodo
+### Cancelar suscripción
 
-`Solicitudes a mi nodo` muestra las personas que quieren unirse a tu nodo.
+Si ya no desea sincronizar un nodo, haga clic en `Unsubscribe`.
 
-![Solicitudes a mi nodo](../../image/other/联盟图/加入我的节点.png)
+Después de cancelar la suscripción, el índice federado de ese nodo se elimina de su sitio local.
 
-Para generar una invitación, asegúrate de que el nodo local esté habilitado, ejecuta al menos una vez `Actualizar índice saliente` para confirmar el dominio público y luego pulsa `Restablecer enlace de invitación`.
+## Nodos que se unen a mí
 
-Cuando llega una solicitud, puedes elegir:
+`Nodes Joining Me` es donde gestiona las solicitudes de otras personas.
 
-| Acción | Resultado |
+![Nodos que se unen a mí](../../image/other/联盟图/加入我的节点.png)
+
+### Generar un enlace de invitación
+
+1. Asegúrese de que el nodo local esté activado.
+2. Haga clic en `Update Outbound Index` al menos una vez para que ImgBed confirme el dominio público.
+3. Abra `Nodes Joining Me`.
+4. Haga clic en `Reset Invitation Link`.
+5. Copie el enlace de invitación y envíelo al otro propietario.
+
+Si el enlace de invitación está vacío, normalmente el dominio público aún no se ha confirmado. Vuelva a `Local Node` y haga clic en `Update Outbound Index`.
+
+### Gestionar solicitudes de unión
+
+Cuando alguien envía una solicitud, aparece en la lista `Nodes Joining Me`.
+
+| Acción | Significado |
 | --- | --- |
-| Aprobar | Permite que la otra parte sincronice tu lista compartida |
-| Rechazar | No permite la unión |
-| Eliminar | Borra un registro terminado |
-| Comprobar estado | Verifica si la otra parte conserva la relación |
+| Aprobar | Permite que el otro nodo sincronice su lista de archivos compartidos |
+| Rechazar | Rechaza la solicitud de unión |
+| Eliminar | Elimina un registro finalizado |
+| Comprobar estado | Comprueba si la otra parte todavía mantiene esta relación |
 
-Después de aprobar, la otra parte todavía debe actualizar su índice entrante para ver tus archivos.
+Después de la aprobación, la otra parte aún debe hacer clic en `Update Inbound Index` antes de que sus archivos compartidos aparezcan allí.
 
-![Aprobar nodo](../../image/other/联盟图/邀请节点同意.png)
+![Aprobar nodo invitado](../../image/other/联盟图/邀请节点同意.png)
 
 ## Mensajes
 
-Cuando la relación ya está aprobada, puedes usar `Mensaje` en la tarjeta del nodo.
+Después de que una relación sea aprobada, haga clic en `Message` en la tarjeta del nodo.
 
-Los mensajes solo sirven para coordinar la relación federada. No cambian archivos, etiquetas, directorios ni permisos.
+Los mensajes son solo para comunicarse sobre la relación de federación. No cambian archivos, etiquetas, directorios ni permisos.
 
 ![Mensajes](../../image/other/联盟图/留言功能.png)
 
 ## Ver archivos federados
 
-Cuando la sincronización termine, vuelve a la lista de archivos del panel. En la parte superior puedes cambiar entre archivos locales y archivos federados.
+Cuando termine la sincronización, vuelva a la lista de archivos del panel de administración.
 
-Los archivos federados no son archivos locales: puedes verlos, buscarlos, previsualizarlos y copiar enlaces, pero no moverlos, borrarlos, cambiarles etiquetas ni crear copias de seguridad desde tu sitio.
+En la parte superior de la página, cambie entre archivos locales y archivos federados. En archivos federados puede explorar el contenido sincronizado.
 
-![Vista en el panel](../../image/other/联盟图/联盟管理显示效果图.png)
+Los archivos federados sirven principalmente para ver, buscar, previsualizar y copiar enlaces. No son archivos locales, por lo que no puede moverlos, eliminarlos, reetiquetarlos ni hacer copias de seguridad desde su propio sitio.
 
-## Preguntas habituales
+![Archivos federados en el panel de administración](../../image/other/联盟图/联盟管理显示效果图.png)
 
-### Aparece que no existe relación
+## Preguntas frecuentes
 
-Normalmente significa que la otra parte eliminó tu registro. En ese caso debes enviar una nueva solicitud.
+### ¿Por qué me pide volver a solicitar porque no existe un registro de relación?
 
-![Solicitar de nuevo](../../image/other/联盟图/无关系记录重新申请.png)
+Normalmente significa que la otra parte lo eliminó y quitó el registro, por lo que la relación ya no puede encontrarse. Envíe una nueva solicitud de unión.
 
-### Me uní pero no veo archivos
+![Volver a solicitar cuando no existe un registro de relación](../../image/other/联盟图/无关系记录重新申请.png)
 
-Comprueba:
+### ¿Por qué no veo archivos después de unirme?
 
-1. La otra parte aprobó tu solicitud.
-2. La otra parte actualizó su índice saliente.
-3. Tú actualizaste el índice entrante.
-4. Las carpetas sincronizadas de la otra parte contienen los directorios que quiere compartir.
+Compruebe:
+
+1. El otro propietario aprobó su solicitud.
+2. El otro propietario hizo clic en `Update Outbound Index`.
+3. Usted hizo clic en `Update Inbound Index`.
+4. Las carpetas de sincronización del otro propietario incluyen los directorios que quiere compartir.
+
+### ¿Qué debo hacer cuando se detecta un cambio de dominio?
+
+Si está abriendo el panel de administración mediante el dominio de producción, confirme y continúe.
+
+Si está usando una dirección temporal, cancele, vuelva a abrir el panel de administración con el dominio de producción y pruebe de nuevo.
+
+### ¿Qué significa una lista vacía de carpetas de sincronización?
+
+Una lista vacía de carpetas de sincronización significa que se comparten todas las carpetas.
+
+Para compartir solo algunos directorios, seleccione esas carpetas manualmente.
+
+### Diferencia entre actualizaciones de índice saliente y entrante
+
+| Botón | Significado sencillo |
+| --- | --- |
+| Actualizar índice saliente | Actualiza lo que otros pueden sincronizar desde mí |
+| Actualizar índice entrante | Actualiza lo que yo he sincronizado desde otros |

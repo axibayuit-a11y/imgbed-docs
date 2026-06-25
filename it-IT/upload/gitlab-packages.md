@@ -19,7 +19,7 @@ Servono solo tre cose:
 3. Apri `Access Tokens` dalla barra laterale.
 4. Dai al token un nome riconoscibile.
 5. Scegli una scadenza adatta al tuo modo di gestire la manutenzione.
-6. Seleziona lo scope `api`.
+6. Seleziona l'ambito `api`.
 7. Copia e salva subito il token appena viene creato.
 
 ![Crea token legacy](../../image/upload/gitlab-packages/点击生成旧版令牌.png)
@@ -36,7 +36,7 @@ Dopo aver scelto `GitLab Packages` nelle Impostazioni di caricamento, compila:
 | Access Token | Il GitLab Personal Access Token appena creato. |
 | Nome progetto | Un nome breve come `imgbed`, oppure un percorso completo come `username/imgbed`. |
 | Repository privato | Attiva o disattiva in base alle tue esigenze. |
-| Nota | Opzionale, per esempio `Primary upload channel`. |
+| Nota | Opzionale, per esempio `Canale di caricamento principale`. |
 
 ![Configura canale](../../image/upload/gitlab-packages/配置渠道内容.png)
 
@@ -56,12 +56,12 @@ Il sistema gestisce automaticamente questi dettagli:
 ## Checklist rapida
 
 ```text
-Accedi a GitLab
--> Crea un Access Token
--> Seleziona solo lo scope api
--> Torna in ImgBed e inserisci token e nome progetto
--> Salva
--> Se inserisci solo il nome progetto, ImgBed aggiunge automaticamente lo username corrente
--> Se inserisci username/project, ImgBed lo usa così com'è
--> Carica un'immagine di prova
+Sign in to GitLab
+-> Create an Access Token
+-> Select only the api scope
+-> Return to ImgBed and enter the token and project name
+-> Save
+-> If only a project name is entered, ImgBed adds the current username automatically
+-> If username/project is entered, ImgBed uses it as-is
+-> Upload a test image
 ```

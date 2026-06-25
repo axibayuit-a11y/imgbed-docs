@@ -113,17 +113,17 @@ Klik op Opslaan wanneer je klaar bent.
 ## Snelle checklist
 
 ```text
-Maak een Discord-server
--> Maak een tekstkanaal
--> Maak een bot in Discord Developer Portal
--> Bewaar het Bot Token van de Bot-pagina
--> Selecteer in OAuth2 bot, View Channels, Send Messages, Attach Files en Read Message History
--> Kopieer de gegenereerde URL en autoriseer de bot voor de doelserver
--> Controleer dat het doeltekstkanaal dezelfde rechten toestaat
--> Schakel Developer Mode in
--> Rechtsklik op het doeltekstkanaal en kopieer Channel ID
--> Vul Bot Token en Channel ID in ImgBed in
--> Sla op en upload een testafbeelding
+Create a Discord server
+-> Create a text channel
+-> Create a bot in the Discord Developer Portal
+-> Save the Bot Token from the Bot page
+-> In OAuth2, select bot, View Channels, Send Messages, Attach Files, and Read Message History
+-> Copy the generated URL and authorize the bot for the target server
+-> Make sure the target text channel grants the same permissions
+-> Enable Developer Mode
+-> Right-click the target text channel and copy the Channel ID
+-> Enter the Bot Token and Channel ID in ImgBed
+-> Save and upload a test image
 ```
 
 ## Referenties

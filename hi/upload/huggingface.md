@@ -2,66 +2,66 @@
 
 ## शुरू करने से पहले क्या चाहिए
 
-सिर्फ तीन चीज़ें चाहिए:
+आपको केवल तीन चीज़ें चाहिए:
 
-| ज़रूरत | उपयोग |
+| आवश्यकता | उद्देश्य |
 | --- | --- |
-| Hugging Face account | access token generate करने और repository own करने के लिए। |
-| Hugging Face User Access Token | ImgBed को Hugging Face API access, repositories create और files upload करने के लिए। |
-| Repository name | केवल repository name डाल सकते हैं, जैसे `image`। |
+| Hugging Face खाता | एक्सेस टोकन बनाने और रिपॉज़िटरी का मालिक होने के लिए। |
+| Hugging Face उपयोगकर्ता एक्सेस टोकन | ImgBed को Hugging Face API तक पहुँचने, रिपॉज़िटरी बनाने और फ़ाइलें अपलोड करने के लिए। |
+| रिपॉज़िटरी नाम | आप केवल रिपॉज़िटरी नाम दर्ज कर सकते हैं, जैसे `image`। |
 
-## Setup Steps
+## कॉन्फ़िगरेशन चरण
 
-### Step 1: Hugging Face में sign in करें और Access Token बनाएँ
+### चरण 1: Hugging Face में साइन इन करें और एक्सेस टोकन बनाएँ
 
-1. Hugging Face में sign in करें।
-2. ऊपर दाएँ avatar पर क्लिक करके `Settings` खोलें।
-3. left sidebar से `Access Tokens` खोलें।
-4. नया token बनाएँ।
-5. token को पहचानने लायक नाम दें।
-6. `write` permission चुनें।
-7. token बनते ही उसे copy और save करें।
+1. Hugging Face में साइन इन करें।
+2. ऊपर दाएँ अपने अवतार पर क्लिक करें और `Settings` खोलें।
+3. बाएँ साइडबार से `Access Tokens` खोलें।
+4. नया टोकन बनाएँ।
+5. टोकन को पहचानने योग्य नाम दें।
+6. अनुमति `write` चुनें।
+7. टोकन बनते ही उसे कॉपी और सहेजें।
 
-![Token बनाएँ](../../image/upload/huggingface/创建令牌.png)
+![टोकन बनाएँ](../../image/upload/huggingface/创建令牌.png)
 
-## Step 2: ImgBed में Hugging Face channel भरें
+## चरण 2: ImgBed में Hugging Face चैनल भरें
 
-Upload Settings में `Hugging Face` चुनने के बाद fields ऐसे भरें:
+अपलोड सेटिंग्स में `Hugging Face` चुनने के बाद फ़ील्ड इस तरह भरें:
 
-| UI Field | क्या डालें |
+| UI फ़ील्ड | क्या दर्ज करें |
 | --- | --- |
-| Channel name | आपका चुना हुआ नाम, जैसे `hf-primary`। |
-| Repository name | short repo name जैसे `image`, या full path जैसे `username/image`। |
-| Access Token | अभी बनाया गया Hugging Face User Access Token। |
-| Private repository | अपनी ज़रूरत के हिसाब से on या off करें। |
-| Remark | optional, जैसे `Primary upload channel`। |
+| चैनल नाम | आपका चुना हुआ नाम, जैसे `hf-primary`। |
+| रिपॉज़िटरी नाम | छोटा रिपॉज़िटरी नाम जैसे `image`, या पूरा पथ जैसे `username/image`। |
+| एक्सेस टोकन | अभी बनाया गया Hugging Face उपयोगकर्ता एक्सेस टोकन। |
+| निजी रिपॉज़िटरी | आवश्यकता के अनुसार सक्षम या अक्षम करें। |
+| टिप्पणी | वैकल्पिक, जैसे `Primary upload channel`। |
 
-![Channel जोड़ें](../../image/upload/huggingface/添加渠道.png)
+![चैनल जोड़ें](../../image/upload/huggingface/添加渠道.png)
 
-## Step 3: Channel save करें
+## चरण 3: चैनल सहेजें
 
-fields भरने के बाद Save पर क्लिक करें।
+फ़ील्ड भरने के बाद सहेजें पर क्लिक करें।
 
-system ये details अपने आप संभालेगा:
+सिस्टम ये विवरण संभालता है:
 
-| System Behavior | Description |
+| सिस्टम व्यवहार | विवरण |
 | --- | --- |
-| Short repository name | ImgBed current Hugging Face account पहचानता है और value को full repository path में बदलता है। |
-| Full repository path | ImgBed `username/repository` path को जैसा डाला गया है वैसा ही use करता है। |
-| Repository check | current personal account path use होने पर ImgBed repository न हो तो create करने की कोशिश करता है। full path manually डालने पर वही path directly use करता है। |
-| Repository type | यह channel `dataset` repository use करता है। |
-| Public/private state | repository visibility current switch के अनुसार sync होती है। |
+| छोटा रिपॉज़िटरी नाम | ImgBed वर्तमान Hugging Face खाते को पहचानता है और मान को पूरे रिपॉज़िटरी पथ में बदलता है। |
+| पूरा रिपॉज़िटरी पथ | ImgBed `username/repository` पथ को ठीक वैसे ही उपयोग करता है जैसे दर्ज किया गया है। |
+| रिपॉज़िटरी जाँच | यदि आप वर्तमान व्यक्तिगत खाते का पथ उपयोग करते हैं, तो रिपॉज़िटरी न होने पर ImgBed उसे बनाने की कोशिश करता है। यदि पूरा पथ मैन्युअल रूप से दर्ज करें, तो ImgBed उसी पथ का सीधे उपयोग करता है। |
+| रिपॉज़िटरी प्रकार | यह चैनल `dataset` रिपॉज़िटरी उपयोग करता है। |
+| सार्वजनिक/निजी स्थिति | रिपॉज़िटरी दृश्यता वर्तमान स्विच के अनुसार सिंक्रनाइज़ होती है। |
 
-## Quick Checklist
+## त्वरित सूची
 
 ```text
-Hugging Face में sign in करें
--> Access Token बनाएँ
--> write permission चुनें
--> ImgBed में लौटकर token और repository name डालें
+Sign in to Hugging Face
+-> Create an Access Token
+-> Select write permission
+-> Return to ImgBed and enter the token and repository name
 -> Save
--> केवल repo name डालने पर ImgBed current username automatically जोड़ता है
--> username/repo डालने पर ImgBed उसे जैसा है वैसा use करता है
--> ImgBed dataset repository check या create करता है
--> test image upload करें
+-> If only a repo name is entered, ImgBed adds the current username automatically
+-> If username/repo is entered, ImgBed uses it as-is
+-> ImgBed checks or creates the dataset repository
+-> Upload a test image
 ```

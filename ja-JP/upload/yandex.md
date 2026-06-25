@@ -1,103 +1,112 @@
-# Yandex チャンネルの追加
+# Yandex チャネルを追加する
 
-Yandex チャンネルは、Yandex Disk を ImgBed の保存先として利用します。
+## 先に必要なもの
 
-## 事前に用意するもの
-
-| 必要なもの | 用途 |
+| 必要なもの | 必要な理由 |
 | --- | --- |
-| Yandex アカウント | Yandex Disk の認証に使います |
-| Yandex OAuth App | Client ID と Client Secret を取得します |
-| ImgBed ドメイン | OAuth コールバック URL に使います |
-| Yandex Disk | 実際のファイル保存先 |
+| Yandex アカウント | サインインし、Yandex Disk を認可するために使用します。 |
+| Yandex OAuth アプリ | `Client ID` と `Client Secret` を生成するために使用します。 |
+| ImgBed ドメイン | OAuth redirect URI に使用します。 |
+| 利用可能な Yandex Disk ストレージ | 実際のファイル保存先として使用します。 |
 
-## Yandex OAuth App を作成する
+## 設定手順
 
-次の URL を開きます。
+### 手順 1: Yandex OAuth アプリを作成する
+
+1. Yandex OAuth アプリ作成ページを開きます。
 
 ```text
 https://oauth.yandex.com/client/new
 ```
 
-ログインを求められたら、保存先に使う Yandex アカウントでログインします。
-
-新しいアプリを作成し、分かりやすい名前を付けます。
-
-```text
-imgbed-yandex
-```
-
-コールバック URL には次を設定します。
+2. サインイン画面にリダイレクトされた場合は、先に Yandex アカウントでサインインします。
+3. 新しいアプリを作成します。
+4. アプリに識別しやすい名前を付けます。例: `imgbed-yandex`。
+5. callback または redirect URL の設定を見つけます。
+6. 次を入力します。
 
 ```text
-https://あなたのドメイン/api/oauth/yandex/callback
+https://your-domain.com/api/oauth/yandex/callback
 ```
 
-## 権限を確認する
+### 手順 2: 権限を確認する
 
-ImgBed の Yandex 連携では、`Yandex.Disk REST API` の次の権限を使います。
+現在の ImgBed Yandex 連携では、`Yandex.Disk REST API` の下で次の 4 つの権限を保持します。
 
-| 権限 | 用途 |
+| 権限 | 目的 |
 | --- | --- |
-| `cloud_api:disk.app_folder` | アプリフォルダへファイルを保存 |
-| `cloud_api:disk.read` | ファイルとダウンロードリンクを読み取り |
-| `cloud_api:disk.write` | アップロード、ディレクトリ作成、削除 |
-| `Access to information about Yandex.Disk` | 容量と使用量の確認 |
+| `cloud_api:disk.app_folder` | ImgBed が app folder にファイルを保存できるようにします。 |
+| `cloud_api:disk.read` | ファイルとダウンロードリンクを読み取ります。 |
+| `cloud_api:disk.write` | ファイルのアップロード、フォルダーの作成、ファイルの削除を行います。 |
+| `Access to information about Yandex.Disk` | ディスククォータと使用済み容量を読み取ります。 |
 
-`Yandex ID API` の名前やメールアドレスの権限は、必要に応じて選択します。アップロード、削除、容量確認の中心は上記 4 つです。
+`Yandex ID API` の下に次の権限も表示される場合、それらは任意です。
 
-![Yandex Disk 権限](../../image/upload/yandex/dataaccess配置软盘权限.png)
+| 権限テキスト | 推奨 |
+| --- | --- |
+| `Access to username, first name and surname, gender` | 任意 |
+| `Access to email address` | 任意 |
 
-## Client ID と Secret を控える
+アップロード、download、削除、quota の中核機能は、主に上記 4 つの `Yandex.Disk REST API` 権限に依存します。
 
-アプリ作成後、次の値をコピーします。
+![Yandex Disk 権限を設定する](../../image/upload/yandex/dataaccess配置软盘权限.png)
 
-| Yandex 側 | ImgBed 側 |
+### 手順 3: アプリ認証情報をコピーする
+
+アプリが作成されたら、次をコピーします。
+
+| Yandex 項目 | ImgBed 項目 |
 | --- | --- |
 | `Client ID` | `Client ID` |
 | `Client Secret` | `Client Secret` |
 
-![Client ID と Secret](../../image/upload/yandex/记录客户端id和secret.png)
+![Client ID と Secret を記録する](../../image/upload/yandex/记录客户端id和secret.png)
 
-## ImgBed へ入力する
+### 手順 4: Yandex チャネルを入力する
 
-アップロード設定で `Yandex` を選びます。
+アップロード設定で `Yandex` を選択し、次を入力します。
 
-| 項目 | 入力内容 |
+| ImgBed 項目 | 入力内容 |
 | --- | --- |
-| チャンネル名 | 例：`Yandex Main` |
-| Client ID | Yandex App の Client ID |
-| Client Secret | Yandex App の Client Secret |
-| Refresh Token | まずは空欄 |
-| ルートディレクトリ | 任意。通常は `imgbed` |
+| チャネル名 | 識別しやすい名前。例: `Main Yandex` |
+| Client ID | Yandex app の `Client ID` |
+| Client Secret | Yandex app の `Client Secret` |
+| Refresh Token | 今は空のままにします。 |
+| Root directory | 任意。デフォルトは `imgbed` です。 |
 
-![Yandex 設定](../../image/upload/yandex/编辑配置渠道.png)
+![チャネル設定を編集する](../../image/upload/yandex/编辑配置渠道.png)
 
-## Refresh Token を取得する
+### 手順 5: Refresh Token を取得する
 
-1. ImgBed で「Token を取得」をクリックします。
-2. 保存先に使う Yandex アカウントでログインします。
-3. 権限を許可します。
-4. コールバックページに表示された `Refresh Token` をコピーします。
-5. ImgBed の `Refresh Token` 欄に貼り付けます。
+1. ImgBed で `Get Token` をクリックします。
+2. 接続する Yandex アカウントでサインインします。
+3. 認可プロンプトを承認します。
+4. callback ページに `Refresh Token` が表示されます。
+5. コピーします。
+6. ImgBed に戻り、`Refresh Token` 項目に貼り付けます。
 
-![Refresh Token](../../image/upload/yandex/授权后复制刷新令牌.png)
+![認可後に refresh token をコピーする](../../image/upload/yandex/授权后复制刷新令牌.png)
 
-## クイック手順
+### 手順 6: チャネルを保存する
+
+すべての項目を入力したら、チャネルを保存します。
+
+## クイックフロー
 
 ```text
-Yandex OAuth Console を開く
--> App を作成
--> https://あなたのドメイン/api/oauth/yandex/callback を設定
--> Disk 権限を確認
--> Client ID / Client Secret をコピー
--> ImgBed に入力
--> Token を取得
--> Refresh Token を貼り付けて保存
+Open Yandex OAuth Console
+-> Create an app
+-> Add https://your-domain.com/api/oauth/yandex/callback
+-> Confirm Yandex Disk permissions
+-> Copy Client ID and Client Secret
+-> Fill Client ID / Client Secret into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## 参考
 
-1. Yandex アプリ登録: https://yandex.com/dev/id/doc/en/register-client
-2. 認可コード URL: https://yandex.com/dev/id/doc/en/codes/code-url
-3. OAuth Token API: https://yandex.com/dev/id/doc/en/tokens/token
+1. Yandex app を登録する: https://yandex.com/dev/id/doc/en/register-client
+2. URL から認可コードを取得する: https://yandex.com/dev/id/doc/en/codes/code-url
+3. Yandex OAuth token endpoint: https://yandex.com/dev/id/doc/en/tokens/token

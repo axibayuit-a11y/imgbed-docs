@@ -1,6 +1,6 @@
 # Token API Cloudflare
 
-Dane API Cloudflare pozwalają ImgBed czyścić cache CDN Cloudflare po zmianach plików.
+Dane API Cloudflare pozwalają ImgBed czyścić pamięć podręczną CDN Cloudflare po zmianach plików.
 
 ![Ustawienia tokenu API Cloudflare](../../image/Safety/cloudflare%20api%20token截图.png)
 
@@ -20,25 +20,25 @@ Trzeba wypełnić:
 
 ## Co robi to ustawienie
 
-Cloudflare może cache'ować publiczne URL-e obrazów.
+Cloudflare może przechowywać publiczne adresy URL obrazów w pamięci podręcznej.
 
-Cache przyspiesza dostarczanie obrazów, ale może też sprawić, że stara treść będzie widoczna przez jakiś czas po usunięciu, zablokowaniu, zastąpieniu lub przeniesieniu pliku.
+Pamięć podręczna przyspiesza dostarczanie obrazów, ale może też sprawić, że stara treść będzie widoczna przez jakiś czas po usunięciu, zablokowaniu, zastąpieniu lub przeniesieniu pliku.
 
-Po skonfigurowaniu danych API Cloudflare ImgBed próbuje wyczyścić powiązany cache Cloudflare po zakończeniu takich operacji.
+Po skonfigurowaniu danych API Cloudflare ImgBed próbuje wyczyścić powiązaną pamięć podręczną Cloudflare po zakończeniu takich operacji.
 
 Jest to przydatne, gdy:
 
 - usuwasz obraz i chcesz, aby publiczny link przestał działać jak najszybciej.
 - blokujesz obraz i chcesz, aby odwiedzający nie widzieli oryginalnego pliku.
 - zastępujesz plik o tej samej nazwie i chcesz szybciej pokazać nową wersję.
-- przenosisz lub zmieniasz nazwy plików i chcesz szybko odświeżyć cache starych ścieżek.
-- zmieniasz reguły publicznego dostępu i chcesz szybciej odświeżyć publiczną galerię albo cache losowych obrazów.
+- przenosisz lub zmieniasz nazwy plików i chcesz szybko odświeżyć pamięć podręczną starych ścieżek.
+- zmieniasz reguły publicznego dostępu i chcesz szybciej odświeżyć publiczną galerię albo pamięć podręczną losowych obrazów.
 
 ## Co jeśli zostawisz puste
 
 ImgBed działa normalnie bez tego ustawienia.
 
-Jedyna różnica polega na tym, że ImgBed nie będzie aktywnie czyścił cache CDN Cloudflare. Odwiedzający mogą widzieć starą zawartość do momentu naturalnego wygaśnięcia cache Cloudflare.
+Jedyna różnica polega na tym, że ImgBed nie będzie aktywnie czyścił pamięci podręcznej CDN Cloudflare. Odwiedzający mogą widzieć starą zawartość do momentu naturalnego wygaśnięcia pamięci podręcznej Cloudflare.
 
 ## Jak znaleźć Zone ID
 
@@ -74,7 +74,7 @@ Wpisz Cloudflare Global API Key.
 
 Po wypełnieniu pól zapisz ustawienia.
 
-Przyszłe zmiany plików będą automatycznie próbowały wyczyścić cache Cloudflare. Operacje wykonane wcześniej nie są czyszczone wstecznie. Jeśli usunięto lub zastąpiono plik przed konfiguracją, poczekaj na wygaśnięcie cache albo wyczyść go ręcznie w Cloudflare.
+Przyszłe zmiany plików będą automatycznie próbowały wyczyścić pamięć podręczną Cloudflare. Operacje wykonane wcześniej nie są czyszczone wstecznie. Jeśli usunięto lub zastąpiono plik przed konfiguracją, poczekaj na wygaśnięcie pamięci podręcznej albo wyczyść ją ręcznie w Cloudflare.
 
 ## FAQ
 
@@ -82,22 +82,22 @@ Przyszłe zmiany plików będą automatycznie próbowały wyczyścić cache Clou
 
 Nie.
 
-Jeśli domena nie używa Cloudflare albo opóźnienie cache CDN Ci nie przeszkadza, możesz zostawić to puste.
+Jeśli domena nie używa Cloudflare albo opóźnienie pamięci podręcznej CDN Ci nie przeszkadza, możesz zostawić to puste.
 
-### Czy błędne dane zepsują upload?
+### Czy błędne dane zepsują przesyłanie?
 
 Zwykle nie.
 
-Błędne dane uniemożliwią tylko czyszczenie cache Cloudflare. Upload i zwykły dostęp do plików powinny nadal działać.
+Błędne dane uniemożliwią tylko czyszczenie pamięci podręcznej Cloudflare. Przesyłanie i zwykły dostęp do plików powinny nadal działać.
 
 ### Dlaczego usunięty obraz nadal się otwiera?
 
-Najczęstsza przyczyna to stary plik nadal obecny w cache Cloudflare.
+Najczęstsza przyczyna to stary plik nadal obecny w pamięci podręcznej Cloudflare.
 
-Przy poprawnych danych API Cloudflare ImgBed czyści cache powiązanego URL-a po usunięciu pliku.
+Przy poprawnych danych API Cloudflare ImgBed czyści pamięć podręczną powiązanego adresu URL po usunięciu pliku.
 
 ### Dlaczego po zastąpieniu pliku nadal widzę stary obraz?
 
-To również zwykle wynika z cache CDN.
+To również zwykle wynika z pamięci podręcznej CDN.
 
-Po skonfigurowaniu tego ustawienia ImgBed próbuje wyczyścić cache starego URL-a, gdy plik o tej samej nazwie zostanie nadpisany.
+Po skonfigurowaniu tego ustawienia ImgBed próbuje wyczyścić pamięć podręczną starego adresu URL, gdy plik o tej samej nazwie zostanie nadpisany.

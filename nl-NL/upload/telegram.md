@@ -105,15 +105,15 @@ Klik op Opslaan wanneer je klaar bent.
 ## Snelle checklist
 
 ```text
-Maak een bot met @BotFather
--> Bewaar het Bot Token
--> Maak een Telegram-kanaal
--> Voeg de bot toe aan het kanaal en geef beheerdersrechten
--> Zoek @userinfobot en kies Channel
--> Stuur een bericht uit het kanaal door naar @userinfobot
--> Kopieer de teruggegeven Id: -100...
--> Vul Bot Token en Chat ID in ImgBed in
--> Sla op en upload een testafbeelding
+Create a bot with @BotFather
+-> Save the Bot Token
+-> Create a Telegram channel
+-> Add the bot to the channel and grant administrator permissions
+-> Search for @userinfobot and choose Channel
+-> Forward any message from the channel to @userinfobot
+-> Copy the returned Id: -100...
+-> Enter the Bot Token and Chat ID in ImgBed
+-> Save and upload a test image
 ```
 
 ## Referenties

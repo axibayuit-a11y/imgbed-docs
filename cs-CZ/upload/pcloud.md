@@ -60,7 +60,7 @@ API host vyberte podle regionu účtu:
 | Přepínač kanálu | Přepínač na kartě zůstane zapnutý. |
 | Zobrazení e-mailu | Karta ukazuje připojený e-mail pCloud. |
 | Dotaz na kvótu | Po úspěšném dotazu se zobrazí použité a celkové místo. |
-| Testovací upload | Testovací obrázek se objeví v nastaveném adresáři pCloud. |
+| Testovací nahrání | Testovací obrázek se objeví v nastaveném adresáři pCloud. |
 
 ![Dotaz na kvótu úspěšný](../../image/upload/pcloud/查询额度成功.png)
 
@@ -70,7 +70,7 @@ API host vyberte podle regionu účtu:
 
 pCloud OAuth2 není ve výchozím stavu samoobslužně dostupné. Je potřeba napsat pCloudu a požádat o zapnutí.
 
-Aktuální tok pCloud OAuth2 navíc nepodporuje krátkodobý upload link, který ImgBed potřebuje. Proto tento kanál používá přihlášení e-mailem a heslem.
+Aktuální tok pCloud OAuth2 navíc nepodporuje krátkodobý odkaz pro nahrávání, který ImgBed potřebuje. Proto tento kanál používá přihlášení e-mailem a heslem.
 
 ### Jaký API host použít?
 
@@ -89,14 +89,14 @@ eapi.pcloud.com
 ## Rychlý postup
 
 ```text
-Připravte e-mail a heslo pCloud
--> Otevřete Nastavení nahrávání
--> Přidat kanál
--> Vyberte pCloud
--> Vyplňte název kanálu / e-mail / heslo
--> API host nechte api.pcloud.com, pokud účet není v Evropě
--> Úložný adresář nechte imgbed, pokud nepotřebujete jiný
--> Uložte
--> Dotaz na kvótu
--> Nahrajte testovací obrázek
+Prepare your pCloud email and password
+-> Open Upload Settings
+-> Add Channel
+-> Choose pCloud
+-> Fill channel name / email / password
+-> Keep API host as api.pcloud.com unless your account is in Europe
+-> Keep storage directory as imgbed unless you need another folder
+-> Save
+-> Query quota
+-> Upload a test image
 ```

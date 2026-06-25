@@ -134,18 +134,18 @@ https://your-domain.com/api/oauth/dropbox/callback
 ## Короткий сценарий
 
 ```text
-Открыть Dropbox App Console
--> Создать app
--> Выбрать App folder access
--> Добавить https://your-domain.com/api/oauth/dropbox/callback
--> Включить account_info.read / files.metadata.read / files.metadata.write / files.content.write
--> При желании включить files.content.read
--> Нажать Submit
--> Скопировать App Key и App Secret
--> Ввести их в ImgBed
--> Нажать Get Token
--> Скопировать Refresh Token с callback-страницы
--> Вставить его обратно в ImgBed и сохранить
+Open Dropbox App Console
+-> Create an app
+-> Choose App folder access
+-> Add https://your-domain.com/api/oauth/dropbox/callback
+-> Enable account_info.read / files.metadata.read / files.metadata.write / files.content.write
+-> Optionally enable files.content.read
+-> Click Submit
+-> Copy App Key and App Secret
+-> Fill them into ImgBed
+-> Click Get Token
+-> Copy the Refresh Token from the callback page
+-> Paste it back into ImgBed and save
 ```
 
 ## Ссылки

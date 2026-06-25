@@ -1,16 +1,16 @@
-# Pengaturan unggahan
+# Pengaturan Unggah
 
-Pengaturan unggahan menghubungkan ImgBed dengan kanal penyimpanan milik Anda. Setelah kanal dikonfigurasi, gambar dan file yang diunggah akan disimpan ke layanan yang Anda pilih. ImgBed mengelola tautan akses, catatan file, pratinjau, galeri publik, Random Image API, akses WebDAV, dan alur terkait.
+Pengaturan unggah menghubungkan ImgBed dengan kanal penyimpanan Anda sendiri. Setelah sebuah kanal dikonfigurasi, gambar dan berkas yang diunggah akan disimpan di layanan yang Anda pilih. ImgBed mengelola catatan berkas, tautan akses, pratinjau, fitur galeri publik, akses API gambar acak, akses WebDAV, dan alur terkait.
 
-Setiap pengguna bisa cocok dengan kanal yang berbeda. Jika ingin mulai dengan sederhana, Telegram, Discord, atau GitHub Releases bisa menjadi pilihan awal. Jika kapasitas, kecepatan, dan stabilitas jangka panjang lebih penting, pertimbangkan Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud, atau layanan WebDAV sendiri.
+Setiap pengguna dapat memilih kanal yang berbeda. Jika Anda menginginkan konfigurasi sederhana, Telegram, Discord, atau GitHub Releases dapat menjadi titik awal yang baik. Jika kapasitas, kecepatan, dan stabilitas jangka panjang lebih penting, pertimbangkan Cloudflare R2, S3, OneDrive, Google Drive, Dropbox, Yandex, pCloud, atau layanan WebDAV milik Anda sendiri.
 
-## Sebelum mulai
+## Sebelum Memulai
 
-- Siapkan akun penyimpanan atau API credentials yang akan digunakan.
-- Pastikan domain ImgBed dapat diakses, karena kanal OAuth membutuhkan callback URL.
-- Setelah menambahkan kanal, unggah gambar uji coba terlebih dahulu untuk memastikan file tersimpan dan dapat dibuka.
+- Siapkan akun penyimpanan atau kredensial API yang diperlukan.
+- Pastikan domain ImgBed Anda dapat diakses, karena kanal berbasis OAuth memerlukan URL callback.
+- Setelah menambahkan kanal, unggah gambar uji terlebih dahulu untuk memastikan berkas tersimpan dan dapat dibuka dengan benar.
 
-## Daftar kanal
+## Daftar Kanal
 
 - [Telegram](./telegram.md)
 - [Cloudflare R2](./cloudflare-r2.md)
@@ -26,8 +26,8 @@ Setiap pengguna bisa cocok dengan kanal yang berbeda. Jika ingin mulai dengan se
 - [Yandex](./yandex.md)
 - [pCloud](./pcloud.md)
 
-## Isi bab ini
+## Yang Dibahas dalam Bab Ini
 
-- Informasi yang perlu disiapkan sebelum mengatur setiap kanal unggahan.
-- Cara membuat aplikasi, menyalin key, atau memberi otorisasi Token di platform pihak ketiga.
-- Cara mengisi konfigurasi kanal di ImgBed dan memastikan unggahan berjalan.
+- Hal yang dibutuhkan setiap kanal unggah sebelum dikonfigurasi.
+- Cara membuat aplikasi, menyalin kunci, atau mengotorisasi token di platform eksternal.
+- Cara mengisi konfigurasi kanal di ImgBed dan memastikan unggahan berjalan dengan benar.

@@ -1,21 +1,21 @@
 # OCR
 
-OCR images, scans এবং document screenshots থেকে text extract করে।
+OCR ছবি, স্ক্যান এবং ডকুমেন্টের স্ক্রিনশট থেকে লেখা বের করে।
 
-Recognition-এর পর result copy করা যায়, `Markdown`, `PDF` বা `Word` হিসেবে export করা যায়, অথবা multiple formats একসঙ্গে package করে download করা যায়।
+শনাক্তকরণের পর আপনি ফলাফল কপি করতে পারেন, `Markdown`, `PDF` বা `Word` হিসেবে রপ্তানি করতে পারেন, অথবা একাধিক ফরম্যাট একসঙ্গে প্যাকেজ করে ডাউনলোড করতে পারেন।
 
 ## OCR কী করতে পারে
 
-| Feature | Description |
+| বৈশিষ্ট্য | বিবরণ |
 | --- | --- |
-| Image text recognition | Images, screenshots এবং scans থেকে text extract করে। |
-| Document layout recognition | Tables, formulas, stamps এবং mixed text-image layouts-এর জন্য ভালো। |
-| Multiple services | Baidu PaddleOCR, Microsoft Azure Vision এবং Google Vision support করে। |
-| Copy results | Processing-এর পর recognized text copy করুন। |
-| Export files | `Markdown`, `PDF` এবং `Word` export করুন। |
-| Batch packaging | Multiple files recognize করার পর results package হিসেবে download করুন। |
+| ছবির লেখা শনাক্তকরণ | ছবি, স্ক্রিনশট এবং স্ক্যান থেকে লেখা বের করে। |
+| ডকুমেন্ট লেআউট শনাক্তকরণ | টেবিল, সূত্র, সিলমোহর এবং লেখা-ছবি মিশ্রিত লেআউটের জন্য বেশি উপযোগী। |
+| একাধিক পরিষেবা | Baidu PaddleOCR, Microsoft Azure Vision এবং Google Vision সমর্থন করে। |
+| ফলাফল কপি | প্রক্রিয়াকরণের পর শনাক্ত করা লেখা কপি করুন। |
+| ফাইল রপ্তানি | `Markdown`, `PDF` এবং `Word` রপ্তানি করুন। |
+| ব্যাচ প্যাকেজিং | একাধিক ফাইল শনাক্ত করার পর ফলাফল প্যাকেজ হিসেবে ডাউনলোড করুন। |
 
-## আগে OCR Services Configure করুন
+## আগে OCR পরিষেবা কনফিগার করুন
 
 খুলুন:
 
@@ -23,186 +23,186 @@ Recognition-এর পর result copy করা যায়, `Markdown`, `PDF` ব
 System Settings -> Other Settings -> OCR
 ```
 
-![IP geolocation and OCR](../../image/other/ip定位和ocr文字识别.png)
+![IP ভূ-অবস্থান ও OCR](../../image/other/ip定位和ocr文字识别.png)
 
-যে services ব্যবহার করতে চান সেগুলোর credentials পূরণ করুন:
+যে পরিষেবাগুলো ব্যবহার করতে চান, সেগুলোর পরিচয়পত্র পূরণ করুন:
 
-| Service | What To Enter | Best For |
+| পরিষেবা | কী লিখবেন | কোন ক্ষেত্রে সেরা |
 | --- | --- | --- |
-| Baidu PaddleOCR | `PaddleOCR Token` | Recommended first choice। Documents, images, tables এবং mixed layouts-এর জন্য ভালো। |
-| Microsoft Azure Vision | `Azure Vision Endpoint` এবং `Azure Vision API Key` | Microsoft cloud services ব্যবহার করলে useful। |
-| Google Vision | `Google Vision API Key`। Service account `JSON` শুধু quota query-এর জন্য। | Google Cloud services ব্যবহার করলে useful। |
+| Baidu PaddleOCR | `PaddleOCR Token` | প্রস্তাবিত প্রথম পছন্দ। ডকুমেন্ট, ছবি, টেবিল এবং মিশ্র লেআউটের জন্য ভালো। |
+| Microsoft Azure Vision | `Azure Vision Endpoint` এবং `Azure Vision API Key` | আপনি আগে থেকেই Microsoft ক্লাউড পরিষেবা ব্যবহার করলে উপযোগী। |
+| Google Vision | `Google Vision API Key`। পরিষেবা অ্যাকাউন্টের `JSON` শুধু কোটা অনুসন্ধানের জন্য ব্যবহৃত হয়। | আপনি Google Cloud পরিষেবা ব্যবহার করলে উপযোগী। |
 
-Credentials পূরণ করার পর save করুন।
+পরিচয়পত্র পূরণ করার পর সংরক্ষণ করুন।
 
-Initial testing-এর জন্য একটি service configure করলেই হয়। তিনটিই দরকার নেই।
+প্রাথমিক পরীক্ষার জন্য শুধু একটি পরিষেবা কনফিগার করলেই হয়। তিনটিই দরকার নেই।
 
-## Google Vision Setup
+## Google Vision সেটআপ
 
-Google setup-এর দুটি অংশ:
+Google সেটআপের দুটি অংশ আছে:
 
-| Goal | Requirement |
+| লক্ষ্য | প্রয়োজনীয়তা |
 | --- | --- |
-| OCR ব্যবহার | `Cloud Vision API` enable করুন, তারপর `API Key` তৈরি করুন। |
-| Usage query | Service account তৈরি করুন, `Monitoring Viewer` grant করুন, তারপর service account `JSON` download করুন। |
+| OCR ব্যবহার | `Cloud Vision API` চালু করুন, তারপর একটি `API Key` তৈরি করুন। |
+| ব্যবহারের হিসাব দেখা | একটি পরিষেবা অ্যাকাউন্ট তৈরি করুন, তাকে `Monitoring Viewer` দিন, তারপর পরিষেবা অ্যাকাউন্টের `JSON` ডাউনলোড করুন। |
 
-![Google API key and service account](../../image/other/谷歌api秘钥和服务账号截图.png)
+![Google API কী ও পরিষেবা অ্যাকাউন্ট](../../image/other/谷歌api秘钥和服务账号截图.png)
 
 ### OCR-এর জন্য Google ব্যবহার
 
 1. Google Cloud Console খুলুন।
 2. `APIs & Services`-এ যান।
-3. `Library` খুলে `Cloud Vision API` search করে enable করুন।
+3. `Library` খুলুন, `Cloud Vision API` খুঁজুন এবং চালু করুন।
 4. `Credentials`-এ ফিরে যান।
 5. একটি `API Key` তৈরি করুন।
-6. API Key খুলে copy করুন।
-7. ImgBed-এর `Google Vision API Key`-এ paste করুন।
-8. Save করুন।
+6. API Key খুলে কপি করুন।
+7. ImgBed-এর `Google Vision API Key`-এ পেস্ট করুন।
+8. সংরক্ষণ করুন।
 
-এরপর OCR dialog-এ Google Vision নির্বাচন করতে পারবেন।
+এরপর OCR ডায়ালগে Google Vision নির্বাচন করতে পারবেন।
 
-### Google Usage Query
+### Google ব্যবহারের হিসাব দেখা
 
-Quota query recognition-এর জন্য required নয়।
+কোটা অনুসন্ধান শনাক্তকরণের জন্য প্রয়োজন নয়।
 
-এটি শুধু গত 30 দিনে কত Google Vision calls ব্যবহৃত হয়েছে তার rough count দেখায়।
+এটি শুধু গত 30 দিনে কতটি Google Vision কল ব্যবহার হয়েছে তার আনুমানিক সংখ্যা দেখায়।
 
 1. Google Cloud Console-এ `IAM & Admin` খুলুন।
 2. `Service Accounts` খুলুন।
-3. একটি service account তৈরি করুন, যেমন `vision-monitor`।
-4. এটিকে `Monitoring Viewer` role দিন।
-5. Service account details খুলে key create করুন।
+3. একটি পরিষেবা অ্যাকাউন্ট তৈরি করুন, যেমন `vision-monitor`।
+4. সেটিকে `Monitoring Viewer` ভূমিকা দিন।
+5. পরিষেবা অ্যাকাউন্টের বিবরণ খুলে একটি কী তৈরি করুন।
 6. `JSON` নির্বাচন করুন।
-7. Generated JSON file download করুন।
-8. ImgBed-এ ফিরে service account `JSON`-এর নিচে import করুন (optional)।
-9. Import successful হলে quota query ক্লিক করুন।
+7. তৈরি হওয়া JSON ফাইল ডাউনলোড করুন।
+8. ImgBed-এ ফিরে পরিষেবা অ্যাকাউন্ট `JSON`-এর অধীনে এটি আমদানি করুন (ঐচ্ছিক)।
+9. আমদানি সফল হলে কোটা অনুসন্ধানে ক্লিক করুন।
 
-Import-এর পর ImgBed service account-এর project name দেখায়। Usage query করার সময় ImgBed Google monitoring data পড়ে এই মাসের call count দেখায়।
+আমদানির পর ImgBed পরিষেবা অ্যাকাউন্টের প্রকল্পের নাম দেখায়। ব্যবহারের হিসাব দেখার সময় ImgBed Google পর্যবেক্ষণ ডেটা পড়ে এবং এই মাসের কল সংখ্যা দেখায়।
 
 সংক্ষেপে:
 
-| Item | Purpose |
+| আইটেম | উদ্দেশ্য |
 | --- | --- |
-| `Google Vision API Key` | OCR recognition করে। |
-| Service account `JSON` | কত Google Vision calls ব্যবহৃত হয়েছে query করে। |
-| `Monitoring Viewer` role | Service account-কে usage data পড়তে দেয়। |
+| `Google Vision API Key` | OCR শনাক্তকরণ চালায়। |
+| পরিষেবা অ্যাকাউন্ট `JSON` | কতটি Google Vision কল ব্যবহার হয়েছে তা অনুসন্ধান করে। |
+| `Monitoring Viewer` ভূমিকা | পরিষেবা অ্যাকাউন্টকে ব্যবহার ডেটা পড়তে দেয়। |
 
-## Baidu PaddleOCR Token নেওয়া
+## Baidu PaddleOCR Token নেওয়া
 
-Baidu PaddleOCR access token চায়।
+Baidu PaddleOCR একটি অ্যাক্সেস টোকেন চায়।
 
-![Get PaddleOCR token](../../image/other/获取飞浆令牌.png)
+![PaddleOCR টোকেন নেওয়া](../../image/other/获取飞浆令牌.png)
 
-Baidu PaddleOCR page-এর `API` call window খুলে token নেওয়ার জন্য click করুন, তারপর copy করুন।
+Baidu PaddleOCR পেজে `API` কল উইন্ডো খুলুন, টোকেন নেওয়ার জন্য ক্লিক করুন, তারপর সেটি কপি করুন।
 
-ImgBed-এ ফিরে `PaddleOCR Token`-এ paste করে save করুন।
+ImgBed-এ ফিরে `PaddleOCR Token`-এ পেস্ট করুন এবং সংরক্ষণ করুন।
 
-## Recognition শুরু করা
+## শনাক্তকরণ শুরু করা
 
-File Management-এ image বা document screenshot নির্বাচন করে `OCR` ক্লিক করুন।
+ফাইল ব্যবস্থাপনায় একটি ছবি বা ডকুমেন্ট স্ক্রিনশট নির্বাচন করে `OCR`-এ ক্লিক করুন।
 
-![OCR recognition](../../image/other/ocr识别截图.png)
+![OCR শনাক্তকরণ](../../image/other/ocr识别截图.png)
 
-Dialog-এ recognition service এবং model নির্বাচন করুন।
+ডায়ালগে শনাক্তকরণ পরিষেবা এবং মডেল নির্বাচন করুন।
 
-Common PaddleOCR model choices:
+সাধারণ PaddleOCR মডেল নির্বাচন:
 
-| Model | Best For |
+| মডেল | কোন ক্ষেত্রে সেরা |
 | --- | --- |
-| `PP-StructureV3` | Recommended default। Documents, tables, formulas, stamps এবং mixed layouts-এর জন্য ভালো। |
-| `PP-OCRv5` | Simple images, ordinary text এবং lightweight recognition। |
-| `PaddleOCR-VL` | Multilingual, complex images এবং chart-like content। |
-| `PaddleOCR-VL-1.5` | আরও complex document pages এবং layout recovery। |
+| `PP-StructureV3` | প্রস্তাবিত ডিফল্ট। ডকুমেন্ট, টেবিল, সূত্র, সিলমোহর এবং মিশ্র লেআউটের জন্য ভালো। |
+| `PP-OCRv5` | সাধারণ ছবি, সাধারণ লেখা এবং হালকা শনাক্তকরণ। |
+| `PaddleOCR-VL` | বহু-ভাষিক, জটিল ছবি এবং চার্ট-ধরনের কনটেন্ট। |
+| `PaddleOCR-VL-1.5` | আরও জটিল ডকুমেন্ট পেজ এবং লেআউট পুনরুদ্ধার। |
 
-নিশ্চিত না হলে `PP-StructureV3` দিয়ে শুরু করুন।
+নিশ্চিত না হলে `PP-StructureV3` দিয়ে শুরু করুন।
 
-## Advanced Options
+## উন্নত বিকল্প
 
-| Option | Description |
+| বিকল্প | বিবরণ |
 | --- | --- |
-| Orientation correction | Image rotated বা skewed হলে ব্যবহার করুন। |
-| Document flattening | Curvature বা tilt থাকা photographed documents-এর জন্য ব্যবহার করুন। |
-| Layout detection | Headings, paragraphs, tables এবং image structure preserve করতে চাইলে ব্যবহার করুন। |
-| Chart recognition | Image-এ charts বা complex structures থাকলে ব্যবহার করুন। |
-| Beautify `Markdown` | Exported Markdown পড়তে সহজ করে। |
+| দিকনির্দেশ সংশোধন | ছবি ঘোরানো বা কাত হলে ব্যবহার করুন। |
+| ডকুমেন্ট সমতলকরণ | বাঁক বা ঢাল থাকা ছবি তোলা ডকুমেন্টের জন্য ব্যবহার করুন। |
+| লেআউট শনাক্তকরণ | শিরোনাম, অনুচ্ছেদ, টেবিল এবং ছবির গঠন সংরক্ষণ করতে চাইলে ব্যবহার করুন। |
+| চার্ট শনাক্তকরণ | ছবিতে চার্ট বা জটিল গঠন থাকলে ব্যবহার করুন। |
+| `Markdown` সুন্দর করা | রপ্তানি করা Markdown পড়া সহজ করে। |
 
-Regular screenshots-এর জন্য options minimal রাখুন। Document scans-এর জন্য document-related options বেশি enable করুন।
+সাধারণ স্ক্রিনশটের জন্য বিকল্প কম রাখুন। ডকুমেন্ট স্ক্যানের জন্য ডকুমেন্ট-সম্পর্কিত আরও বিকল্প চালু করুন।
 
-## Results দেখা
+## ফলাফল দেখা
 
-Recognition শেষ হলে dialog result দেখায়।
+শনাক্তকরণ শেষ হলে ডায়ালগে ফলাফল দেখা যায়।
 
-আপনি direct copy করতে পারেন বা export formats বেছে নিতে পারেন।
+আপনি সরাসরি কপি করতে পারেন অথবা রপ্তানি ফরম্যাট নির্বাচন করতে পারেন।
 
-![PDF recognition](../../image/other/pdf识别截图.png)
+![PDF শনাক্তকরণ](../../image/other/pdf识别截图.png)
 
-Document pages-এর জন্য exported `PDF` page appearance preserve করতে পারে এবং text searchable রাখে। Scans archive করা এবং পরে content খোঁজার জন্য useful।
+ডকুমেন্ট পেজের ক্ষেত্রে রপ্তানি করা `PDF` পেজের চেহারা বজায় রেখে লেখাকে অনুসন্ধানযোগ্য রাখতে পারে। স্ক্যান আর্কাইভ করা এবং পরে কনটেন্ট খুঁজে পাওয়ার জন্য এটি উপযোগী।
 
-## Export Format নির্বাচন
+## রপ্তানি ফরম্যাট নির্বাচন
 
-| Format | Best For |
+| ফরম্যাট | কোন ক্ষেত্রে সেরা |
 | --- | --- |
-| `Markdown (.md)` | Notes, documentation systems এবং পরের editing। |
-| `PDF (.pdf)` | Page appearance এবং scanned document results preserve করা। |
-| `Word (.docx)` | Layout editing, text modification এবং অন্যদের handoff। |
-| Export all | Multiple formats এবং original image save করে; important archives-এর জন্য suitable। |
+| `Markdown (.md)` | নোট, ডকুমেন্টেশন সিস্টেম এবং পরবর্তী সম্পাদনা। |
+| `PDF (.pdf)` | পেজের চেহারা এবং স্ক্যান করা ডকুমেন্টের ফলাফল সংরক্ষণ। |
+| `Word (.docx)` | লেআউট সম্পাদনা চালিয়ে যাওয়া, লেখা পরিবর্তন এবং অন্যদের কাছে হস্তান্তর। |
+| সব রপ্তানি | একাধিক ফরম্যাট ও মূল ছবি সংরক্ষণ করে; গুরুত্বপূর্ণ আর্কাইভের জন্য উপযোগী। |
 
-শুধু text দরকার হলে Markdown export করুন।
+শুধু লেখা দরকার হলে Markdown রপ্তানি করুন।
 
-Page appearance দরকার হলে PDF বা Word ব্যবহার করুন।
+পেজের চেহারা দরকার হলে PDF বা Word ব্যবহার করুন।
 
-## Word Output
+## Word আউটপুট
 
-Exported Word documents office software দিয়ে খোলা এবং edit করা যায়।
+রপ্তানি করা Word ডকুমেন্ট অফিস সফটওয়্যার দিয়ে খোলা ও সম্পাদনা করা যায়।
 
-![Word result](../../image/other/word识别结果.png)
+![Word ফলাফল](../../image/other/word识别结果.png)
 
-কিছু documents-এর Word output-এ recognized images, headings এবং paragraphs থাকে।
+কিছু ডকুমেন্টের Word আউটপুটে শনাক্ত করা ছবি, শিরোনাম এবং অনুচ্ছেদ থাকে।
 
-Recognition quality original image clarity, model choice এবং document complexity-এর ওপর depend করে।
+শনাক্তকরণের মান মূল ছবির স্বচ্ছতা, মডেল নির্বাচন এবং ডকুমেন্টের জটিলতার ওপর নির্ভর করে।
 
-## OCR-এর জন্য ভালো File Types
+## OCR-এর জন্য ভালো ফাইল ধরন
 
-| File Type | Recommendation |
+| ফাইলের ধরন | সুপারিশ |
 | --- | --- |
-| Clear screenshots | Direct recognize করুন। |
-| Scans | `PP-StructureV3` prefer করুন। |
-| Photographed documents | Orientation correction এবং document flattening enable করুন। |
-| Tables, formulas, stamps | Structured models prefer করুন। |
-| Simple short text images | `PP-OCRv5` সাধারণত যথেষ্ট। |
+| পরিষ্কার স্ক্রিনশট | সরাসরি শনাক্ত করুন। |
+| স্ক্যান | `PP-StructureV3` পছন্দ করুন। |
+| ছবি তোলা ডকুমেন্ট | দিকনির্দেশ সংশোধন এবং ডকুমেন্ট সমতলকরণ চালু করুন। |
+| টেবিল, সূত্র, সিলমোহর | কাঠামোগত মডেল পছন্দ করুন। |
+| ছোট সাধারণ লেখার ছবি | `PP-OCRv5` সাধারণত যথেষ্ট। |
 
-Straight text থাকা clearer images সাধারণত ভালো results দেয়।
+আরও পরিষ্কার ছবি এবং সোজা লেখা সাধারণত ভালো ফল দেয়।
 
-## Common Cases
+## সাধারণ ঘটনা
 
-| Case | Meaning |
+| ঘটনা | অর্থ |
 | --- | --- |
-| Recognition fails | Service token বা key save আছে কি না check করুন। |
-| Recognition slow | Complex documents এবং large images বেশি সময় নেয়। |
-| Table incomplete | Structured model try করুন। |
-| Text mistakes | Blur, glare এবং skew recognition errors বাড়ায়। Clearer image try করুন। |
-| Word output-এ অনেক images | Structured models কিছু recognized images preserve করতে পারে। এটি normal। |
+| শনাক্তকরণ ব্যর্থ | পরিষেবা টোকেন বা কী সংরক্ষণ করা আছে কি না পরীক্ষা করুন। |
+| শনাক্তকরণ ধীর | জটিল ডকুমেন্ট এবং বড় ছবিতে বেশি সময় লাগে। |
+| টেবিল অসম্পূর্ণ | একটি কাঠামোগত মডেল চেষ্টা করুন। |
+| লেখায় ভুল আছে | ঝাপসা, আলো প্রতিফলন এবং কাত হওয়া শনাক্তকরণ ত্রুটি বাড়ায়। আরও পরিষ্কার ছবি চেষ্টা করুন। |
+| Word আউটপুটে অনেক ছবি আছে | কাঠামোগত মডেল কিছু শনাক্ত করা ছবি সংরক্ষণ করতে পারে। এটি স্বাভাবিক। |
 
-### Google Quota Query fail হলে
+### Google কোটা অনুসন্ধান ব্যর্থ হলে
 
-Check করুন:
+পরীক্ষা করুন:
 
-1. Service account `JSON` import হয়েছে।
-2. Service account-এর `Monitoring Viewer` role আছে।
-3. Project-এ `Cloud Vision API` enabled।
+1. পরিষেবা অ্যাকাউন্ট `JSON` আমদানি করা হয়েছে।
+2. পরিষেবা অ্যাকাউন্টের `Monitoring Viewer` ভূমিকা আছে।
+3. প্রকল্পে `Cloud Vision API` চালু আছে।
 
-শুধু OCR দরকার হলে usage query না করেও চলে; service account JSON ignore করে শুধু `Google Vision API Key` পূরণ করতে পারেন।
+আপনার যদি শুধু OCR দরকার হয় এবং ব্যবহারের হিসাব দেখা দরকার না হয়, পরিষেবা অ্যাকাউন্ট JSON উপেক্ষা করে শুধু `Google Vision API Key` পূরণ করতে পারেন।
 
-## Quick Flow
+## দ্রুত ধাপ
 
 ```text
-System Settings খুলুন
--> Other Settings খুলুন
--> OCR service credentials পূরণ করুন
+Open System Settings
+-> Open Other Settings
+-> Fill OCR service credentials
 -> Save
--> File Management-এ ফিরে যান
--> File select করে OCR ক্লিক করুন
--> Model নির্বাচন করুন
--> Recognition শেষ হওয়ার অপেক্ষা করুন
--> Results copy করুন বা Markdown / PDF / Word export করুন
+-> Return to File Management
+-> Select a file and click OCR
+-> Choose a model
+-> Wait for recognition
+-> Copy results or export Markdown / PDF / Word
 ```

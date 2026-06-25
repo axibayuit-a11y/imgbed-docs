@@ -1,97 +1,97 @@
-# Magnet Transfer
+# magnet লিংক স্থানান্তর
 
-Magnet transfer magnet link থেকে files download করে এবং আপনার নির্বাচিত cloud storage channel-এ automatically upload করে।
+magnet লিংক স্থানান্তর একটি magnet লিংক থেকে ফাইল ডাউনলোড করে এবং আপনার নির্বাচিত ক্লাউড স্টোরেজ চ্যানেলে স্বয়ংক্রিয়ভাবে আপলোড করে।
 
-Anime episodes, videos, archives এবং similar files transfer করতে এটি useful। Magnet link paste করলে ImgBed background download task তৈরি করে। Download শেষ হলে file ImgBed-এ upload হয় এবং final link upload list-এ দেখা যায়।
+অ্যানিমে পর্ব, ভিডিও, আর্কাইভ এবং অনুরূপ ফাইল স্থানান্তরের জন্য এটি উপযোগী। একটি magnet লিংক পেস্ট করলে ImgBed পটভূমিতে একটি ডাউনলোড কাজ তৈরি করে। ডাউনলোড শেষ হলে ফাইলটি ImgBed-এ আপলোড হয় এবং চূড়ান্ত লিংক আপলোড তালিকায় দেখা যায়।
 
-![Magnet transfer](../../image/other/磁力链接/磁力链接.png)
+![magnet লিংক স্থানান্তর](../../image/other/磁力链接/磁力链接.png)
 
-## কোথায় ব্যবহার করবেন
+## কোথায় ব্যবহার করবেন
 
-Magnet transfer entry homepage upload area-তে আছে।
+magnet লিংক স্থানান্তরের প্রবেশপথ হোমপেজের আপলোড এলাকায় থাকে।
 
-Input box-এ magnet link paste করুন, `Transfer` নির্বাচন করুন, তারপর upload করুন।
+ইনপুট বক্সে magnet লিংক পেস্ট করুন, `Transfer` নির্বাচন করুন, তারপর আপলোড করুন।
 
-![Upload anime](../../image/other/磁力链接/上传番剧.png)
+![অ্যানিমে আপলোড](../../image/other/磁力链接/上传番剧.png)
 
 ## প্রথমবার ব্যবহারের আগে
 
-আগে admin panel-এ magnet transfer configure করুন।
+আগে অ্যাডমিন প্যানেলে magnet লিংক স্থানান্তর কনফিগার করুন।
 
-সাধারণত দরকার:
+সাধারণত আপনার দরকার হবে:
 
-1. Download task চালানোর জন্য GitHub account।
-2. Google Drive বা OneDrive-এর মতো cloud upload channel।
-3. Target upload directory।
-4. Task timeout।
+1. ডাউনলোড কাজ চালানোর জন্য একটি GitHub অ্যাকাউন্ট।
+2. Google Drive বা OneDrive-এর মতো একটি ক্লাউড আপলোড চ্যানেল।
+3. লক্ষ্য আপলোড ডিরেক্টরি।
+4. কাজের সময়সীমা।
 
-Settings ready হলে homepage-এ ফিরে magnet link paste করে transfer start করুন।
+সেটিংস প্রস্তুত হলে হোমপেজে ফিরে magnet লিংক পেস্ট করে স্থানান্তর শুরু করুন।
 
-## Magnet Link Upload করা
+## magnet লিংক আপলোড করা
 
-1. Homepage upload box-এ magnet link paste করুন।
-2. Mode `Transfer` সেট আছে কি না নিশ্চিত করুন।
-3. Upload ক্লিক করুন।
-4. ImgBed magnet task create করা পর্যন্ত অপেক্ষা করুন।
-5. Task start হলে progress দেখতে bottom-right corner-এর `Magnet Tasks` floating panel ব্যবহার করুন।
+1. হোমপেজের আপলোড বক্সে magnet লিংক পেস্ট করুন।
+2. মোড `Transfer` হিসেবে সেট আছে কি না নিশ্চিত করুন।
+3. আপলোডে ক্লিক করুন।
+4. ImgBed magnet কাজ তৈরি করা পর্যন্ত অপেক্ষা করুন।
+5. কাজ শুরু হলে অগ্রগতি দেখতে ডান দিকের নিচের কোণের `Magnet Tasks` ভাসমান প্যানেল ব্যবহার করুন।
 
-Download এবং upload সময় নিতে পারে। Speed magnet resource, GitHub runtime environment এবং selected cloud storage channel-এর ওপর depend করে।
+ডাউনলোড ও আপলোডে সময় লাগতে পারে। গতি নির্ভর করে magnet রিসোর্স, GitHub রানটাইম পরিবেশ এবং নির্বাচিত ক্লাউড স্টোরেজ চ্যানেলের ওপর।
 
-![Magnet downloading](../../image/other/磁力链接/磁力链接下载中.png)
+![magnet ডাউনলোড হচ্ছে](../../image/other/磁力链接/磁力链接下载中.png)
 
-## Completion-এর পর
+## সম্পন্ন হওয়ার পর
 
-Task complete হলে upload list file name এবং link দেখায়।
+কাজ সম্পন্ন হলে আপলোড তালিকায় ফাইলের নাম এবং লিংক দেখা যায়।
 
-Videos video preview দেখায়, images image preview দেখায়, আর other files regular file icon দেখায়।
+ভিডিও হলে ভিডিও প্রিভিউ, ছবি হলে ছবি প্রিভিউ, আর অন্যান্য ফাইল হলে সাধারণ ফাইল আইকন দেখানো হয়।
 
-![Downloaded video](../../image/other/磁力链接/下载好后的视频.png)
+![ডাউনলোড করা ভিডিও](../../image/other/磁力链接/下载好后的视频.png)
 
-আপনি copy করতে পারেন:
+আপনি কপি করতে পারেন:
 
-| Link Type | Use Case |
+| লিংকের ধরন | ব্যবহারের ক্ষেত্র |
 | --- | --- |
-| Original link | Direct file access |
-| Markdown | Markdown posts বা notes |
-| HTML | Web page code |
-| BBCode | BBCode support করা forums |
+| মূল লিংক | সরাসরি ফাইলে প্রবেশ |
+| Markdown | Markdown পোস্ট বা নোট |
+| HTML | ওয়েব পেজের কোড |
+| BBCode | BBCode সমর্থনকারী ফোরাম |
 
-## Magnet Task Panel
+## magnet কাজের প্যানেল
 
-Bottom-right magnet task panel task count, task name, progress এবং final status দেখায়।
+ডান দিকের নিচের magnet কাজের প্যানেল কাজের সংখ্যা, কাজের নাম, অগ্রগতি এবং চূড়ান্ত অবস্থা দেখায়।
 
-Common states:
+সাধারণ অবস্থা:
 
-| Status | Meaning |
+| অবস্থা | অর্থ |
 | --- | --- |
-| Waiting | Task তৈরি হয়েছে এবং run হওয়ার অপেক্ষায়। |
-| Downloading | Magnet resource download হচ্ছে। |
-| Uploading | File download হয়েছে এবং cloud storage-এ upload হচ্ছে। |
-| Completed | Upload successful এবং link copy করা যাবে। |
-| Failed | Task successfully finish হয়নি। Message check করে আবার চেষ্টা করুন। |
+| অপেক্ষমাণ | কাজ তৈরি হয়েছে এবং চালুর অপেক্ষায় আছে। |
+| ডাউনলোড হচ্ছে | magnet রিসোর্স ডাউনলোড হচ্ছে। |
+| আপলোড হচ্ছে | ফাইল ডাউনলোড হয়েছে এবং ক্লাউড স্টোরেজে আপলোড হচ্ছে। |
+| সম্পন্ন | আপলোড সফল হয়েছে এবং লিংক কপি করা যাবে। |
+| ব্যর্থ | কাজ সফলভাবে শেষ হয়নি। বার্তাটি দেখুন এবং আবার চেষ্টা করুন। |
 
-## Tips
+## পরামর্শ
 
-- Magnet link-এ multiple files থাকলে ImgBed display-এর জন্য main completed file prioritise করে।
-- Large files বেশি সময় নেয়। Task finish হওয়ার আগে page refresh না করাই ভালো।
-- Magnet resource-এ available peers না থাকলে download খুব slow বা fail হতে পারে।
-- Cloud account quota শেষ, authorization expired, বা upload directory ভুল হলে task fail করতে পারে।
-- Upload complete হওয়ার পর video preview আসতে কয়েক seconds লাগতে পারে।
+- magnet লিংকে একাধিক ফাইল থাকলে ImgBed প্রদর্শনের জন্য সম্পন্ন হওয়া প্রধান ফাইলকে অগ্রাধিকার দেয়।
+- বড় ফাইলে বেশি সময় লাগে। কাজ শেষ হওয়ার আগে পেজ রিফ্রেশ না করাই ভালো।
+- magnet রিসোর্সের জন্য উপলভ্য peer না থাকলে ডাউনলোড খুব ধীর হতে পারে বা ব্যর্থ হতে পারে।
+- ক্লাউড অ্যাকাউন্টের কোটা শেষ, অনুমোদনের মেয়াদ শেষ, অথবা আপলোড ডিরেক্টরি ভুল হলে কাজ ব্যর্থ হতে পারে।
+- আপলোড সম্পন্ন হওয়ার পর ভিডিও প্রিভিউ আসতে কয়েক সেকেন্ড লাগতে পারে।
 
-## FAQ
+## সাধারণ প্রশ্ন
 
-### Magnet Link paste করার পর কিছু start হচ্ছে না
+### magnet লিংক পেস্ট করার পর কিছু শুরু হচ্ছে না
 
-Admin panel-এ magnet transfer enabled আছে কি না এবং usable GitHub account ও cloud channel selected আছে কি না confirm করুন।
+অ্যাডমিন প্যানেলে magnet লিংক স্থানান্তর চালু আছে কি না এবং ব্যবহারযোগ্য GitHub অ্যাকাউন্ট ও ক্লাউড চ্যানেল নির্বাচন করা হয়েছে কি না নিশ্চিত করুন।
 
-### Download সবসময় slow
+### ডাউনলোড সবসময় ধীর
 
-Magnet speed resource-এর ওপর depend করে। Available peers না থাকলে download খুব slow বা impossible হতে পারে।
+magnet-এর গতি রিসোর্সের ওপর নির্ভর করে। উপলভ্য peer না থাকলে ডাউনলোড খুব ধীর বা অসম্ভব হতে পারে।
 
-### Upload-এর পর Preview নেই
+### আপলোডের পর প্রিভিউ দেখা যাচ্ছে না
 
-আগে file link খোলে কি না confirm করুন। Video files browser-এ load হতে সামান্য সময় নিতে পারে, অথবা link direct খুলুন।
+আগে নিশ্চিত করুন ফাইলের লিংক খোলে। ভিডিও ফাইল ব্রাউজারে লোড হতে সামান্য সময় নিতে পারে, অথবা আপনি সরাসরি লিংক খুলতে পারেন।
 
-### Task fail হলে কী check করব?
+### কাজ ব্যর্থ হলে কী পরীক্ষা করব?
 
-Magnet link valid কি না, cloud channel কাজ করছে কি না, এবং upload directory সঠিক কি না check করুন। তারপর task আবার submit করুন।
+magnet লিংক বৈধ কি না, ক্লাউড চ্যানেল কাজ করছে কি না এবং আপলোড ডিরেক্টরি সঠিক কি না পরীক্ষা করুন। তারপর কাজটি আবার জমা দিন।

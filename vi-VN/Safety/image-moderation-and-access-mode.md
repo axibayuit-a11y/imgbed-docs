@@ -1,165 +1,165 @@
-# Image Moderation và Access Mode
+# Kiểm duyệt hình ảnh và chế độ truy cập
 
-Image moderation gán age rating cho uploaded images. Access mode kiểm soát ratings nào được hiển thị qua public access.
+Kiểm duyệt hình ảnh gán xếp hạng độ tuổi cho hình ảnh được tải lên. Chế độ truy cập kiểm soát những xếp hạng nào được hiển thị qua truy cập công khai.
 
-Điều này ảnh hưởng đến public gallery, public file URLs và random image API. Nó không hạn chế admin panel. Administrators vẫn có thể xem và manage tất cả files.
+Điều này ảnh hưởng đến thư viện công khai, URL tệp công khai và API hình ảnh ngẫu nhiên. Nó không hạn chế bảng quản trị. Quản trị viên vẫn có thể xem và quản lý tất cả tệp.
 
-## Cấu hình ở đâu
+## Nơi cấu hình
 
-Mở admin panel, rồi vào:
+Mở bảng quản trị, rồi đi tới:
 
 ```text
 System Settings -> Security Settings -> Upload Management -> Image Moderation
 ```
 
-Các settings chính:
+Các cài đặt chính:
 
-- Access mode
-- Enable moderation
-- Moderation provider
+- Chế độ truy cập
+- Bật kiểm duyệt
+- Nhà cung cấp kiểm duyệt
 
-## Access Mode làm gì
+## Chế độ truy cập làm gì
 
-Access mode quyết định age ratings nào có thể hiển thị public.
+Chế độ truy cập quyết định những xếp hạng độ tuổi nào có thể được hiển thị công khai.
 
-Current modes:
+Các chế độ hiện tại:
 
-| Access Mode | Publicly Visible Ratings |
+| Chế độ truy cập | Xếp hạng được hiển thị công khai |
 | --- | --- |
-| Adult mode | General, R12, R16, R18 |
-| Youth mode | General, R12, R16 |
-| Teen mode | General, R12 |
-| Child mode | Chỉ General |
+| Chế độ người lớn | Chung, R12, R16, R18 |
+| Chế độ thanh thiếu niên | Chung, R12, R16 |
+| Chế độ thiếu niên | Chung, R12 |
+| Chế độ trẻ em | Chỉ Chung |
 
-Default là Adult mode.
+Mặc định là Chế độ người lớn.
 
-Với private sites hoặc sites có mature content, Adult mode có thể phù hợp. Nếu muốn public gallery thận trọng hơn, chọn Youth, Teen hoặc Child mode.
+Với trang riêng tư hoặc trang có nội dung trưởng thành, Chế độ người lớn có thể phù hợp. Với thư viện công khai thận trọng hơn, hãy chọn chế độ Thanh thiếu niên, Thiếu niên hoặc Trẻ em.
 
-## Enable Moderation làm gì
+## Tác dụng của việc bật kiểm duyệt
 
-Khi moderation được bật, ImgBed gọi selected moderation provider trong lúc upload và save age rating được phát hiện.
+Khi bật kiểm duyệt, ImgBed gọi nhà cung cấp kiểm duyệt đã chọn trong quá trình tải lên và lưu xếp hạng độ tuổi phát hiện được.
 
-Ratings chính:
+Các xếp hạng chính:
 
-| Rating | Meaning |
+| Xếp hạng | Ý nghĩa |
 | --- | --- |
-| General | Safe public content |
-| R12 | Content hơi nhạy cảm |
-| R16 | Content nhạy cảm mức vừa |
-| R18 | Adult content |
+| Chung | Nội dung công khai an toàn |
+| R12 | Nội dung hơi nhạy cảm |
+| R16 | Nội dung nhạy cảm mức vừa |
+| R18 | Nội dung người lớn |
 
-Moderation result được dùng khi quyết định public access.
+Kết quả kiểm duyệt được dùng khi quyết định quyền truy cập công khai.
 
-Nếu moderation không bật, hoặc old files chưa có rating, các files đó được xem là unrated. Unrated files không tự động bị xóa khỏi public gallery hoặc random image API chỉ vì chưa có rating.
+Nếu kiểm duyệt chưa được bật, hoặc tệp cũ không có xếp hạng, các tệp đó được xem là chưa xếp hạng. Tệp chưa xếp hạng không tự động bị xóa khỏi thư viện công khai hoặc API hình ảnh ngẫu nhiên chỉ vì chưa có xếp hạng.
 
-## Chọn Moderation Provider
+## Chọn nhà cung cấp kiểm duyệt
 
-Available providers gồm:
+Các nhà cung cấp có sẵn gồm:
 
 - moderatecontent.com
 - nsfwjs
 - Sightengine
 
-Mỗi provider có yêu cầu khác nhau:
+Mỗi nhà cung cấp có yêu cầu khác nhau:
 
-- moderatecontent.com thường cần API Key.
-- nsfwjs thường cần API endpoint URL.
-- Sightengine cần API user và API secret.
+- moderatecontent.com thường yêu cầu API Key.
+- nsfwjs thường yêu cầu URL điểm cuối API.
+- Sightengine yêu cầu API user và API secret.
 
-Chọn theo account, availability và detection quality của bạn. Miễn là moderation được bật và cấu hình đúng, ImgBed sẽ cố ghi image rating trong lúc upload.
+Hãy chọn theo tài khoản, mức độ khả dụng và chất lượng phát hiện của bạn. Miễn là kiểm duyệt được bật và cấu hình đúng, ImgBed sẽ cố gắng ghi xếp hạng hình ảnh trong quá trình tải lên.
 
-## Ảnh hưởng đến Public Gallery
+## Ảnh hưởng đến thư viện công khai
 
-Public gallery filter files theo access mode.
-
-Ví dụ:
-
-- Adult mode: R18 images có thể xuất hiện.
-- Youth mode: R18 images bị ẩn.
-- Teen mode: R16 và R18 images bị ẩn.
-- Child mode: chỉ General images được hiển thị.
-
-Điều này chỉ ảnh hưởng normal public access. Admin panel vẫn hiển thị tất cả files.
-
-## Ảnh hưởng đến Public File URLs
-
-Public file URLs là direct image links mà visitors mở.
-
-Nếu file rating được current access mode cho phép, ImgBed trả original image.
-
-Nếu rating cao hơn allowed level, normal public access không trả original image. Thay vào đó, ImgBed trả configured blocked result hoặc blocked fallback image.
+Thư viện công khai lọc tệp theo chế độ truy cập.
 
 Ví dụ:
 
-- Current mode là Child mode.
-- Một image được rating R18.
-- Visitor mở public URL trực tiếp.
-- ImgBed không trả R18 original image cho visitor đó.
+- Chế độ người lớn: hình ảnh R18 có thể xuất hiện.
+- Chế độ thanh thiếu niên: hình ảnh R18 bị ẩn.
+- Chế độ thiếu niên: hình ảnh R16 và R18 bị ẩn.
+- Chế độ trẻ em: chỉ hiển thị hình ảnh Chung.
 
-![Restricted file image](../../image/Safety/文件受限图.png)
+Điều này chỉ ảnh hưởng đến truy cập công khai thông thường. Bảng quản trị vẫn hiển thị tất cả tệp.
 
-Administrators xem files trong admin panel không bị restriction này ảnh hưởng.
+## Ảnh hưởng đến URL tệp công khai
 
-## Ảnh hưởng đến Random Image API
+URL tệp công khai là các liên kết hình ảnh trực tiếp do khách truy cập mở.
 
-Random image API cũng filter candidate pool theo access mode.
+Nếu xếp hạng của tệp được chế độ truy cập hiện tại cho phép, ImgBed trả về hình ảnh gốc.
 
-Ở Child mode, random images chỉ được chọn từ General-rated files.
+Nếu xếp hạng cao hơn mức cho phép, truy cập công khai thông thường sẽ không trả về hình ảnh gốc. Thay vào đó, ImgBed trả về kết quả bị chặn đã cấu hình hoặc hình ảnh thay thế.
 
-Ở Youth mode, random images có thể đến từ General, R12 và R16 files, nhưng không từ R18 files.
+Ví dụ:
 
-Điều này ngăn random image API bypass public gallery restrictions.
+- Chế độ hiện tại là Chế độ trẻ em.
+- Một hình ảnh được xếp hạng R18.
+- Một khách truy cập mở trực tiếp URL công khai.
+- ImgBed không trả về hình ảnh gốc R18 cho khách truy cập đó.
 
-## Quan hệ với List Rules
+![Hình ảnh tệp bị hạn chế](../../image/Safety/文件受限图.png)
 
-Access mode không phải public access rule duy nhất. Nó hoạt động cùng allow/block list rules.
+Quản trị viên xem tệp trong bảng quản trị không bị ảnh hưởng bởi hạn chế này.
 
-Hiểu đơn giản:
+## Ảnh hưởng đến API hình ảnh ngẫu nhiên
 
-- Allowlisted content được ưu tiên public.
-- Blocklisted content không thể được regular visitors xem trực tiếp.
-- Content không nằm trong list nào sẽ được check tiếp theo access mode.
+API hình ảnh ngẫu nhiên cũng lọc nhóm ứng viên theo chế độ truy cập.
 
-Nếu một image bị restrict bởi cả age rating và list rules, regular visitors vẫn không thể xem original file trực tiếp.
+Trong Chế độ trẻ em, hình ảnh ngẫu nhiên chỉ được chọn từ các tệp được xếp hạng Chung.
 
-## Recommended Settings
+Trong Chế độ thanh thiếu niên, hình ảnh ngẫu nhiên có thể đến từ tệp Chung, R12 và R16, nhưng không đến từ tệp R18.
 
-Với public sites:
+Điều này ngăn API hình ảnh ngẫu nhiên vượt qua hạn chế của thư viện công khai.
 
-- Enable moderation.
-- Chọn access mode phù hợp với audience của site.
-- Dùng Child mode hoặc Teen mode cho visitors mọi lứa tuổi.
-- Tránh Adult mode nếu không muốn mature content hiển thị public.
-- Review file ratings trong admin panel và adjust manually khi cần.
+## Quan hệ với quy tắc danh sách
 
-Với private hoặc personal sites:
+Chế độ truy cập không phải là quy tắc truy cập công khai duy nhất. Nó hoạt động cùng với quy tắc danh sách cho phép/chặn.
 
-- Adult mode thường ổn.
-- Enable moderation nếu hữu ích.
-- Review và adjust ratings trong admin panel khi cần.
+Nói đơn giản:
 
-## FAQ
+- Nội dung trong danh sách cho phép được ưu tiên công khai.
+- Nội dung trong danh sách chặn không thể được khách truy cập thông thường xem trực tiếp.
+- Nội dung không nằm trong cả hai danh sách sẽ được kiểm tra tiếp theo theo chế độ truy cập.
 
-### Files có biến mất khỏi Admin Panel sau khi đổi Access Mode không?
+Nếu một hình ảnh bị hạn chế bởi cả xếp hạng độ tuổi và quy tắc danh sách, khách truy cập thông thường vẫn không thể xem trực tiếp tệp gốc.
+
+## Cài đặt đề xuất
+
+Đối với trang công khai:
+
+- Bật kiểm duyệt.
+- Chọn chế độ truy cập phù hợp với đối tượng của trang.
+- Dùng Chế độ trẻ em hoặc Chế độ thiếu niên cho khách truy cập mọi lứa tuổi.
+- Tránh Chế độ người lớn nếu bạn không muốn hiển thị công khai nội dung trưởng thành.
+- Xem xếp hạng tệp trong bảng quản trị và điều chỉnh thủ công khi cần.
+
+Đối với trang riêng tư hoặc cá nhân:
+
+- Chế độ người lớn thường phù hợp.
+- Bật kiểm duyệt nếu hữu ích.
+- Xem và điều chỉnh xếp hạng trong bảng quản trị khi cần.
+
+## Câu hỏi thường gặp
+
+### Tệp có biến mất khỏi bảng quản trị sau khi tôi đổi chế độ truy cập không?
 
 Không.
 
-Access mode chỉ ảnh hưởng normal public access. Không ảnh hưởng admin panel.
+Chế độ truy cập chỉ ảnh hưởng đến truy cập công khai thông thường. Nó không ảnh hưởng đến bảng quản trị.
 
-### Vì sao Public Gallery hiển thị ít Images hơn sau khi chuyển sang Child Mode?
+### Vì sao thư viện công khai hiển thị ít hình hơn sau khi chuyển sang Chế độ trẻ em?
 
-Child mode chỉ cho phép General-rated files hiển thị public. R12, R16 và R18 files bị filter ra.
+Chế độ trẻ em chỉ cho phép hiển thị công khai các tệp được xếp hạng Chung. Tệp R12, R16 và R18 bị lọc ra.
 
-### Public URLs vẫn mở Adult Images được không?
+### URL công khai vẫn có thể mở hình ảnh người lớn không?
 
-Nếu current access mode không cho phép rating đó, normal public URLs sẽ không trả original image.
+Nếu chế độ truy cập hiện tại không cho phép xếp hạng đó, URL công khai thông thường sẽ không trả về hình ảnh gốc.
 
-### Random Image API có return Restricted Images không?
+### API hình ảnh ngẫu nhiên có thể trả về hình ảnh bị hạn chế không?
 
 Không.
 
-Random image API filter candidates theo current access mode.
+API hình ảnh ngẫu nhiên lọc ứng viên theo chế độ truy cập hiện tại.
 
-### Old Unrated Images thì sao?
+### Hình ảnh cũ chưa xếp hạng sẽ thế nào?
 
-Unrated images không bị ẩn tự động chỉ vì chưa có moderation results. Bạn có thể adjust ratings sau trong admin panel.
+Hình ảnh chưa xếp hạng không tự động bị ẩn chỉ vì chúng chưa có kết quả kiểm duyệt. Bạn có thể điều chỉnh xếp hạng của chúng sau trong bảng quản trị.

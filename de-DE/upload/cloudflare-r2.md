@@ -2,17 +2,17 @@
 
 ## Geeignet für
 
-Nutze Cloudflare R2, wenn:
+Verwenden Sie Cloudflare R2, wenn:
 
-- deine ImgBed-Seite bereits auf Cloudflare läuft und Dateien in einem R2-Bucket desselben Cloudflare-Kontos gespeichert werden sollen.
-- du keinen separaten S3-Endpoint mit Access Key und Secret Key einrichten möchtest.
+- Ihre ImgBed-Seite bereits auf Cloudflare läuft und Dateien in einem R2-Bucket desselben Cloudflare-Kontos gespeichert werden sollen.
+- Sie keinen separaten S3-Endpoint mit Access Key und Secret Key einrichten möchten.
 - Lese- und Schreibzugriffe möglichst einfach über das R2-Binding von Worker oder Pages laufen sollen.
 
 Kurz gesagt:
 
-Der R2-Kanal wird nicht manuell im ImgBed-Adminbereich angelegt. Du bindest zuerst einen R2-Bucket an das Cloudflare-Projekt. Der Name der Binding-Variable muss exakt `img_r2` lauten.
+Der R2-Kanal wird nicht manuell im ImgBed-Adminbereich angelegt. Binden Sie zuerst einen R2-Bucket an das Cloudflare-Projekt. Der Name der Binding-Variable muss exakt `img_r2` lauten.
 
-## Was du vorher brauchst
+## Was Sie vorher benötigen
 
 - Ein Cloudflare-Konto.
 - Einen bestehenden R2-Bucket.
@@ -22,10 +22,10 @@ Der R2-Kanal wird nicht manuell im ImgBed-Adminbereich angelegt. Du bindest zuer
 
 ### 1. R2-Bucket erstellen
 
-1. Melde dich im Cloudflare Dashboard an.
-2. Öffne `R2 Object Storage`.
-3. Klicke auf Bucket erstellen.
-4. Wähle einen Bucket-Namen, zum Beispiel `imgbed`.
+1. Melden Sie sich im Cloudflare Dashboard an.
+2. Öffnen Sie `R2 Object Storage`.
+3. Klicken Sie auf Bucket erstellen.
+4. Wählen Sie einen Bucket-Namen, zum Beispiel `imgbed`.
 
 In diesem Bucket werden später die hochgeladenen Dateien gespeichert.
 
@@ -33,7 +33,7 @@ In diesem Bucket werden später die hochgeladenen Dateien gespeichert.
 
 ### 2. Bucket an das ImgBed-Projekt binden
 
-Wähle den Binding-Ort passend zu deiner Bereitstellung:
+Wählen Sie den Binding-Ort passend zu Ihrer Bereitstellung:
 
 | Bereitstellung | Binding-Ort |
 | --- | --- |
@@ -51,11 +51,11 @@ Der Variablenname muss genau `img_r2` sein. Hochladen, Lesen und Löschen von R2
 
 ### 3. Projekt erneut bereitstellen
 
-Speichere das Binding und deploye ImgBed danach neu, damit die Worker- oder Pages-Laufzeit auf `img_r2` zugreifen kann.
+Speichern Sie das Binding und stellen Sie ImgBed danach erneut bereit, damit die Worker- oder Pages-Laufzeit auf `img_r2` zugreifen kann.
 
-## Was du in ImgBed siehst
+## Was Sie in ImgBed sehen
 
-Sobald das R2-Binding verfügbar ist, öffne:
+Sobald das R2-Binding verfügbar ist, öffnen Sie:
 
 1. Systemeinstellungen.
 2. Upload-Einstellungen.
@@ -70,7 +70,7 @@ Das System erstellt automatisch einen festen Kanal:
 | Speichermodus | `binding` |
 | Konfigurationsquelle | Environment Binding |
 
-Das ist ein fest gebundener Kanal. Du musst nicht auf Kanal hinzufügen klicken, um ihn anzulegen, und er lässt sich nicht wie ein normaler Kanal löschen.
+Das ist ein fest gebundener Kanal. Sie müssen nicht auf Kanal hinzufügen klicken, um ihn anzulegen, und er lässt sich nicht wie ein normaler Kanal löschen.
 
 ## Bearbeitbare Felder im Adminbereich
 
@@ -82,22 +82,22 @@ Das ist ein fest gebundener Kanal. Du musst nicht auf Kanal hinzufügen klicken,
 | Quotenlimit | Steuert, ob dieser R2-Kanal abhängig von der Kapazität bei Uploads berücksichtigt wird. | Nein |
 | Schwellenwert | Stoppt Schreibvorgänge auf diesen Kanal, sobald die angegebene Nutzung erreicht ist. | Erforderlich bei aktivierten Quotenlimits |
 
-Die Account ID findest du im Kontoinformationsbereich des Cloudflare Dashboards. Trage sie nur ein, wenn ImgBed die R2-Nutzung abfragen und anhand der Quote steuern soll.
+Die Account ID finden Sie im Kontoinformationsbereich des Cloudflare Dashboards. Tragen Sie sie nur ein, wenn ImgBed die R2-Nutzung abfragen und anhand der Quote steuern soll.
 
 ![Account ID abrufen](../../image/upload/cloudflare-r2/获取账户id.png)
 
 ## Einrichtungsschritte
 
-1. Erstelle in Cloudflare einen R2-Bucket.
-2. Öffne die Cloudflare-Einstellungen des ImgBed-Projekts.
-3. Füge ein R2-Bucket-Binding hinzu.
-4. Setze `Variable name` auf `img_r2`.
-5. Wähle den erstellten R2-Bucket aus.
-6. Speichere das Binding und deploye ImgBed neu.
-7. Kehre zu ImgBed -> Systemeinstellungen -> Upload-Einstellungen zurück.
-8. Prüfe, ob der Kanal `Cloudflare R2` erscheint und aktiviert ist.
+1. Erstellen Sie in Cloudflare einen R2-Bucket.
+2. Öffnen Sie die Cloudflare-Einstellungen des ImgBed-Projekts.
+3. Fügen Sie ein R2-Bucket-Binding hinzu.
+4. Setzen Sie `Variable name` auf `img_r2`.
+5. Wählen Sie den erstellten R2-Bucket aus.
+6. Speichern Sie das Binding und stellen Sie ImgBed erneut bereit.
+7. Kehren Sie zu ImgBed -> Systemeinstellungen -> Upload-Einstellungen zurück.
+8. Prüfen Sie, ob der Kanal `Cloudflare R2` erscheint und aktiviert ist.
 
-Wenn R2 anhand der Kapazität bei der Upload-Auswahl berücksichtigt werden soll, aktiviere das Quotenlimit und trage vor dem Speichern Account ID, Bucket-Name, Quotenlimit und Schwellenwert ein.
+Wenn R2 anhand der Kapazität bei der Upload-Auswahl berücksichtigt werden soll, aktivieren Sie das Quotenlimit und tragen Sie vor dem Speichern Account ID, Bucket-Name, Quotenlimit und Schwellenwert ein.
 
 ![Quotenlimit konfigurieren](../../image/upload/cloudflare-r2/配置容量限制.png)
 
@@ -106,4 +106,4 @@ Wenn R2 anhand der Kapazität bei der Upload-Auswahl berücksichtigt werden soll
 - Der feste Kanal `Cloudflare R2` erscheint in den Upload-Einstellungen.
 - Die Kanalkarte zeigt, dass der Kanal aktiv ist.
 - Eine kleine Testdatei wird erfolgreich hochgeladen und der zurückgegebene Link öffnet sich normal.
-- Wenn beim Öffnen einer Datei `R2 database binding is not configured` erscheint, hat die Laufzeit das Binding `img_r2` nicht erhalten. Prüfe den Binding-Namen in Cloudflare und deploye das Projekt erneut.
+- Wenn beim Öffnen einer Datei `R2 database binding is not configured` erscheint, hat die Laufzeit das Binding `img_r2` nicht erhalten. Prüfen Sie den Binding-Namen in Cloudflare und stellen Sie das Projekt erneut bereit.

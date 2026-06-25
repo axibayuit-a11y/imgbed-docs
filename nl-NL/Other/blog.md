@@ -8,9 +8,9 @@ Na inschakelen kunnen bezoekers openen:
 https://your-domain.com/blog/
 ```
 
-![Bloghomepage](../../image/other/博客/博客首页.png)
+![Startpagina van de blog](../../image/other/博客/博客首页.png)
 
-De blog is gebaseerd op het open-sourceproject [LyraVoid/Mizuki](https://github.com/LyraVoid/Mizuki). ImgBed heeft deze opnieuw geïntegreerd met Vue, zodat hij als onderdeel van de image-hosting-site kan draaien.
+De blog is aangepast op basis van het opensourceproject [LyraVoid/Mizuki](https://github.com/LyraVoid/Mizuki). ImgBed heeft de blog herschreven en met Vue geïntegreerd, zodat hij als onderdeel van de afbeeldingshostingsite kan draaien.
 
 ## Waar je dit configureert
 
@@ -30,7 +30,7 @@ System Settings -> Other Settings -> Blog
 4. Wacht op de succesmelding.
 5. Open `https://your-domain.com/blog/` om de blog te bekijken.
 
-Bij het eerste gebruik maakt ImgBed een privé GitHub-repository aan onder het gekozen account:
+Bij het eerste gebruik maakt ImgBed een privé-GitHub-repository aan onder het gekozen account:
 
 ```text
 imgbed-blog-config
@@ -40,7 +40,7 @@ Deze repository bewaart bloginstellingen en artikelinhoud.
 
 ## Berichten schrijven
 
-Blogberichten bewerk je in je privé GitHub-repository:
+Blogberichten bewerk je in je privé-GitHub-repository:
 
 ```text
 imgbed-blog-config
@@ -52,19 +52,19 @@ Typische werkwijze:
 2. Ga naar de privérepository `imgbed-blog-config`.
 3. Bewerk of voeg berichtbestanden toe.
 4. Commit de wijzigingen.
-5. Ga terug naar het ImgBed-beheer en klik op `Update Blog`, of klik drie keer op het logo linksboven op de bloghomepage om een update te starten.
+5. Ga terug naar het ImgBed-beheer en klik op `Update Blog`, of klik drie keer op het logo linksboven op de startpagina van de blog om een update te starten.
 
 `Update Blog` overschrijft geen inhoud die je hebt geschreven. De actie is vooral bedoeld om de repository te initialiseren en de blogcache te verversen.
 
 ## Ondersteunde functies
 
-De blog ondersteunt gebruikelijke blogfuncties zoals berichtenlijsten, categorieën, tags, archieven, zoeken, dark mode en taalwisseling.
+De blog ondersteunt gebruikelijke blogfuncties zoals berichtenlijsten, categorieën, tags, archieven, zoeken, donkere modus en taalwisseling.
 
 Ook reacties en bezoekstatistieken worden ondersteund.
 
 ![Blogreacties](../../image/other/博客/支持留言.png)
 
-Reacties verschijnen onder berichten. Bezoekers kunnen avatar, nickname, e-mailadres en reactie invullen.
+Reacties verschijnen onder berichten. Bezoekers kunnen een avatar, bijnaam, e-mailadres en reactie-inhoud invullen.
 
 Bezoekstatistieken tonen artikelweergaven en sitebezoeken, zodat je blogverkeer beter kunt volgen.
 
