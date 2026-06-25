@@ -4,7 +4,7 @@ Usuwanie przez API Token jest przeznaczone dla skryptów, automatyzacji i progra
 
 Usuwanie jest operacją zapisu. Po wykonaniu polecenia pliki zostaną naprawdę usunięte. Najpierw sprawdź w `imgbed-token-list.mjs`, które `fileId` mają zostać usunięte, a dopiero potem przekaż te ID do skryptu usuwania.
 
-![Edycja API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Edycja API Token](../../image/Safety/apitoken/编辑删除权限api.png)
 
 ## Przygotowanie
 
@@ -174,5 +174,6 @@ Ostrzeżenie zwykle oznacza niekrytyczny problem podczas usuwania zdalnego, czys
 ### Czy można usunąć cały katalog naraz?
 
 Ten skrypt nie ma funkcji czyszczenia katalogu. Najpierw użyj skryptu listy, aby wybrać jednoznaczne `fileId`, a potem przekaż pliki pojedynczo do skryptu usuwania.
+
 
 

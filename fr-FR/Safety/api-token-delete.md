@@ -4,7 +4,7 @@ La suppression de fichiers avec API Token est destinée aux scripts, tâches aut
 
 La suppression est une opération d’écriture. Une fois la commande exécutée, les données sont réellement supprimées. Il est recommandé d’utiliser d’abord `imgbed-token-list.mjs` pour vérifier les valeurs `fileId` à supprimer, puis de transmettre ces identifiants au script de suppression.
 
-![Modifier l’API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Modifier l’API Token](../../image/Safety/apitoken/编辑删除权限api.png)
 
 ## Préparation
 
@@ -174,5 +174,6 @@ Les avertissements indiquent généralement un problème non bloquant pendant la
 ### Peut-on supprimer tout un dossier en une seule fois ?
 
 Ce script ne propose pas d’opération pour vider un dossier entier. Utilisez d’abord le script de liste pour filtrer des valeurs `fileId` précises, puis transmettez les fichiers à supprimer un par un au script de suppression.
+
 
 

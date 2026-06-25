@@ -17,9 +17,13 @@ Kami tidak percaya pada solusi "one-size-fits-all". Sama ada anda cuma mahu simp
 - 🌍 Menyokong 28 interface languages untuk pengguna di seluruh dunia
 - 📦 13 mainstream upload channels terbina dalam: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, pCloud
 - 🧩 Pure modular design, semua feature boleh diaktifkan bila perlu sahaja, tidak membazir resources
-- 🔒 Data sepenuhnya di bawah kawalan anda. Tiada third party boleh melihat atau memadam kandungan anda
+- 🔐 Menyokong API Token, mod akses dan peraturan senarai untuk mengurus kebenaran kandungan dengan lebih terperinci
 
 Projek ini masih terus diperbaiki. Keupayaan kami terhad, tetapi kami akan cuba sebaik mungkin untuk menjadikan setiap feature jelas, stabil dan mudah digunakan. Jika ImgBed membantu anda memiliki image host, blog atau file sharing space sendiri dengan lebih mudah, kami sangat gembira.
+
+## Mula guna
+
+Deploy ImgBed melalui [https://glow.ccwu.cc/](https://glow.ccwu.cc/) untuk segera memiliki perkhidmatan pengehosan imej dan fail sendiri.
 
 ## Penghargaan sumber terbuka
 
@@ -29,3 +33,5 @@ Terima kasih kepada projek sumber terbuka [CloudFlare-ImgBed](https://github.com
 
 - 🐛 Bug atau cadangan feature: hantar di [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
 - 📧 Hubungan lain: axibayuit@gmail.com
+
+

@@ -17,9 +17,13 @@ Nevěříme na řešení typu "jedno pro všechny". Ať už chcete jen ukládat 
 - 🌍 Podpora 28 jazyků rozhraní pro uživatele po celém světě
 - 📦 13 vestavěných hlavních nahrávacích kanálů: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex a pCloud
 - 🧩 Plně modulární návrh: každou funkci zapnete jen tehdy, když ji potřebujete, bez plýtvání prostředky
-- 🔒 Data máte plně pod kontrolou. Žádná třetí strana nemůže váš obsah zobrazit ani smazat
+- 🔐 Podporuje API Token, režimy přístupu a pravidla seznamů pro přesnou správu oprávnění k obsahu
 
 Projekt se stále zlepšuje. Naše možnosti jsou omezené, ale uděláme maximum pro to, aby každá funkce byla jasná, stabilní a příjemná k použití. Pokud vám ImgBed pomůže snadněji získat vlastní hosting obrázků, blog nebo prostor pro sdílení souborů, budeme velmi rádi.
+
+## Začněte používat
+
+Nasaďte ImgBed přes [https://glow.ccwu.cc/](https://glow.ccwu.cc/) a rychle získejte vlastní službu pro hostování obrázků a souborů.
 
 ## Poděkování open source
 
@@ -29,3 +33,5 @@ Děkujeme open-source projektům [CloudFlare-ImgBed](https://github.com/MarSeven
 
 - 🐛 Chyby nebo návrhy funkcí: pošlete do [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
 - 📧 Jiný kontakt: axibayuit@gmail.com
+
+

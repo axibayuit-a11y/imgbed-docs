@@ -4,7 +4,7 @@ API Token فائل حذف کاری اسکرپٹس، خودکار کاموں، ا
 
 حذف کاری ایک write operation ہے اور کمانڈ چلنے کے بعد واقعی ڈیٹا حذف کرتی ہے۔ پہلے `imgbed-token-list.mjs` استعمال کر کے ان `fileId` قدروں کی تصدیق کریں جنہیں آپ حذف کرنا چاہتے ہیں، پھر وہ IDs حذف کاری اسکرپٹ کو دیں۔
 
-![API Token میں ترمیم](../../image/Safety/apitoken/编辑api%20token.png)
+![API Token میں ترمیم](../../image/Safety/apitoken/编辑删除权限api.png)
 
 ## شروع کرنے سے پہلے
 
@@ -174,3 +174,4 @@ node imgbed-token-list.mjs `
 ### کیا میں پوری ڈائریکٹری ایک ساتھ حذف کر سکتا ہوں؟
 
 یہ اسکرپٹ directory-emptying operation فراہم نہیں کرتا۔ پہلے listing script سے واضح `fileId` قدریں filter کریں، پھر جن فائلوں کو حذف کرنا چاہتے ہیں انہیں ایک ایک کر کے pass کریں۔
+

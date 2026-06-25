@@ -4,7 +4,7 @@ O gerenciamento por API Token é indicado para scripts de automação, ferrament
 
 As permissões de gerenciamento expõem apenas operações leves adequadas para scripts. Operações pesadas que exigem confirmação no navegador, tarefas em lote da interface ou limpeza de índice de federação ainda devem ser feitas pelo painel administrativo no navegador.
 
-![Editar API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Editar API Token](../../image/Safety/apitoken/编辑管理权限api.png)
 
 ## Preparação
 
@@ -486,5 +486,6 @@ Nas configurações de upload, use primeiro `--get` para ver a estrutura do subc
 ### Quero usar o resultado em outro programa
 
 Use `--output json` ou `--save-response result.json`. O programa pode ler diretamente o arquivo JSON salvo.
+
 
 

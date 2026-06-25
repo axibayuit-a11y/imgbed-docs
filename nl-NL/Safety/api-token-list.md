@@ -2,6 +2,8 @@
 
 Het lijstscript voor API Token is bedoeld voor scripts, automatisering en programma's van derden die ImgBed-gegevens moeten lezen. Het gebruikt alleen de machtiging `list`; het uploadt geen bestanden, verwijdert geen bestanden, wijzigt geen configuratie en blokkeert of staat uploads vanaf een bepaald IP-adres niet toe.
 
+![API Token bewerken](../../image/Safety/apitoken/编辑列出权限api.png)
+
 Belangrijkste toepassingen:
 
 | Functie | Beschrijving |

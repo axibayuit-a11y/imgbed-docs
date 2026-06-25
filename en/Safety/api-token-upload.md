@@ -2,7 +2,7 @@
 
 API Token uploads are intended for scripts, automation jobs, and third-party programs. You do not need to open the web UI. As long as you provide the site URL, token, local file path, and a real upload channel, the file can be uploaded to ImgBed and the response will include the file URL.
 
-![Edit API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Edit API Token](../../image/Safety/apitoken/编辑上传权限api.png)
 
 ## Before You Start
 
@@ -242,3 +242,4 @@ Use `--output json`, or add `--save-response result.json`. Read the `url` field 
 ### Yandex Cannot Upload Archives
 
 Yandex does not support archive formats. This may be caused by their platform policy. When using Yandex, upload non-archive files where possible.
+

@@ -4,7 +4,7 @@ API Token 설정 관리는 자동화 스크립트, 운영 도구, 외부 제어 
 
 관리 권한은 스크립트에서 처리하기 적합한 가벼운 작업만 제공합니다. 브라우저 확인, 웹 인터페이스의 분할 작업, 연합 인덱스 정리가 필요한 무거운 작업은 여전히 브라우저 관리자 화면에서 처리해야 합니다.
 
-![API Token 편집](../../image/Safety/apitoken/编辑api%20token.png)
+![API Token 편집](../../image/Safety/apitoken/编辑管理权限api.png)
 
 ## 준비하기
 
@@ -486,4 +486,5 @@ node imgbed-token-federation.mjs `
 ### 결과를 다른 프로그램에서 사용하고 싶습니다
 
 `--output json`을 사용하거나 `--save-response result.json`을 추가하세요. 저장된 JSON 파일을 프로그램에서 바로 읽을 수 있습니다.
+
 

@@ -17,9 +17,13 @@ ImgBed image upload மற்றும் link management-இல் இருந
 - 🌍 28 interface languages ஆதரவு, உலகம் முழுவதும் உள்ள users எளிதாக பயன்படுத்தலாம்
 - 📦 13 built-in mainstream upload channels: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, pCloud
 - 🧩 pure modular design, எல்லா feature-களும் தேவைக்கேற்ப enable செய்யலாம், resources வீணாகாது
-- 🔒 data முழுவதும் உங்கள் control-ல் இருக்கும். எந்த third party-யும் உங்கள் content-ஐ பார்க்கவோ delete செய்யவோ முடியாது
+- 🔐 API Token, access mode மற்றும் list rules ஆதரவு மூலம் content permission-களை நுணுக்கமாக நிர்வகிக்கலாம்
 
 இந்த project தொடர்ந்து மேம்படுத்தப்படுகிறது. எங்கள் திறன் வரம்புடையது, ஆனால் ஒவ்வொரு feature-ஐயும் clear, stable, easy to use ஆக உருவாக்க முழு முயற்சி செய்வோம். ImgBed உங்கள் சொந்த image host, blog அல்லது file sharing space-ஐ எளிதாகப் பெற உதவினால், எங்களுக்கு மிகவும் மகிழ்ச்சி.
+
+## பயன்படுத்தத் தொடங்குங்கள்
+
+[https://glow.ccwu.cc/](https://glow.ccwu.cc/) மூலம் ImgBed-ஐ deploy செய்து, உங்கள் சொந்த பட மற்றும் கோப்பு hosting சேவையை விரைவாகப் பெறுங்கள்.
 
 ## திறந்த மூல நன்றி
 
@@ -29,3 +33,5 @@ ImgBed image upload மற்றும் link management-இல் இருந
 
 - 🐛 Bug அல்லது feature suggestion: [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)-ல் submit செய்யவும்
 - 📧 மற்ற தொடர்பு: axibayuit@gmail.com
+
+

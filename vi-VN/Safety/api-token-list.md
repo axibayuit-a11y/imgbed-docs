@@ -2,6 +2,8 @@
 
 Các tập lệnh liệt kê bằng API Token hữu ích khi tập lệnh, tác vụ tự động hoặc chương trình của bên thứ ba cần đọc dữ liệu ImgBed. Chúng chỉ dùng quyền `list`. Chúng không tải tệp lên, không xóa tệp, không thay đổi cấu hình và không chặn hoặc cho phép bất kỳ địa chỉ IP nào.
 
+![Chỉnh sửa API Token](../../image/Safety/apitoken/编辑列出权限api.png)
+
 Các mục đích chính:
 
 | Chức năng | Mô tả |

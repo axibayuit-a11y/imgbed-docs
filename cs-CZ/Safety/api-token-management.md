@@ -4,7 +4,7 @@ Správa přes API Token je určená pro automatizační skripty, provozní nást
 
 Toto oprávnění pokrývá jen lehké operace vhodné pro skripty. Operace vyžadující potvrzení v prohlížeči, dlouhé dávkové úlohy ve webovém rozhraní nebo čištění federačních indexů zůstávají v administraci v prohlížeči.
 
-![Upravit API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Upravit API Token](../../image/Safety/apitoken/编辑管理权限api.png)
 
 ## Příprava
 
@@ -486,5 +486,6 @@ U nastavení nahrávání nejprve použijte `--get` a podívejte se na strukturu
 ### Chci výsledek použít v jiném programu
 
 Použijte `--output json`, nebo přidejte `--save-response result.json`. Program může uložený soubor JSON přímo přečíst.
+
 
 

@@ -47,6 +47,7 @@ const safetyItems = [
   'Safety/webdav-site-access',
   'Safety/api-token-upload',
   'Safety/api-token-list',
+  'Safety/api-token-file-management',
   'Safety/api-token-delete',
   'Safety/api-token-management'
 ] as const

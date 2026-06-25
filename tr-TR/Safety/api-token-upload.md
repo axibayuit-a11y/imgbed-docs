@@ -2,7 +2,7 @@
 
 API Token ile yükleme; betikler, otomasyon işleri ve üçüncü taraf programlar için tasarlanmıştır. Web UI'yi açmanız gerekmez. Site URL'sini, token değerini, yerel dosya yolunu ve gerçek bir yükleme kanalını sağladığınız sürece dosya ImgBed'e yüklenebilir ve yanıt dosya URL'sini içerir.
 
-![API Token düzenleme](../../image/Safety/apitoken/编辑api%20token.png)
+![API Token düzenleme](../../image/Safety/apitoken/编辑上传权限api.png)
 
 ## Başlamadan Önce
 
@@ -242,3 +242,4 @@ Seçilen kanalda bu ada sahip bir alt kanal gerçekten var mı ve etkin mi kontr
 ### Yandex Arşivleri Yükleyemiyor
 
 Yandex arşiv biçimlerini desteklemez. Bu, platform politikalarından kaynaklanabilir. Yandex kullanırken mümkünse arşiv olmayan dosyalar yükleyin.
+

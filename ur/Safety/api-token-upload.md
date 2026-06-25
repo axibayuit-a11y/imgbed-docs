@@ -2,7 +2,7 @@
 
 API Token اپ لوڈز اسکرپٹس، خودکار کاموں، اور فریق ثالث پروگراموں کے لیے ہیں۔ آپ کو web UI کھولنے کی ضرورت نہیں۔ جب تک آپ سائٹ URL، token، مقامی فائل path، اور حقیقی اپ لوڈ چینل فراہم کرتے ہیں، فائل ImgBed پر اپ لوڈ کی جا سکتی ہے اور response میں فائل URL شامل ہوگا۔
 
-![API Token میں ترمیم](../../image/Safety/apitoken/编辑api%20token.png)
+![API Token میں ترمیم](../../image/Safety/apitoken/编辑上传权限api.png)
 
 ## شروع کرنے سے پہلے
 
@@ -242,3 +242,4 @@ Single-request `/upload` پوری فائل ایک درخواست میں بھیج
 ### Yandex آرکائیوز اپ لوڈ نہیں کر سکتا
 
 Yandex archive formats کو support نہیں کرتا۔ یہ ان کی platform policy کی وجہ سے ہو سکتا ہے۔ Yandex استعمال کرتے وقت جہاں ممکن ہو non-archive files اپ لوڈ کریں۔
+

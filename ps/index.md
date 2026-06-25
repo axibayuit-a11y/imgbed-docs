@@ -17,9 +17,13 @@ ImgBed د image upload او link management څخه پيل شو. اوس دا د p
 - 🌍 د 28 interface languages ملاتړ، څو global users يې اسانه وکاروي
 - 📦 13 built-in mainstream upload channels: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, pCloud
 - 🧩 pure modular design، هر feature د اړتيا له مخې enable کېږي او resources نه ضايع کېږي
-- 🔒 data بشپړ ستاسې په control کې دی. هېڅ third party ستاسې content نه شي ليدلای يا delete کولای
+- 🔐 د API Token، access mode او list rules ملاتړ کوي، څو د content permission په ډېر دقت اداره شي
 
 دا project لا هم ښه کېږي. زموږ توان محدود دی، خو هڅه کوو هر feature clear, stable او easy to use کړو. که ImgBed تاسې سره مرسته وکړي چې خپل image host, blog يا file sharing space په اسانه ولرئ، موږ به ډېر خوشحاله شو.
+
+## کارول پیل کړئ
+
+له [https://glow.ccwu.cc/](https://glow.ccwu.cc/) څخه ImgBed deploy کړئ او ژر خپله د انځورونو او فایلونو hosting خدمت ولرئ.
 
 ## د Open Source مننه
 
@@ -29,3 +33,5 @@ ImgBed د image upload او link management څخه پيل شو. اوس دا د p
 
 - 🐛 Bug يا feature suggestion: په [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues) کې submit کړئ
 - 📧 نور تماس: axibayuit@gmail.com
+
+

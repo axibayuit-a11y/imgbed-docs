@@ -2,6 +2,8 @@
 
 Lo script di elenco con API Token è pensato per script, automazioni e programmi di terze parti che devono leggere dati da ImgBed. Usa solo il permesso `list`. Non carica file, non elimina file, non modifica configurazioni e non blocca né consente caricamenti per alcun IP.
 
+![Modifica API Token](../../image/Safety/apitoken/编辑列出权限api.png)
+
 Usi principali:
 
 | Funzione | Descrizione |

@@ -2,6 +2,8 @@
 
 API Token listing scripts are useful when scripts, automation jobs, or third-party programs need to read ImgBed data. They only use the `list` permission. They do not upload files, delete files, change configuration, or block or allow any IP address.
 
+![Edit API Token](../../image/Safety/apitoken/编辑列出权限api.png)
+
 Main uses:
 
 | Feature | Description |

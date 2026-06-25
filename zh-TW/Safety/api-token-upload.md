@@ -2,7 +2,7 @@
 
 API Token 上傳適合腳本、自動化任務和第三方程式使用。不需要打開網頁，只要帶上站台位址、Token、本機檔案路徑和真實上傳渠道，就可以把檔案上傳到 ImgBed，成功後會拿到檔案連結。
 
-![編輯 API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![編輯 API Token](../../image/Safety/apitoken/编辑上传权限api.png)
 
 ## 準備工作
 
@@ -240,4 +240,5 @@ Content-Type: multipart/form-data
 ### Yandex 上傳壓縮包失敗
 
 Yandex 不支援壓縮包格式，可能是他們的相關政策導致。需要使用 Yandex 渠道時，建議上傳非壓縮檔案。
+
 

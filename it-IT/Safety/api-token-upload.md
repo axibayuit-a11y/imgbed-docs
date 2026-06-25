@@ -2,7 +2,7 @@
 
 Il caricamento tramite API Token è pensato per script, automazioni e programmi di terze parti. Non serve aprire il sito: bastano indirizzo ImgBed, Token, percorso del file e canale reale di caricamento per inviare il file e ottenere il link finale.
 
-![Modifica API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Modifica API Token](../../image/Safety/apitoken/编辑上传权限api.png)
 
 ## Preparazione
 
@@ -240,6 +240,7 @@ Usa `--output json` oppure `--save-response result.json`. Il programma può legg
 ### Il caricamento di archivi su Yandex fallisce
 
 Yandex non supporta in modo affidabile i formati compressi; può dipendere dalle politiche della piattaforma. Se devi usare Yandex, preferisci file non compressi.
+
 
 
 

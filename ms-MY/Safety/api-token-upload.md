@@ -2,7 +2,7 @@
 
 Muat naik melalui API Token sesuai untuk skrip, tugas automasi dan aplikasi pihak ketiga. Anda tidak perlu membuka antara muka web ImgBed. Selagi anda memberikan alamat tapak, API Token, laluan fail tempatan dan saluran muat naik sebenar, skrip akan mengembalikan pautan fail selepas muat naik berjaya.
 
-![Sunting API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Sunting API Token](../../image/Safety/apitoken/编辑上传权限api.png)
 
 ## Sebelum Bermula
 
@@ -240,4 +240,5 @@ Gunakan `--output json` atau `--save-response result.json`. Program boleh membac
 ### Muat Naik Arkib Gagal ke Yandex
 
 Yandex tidak menyokong format arkib atau fail termampat dengan stabil. Ini mungkin berkaitan dasar platform. Untuk Yandex, gunakan fail bukan arkib.
+
 

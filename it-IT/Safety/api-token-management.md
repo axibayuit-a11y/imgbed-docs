@@ -4,7 +4,7 @@ La gestione tramite API Token è pensata per script di automazione, strumenti op
 
 Il permesso di gestione espone solo operazioni leggere adatte agli script. Le operazioni pesanti che richiedono conferma nella pagina web, lavori a blocchi dell'interfaccia web o pulizia degli indici di federazione restano nel pannello amministrativo della pagina web.
 
-![Modifica API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Modifica API Token](../../image/Safety/apitoken/编辑管理权限api.png)
 
 ## Preparazione
 
@@ -486,6 +486,7 @@ Per le impostazioni di caricamento usa prima `--get` per vedere la struttura del
 ### Voglio usare il risultato in un altro programma
 
 Usa `--output json` oppure `--save-response result.json`. Il programma può leggere direttamente il file JSON salvato.
+
 
 
 

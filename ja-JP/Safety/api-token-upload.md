@@ -2,7 +2,7 @@
 
 API Token アップロードは、スクリプト、自動化タスク、外部プログラムから ImgBed にファイルを送るための機能です。Web 画面を開かなくても、サイト URL、Token、ローカルファイルのパス、実際のアップロードチャンネルを指定すれば、アップロード後にファイル URL を取得できます。
 
-![API Token の編集](../../image/Safety/apitoken/编辑api%20token.png)
+![API Token の編集](../../image/Safety/apitoken/编辑上传权限api.png)
 
 ## 事前準備
 
@@ -242,4 +242,5 @@ Content-Type: multipart/form-data
 ### Yandex でアーカイブをアップロードできない
 
 Yandex はアーカイブ形式に対応していません。これはプラットフォーム側のポリシーによる可能性があります。Yandex チャンネルを使う場合は、可能であれば非アーカイブファイルをアップロードしてください。
+
 

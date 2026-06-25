@@ -18,6 +18,7 @@ const WRITE_ACTIONS = new Set([
   'block-ip',
   'allow-ip',
   'create-upload-token',
+  'delete-upload-token',
 ]);
 
 const READ_ACTIONS = new Set(['get-label', 'get-tags']);
@@ -47,6 +48,7 @@ Usage:
   node imgbed-token-manage.mjs --base-url <url> --token <token> --block-ip <ip> [--apply]
   node imgbed-token-manage.mjs --base-url <url> --token <token> --allow-ip <ip> [--apply]
   node imgbed-token-manage.mjs --base-url <url> --token <token> --create-upload-token --name <name> --owner <owner> --default-upload-channel <key> --expires-in-minutes <n> [--apply]
+  node imgbed-token-manage.mjs --base-url <url> --token <token> --delete-upload-token --token-id <id> [--apply]
 
 Required:
   --base-url <url>              ImgBed site URL, for example https://image.ai6.me
@@ -69,6 +71,7 @@ Actions:
   --block-ip <ip>               Add an upload IP to the blocked list.
   --allow-ip <ip>               Remove an upload IP from the blocked list.
   --create-upload-token         Create a short-lived upload-only API Token.
+  --delete-upload-token         Delete an upload-only auto-delete API Token whose lifetime is 24 hours or less.
   --apply                       Actually send write requests. Without this flag, writes only preview.
 
 Action parameters:
@@ -92,6 +95,7 @@ Action parameters:
                                 Default upload channel for the short upload token.
   --expires-in-minutes <n>      Expiration relative to now for --create-upload-token. Maximum: 1440.
   --expires-at <ms>             Absolute expiration timestamp in milliseconds. Maximum: 24 hours from now.
+  --token-id <id>               API Token ID for --delete-upload-token.
 
 Tool options:
   --batch-size <n>              Batch size for batch actions. Default: 15, maximum: 15.
@@ -103,6 +107,7 @@ Tool options:
 
 Notes:
   - This script does not upload, list, or delete files. Use the dedicated upload/list/delete scripts for those permissions.
+  - --delete-upload-token deletes eligible short upload API Tokens, not files.
   - Write actions are dry-run by default. Add --apply only after checking the preview.
 `);
 }
@@ -132,6 +137,7 @@ function parseArgs(argv) {
     defaultUploadChannel: '',
     expiresInMinutes: '',
     expiresAt: '',
+    tokenId: '',
     batchSize: BATCH_LIMIT,
     apply: false,
     retries: 3,
@@ -171,6 +177,7 @@ function parseArgs(argv) {
       case '--rename':
       case '--create-folder':
       case '--create-upload-token':
+      case '--delete-upload-token':
         setAction(flag.slice(2));
         break;
       case '--block-ip':
@@ -243,6 +250,9 @@ function parseArgs(argv) {
         break;
       case '--expires-at':
         args.expiresAt = readValue();
+        break;
+      case '--token-id':
+        args.tokenId = readValue();
         break;
       case '--batch-size':
         args.batchSize = Number(readValue());
@@ -356,8 +366,15 @@ function normalizeRenameItems(args) {
   })).filter((item) => item.oldFileId && item.newFileId);
 
   if (normalized.length === 0) throw new Error('--rename requires --old-file-id/--new-file-id or --items-json');
-  if (normalized.length > args.batchSize) throw new Error(`Too many rename items. Batch size is ${args.batchSize}`);
   return normalized;
+}
+
+function splitBatches(items, batchSize) {
+  const batches = [];
+  for (let index = 0; index < items.length; index += batchSize) {
+    batches.push(items.slice(index, index + batchSize));
+  }
+  return batches;
 }
 
 function requireSingleFileId(args) {
@@ -420,7 +437,7 @@ function validateArgs(args) {
       if (!VALID_LIST_TYPES.has(args.listType)) throw new Error('--list-type must be None, White, or Block');
       break;
     case 'batch-list-type':
-      if (normalizeFileIds(args).length > args.batchSize) throw new Error(`Too many --file-id values. Batch size is ${args.batchSize}`);
+      normalizeFileIds(args);
       if (!VALID_LIST_TYPES.has(args.listType)) throw new Error('--list-type must be None, White, or Block');
       break;
     case 'set-tags':
@@ -430,12 +447,12 @@ function validateArgs(args) {
       if (normalizeTags(args).length === 0) throw new Error('At least one --tag or --tags-json value is required');
       break;
     case 'batch-tags':
-      if (normalizeFileIds(args).length > args.batchSize) throw new Error(`Too many --file-id values. Batch size is ${args.batchSize}`);
+      normalizeFileIds(args);
       if (!VALID_TAG_ACTIONS.has(args.tagAction)) throw new Error('--tag-action must be set, add, or remove');
       if (normalizeTags(args).length === 0) throw new Error('At least one --tag or --tags-json value is required');
       break;
     case 'move':
-      if (normalizeFileIds(args).length > args.batchSize) throw new Error(`Too many --file-id values. Batch size is ${args.batchSize}`);
+      normalizeFileIds(args);
       if (!String(args.targetPath || '').trim()) throw new Error('--move requires --target-path');
       break;
     case 'rename':
@@ -453,6 +470,9 @@ function validateArgs(args) {
       if (!args.owner) throw new Error('--create-upload-token requires --owner');
       if (!args.defaultUploadChannel) throw new Error('--create-upload-token requires --default-upload-channel');
       resolveExpiresAt(args);
+      break;
+    case 'delete-upload-token':
+      if (!String(args.tokenId || '').trim()) throw new Error('--delete-upload-token requires --token-id');
       break;
   }
 }
@@ -596,20 +616,103 @@ function buildActionPlan(args) {
         },
         response: 'json',
       };
+    case 'delete-upload-token': {
+      const url = new URL('/api/manage/apiTokens', `${normalizeBaseUrl(args.baseUrl)}/`);
+      url.searchParams.set('id', String(args.tokenId || '').trim());
+      return {
+        method: 'DELETE',
+        url: url.toString(),
+        response: 'json',
+      };
+    }
     default:
       throw new Error(`Unsupported action: ${args.action}`);
   }
 }
 
-function createDryRunResult(args, plan) {
+function buildActionPlans(args) {
+  switch (args.action) {
+    case 'batch-tags': {
+      const fileIdBatches = splitBatches(normalizeFileIds(args), args.batchSize);
+      return fileIdBatches.map((fileIds, index) => ({
+        method: 'POST',
+        url: toUrl(args, '/api/manage/tags/batch'),
+        body: {
+          fileIds,
+          action: args.tagAction,
+          tags: normalizeTags(args),
+        },
+        response: 'json',
+        batchIndex: index + 1,
+        batchCount: fileIdBatches.length,
+        requested: fileIds,
+      }));
+    }
+    case 'batch-list-type': {
+      const fileIdBatches = splitBatches(normalizeFileIds(args), args.batchSize);
+      return fileIdBatches.map((fileIds, index) => ({
+        method: 'POST',
+        url: toUrl(args, '/api/manage/listType/batch'),
+        body: { fileIds, listType: args.listType },
+        response: 'ndjson',
+        batchIndex: index + 1,
+        batchCount: fileIdBatches.length,
+        requested: fileIds,
+      }));
+    }
+    case 'move': {
+      const fileIdBatches = splitBatches(normalizeFileIds(args), args.batchSize);
+      return fileIdBatches.map((fileIds, index) => ({
+        method: 'POST',
+        url: toUrl(args, '/api/manage/relocate/batch'),
+        body: {
+          taskType: 'move',
+          fileIds,
+          targetPath: args.targetPath,
+        },
+        response: 'ndjson',
+        batchIndex: index + 1,
+        batchCount: fileIdBatches.length,
+        requested: fileIds,
+      }));
+    }
+    case 'rename': {
+      const itemBatches = splitBatches(normalizeRenameItems(args), args.batchSize);
+      return itemBatches.map((items, index) => ({
+        method: 'POST',
+        url: toUrl(args, '/api/manage/relocate/batch'),
+        body: {
+          taskType: 'rename',
+          items,
+        },
+        response: 'ndjson',
+        batchIndex: index + 1,
+        batchCount: itemBatches.length,
+        requested: items,
+      }));
+    }
+    default:
+      return [buildActionPlan(args)];
+  }
+}
+
+function createDryRunResult(args, plans) {
+  const normalizedPlans = Array.isArray(plans) ? plans : [plans];
   return {
     success: true,
     dryRun: true,
     action: args.action,
-    method: plan.method,
-    url: plan.url,
-    body: plan.body,
-    bodyText: plan.bodyText,
+    batchSize: args.batchSize,
+    batchCount: normalizedPlans.length,
+    plans: normalizedPlans.map((plan) => ({
+      batchIndex: plan.batchIndex,
+      batchCount: plan.batchCount,
+      method: plan.method,
+      url: plan.url,
+      body: plan.body,
+      bodyText: plan.bodyText,
+      requested: plan.requested,
+    })),
     message: 'Dry run only. Add --apply to execute this write action.',
   };
 }
@@ -663,10 +766,11 @@ async function requestWithRetries(args, plan) {
     const timeout = setTimeout(() => controller.abort(), args.timeoutMs);
     try {
       const isTextBody = plan.bodyText !== undefined;
+      const hasRequestBody = plan.method !== 'GET' && (plan.bodyText !== undefined || plan.body !== undefined);
       const response = await fetch(plan.url, {
         method: plan.method,
         headers: isTextBody ? textHeaders(args) : jsonHeaders(args),
-        body: plan.method === 'GET'
+        body: !hasRequestBody
           ? undefined
           : isTextBody
             ? plan.bodyText
@@ -679,6 +783,9 @@ async function requestWithRetries(args, plan) {
       const result = {
         success: response.ok && !failedPayload && !ndjsonBatchError && (payload?.parseErrors?.length || 0) === 0,
         action: args.action,
+        batchIndex: plan.batchIndex,
+        batchCount: plan.batchCount,
+        requested: plan.requested,
         status: response.status,
         statusText: response.statusText,
         payload,
@@ -698,13 +805,63 @@ async function requestWithRetries(args, plan) {
   return {
     success: false,
     action: args.action,
+    batchIndex: plan.batchIndex,
+    batchCount: plan.batchCount,
+    requested: plan.requested,
     error: lastError?.message || 'Request failed',
+  };
+}
+
+async function requestPlansWithRetries(args, plans) {
+  if (plans.length === 1) {
+    return requestWithRetries(args, plans[0]);
+  }
+
+  const startedAt = Date.now();
+  const batches = [];
+  for (const plan of plans) {
+    const batchResult = await requestWithRetries(args, plan);
+    batches.push(batchResult);
+    if (batchResult.success === false) {
+      break;
+    }
+  }
+
+  return {
+    success: batches.length === plans.length && batches.every((batch) => batch.success !== false),
+    action: args.action,
+    batchSize: args.batchSize,
+    batchCount: plans.length,
+    completedBatchCount: batches.length,
+    durationMs: Date.now() - startedAt,
+    batches,
   };
 }
 
 function summarize(result) {
   if (!result || typeof result !== 'object') return result;
   if (result.dryRun) return result;
+  if (Array.isArray(result.batches)) {
+    return {
+      success: result.success,
+      action: result.action,
+      batchSize: result.batchSize,
+      batchCount: result.batchCount,
+      completedBatchCount: result.completedBatchCount,
+      durationMs: result.durationMs,
+      batches: result.batches.map((batch) => ({
+        success: batch.success,
+        batchIndex: batch.batchIndex,
+        status: batch.status,
+        requestedCount: Array.isArray(batch.requested) ? batch.requested.length : 0,
+        eventCount: batch.payload?.eventCount,
+        complete: batch.payload?.complete,
+        parseErrorCount: batch.payload?.parseErrors?.length || 0,
+        payload: batch.payload && !batch.payload.events ? batch.payload : undefined,
+        error: batch.error,
+      })),
+    };
+  }
   const payload = result.payload;
   if (payload && typeof payload === 'object' && !Array.isArray(payload)) {
     if (payload.events) {
@@ -731,9 +888,13 @@ function printPretty(result) {
   const summary = summarize(result);
   if (summary.dryRun) {
     process.stdout.write(`dry-run: ${summary.action}\n`);
-    process.stdout.write(`${summary.method} ${summary.url}\n`);
-    if (summary.body !== undefined) process.stdout.write(`${JSON.stringify(summary.body, null, 2)}\n`);
-    if (summary.bodyText !== undefined) process.stdout.write(`${summary.bodyText}\n`);
+    process.stdout.write(`batches: ${summary.batchCount}\n`);
+    for (const plan of summary.plans) {
+      const batchLabel = plan.batchIndex ? `batch ${plan.batchIndex}/${plan.batchCount}: ` : '';
+      process.stdout.write(`${batchLabel}${plan.method} ${plan.url}\n`);
+      if (plan.body !== undefined) process.stdout.write(`${JSON.stringify(plan.body, null, 2)}\n`);
+      if (plan.bodyText !== undefined) process.stdout.write(`${plan.bodyText}\n`);
+    }
     process.stdout.write(`${summary.message}\n`);
     return;
   }
@@ -754,10 +915,10 @@ async function main() {
   }
   validateArgs(args);
 
-  const plan = buildActionPlan(args);
-  const result = !plan.readOnly && WRITE_ACTIONS.has(args.action) && !args.apply
-    ? createDryRunResult(args, plan)
-    : await requestWithRetries(args, plan);
+  const plans = buildActionPlans(args);
+  const result = !plans.some((plan) => plan.readOnly) && WRITE_ACTIONS.has(args.action) && !args.apply
+    ? createDryRunResult(args, plans)
+    : await requestPlansWithRetries(args, plans);
 
   saveResponseIfNeeded(args, result);
   if (args.output === 'json') {

@@ -4,7 +4,7 @@ API Token file deletion is intended for scripts, automation jobs, and third-part
 
 Deletion is a write operation and really deletes data after the command runs. Use `imgbed-token-list.mjs` first to confirm the `fileId` values you want to delete, then pass those IDs to the deletion script.
 
-![Edit API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Edit API Token](../../image/Safety/apitoken/编辑删除权限api.png)
 
 ## Before You Start
 
@@ -174,3 +174,4 @@ Warnings usually mean there was a non-fatal problem during remote deletion, cach
 ### Can I delete an entire directory at once?
 
 This script does not provide a directory-emptying operation. Use the listing script first to filter explicit `fileId` values, then pass the files you want to delete one by one.
+

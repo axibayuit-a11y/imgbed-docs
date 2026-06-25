@@ -17,9 +17,13 @@ ImgBed는 이미지 업로드와 링크 관리에서 시작해, 이제는 개인
 - 🌍 28개 인터페이스 언어를 지원해 전 세계 사용자가 편하게 사용 가능
 - 📦 13개 주요 업로드 채널 내장: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, pCloud
 - 🧩 완전한 모듈식 설계로 필요한 기능만 켜서 리소스를 낭비하지 않음
-- 🔒 데이터는 완전히 사용자가 관리하며, 제3자가 내용을 보거나 삭제할 수 없음
+- 🔐 API Token, 접근 모드, 목록 규칙을 지원해 콘텐츠 권한을 세밀하게 관리할 수 있음
 
 이 프로젝트는 계속 개선되고 있습니다. 우리의 역량은 제한적이지만, 모든 기능을 명확하고 안정적이며 사용하기 좋게 만들기 위해 최선을 다하겠습니다. ImgBed가 당신만의 이미지 호스트, 블로그, 파일 공유 공간을 더 쉽게 갖는 데 도움이 된다면 매우 기쁩니다.
+
+## 시작하기
+
+[https://glow.ccwu.cc/](https://glow.ccwu.cc/)에서 ImgBed를 배포해 나만의 이미지 및 파일 호스팅 서비스를 빠르게 마련하세요.
 
 ## 오픈소스 감사
 
@@ -29,3 +33,5 @@ ImgBed는 이미지 업로드와 링크 관리에서 시작해, 이제는 개인
 
 - 🐛 Bug 또는 기능 제안: [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)에 남겨 주세요
 - 📧 기타 연락: axibayuit@gmail.com
+
+

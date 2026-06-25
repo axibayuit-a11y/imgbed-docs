@@ -17,9 +17,13 @@ No creemos en soluciones de "talla única". Ya quieras guardar imágenes de form
 - 🌍 28 idiomas de interfaz para usuarios de todo el mundo
 - 📦 13 canales de subida principales integrados: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex y pCloud
 - 🧩 Diseño completamente modular: activa solo lo que necesitas y evita gastar recursos de más
-- 🔒 Tus datos están bajo tu control. Ningún tercero puede ver ni eliminar tu contenido
+- 🔐 Admite API Token, modos de acceso y reglas de listas para gestionar permisos de contenido con precisión
 
 Este proyecto sigue mejorando. Nuestra capacidad es limitada, pero haremos todo lo posible para que cada función sea clara, estable y fácil de usar. Si ImgBed te ayuda a tener tu propio host de imágenes, blog o espacio para compartir archivos con menos esfuerzo, nos hará muy felices.
+
+## Empezar a usarlo
+
+Despliega ImgBed desde [https://glow.ccwu.cc/](https://glow.ccwu.cc/) y consigue rápidamente tu propio servicio de alojamiento de imágenes y archivos.
 
 ## Agradecimientos de código abierto
 
@@ -29,3 +33,5 @@ Agradecemos las contribuciones de los proyectos de código abierto [CloudFlare-I
 
 - 🐛 Bugs o sugerencias: envíalos en [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
 - 📧 Otro contacto: axibayuit@gmail.com
+
+

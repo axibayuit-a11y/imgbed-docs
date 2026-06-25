@@ -4,7 +4,7 @@ Penghapusan berkas melalui API Token ditujukan untuk skrip, pekerjaan otomatis, 
 
 Penghapusan adalah operasi tulis. Setelah perintah dijalankan, data benar-benar dihapus. Sebaiknya periksa dahulu nilai `fileId` yang akan dihapus dengan `imgbed-token-list.mjs`, lalu kirim ID tersebut ke skrip penghapusan.
 
-![Edit API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Edit API Token](../../image/Safety/apitoken/编辑删除权限api.png)
 
 ## Persiapan
 
@@ -174,5 +174,6 @@ Peringatan biasanya menunjukkan masalah tidak fatal saat penghapusan di penyimpa
 ### Bisakah menghapus seluruh folder sekaligus?
 
 Skrip ini tidak menyediakan operasi untuk mengosongkan folder secara langsung. Gunakan skrip daftar terlebih dahulu untuk memfilter nilai `fileId` yang jelas, lalu berikan berkas yang ingin dihapus satu per satu ke skrip penghapusan.
+
 
 

@@ -17,9 +17,13 @@ Wij geloven niet in oplossingen die iedereen in hetzelfde model dwingen. Of je n
 - 🌍 Ondersteuning voor 28 interfacetalen, zodat gebruikers wereldwijd ermee kunnen werken
 - 📦 13 ingebouwde gangbare uploadkanalen: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex en pCloud
 - 🧩 Volledig modulair ontwerp: schakel functies alleen in wanneer je ze nodig hebt, zonder resources te verspillen
-- 🔒 Je gegevens blijven volledig onder jouw controle. Geen derde partij kan je inhoud bekijken of verwijderen
+- 🔐 Ondersteunt API Token, toegangsmodi en lijstregels voor fijnmazig beheer van inhoudsrechten
 
 Dit project wordt nog steeds verbeterd. Onze mogelijkheden zijn beperkt, maar we doen ons best om elke functie duidelijk, stabiel en prettig bruikbaar te maken. Als ImgBed je helpt om makkelijker je eigen image host, blog of ruimte voor bestandsdeling te hebben, zijn we daar erg blij mee.
+
+## Aan de slag
+
+Deploy ImgBed via [https://glow.ccwu.cc/](https://glow.ccwu.cc/) en krijg snel je eigen dienst voor image hosting en file hosting.
 
 ## Dank aan open source
 
@@ -29,3 +33,5 @@ Met dank aan de open-sourceprojecten [CloudFlare-ImgBed](https://github.com/MarS
 
 - 🐛 Bugs of functieverzoeken: meld ze via [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
 - 📧 Ander contact: axibayuit@gmail.com
+
+

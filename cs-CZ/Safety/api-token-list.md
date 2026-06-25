@@ -2,6 +2,8 @@
 
 Skript pro výpis pomocí API Token se hodí pro skripty, automatizaci a externí programy, které potřebují číst data z ImgBed. Používá pouze oprávnění `list`. Nenahrává soubory, nemaže soubory, nemění konfiguraci a nezakazuje ani nepovoluje nahrávání z žádné IP adresy.
 
+![Upravit API Token](../../image/Safety/apitoken/编辑列出权限api.png)
+
 Hlavní použití:
 
 | Funkce | Popis |

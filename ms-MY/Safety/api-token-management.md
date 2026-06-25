@@ -4,7 +4,7 @@ Pengurusan konfigurasi melalui API Token sesuai untuk skrip automasi, alat opera
 
 Kebenaran pengurusan ini hanya membuka operasi ringan yang sesuai untuk skrip. Operasi berat yang memerlukan pengesahan dalam pelayar, kerja berperingkat dalam antara muka web atau pembersihan indeks federasi tetap perlu dilakukan daripada panel pentadbir dalam pelayar.
 
-![Sunting API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Sunting API Token](../../image/Safety/apitoken/编辑管理权限api.png)
 
 ## Sebelum Bermula
 
@@ -486,4 +486,5 @@ Untuk tetapan muat naik, jalankan `--get` dahulu dan lihat struktur subsaluran s
 ### Hasil Hendak Digunakan oleh Program Lain
 
 Gunakan `--output json` atau `--save-response result.json`. Program boleh membaca fail JSON yang disimpan secara langsung.
+
 

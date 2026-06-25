@@ -2,7 +2,7 @@
 
 Das Hochladen per API Token ist für Skripte, Automatisierungen und externe Programme gedacht. Die Weboberfläche muss nicht geöffnet werden: Website-Adresse, API Token, lokaler Dateipfad und ein echter Hochladekanal reichen aus. Nach erfolgreichem Hochladen gibt das Skript den Dateilink zurück.
 
-![API Token bearbeiten](../../image/Safety/apitoken/编辑api%20token.png)
+![API Token bearbeiten](../../image/Safety/apitoken/编辑上传权限api.png)
 
 ## Vorbereitung
 
@@ -240,4 +240,5 @@ Nutze `--output json` oder `--save-response result.json`. Das Programm kann aus 
 ### Yandex lädt Archive nicht hoch
 
 Yandex unterstützt Archivformate und komprimierte Formate nicht zuverlässig. Das kann an den Plattformrichtlinien liegen. Für Yandex sollten nicht komprimierte Dateien verwendet werden.
+
 

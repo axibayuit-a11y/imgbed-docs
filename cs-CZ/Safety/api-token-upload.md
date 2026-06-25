@@ -2,7 +2,7 @@
 
 Nahrávání přes API Token je určené pro skripty, automatizaci a externí programy. Není nutné otevírat ImgBed v prohlížeči; stačí zadat adresu webu, API Token, cestu k místnímu souboru a skutečný nahrávací kanál. Po úspěšném nahrání skript vrátí odkaz na soubor.
 
-![Upravit API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Upravit API Token](../../image/Safety/apitoken/编辑上传权限api.png)
 
 ## Příprava
 
@@ -240,5 +240,6 @@ Použijte `--output json`, nebo přidejte `--save-response result.json`. Program
 ### Yandex odmítá archiv
 
 Yandex nepodporuje archivní a komprimované formáty spolehlivě; může to souviset s pravidly platformy. Pro kanál Yandex použijte nekomprimovaný soubor.
+
 
 

@@ -4,7 +4,7 @@ La eliminación con API Token está pensada para scripts, tareas automatizadas y
 
 Eliminar es una operación de escritura y borra datos reales cuando se ejecuta el comando. Se recomienda usar primero `imgbed-token-list.mjs` para confirmar los valores de `fileId` que quieres borrar, y después pasarlos al script de eliminación.
 
-![Editar API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Editar API Token](../../image/Safety/apitoken/编辑删除权限api.png)
 
 ## Preparación
 
@@ -174,5 +174,6 @@ Las advertencias suelen indicar un problema no crítico durante la eliminación 
 ### ¿Puedo eliminar un directorio completo de una vez?
 
 Este script no ofrece una operación para vaciar directorios. Usa primero el script de listado para filtrar valores `fileId` explícitos y después pasa uno por uno los archivos que quieras eliminar.
+
 
 

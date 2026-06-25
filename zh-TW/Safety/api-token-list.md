@@ -2,6 +2,8 @@
 
 API Token 列出腳本適合讓自動化腳本、排程任務或第三方程式讀取 ImgBed 資料。它只使用 `list` 權限，不會上傳檔案、刪除檔案、修改設定，也不會封鎖或放行某個 IP。
 
+![編輯 API Token](../../image/Safety/apitoken/编辑列出权限api.png)
+
 主要用途：
 
 | 功能 | 說明 |

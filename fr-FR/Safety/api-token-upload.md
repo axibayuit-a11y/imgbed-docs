@@ -2,7 +2,7 @@
 
 Le téléversement avec API Token est destiné aux scripts, tâches automatisées et programmes tiers. Vous n’avez pas besoin d’ouvrir l’interface web : indiquez l’URL du site, le token, le chemin du fichier local et un vrai canal de téléversement, puis ImgBed renverra l’URL du fichier après l’envoi.
 
-![Modifier l’API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Modifier l’API Token](../../image/Safety/apitoken/编辑上传权限api.png)
 
 ## Préparation
 
@@ -242,5 +242,6 @@ Utilisez `--output json` ou ajoutez `--save-response result.json`. Votre program
 ### Yandex ne téléverse pas les archives
 
 Yandex ne prend pas en charge les formats d’archive. Cela peut venir de sa politique de plateforme. Avec Yandex, utilisez de préférence des fichiers non compressés.
+
 
 

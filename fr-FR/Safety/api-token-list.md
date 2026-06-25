@@ -2,6 +2,8 @@
 
 Le script de liste avec API Token est destiné aux scripts, tâches automatisées et programmes tiers qui doivent lire les données d’ImgBed. Il utilise uniquement le droit `list`. Il ne téléverse pas de fichiers, ne supprime pas de fichiers, ne modifie pas la configuration et ne bloque ni n’autorise aucun IP à téléverser.
 
+![Modifier l’API Token](../../image/Safety/apitoken/编辑列出权限api.png)
+
 Usages principaux :
 
 | Fonction | Description |

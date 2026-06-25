@@ -2,7 +2,7 @@
 
 Unggahan melalui API Token ditujukan untuk skrip, pekerjaan otomatis, dan aplikasi pihak ketiga. Anda tidak perlu membuka antarmuka web ImgBed; cukup berikan alamat situs, API Token, jalur berkas lokal, dan kanal unggahan yang nyata. Setelah unggahan berhasil, skrip akan mengembalikan tautan berkas.
 
-![Edit API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Edit API Token](../../image/Safety/apitoken/编辑上传权限api.png)
 
 ## Persiapan
 
@@ -240,4 +240,5 @@ Gunakan `--output json` atau `--save-response result.json`. Program dapat membac
 ### Arsip gagal diunggah ke Yandex
 
 Yandex tidak mendukung format arsip atau berkas terkompresi secara andal. Hal ini mungkin terkait kebijakan platform. Untuk Yandex, gunakan berkas nonarsip.
+
 

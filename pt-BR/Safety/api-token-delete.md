@@ -4,7 +4,7 @@ O script de exclusão com API Token é indicado para scripts, tarefas automatiza
 
 Excluir é uma operação de gravação. Depois que o comando é executado, os arquivos são realmente removidos. Por isso, confira primeiro os `fileId` que deseja excluir com `imgbed-token-list.mjs` e só depois passe esses IDs para o script de exclusão.
 
-![Editar API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Editar API Token](../../image/Safety/apitoken/编辑删除权限api.png)
 
 ## Preparação
 
@@ -174,5 +174,6 @@ Um aviso geralmente indica um problema não crítico durante a exclusão remota,
 ### Posso excluir um diretório inteiro de uma vez?
 
 Este script não oferece uma função para esvaziar diretórios. Use primeiro o script de listagem para filtrar `fileId` claros e depois passe cada arquivo ao script de exclusão.
+
 
 

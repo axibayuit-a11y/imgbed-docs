@@ -17,9 +17,13 @@ Chúng tôi không tin vào giải pháp "một khuôn cho tất cả". Dù bạ
 - 🌍 Hỗ trợ 28 ngôn ngữ giao diện, giúp người dùng toàn cầu sử dụng thuận tiện
 - 📦 Tích hợp 13 kênh tải lên phổ biến: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, pCloud
 - 🧩 Thiết kế thuần mô-đun, mọi tính năng bật theo nhu cầu, không lãng phí tài nguyên
-- 🔒 Dữ liệu hoàn toàn do bạn kiểm soát. Không bên thứ ba nào có thể xem hoặc xóa nội dung của bạn
+- 🔐 Hỗ trợ API Token, chế độ truy cập và quy tắc danh sách để quản lý quyền nội dung chi tiết hơn
 
 Dự án này vẫn đang tiếp tục hoàn thiện. Khả năng của chúng tôi có giới hạn, nhưng chúng tôi sẽ cố hết sức để từng tính năng rõ ràng, ổn định và dễ dùng. Nếu ImgBed giúp bạn dễ dàng sở hữu nơi lưu ảnh, blog hoặc không gian chia sẻ tệp riêng, chúng tôi sẽ rất vui.
+
+## Bắt đầu sử dụng
+
+Triển khai ImgBed qua [https://glow.ccwu.cc/](https://glow.ccwu.cc/) để nhanh chóng có dịch vụ lưu trữ ảnh và tệp của riêng bạn.
 
 ## Cảm ơn mã nguồn mở
 
@@ -29,3 +33,5 @@ Xin cảm ơn đóng góp của các dự án mã nguồn mở [CloudFlare-ImgBe
 
 - 🐛 Bug hoặc đề xuất tính năng: gửi tại [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
 - 📧 Liên hệ khác: axibayuit@gmail.com
+
+

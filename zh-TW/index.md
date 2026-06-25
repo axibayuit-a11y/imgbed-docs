@@ -17,9 +17,13 @@
 - 🌍 支援 28 種介面語言，全球使用者都能順暢使用
 - 📦 內建 13 種主流上傳渠道：Telegram、Cloudflare R2、S3、WebDAV、Discord、Hugging Face、GitHub Releases、GitLab Packages、OneDrive、Google Drive、Dropbox、Yandex、pCloud
 - 🧩 純模組化設計，所有功能按需開啟，不浪費資源
-- 🔒 資料完全由你掌控，沒有第三方能查看或刪除你的內容
+- 🔐 支援 API Token、存取模式和名單規則，便於精細化管理內容權限
 
 這個專案仍在持續完善。我們能力有限，但會盡全力把每一個功能都做清楚、做穩定、做好用。如果 ImgBed 能幫你更輕鬆地擁有自己的圖床、部落格或檔案分享空間，我們會非常開心。
+
+## 開始體驗
+
+透過 [https://glow.ccwu.cc/](https://glow.ccwu.cc/) 部署 ImgBed，快速擁有自己的圖床與檔案託管服務。
 
 ## 開源致謝
 
@@ -29,3 +33,5 @@
 
 - 🐛 遇到 Bug 或功能建議：請提交 [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
 - 📧 其他聯絡：axibayuit@gmail.com
+
+

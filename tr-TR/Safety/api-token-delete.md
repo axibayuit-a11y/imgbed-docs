@@ -4,7 +4,7 @@ API Token ile silme betiği; betikler, otomasyon işleri ve üçüncü taraf pro
 
 Silme işlemi veriyi değiştirir. Komut çalıştırıldıktan sonra dosyalar gerçekten silinir. Bu nedenle önce `imgbed-token-list.mjs` ile silinecek `fileId` değerlerini doğrulayın, ardından bu ID'leri silme betiğine verin.
 
-![API Token düzenle](../../image/Safety/apitoken/编辑api%20token.png)
+![API Token düzenle](../../image/Safety/apitoken/编辑删除权限api.png)
 
 ## Hazırlık
 
@@ -174,4 +174,5 @@ Uyarılar genellikle uzak silme, önbellek temizliği veya istatistiklerin tamam
 ### Klasörü tek seferde silebilir miyim?
 
 Bu betik klasör boşaltma özelliği sunmaz. Önce listeleme betiğiyle açık `fileId` değerlerini seçin, ardından silinecek dosyaları tek tek silme betiğine verin.
+
 

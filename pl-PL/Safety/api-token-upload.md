@@ -2,7 +2,7 @@
 
 Przesyłanie za pomocą API Token jest przeznaczone dla skryptów, zadań automatyzacji i programów zewnętrznych. Nie trzeba otwierać interfejsu WWW. Jeśli podasz adres URL witryny, token, lokalną ścieżkę pliku oraz rzeczywisty kanał przesyłania, plik zostanie przesłany do ImgBed, a odpowiedź będzie zawierać jego adres URL.
 
-![Edycja API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Edycja API Token](../../image/Safety/apitoken/编辑上传权限api.png)
 
 ## Zanim zaczniesz
 
@@ -242,5 +242,6 @@ Użyj `--output json` albo dodaj `--save-response result.json`. Odczytaj pole `u
 ### Yandex nie może przesyłać archiwów
 
 Yandex nie obsługuje formatów archiwów. Może to wynikać z zasad tej platformy. Przy korzystaniu z Yandex w miarę możliwości przesyłaj pliki niebędące archiwami.
+
 
 

@@ -4,7 +4,7 @@ Pengelolaan konfigurasi melalui API Token ditujukan untuk skrip otomatis, alat o
 
 Izin pengelolaan ini hanya membuka operasi ringan yang cocok untuk skrip. Operasi berat yang memerlukan konfirmasi di peramban, pekerjaan bertahap di antarmuka web, atau pembersihan indeks federasi tetap harus dilakukan dari panel admin di peramban.
 
-![Edit API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Edit API Token](../../image/Safety/apitoken/编辑管理权限api.png)
 
 ## Persiapan
 
@@ -486,4 +486,5 @@ Untuk pengaturan unggahan, jalankan `--get` terlebih dahulu dan lihat struktur s
 ### Hasil ingin dipakai oleh program lain
 
 Gunakan `--output json` atau `--save-response result.json`. Program dapat membaca berkas JSON yang tersimpan secara langsung.
+
 

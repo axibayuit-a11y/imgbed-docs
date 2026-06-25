@@ -2,6 +2,8 @@
 
 Skrip senarai melalui API Token sesuai untuk skrip, automasi dan aplikasi pihak ketiga yang perlu membaca data ImgBed. Skrip ini hanya menggunakan kebenaran `list`; ia tidak memuat naik fail, memadam fail, mengubah konfigurasi, atau menyekat dan membenarkan muat naik daripada IP tertentu.
 
+![Sunting API Token](../../image/Safety/apitoken/编辑列出权限api.png)
+
 Kegunaan utama:
 
 | Fungsi | Maksud |

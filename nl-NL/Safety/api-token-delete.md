@@ -4,7 +4,7 @@ Verwijderen met een API Token is bedoeld voor scripts, automatisering en program
 
 Verwijderen is een schrijfactie. Nadat de opdracht is uitgevoerd, worden de bestanden echt verwijderd. Controleer daarom eerst met `imgbed-token-list.mjs` welke `fileId` je wilt verwijderen en geef die ID's daarna door aan het verwijderingsscript.
 
-![API Token bewerken](../../image/Safety/apitoken/编辑api%20token.png)
+![API Token bewerken](../../image/Safety/apitoken/编辑删除权限api.png)
 
 ## Voorbereiding
 
@@ -174,5 +174,6 @@ Een waarschuwing betekent meestal dat er een niet-kritiek probleem was bij exter
 ### Kan ik in één keer per map verwijderen?
 
 Dit script heeft geen functie om een map in één keer leeg te maken. Gebruik eerst het lijstscript om duidelijke `fileId`-waarden te vinden en geef de bestanden daarna één voor één door aan het verwijderingsscript.
+
 
 

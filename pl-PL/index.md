@@ -17,9 +17,13 @@ Nie wierzymy w rozwiązania typu "jeden rozmiar dla wszystkich". Niezależnie od
 - 🌍 Obsługa 28 języków interfejsu dla użytkowników z całego świata
 - 📦 13 wbudowanych popularnych kanałów przesyłania: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex i pCloud
 - 🧩 W pełni modułowa konstrukcja: włączasz tylko potrzebne funkcje i nie marnujesz zasobów
-- 🔒 Dane są całkowicie pod Twoją kontrolą. Żadna strona trzecia nie może oglądać ani usuwać Twoich treści
+- 🔐 Obsługuje API Token, tryby dostępu i reguły list, aby precyzyjnie zarządzać uprawnieniami do treści
 
 Ten projekt nadal się rozwija. Nasze możliwości są ograniczone, ale zrobimy wszystko, aby każda funkcja była jasna, stabilna i wygodna w użyciu. Jeśli ImgBed pomoże Ci łatwiej mieć własny hosting obrazów, blog lub przestrzeń do udostępniania plików, będziemy bardzo szczęśliwi.
+
+## Zacznij korzystać
+
+Wdróż ImgBed przez [https://glow.ccwu.cc/](https://glow.ccwu.cc/) i szybko uruchom własną usługę hostingu obrazów oraz plików.
 
 ## Podziękowania dla open source
 
@@ -29,3 +33,5 @@ Dziękujemy projektom open source [CloudFlare-ImgBed](https://github.com/MarSeve
 
 - 🐛 Błędy lub sugestie funkcji: zgłoś w [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
 - 📧 Inny kontakt: axibayuit@gmail.com
+
+

@@ -4,7 +4,7 @@ Das Löschen per API Token ist für Skripte, Automatisierungen und externe Progr
 
 Löschen ist eine schreibende Operation. Nach Ausführung des Befehls werden die Daten tatsächlich entfernt. Prüfe am besten zuerst mit `imgbed-token-list.mjs`, welche `fileId`-Werte gelöscht werden sollen, und übergib diese IDs danach an das Löschskript.
 
-![API Token bearbeiten](../../image/Safety/apitoken/编辑api%20token.png)
+![API Token bearbeiten](../../image/Safety/apitoken/编辑删除权限api.png)
 
 ## Vorbereitung
 
@@ -174,5 +174,6 @@ Warnungen bedeuten meist ein nicht kritisches Problem beim Löschen im entfernte
 ### Kann ein ganzer Ordner auf einmal gelöscht werden?
 
 Dieses Skript bietet keine Funktion zum Leeren eines ganzen Ordners. Filtere zuerst mit dem Listenskript die konkreten `fileId`-Werte heraus und übergib die zu löschenden Dateien dann einzeln an das Löschskript.
+
 
 

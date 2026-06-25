@@ -2,7 +2,7 @@
 
 API Token 업로드는 스크립트, 자동화 작업, 외부 프로그램에서 ImgBed로 파일을 올릴 때 사용합니다. 웹 화면을 열지 않아도 사이트 주소, Token, 로컬 파일 경로, 실제 업로드 채널을 지정하면 파일을 업로드하고 결과로 파일 URL을 받을 수 있습니다.
 
-![API Token 편집](../../image/Safety/apitoken/编辑api%20token.png)
+![API Token 편집](../../image/Safety/apitoken/编辑上传权限api.png)
 
 ## 준비하기
 
@@ -242,4 +242,5 @@ Content-Type: multipart/form-data
 ### Yandex에서 압축 파일 업로드가 실패합니다
 
 Yandex는 압축 파일 형식을 지원하지 않습니다. 플랫폼 정책 때문일 수 있습니다. Yandex 채널을 사용할 때는 가능하면 압축하지 않은 파일을 업로드하세요.
+
 

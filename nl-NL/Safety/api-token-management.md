@@ -4,7 +4,7 @@ Configuratiebeheer met een API Token is bedoeld voor automatiseringsscripts, beh
 
 De beheerrechten openen alleen lichte acties die geschikt zijn voor scripts. Zware acties waarvoor bevestiging in de webinterface, batches in de gebruikersinterface of het opschonen van federatie-indexen nodig zijn, blijven in het beheerpaneel.
 
-![API Token bewerken](../../image/Safety/apitoken/编辑api%20token.png)
+![API Token bewerken](../../image/Safety/apitoken/编辑管理权限api.png)
 
 ## Voorbereiding
 
@@ -486,5 +486,6 @@ Gebruik voor uploadinstellingen eerst `--get` om de structuur van een bestaand s
 ### Ik wil het resultaat in een ander programma gebruiken
 
 Gebruik `--output json` of `--save-response result.json`. Het programma kan het opgeslagen JSON-bestand direct lezen.
+
 
 

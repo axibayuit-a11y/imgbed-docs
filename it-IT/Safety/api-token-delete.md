@@ -4,7 +4,7 @@ L'eliminazione tramite API Token è pensata per script, automazioni e programmi 
 
 L'eliminazione è un'operazione di scrittura. Dopo l'esecuzione del comando, i dati vengono rimossi davvero. È consigliabile usare prima `imgbed-token-list.mjs` per verificare i valori `fileId` da eliminare, poi passare questi ID allo script di eliminazione.
 
-![Modifica API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Modifica API Token](../../image/Safety/apitoken/编辑删除权限api.png)
 
 ## Preparazione
 
@@ -174,6 +174,7 @@ I avviso di solito indicano un problema non bloccante durante l'eliminazione nel
 ### È possibile eliminare una cartella intera in una volta?
 
 Questo script non offre un'operazione per svuotare una cartella intera. Usa prima lo script di elenco per filtrare valori `fileId` precisi, poi passa allo script di eliminazione i file da eliminare uno per uno.
+
 
 
 

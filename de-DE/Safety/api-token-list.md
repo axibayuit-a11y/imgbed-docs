@@ -2,6 +2,8 @@
 
 Das Listenskript mit API Token ist für Skripte, Automatisierungen und externe Programme gedacht, die Daten aus ImgBed lesen müssen. Es nutzt nur die Berechtigung `list`. Es lädt keine Dateien hoch, löscht keine Dateien, ändert keine Konfiguration und sperrt oder erlaubt keine Uploads für einzelne IP-Adressen.
 
+![API Token bearbeiten](../../image/Safety/apitoken/编辑列出权限api.png)
+
 Hauptzwecke:
 
 | Funktion | Beschreibung |

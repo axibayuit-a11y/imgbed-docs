@@ -2,7 +2,7 @@
 
 La subida con API Token está pensada para scripts, tareas automatizadas y programas de terceros. No hace falta abrir la interfaz web: con la URL del sitio, el token, la ruta del archivo local y un canal de subida real, puedes subir el archivo a ImgBed y recibir su URL al terminar.
 
-![Editar API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Editar API Token](../../image/Safety/apitoken/编辑上传权限api.png)
 
 ## Preparación
 
@@ -242,5 +242,6 @@ Usa `--output json` o añade `--save-response result.json`. Tu programa puede le
 ### Yandex no sube archivos comprimidos
 
 Yandex no admite formatos de archivo comprimido. Puede deberse a su política de plataforma. Si usas Yandex, sube archivos no comprimidos siempre que sea posible.
+
 
 

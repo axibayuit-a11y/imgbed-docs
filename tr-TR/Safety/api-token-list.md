@@ -2,6 +2,8 @@
 
 API Token ile listeleme betiği, ImgBed verilerini okuması gereken betikler, otomasyon işleri ve üçüncü taraf programlar için uygundur. Yalnızca `list` iznini kullanır; dosya yüklemez, dosya silmez, yapılandırmayı değiştirmez ve herhangi bir IP için yüklemeyi engellemez ya da izin vermez.
 
+![API Token düzenleme](../../image/Safety/apitoken/编辑列出权限api.png)
+
 Başlıca kullanım alanları:
 
 | İşlev | Açıklama |

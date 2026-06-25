@@ -4,7 +4,7 @@ Mazání souborů přes API Token je určené pro skripty, automatizaci a extern
 
 Mazání je zápisová operace a po spuštění příkazu se data skutečně odstraní. Doporučuje se nejdříve pomocí `imgbed-token-list.mjs` ověřit, které hodnoty `fileId` chcete smazat, a teprve potom je předat mazacímu skriptu.
 
-![Upravit API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Upravit API Token](../../image/Safety/apitoken/编辑删除权限api.png)
 
 ## Příprava
 
@@ -174,6 +174,7 @@ Varování obvykle znamenají nefatální problém při mazání ve vzdáleném 
 ### Lze najednou smazat celou složku?
 
 Tento skript neumí vyprázdnit složku najednou. Nejprve pomocí vypisovacího skriptu vyfiltrujte konkrétní hodnoty `fileId` a potom soubory, které chcete smazat, předejte mazacímu skriptu jednotlivě.
+
 
 
 

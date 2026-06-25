@@ -4,7 +4,7 @@ API Token configuration management is intended for automation scripts, operation
 
 Management permission only exposes lightweight operations suitable for scripts. Heavy operations that require browser confirmation, frontend batch jobs, or federation index cleanup still need to be handled in the browser admin panel.
 
-![Edit API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Edit API Token](../../image/Safety/apitoken/编辑管理权限api.png)
 
 ## Before You Start
 
@@ -486,3 +486,4 @@ For upload settings, use `--get` to inspect the existing child channel structure
 ### I Want To Use The Result In Another Program
 
 Use `--output json`, or add `--save-response result.json`. Your program can read the saved JSON file directly.
+

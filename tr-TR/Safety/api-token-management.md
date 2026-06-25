@@ -4,7 +4,7 @@ API Token yapılandırma yönetimi otomasyon betikleri, operasyon araçları vey
 
 Yönetim izni yalnızca betiklere uygun hafif işlemleri açar. Tarayıcı onayı, ön yüz toplu işleri veya federasyon dizini temizliği gerektiren ağır işlemler yine tarayıcıdaki yönetim panelinde yapılmalıdır.
 
-![API Token düzenleme](../../image/Safety/apitoken/编辑api%20token.png)
+![API Token düzenleme](../../image/Safety/apitoken/编辑管理权限api.png)
 
 ## Başlamadan Önce
 
@@ -486,3 +486,4 @@ Yükleme ayarları için mevcut alt kanal yapısını incelemek üzere `--get` k
 ### Sonucu Başka Bir Programda Kullanmak İstiyorum
 
 `--output json` kullanın veya `--save-response result.json` ekleyin. Programınız kaydedilen JSON dosyasını doğrudan okuyabilir.
+

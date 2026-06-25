@@ -2,6 +2,8 @@
 
 Skrip daftar dengan API Token ditujukan untuk skrip, pekerjaan otomatis, dan aplikasi pihak ketiga yang perlu membaca data ImgBed. Skrip ini hanya memakai izin `list`. Skrip tidak mengunggah berkas, tidak menghapus berkas, tidak mengubah konfigurasi, dan tidak memblokir atau mengizinkan unggahan dari IP mana pun.
 
+![Edit API Token](../../image/Safety/apitoken/编辑列出权限api.png)
+
 Kegunaan utama:
 
 | Fitur | Keterangan |

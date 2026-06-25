@@ -4,7 +4,7 @@ Skrip padam melalui API Token sesuai untuk skrip, automasi dan aplikasi pihak ke
 
 Pemadaman ialah operasi tulis. Selepas arahan dijalankan, fail benar-benar akan dipadam. Sebaiknya semak dahulu `fileId` yang hendak dipadam dengan `imgbed-token-list.mjs`, kemudian serahkan ID tersebut kepada skrip padam.
 
-![Sunting API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Sunting API Token](../../image/Safety/apitoken/编辑删除权限api.png)
 
 ## Persediaan
 
@@ -174,6 +174,7 @@ Amaran biasanya bermaksud terdapat masalah tidak kritikal semasa pemadaman jauh,
 ### Bolehkah saya memadam mengikut direktori sekali gus?
 
 Skrip ini tidak menyediakan fungsi mengosongkan direktori. Gunakan skrip senarai dahulu untuk menapis `fileId` yang jelas, kemudian hantar fail yang hendak dipadam satu demi satu kepada skrip padam.
+
 
 
 

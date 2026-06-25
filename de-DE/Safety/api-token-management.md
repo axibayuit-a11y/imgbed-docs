@@ -4,7 +4,7 @@ Die Konfigurationsverwaltung per API Token ist für Automatisierungsskripte, Bet
 
 Die Verwaltungsberechtigung ist nur für leichte, skriptgeeignete Operationen vorgesehen. Schwere Operationen mit Bestätigung in der Weboberfläche, stapelweiser Verarbeitung im Weboberfläche oder Bereinigung von Föderationsindizes bleiben im Administrationsbereich der Weboberfläche.
 
-![API Token bearbeiten](../../image/Safety/apitoken/编辑api%20token.png)
+![API Token bearbeiten](../../image/Safety/apitoken/编辑管理权限api.png)
 
 ## Vorbereitung
 
@@ -486,5 +486,6 @@ Für Hochladeeinstellungen zuerst mit `--get` die Struktur des Unterkanals prüf
 ### Ergebnis in anderem Programm verwenden
 
 Nutze `--output json` oder `--save-response result.json`. Das Programm kann die gespeicherte JSON-Datei direkt lesen.
+
 
 

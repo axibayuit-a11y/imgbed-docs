@@ -4,7 +4,7 @@ Xóa tệp bằng API Token dành cho tập lệnh, tác vụ tự động và c
 
 Xóa là thao tác ghi và sẽ thực sự xóa dữ liệu sau khi lệnh chạy. Trước tiên hãy dùng `imgbed-token-list.mjs` để xác nhận các giá trị `fileId` bạn muốn xóa, rồi truyền các ID đó cho tập lệnh xóa.
 
-![Chỉnh sửa API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Chỉnh sửa API Token](../../image/Safety/apitoken/编辑删除权限api.png)
 
 ## Trước khi bắt đầu
 
@@ -174,3 +174,4 @@ Cảnh báo thường nghĩa là có vấn đề không nghiêm trọng trong qu
 ### Tôi có thể xóa cả thư mục cùng lúc không?
 
 Tập lệnh này không cung cấp thao tác xóa sạch thư mục. Trước tiên hãy dùng tập lệnh liệt kê để lọc các giá trị `fileId` rõ ràng, rồi truyền từng tệp bạn muốn xóa.
+

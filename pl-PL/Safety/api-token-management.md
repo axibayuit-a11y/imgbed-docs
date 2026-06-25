@@ -4,7 +4,7 @@ Zarządzanie konfiguracją za pomocą API Token jest przeznaczone dla skryptów 
 
 Uprawnienie do zarządzania udostępnia tylko lekkie operacje odpowiednie dla skryptów. Ciężkie operacje wymagające potwierdzenia w przeglądarce, zadań wsadowych interfejsu użytkownika albo czyszczenia indeksu federacji nadal trzeba obsługiwać w panelu administracyjnym w przeglądarce.
 
-![Edycja API Token](../../image/Safety/apitoken/编辑api%20token.png)
+![Edycja API Token](../../image/Safety/apitoken/编辑管理权限api.png)
 
 ## Zanim zaczniesz
 
@@ -486,5 +486,6 @@ Dla ustawień przesyłania użyj `--get`, aby sprawdzić istniejącą strukturę
 ### Chcę użyć wyniku w innym programie
 
 Użyj `--output json` albo dodaj `--save-response result.json`. Program może bezpośrednio odczytać zapisany plik JSON.
+
 
 

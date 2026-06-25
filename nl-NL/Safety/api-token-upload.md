@@ -2,7 +2,7 @@
 
 Uploaden met een API Token is bedoeld voor scripts, automatisering en programma's van derden. Je hoeft de webpagina niet te openen: met het ImgBed-adres, het Token, het bestandspad en een echt uploadkanaal kan het bestand worden geüpload en krijg je na afloop de bestandslink terug.
 
-![API Token bewerken](../../image/Safety/apitoken/编辑api%20token.png)
+![API Token bewerken](../../image/Safety/apitoken/编辑上传权限api.png)
 
 ## Voorbereiding
 
@@ -240,5 +240,6 @@ Gebruik `--output json` of `--save-response result.json`. Het programma kan het 
 ### Upload van archieven naar Yandex faalt
 
 Yandex ondersteunt gecomprimeerde formaten niet betrouwbaar; dit kan door platformbeleid komen. Gebruik bij Yandex bij voorkeur niet-gecomprimeerde bestanden.
+
 
 
