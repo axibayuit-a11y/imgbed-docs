@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Skrip | Kegunaan |
 | --- | --- |
-| <a href="/tools/imgbed-token-delete.mjs" download>Unduh skrip penghapus berkas</a> | Menghapus satu atau beberapa ID berkas yang ditentukan secara jelas |
+| <a href="/tools/imgbed-token-delete.mjs" download>skrip penghapus berkas</a> | Menghapus satu atau beberapa ID berkas yang ditentukan secara jelas |
 
 Skrip membutuhkan Node.js 18 atau versi yang lebih baru.
 

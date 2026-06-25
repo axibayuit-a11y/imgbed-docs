@@ -20,8 +20,8 @@ La documentation fournit deux scripts Node.js :
 
 | Script | Utilisation |
 | --- | --- |
-| <a href="/tools/imgbed-token-single-upload.mjs" download>Télécharger le script de téléversement en une seule requête</a> | Appelle `/upload` une seule fois. Adapté aux petits fichiers et aux tests de connectivité. |
-| <a href="/tools/imgbed-token-chunk-upload.mjs" download>Télécharger le script de téléversement par morceaux</a> | Utilise les flux par morceaux, directs ou avec session de plateforme via API Token. Recommandé pour les gros fichiers. |
+| <a href="/tools/imgbed-token-single-upload.mjs" download>script de téléversement en une seule requête</a> | Appelle `/upload` une seule fois. Adapté aux petits fichiers et aux tests de connectivité. |
+| <a href="/tools/imgbed-token-chunk-upload.mjs" download>script de téléversement par morceaux</a> | Utilise les flux par morceaux, directs ou avec session de plateforme via API Token. Recommandé pour les gros fichiers. |
 
 Node.js 18 ou plus récent est nécessaire.
 

@@ -20,8 +20,8 @@ La documentación incluye dos scripts de Node.js:
 
 | Script | Uso |
 | --- | --- |
-| <a href="/tools/imgbed-token-single-upload.mjs" download>Descargar script de subida en una sola petición</a> | Llama una sola vez a `/upload`. Sirve para archivos pequeños y pruebas de conectividad. |
-| <a href="/tools/imgbed-token-chunk-upload.mjs" download>Descargar script de subida por partes</a> | Usa subidas por partes, subidas directas o sesiones de plataforma mediante API Token. Recomendado para archivos grandes. |
+| <a href="/tools/imgbed-token-single-upload.mjs" download>script de subida en una sola petición</a> | Llama una sola vez a `/upload`. Sirve para archivos pequeños y pruebas de conectividad. |
+| <a href="/tools/imgbed-token-chunk-upload.mjs" download>script de subida por partes</a> | Usa subidas por partes, subidas directas o sesiones de plataforma mediante API Token. Recomendado para archivos grandes. |
 
 Necesitas Node.js 18 o superior.
 

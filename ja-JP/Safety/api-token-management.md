@@ -30,9 +30,9 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | スクリプト | 用途 |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>アップロード設定管理スクリプトをダウンロード</a> | アップロードチャンネル、子チャンネル、負荷分散を管理します。 |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>サイト設定管理スクリプトをダウンロード</a> | セキュリティ設定、ページ設定、その他設定を管理します。 |
-| <a href="/tools/imgbed-token-federation.mjs" download>フェデレーション関係管理スクリプトをダウンロード</a> | 軽量なフェデレーション関係操作、申請、メッセージを管理します。 |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>アップロード設定管理スクリプト</a> | アップロードチャンネル、子チャンネル、負荷分散を管理します。 |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>サイト設定管理スクリプト</a> | セキュリティ設定、ページ設定、その他設定を管理します。 |
+| <a href="/tools/imgbed-token-federation.mjs" download>フェデレーション関係管理スクリプト</a> | 軽量なフェデレーション関係操作、申請、メッセージを管理します。 |
 
 実行には Node.js 18 以上が必要です。
 

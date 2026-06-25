@@ -30,9 +30,9 @@ The documentation package provides three Node.js scripts:
 
 | Script | Purpose |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>Download upload settings management script</a> | Manage upload channels, child channels, and load balancing. |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>Download site settings management script</a> | Manage security settings, page settings, and other settings. |
-| <a href="/tools/imgbed-token-federation.mjs" download>Download federation relation management script</a> | Manage lightweight federation relation actions, requests, and messages. |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>upload settings management script</a> | Manage upload channels, child channels, and load balancing. |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>site settings management script</a> | Manage security settings, page settings, and other settings. |
+| <a href="/tools/imgbed-token-federation.mjs" download>federation relation management script</a> | Manage lightweight federation relation actions, requests, and messages. |
 
 Node.js 18 or later is required.
 

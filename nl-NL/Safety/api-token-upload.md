@@ -20,8 +20,8 @@ De documentatie bevat twee Node.js-scripts:
 
 | Script | Gebruik |
 | --- | --- |
-| <a href="/tools/imgbed-token-single-upload.mjs" download>Script voor enkele upload downloaden</a> | Roept één keer `/upload` aan; geschikt voor kleine bestanden en API-tests |
-| <a href="/tools/imgbed-token-chunk-upload.mjs" download>Script voor upload in delen downloaden</a> | Gebruikt chunk-, direct-upload- of platformsessies; geschikt voor grote bestanden |
+| <a href="/tools/imgbed-token-single-upload.mjs" download>Script voor enkele upload</a> | Roept één keer `/upload` aan; geschikt voor kleine bestanden en API-tests |
+| <a href="/tools/imgbed-token-chunk-upload.mjs" download>Script voor upload in delen</a> | Gebruikt chunk-, direct-upload- of platformsessies; geschikt voor grote bestanden |
 
 Je hebt lokaal Node.js 18 of hoger nodig.
 

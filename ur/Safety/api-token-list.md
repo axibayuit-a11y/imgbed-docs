@@ -33,7 +33,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | اسکرپٹ | مقصد |
 | --- | --- |
-| <a href="/tools/imgbed-token-list.mjs" download>فہرست سازی اور فلٹرنگ اسکرپٹ ڈاؤن لوڈ کریں</a> | فائل مینیجر فہرست، صارف انتظام فہرست، اپ لوڈ چینل فہرست، اور ڈائریکٹری statistics۔ |
+| <a href="/tools/imgbed-token-list.mjs" download>فہرست سازی اور فلٹرنگ اسکرپٹ</a> | فائل مینیجر فہرست، صارف انتظام فہرست، اپ لوڈ چینل فہرست، اور ڈائریکٹری statistics۔ |
 
 Node.js 18 یا بعد کا ورژن درکار ہے۔
 

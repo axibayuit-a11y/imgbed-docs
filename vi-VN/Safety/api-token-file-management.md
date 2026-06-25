@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Tập lệnh | Mục đích |
 | --- | --- |
-| <a href="/tools/imgbed-token-manage.mjs" download>Tải tập lệnh quản lý tệp</a> | Siêu dữ liệu tệp, nhãn kiểm duyệt, thẻ tệp, trạng thái danh sách, di chuyển, đổi tên, tạo thư mục, chặn/khôi phục IP, tạo và xóa Token tải lên ngắn hạn |
+| <a href="/tools/imgbed-token-manage.mjs" download>tập lệnh quản lý tệp</a> | Siêu dữ liệu tệp, nhãn kiểm duyệt, thẻ tệp, trạng thái danh sách, di chuyển, đổi tên, tạo thư mục, chặn/khôi phục IP, tạo và xóa Token tải lên ngắn hạn |
 
 Máy cục bộ cần cài Node.js 18 trở lên để chạy tập lệnh.
 

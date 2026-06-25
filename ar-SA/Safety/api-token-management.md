@@ -30,9 +30,9 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | السكربت | الغرض |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>تنزيل سكربت إدارة إعدادات الرفع</a> | إدارة قنوات الرفع، والقنوات الفرعية، وموازنة الحمل. |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>تنزيل سكربت إدارة إعدادات الموقع</a> | إدارة إعدادات الأمان، وإعدادات الصفحات، والإعدادات الأخرى. |
-| <a href="/tools/imgbed-token-federation.mjs" download>تنزيل سكربت إدارة علاقات الاتحاد</a> | إدارة إجراءات علاقات الاتحاد الخفيفة، والطلبات، والرسائل. |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>سكربت إدارة إعدادات الرفع</a> | إدارة قنوات الرفع، والقنوات الفرعية، وموازنة الحمل. |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>سكربت إدارة إعدادات الموقع</a> | إدارة إعدادات الأمان، وإعدادات الصفحات، والإعدادات الأخرى. |
+| <a href="/tools/imgbed-token-federation.mjs" download>سكربت إدارة علاقات الاتحاد</a> | إدارة إجراءات علاقات الاتحاد الخفيفة، والطلبات، والرسائل. |
 
 يتطلب ذلك Node.js 18 أو إصدارًا أحدث.
 

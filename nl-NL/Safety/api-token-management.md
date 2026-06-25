@@ -30,9 +30,9 @@ De documentatie bevat drie Node.js-scripts:
 
 | Script | Gebruik |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>Script voor uploadinstellingen downloaden</a> | Beheert uploadkanalen, subkanalen en load balancing |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>Script voor site-instellingen downloaden</a> | Beheert beveiliging, pagina's en overige instellingen |
-| <a href="/tools/imgbed-token-federation.mjs" download>Script voor federatierelaties downloaden</a> | Beheert lichte relatieacties, aanvragen en berichten |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>Script voor uploadinstellingen</a> | Beheert uploadkanalen, subkanalen en load balancing |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>Script voor site-instellingen</a> | Beheert beveiliging, pagina's en overige instellingen |
+| <a href="/tools/imgbed-token-federation.mjs" download>Script voor federatierelaties</a> | Beheert lichte relatieacties, aanvragen en berichten |
 
 Je hebt lokaal Node.js 18 of hoger nodig.
 

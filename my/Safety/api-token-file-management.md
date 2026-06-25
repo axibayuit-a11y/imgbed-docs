@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | စခရစ် | အသုံးပြုရန်နေရာ |
 | --- | --- |
-| <a href="/tools/imgbed-token-manage.mjs" download>ဖိုင်စီမံခန့်ခွဲရေးစခရစ် ဒေါင်းလုဒ်လုပ်ရန်</a> | ဖိုင် metadata၊ moderation labels၊ ဖိုင် tag များ၊ list အခြေအနေ၊ ရွှေ့ခြင်း၊ အမည်ပြောင်းခြင်း၊ ဖိုလ်ဒါဖန်တီးခြင်း၊ IP ပိတ်/ပြန်ဖွင့်ခြင်း၊ အချိန်တို upload Token ဖန်တီးခြင်းနှင့် ဖျက်ခြင်း |
+| <a href="/tools/imgbed-token-manage.mjs" download>ဖိုင်စီမံခန့်ခွဲရေးစခရစ်</a> | ဖိုင် metadata၊ moderation labels၊ ဖိုင် tag များ၊ list အခြေအနေ၊ ရွှေ့ခြင်း၊ အမည်ပြောင်းခြင်း၊ ဖိုလ်ဒါဖန်တီးခြင်း၊ IP ပိတ်/ပြန်ဖွင့်ခြင်း၊ အချိန်တို upload Token ဖန်တီးခြင်းနှင့် ဖျက်ခြင်း |
 
 စခရစ်ကို run ရန် စက်တွင်းတွင် Node.js 18 သို့မဟုတ် ၎င်းထက်အသစ်သော ဗားရှင်း လိုအပ်သည်။
 

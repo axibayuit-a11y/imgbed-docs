@@ -30,9 +30,9 @@ Die ImgBed-Dokumentation enthält drei Node.js-Skripte:
 
 | Skript | Zweck |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>Skript für Hochladeeinstellungen herunterladen</a> | Verwaltet Hochladekanäle, Unterkanäle und Lastverteilung |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>Skript für Website-Einstellungen herunterladen</a> | Verwaltet Sicherheits-, Seiten- und weitere Einstellungen |
-| <a href="/tools/imgbed-token-federation.mjs" download>Skript für Föderationsbeziehungen herunterladen</a> | Verwaltet leichte Beziehungsaktionen, Beitrittsanfragen und Nachrichten |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>Skript für Hochladeeinstellungen</a> | Verwaltet Hochladekanäle, Unterkanäle und Lastverteilung |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>Skript für Website-Einstellungen</a> | Verwaltet Sicherheits-, Seiten- und weitere Einstellungen |
+| <a href="/tools/imgbed-token-federation.mjs" download>Skript für Föderationsbeziehungen</a> | Verwaltet leichte Beziehungsaktionen, Beitrittsanfragen und Nachrichten |
 
 Erforderlich ist Node.js 18 oder neuer.
 

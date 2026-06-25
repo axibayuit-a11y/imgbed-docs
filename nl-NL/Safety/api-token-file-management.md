@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Script | Gebruik |
 | --- | --- |
-| <a href="/tools/imgbed-token-manage.mjs" download>Script voor bestandsbeheer downloaden</a> | Bestandsmetadata, moderatielabels, bestandstags, lijststatus, verplaatsen, hernoemen, mappen maken, IP blokkeren/toestaan en kort geldige upload-Tokens maken of verwijderen |
+| <a href="/tools/imgbed-token-manage.mjs" download>Script voor bestandsbeheer</a> | Bestandsmetadata, moderatielabels, bestandstags, lijststatus, verplaatsen, hernoemen, mappen maken, IP blokkeren/toestaan en kort geldige upload-Tokens maken of verwijderen |
 
 Je hebt lokaal Node.js 18 of hoger nodig.
 

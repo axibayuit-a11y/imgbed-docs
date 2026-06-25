@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Skript | Účel |
 | --- | --- |
-| <a href="/tools/imgbed-token-manage.mjs" download>Stáhnout skript pro správu souborů</a> | Metadata souborů, moderační štítky, tagy souborů, stav seznamu, přesun, přejmenování, vytváření složek, blokování/obnovení IP a vytváření nebo mazání krátkodobých nahrávacích Tokenů |
+| <a href="/tools/imgbed-token-manage.mjs" download>skript pro správu souborů</a> | Metadata souborů, moderační štítky, tagy souborů, stav seznamu, přesun, přejmenování, vytváření složek, blokování/obnovení IP a vytváření nebo mazání krátkodobých nahrávacích Tokenů |
 
 Na místním počítači je potřeba Node.js 18 nebo novější.
 

@@ -20,8 +20,8 @@ Dokumentasi ImgBed menyediakan dua skrip Node.js:
 
 | Skrip | Kegunaan |
 | --- | --- |
-| <a href="/tools/imgbed-token-single-upload.mjs" download>Unduh skrip unggahan satu permintaan</a> | Memanggil `/upload` satu kali saja; cocok untuk berkas kecil dan uji koneksi antarmuka |
-| <a href="/tools/imgbed-token-chunk-upload.mjs" download>Unduh skrip unggahan bertahap</a> | Memakai unggahan bertahap, unggahan langsung, atau sesi platform sesuai kanal; cocok untuk berkas besar |
+| <a href="/tools/imgbed-token-single-upload.mjs" download>skrip unggahan satu permintaan</a> | Memanggil `/upload` satu kali saja; cocok untuk berkas kecil dan uji koneksi antarmuka |
+| <a href="/tools/imgbed-token-chunk-upload.mjs" download>skrip unggahan bertahap</a> | Memakai unggahan bertahap, unggahan langsung, atau sesi platform sesuai kanal; cocok untuk berkas besar |
 
 Skrip membutuhkan Node.js 18 atau versi yang lebih baru.
 

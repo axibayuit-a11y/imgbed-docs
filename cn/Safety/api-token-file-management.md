@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="你的 API Token"
 
 | 脚本 | 用途 |
 | --- | --- |
-| <a href="/tools/imgbed-token-manage.mjs" download>下载文件管理脚本</a> | 文件元数据、审查标签、文件标签、名单状态、移动、重命名、创建文件夹、IP 禁用/恢复、短期上传 Token 创建和删除 |
+| <a href="/tools/imgbed-token-manage.mjs" download>文件管理脚本</a> | 文件元数据、审查标签、文件标签、名单状态、移动、重命名、创建文件夹、IP 禁用/恢复、短期上传 Token 创建和删除 |
 
 运行脚本需要本机安装 Node.js 18 或更高版本。
 

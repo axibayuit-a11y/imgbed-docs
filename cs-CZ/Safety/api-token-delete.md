@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Skript | Účel |
 | --- | --- |
-| <a href="/tools/imgbed-token-delete.mjs" download>Stáhnout skript pro mazání souborů</a> | Smaže jedno nebo více výslovně zadaných ID souborů |
+| <a href="/tools/imgbed-token-delete.mjs" download>skript pro mazání souborů</a> | Smaže jedno nebo více výslovně zadaných ID souborů |
 
 Na místním počítači je potřeba Node.js 18 nebo novější.
 

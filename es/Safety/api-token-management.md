@@ -30,9 +30,9 @@ La documentación incluye tres scripts de Node.js:
 
 | Script | Uso |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>Descargar script de gestión de subidas</a> | Gestiona canales de subida, subcanales y balanceo de carga. |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>Descargar script de ajustes del sitio</a> | Gestiona seguridad, páginas y otros ajustes. |
-| <a href="/tools/imgbed-token-federation.mjs" download>Descargar script de relaciones federadas</a> | Gestiona acciones federadas ligeras, solicitudes y mensajes. |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>script de gestión de subidas</a> | Gestiona canales de subida, subcanales y balanceo de carga. |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>script de ajustes del sitio</a> | Gestiona seguridad, páginas y otros ajustes. |
+| <a href="/tools/imgbed-token-federation.mjs" download>script de relaciones federadas</a> | Gestiona acciones federadas ligeras, solicitudes y mensajes. |
 
 Necesitas Node.js 18 o superior.
 

@@ -33,7 +33,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Skript | Účel |
 | --- | --- |
-| <a href="/tools/imgbed-token-list.mjs" download>Stáhnout skript pro výpis a filtrování</a> | Výpis správy souborů, výpis správy uživatelů, seznam nahrávacích kanálů a tabulka statistik složek |
+| <a href="/tools/imgbed-token-list.mjs" download>skript pro výpis a filtrování</a> | Výpis správy souborů, výpis správy uživatelů, seznam nahrávacích kanálů a tabulka statistik složek |
 
 Na místním počítači je potřeba Node.js 18 nebo novější.
 

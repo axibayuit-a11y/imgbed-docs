@@ -30,9 +30,9 @@ La documentazione include tre script Node.js:
 
 | Script | Uso |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>Scarica lo script per le impostazioni di caricamento</a> | Gestisce canali di caricamento, sottocanali e bilanciamento del carico |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>Scarica lo script per le impostazioni del sito</a> | Gestisce sicurezza, pagine e altre impostazioni |
-| <a href="/tools/imgbed-token-federation.mjs" download>Scarica lo script di federazione</a> | Gestisce azioni leggere di relazione, richieste e messaggi |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>script per le impostazioni di caricamento</a> | Gestisce canali di caricamento, sottocanali e bilanciamento del carico |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>script per le impostazioni del sito</a> | Gestisce sicurezza, pagine e altre impostazioni |
+| <a href="/tools/imgbed-token-federation.mjs" download>script di federazione</a> | Gestisce azioni leggere di relazione, richieste e messaggi |
 
 Serve Node.js 18 o superiore installato in locale.
 

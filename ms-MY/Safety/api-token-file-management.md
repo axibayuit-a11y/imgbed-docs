@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Skrip | Kegunaan |
 | --- | --- |
-| <a href="/tools/imgbed-token-manage.mjs" download>Muat turun skrip pengurusan fail</a> | Metadata fail, label semakan, tag fail, status senarai, pindah, nama semula, cipta folder, sekat/pulih IP, cipta dan padam Token muat naik jangka pendek |
+| <a href="/tools/imgbed-token-manage.mjs" download>skrip pengurusan fail</a> | Metadata fail, label semakan, tag fail, status senarai, pindah, nama semula, cipta folder, sekat/pulih IP, cipta dan padam Token muat naik jangka pendek |
 
 Untuk menjalankan skrip, komputer setempat perlu memasang Node.js 18 atau versi lebih baharu.
 

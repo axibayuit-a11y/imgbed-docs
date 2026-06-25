@@ -30,9 +30,9 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | اسکرپٹ | مقصد |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>upload settings management script ڈاؤن لوڈ کریں</a> | اپ لوڈ چینلز، child channels، اور load balancing manage کریں۔ |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>site settings management script ڈاؤن لوڈ کریں</a> | security settings، page settings، اور other settings manage کریں۔ |
-| <a href="/tools/imgbed-token-federation.mjs" download>federation relation management script ڈاؤن لوڈ کریں</a> | lightweight federation relation actions، requests، اور messages manage کریں۔ |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>اپ لوڈ ترتیبات مینجمنٹ اسکرپٹ</a> | اپ لوڈ چینلز، child channels، اور load balancing manage کریں۔ |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>سائٹ ترتیبات مینجمنٹ اسکرپٹ</a> | security settings، page settings، اور other settings manage کریں۔ |
+| <a href="/tools/imgbed-token-federation.mjs" download>فیڈریشن تعلقات مینجمنٹ اسکرپٹ</a> | lightweight federation relation actions، requests، اور messages manage کریں۔ |
 
 Node.js 18 یا بعد کا ورژن درکار ہے۔
 

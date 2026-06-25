@@ -30,9 +30,9 @@ Dokumentace ImgBed obsahuje tři skripty pro Node.js:
 
 | Skript | Účel |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>Stáhnout skript pro správu nahrávacích nastavení</a> | Správa nahrávacích kanálů, podkanálů a vyvažování zátěže |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>Stáhnout skript pro správu nastavení webu</a> | Správa zabezpečení, nastavení stránek a dalších nastavení |
-| <a href="/tools/imgbed-token-federation.mjs" download>Stáhnout skript pro správu federačních vztahů</a> | Správa lehkých vztahových akcí, žádostí o připojení a zpráv |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>skript pro správu nahrávacích nastavení</a> | Správa nahrávacích kanálů, podkanálů a vyvažování zátěže |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>skript pro správu nastavení webu</a> | Správa zabezpečení, nastavení stránek a dalších nastavení |
+| <a href="/tools/imgbed-token-federation.mjs" download>skript pro správu federačních vztahů</a> | Správa lehkých vztahových akcí, žádostí o připojení a zpráv |
 
 Na místním počítači je potřeba Node.js 18 nebo novější.
 

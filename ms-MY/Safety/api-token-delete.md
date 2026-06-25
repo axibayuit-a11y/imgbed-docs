@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Skrip | Kegunaan |
 | --- | --- |
-| <a href="/tools/imgbed-token-delete.mjs" download>Muat turun skrip padam fail</a> | Memadam satu atau beberapa ID fail yang dinyatakan dengan jelas |
+| <a href="/tools/imgbed-token-delete.mjs" download>skrip padam fail</a> | Memadam satu atau beberapa ID fail yang dinyatakan dengan jelas |
 
 Skrip ini memerlukan Node.js 18 atau lebih baharu.
 

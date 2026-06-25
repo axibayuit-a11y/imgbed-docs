@@ -20,8 +20,8 @@ Pakiet dokumentacji udostępnia dwa skrypty Node.js:
 
 | Skrypt | Przeznaczenie |
 | --- | --- |
-| <a href="/tools/imgbed-token-single-upload.mjs" download>Pobierz skrypt przesyłania pojedynczym żądaniem</a> | Wywołuje `/upload` jeden raz. Przydatny przy małych plikach i testach łączności. |
-| <a href="/tools/imgbed-token-chunk-upload.mjs" download>Pobierz skrypt przesyłania fragmentami</a> | Używa fragmentowania przez API Token, przesyłania bezpośredniego albo sesji przesyłania platformy. Zalecany dla dużych plików. |
+| <a href="/tools/imgbed-token-single-upload.mjs" download>skrypt przesyłania pojedynczym żądaniem</a> | Wywołuje `/upload` jeden raz. Przydatny przy małych plikach i testach łączności. |
+| <a href="/tools/imgbed-token-chunk-upload.mjs" download>skrypt przesyłania fragmentami</a> | Używa fragmentowania przez API Token, przesyłania bezpośredniego albo sesji przesyłania platformy. Zalecany dla dużych plików. |
 
 Wymagany jest Node.js 18 lub nowszy.
 

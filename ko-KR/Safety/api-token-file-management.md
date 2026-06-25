@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | 스크립트 | 용도 |
 | --- | --- |
-| <a href="/tools/imgbed-token-manage.mjs" download>파일 관리 스크립트 다운로드</a> | 파일 메타데이터, 검토 라벨, 파일 태그, 목록 상태, 이동, 이름 변경, 폴더 생성, IP 차단/복구, 단기 업로드 Token 생성과 삭제 |
+| <a href="/tools/imgbed-token-manage.mjs" download>파일 관리 스크립트</a> | 파일 메타데이터, 검토 라벨, 파일 태그, 목록 상태, 이동, 이름 변경, 폴더 생성, IP 차단/복구, 단기 업로드 Token 생성과 삭제 |
 
 스크립트를 실행하려면 로컬에 Node.js 18 이상이 설치되어 있어야 합니다.
 

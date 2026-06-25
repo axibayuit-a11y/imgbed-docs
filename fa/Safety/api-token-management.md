@@ -30,9 +30,9 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | اسکریپت | کاربرد |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>دانلود اسکریپت مدیریت تنظیمات آپلود</a> | مدیریت کانال‌های آپلود، کانال‌های فرعی و توازن بار |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>دانلود اسکریپت مدیریت تنظیمات سایت</a> | مدیریت تنظیمات امنیتی، تنظیمات صفحه‌ها و تنظیمات دیگر |
-| <a href="/tools/imgbed-token-federation.mjs" download>دانلود اسکریپت مدیریت روابط فدراسیون</a> | مدیریت کارهای سبک رابطه، درخواست‌های پیوستن و پیام‌ها |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>اسکریپت مدیریت تنظیمات آپلود</a> | مدیریت کانال‌های آپلود، کانال‌های فرعی و توازن بار |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>اسکریپت مدیریت تنظیمات سایت</a> | مدیریت تنظیمات امنیتی، تنظیمات صفحه‌ها و تنظیمات دیگر |
+| <a href="/tools/imgbed-token-federation.mjs" download>اسکریپت مدیریت روابط فدراسیون</a> | مدیریت کارهای سبک رابطه، درخواست‌های پیوستن و پیام‌ها |
 
 برای اجرا، Node.js 18 یا نسخه جدیدتر لازم است.
 

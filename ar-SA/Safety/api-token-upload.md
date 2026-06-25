@@ -20,8 +20,8 @@ System Settings -> Security Settings -> API Token
 
 | السكربت | الغرض |
 | --- | --- |
-| <a href="/tools/imgbed-token-single-upload.mjs" download>تنزيل سكربت الرفع بطلب واحد</a> | يستدعي `/upload` مرة واحدة. مفيد للملفات الصغيرة واختبارات الاتصال. |
-| <a href="/tools/imgbed-token-chunk-upload.mjs" download>تنزيل سكربت الرفع المجزأ</a> | يستخدم التجزئة عبر API Token أو الرفع المباشر أو جلسات الرفع الخاصة بالمنصة. موصى به للملفات الكبيرة. |
+| <a href="/tools/imgbed-token-single-upload.mjs" download>سكربت الرفع بطلب واحد</a> | يستدعي `/upload` مرة واحدة. مفيد للملفات الصغيرة واختبارات الاتصال. |
+| <a href="/tools/imgbed-token-chunk-upload.mjs" download>سكربت الرفع المجزأ</a> | يستخدم التجزئة عبر API Token أو الرفع المباشر أو جلسات الرفع الخاصة بالمنصة. موصى به للملفات الكبيرة. |
 
 يتطلب ذلك Node.js 18 أو إصدارًا أحدث.
 

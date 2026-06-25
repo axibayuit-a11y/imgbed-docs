@@ -20,8 +20,8 @@ System Settings -> Security Settings -> API Token
 
 | Скрипт | Назначение |
 | --- | --- |
-| <a href="/tools/imgbed-token-single-upload.mjs" download>Скачать скрипт загрузки одним запросом</a> | Один раз вызывает `/upload`. Подходит для небольших файлов и проверки соединения. |
-| <a href="/tools/imgbed-token-chunk-upload.mjs" download>Скачать скрипт загрузки частями</a> | Использует разбиение через API Token, прямую загрузку или сессии загрузки платформы. Рекомендуется для больших файлов. |
+| <a href="/tools/imgbed-token-single-upload.mjs" download>скрипт загрузки одним запросом</a> | Один раз вызывает `/upload`. Подходит для небольших файлов и проверки соединения. |
+| <a href="/tools/imgbed-token-chunk-upload.mjs" download>скрипт загрузки частями</a> | Использует разбиение через API Token, прямую загрузку или сессии загрузки платформы. Рекомендуется для больших файлов. |
 
 Требуется Node.js 18 или новее.
 

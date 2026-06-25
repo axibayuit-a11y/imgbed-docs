@@ -33,7 +33,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Skript | Zweck |
 | --- | --- |
-| <a href="/tools/imgbed-token-list.mjs" download>Skript zum Auflisten und Filtern herunterladen</a> | Dateiverwaltung auflisten, Benutzerverwaltung auflisten, Hochladekanäle auflisten und Ordnerstatistiken lesen |
+| <a href="/tools/imgbed-token-list.mjs" download>Skript zum Auflisten und Filtern</a> | Dateiverwaltung auflisten, Benutzerverwaltung auflisten, Hochladekanäle auflisten und Ordnerstatistiken lesen |
 
 Erforderlich ist Node.js 18 oder neuer.
 

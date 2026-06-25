@@ -30,9 +30,9 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | স্ক্রিপ্ট | উদ্দেশ্য |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>আপলোড সেটিংস ব্যবস্থাপনা স্ক্রিপ্ট ডাউনলোড</a> | আপলোড চ্যানেল, উপ-চ্যানেল এবং লোড ব্যাল্যান্সিং পরিচালনা. |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>সাইট সেটিংস ব্যবস্থাপনা স্ক্রিপ্ট ডাউনলোড</a> | নিরাপত্তা সেটিংস, পাতা সেটিংস এবং অন্যান্য সেটিংস পরিচালনা. |
-| <a href="/tools/imgbed-token-federation.mjs" download>ফেডারেশন সম্পর্ক ব্যবস্থাপনা স্ক্রিপ্ট ডাউনলোড</a> | হালকা ফেডারেশন সম্পর্কের কাজ, অনুরোধ এবং বার্তা পরিচালনা. |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>আপলোড সেটিংস ব্যবস্থাপনা স্ক্রিপ্ট</a> | আপলোড চ্যানেল, উপ-চ্যানেল এবং লোড ব্যাল্যান্সিং পরিচালনা. |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>সাইট সেটিংস ব্যবস্থাপনা স্ক্রিপ্ট</a> | নিরাপত্তা সেটিংস, পাতা সেটিংস এবং অন্যান্য সেটিংস পরিচালনা. |
+| <a href="/tools/imgbed-token-federation.mjs" download>ফেডারেশন সম্পর্ক ব্যবস্থাপনা স্ক্রিপ্ট</a> | হালকা ফেডারেশন সম্পর্কের কাজ, অনুরোধ এবং বার্তা পরিচালনা. |
 
 Node.js 18 বা তার নতুন সংস্করণ প্রয়োজন.
 

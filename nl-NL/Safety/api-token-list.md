@@ -33,7 +33,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Script | Gebruik |
 | --- | --- |
-| <a href="/tools/imgbed-token-list.mjs" download>Script voor lijsten en filteren downloaden</a> | Lijst in bestandsbeheer, lijst in gebruikersbeheer, lijst met uploadkanalen, mapstatistiektabel |
+| <a href="/tools/imgbed-token-list.mjs" download>Script voor lijsten en filteren</a> | Lijst in bestandsbeheer, lijst in gebruikersbeheer, lijst met uploadkanalen, mapstatistiektabel |
 
 Je hebt lokaal Node.js 18 of hoger nodig.
 

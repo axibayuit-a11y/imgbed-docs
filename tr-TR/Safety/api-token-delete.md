@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Betik | Kullanım |
 | --- | --- |
-| <a href="/tools/imgbed-token-delete.mjs" download>Dosya silme betiğini indir</a> | Açıkça belirtilen bir veya birden fazla dosya ID'sini siler |
+| <a href="/tools/imgbed-token-delete.mjs" download>Dosya silme betiği</a> | Açıkça belirtilen bir veya birden fazla dosya ID'sini siler |
 
 Node.js 18 veya üzeri gerekir.
 

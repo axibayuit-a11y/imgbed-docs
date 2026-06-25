@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | السكربت | الغرض |
 | --- | --- |
-| <a href="/tools/imgbed-token-delete.mjs" download>تنزيل سكربت حذف الملفات</a> | حذف معرّف ملف واحد أو عدة معرّفات ملفات محددة صراحة. |
+| <a href="/tools/imgbed-token-delete.mjs" download>سكربت حذف الملفات</a> | حذف معرّف ملف واحد أو عدة معرّفات ملفات محددة صراحة. |
 
 يتطلب ذلك Node.js 18 أو إصدارًا أحدث.
 

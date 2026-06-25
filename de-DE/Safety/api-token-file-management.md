@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Skript | Zweck |
 | --- | --- |
-| <a href="/tools/imgbed-token-manage.mjs" download>Dateiverwaltungsskript herunterladen</a> | Dateimetadaten, Moderationslabels, Dateitags, Listenstatus, Verschieben, Umbenennen, Ordnererstellung, IP-Sperre/-Freigabe sowie Erstellung und Löschung kurzlebiger Upload-Tokens |
+| <a href="/tools/imgbed-token-manage.mjs" download>Dateiverwaltungsskript</a> | Dateimetadaten, Moderationslabels, Dateitags, Listenstatus, Verschieben, Umbenennen, Ordnererstellung, IP-Sperre/-Freigabe sowie Erstellung und Löschung kurzlebiger Upload-Tokens |
 
 Zum Ausführen des Skripts ist lokal Node.js 18 oder neuer erforderlich.
 

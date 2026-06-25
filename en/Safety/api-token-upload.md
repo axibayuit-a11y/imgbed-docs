@@ -20,8 +20,8 @@ The documentation package provides two Node.js scripts:
 
 | Script | Purpose |
 | --- | --- |
-| <a href="/tools/imgbed-token-single-upload.mjs" download>Download single-request upload script</a> | Calls `/upload` once. Useful for small files and connectivity tests. |
-| <a href="/tools/imgbed-token-chunk-upload.mjs" download>Download chunked upload script</a> | Uses API Token chunking, direct upload, or platform upload sessions. Recommended for large files. |
+| <a href="/tools/imgbed-token-single-upload.mjs" download>single-request upload script</a> | Calls `/upload` once. Useful for small files and connectivity tests. |
+| <a href="/tools/imgbed-token-chunk-upload.mjs" download>chunked upload script</a> | Uses API Token chunking, direct upload, or platform upload sessions. Recommended for large files. |
 
 Node.js 18 or later is required.
 

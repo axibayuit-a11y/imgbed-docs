@@ -20,8 +20,8 @@ Dokümantasyon paketi iki Node.js betiği sağlar:
 
 | Betik | Amaç |
 | --- | --- |
-| <a href="/tools/imgbed-token-single-upload.mjs" download>Tek istekli yükleme betiğini indir</a> | `/upload` öğesini bir kez çağırır. Küçük dosyalar ve bağlantı testleri için kullanışlıdır. |
-| <a href="/tools/imgbed-token-chunk-upload.mjs" download>Parçalı yükleme betiğini indir</a> | API Token parçalama, doğrudan yükleme veya platform yükleme oturumlarını kullanır. Büyük dosyalar için önerilir. |
+| <a href="/tools/imgbed-token-single-upload.mjs" download>Tek istekli yükleme betiği</a> | `/upload` öğesini bir kez çağırır. Küçük dosyalar ve bağlantı testleri için kullanışlıdır. |
+| <a href="/tools/imgbed-token-chunk-upload.mjs" download>Parçalı yükleme betiği</a> | API Token parçalama, doğrudan yükleme veya platform yükleme oturumlarını kullanır. Büyük dosyalar için önerilir. |
 
 Node.js 18 veya üzeri gerekir.
 

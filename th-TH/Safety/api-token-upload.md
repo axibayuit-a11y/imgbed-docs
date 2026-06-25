@@ -20,8 +20,8 @@ System Settings -> Security Settings -> API Token
 
 | สคริปต์ | วัตถุประสงค์ |
 | --- | --- |
-| <a href="/tools/imgbed-token-single-upload.mjs" download>ดาวน์โหลดสคริปต์อัปโหลดแบบคำขอเดียว</a> | เรียก `/upload` หนึ่งครั้ง เหมาะสำหรับไฟล์ขนาดเล็กและการทดสอบการเชื่อมต่อ |
-| <a href="/tools/imgbed-token-chunk-upload.mjs" download>ดาวน์โหลดสคริปต์อัปโหลดแบบแบ่งส่วน</a> | ใช้การแบ่งส่วนผ่าน API Token, การอัปโหลดโดยตรง หรือเซสชันอัปโหลดของแพลตฟอร์ม แนะนำสำหรับไฟล์ขนาดใหญ่ |
+| <a href="/tools/imgbed-token-single-upload.mjs" download>สคริปต์อัปโหลดแบบคำขอเดียว</a> | เรียก `/upload` หนึ่งครั้ง เหมาะสำหรับไฟล์ขนาดเล็กและการทดสอบการเชื่อมต่อ |
+| <a href="/tools/imgbed-token-chunk-upload.mjs" download>สคริปต์อัปโหลดแบบแบ่งส่วน</a> | ใช้การแบ่งส่วนผ่าน API Token, การอัปโหลดโดยตรง หรือเซสชันอัปโหลดของแพลตฟอร์ม แนะนำสำหรับไฟล์ขนาดใหญ่ |
 
 ต้องใช้ Node.js 18 หรือใหม่กว่า
 

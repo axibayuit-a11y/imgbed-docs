@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Script | Uso |
 | --- | --- |
-| <a href="/tools/imgbed-token-delete.mjs" download>Scarica lo script di eliminazione file</a> | Elimina uno o più ID file indicati esplicitamente |
+| <a href="/tools/imgbed-token-delete.mjs" download>script di eliminazione file</a> | Elimina uno o più ID file indicati esplicitamente |
 
 Serve Node.js 18 o superiore installato in locale.
 

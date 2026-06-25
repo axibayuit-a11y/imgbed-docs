@@ -33,7 +33,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Script | Uso |
 | --- | --- |
-| <a href="/tools/imgbed-token-list.mjs" download>Descargar script de listado y filtrado</a> | Listado del gestor de archivos, listado de gestión de usuarios, lista de canales de subida y estadísticas de directorios. |
+| <a href="/tools/imgbed-token-list.mjs" download>script de listado y filtrado</a> | Listado del gestor de archivos, listado de gestión de usuarios, lista de canales de subida y estadísticas de directorios. |
 
 Necesitas Node.js 18 o superior en el equipo local.
 

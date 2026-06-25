@@ -20,8 +20,8 @@ System Settings -> Security Settings -> API Token
 
 | سکرېپټ | موخه |
 | --- | --- |
-| <a href="/tools/imgbed-token-single-upload.mjs" download>د یوې غوښتنې د پورته کولو سکرېپټ کښته کړئ</a> | `/upload` یو ځل غږوي. د وړو فایلونو او د اړیکې د ازموینو لپاره ګټور دی. |
-| <a href="/tools/imgbed-token-chunk-upload.mjs" download>د ټوټه-ټوټه پورته کولو سکرېپټ کښته کړئ</a> | د API Token ټوټه کول، مستقیم پورته کول یا د پلاتفورم د پورته کولو ناستې کاروي. د لویو فایلونو لپاره سپارښتنه کېږي. |
+| <a href="/tools/imgbed-token-single-upload.mjs" download>د یوې غوښتنې د پورته کولو سکرېپټ</a> | `/upload` یو ځل غږوي. د وړو فایلونو او د اړیکې د ازموینو لپاره ګټور دی. |
+| <a href="/tools/imgbed-token-chunk-upload.mjs" download>د ټوټه-ټوټه پورته کولو سکرېپټ</a> | د API Token ټوټه کول، مستقیم پورته کول یا د پلاتفورم د پورته کولو ناستې کاروي. د لویو فایلونو لپاره سپارښتنه کېږي. |
 
 Node.js 18 یا تر هغه نوی نسخه اړینه ده.
 

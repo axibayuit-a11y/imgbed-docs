@@ -20,8 +20,8 @@ Gói tài liệu cung cấp hai tập lệnh Node.js:
 
 | Tập lệnh | Mục đích |
 | --- | --- |
-| <a href="/tools/imgbed-token-single-upload.mjs" download>Tải tập lệnh tải lên một yêu cầu</a> | Gọi `/upload` một lần. Hữu ích cho tệp nhỏ và kiểm tra kết nối. |
-| <a href="/tools/imgbed-token-chunk-upload.mjs" download>Tải tập lệnh tải lên theo phần</a> | Dùng chia phần bằng API Token, tải trực tiếp hoặc phiên tải lên của nền tảng. Khuyến nghị cho tệp lớn. |
+| <a href="/tools/imgbed-token-single-upload.mjs" download>tập lệnh tải lên một yêu cầu</a> | Gọi `/upload` một lần. Hữu ích cho tệp nhỏ và kiểm tra kết nối. |
+| <a href="/tools/imgbed-token-chunk-upload.mjs" download>tập lệnh tải lên theo phần</a> | Dùng chia phần bằng API Token, tải trực tiếp hoặc phiên tải lên của nền tảng. Khuyến nghị cho tệp lớn. |
 
 Yêu cầu Node.js 18 trở lên.
 

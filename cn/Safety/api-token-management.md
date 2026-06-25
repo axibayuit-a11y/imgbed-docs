@@ -28,9 +28,9 @@ $env:IMGBED_API_TOKEN="你的 API Token"
 
 | 脚本 | 用途 |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>下载上传设置管理脚本</a> | 管理上传渠道、子渠道和负载均衡 |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>下载站点设置管理脚本</a> | 管理安全设置、页面设置和其他设置 |
-| <a href="/tools/imgbed-token-federation.mjs" download>下载联盟关系管理脚本</a> | 管理联盟轻量关系动作、申请和留言 |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>上传设置管理脚本</a> | 管理上传渠道、子渠道和负载均衡 |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>站点设置管理脚本</a> | 管理安全设置、页面设置和其他设置 |
+| <a href="/tools/imgbed-token-federation.mjs" download>联盟关系管理脚本</a> | 管理联盟轻量关系动作、申请和留言 |
 
 运行脚本需要本机安装 Node.js 18 或更高版本。
 

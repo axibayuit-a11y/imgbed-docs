@@ -33,7 +33,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | スクリプト | 用途 |
 | --- | --- |
-| <a href="/tools/imgbed-token-list.mjs" download>一覧取得と絞り込みスクリプトをダウンロード</a> | ファイル管理の一覧取得、ユーザー管理の一覧取得、アップロードチャンネル一覧、ディレクトリ統計表 |
+| <a href="/tools/imgbed-token-list.mjs" download>一覧取得と絞り込みスクリプト</a> | ファイル管理の一覧取得、ユーザー管理の一覧取得、アップロードチャンネル一覧、ディレクトリ統計表 |
 
 実行には Node.js 18 以上が必要です。
 

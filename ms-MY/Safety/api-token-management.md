@@ -30,9 +30,9 @@ Dokumentasi ImgBed menyediakan tiga skrip Node.js:
 
 | Skrip | Kegunaan |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>Muat turun skrip pengurusan tetapan muat naik</a> | Mengurus saluran muat naik, subsaluran dan pengimbangan beban |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>Muat turun skrip pengurusan tetapan tapak</a> | Mengurus tetapan keselamatan, tetapan halaman dan tetapan lain |
-| <a href="/tools/imgbed-token-federation.mjs" download>Muat turun skrip pengurusan hubungan federasi</a> | Mengurus tindakan hubungan ringan, permintaan menyertai dan mesej |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>skrip pengurusan tetapan muat naik</a> | Mengurus saluran muat naik, subsaluran dan pengimbangan beban |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>skrip pengurusan tetapan tapak</a> | Mengurus tetapan keselamatan, tetapan halaman dan tetapan lain |
+| <a href="/tools/imgbed-token-federation.mjs" download>skrip pengurusan hubungan federasi</a> | Mengurus tindakan hubungan ringan, permintaan menyertai dan mesej |
 
 Skrip memerlukan Node.js 18 atau versi yang lebih baharu.
 

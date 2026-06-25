@@ -20,8 +20,8 @@ Dokumentace ImgBed obsahuje dva skripty pro Node.js:
 
 | Skript | Účel |
 | --- | --- |
-| <a href="/tools/imgbed-token-single-upload.mjs" download>Stáhnout skript pro nahrání jedním požadavkem</a> | Zavolá `/upload` pouze jednou; hodí se pro malé soubory a zkoušku rozhraní |
-| <a href="/tools/imgbed-token-chunk-upload.mjs" download>Stáhnout skript pro nahrávání po částech</a> | Podle kanálu použije nahrávání po částech, přímé nahrávání nebo relaci dané platformy; hodí se pro velké soubory |
+| <a href="/tools/imgbed-token-single-upload.mjs" download>skript pro nahrání jedním požadavkem</a> | Zavolá `/upload` pouze jednou; hodí se pro malé soubory a zkoušku rozhraní |
+| <a href="/tools/imgbed-token-chunk-upload.mjs" download>skript pro nahrávání po částech</a> | Podle kanálu použije nahrávání po částech, přímé nahrávání nebo relaci dané platformy; hodí se pro velké soubory |
 
 Na místním počítači je potřeba Node.js 18 nebo novější.
 

@@ -20,8 +20,8 @@ System Settings -> Security Settings -> API Token
 
 | 腳本 | 用途 |
 | --- | --- |
-| <a href="/tools/imgbed-token-single-upload.mjs" download>下載單次上傳腳本</a> | 只呼叫一次 `/upload`，適合小檔案和介面連通性測試 |
-| <a href="/tools/imgbed-token-chunk-upload.mjs" download>下載分塊上傳腳本</a> | 使用 API Token 的分塊、直傳或平台工作階段介面，適合大檔案 |
+| <a href="/tools/imgbed-token-single-upload.mjs" download>單次上傳腳本</a> | 只呼叫一次 `/upload`，適合小檔案和介面連通性測試 |
+| <a href="/tools/imgbed-token-chunk-upload.mjs" download>分塊上傳腳本</a> | 使用 API Token 的分塊、直傳或平台工作階段介面，適合大檔案 |
 
 執行腳本需要本機安裝 Node.js 18 或更高版本。
 

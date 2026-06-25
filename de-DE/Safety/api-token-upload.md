@@ -20,8 +20,8 @@ Die ImgBed-Dokumentation enthält zwei Node.js-Skripte:
 
 | Skript | Zweck |
 | --- | --- |
-| <a href="/tools/imgbed-token-single-upload.mjs" download>Skript für Hochladen mit einer Anfrage herunterladen</a> | Ruft `/upload` nur einmal auf; geeignet für kleine Dateien und Schnittstellentests |
-| <a href="/tools/imgbed-token-chunk-upload.mjs" download>Skript für Hochladen in Teilen herunterladen</a> | Nutzt je nach Kanal Teilübertragung, direkte Übertragung oder eine Plattform-Sitzung; geeignet für große Dateien |
+| <a href="/tools/imgbed-token-single-upload.mjs" download>Skript für Hochladen mit einer Anfrage</a> | Ruft `/upload` nur einmal auf; geeignet für kleine Dateien und Schnittstellentests |
+| <a href="/tools/imgbed-token-chunk-upload.mjs" download>Skript für Hochladen in Teilen</a> | Nutzt je nach Kanal Teilübertragung, direkte Übertragung oder eine Plattform-Sitzung; geeignet für große Dateien |
 
 Erforderlich ist Node.js 18 oder neuer.
 

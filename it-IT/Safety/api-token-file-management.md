@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Script | Uso |
 | --- | --- |
-| <a href="/tools/imgbed-token-manage.mjs" download>Scarica lo script di gestione dei file</a> | Metadati dei file, etichette di moderazione, tag dei file, stato delle liste, spostamento, rinomina, creazione cartelle, blocco/ripristino IP, creazione ed eliminazione di Token di caricamento a breve durata |
+| <a href="/tools/imgbed-token-manage.mjs" download>script di gestione dei file</a> | Metadati dei file, etichette di moderazione, tag dei file, stato delle liste, spostamento, rinomina, creazione cartelle, blocco/ripristino IP, creazione ed eliminazione di Token di caricamento a breve durata |
 
 Per eseguire lo script serve Node.js 18 o una versione successiva installata in locale.
 

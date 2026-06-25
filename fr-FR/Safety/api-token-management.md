@@ -30,9 +30,9 @@ La documentation fournit trois scripts Node.js :
 
 | Script | Utilisation |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>Télécharger le script de gestion des téléversements</a> | Gère les canaux de téléversement, sous-canaux et l’équilibrage de charge. |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>Télécharger le script de paramètres du site</a> | Gère les paramètres de sécurité, de page et autres. |
-| <a href="/tools/imgbed-token-federation.mjs" download>Télécharger le script de relations fédérées</a> | Gère les actions fédérées légères, les demandes et les messages. |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>script de gestion des téléversements</a> | Gère les canaux de téléversement, sous-canaux et l’équilibrage de charge. |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>script de paramètres du site</a> | Gère les paramètres de sécurité, de page et autres. |
+| <a href="/tools/imgbed-token-federation.mjs" download>script de relations fédérées</a> | Gère les actions fédérées légères, les demandes et les messages. |
 
 Node.js 18 ou plus récent est nécessaire.
 

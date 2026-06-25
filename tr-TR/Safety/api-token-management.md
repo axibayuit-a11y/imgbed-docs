@@ -30,9 +30,9 @@ Dokümantasyon paketi üç Node.js betiği sağlar:
 
 | Betik | Amaç |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>Yükleme ayarları yönetim betiğini indir</a> | Yükleme kanallarını, alt kanalları ve yük dengelemeyi yönetir. |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>Site ayarları yönetim betiğini indir</a> | Güvenlik ayarlarını, sayfa ayarlarını ve diğer ayarları yönetir. |
-| <a href="/tools/imgbed-token-federation.mjs" download>Federasyon ilişkisi yönetim betiğini indir</a> | Hafif federasyon ilişkisi işlemlerini, istekleri ve mesajları yönetir. |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>Yükleme ayarları yönetim betiği</a> | Yükleme kanallarını, alt kanalları ve yük dengelemeyi yönetir. |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>Site ayarları yönetim betiği</a> | Güvenlik ayarlarını, sayfa ayarlarını ve diğer ayarları yönetir. |
+| <a href="/tools/imgbed-token-federation.mjs" download>Federasyon ilişkisi yönetim betiği</a> | Hafif federasyon ilişkisi işlemlerini, istekleri ve mesajları yönetir. |
 
 Node.js 18 veya üzeri gerekir.
 

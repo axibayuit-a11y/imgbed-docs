@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Skrypt | Zastosowanie |
 | --- | --- |
-| <a href="/tools/imgbed-token-manage.mjs" download>Pobierz skrypt zarządzania plikami</a> | Metadane plików, etykiety moderacji, tagi plików, status listy, przenoszenie, zmiana nazwy, tworzenie folderów, blokowanie/przywracanie IP oraz tworzenie i usuwanie krótkoterminowych Tokenów przesyłania |
+| <a href="/tools/imgbed-token-manage.mjs" download>skrypt zarządzania plikami</a> | Metadane plików, etykiety moderacji, tagi plików, status listy, przenoszenie, zmiana nazwy, tworzenie folderów, blokowanie/przywracanie IP oraz tworzenie i usuwanie krótkoterminowych Tokenów przesyłania |
 
 Wymagany jest Node.js 18 lub nowszy zainstalowany lokalnie.
 

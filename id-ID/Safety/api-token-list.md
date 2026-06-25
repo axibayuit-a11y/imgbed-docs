@@ -33,7 +33,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Skrip | Kegunaan |
 | --- | --- |
-| <a href="/tools/imgbed-token-list.mjs" download>Unduh skrip daftar dan filter</a> | Daftar pengelolaan berkas, daftar pengelolaan pengguna, daftar kanal unggahan, dan tabel statistik folder |
+| <a href="/tools/imgbed-token-list.mjs" download>skrip daftar dan filter</a> | Daftar pengelolaan berkas, daftar pengelolaan pengguna, daftar kanal unggahan, dan tabel statistik folder |
 
 Skrip membutuhkan Node.js 18 atau versi yang lebih baru.
 

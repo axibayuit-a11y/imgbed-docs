@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Betik | Kullanım |
 | --- | --- |
-| <a href="/tools/imgbed-token-manage.mjs" download>Dosya yönetimi betiğini indir</a> | Dosya meta verileri, denetim etiketleri, dosya etiketleri, liste durumu, taşıma, yeniden adlandırma, klasör oluşturma, IP engelleme/geri açma, kısa süreli yükleme Token oluşturma ve silme |
+| <a href="/tools/imgbed-token-manage.mjs" download>Dosya yönetimi betiği</a> | Dosya meta verileri, denetim etiketleri, dosya etiketleri, liste durumu, taşıma, yeniden adlandırma, klasör oluşturma, IP engelleme/geri açma, kısa süreli yükleme Token oluşturma ve silme |
 
 Betiği çalıştırmak için yerel makinede Node.js 18 veya üzeri gerekir.
 

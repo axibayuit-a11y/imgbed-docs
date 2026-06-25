@@ -33,7 +33,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Tập lệnh | Mục đích |
 | --- | --- |
-| <a href="/tools/imgbed-token-list.mjs" download>Tải tập lệnh liệt kê và lọc</a> | Liệt kê trong trình quản lý tệp, liệt kê trong quản lý người dùng, danh sách kênh tải lên và thống kê thư mục. |
+| <a href="/tools/imgbed-token-list.mjs" download>tập lệnh liệt kê và lọc</a> | Liệt kê trong trình quản lý tệp, liệt kê trong quản lý người dùng, danh sách kênh tải lên và thống kê thư mục. |
 
 Yêu cầu Node.js 18 trở lên.
 

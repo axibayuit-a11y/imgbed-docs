@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | سکریپټ | کار |
 | --- | --- |
-| <a href="/tools/imgbed-token-delete.mjs" download>د فایل ړنګولو سکریپټ ښکته کړئ</a> | یو یا څو په ښکاره ټاکل شوي فایل ID ړنګوي |
+| <a href="/tools/imgbed-token-delete.mjs" download>د فایل ړنګولو سکریپټ</a> | یو یا څو په ښکاره ټاکل شوي فایل ID ړنګوي |
 
 د چلولو لپاره Node.js 18 یا تر هغه نوی بڼه پکار ده.
 

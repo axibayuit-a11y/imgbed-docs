@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Tập lệnh | Mục đích |
 | --- | --- |
-| <a href="/tools/imgbed-token-delete.mjs" download>Tải tập lệnh xóa tệp</a> | Xóa một hoặc nhiều file ID được chỉ định rõ ràng. |
+| <a href="/tools/imgbed-token-delete.mjs" download>tập lệnh xóa tệp</a> | Xóa một hoặc nhiều file ID được chỉ định rõ ràng. |
 
 Yêu cầu Node.js 18 trở lên.
 

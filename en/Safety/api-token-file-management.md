@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Script | Purpose |
 | --- | --- |
-| <a href="/tools/imgbed-token-manage.mjs" download>Download the file management script</a> | File metadata, moderation labels, file tags, list status, move, rename, folder creation, IP blocking/restoration, and short-lived upload Token creation and deletion |
+| <a href="/tools/imgbed-token-manage.mjs" download>file management script</a> | File metadata, moderation labels, file tags, list status, move, rename, folder creation, IP blocking/restoration, and short-lived upload Token creation and deletion |
 
 Node.js 18 or later is required to run the script.
 

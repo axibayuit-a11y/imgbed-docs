@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | اسکرپٹ | استعمال |
 | --- | --- |
-| <a href="/tools/imgbed-token-manage.mjs" download>فائل مینجمنٹ اسکرپٹ ڈاؤن لوڈ کریں</a> | فائل metadata، moderation labels، فائل ٹیگز، فہرست کی حالت، منتقلی، نام بدلنا، فولڈر بنانا، IP بند/بحال کرنا، عارضی اپ لوڈ Token بنانا اور حذف کرنا |
+| <a href="/tools/imgbed-token-manage.mjs" download>فائل مینجمنٹ اسکرپٹ</a> | فائل metadata، moderation labels، فائل ٹیگز، فہرست کی حالت، منتقلی، نام بدلنا، فولڈر بنانا، IP بند/بحال کرنا، عارضی اپ لوڈ Token بنانا اور حذف کرنا |
 
 اسکرپٹ چلانے کے لیے مقامی مشین پر Node.js 18 یا اس سے نیا ورژن درکار ہے۔
 

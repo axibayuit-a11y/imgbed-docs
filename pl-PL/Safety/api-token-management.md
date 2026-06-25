@@ -30,9 +30,9 @@ Pakiet dokumentacji udostępnia trzy skrypty Node.js:
 
 | Skrypt | Przeznaczenie |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>Pobierz skrypt zarządzania ustawieniami przesyłania</a> | Zarządza kanałami przesyłania, kanałami podrzędnymi i równoważeniem obciążenia. |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>Pobierz skrypt zarządzania ustawieniami witryny</a> | Zarządza ustawieniami bezpieczeństwa, ustawieniami stron i innymi ustawieniami. |
-| <a href="/tools/imgbed-token-federation.mjs" download>Pobierz skrypt zarządzania relacjami federacji</a> | Zarządza lekkimi akcjami relacji federacji, żądaniami i wiadomościami. |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>skrypt zarządzania ustawieniami przesyłania</a> | Zarządza kanałami przesyłania, kanałami podrzędnymi i równoważeniem obciążenia. |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>skrypt zarządzania ustawieniami witryny</a> | Zarządza ustawieniami bezpieczeństwa, ustawieniami stron i innymi ustawieniami. |
+| <a href="/tools/imgbed-token-federation.mjs" download>skrypt zarządzania relacjami federacji</a> | Zarządza lekkimi akcjami relacji federacji, żądaniami i wiadomościami. |
 
 Wymagany jest Node.js 18 lub nowszy.
 

@@ -30,9 +30,9 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | سکرېپټ | موخه |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>د پورته کولو تنظیماتو د مدیریت سکرېپټ کښته کړئ</a> | د پورته کولو چینلونه، فرعي چینلونه او د بار-وېش مدیریت کوي. |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>د سایټ د تنظیماتو د مدیریت سکرېپټ کښته کړئ</a> | د امنیت تنظیمات، د پاڼو تنظیمات او نور تنظیمات مدیریت کوي. |
-| <a href="/tools/imgbed-token-federation.mjs" download>د فدراسیون اړیکو د مدیریت سکرېپټ کښته کړئ</a> | د فدراسیون د سپکو اړیکو کړنې، غوښتنې او پیغامونه مدیریت کوي. |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>د پورته کولو تنظیماتو د مدیریت سکرېپټ</a> | د پورته کولو چینلونه، فرعي چینلونه او د بار-وېش مدیریت کوي. |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>د سایټ د تنظیماتو د مدیریت سکرېپټ</a> | د امنیت تنظیمات، د پاڼو تنظیمات او نور تنظیمات مدیریت کوي. |
+| <a href="/tools/imgbed-token-federation.mjs" download>د فدراسیون اړیکو د مدیریت سکرېپټ</a> | د فدراسیون د سپکو اړیکو کړنې، غوښتنې او پیغامونه مدیریت کوي. |
 
 Node.js 18 یا تر هغه نوی نسخه اړینه ده.
 

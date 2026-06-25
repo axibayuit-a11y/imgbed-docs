@@ -30,9 +30,9 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | 스크립트 | 용도 |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>업로드 설정 관리 스크립트 다운로드</a> | 업로드 채널, 하위 채널, 부하 분산을 관리합니다. |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>사이트 설정 관리 스크립트 다운로드</a> | 보안 설정, 페이지 설정, 기타 설정을 관리합니다. |
-| <a href="/tools/imgbed-token-federation.mjs" download>연합 관계 관리 스크립트 다운로드</a> | 가벼운 연합 관계 작업, 신청, 메시지를 관리합니다. |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>업로드 설정 관리 스크립트</a> | 업로드 채널, 하위 채널, 부하 분산을 관리합니다. |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>사이트 설정 관리 스크립트</a> | 보안 설정, 페이지 설정, 기타 설정을 관리합니다. |
+| <a href="/tools/imgbed-token-federation.mjs" download>연합 관계 관리 스크립트</a> | 가벼운 연합 관계 작업, 신청, 메시지를 관리합니다. |
 
 실행하려면 Node.js 18 이상이 필요합니다.
 

@@ -33,7 +33,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Betik | Kullanım |
 | --- | --- |
-| <a href="/tools/imgbed-token-list.mjs" download>Listeleme ve filtreleme betiğini indir</a> | Dosya yönetimi listesi, kullanıcı yönetimi listesi, yükleme kanalı listesi, klasör istatistik tablosu |
+| <a href="/tools/imgbed-token-list.mjs" download>Listeleme ve filtreleme betiği</a> | Dosya yönetimi listesi, kullanıcı yönetimi listesi, yükleme kanalı listesi, klasör istatistik tablosu |
 
 Node.js 18 veya üzeri gerekir.
 

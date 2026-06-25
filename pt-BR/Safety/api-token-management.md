@@ -30,9 +30,9 @@ O repositório da documentação fornece três scripts Node.js:
 
 | Script | Uso |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>Baixar script de configurações de upload</a> | Gerencia canais de upload, subcanais e balanceamento de carga |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>Baixar script de configurações do site</a> | Gerencia segurança, páginas e outras configurações |
-| <a href="/tools/imgbed-token-federation.mjs" download>Baixar script de federação</a> | Gerencia ações leves de relação, solicitações e mensagens da federação |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>script de configurações de upload</a> | Gerencia canais de upload, subcanais e balanceamento de carga |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>script de configurações do site</a> | Gerencia segurança, páginas e outras configurações |
+| <a href="/tools/imgbed-token-federation.mjs" download>script de federação</a> | Gerencia ações leves de relação, solicitações e mensagens da federação |
 
 É necessário ter Node.js 18 ou superior instalado na máquina local.
 

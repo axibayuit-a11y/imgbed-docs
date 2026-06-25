@@ -20,8 +20,8 @@ System Settings -> Security Settings -> API Token
 
 | اسکریپت | کاربرد |
 | --- | --- |
-| <a href="/tools/imgbed-token-single-upload.mjs" download>دانلود اسکریپت آپلود با یک درخواست</a> | فقط یک بار `/upload` را فراخوانی می‌کند؛ مناسب فایل‌های کوچک و آزمون اتصال رابط |
-| <a href="/tools/imgbed-token-chunk-upload.mjs" download>دانلود اسکریپت آپلود بخش‌بخش</a> | بسته به کانال از آپلود بخش‌بخش، آپلود مستقیم یا نشست پلتفرم استفاده می‌کند؛ مناسب فایل‌های بزرگ |
+| <a href="/tools/imgbed-token-single-upload.mjs" download>اسکریپت آپلود با یک درخواست</a> | فقط یک بار `/upload` را فراخوانی می‌کند؛ مناسب فایل‌های کوچک و آزمون اتصال رابط |
+| <a href="/tools/imgbed-token-chunk-upload.mjs" download>اسکریپت آپلود بخش‌بخش</a> | بسته به کانال از آپلود بخش‌بخش، آپلود مستقیم یا نشست پلتفرم استفاده می‌کند؛ مناسب فایل‌های بزرگ |
 
 برای اجرا، Node.js 18 یا نسخه جدیدتر لازم است.
 

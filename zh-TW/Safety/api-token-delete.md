@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | 腳本 | 用途 |
 | --- | --- |
-| <a href="/tools/imgbed-token-delete.mjs" download>下載刪除檔案腳本</a> | 刪除一個或多個明確指定的檔案 ID。 |
+| <a href="/tools/imgbed-token-delete.mjs" download>刪除檔案腳本</a> | 刪除一個或多個明確指定的檔案 ID。 |
 
 執行腳本需要本機安裝 Node.js 18 或更新版本。
 

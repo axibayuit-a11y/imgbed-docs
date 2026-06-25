@@ -26,7 +26,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | スクリプト | 用途 |
 | --- | --- |
-| <a href="/tools/imgbed-token-delete.mjs" download>ファイル削除スクリプトをダウンロード</a> | 明示的に指定した 1 件または複数件のファイル ID を削除します |
+| <a href="/tools/imgbed-token-delete.mjs" download>ファイル削除スクリプト</a> | 明示的に指定した 1 件または複数件のファイル ID を削除します |
 
 実行には Node.js 18 以上が必要です。
 

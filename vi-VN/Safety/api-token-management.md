@@ -30,9 +30,9 @@ Gói tài liệu cung cấp ba tập lệnh Node.js:
 
 | Tập lệnh | Mục đích |
 | --- | --- |
-| <a href="/tools/imgbed-token-upload-settings.mjs" download>Tải tập lệnh quản lý cài đặt tải lên</a> | Quản lý kênh tải lên, kênh con và cân bằng tải. |
-| <a href="/tools/imgbed-token-site-settings.mjs" download>Tải tập lệnh quản lý cài đặt trang</a> | Quản lý cài đặt bảo mật, cài đặt trang và cài đặt khác. |
-| <a href="/tools/imgbed-token-federation.mjs" download>Tải tập lệnh quản lý quan hệ liên kết</a> | Quản lý các thao tác, yêu cầu và tin nhắn quan hệ liên kết nhẹ. |
+| <a href="/tools/imgbed-token-upload-settings.mjs" download>tập lệnh quản lý cài đặt tải lên</a> | Quản lý kênh tải lên, kênh con và cân bằng tải. |
+| <a href="/tools/imgbed-token-site-settings.mjs" download>tập lệnh quản lý cài đặt trang</a> | Quản lý cài đặt bảo mật, cài đặt trang và cài đặt khác. |
+| <a href="/tools/imgbed-token-federation.mjs" download>tập lệnh quản lý quan hệ liên kết</a> | Quản lý các thao tác, yêu cầu và tin nhắn quan hệ liên kết nhẹ. |
 
 Yêu cầu Node.js 18 trở lên.
 

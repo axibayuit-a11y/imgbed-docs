@@ -31,7 +31,7 @@ $env:IMGBED_API_TOKEN="你的 API Token"
 
 | 脚本 | 用途 |
 | --- | --- |
-| <a href="/tools/imgbed-token-list.mjs" download>下载列出和筛选脚本</a> | 文件管理列出、用户管理列出、上传渠道列表、目录统计表 |
+| <a href="/tools/imgbed-token-list.mjs" download>列出和筛选脚本</a> | 文件管理列出、用户管理列出、上传渠道列表、目录统计表 |
 
 运行脚本需要本机安装 Node.js 18 或更高版本。
 

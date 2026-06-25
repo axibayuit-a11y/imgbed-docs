@@ -20,8 +20,8 @@ La documentazione include due script Node.js:
 
 | Script | Uso |
 | --- | --- |
-| <a href="/tools/imgbed-token-single-upload.mjs" download>Scarica lo script di caricamento singolo</a> | Chiama `/upload` una sola volta; adatto a file piccoli e test di connettività |
-| <a href="/tools/imgbed-token-chunk-upload.mjs" download>Scarica lo script di caricamento a blocchi</a> | Usa API a blocchi, caricamento diretto o sessioni della piattaforma; adatto a file grandi |
+| <a href="/tools/imgbed-token-single-upload.mjs" download>script di caricamento singolo</a> | Chiama `/upload` una sola volta; adatto a file piccoli e test di connettività |
+| <a href="/tools/imgbed-token-chunk-upload.mjs" download>script di caricamento a blocchi</a> | Usa API a blocchi, caricamento diretto o sessioni della piattaforma; adatto a file grandi |
 
 Serve Node.js 18 o superiore installato in locale.
 

@@ -20,8 +20,8 @@ O repositório da documentação fornece dois scripts Node.js:
 
 | Script | Uso |
 | --- | --- |
-| <a href="/tools/imgbed-token-single-upload.mjs" download>Baixar script de upload único</a> | Chama `/upload` apenas uma vez; serve para arquivos pequenos e testes de conectividade |
-| <a href="/tools/imgbed-token-chunk-upload.mjs" download>Baixar script de upload em partes</a> | Usa as APIs de partes, envio direto ou sessão da plataforma; serve para arquivos grandes |
+| <a href="/tools/imgbed-token-single-upload.mjs" download>script de upload único</a> | Chama `/upload` apenas uma vez; serve para arquivos pequenos e testes de conectividade |
+| <a href="/tools/imgbed-token-chunk-upload.mjs" download>script de upload em partes</a> | Usa as APIs de partes, envio direto ou sessão da plataforma; serve para arquivos grandes |
 
 É necessário ter Node.js 18 ou superior instalado na máquina local.
 

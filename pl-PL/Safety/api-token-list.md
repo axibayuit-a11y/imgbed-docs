@@ -33,7 +33,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | Skrypt | Zastosowanie |
 | --- | --- |
-| <a href="/tools/imgbed-token-list.mjs" download>Pobierz skrypt listowania i filtrowania</a> | Lista w zarządzaniu plikami, lista w zarządzaniu użytkownikami, lista kanałów przesyłania, tabela statystyk katalogów |
+| <a href="/tools/imgbed-token-list.mjs" download>skrypt listowania i filtrowania</a> | Lista w zarządzaniu plikami, lista w zarządzaniu użytkownikami, lista kanałów przesyłania, tabela statystyk katalogów |
 
 Wymagany jest Node.js 18 lub nowszy.
 

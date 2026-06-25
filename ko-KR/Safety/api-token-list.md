@@ -33,7 +33,7 @@ $env:IMGBED_API_TOKEN="your API Token"
 
 | 스크립트 | 용도 |
 | --- | --- |
-| <a href="/tools/imgbed-token-list.mjs" download>목록 조회와 필터링 스크립트 다운로드</a> | 파일 관리 목록 조회, 사용자 관리 목록 조회, 업로드 채널 목록, 디렉터리 통계표 |
+| <a href="/tools/imgbed-token-list.mjs" download>목록 조회와 필터링 스크립트</a> | 파일 관리 목록 조회, 사용자 관리 목록 조회, 업로드 채널 목록, 디렉터리 통계표 |
 
 실행하려면 Node.js 18 이상이 필요합니다.
 
