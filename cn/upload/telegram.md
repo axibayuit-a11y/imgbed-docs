@@ -105,7 +105,7 @@
 
 ## 一句话流程速查
 
-```test
+```text
 搜索 @BotFather 创建机器人
 -> 保存 Bot Token
 -> 创建频道
