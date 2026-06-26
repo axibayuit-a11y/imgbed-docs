@@ -21,9 +21,9 @@ ImgBed는 이미지 업로드와 링크 관리에서 시작해, 이제는 개인
 
 이 프로젝트는 계속 개선되고 있습니다. 우리의 역량은 제한적이지만, 모든 기능을 명확하고 안정적이며 사용하기 좋게 만들기 위해 최선을 다하겠습니다. ImgBed가 당신만의 이미지 호스트, 블로그, 파일 공유 공간을 더 쉽게 갖는 데 도움이 된다면 매우 기쁩니다.
 
-<a href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer">
-  <img src="../image/部署按钮.png" alt="Deploy ImgBed" width="320">
-</a>
+## 시작하기
+
+<a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy"></a>에서 ImgBed를 배포해 나만의 이미지 및 파일 호스팅 서비스를 빠르게 마련하세요.
 
 ## 오픈소스 감사
 

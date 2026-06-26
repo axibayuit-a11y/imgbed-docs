@@ -21,9 +21,9 @@ Wir glauben nicht an Lösungen nach dem Motto "eine für alles". Egal, ob Sie ei
 
 Dieses Projekt wird weiterhin verbessert. Unsere Möglichkeiten sind begrenzt, aber wir werden unser Bestes tun, um jede Funktion klar, stabil und gut nutzbar zu machen. Wenn ImgBed Ihnen hilft, einfacher einen eigenen Bildhost, Blog oder Dateifreigabebereich zu besitzen, freut uns das sehr.
 
-<a href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer">
-  <img src="../image/部署按钮.png" alt="Deploy ImgBed" width="320">
-</a>
+## Jetzt starten
+
+Stelle ImgBed über <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy"></a> bereit und erhalte schnell deinen eigenen Dienst für Bild- und Datei-Hosting.
 
 ## Dank an Open Source
 

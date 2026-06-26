@@ -21,9 +21,9 @@
 
 这个项目仍在持续完善。我们能力有限，但会尽全力把每一个功能都做清楚、做稳定、做好用。如果 ImgBed 能帮你更轻松地拥有自己的图床、博客或文件分享空间，我们会非常开心。
 
-<a href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer">
-  <img src="../image/部署按钮.png" alt="Deploy ImgBed" width="320">
-</a>
+## 开始体验
+
+通过 <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy"></a> 部署 ImgBed，快速拥有自己的图床与文件托管服务。
 
 ## 开源致谢
 

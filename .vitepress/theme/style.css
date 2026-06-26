@@ -44,38 +44,48 @@
   display: none;
 }
 
-.vp-doc a[href="https://glow.ccwu.cc/reg/IMG-FREELY"] {
-  display: inline-block;
-  line-height: 0;
+.vp-doc .imgbed-deploy-button {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: -0.35em;
+  margin: 0 0.12em;
   cursor: pointer;
-  border-radius: 24px;
+  border-radius: 999px;
+  line-height: 0;
   transform: translateY(0) scale(1);
   transition:
     transform 160ms ease,
     filter 160ms ease;
 }
 
-.vp-doc a[href="https://glow.ccwu.cc/reg/IMG-FREELY"] img {
+.vp-doc .imgbed-deploy-button img {
   display: block;
-  max-width: min(320px, 100%);
-  height: auto;
+  width: auto;
+  height: 36px;
+  max-width: none;
   user-select: none;
   -webkit-user-drag: none;
 }
 
-.vp-doc a[href="https://glow.ccwu.cc/reg/IMG-FREELY"]:hover {
-  transform: translateY(-2px) scale(1.02);
-  filter: drop-shadow(0 12px 20px rgb(37 99 235 / 28%));
+.vp-doc .imgbed-deploy-button:hover {
+  transform: translateY(-1px) scale(1.03);
+  filter: drop-shadow(0 6px 10px rgb(37 99 235 / 24%));
 }
 
-.vp-doc a[href="https://glow.ccwu.cc/reg/IMG-FREELY"]:active {
+.vp-doc .imgbed-deploy-button:active {
   transform: translateY(1px) scale(0.97);
-  filter: drop-shadow(0 5px 10px rgb(37 99 235 / 20%));
+  filter: drop-shadow(0 3px 6px rgb(37 99 235 / 18%));
 }
 
-.vp-doc a[href="https://glow.ccwu.cc/reg/IMG-FREELY"]:focus-visible {
+.vp-doc .imgbed-deploy-button:focus-visible {
   outline: 3px solid var(--vp-c-brand-1);
   outline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+  .vp-doc .imgbed-deploy-button img {
+    height: 32px;
+  }
 }
 
 .vp-doc table:has(tr > :nth-child(2):last-child) th,

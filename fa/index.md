@@ -21,9 +21,9 @@ ImgBed از آپلود تصویر و مدیریت لینک شروع شد. اکن
 
 این پروژه همچنان در حال بهبود است. توان ما محدود است، اما تمام تلاش خود را می‌کنیم تا هر قابلیت روشن، پایدار و خوش‌دست باشد. اگر ImgBed به شما کمک کند راحت‌تر میزبان تصویر، وبلاگ یا فضای اشتراک‌گذاری فایل خودتان را داشته باشید، بسیار خوشحال می‌شویم.
 
-<a href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer">
-  <img src="../image/部署按钮.png" alt="Deploy ImgBed" width="320">
-</a>
+## شروع استفاده
+
+با <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy"></a> ImgBed را مستقر کنید و سریع سرویس میزبانی تصویر و فایل خودتان را داشته باشید.
 
 ## سپاس از متن‌باز
 

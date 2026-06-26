@@ -21,9 +21,9 @@
 
 ما زال هذا المشروع يتحسن باستمرار. قدراتنا محدودة، لكننا سنبذل كل ما نستطيع لجعل كل ميزة واضحة ومستقرة وسهلة الاستخدام. إذا ساعدك ImgBed على امتلاك مساحة صور أو مدونة أو مساحة مشاركة ملفات خاصة بك بسهولة أكبر، فسنكون سعداء جدا.
 
-<a href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer">
-  <img src="../image/部署按钮.png" alt="Deploy ImgBed" width="320">
-</a>
+## ابدأ التجربة
+
+استخدم <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy"></a> لنشر ImgBed، واحصل بسرعة على خدمة خاصة بك لاستضافة الصور والملفات.
 
 ## شكر للمشاريع مفتوحة المصدر
 
