@@ -44,6 +44,40 @@
   display: none;
 }
 
+.vp-doc a[href="https://glow.ccwu.cc/reg/IMG-FREELY"] {
+  display: inline-block;
+  line-height: 0;
+  cursor: pointer;
+  border-radius: 24px;
+  transform: translateY(0) scale(1);
+  transition:
+    transform 160ms ease,
+    filter 160ms ease;
+}
+
+.vp-doc a[href="https://glow.ccwu.cc/reg/IMG-FREELY"] img {
+  display: block;
+  max-width: min(320px, 100%);
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.vp-doc a[href="https://glow.ccwu.cc/reg/IMG-FREELY"]:hover {
+  transform: translateY(-2px) scale(1.02);
+  filter: drop-shadow(0 12px 20px rgb(37 99 235 / 28%));
+}
+
+.vp-doc a[href="https://glow.ccwu.cc/reg/IMG-FREELY"]:active {
+  transform: translateY(1px) scale(0.97);
+  filter: drop-shadow(0 5px 10px rgb(37 99 235 / 20%));
+}
+
+.vp-doc a[href="https://glow.ccwu.cc/reg/IMG-FREELY"]:focus-visible {
+  outline: 3px solid var(--vp-c-brand-1);
+  outline-offset: 4px;
+}
+
 .vp-doc table:has(tr > :nth-child(2):last-child) th,
 .vp-doc table:has(tr > :nth-child(2):last-child) td {
   width: 50%;
