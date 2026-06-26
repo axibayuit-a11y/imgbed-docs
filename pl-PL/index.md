@@ -21,9 +21,9 @@ Nie wierzymy w rozwiązania typu "jeden rozmiar dla wszystkich". Niezależnie od
 
 Ten projekt nadal się rozwija. Nasze możliwości są ograniczone, ale zrobimy wszystko, aby każda funkcja była jasna, stabilna i wygodna w użyciu. Jeśli ImgBed pomoże Ci łatwiej mieć własny hosting obrazów, blog lub przestrzeń do udostępniania plików, będziemy bardzo szczęśliwi.
 
-## Zacznij korzystać
-
-Wdróż ImgBed przez [https://glow.ccwu.cc/](https://glow.ccwu.cc/) i szybko uruchom własną usługę hostingu obrazów oraz plików.
+<a href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer">
+  <img src="../image/部署按钮.png" alt="Deploy ImgBed" width="320">
+</a>
 
 ## Podziękowania dla open source
 

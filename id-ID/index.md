@@ -21,9 +21,9 @@ Kami tidak percaya pada solusi "one-size-fits-all". Entah Anda hanya ingin menyi
 
 Proyek ini masih terus disempurnakan. Kemampuan kami terbatas, tetapi kami akan berusaha semaksimal mungkin agar setiap fitur jelas, stabil, dan enak digunakan. Jika ImgBed membantu Anda lebih mudah memiliki image host, blog, atau ruang berbagi file sendiri, kami akan sangat senang.
 
-## Mulai mencoba
-
-Deploy ImgBed melalui [https://glow.ccwu.cc/](https://glow.ccwu.cc/) untuk segera memiliki layanan hosting gambar dan file sendiri.
+<a href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer">
+  <img src="../image/部署按钮.png" alt="Deploy ImgBed" width="320">
+</a>
 
 ## Terima kasih untuk open source
 

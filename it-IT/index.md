@@ -21,9 +21,9 @@ Non crediamo nelle soluzioni "uguali per tutti". Che tu voglia solo salvare imma
 
 Questo progetto continua a migliorare. Le nostre capacità sono limitate, ma faremo del nostro meglio per rendere ogni funzione chiara, stabile e piacevole da usare. Se ImgBed ti aiuta ad avere più facilmente il tuo image host, blog o spazio di condivisione file, ne saremo molto felici.
 
-## Inizia a usare ImgBed
-
-Distribuisci ImgBed da [https://glow.ccwu.cc/](https://glow.ccwu.cc/) e ottieni rapidamente il tuo servizio di hosting per immagini e file.
+<a href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer">
+  <img src="../image/部署按钮.png" alt="Deploy ImgBed" width="320">
+</a>
 
 ## Ringraziamenti open source
 

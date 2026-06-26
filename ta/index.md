@@ -21,9 +21,9 @@ ImgBed image upload மற்றும் link management-இல் இருந
 
 இந்த project தொடர்ந்து மேம்படுத்தப்படுகிறது. எங்கள் திறன் வரம்புடையது, ஆனால் ஒவ்வொரு feature-ஐயும் clear, stable, easy to use ஆக உருவாக்க முழு முயற்சி செய்வோம். ImgBed உங்கள் சொந்த image host, blog அல்லது file sharing space-ஐ எளிதாகப் பெற உதவினால், எங்களுக்கு மிகவும் மகிழ்ச்சி.
 
-## பயன்படுத்தத் தொடங்குங்கள்
-
-[https://glow.ccwu.cc/](https://glow.ccwu.cc/) மூலம் ImgBed-ஐ deploy செய்து, உங்கள் சொந்த பட மற்றும் கோப்பு hosting சேவையை விரைவாகப் பெறுங்கள்.
+<a href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer">
+  <img src="../image/部署按钮.png" alt="Deploy ImgBed" width="320">
+</a>
 
 ## திறந்த மூல நன்றி
 

@@ -21,9 +21,9 @@ Nevěříme na řešení typu "jedno pro všechny". Ať už chcete jen ukládat 
 
 Projekt se stále zlepšuje. Naše možnosti jsou omezené, ale uděláme maximum pro to, aby každá funkce byla jasná, stabilní a příjemná k použití. Pokud vám ImgBed pomůže snadněji získat vlastní hosting obrázků, blog nebo prostor pro sdílení souborů, budeme velmi rádi.
 
-## Začněte používat
-
-Nasaďte ImgBed přes [https://glow.ccwu.cc/](https://glow.ccwu.cc/) a rychle získejte vlastní službu pro hostování obrázků a souborů.
+<a href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer">
+  <img src="../image/部署按钮.png" alt="Deploy ImgBed" width="320">
+</a>
 
 ## Poděkování open source
 

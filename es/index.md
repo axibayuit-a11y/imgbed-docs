@@ -21,9 +21,9 @@ No creemos en soluciones de "talla única". Ya quieras guardar imágenes de form
 
 Este proyecto sigue mejorando. Nuestra capacidad es limitada, pero haremos todo lo posible para que cada función sea clara, estable y fácil de usar. Si ImgBed te ayuda a tener tu propio host de imágenes, blog o espacio para compartir archivos con menos esfuerzo, nos hará muy felices.
 
-## Empezar a usarlo
-
-Despliega ImgBed desde [https://glow.ccwu.cc/](https://glow.ccwu.cc/) y consigue rápidamente tu propio servicio de alojamiento de imágenes y archivos.
+<a href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer">
+  <img src="../image/部署按钮.png" alt="Deploy ImgBed" width="320">
+</a>
 
 ## Agradecimientos de código abierto
 

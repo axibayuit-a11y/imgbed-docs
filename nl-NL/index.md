@@ -21,9 +21,9 @@ Wij geloven niet in oplossingen die iedereen in hetzelfde model dwingen. Of je n
 
 Dit project wordt nog steeds verbeterd. Onze mogelijkheden zijn beperkt, maar we doen ons best om elke functie duidelijk, stabiel en prettig bruikbaar te maken. Als ImgBed je helpt om makkelijker je eigen image host, blog of ruimte voor bestandsdeling te hebben, zijn we daar erg blij mee.
 
-## Aan de slag
-
-Deploy ImgBed via [https://glow.ccwu.cc/](https://glow.ccwu.cc/) en krijg snel je eigen dienst voor image hosting en file hosting.
+<a href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer">
+  <img src="../image/部署按钮.png" alt="Deploy ImgBed" width="320">
+</a>
 
 ## Dank aan open source
 

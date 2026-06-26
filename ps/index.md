@@ -21,9 +21,9 @@ ImgBed د image upload او link management څخه پيل شو. اوس دا د p
 
 دا project لا هم ښه کېږي. زموږ توان محدود دی، خو هڅه کوو هر feature clear, stable او easy to use کړو. که ImgBed تاسې سره مرسته وکړي چې خپل image host, blog يا file sharing space په اسانه ولرئ، موږ به ډېر خوشحاله شو.
 
-## کارول پیل کړئ
-
-له [https://glow.ccwu.cc/](https://glow.ccwu.cc/) څخه ImgBed deploy کړئ او ژر خپله د انځورونو او فایلونو hosting خدمت ولرئ.
+<a href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer">
+  <img src="../image/部署按钮.png" alt="Deploy ImgBed" width="320">
+</a>
 
 ## د Open Source مننه
 

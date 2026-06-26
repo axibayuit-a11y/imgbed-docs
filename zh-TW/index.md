@@ -21,9 +21,9 @@
 
 這個專案仍在持續完善。我們能力有限，但會盡全力把每一個功能都做清楚、做穩定、做好用。如果 ImgBed 能幫你更輕鬆地擁有自己的圖床、部落格或檔案分享空間，我們會非常開心。
 
-## 開始體驗
-
-透過 [https://glow.ccwu.cc/](https://glow.ccwu.cc/) 部署 ImgBed，快速擁有自己的圖床與檔案託管服務。
+<a href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer">
+  <img src="../image/部署按钮.png" alt="Deploy ImgBed" width="320">
+</a>
 
 ## 開源致謝
 
