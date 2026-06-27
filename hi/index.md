@@ -1,37 +1,37 @@
 # ImgBed
 
-Cloudflare इकोसिस्टम पर आधारित एक ऑल-इन-वन व्यक्तिगत कंटेंट होस्टिंग टूल।
+Cloudflare इकोसिस्टम पर आधारित एक संपूर्ण व्यक्तिगत सामग्री होस्टिंग उपकरण।
 
-ImgBed की शुरुआत image upload और link management से हुई थी। अब यह व्यक्तिगत कंटेंट होस्ट करने का पूरा समाधान बन चुका है। आप इसका उपयोग कर सकते हैं:
+ImgBed की शुरुआत तस्वीर अपलोड और लिंक प्रबंधन से हुई थी। अब यह व्यक्तिगत सामग्री होस्ट करने का पूरा समाधान बन चुका है। आप इसका उपयोग कर सकते हैं:
 
-- फ़ाइलों को अपनी पसंद के किसी भी storage channel पर upload करने के लिए
-- images और किसी भी format की files को publicly share करने के लिए
-- एक मिनट में personal blog जल्दी set up करने के लिए
-- magnet links से files को one-click में save करने के लिए
-- ImgBed node federation में शामिल होकर open file indexes share करने के लिए
+- फ़ाइलों को अपनी पसंद के किसी भी संग्रहण चैनल पर अपलोड करने के लिए
+- तस्वीरों और किसी भी प्रारूप की फ़ाइलों को सार्वजनिक रूप से साझा करने के लिए
+- एक मिनट में जल्दी से व्यक्तिगत ब्लॉग बनाने के लिए
+- मैग्नेट लिंक से एक क्लिक में फ़ाइलें सहेजने के लिए
+- ImgBed नोड फ़ेडरेशन में शामिल होकर खुले फ़ाइल सूचकांक साझा करने के लिए
 
-हम "one-size-fits-all" solution में विश्वास नहीं करते। चाहे आप बस images save करना चाहते हों, albums bulk में manage करना चाहते हों, कुछ notes लिखना चाहते हों या हल्का public resource site बनाना चाहते हों, ImgBed आपकी पसंद का सम्मान करता है और आपको maximum flexibility देता है।
+हमारा मूल उद्देश्य यह है कि हर व्यक्ति के पास अपनी छवि होस्टिंग और फ़ाइल साझा करने की साइट हो। आप किसी भी देश से हों, कोई भी भाषा इस्तेमाल करते हों; चाहे आप केवल तस्वीरें सहेजना, एल्बम व्यवस्थित करना और दोस्तों के साथ फ़ाइलें साझा करना चाहते हों, या ब्लॉग, रचनात्मक सामग्री या सार्वजनिक संसाधनों के लिए एक स्थिर होस्टिंग स्थान बनाना चाहते हों, ImgBed इस काम की बाधा को जितना हो सके कम करना चाहता है, ताकि शुरुआत अधिक स्वतंत्र, स्पष्ट और आसान हो।
 
 ## तुरंत इस्तेमाल होने वाली शक्तिशाली क्षमताएँ
 
-- 🌍 28 interface languages का समर्थन, ताकि दुनिया भर के users आसानी से इस्तेमाल कर सकें
-- 📦 13 built-in mainstream upload channels: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, pCloud
-- 🧩 पूरी तरह modular design, हर feature जरूरत पड़ने पर ही enable करें, resources waste न करें
-- 🔐 API Token, access mode और list rule का समर्थन, ताकि content permissions को अधिक बारीकी से manage किया जा सके
+- 🌍 28 इंटरफ़ेस भाषाओं का समर्थन, ताकि दुनिया भर के उपयोगकर्ता आसानी से इस्तेमाल कर सकें
+- 📦 13 अंतर्निहित मुख्यधारा अपलोड चैनल: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, pCloud
+- 🧩 पूरी तरह मॉड्यूलर डिज़ाइन, हर सुविधा जरूरत पड़ने पर ही चालू करें, संसाधन बर्बाद न करें
+- 🔐 API Token, पहुँच मोड और सूची नियमों का समर्थन, ताकि सामग्री अनुमतियों को अधिक बारीकी से प्रबंधित किया जा सके
 
-यह project अभी भी लगातार बेहतर हो रहा है। हमारी क्षमता सीमित है, लेकिन हम हर feature को clear, stable और easy to use बनाने की पूरी कोशिश करेंगे। अगर ImgBed आपको अपना image host, blog या file sharing space आसानी से बनाने में मदद करे, तो हमें बहुत खुशी होगी।
+यह परियोजना अभी भी लगातार बेहतर हो रही है। हमारी क्षमता सीमित है, लेकिन हम हर सुविधा को स्पष्ट, स्थिर और उपयोग में आसान बनाने की पूरी कोशिश करेंगे। अगर ImgBed आपको अपना चित्र होस्टिंग स्थान, ब्लॉग या फ़ाइल साझा करने की जगह आसानी से बनाने में मदद करे, तो हमें बहुत खुशी होगी।
 
 ## शुरू करें
 
-<a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy"></a> से ImgBed डिप्लॉय करें और जल्दी ही अपनी इमेज व फ़ाइल होस्टिंग सेवा शुरू करें।
+<a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="ImgBed डिप्लॉय करें"><img src="../image/部署按钮.png" alt="ImgBed डिप्लॉय करें"></a> से ImgBed डिप्लॉय करें और जल्दी ही अपनी तस्वीर व फ़ाइल होस्टिंग सेवा शुरू करें।
 
 ## ओपन सोर्स आभार
 
 हम ओपन सोर्स प्रोजेक्ट [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) और [Mizuki](https://github.com/LyraVoid/Mizuki) के योगदान के लिए आभारी हैं।
 
-## Feedback
+## प्रतिक्रिया
 
-- 🐛 Bug या feature सुझाव: [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues) में submit करें
+- 🐛 समस्या या सुविधा सुझाव: [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues) में भेजें
 - 📧 अन्य संपर्क: axibayuit@gmail.com
 
 

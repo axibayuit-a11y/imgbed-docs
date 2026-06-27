@@ -10,7 +10,7 @@ ImgBed začal u nahrávání obrázků a správy odkazů. Dnes z něj vyrostlo k
 - Jedním kliknutím ukládali soubory z magnet odkazů
 - Připojili se k federaci uzlů ImgBed a sdíleli otevřené indexy souborů
 
-Nevěříme na řešení typu "jedno pro všechny". Ať už chcete jen ukládat obrázky, hromadně spravovat alba, psát pár poznámek nebo vytvořit lehký veřejný web se zdroji, ImgBed respektuje vaši volbu a nechává vám co největší flexibilitu.
+Naším původním záměrem je, aby každý mohl mít vlastní web pro hostování obrázků a sdílení souborů. Nezáleží na tom, z jaké země pocházíte ani jakým jazykem mluvíte. Ať už si chcete jen ukládat obrázky, třídit alba, sdílet soubory s přáteli, nebo vybudovat stabilní prostor pro blog, vlastní tvorbu či veřejné zdroje, ImgBed se snaží co nejvíce snížit vstupní bariéru a udělat celý proces svobodnější, srozumitelnější a snazší na začátek.
 
 ## Silné funkce připravené k použití
 
@@ -23,7 +23,7 @@ Projekt se stále zlepšuje. Naše možnosti jsou omezené, ale uděláme maximu
 
 ## Začněte používat
 
-Nasaďte ImgBed přes <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy"></a> a rychle získejte vlastní službu pro hostování obrázků a souborů.
+Nasaďte ImgBed přes <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Nasadit ImgBed"><img src="../image/部署按钮.png" alt="Nasadit ImgBed"></a> a rychle získejte vlastní službu pro hostování obrázků a souborů.
 
 ## Poděkování open source
 

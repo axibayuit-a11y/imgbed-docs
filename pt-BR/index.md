@@ -10,7 +10,7 @@ O ImgBed começou com upload de imagens e gerenciamento de links. Hoje ele já s
 - Salvar arquivos de links magnet com um clique
 - Entrar na federação de nós ImgBed e compartilhar índices de arquivos abertos
 
-Nós não acreditamos em solução "tamanho único". Se você quer apenas guardar imagens, gerenciar álbuns em lote, escrever alguns textos ou montar uma página pública leve de recursos, o ImgBed respeita sua escolha e preserva o máximo de flexibilidade possível.
+Nosso objetivo inicial é permitir que cada pessoa tenha seu próprio site de hospedagem de imagens e compartilhamento de arquivos. Não importa de qual país você vem ou qual idioma usa: se você quer apenas salvar imagens, organizar álbuns, compartilhar arquivos com amigos, ou criar um espaço de hospedagem estável para um blog, conteúdos criativos ou recursos públicos, o ImgBed busca reduzir ao máximo a barreira de entrada e tornar essa experiência mais livre, mais clara e mais fácil de começar.
 
 ## Recursos poderosos prontos para uso
 
@@ -23,13 +23,13 @@ Este projeto continua em evolução. Nossa capacidade é limitada, mas vamos nos
 
 ## Comece a usar
 
-Implante o ImgBed em <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy"></a> e tenha rapidamente seu próprio serviço de hospedagem de imagens e arquivos.
+Implante o ImgBed em <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Implantar ImgBed"><img src="../image/部署按钮.png" alt="Implantar ImgBed"></a> e tenha rapidamente seu próprio serviço de hospedagem de imagens e arquivos.
 
 ## Agradecimentos ao código aberto
 
 Agradecemos as contribuições dos projetos de código aberto [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) e [Mizuki](https://github.com/LyraVoid/Mizuki).
 
-## Feedback
+## Retorno
 
 - 🐛 Bugs ou sugestões: envie em [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
 - 📧 Outro contato: axibayuit@gmail.com

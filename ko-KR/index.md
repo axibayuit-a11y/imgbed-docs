@@ -10,7 +10,7 @@ ImgBed는 이미지 업로드와 링크 관리에서 시작해, 이제는 개인
 - 마그넷 링크로 파일을 한 번에 저장
 - ImgBed 노드 연합에 참여해 공개 파일 인덱스 공유
 
-우리는 "하나의 방식으로 모두를 맞추는" 해결책을 믿지 않습니다. 단순히 이미지를 저장하고 싶든, 앨범을 대량으로 관리하고 싶든, 짧은 글을 몇 편 쓰고 싶든, 가벼운 공개 리소스 사이트를 만들고 싶든, ImgBed는 사용자의 선택을 존중하고 최대한의 유연성을 남겨 둡니다.
+ImgBed의 출발점은 누구나 자신만의 이미지 호스팅 및 파일 공유 사이트를 가질 수 있게 하는 것입니다. 어느 나라에 있든, 어떤 언어를 사용하든, 단순히 이미지를 저장하고 앨범을 정리하거나 친구에게 파일을 공유하려는 경우에도, 블로그·창작 콘텐츠·공개 자료를 위한 안정적인 호스팅 공간을 만들고 싶은 경우에도, ImgBed는 진입 장벽을 최대한 낮추고 이 경험을 더 자유롭고 명확하며 시작하기 쉽게 만들고자 합니다.
 
 ## 바로 사용할 수 있는 강력한 기능
 
@@ -23,7 +23,7 @@ ImgBed는 이미지 업로드와 링크 관리에서 시작해, 이제는 개인
 
 ## 시작하기
 
-<a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy"></a>에서 ImgBed를 배포해 나만의 이미지 및 파일 호스팅 서비스를 빠르게 마련하세요.
+<a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="ImgBed 배포"><img src="../image/部署按钮.png" alt="ImgBed 배포"></a>에서 ImgBed를 배포해 나만의 이미지 및 파일 호스팅 서비스를 빠르게 마련하세요.
 
 ## 오픈소스 감사
 
@@ -31,7 +31,7 @@ ImgBed는 이미지 업로드와 링크 관리에서 시작해, 이제는 개인
 
 ## 문제 피드백
 
-- 🐛 Bug 또는 기능 제안: [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)에 남겨 주세요
+- 🐛 오류 또는 기능 제안: [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)에 남겨 주세요
 - 📧 기타 연락: axibayuit@gmail.com
 
 

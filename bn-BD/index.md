@@ -1,37 +1,37 @@
 # ImgBed
 
-Cloudflare ecosystem-এর ওপর তৈরি একটি all-in-one personal content hosting tool।
+Cloudflare ইকোসিস্টেমের ওপর তৈরি একটি পূর্ণাঙ্গ ব্যক্তিগত কনটেন্ট হোস্টিং টুল।
 
-ImgBed শুরু হয়েছিল image upload এবং link management দিয়ে। এখন এটি personal content hosting-এর একটি পূর্ণাঙ্গ সমাধানে পরিণত হয়েছে। আপনি এটি দিয়ে পারেন:
+ImgBed-এর শুরু হয়েছিল ছবি আপলোড ও লিংক ব্যবস্থাপনা দিয়ে। এখন এটি ব্যক্তিগত কনটেন্ট হোস্টিংয়ের একটি পূর্ণাঙ্গ সমাধানে পরিণত হয়েছে। আপনি এটি দিয়ে পারেন:
 
-- আপনার পছন্দের যেকোনো storage channel-এ file upload করতে
-- images এবং যেকোনো format-এর files publicভাবে share করতে
-- এক মিনিটে দ্রুত personal blog setup করতে
-- magnet links থেকে one-click-এ file save করতে
-- ImgBed node federation-এ যোগ দিয়ে open file indexes share করতে
+- আপনার পছন্দের যেকোনো সংরক্ষণ চ্যানেলে ফাইল আপলোড করতে
+- ছবি ও যেকোনো ফরম্যাটের ফাইল প্রকাশ্যে শেয়ার করতে
+- এক মিনিটে দ্রুত ব্যক্তিগত ব্লগ তৈরি করতে
+- ম্যাগনেট লিংক থেকে এক ক্লিকে ফাইল সংরক্ষণ করতে
+- ImgBed নোড ফেডারেশনে যোগ দিয়ে উন্মুক্ত ফাইল সূচি শেয়ার করতে
 
-আমরা "one-size-fits-all" solution-এ বিশ্বাস করি না। আপনি শুধু ছবি save করতে চান, bulk album manage করতে চান, কিছু note লিখতে চান, অথবা lightweight public resource site বানাতে চান — ImgBed আপনার পছন্দকে সম্মান করে এবং সর্বোচ্চ flexibility রাখে।
+আমাদের মূল লক্ষ্য হলো, প্রত্যেক মানুষ যেন নিজের একটি ছবি হোস্টিং ও ফাইল শেয়ারিং সাইট রাখতে পারে। আপনি যে দেশেই থাকুন, যে ভাষাই ব্যবহার করুন; আপনি শুধু ছবি সংরক্ষণ করতে চান, অ্যালবাম গুছিয়ে রাখতে চান, বন্ধুদের সঙ্গে ফাইল ভাগ করতে চান, অথবা ব্লগ, সৃজনশীল কনটেন্ট বা উন্মুক্ত রিসোর্সের জন্য একটি স্থিতিশীল হোস্টিং জায়গা তৈরি করতে চান — ImgBed এই কাজের বাধা যতটা সম্ভব কমিয়ে এটিকে আরও স্বাধীন, আরও পরিষ্কার এবং শুরু করা আরও সহজ করতে চায়।
 
 ## ব্যবহার শুরু করলেই শক্তিশালী ক্ষমতা
 
-- 🌍 ২৮টি interface language support, যাতে global users সহজে ব্যবহার করতে পারে
-- 📦 ১৩টি built-in mainstream upload channel: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, pCloud
-- 🧩 Pure modular design, সব feature প্রয়োজন অনুযায়ী enable করা যায়, resource waste হয় না
-- 🔐 API Token, access mode ও list rule সমর্থন করে, তাই কনটেন্টের অনুমতি আরও সূক্ষ্মভাবে পরিচালনা করা যায়
+- 🌍 ২৮টি ইন্টারফেস ভাষা সমর্থন করে, যাতে বিশ্বজুড়ে ব্যবহারকারীরা সহজে ব্যবহার করতে পারেন
+- 📦 ১৩টি বিল্ট-ইন মূলধারার আপলোড চ্যানেল: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, pCloud
+- 🧩 সম্পূর্ণ মডুলার নকশা, সব ফিচার প্রয়োজন অনুযায়ী চালু করা যায়, অপ্রয়োজনীয় সম্পদ নষ্ট হয় না
+- 🔐 API Token, অ্যাক্সেস মোড ও তালিকা-নিয়ম সমর্থন করে, তাই কনটেন্টের অনুমতি আরও সূক্ষ্মভাবে পরিচালনা করা যায়
 
-এই project এখনও উন্নত হচ্ছে। আমাদের সামর্থ্য সীমিত, কিন্তু আমরা প্রতিটি feature পরিষ্কার, stable এবং ব্যবহারযোগ্য করার জন্য সর্বোচ্চ চেষ্টা করব। ImgBed যদি আপনাকে নিজের image host, blog বা file sharing space সহজে তৈরি করতে সাহায্য করে, আমরা খুব খুশি হব।
+এই প্রকল্প এখনও উন্নত হচ্ছে। আমাদের সামর্থ্য সীমিত, কিন্তু আমরা প্রতিটি ফিচার পরিষ্কার, স্থিতিশীল ও ব্যবহারবান্ধব করার জন্য সর্বোচ্চ চেষ্টা করব। ImgBed যদি আপনাকে নিজের ছবি হোস্টিং, ব্লগ বা ফাইল শেয়ারিং জায়গা আরও সহজে তৈরি করতে সাহায্য করে, আমরা খুব খুশি হব।
 
 ## ব্যবহার শুরু করুন
 
-<a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy"></a> থেকে ImgBed ডিপ্লয় করে দ্রুত নিজের ইমেজ হোস্টিং ও ফাইল হোস্টিং সেবা চালু করুন।
+<a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="ImgBed ডিপ্লয়"><img src="../image/部署按钮.png" alt="ImgBed ডিপ্লয়"></a> থেকে ImgBed ডিপ্লয় করে দ্রুত নিজের ছবি ও ফাইল হোস্টিং সেবা চালু করুন।
 
 ## ওপেন সোর্স কৃতজ্ঞতা
 
 ওপেন সোর্স প্রকল্প [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) এবং [Mizuki](https://github.com/LyraVoid/Mizuki)-এর অবদানের জন্য কৃতজ্ঞতা।
 
-## Feedback
+## প্রতিক্রিয়া
 
-- 🐛 Bug বা feature suggestion: [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)-এ submit করুন
+- 🐛 সমস্যা বা ফিচার প্রস্তাব: [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)-এ জমা দিন
 - 📧 অন্যান্য যোগাযোগ: axibayuit@gmail.com
 
 

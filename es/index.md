@@ -10,7 +10,7 @@ ImgBed empezó con la subida de imágenes y la gestión de enlaces. Hoy ha creci
 - Guardar archivos desde enlaces magnet con un solo clic
 - Unirte a la federación de nodos ImgBed y compartir índices de archivos abiertos
 
-No creemos en soluciones de "talla única". Ya quieras guardar imágenes de forma sencilla, gestionar álbumes en lote, escribir algunas notas o levantar un sitio público ligero de recursos, ImgBed respeta tu elección y conserva la mayor flexibilidad posible para ti.
+Nuestra idea inicial es que cualquier persona pueda tener su propio sitio para alojar imágenes y compartir archivos. No importa de qué país seas ni qué idioma uses: si solo quieres guardar imágenes, organizar álbumes, compartir archivos con amigos, o crear un espacio de alojamiento estable para un blog, contenido creativo o recursos públicos, ImgBed busca reducir la barrera de entrada tanto como sea posible y hacer que todo sea más libre, más claro y más fácil de empezar.
 
 ## Potencia lista para usar
 
@@ -19,11 +19,11 @@ No creemos en soluciones de "talla única". Ya quieras guardar imágenes de form
 - 🧩 Diseño completamente modular: activa solo lo que necesitas y evita gastar recursos de más
 - 🔐 Admite API Token, modos de acceso y reglas de listas para gestionar permisos de contenido con precisión
 
-Este proyecto sigue mejorando. Nuestra capacidad es limitada, pero haremos todo lo posible para que cada función sea clara, estable y fácil de usar. Si ImgBed te ayuda a tener tu propio host de imágenes, blog o espacio para compartir archivos con menos esfuerzo, nos hará muy felices.
+Este proyecto sigue mejorando. Nuestra capacidad es limitada, pero haremos todo lo posible para que cada función sea clara, estable y fácil de usar. Si ImgBed te ayuda a tener con menos esfuerzo tu propio alojamiento de imágenes, blog o espacio para compartir archivos, nos hará muy felices.
 
 ## Empezar a usarlo
 
-Despliega ImgBed desde <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy"></a> y consigue rápidamente tu propio servicio de alojamiento de imágenes y archivos.
+Despliega ImgBed desde <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Desplegar ImgBed"><img src="../image/部署按钮.png" alt="Desplegar ImgBed"></a> y consigue rápidamente tu propio servicio de alojamiento de imágenes y archivos.
 
 ## Agradecimientos de código abierto
 
@@ -31,7 +31,7 @@ Agradecemos las contribuciones de los proyectos de código abierto [CloudFlare-I
 
 ## Comentarios
 
-- 🐛 Bugs o sugerencias: envíalos en [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
+- 🐛 Errores o sugerencias de funciones: envíalos en [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
 - 📧 Otro contacto: axibayuit@gmail.com
 
 

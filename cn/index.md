@@ -10,7 +10,7 @@
 - 通过磁力链接一键转存文件
 - 加入 ImgBed 节点联盟，共享开放文件索引
 
-我们不相信 "一刀切" 的解决方案。无论你只是想简单保存图片、批量管理相册、写几篇随笔，还是搭建一个轻量的公共资源站，ImgBed 都尊重你的选择，为你保留最大的灵活性。
+我们的初衷，是希望每个人都能拥有属于自己的图片托管和文件分享站点。无论你来自哪个国家，使用哪种语言；无论你只是想简单保存图片、整理相册、分享文件给朋友，还是想为博客、创作内容或公共资源搭建一个稳定的托管空间，ImgBed 都希望尽量降低门槛，让这件事变得更自由、更清晰、更容易开始。
 
 ## 开箱即用的强大能力
 
@@ -23,7 +23,7 @@
 
 ## 开始体验
 
-通过 <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy"></a> 部署 ImgBed，快速拥有自己的图床与文件托管服务。
+通过 <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="部署 ImgBed"><img src="../image/部署按钮.png" alt="部署 ImgBed"></a> 部署 ImgBed，快速拥有自己的图床与文件托管服务。
 
 ## 开源致谢
 

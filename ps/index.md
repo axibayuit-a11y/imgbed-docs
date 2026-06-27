@@ -1,37 +1,37 @@
 # ImgBed
 
-د Cloudflare ecosystem پر بنسټ يو all-in-one personal content hosting tool دی.
+د Cloudflare پر چاپېریال ولاړ، د شخصي منځپانګې د کوربه‌توب بشپړ ابزار دی.
 
-ImgBed د image upload او link management څخه پيل شو. اوس دا د personal content hosting لپاره يو بشپړ solution ګرځېدلی دی. تاسې يې کارولای شئ چې:
+ImgBed د انځور پورته کولو او د تړونونو له مديريت څخه پيل شو. اوس دا د شخصي منځپانګې د کوربه‌توب لپاره يو بشپړ حل ګرځېدلی دی. تاسې يې کارولای شئ چې:
 
-- files هر هغه storage channel ته upload کړئ چې تاسې يې خوښوئ
-- images او د هر format files په public ډول share کړئ
-- په يوه دقيقه کې personal blog ژر جوړ کړئ
-- له magnet links څخه files په one-click کې save کړئ
-- د ImgBed node federation سره يوځای شئ او open file indexes share کړئ
+- فایلونه خپل د خوښې هر زېرمه چینل ته پورته کړئ
+- انځورونه او د هر ډول بڼې فایلونه په عامه ډول شریک کړئ
+- په يوه دقيقه کې شخصي بلاګ ژر جوړ کړئ
+- له مقناطیسي تړونو څخه فایلونه په يو کلیک کې خوندي کړئ
+- د ImgBed د نوډونو فدراسیون سره يوځای شئ او پرانيستي فایل شاخصونه شریک کړئ
 
-موږ په "one-size-fits-all" solution باور نه لرو. که تاسې يوازې images ساتل غواړئ، albums په bulk ډول manage کول غواړئ، څو notes ليکل غواړئ، يا يو lightweight public resource site جوړول غواړئ، ImgBed ستاسې انتخاب ته درناوی کوي او maximum flexibility درکوي.
+زموږ لومړنی هدف دا دی چې هر څوک وکولای شي د انځورونو د کوربه‌توب او فایل شریکولو خپل ځانګړی سایټ ولري. مهمه نه ده چې تاسې د کوم هېواد یاست یا کومه ژبه کاروئ؛ که یوازې انځورونه ساتل، البومونه منظمول او له ملګرو سره فایلونه شریکول غواړئ، یا د بلاګ، تخلیقي منځپانګې او عامه سرچینو لپاره یو ثابت کوربه‌توب ځای جوړول غواړئ، ImgBed هڅه کوي د پیل خنډ تر وسه کم کړي او دا کار لا ازاد، روښانه او اسانه کړي.
 
 ## چمتو او پياوړي امکانات
 
-- 🌍 د 28 interface languages ملاتړ، څو global users يې اسانه وکاروي
-- 📦 13 built-in mainstream upload channels: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, pCloud
-- 🧩 pure modular design، هر feature د اړتيا له مخې enable کېږي او resources نه ضايع کېږي
-- 🔐 د API Token، access mode او list rules ملاتړ کوي، څو د content permission په ډېر دقت اداره شي
+- 🌍 د 28 انٹرفېس ژبو ملاتړ، څو د نړۍ کاروونکي يې اسانه وکاروي
+- 📦 13 جوړ دننه اصلي پورته کولو چینلونه: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, pCloud
+- 🧩 بشپړ ماډلر ډیزاین، هره ځانګړنه د اړتیا له مخې فعالېږي او سرچینې نه ضایع کېږي
+- 🔐 د API Token، لاسرسي حالت او لېست قواعدو ملاتړ کوي، څو د منځپانګې اجازې په ډېر دقت اداره شي
 
-دا project لا هم ښه کېږي. زموږ توان محدود دی، خو هڅه کوو هر feature clear, stable او easy to use کړو. که ImgBed تاسې سره مرسته وکړي چې خپل image host, blog يا file sharing space په اسانه ولرئ، موږ به ډېر خوشحاله شو.
+دا پروژه لا هم ښه کېږي. زموږ توان محدود دی، خو هڅه کوو هره ځانګړنه روښانه، باثباته او د کارولو لپاره اسانه کړو. که ImgBed تاسې سره مرسته وکړي چې خپل د انځور کوربه‌توب ځای، بلاګ يا د فایل شریکولو فضا په اسانه ولرئ، موږ به ډېر خوشحاله شو.
 
 ## کارول پیل کړئ
 
-له <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy"></a> څخه ImgBed deploy کړئ او ژر خپله د انځورونو او فایلونو hosting خدمت ولرئ.
+له <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="ImgBed خپور کړئ"><img src="../image/部署按钮.png" alt="ImgBed خپور کړئ"></a> څخه ImgBed خپور کړئ او ژر خپله د انځورونو او فایلونو د کوربه‌توب خدمت ولرئ.
 
-## د Open Source مننه
+## د پرانيستې سرچينې مننه
 
-د open source projects [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) او [Mizuki](https://github.com/LyraVoid/Mizuki) له ونډې مننه کوو.
+د پرانيستې سرچينې پروژو [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) او [Mizuki](https://github.com/LyraVoid/Mizuki) له ونډې مننه کوو.
 
-## Feedback
+## غبرګون
 
-- 🐛 Bug يا feature suggestion: په [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues) کې submit کړئ
+- 🐛 ستونزه يا د ځانګړنې وړاندیز: په [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues) کې يې واستوئ
 - 📧 نور تماس: axibayuit@gmail.com
 
 

@@ -10,7 +10,7 @@ ImgBed started with image uploads and link management. It has now grown into a c
 - Save files from magnet links with one click
 - Join the ImgBed node federation and share open file indexes
 
-We do not believe in one-size-fits-all solutions. Whether you simply want to save images, manage albums in bulk, write a few notes, or build a lightweight public resource site, ImgBed respects your choices and keeps as much flexibility as possible in your hands.
+Our original goal is to help everyone have their own image hosting and file sharing site. No matter which country you are from or which language you use, whether you simply want to save images, organize albums, share files with friends, or build a stable hosting space for a blog, creative work, or public resources, ImgBed aims to lower the barrier as much as possible and make the experience freer, clearer, and easier to start.
 
 ## Powerful Features Out of the Box
 
@@ -23,7 +23,7 @@ This project is still being improved. Our ability is limited, but we will do our
 
 ## Start Using
 
-Deploy ImgBed from <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy"></a> and quickly get your own image hosting and file hosting service.
+Deploy ImgBed from <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy ImgBed"></a> and quickly get your own image hosting and file hosting service.
 
 ## Open Source Thanks
 

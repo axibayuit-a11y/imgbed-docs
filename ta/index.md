@@ -1,37 +1,37 @@
 # ImgBed
 
-Cloudflare ecosystem அடிப்படையில் உருவாக்கப்பட்ட all-in-one personal content hosting tool.
+Cloudflare சூழலை அடிப்படையாகக் கொண்ட, தனிப்பட்ட உள்ளடக்கங்களைத் தங்கவைக்கும் முழுமையான கருவி.
 
-ImgBed image upload மற்றும் link management-இல் இருந்து தொடங்கியது. இப்போது இது personal content hosting-க்கு முழுமையான solution ஆக வளர்ந்துள்ளது. இதை நீங்கள் பயன்படுத்த முடியும்:
+ImgBed படம் பதிவேற்றம் மற்றும் இணைப்பு மேலாண்மையிலிருந்து தொடங்கியது. இப்போது இது தனிப்பட்ட உள்ளடக்கத் தங்குதளத்திற்கான முழுமையான தீர்வாக வளர்ந்துள்ளது. இதை நீங்கள் பயன்படுத்த முடியும்:
 
-- நீங்கள் விரும்பும் எந்த storage channel-க்கும் files upload செய்ய
-- images மற்றும் எந்த format files-யையும் public-ஆக share செய்ய
-- ஒரு நிமிடத்தில் personal blog விரைவாக அமைக்க
-- magnet links மூலம் files-ஐ one-click-ல் save செய்ய
-- ImgBed node federation-ல் சேர்ந்து open file indexes share செய்ய
+- நீங்கள் விரும்பும் எந்த சேமிப்பு சேனலிற்கும் கோப்புகளைப் பதிவேற்ற
+- படங்களையும் எந்த வடிவிலான கோப்புகளையும் பொதுவாகப் பகிர
+- ஒரு நிமிடத்தில் தனிப்பட்ட வலைப்பதிவை விரைவாக அமைக்க
+- காந்த இணைப்புகள் மூலம் கோப்புகளை ஒரே கிளிக்கில் சேமிக்க
+- ImgBed முனைய கூட்டமைப்பில் சேர்ந்து திறந்த கோப்பு குறியீடுகளைப் பகிர
 
-நாங்கள் "one-size-fits-all" solution-ஐ நம்பவில்லை. நீங்கள் வெறும் images சேமிக்க விரும்பினாலும், albums-ஐ bulk-ஆக manage செய்ய விரும்பினாலும், சில notes எழுத விரும்பினாலும், அல்லது lightweight public resource site அமைக்க விரும்பினாலும், ImgBed உங்கள் தேர்வை மதித்து maximum flexibility தருகிறது.
+ஒவ்வொருவருக்கும் தங்களுக்கே உரிய படம் ஹோஸ்டிங் மற்றும் கோப்பு பகிர்வு தளம் இருக்க வேண்டும் என்பதே எங்கள் ஆரம்ப நோக்கம். நீங்கள் எந்த நாட்டைச் சேர்ந்தவராக இருந்தாலும், எந்த மொழியைப் பயன்படுத்தினாலும்; படங்களை எளிதாக சேமிக்க, ஆல்பங்களை ஒழுங்குபடுத்த, நண்பர்களுடன் கோப்புகளைப் பகிர, அல்லது வலைப்பதிவு, படைப்புப் உள்ளடக்கம், பொதுப் பயனுள்ள வளங்கள் ஆகியவற்றுக்கான நிலையான ஹோஸ்டிங் இடத்தை அமைக்க விரும்பினாலும், ImgBed தொடங்கும் தடையை முடிந்தவரை குறைத்து, இதை மேலும் சுதந்திரமான, தெளிவான, எளிதில் தொடங்கக்கூடிய அனுபவமாக மாற்ற விரும்புகிறது.
 
 ## உடனே பயன்படுத்தக்கூடிய சக்திவாய்ந்த திறன்கள்
 
-- 🌍 28 interface languages ஆதரவு, உலகம் முழுவதும் உள்ள users எளிதாக பயன்படுத்தலாம்
-- 📦 13 built-in mainstream upload channels: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, pCloud
-- 🧩 pure modular design, எல்லா feature-களும் தேவைக்கேற்ப enable செய்யலாம், resources வீணாகாது
-- 🔐 API Token, access mode மற்றும் list rules ஆதரவு மூலம் content permission-களை நுணுக்கமாக நிர்வகிக்கலாம்
+- 🌍 உலகளாவிய பயனர்கள் எளிதாகப் பயன்படுத்த 28 இடைமுக மொழிகள் ஆதரவு
+- 📦 உள்ளமைந்த 13 முக்கிய பதிவேற்ற சேனல்கள்: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, pCloud
+- 🧩 முழுமையான கூறு அடிப்படையிலான வடிவமைப்பு; தேவையான அம்சங்களை மட்டும் இயக்கலாம், வளங்கள் வீணாகாது
+- 🔐 API Token, அணுகல் முறை மற்றும் பட்டியல் விதிகளை ஆதரிக்கிறது; உள்ளடக்க அனுமதிகளை நுணுக்கமாக நிர்வகிக்க உதவும்
 
-இந்த project தொடர்ந்து மேம்படுத்தப்படுகிறது. எங்கள் திறன் வரம்புடையது, ஆனால் ஒவ்வொரு feature-ஐயும் clear, stable, easy to use ஆக உருவாக்க முழு முயற்சி செய்வோம். ImgBed உங்கள் சொந்த image host, blog அல்லது file sharing space-ஐ எளிதாகப் பெற உதவினால், எங்களுக்கு மிகவும் மகிழ்ச்சி.
+இந்தத் திட்டம் தொடர்ந்து மேம்படுத்தப்படுகிறது. எங்கள் திறன் வரம்புடையது, ஆனால் ஒவ்வொரு அம்சத்தையும் தெளிவான, நிலையான, பயன்படுத்த எளிதானதாக உருவாக்க முழு முயற்சி செய்வோம். ImgBed உங்கள் சொந்த படத் தங்குதளம், வலைப்பதிவு அல்லது கோப்பு பகிர்வு இடத்தை எளிதாகப் பெற உதவினால், எங்களுக்கு மிகவும் மகிழ்ச்சி.
 
 ## பயன்படுத்தத் தொடங்குங்கள்
 
-<a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy"></a> மூலம் ImgBed-ஐ deploy செய்து, உங்கள் சொந்த பட மற்றும் கோப்பு hosting சேவையை விரைவாகப் பெறுங்கள்.
+<a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="ImgBed-ஐ வெளியிடு"><img src="../image/部署按钮.png" alt="ImgBed-ஐ வெளியிடு"></a> மூலம் ImgBed-ஐ வெளியிட்டு, உங்கள் சொந்த படம் மற்றும் கோப்பு தங்குதளச் சேவையை விரைவாகப் பெறுங்கள்.
 
-## திறந்த மூல நன்றி
+## திறந்த மூலத்திற்கு நன்றி
 
-திறந்த மூல projects ஆன [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) மற்றும் [Mizuki](https://github.com/LyraVoid/Mizuki) ஆகியவற்றின் பங்களிப்புக்கு நன்றி.
+திறந்த மூலத் திட்டங்களான [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) மற்றும் [Mizuki](https://github.com/LyraVoid/Mizuki) ஆகியவற்றின் பங்களிப்புக்கு நன்றி.
 
-## Feedback
+## கருத்து
 
-- 🐛 Bug அல்லது feature suggestion: [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)-ல் submit செய்யவும்
+- 🐛 பிழை அல்லது அம்ச பரிந்துரை: [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)-ல் அனுப்பவும்
 - 📧 மற்ற தொடர்பு: axibayuit@gmail.com
 
 

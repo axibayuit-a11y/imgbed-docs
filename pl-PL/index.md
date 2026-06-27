@@ -10,7 +10,7 @@ ImgBed zaczynał od wysyłania obrazów i zarządzania linkami. Dziś wyrósł n
 - Zapisywania plików z linków magnet jednym kliknięciem
 - Dołączenia do federacji węzłów ImgBed i współdzielenia otwartych indeksów plików
 
-Nie wierzymy w rozwiązania typu "jeden rozmiar dla wszystkich". Niezależnie od tego, czy chcesz po prostu przechowywać obrazy, masowo zarządzać albumami, napisać kilka notatek, czy zbudować lekką publiczną stronę z zasobami, ImgBed szanuje Twój wybór i zostawia Ci maksymalną elastyczność.
+Naszą pierwotną intencją jest to, aby każdy mógł mieć własną stronę do hostowania obrazów i udostępniania plików. Niezależnie od kraju i języka, którego używasz; czy chcesz po prostu przechowywać obrazy, porządkować albumy, udostępniać pliki znajomym, czy zbudować stabilną przestrzeń hostingową dla bloga, twórczości lub zasobów publicznych, ImgBed stara się maksymalnie obniżyć próg wejścia i sprawić, by rozpoczęcie było bardziej swobodne, jasne i łatwe.
 
 ## Mocne funkcje gotowe od razu
 
@@ -23,7 +23,7 @@ Ten projekt nadal się rozwija. Nasze możliwości są ograniczone, ale zrobimy 
 
 ## Zacznij korzystać
 
-Wdróż ImgBed przez <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy"></a> i szybko uruchom własną usługę hostingu obrazów oraz plików.
+Wdróż ImgBed przez <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Wdróż ImgBed"><img src="../image/部署按钮.png" alt="Wdróż ImgBed"></a> i szybko uruchom własną usługę hostingu obrazów oraz plików.
 
 ## Podziękowania dla open source
 

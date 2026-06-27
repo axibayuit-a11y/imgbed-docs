@@ -10,7 +10,7 @@ ImgBed a commencé avec l'envoi d'images et la gestion des liens. Il est désorm
 - Enregistrer des fichiers depuis des liens magnet en un clic
 - Rejoindre la fédération de noeuds ImgBed et partager des index de fichiers ouverts
 
-Nous ne croyons pas aux solutions "taille unique". Que vous vouliez simplement conserver des images, gérer des albums en lot, écrire quelques notes ou créer un site public léger de ressources, ImgBed respecte votre choix et vous laisse la plus grande flexibilité possible.
+Notre intention de départ est de permettre à chacun de disposer de son propre site d’hébergement d’images et de partage de fichiers. Peu importe votre pays ou la langue que vous utilisez : que vous souhaitiez simplement conserver des images, organiser des albums, partager des fichiers avec des amis, ou créer un espace d’hébergement stable pour un blog, des créations ou des ressources publiques, ImgBed cherche à réduire autant que possible les barrières d’entrée et à rendre cette expérience plus libre, plus claire et plus facile à commencer.
 
 ## Des capacités puissantes prêtes à l'emploi
 
@@ -23,7 +23,7 @@ Ce projet continue de s'améliorer. Nos moyens sont limités, mais nous ferons t
 
 ## Commencer
 
-Déployez ImgBed depuis <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy"></a> pour disposer rapidement de votre propre service d’hébergement d’images et de fichiers.
+Déployez ImgBed depuis <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Déployer ImgBed"><img src="../image/部署按钮.png" alt="Déployer ImgBed"></a> pour disposer rapidement de votre propre service d’hébergement d’images et de fichiers.
 
 ## Remerciements open source
 
@@ -31,7 +31,6 @@ Merci aux projets open source [CloudFlare-ImgBed](https://github.com/MarSeventh/
 
 ## Retours
 
-- 🐛 Bugs ou suggestions : ouvrez un [GitHub Issue](https://github.com/axibayuit-a11y/imgbed-docs/issues)
+- 🐛 Bugs ou suggestions : ouvrez un [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
 - 📧 Autre contact : axibayuit@gmail.com
-
 

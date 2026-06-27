@@ -1,37 +1,37 @@
 # ImgBed
 
-Cloudflare ecosystem ပေါ်မှာ အခြေခံထားတဲ့ all-in-one personal content hosting tool ဖြစ်ပါတယ်။
+Cloudflare ဂေဟစနစ်ပေါ်တွင် အခြေခံထားသော ကိုယ်ပိုင်အကြောင်းအရာများကို သိမ်းဆည်းမျှဝေရန် စုံလင်သောကိရိယာ ဖြစ်ပါသည်။
 
-ImgBed က image upload နဲ့ link management ကနေ စတင်ခဲ့ပါတယ်။ အခုတော့ personal content hosting အတွက် ပြည့်စုံတဲ့ solution တစ်ခုအဖြစ် တိုးတက်လာပါပြီ။ ImgBed နဲ့ သင်လုပ်နိုင်တာတွေက:
+ImgBed သည် ရုပ်ပုံတင်ခြင်းနှင့် လင့်ခ်စီမံခြင်းမှ စတင်ခဲ့ပြီး ယခုအခါ ကိုယ်ပိုင်အကြောင်းအရာများကို သိမ်းဆည်းမျှဝေရန် ပြည့်စုံသောဖြေရှင်းချက်တစ်ခုအဖြစ် တိုးတက်လာပါပြီ။ ImgBed ဖြင့် သင်လုပ်နိုင်သည်များမှာ:
 
-- သင်နှစ်သက်တဲ့ မည်သည့် storage channel ကိုမဆို files upload လုပ်ခြင်း
-- images နဲ့ မည်သည့် format files မဆို public share လုပ်ခြင်း
-- personal blog ကို တစ်မိနစ်အတွင်း မြန်မြန် setup လုပ်ခြင်း
-- magnet links ကနေ files ကို one-click နဲ့ save လုပ်ခြင်း
-- ImgBed node federation ထဲဝင်ပြီး open file indexes ကို share လုပ်ခြင်း
+- သင်နှစ်သက်သော မည်သည့်သိုလှောင်မှုချန်နယ်သို့မဆို ဖိုင်များ တင်နိုင်ခြင်း
+- ရုပ်ပုံများနှင့် မည်သည့်ဖော်မတ်ဖိုင်များမဆို အများပြည်သူသို့ မျှဝေနိုင်ခြင်း
+- ကိုယ်ပိုင်ဘလော့ဂ်ကို တစ်မိနစ်အတွင်း မြန်မြန်တည်ဆောက်နိုင်ခြင်း
+- မက်ဂနက်လင့်ခ်များမှ ဖိုင်များကို တစ်ချက်နှိပ်ဖြင့် သိမ်းဆည်းနိုင်ခြင်း
+- ImgBed နိုဒ်ဖက်ဒရေးရှင်းတွင် ပါဝင်ပြီး ဖွင့်ထားသောဖိုင်အညွှန်းများကို မျှဝေနိုင်ခြင်း
 
-ကျွန်ုပ်တို့က "one-size-fits-all" solution ကို မယုံကြည်ပါ။ သင်က images ကို ရိုးရိုး save လုပ်ချင်တာဖြစ်ဖြစ်၊ albums ကို bulk manage လုပ်ချင်တာဖြစ်ဖြစ်၊ notes အနည်းငယ်ရေးချင်တာဖြစ်ဖြစ်၊ lightweight public resource site တစ်ခုတည်ဆောက်ချင်တာဖြစ်ဖြစ်၊ ImgBed က သင့်ရွေးချယ်မှုကို လေးစားပြီး maximum flexibility ပေးထားပါတယ်။
+ကျွန်ုပ်တို့၏ မူလရည်ရွယ်ချက်မှာ လူတိုင်း ကိုယ်ပိုင်ရုပ်ပုံနှင့် ဖိုင်မျှဝေသည့် ဝဘ်ဆိုက်တစ်ခု ပိုင်ဆိုင်နိုင်ရန် ဖြစ်သည်။ သင် ဘယ်နိုင်ငံကပဲဖြစ်ဖြစ်၊ ဘယ်ဘာသာစကားကိုပဲ သုံးသုံး၊ ရုပ်ပုံများကို ရိုးရိုးသိမ်းဆည်းချင်တာ၊ အယ်လ်ဘမ်များကို စီစဉ်ချင်တာ၊ မိတ်ဆွေများနှင့် ဖိုင်များမျှဝေချင်တာ၊ သို့မဟုတ် ဘလော့ဂ်၊ ဖန်တီးမှုအကြောင်းအရာများ၊ အများသုံးအရင်းအမြစ်များအတွက် တည်ငြိမ်သောနေရာတစ်ခု တည်ဆောက်ချင်တာဖြစ်စေ ImgBed သည် စတင်ရန် အတားအဆီးကို အတတ်နိုင်ဆုံး လျှော့ချပြီး ဤအရာကို ပိုမိုလွတ်လပ်၊ ပိုမိုရှင်းလင်း၊ ပိုမိုစတင်လွယ်ကူစေရန် ရည်ရွယ်ထားပါသည်။
 
-## အသင့်သုံးနိုင်တဲ့ အစွမ်းထက် features
+## ချက်ချင်းအသုံးပြုနိုင်သော အစွမ်းထက်လုပ်ဆောင်ချက်များ
 
-- 🌍 28 interface languages ကို support လုပ်ပြီး global users အတွက် အဆင်ပြေစေပါတယ်
-- 📦 13 built-in mainstream upload channels: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, pCloud
-- 🧩 pure modular design ဖြစ်ပြီး feature တိုင်းကို လိုအပ်သလို enable လုပ်နိုင်လို့ resources မဖြုန်းပါ
-- 🔐 API Token၊ access mode နှင့် list rules ကို support လုပ်ပြီး content permission ကို အသေးစိတ် စီမံနိုင်ပါတယ်
+- 🌍 မျက်နှာပြင်ဘာသာစကား 28 မျိုးကို ထောက်ပံ့ထားပြီး ကမ္ဘာတစ်ဝှမ်းရှိ အသုံးပြုသူများအတွက် အဆင်ပြေစေပါသည်
+- 📦 အဓိက ဖိုင်တင်ချန်နယ် 13 မျိုး ပါဝင်သည်: Telegram, Cloudflare R2, S3, WebDAV, Discord, Hugging Face, GitHub Releases, GitLab Packages, OneDrive, Google Drive, Dropbox, Yandex, pCloud
+- 🧩 အပြည့်အဝ မော်ဂျူးပုံစံ ဒီဇိုင်းဖြစ်ပြီး လိုအပ်သည့်လုပ်ဆောင်ချက်များကိုသာ ဖွင့်နိုင်သောကြောင့် အရင်းအမြစ်များ မဖြုန်းပါ
+- 🔐 API Token၊ ဝင်ရောက်ခွင့်မုဒ်နှင့် စာရင်းစည်းမျဉ်းများကို ထောက်ပံ့ပြီး အကြောင်းအရာခွင့်ပြုချက်များကို အသေးစိတ်စီမံနိုင်ပါသည်
 
-ဒီ project က ဆက်လက်တိုးတက်နေဆဲပါ။ ကျွန်ုပ်တို့ရဲ့ စွမ်းရည်မှာ ကန့်သတ်ချက်ရှိပေမဲ့ feature တစ်ခုချင်းစီကို clear, stable, easy to use ဖြစ်အောင် အကောင်းဆုံးကြိုးစားသွားပါမယ်။ ImgBed က သင့်ကို ကိုယ်ပိုင် image host, blog, file sharing space တစ်ခု ပိုလွယ်ကူစွာ ပိုင်ဆိုင်နိုင်အောင် ကူညီပေးနိုင်ရင် ကျွန်ုပ်တို့ အလွန်ဝမ်းသာပါမယ်။
+ဤပရောဂျက်သည် ဆက်လက်တိုးတက်နေဆဲဖြစ်သည်။ ကျွန်ုပ်တို့၏ စွမ်းရည်မှာ ကန့်သတ်ချက်ရှိသော်လည်း လုပ်ဆောင်ချက်တိုင်းကို ရှင်းလင်း၊ တည်ငြိမ်ပြီး အသုံးပြုရလွယ်ကူအောင် အကောင်းဆုံးကြိုးစားသွားပါမည်။ ImgBed က သင့်ကို ကိုယ်ပိုင်ရုပ်ပုံသိမ်းဆည်းမျှဝေရန် နေရာ၊ ဘလော့ဂ် သို့မဟုတ် ဖိုင်မျှဝေရာနေရာတစ်ခု ပိုလွယ်ကူစွာ ပိုင်ဆိုင်နိုင်အောင် ကူညီပေးနိုင်ပါက ကျွန်ုပ်တို့ အလွန်ဝမ်းသာပါမည်။
 
 ## စတင်အသုံးပြုရန်
 
-<a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Deploy ImgBed"><img src="../image/部署按钮.png" alt="Deploy"></a> မှ ImgBed ကို deploy လုပ်ပြီး ကိုယ်ပိုင် image hosting နှင့် file hosting ဝန်ဆောင်မှုကို လျင်မြန်စွာ ရယူပါ။
+<a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="ImgBed ကို ဖြန့်ချိရန်"><img src="../image/部署按钮.png" alt="ImgBed ကို ဖြန့်ချိရန်"></a> မှ ImgBed ကို ဖြန့်ချိပြီး ကိုယ်ပိုင်ရုပ်ပုံနှင့် ဖိုင်သိမ်းဆည်းမျှဝေရန် ဝန်ဆောင်မှုကို လျင်မြန်စွာ ရယူပါ။
 
-## Open source အတွက် ကျေးဇူးတင်ခြင်း
+## ဖွင့်လှစ်ရင်းမြစ်အတွက် ကျေးဇူးတင်ခြင်း
 
-Open source projects ဖြစ်သော [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) နှင့် [Mizuki](https://github.com/LyraVoid/Mizuki) တို့၏ ပံ့ပိုးမှုများအတွက် ကျေးဇူးတင်ပါသည်။
+ဖွင့်လှစ်ရင်းမြစ်ပရောဂျက်များဖြစ်သော [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) နှင့် [Mizuki](https://github.com/LyraVoid/Mizuki) တို့၏ ပံ့ပိုးမှုများအတွက် ကျေးဇူးတင်ပါသည်။
 
-## Feedback
+## တုံ့ပြန်ချက်
 
-- 🐛 Bug သို့မဟုတ် feature suggestion: [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues) မှာ submit လုပ်ပါ
+- 🐛 ပြဿနာ သို့မဟုတ် လုပ်ဆောင်ချက်အကြံပြုချက်: [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues) တွင် တင်ပြပါ
 - 📧 အခြားဆက်သွယ်ရန်: axibayuit@gmail.com
 
 
