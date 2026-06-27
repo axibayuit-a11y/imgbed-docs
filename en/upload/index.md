@@ -6,6 +6,10 @@ Different users may prefer different channels. If you want a simple setup, Teleg
 
 ## Before You Start
 
+> Before using ImgBed for the first time, you must open the initialization page and click "Rebuild Index" to complete the required D1 tables and avoid errors in later features.
+>
+> ![Click Rebuild Index during initialization](../../image/初始化点击重建索引.png)
+
 - Prepare the storage account or API credentials you want to use.
 - Make sure your ImgBed domain is reachable, because OAuth-based channels need callback URLs.
 - After adding a channel, upload a test image first to confirm that files can be saved and opened correctly.

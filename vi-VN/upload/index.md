@@ -6,6 +6,10 @@ Mỗi người có thể phù hợp với một kênh khác nhau. Nếu muốn b
 
 ## Trước khi bắt đầu
 
+> Trước khi dùng ImgBed lần đầu, bạn phải vào trang khởi tạo và nhấp "Xây dựng lại chỉ mục" để bổ sung các bảng D1 cần thiết, tránh lỗi ở những chức năng sau.
+>
+> ![Nhấp Xây dựng lại chỉ mục khi khởi tạo](../../image/初始化点击重建索引.png)
+
 - Chuẩn bị tài khoản lưu trữ hoặc API credentials bạn muốn dùng.
 - Đảm bảo domain ImgBed của bạn truy cập được, vì các kênh OAuth cần callback URL.
 - Sau khi thêm kênh, hãy tải thử một ảnh để xác nhận tệp được lưu và mở đúng.

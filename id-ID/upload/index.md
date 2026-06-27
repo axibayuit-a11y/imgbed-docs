@@ -6,6 +6,10 @@ Setiap pengguna dapat memilih kanal yang berbeda. Jika Anda menginginkan konfigu
 
 ## Sebelum Memulai
 
+> Sebelum menggunakan ImgBed untuk pertama kali, Anda harus membuka halaman inisialisasi dan mengeklik "Bangun Ulang Indeks" untuk melengkapi tabel D1 yang diperlukan dan menghindari error pada fitur berikutnya.
+>
+> ![Klik Bangun Ulang Indeks saat inisialisasi](../../image/初始化点击重建索引.png)
+
 - Siapkan akun penyimpanan atau kredensial API yang diperlukan.
 - Pastikan domain ImgBed Anda dapat diakses, karena kanal berbasis OAuth memerlukan URL callback.
 - Setelah menambahkan kanal, unggah gambar uji terlebih dahulu untuk memastikan berkas tersimpan dan dapat dibuka dengan benar.

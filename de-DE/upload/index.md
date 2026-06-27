@@ -6,6 +6,10 @@ Je nach Nutzung passt ein anderer Kanal besser. Für einen einfachen Einstieg ei
 
 ## Vor dem Start
 
+> Vor der ersten Nutzung von ImgBed müssen Sie die Initialisierungsseite öffnen und auf "Index neu erstellen" klicken, damit die erforderlichen D1-Tabellen ergänzt werden und spätere Funktionsfehler vermieden werden.
+>
+> ![Bei der Initialisierung auf Index neu erstellen klicken](../../image/初始化点击重建索引.png)
+
 - Bereiten Sie das Speicherkonto oder die API-Zugangsdaten vor.
 - Stellen Sie sicher, dass Ihre ImgBed-Domain erreichbar ist, da OAuth-Kanäle Callback-URLs benötigen.
 - Laden Sie nach dem Hinzufügen eines Kanals zuerst ein Testbild hoch, um Speichern und Öffnen zu prüfen.

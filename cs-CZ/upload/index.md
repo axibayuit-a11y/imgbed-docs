@@ -6,6 +6,10 @@ Každému může vyhovovat jiný kanál. Pokud chcete jednoduchý začátek, zku
 
 ## Než začnete
 
+> Před prvním použitím ImgBed musíte otevřít inicializační stránku a kliknout na "Znovu sestavit index", aby se doplnily potřebné tabulky D1 a předešlo se chybám v dalších funkcích.
+>
+> ![Kliknutí na znovu sestavit index při inicializaci](../../image/初始化点击重建索引.png)
+
 - Připravte si úložný účet nebo API údaje, které chcete použít.
 - Ověřte, že je vaše doména ImgBed dostupná, protože OAuth kanály potřebují URL zpětného volání.
 - Po přidání kanálu nejdříve nahrajte testovací obrázek a ověřte, že se soubor uloží a otevře.

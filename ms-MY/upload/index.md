@@ -6,6 +6,10 @@ Pengguna yang berbeza mungkin memilih saluran yang berbeza. Jika anda mahu perse
 
 ## Sebelum Bermula
 
+> Sebelum menggunakan ImgBed buat kali pertama, anda mesti membuka halaman pemulaan dan klik "Bina Semula Indeks" untuk melengkapkan jadual D1 yang diperlukan serta mengelakkan ralat pada fungsi seterusnya.
+>
+> ![Klik Bina Semula Indeks semasa pemulaan](../../image/初始化点击重建索引.png)
+
 - Sediakan akaun storan atau kelayakan API yang ingin digunakan.
 - Pastikan domain ImgBed anda boleh dicapai, kerana saluran berasaskan OAuth memerlukan URL callback.
 - Selepas menambah saluran, muat naik imej ujian terlebih dahulu untuk mengesahkan bahawa fail boleh disimpan dan dibuka dengan betul.

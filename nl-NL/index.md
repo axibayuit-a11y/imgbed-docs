@@ -10,7 +10,7 @@ ImgBed begon met het uploaden van afbeeldingen en het beheren van links. Inmidde
 - Bestanden met één klik vanuit magnet-links op te slaan
 - Deel te nemen aan de ImgBed-nodefederatie en open bestandsindexen te delen
 
-Ons oorspronkelijke doel is dat iedereen een eigen site kan hebben voor het hosten van afbeeldingen en het delen van bestanden. Het maakt niet uit uit welk land je komt of welke taal je gebruikt: of je nu alleen afbeeldingen wilt bewaren, albums wilt ordenen, bestanden met vrienden wilt delen, of een stabiele hostingruimte wilt bouwen voor een blog, creatieve content of publieke bronnen, ImgBed probeert de drempel zo laag mogelijk te maken en dit vrijer, duidelijker en makkelijker te beginnen.
+Ons oorspronkelijke doel is dat iedereen een eigen site kan hebben voor het hosten van afbeeldingen en het delen van bestanden. Het maakt niet uit uit welk land je komt of welke taal je gebruikt: of je nu alleen afbeeldingen wilt bewaren, albums wilt ordenen, bestanden met vrienden wilt delen, of een stabiele hostingruimte wilt bouwen voor een blog, creatieve content of publieke bronnen, ImgBed probeert de drempel zo laag mogelijk te maken en de start vrijer, duidelijker en makkelijker te maken.
 
 ## Krachtige mogelijkheden direct uit de doos
 
@@ -33,5 +33,4 @@ Met dank aan de open-sourceprojecten [CloudFlare-ImgBed](https://github.com/MarS
 
 - 🐛 Bugs of functieverzoeken: meld ze via [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
 - 📧 Ander contact: axibayuit@gmail.com
-
 

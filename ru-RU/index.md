@@ -25,13 +25,12 @@ ImgBed начинался с загрузки изображений и упра
 
 Разверните ImgBed через <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="Развернуть ImgBed"><img src="../image/部署按钮.png" alt="Развернуть ImgBed"></a> и быстро получите собственный сервис для хостинга изображений и файлов.
 
-## Благодарность open source
+## Благодарность проектам с открытым исходным кодом
 
-Благодарим open-source проекты [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) и [Mizuki](https://github.com/LyraVoid/Mizuki) за их вклад.
+Благодарим проекты с открытым исходным кодом [CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed) и [Mizuki](https://github.com/LyraVoid/Mizuki) за их вклад.
 
 ## Обратная связь
 
 - 🐛 Баги или предложения функций: отправьте в [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues)
 - 📧 Другой контакт: axibayuit@gmail.com
-
 

@@ -23,7 +23,7 @@ Dieses Projekt wird weiterhin verbessert. Unsere Möglichkeiten sind begrenzt, a
 
 ## Jetzt starten
 
-Stelle ImgBed über <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="ImgBed bereitstellen"><img src="../image/部署按钮.png" alt="ImgBed bereitstellen"></a> bereit und erhalte schnell deinen eigenen Dienst für Bild- und Datei-Hosting.
+Stellen Sie ImgBed über <a class="imgbed-deploy-button" href="https://glow.ccwu.cc/reg/IMG-FREELY" target="_blank" rel="noopener noreferrer" aria-label="ImgBed bereitstellen"><img src="../image/部署按钮.png" alt="ImgBed bereitstellen"></a> bereit und erhalten Sie schnell Ihren eigenen Dienst für Bild- und Datei-Hosting.
 
 ## Dank an Open Source
 
@@ -33,5 +33,4 @@ Wir danken den Open-Source-Projekten [CloudFlare-ImgBed](https://github.com/MarS
 
 - 🐛 Bugs oder Funktionsvorschläge: bitte in [GitHub Issues](https://github.com/axibayuit-a11y/imgbed-docs/issues) melden
 - 📧 Sonstiger Kontakt: axibayuit@gmail.com
-
 

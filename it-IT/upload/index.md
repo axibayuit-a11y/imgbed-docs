@@ -6,6 +6,10 @@ Il canale migliore dipende dall'uso. Per iniziare in modo semplice, Telegram, Di
 
 ## Prima di iniziare
 
+> Prima di usare ImgBed per la prima volta, devi aprire la pagina di inizializzazione e fare clic su "Ricostruisci indice" per completare le tabelle D1 necessarie ed evitare errori nelle funzioni successive.
+>
+> ![Fare clic su Ricostruisci indice durante l’inizializzazione](../../image/初始化点击重建索引.png)
+
 - Prepara l'account di archiviazione o le credenziali API da usare.
 - Verifica che il dominio ImgBed sia raggiungibile, perché i canali OAuth richiedono URL di callback.
 - Dopo aver aggiunto un canale, carica prima un'immagine di prova per controllare che salvataggio e apertura funzionino.

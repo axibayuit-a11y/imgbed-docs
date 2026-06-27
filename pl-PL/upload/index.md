@@ -6,6 +6,10 @@ Różnym użytkownikom pasują różne kanały. Jeśli chcesz zacząć prosto, d
 
 ## Zanim zaczniesz
 
+> Przed pierwszym użyciem ImgBed musisz otworzyć stronę inicjalizacji i kliknąć "Odbuduj indeks", aby uzupełnić wymagane tabele D1 i uniknąć błędów w kolejnych funkcjach.
+>
+> ![Kliknięcie Odbuduj indeks podczas inicjalizacji](../../image/初始化点击重建索引.png)
+
 - Przygotuj konto przechowywania lub dane API, których chcesz użyć.
 - Sprawdź, czy domena ImgBed jest dostępna, ponieważ kanały OAuth wymagają adresów callback.
 - Po dodaniu kanału prześlij najpierw obraz testowy, aby potwierdzić zapis i dostęp.

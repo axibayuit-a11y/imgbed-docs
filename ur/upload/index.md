@@ -1,16 +1,20 @@
 # اپ لوڈ سیٹنگز
 
-اپ لوڈ سیٹنگز ImgBed کو آپ کے اپنے storage channels سے جوڑتی ہیں۔ channel configure ہونے کے بعد uploaded images اور files آپ کی منتخب service میں محفوظ ہوتی ہیں۔ ImgBed access links، file records، previews، public gallery، random image API، WebDAV access اور متعلقہ workflows کو manage کرتا ہے۔
+اپ لوڈ سیٹنگز ImgBed کو آپ کے اپنے اسٹوریج چینلز سے جوڑتی ہیں۔ چینل ترتیب دینے کے بعد اپ لوڈ کی گئی تصاویر اور فائلیں آپ کی منتخب کردہ سروس میں محفوظ ہوتی ہیں۔ ImgBed رسائی کے لنکس، فائل ریکارڈز، پیش منظر، عوامی گیلری، رینڈم امیج API، WebDAV رسائی اور متعلقہ ورک فلو کو سنبھالتا ہے۔
 
-ہر user کے لیے مناسب channel مختلف ہو سکتا ہے۔ آسان آغاز کے لیے Telegram، Discord یا GitHub Releases اچھے choices ہیں۔ اگر capacity، speed اور long-term stability زیادہ اہم ہیں تو Cloudflare R2، S3، OneDrive، Google Drive، Dropbox، Yandex، pCloud یا اپنا WebDAV service استعمال کریں۔
+ہر صارف کے لیے مناسب چینل مختلف ہو سکتا ہے۔ اگر آپ آسان آغاز چاہتے ہیں تو Telegram، Discord یا GitHub Releases اچھے انتخاب ہیں۔ اگر گنجائش، رفتار اور طویل مدتی استحکام زیادہ اہم ہیں تو Cloudflare R2، S3، OneDrive، Google Drive، Dropbox، Yandex، pCloud یا اپنی WebDAV سروس استعمال کریں۔
 
 ## شروع کرنے سے پہلے
 
-- جس storage account یا API credentials کو استعمال کرنا ہے، انہیں تیار رکھیں۔
-- یقینی بنائیں کہ آپ کا ImgBed domain کھل رہا ہے، کیونکہ OAuth channels کو callback URL چاہیے۔
-- چینل شامل کرنے کے بعد پہلے ایک آزمائشی تصویر upload کریں، تاکہ file save اور open ہونے کی تصدیق ہو سکے۔
+> ImgBed پہلی بار استعمال کرنے سے پہلے، ضروری D1 ڈیٹا ٹیبلز مکمل کرنے اور بعد کی خصوصیات میں خرابیوں سے بچنے کے لیے ابتدا کاری کے صفحے پر جا کر "انڈیکس دوبارہ بنائیں" پر کلک کرنا لازمی ہے۔
+>
+> ![ابتدا کاری کے وقت انڈیکس دوبارہ بنائیں پر کلک کریں](../../image/初始化点击重建索引.png)
 
-## Channel فہرست
+- جس اسٹوریج اکاؤنٹ یا API اسناد کو استعمال کرنا ہے، انہیں تیار رکھیں۔
+- یقینی بنائیں کہ آپ کا ImgBed ڈومین قابل رسائی ہے، کیونکہ OAuth پر مبنی چینلز کو کال بیک URL کی ضرورت ہوتی ہے۔
+- چینل شامل کرنے کے بعد پہلے ایک آزمائشی تصویر اپ لوڈ کریں، تاکہ تصدیق ہو سکے کہ فائل صحیح طور پر محفوظ اور کھل رہی ہے۔
+
+## چینل فہرست
 
 - [Telegram](./telegram.md)
 - [Cloudflare R2](./cloudflare-r2.md)
@@ -28,6 +32,6 @@
 
 ## اس باب میں کیا ہے
 
-- ہر upload channel کے لیے setup سے پہلے کون سی معلومات چاہیے۔
-- third-party platforms پر app بنانا، keys کاپی کرنا یا Token authorize کرنا۔
-- ImgBed میں channel configuration بھرنا اور upload کے کام کرنے کی تصدیق کرنا۔
+- ہر اپ لوڈ چینل کو ترتیب دینے سے پہلے کن معلومات کی ضرورت ہے۔
+- بیرونی پلیٹ فارمز پر ایپ بنانا، کلیدیں کاپی کرنا یا ٹوکن کی اجازت دینا۔
+- ImgBed میں چینل کی ترتیب درج کرنا اور اپ لوڈ کے درست کام کرنے کی تصدیق کرنا۔

@@ -6,6 +6,10 @@ Welk kanaal het beste past, hangt af van je gebruik. Voor een eenvoudige start z
 
 ## Voor je begint
 
+> Voordat je ImgBed voor het eerst gebruikt, moet je de initialisatiepagina openen en op "Index opnieuw opbouwen" klikken om de vereiste D1-tabellen aan te vullen en fouten in latere functies te voorkomen.
+>
+> ![Tijdens de initialisatie op Index opnieuw opbouwen klikken](../../image/初始化点击重建索引.png)
+
 - Bereid het opslagaccount of de API-gegevens voor die je wilt gebruiken.
 - Controleer of je ImgBed-domein bereikbaar is, omdat OAuth-kanalen callback-URL's nodig hebben.
 - Upload na het toevoegen van een kanaal eerst een testafbeelding om te bevestigen dat opslaan en openen werkt.

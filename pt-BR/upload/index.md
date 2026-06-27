@@ -6,6 +6,10 @@ Cada pessoa pode preferir um canal diferente. Para começar de forma simples, Te
 
 ## Antes de começar
 
+> Antes de usar o ImgBed pela primeira vez, você deve abrir a página de inicialização e clicar em "Reconstruir índice" para completar as tabelas D1 necessárias e evitar erros nas próximas funções.
+>
+> ![Clicar em Reconstruir índice durante a inicialização](../../image/初始化点击重建索引.png)
+
 - Prepare a conta de armazenamento ou as credenciais de API que você pretende usar.
 - Verifique se o domínio do ImgBed está acessível, pois canais baseados em OAuth precisam de URLs de callback.
 - Depois de adicionar um canal, envie primeiro uma imagem de teste para confirmar que o arquivo é salvo e aberto corretamente.

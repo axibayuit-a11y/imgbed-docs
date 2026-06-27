@@ -6,6 +6,10 @@ Her kullanıcı için uygun kanal farklı olabilir. Basit bir başlangıç için
 
 ## Başlamadan önce
 
+> ImgBed'i ilk kez kullanmadan önce, gerekli D1 veri tablolarını tamamlamak ve sonraki özelliklerde hata oluşmasını önlemek için başlatma sayfasına girip "Dizini yeniden oluştur" seçeneğine tıklamanız gerekir.
+>
+> ![Başlatma sırasında Dizini yeniden oluştur seçeneğine tıklama](../../image/初始化点击重建索引.png)
+
 - Kullanacağınız depolama hesabını veya API bilgilerini hazırlayın.
 - ImgBed alan adınızın erişilebilir olduğundan emin olun; OAuth tabanlı kanallar callback URL ister.
 - Kanalı ekledikten sonra önce bir test görseli yükleyerek dosyanın kaydedilip açıldığını doğrulayın.
